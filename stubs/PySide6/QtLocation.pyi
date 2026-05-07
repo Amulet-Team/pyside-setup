@@ -17,7 +17,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QGeoCodeReply(PySide6.QtCore.QObject):
@@ -92,7 +92,7 @@ class QGeoCodingManagerEngine(PySide6.QtCore.QObject):
     def setLocale(self, locale: PySide6.QtCore.QLocale | PySide6.QtCore.QLocale.Language, /) -> None: ...
 
 
-class QGeoManeuver(Shiboken.Object):
+class QGeoManeuver(shiboken6.Shiboken.Object):
 
     class InstructionDirection(enum.Enum):
 
@@ -136,7 +136,7 @@ class QGeoManeuver(Shiboken.Object):
     def waypoint(self, /) -> PySide6.QtPositioning.QGeoCoordinate: ...
 
 
-class QGeoRoute(Shiboken.Object):
+class QGeoRoute(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QGeoRoute, /, *, routeId: str | None = ..., bounds: PySide6.QtPositioning.QGeoRectangle | None = ..., travelTime: int | None = ..., distance: float | None = ..., path: collections.abc.Sequence[PySide6.QtPositioning.QGeoCoordinate] | None = ..., routeLegs: collections.abc.Sequence[PySide6.QtLocation.QGeoRoute] | None = ..., extendedAttributes: typing.Optional[typing.Dict[str, typing.Any]] = ..., legIndex: int | None = ..., overallRoute: PySide6.QtLocation.QGeoRoute | None = ..., segmentsCount: int | None = ..., segments: collections.abc.Sequence[PySide6.QtLocation.QGeoRouteSegment] | None = ...) -> None: ...
@@ -208,7 +208,7 @@ class QGeoRouteReply(PySide6.QtCore.QObject):
     def setRoutes(self, routes: collections.abc.Sequence[PySide6.QtLocation.QGeoRoute], /) -> None: ...
 
 
-class QGeoRouteRequest(Shiboken.Object):
+class QGeoRouteRequest(shiboken6.Shiboken.Object):
 
     class FeatureType(enum.Flag):
 
@@ -288,7 +288,7 @@ class QGeoRouteRequest(Shiboken.Object):
     def waypoints(self, /) -> typing.List[PySide6.QtPositioning.QGeoCoordinate]: ...
 
 
-class QGeoRouteSegment(Shiboken.Object):
+class QGeoRouteSegment(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QGeoRouteSegment, /, *, travelTime: int | None = ..., distance: float | None = ..., path: collections.abc.Sequence[PySide6.QtPositioning.QGeoCoordinate] | None = ..., maneuver: PySide6.QtLocation.QGeoManeuver | None = ...) -> None: ...
@@ -454,7 +454,7 @@ class QGeoServiceProvider(PySide6.QtCore.QObject):
     def setParameters(self, parameters: typing.Dict[str, typing.Any], /) -> None: ...
 
 
-class QGeoServiceProviderFactory(Shiboken.Object):
+class QGeoServiceProviderFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -466,7 +466,7 @@ class QGeoServiceProviderFactory(Shiboken.Object):
 class QIntList: ...
 
 
-class QLocation(Shiboken.Object):
+class QLocation(shiboken6.Shiboken.Object):
 
     class Visibility(enum.Flag):
 
@@ -476,7 +476,7 @@ class QLocation(Shiboken.Object):
         PublicVisibility          = 0x4
 
 
-class QPlace(Shiboken.Object):
+class QPlace(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -529,7 +529,7 @@ class QPlace(Shiboken.Object):
     def visibility(self, /) -> PySide6.QtLocation.QLocation.Visibility: ...
 
 
-class QPlaceAttribute(Shiboken.Object):
+class QPlaceAttribute(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceAttribute, /, *, label: str | None = ..., text: str | None = ...) -> None: ...
@@ -547,7 +547,7 @@ class QPlaceAttribute(Shiboken.Object):
     def text(self, /) -> str: ...
 
 
-class QPlaceCategory(Shiboken.Object):
+class QPlaceCategory(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -569,7 +569,7 @@ class QPlaceCategory(Shiboken.Object):
     def visibility(self, /) -> PySide6.QtLocation.QLocation.Visibility: ...
 
 
-class QPlaceContactDetail(Shiboken.Object):
+class QPlaceContactDetail(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceContactDetail, /, *, label: str | None = ..., value: str | None = ...) -> None: ...
@@ -587,7 +587,7 @@ class QPlaceContactDetail(Shiboken.Object):
     def value(self, /) -> str: ...
 
 
-class QPlaceContent(Shiboken.Object):
+class QPlaceContent(shiboken6.Shiboken.Object):
 
     class DataTag(enum.Enum):
 
@@ -655,7 +655,7 @@ class QPlaceContentReply(PySide6.QtLocation.QPlaceReply):
     def type(self, /) -> PySide6.QtLocation.QPlaceReply.Type: ...
 
 
-class QPlaceContentRequest(Shiboken.Object):
+class QPlaceContentRequest(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -686,7 +686,7 @@ class QPlaceDetailsReply(PySide6.QtLocation.QPlaceReply):
     def type(self, /) -> PySide6.QtLocation.QPlaceReply.Type: ...
 
 
-class QPlaceIcon(Shiboken.Object):
+class QPlaceIcon(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceIcon, /, *, parameters: typing.Optional[typing.Dict[str, typing.Any]] = ..., manager: PySide6.QtLocation.QPlaceManager | None = ...) -> None: ...
@@ -804,7 +804,7 @@ class QPlaceMatchReply(PySide6.QtLocation.QPlaceReply):
     def type(self, /) -> PySide6.QtLocation.QPlaceReply.Type: ...
 
 
-class QPlaceMatchRequest(Shiboken.Object):
+class QPlaceMatchRequest(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -834,7 +834,7 @@ class QPlaceProposedSearchResult(PySide6.QtLocation.QPlaceSearchResult):
     def setSearchRequest(self, request: PySide6.QtLocation.QPlaceSearchRequest, /) -> None: ...
 
 
-class QPlaceRatings(Shiboken.Object):
+class QPlaceRatings(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceRatings, /, *, average: float | None = ..., maximum: float | None = ..., count: int | None = ...) -> None: ...
@@ -926,7 +926,7 @@ class QPlaceSearchReply(PySide6.QtLocation.QPlaceReply):
     def type(self, /) -> PySide6.QtLocation.QPlaceReply.Type: ...
 
 
-class QPlaceSearchRequest(Shiboken.Object):
+class QPlaceSearchRequest(shiboken6.Shiboken.Object):
 
     class RelevanceHint(enum.Enum):
 
@@ -963,7 +963,7 @@ class QPlaceSearchRequest(Shiboken.Object):
     def visibilityScope(self, /) -> PySide6.QtLocation.QLocation.Visibility: ...
 
 
-class QPlaceSearchResult(Shiboken.Object):
+class QPlaceSearchResult(shiboken6.Shiboken.Object):
 
     class SearchResultType(enum.Enum):
 
@@ -995,7 +995,7 @@ class QPlaceSearchSuggestionReply(PySide6.QtLocation.QPlaceReply):
     def type(self, /) -> PySide6.QtLocation.QPlaceReply.Type: ...
 
 
-class QPlaceSupplier(Shiboken.Object):
+class QPlaceSupplier(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceSupplier, /, *, name: str | None = ..., supplierId: str | None = ..., url: PySide6.QtCore.QUrl | None = ..., icon: PySide6.QtLocation.QPlaceIcon | None = ...) -> None: ...
@@ -1017,7 +1017,7 @@ class QPlaceSupplier(Shiboken.Object):
     def url(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QPlaceUser(Shiboken.Object):
+class QPlaceUser(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtLocation.QPlaceUser, /, *, userId: str | None = ..., name: str | None = ...) -> None: ...

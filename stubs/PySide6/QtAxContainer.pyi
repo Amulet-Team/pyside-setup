@@ -17,10 +17,10 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QAxBase(Shiboken.Object):
+class QAxBase(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -90,7 +90,7 @@ class QAxObject(PySide6.QtAxContainer.QAxBaseObject, PySide6.QtAxContainer.QAxBa
     def setControl(self, c: str, /) -> bool: ...
 
 
-class QAxObjectInterface(Shiboken.Object):
+class QAxObjectInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 

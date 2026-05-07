@@ -16,7 +16,7 @@ import os
 import enum
 import typing
 import collections.abc
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractHttpServer(PySide6.QtCore.QObject):
@@ -36,7 +36,7 @@ class QAbstractHttpServer(PySide6.QtCore.QObject):
     def setHttp2Configuration(self, configuration: PySide6.QtNetwork.QHttp2Configuration, /) -> None: ...
 
 
-class QFutureHttpServerResponse(Shiboken.Object):
+class QFutureHttpServerResponse(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -81,7 +81,7 @@ class QHttpServer(PySide6.QtHttpServer.QAbstractHttpServer):
     def router(self, /) -> PySide6.QtHttpServer.QHttpServerRouter: ...
 
 
-class QHttpServerConfiguration(Shiboken.Object):
+class QHttpServerConfiguration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -108,7 +108,7 @@ class QHttpServerConfiguration(Shiboken.Object):
     def swap(self, other: PySide6.QtHttpServer.QHttpServerConfiguration, /) -> None: ...
 
 
-class QHttpServerRequest(Shiboken.Object):
+class QHttpServerRequest(shiboken6.Shiboken.Object):
 
     class Method(enum.Flag):
 
@@ -144,7 +144,7 @@ class QHttpServerRequest(Shiboken.Object):
     def value(self, key: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QHttpServerResponder(Shiboken.Object):
+class QHttpServerResponder(shiboken6.Shiboken.Object):
 
     class StatusCode(enum.Enum):
 
@@ -243,7 +243,7 @@ class QHttpServerResponder(Shiboken.Object):
     def writeEndChunked(self, data: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, trailers: PySide6.QtNetwork.QHttpHeaders, /) -> None: ...
 
 
-class QHttpServerResponse(Shiboken.Object):
+class QHttpServerResponse(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, data: PySide6.QtCore.QJsonArray, /, status: PySide6.QtHttpServer.QHttpServerResponder.StatusCode = ...) -> None: ...
@@ -270,7 +270,7 @@ class QHttpServerResponse(Shiboken.Object):
     def swap(self, other: PySide6.QtHttpServer.QHttpServerResponse, /) -> None: ...
 
 
-class QHttpServerRouter(Shiboken.Object):
+class QHttpServerRouter(shiboken6.Shiboken.Object):
 
     def __init__(self, server: PySide6.QtHttpServer.QAbstractHttpServer, /) -> None: ...
 
@@ -281,14 +281,14 @@ class QHttpServerRouter(Shiboken.Object):
     def removeConverter(self, metaType: PySide6.QtCore.QMetaType | PySide6.QtCore.QMetaType.Type, /) -> None: ...
 
 
-class QHttpServerRouterRule(Shiboken.Object):
+class QHttpServerRouterRule(shiboken6.Shiboken.Object):
     def contextObject(self, /) -> PySide6.QtCore.QObject: ...
     def exec(self, request: PySide6.QtHttpServer.QHttpServerRequest, responder: PySide6.QtHttpServer.QHttpServerResponder, /) -> bool: ...
     def hasValidMethods(self, /) -> bool: ...
     def matches(self, request: PySide6.QtHttpServer.QHttpServerRequest, match: PySide6.QtCore.QRegularExpressionMatch, /) -> bool: ...
 
 
-class QHttpServerWebSocketUpgradeResponse(Shiboken.Object):
+class QHttpServerWebSocketUpgradeResponse(shiboken6.Shiboken.Object):
 
     class ResponseType(enum.Enum):
 

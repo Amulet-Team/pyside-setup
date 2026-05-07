@@ -13,7 +13,7 @@ import PySide6.QtCore
 
 import enum
 import typing
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QDomAttr(PySide6.QtXml.QDomNode):
@@ -81,7 +81,7 @@ class QDomDocument(PySide6.QtXml.QDomNode):
         UseNamespaceProcessing    = 0x1
         PreserveSpacingOnlyNodes  = 0x2
 
-    class ParseResult(Shiboken.Object):
+    class ParseResult(shiboken6.Shiboken.Object):
 
         errorColumn               = ...  # type: int
         errorLine                 = ...  # type: int
@@ -242,7 +242,7 @@ class QDomEntityReference(PySide6.QtXml.QDomNode):
     def nodeType(self, /) -> PySide6.QtXml.QDomNode.NodeType: ...
 
 
-class QDomImplementation(Shiboken.Object):
+class QDomImplementation(shiboken6.Shiboken.Object):
 
     class InvalidDataPolicy(enum.Enum):
 
@@ -269,7 +269,7 @@ class QDomImplementation(Shiboken.Object):
     def setInvalidDataPolicy(policy: PySide6.QtXml.QDomImplementation.InvalidDataPolicy, /) -> None: ...
 
 
-class QDomNamedNodeMap(Shiboken.Object):
+class QDomNamedNodeMap(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -293,7 +293,7 @@ class QDomNamedNodeMap(Shiboken.Object):
     def size(self, /) -> int: ...
 
 
-class QDomNode(Shiboken.Object):
+class QDomNode(shiboken6.Shiboken.Object):
 
     class EncodingPolicy(enum.Enum):
 
@@ -391,7 +391,7 @@ class QDomNode(Shiboken.Object):
     def toText(self, /) -> PySide6.QtXml.QDomText: ...
 
 
-class QDomNodeList(Shiboken.Object):
+class QDomNodeList(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

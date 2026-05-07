@@ -326,7 +326,7 @@ static PyTypeObject *createObjectType()
     };
 
     PyType_Spec SbkObject_Type_spec = {
-        "1:Shiboken.Object",
+        "2:shiboken6.Shiboken.Object",
         sizeof(SbkObject),
         0,
         Py_TPFLAGS_DEFAULT|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -357,7 +357,7 @@ PyTypeObject *SbkObject_TypeF(void)
 }
 
 static const char *SbkObject_SignatureStrings[] = {
-    "Shiboken.Object(self)",
+    "shiboken6.Shiboken.Object(self)",
     nullptr}; // Sentinel
 
 static int mainThreadDeletionHandler(void *)

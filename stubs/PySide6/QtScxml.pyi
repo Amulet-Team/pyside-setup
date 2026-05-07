@@ -15,15 +15,15 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class QScxmlCompiler(Shiboken.Object):
+class QScxmlCompiler(shiboken6.Shiboken.Object):
 
-    class Loader(Shiboken.Object):
+    class Loader(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -60,7 +60,7 @@ class QScxmlDataModel(PySide6.QtCore.QObject):
 
     stateMachineChanged      : typing.ClassVar[Signal] = ... # stateMachineChanged(QScxmlStateMachine*)
 
-    class ForeachLoopBody(Shiboken.Object):
+    class ForeachLoopBody(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -94,7 +94,7 @@ class QScxmlDynamicScxmlServiceFactory(PySide6.QtScxml.QScxmlInvokableServiceFac
     def invoke(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, /) -> PySide6.QtScxml.QScxmlInvokableService: ...
 
 
-class QScxmlError(Shiboken.Object):
+class QScxmlError(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, arg__1: PySide6.QtScxml.QScxmlError, /, *, valid: bool | None = ..., fileName: str | None = ..., line: int | None = ..., column: int | None = ..., description: str | None = ...) -> None: ...
@@ -112,7 +112,7 @@ class QScxmlError(Shiboken.Object):
     def toString(self, /) -> str: ...
 
 
-class QScxmlEvent(Shiboken.Object):
+class QScxmlEvent(shiboken6.Shiboken.Object):
 
     class EventType(enum.Enum):
 
@@ -150,9 +150,9 @@ class QScxmlEvent(Shiboken.Object):
     def setSendId(self, sendId: str, /) -> None: ...
 
 
-class QScxmlExecutableContent(Shiboken.Object):
+class QScxmlExecutableContent(shiboken6.Shiboken.Object):
 
-    class AssignmentInfo(Shiboken.Object):
+    class AssignmentInfo(shiboken6.Shiboken.Object):
 
         context                   = ...  # type: int
         dest                      = ...  # type: int
@@ -165,7 +165,7 @@ class QScxmlExecutableContent(Shiboken.Object):
 
         def __copy__(self, /) -> typing.Self: ...
 
-    class EvaluatorInfo(Shiboken.Object):
+    class EvaluatorInfo(shiboken6.Shiboken.Object):
 
         context                   = ...  # type: int
         expr                      = ...  # type: int
@@ -177,7 +177,7 @@ class QScxmlExecutableContent(Shiboken.Object):
 
         def __copy__(self, /) -> typing.Self: ...
 
-    class ForeachInfo(Shiboken.Object):
+    class ForeachInfo(shiboken6.Shiboken.Object):
 
         array                     = ...  # type: int
         context                   = ...  # type: int
@@ -191,7 +191,7 @@ class QScxmlExecutableContent(Shiboken.Object):
 
         def __copy__(self, /) -> typing.Self: ...
 
-    class InvokeInfo(Shiboken.Object):
+    class InvokeInfo(shiboken6.Shiboken.Object):
 
         autoforward               = ...  # type: bool
         context                   = ...  # type: int
@@ -208,7 +208,7 @@ class QScxmlExecutableContent(Shiboken.Object):
 
         def __copy__(self, /) -> typing.Self: ...
 
-    class ParameterInfo(Shiboken.Object):
+    class ParameterInfo(shiboken6.Shiboken.Object):
 
         expr                      = ...  # type: int
         location                  = ...  # type: int
@@ -324,7 +324,7 @@ class QScxmlStaticScxmlServiceFactory(PySide6.QtScxml.QScxmlInvokableServiceFact
     def invoke(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, /) -> PySide6.QtScxml.QScxmlInvokableService: ...
 
 
-class QScxmlTableData(Shiboken.Object):
+class QScxmlTableData(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 

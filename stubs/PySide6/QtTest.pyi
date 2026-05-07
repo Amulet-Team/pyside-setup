@@ -16,7 +16,7 @@ import PySide6.QtWidgets
 import enum
 import typing
 from PySide6.QtCore import SignalInstance
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractItemModelTester(PySide6.QtCore.QObject):
@@ -41,7 +41,7 @@ class QAbstractItemModelTester(PySide6.QtCore.QObject):
 class QIntList: ...
 
 
-class QSignalSpy(Shiboken.Object):
+class QSignalSpy(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, obj: PySide6.QtCore.QObject, signal: PySide6.QtCore.QMetaMethod, /) -> None: ...
@@ -58,7 +58,7 @@ class QSignalSpy(Shiboken.Object):
     def wait(self, timeout: int, /) -> bool: ...
 
 
-class QTest(Shiboken.Object):
+class QTest(shiboken6.Shiboken.Object):
 
     class ComparisonOperation(enum.Enum):
 
@@ -120,7 +120,7 @@ class QTest(Shiboken.Object):
         EmulationFaults           = 0x1d
         RefCPUCycles              = 0x1e
 
-    class QTouchEventSequence(Shiboken.Object):
+    class QTouchEventSequence(shiboken6.Shiboken.Object):
         def commit(self, /, processEvents: bool = ...) -> None: ...
         @typing.overload
         def move(self, touchId: int, pt: PySide6.QtCore.QPoint, /, widget: PySide6.QtWidgets.QWidget | None = ...) -> PySide6.QtTest.QTest.QTouchEventSequence: ...

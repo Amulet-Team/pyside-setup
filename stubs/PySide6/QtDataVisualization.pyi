@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class Q3DBars(PySide6.QtDataVisualization.QAbstract3DGraph):
@@ -683,7 +683,7 @@ class QBar3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
     def setSelectedBar(self, position: PySide6.QtCore.QPoint, /) -> None: ...
 
 
-class QBarDataItem(Shiboken.Object):
+class QBarDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1243,7 +1243,7 @@ class QScatter3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
     def setSelectedItem(self, index: int, /) -> None: ...
 
 
-class QScatterDataItem(Shiboken.Object):
+class QScatterDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1336,7 +1336,7 @@ class QSurface3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
     def wireframeColor(self, /) -> PySide6.QtGui.QColor: ...
 
 
-class QSurfaceDataItem(Shiboken.Object):
+class QSurfaceDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

@@ -14,7 +14,7 @@ import os
 import enum
 import typing
 import collections.abc
-from shiboken6 import Shiboken
+import shiboken6
 
 
 PlaceholderType = typing.TypeVar("PlaceholderType", bound=PySide6.QtCore.QObject)
@@ -114,7 +114,7 @@ class QAbstractEventDispatcher(PySide6.QtCore.QObject):
     aboutToBlock             : typing.ClassVar[Signal] = ... # aboutToBlock()
     awake                    : typing.ClassVar[Signal] = ... # awake()
 
-    class TimerInfo(Shiboken.Object):
+    class TimerInfo(shiboken6.Shiboken.Object):
 
         interval                  = ...  # type: int
         timerId                   = ...  # type: int
@@ -281,7 +281,7 @@ class QAbstractListModel(PySide6.QtCore.QAbstractItemModel):
     def sibling(self, row: int, column: int, idx: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtCore.QModelIndex: ...
 
 
-class QAbstractNativeEventFilter(Shiboken.Object):
+class QAbstractNativeEventFilter(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -357,7 +357,7 @@ class QAnimationGroup(PySide6.QtCore.QAbstractAnimation):
     def takeAnimation(self, index: int, /) -> PySide6.QtCore.QAbstractAnimation: ...
 
 
-class QBasicMutex(Shiboken.Object):
+class QBasicMutex(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -367,7 +367,7 @@ class QBasicMutex(Shiboken.Object):
     def unlock(self, /) -> None: ...
 
 
-class QBasicReadWriteLock(Shiboken.Object):
+class QBasicReadWriteLock(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -395,7 +395,7 @@ class QBasicReadWriteLock(Shiboken.Object):
     def unlock_shared(self, /) -> None: ...
 
 
-class QBasicTimer(Shiboken.Object):
+class QBasicTimer(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -410,7 +410,7 @@ class QBasicTimer(Shiboken.Object):
     def timerId(self, /) -> int: ...
 
 
-class QBitArray(Shiboken.Object):
+class QBitArray(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -460,7 +460,7 @@ class QBitArray(Shiboken.Object):
     def truncate(self, pos: int, /) -> None: ...
 
 
-class QBluetoothPermission(Shiboken.Object):
+class QBluetoothPermission(shiboken6.Shiboken.Object):
 
     class CommunicationMode(enum.Flag):
 
@@ -504,7 +504,7 @@ class QBuffer(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QByteArray(Shiboken.Object):
+class QByteArray(shiboken6.Shiboken.Object):
 
     class Base64DecodingStatus(enum.Enum):
 
@@ -522,7 +522,7 @@ class QByteArray(Shiboken.Object):
         OmitTrailingEquals        = 0x2
         AbortOnBase64DecodingErrors = 0x4
 
-    class FromBase64Result(Shiboken.Object):
+    class FromBase64Result(shiboken6.Shiboken.Object):
 
         decoded                   = ...  # type: PySide6.QtCore.QByteArray
         decodingStatus            = ...  # type: PySide6.QtCore.QByteArray.Base64DecodingStatus
@@ -775,7 +775,7 @@ class QByteArray(Shiboken.Object):
     def truncate(self, pos: int, /) -> None: ...
 
 
-class QByteArrayMatcher(Shiboken.Object):
+class QByteArrayMatcher(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -795,7 +795,7 @@ class QByteArrayMatcher(Shiboken.Object):
     def setPattern(self, pattern: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> None: ...
 
 
-class QCalendar(Shiboken.Object):
+class QCalendar(shiboken6.Shiboken.Object):
 
     class System(enum.Enum):
 
@@ -807,14 +807,14 @@ class QCalendar(Shiboken.Object):
         IslamicCivil              = 0xb
         Last                      = 0xb
 
-    class SystemId(Shiboken.Object):
+    class SystemId(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
         def index(self, /) -> int: ...
         def isValid(self, /) -> bool: ...
 
-    class YearMonthDay(Shiboken.Object):
+    class YearMonthDay(shiboken6.Shiboken.Object):
 
         day                       = ...  # type: int
         month                     = ...  # type: int
@@ -875,7 +875,7 @@ class QCalendar(Shiboken.Object):
     def weekDayName(self, locale: PySide6.QtCore.QLocale | PySide6.QtCore.QLocale.Language, day: int, /, format: PySide6.QtCore.QLocale.FormatType = ...) -> str: ...
 
 
-class QCalendarPermission(Shiboken.Object):
+class QCalendarPermission(shiboken6.Shiboken.Object):
 
     class AccessMode(enum.Enum):
 
@@ -894,7 +894,7 @@ class QCalendarPermission(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QCalendarPermission, /) -> None: ...
 
 
-class QCameraPermission(Shiboken.Object):
+class QCameraPermission(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -905,7 +905,7 @@ class QCameraPermission(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QCameraPermission, /) -> None: ...
 
 
-class QCborArray(Shiboken.Object):
+class QCborArray(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -976,7 +976,7 @@ class QCborArray(Shiboken.Object):
     def toVariantList(self, /) -> typing.List[typing.Any]: ...
 
 
-class QCborError(Shiboken.Object):
+class QCborError(shiboken6.Shiboken.Object):
 
     c                         = ...  # type: PySide6.QtCore.QCborError.Code
 
@@ -1035,7 +1035,7 @@ class QCborKnownTags(enum.IntEnum):
     Signature                 = 0xd9f7
 
 
-class QCborMap(Shiboken.Object):
+class QCborMap(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1112,7 +1112,7 @@ class QCborMap(Shiboken.Object):
     def value(self, key: PySide6.QtCore.QCborValue | PySide6.QtCore.QCborKnownTags | PySide6.QtCore.QCborSimpleType | PySide6.QtCore.QCborTag | PySide6.QtCore.QCborValue.Type | str | bool | PySide6.QtCore.QByteArray | PySide6.QtCore.QCborArray | PySide6.QtCore.QCborMap | bytes | bytearray | memoryview | float | int, /) -> PySide6.QtCore.QCborValue: ...
 
 
-class QCborParserError(Shiboken.Object):
+class QCborParserError(shiboken6.Shiboken.Object):
 
     error                     = ...  # type: PySide6.QtCore.QCborError
     offset                    = ...  # type: int
@@ -1134,7 +1134,7 @@ class QCborSimpleType(enum.IntEnum):
     Undefined                 = 0x17
 
 
-class QCborStreamReader(Shiboken.Object):
+class QCborStreamReader(shiboken6.Shiboken.Object):
 
     class StringResultCode(enum.Enum):
 
@@ -1236,7 +1236,7 @@ class QCborStreamReader(Shiboken.Object):
     def type(self, /) -> PySide6.QtCore.QCborStreamReader.Type: ...
 
 
-class QCborStreamWriter(Shiboken.Object):
+class QCborStreamWriter(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, device: PySide6.QtCore.QIODevice, /) -> None: ...
@@ -1279,7 +1279,7 @@ class QCborStreamWriter(Shiboken.Object):
     def startMap(self, count: int, /) -> None: ...
 
 
-class QCborStringResultByteArray(Shiboken.Object):
+class QCborStringResultByteArray(shiboken6.Shiboken.Object):
 
     data                      = ...  # type: PySide6.QtCore.QByteArray
     status                    = ...  # type: PySide6.QtCore.QCborStreamReader.StringResultCode
@@ -1292,7 +1292,7 @@ class QCborStringResultByteArray(Shiboken.Object):
     def __copy__(self, /) -> typing.Self: ...
 
 
-class QCborStringResultString(Shiboken.Object):
+class QCborStringResultString(shiboken6.Shiboken.Object):
 
     data                      = ...  # type: str
     status                    = ...  # type: PySide6.QtCore.QCborStreamReader.StringResultCode
@@ -1308,7 +1308,7 @@ class QCborStringResultString(Shiboken.Object):
 class QCborTag(enum.IntEnum): ...  # type: ignore[misc]
 
 
-class QCborValue(Shiboken.Object):
+class QCborValue(shiboken6.Shiboken.Object):
 
     class DiagnosticNotationOption(enum.Flag):
 
@@ -1506,7 +1506,7 @@ class QChildEvent(PySide6.QtCore.QEvent):
     def removed(self, /) -> bool: ...
 
 
-class QCollator(Shiboken.Object):
+class QCollator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1536,7 +1536,7 @@ class QCollator(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QCollator, /) -> None: ...
 
 
-class QCollatorSortKey(Shiboken.Object):
+class QCollatorSortKey(shiboken6.Shiboken.Object):
 
     def __init__(self, other: PySide6.QtCore.QCollatorSortKey, /) -> None: ...
 
@@ -1545,7 +1545,7 @@ class QCollatorSortKey(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QCollatorSortKey, /) -> None: ...
 
 
-class QCommandLineOption(Shiboken.Object):
+class QCommandLineOption(shiboken6.Shiboken.Object):
 
     class Flag(enum.Flag):
 
@@ -1578,7 +1578,7 @@ class QCommandLineOption(Shiboken.Object):
     def valueName(self, /) -> str: ...
 
 
-class QCommandLineParser(Shiboken.Object):
+class QCommandLineParser(shiboken6.Shiboken.Object):
 
     class MessageType(enum.Enum):
 
@@ -1666,7 +1666,7 @@ class QConcatenateTablesProxyModel(PySide6.QtCore.QAbstractItemModel):
     def span(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtCore.QSize: ...
 
 
-class QContactsPermission(Shiboken.Object):
+class QContactsPermission(shiboken6.Shiboken.Object):
 
     class AccessMode(enum.Enum):
 
@@ -1818,7 +1818,7 @@ class QCoreApplication(PySide6.QtCore.QObject):
     def translate(context: str, key: str, /, disambiguation: str | None = ..., n: int = ...) -> str: ...
 
 
-class QCryptographicHash(Shiboken.Object):
+class QCryptographicHash(shiboken6.Shiboken.Object):
 
     class Algorithm(enum.Enum):
 
@@ -2148,7 +2148,7 @@ class QDataStream(PySide6.QtCore.QIODeviceBase):
     def writeUInt8(self, arg__1: int, /) -> None: ...
 
 
-class QDate(Shiboken.Object):
+class QDate(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2259,7 +2259,7 @@ class QDate(Shiboken.Object):
     def year(self, cal: PySide6.QtCore.QCalendar, /) -> int: ...
 
 
-class QDateTime(Shiboken.Object):
+class QDateTime(shiboken6.Shiboken.Object):
 
     class TransitionResolution(enum.Enum):
 
@@ -2399,7 +2399,7 @@ class QDateTime(Shiboken.Object):
     def toUTC(self, /) -> PySide6.QtCore.QDateTime: ...
 
 
-class QDeadlineTimer(Shiboken.Object):
+class QDeadlineTimer(shiboken6.Shiboken.Object):
 
     Forever                   = 0x0
 
@@ -2452,7 +2452,7 @@ class QDeadlineTimer(Shiboken.Object):
     def timerType(self, /) -> PySide6.QtCore.Qt.TimerType: ...
 
 
-class QDir(Shiboken.Object):
+class QDir(shiboken6.Shiboken.Object):
 
     class Filter(enum.Flag):
 
@@ -2605,7 +2605,7 @@ class QDir(Shiboken.Object):
     def toNativeSeparators(pathName: str, /) -> str: ...
 
 
-class QDirIterator(Shiboken.Object):
+class QDirIterator(shiboken6.Shiboken.Object):
 
     class IteratorFlag(enum.Flag):
 
@@ -2632,9 +2632,9 @@ class QDirIterator(Shiboken.Object):
     def path(self, /) -> str: ...
 
 
-class QDirListing(Shiboken.Object):
+class QDirListing(shiboken6.Shiboken.Object):
 
-    class DirEntry(Shiboken.Object):
+    class DirEntry(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -2700,7 +2700,7 @@ class QDirListing(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QDirListing, /) -> None: ...
 
 
-class QDirListingIterator(Shiboken.Object):
+class QDirListingIterator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2728,7 +2728,7 @@ class QDynamicPropertyChangeEvent(PySide6.QtCore.QEvent):
     def propertyName(self, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QEasingCurve(Shiboken.Object):
+class QEasingCurve(shiboken6.Shiboken.Object):
 
     class Type(enum.Enum):
 
@@ -2809,7 +2809,7 @@ class QEasingCurve(Shiboken.Object):
     def valueForProgress(self, progress: float, /) -> float: ...
 
 
-class QElapsedTimer(Shiboken.Object):
+class QElapsedTimer(shiboken6.Shiboken.Object):
 
     class ClockType(enum.Enum):
 
@@ -2847,7 +2847,7 @@ class QElapsedTimer(Shiboken.Object):
     def start(self, /) -> None: ...
 
 
-class QEvent(Shiboken.Object):
+class QEvent(shiboken6.Shiboken.Object):
 
     class Type(enum.IntEnum):
 
@@ -3083,7 +3083,7 @@ class QEventLoop(PySide6.QtCore.QObject):
     def wakeUp(self, /) -> None: ...
 
 
-class QFactoryInterface(Shiboken.Object):
+class QFactoryInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -3253,7 +3253,7 @@ class QFileDevice(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QFileInfo(Shiboken.Object):
+class QFileInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3382,7 +3382,7 @@ class QFileSystemWatcher(PySide6.QtCore.QObject):
     def removePaths(self, files: collections.abc.Sequence[str], /) -> typing.List[str]: ...
 
 
-class QFutureInterfaceBase(Shiboken.Object):
+class QFutureInterfaceBase(shiboken6.Shiboken.Object):
 
     class CancelMode(enum.Enum):
 
@@ -3484,7 +3484,7 @@ class QFutureInterfaceBase(Shiboken.Object):
     def waitForResume(self, /) -> None: ...
 
 
-class QGenericArgument(Shiboken.Object):
+class QGenericArgument(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, QGenericArgument: PySide6.QtCore.QGenericArgument, /) -> None: ...
@@ -3496,7 +3496,7 @@ class QGenericArgument(Shiboken.Object):
     def name(self, /) -> bytes | bytearray | memoryview: ...
 
 
-class QGenericArgumentHolder(Shiboken.Object):
+class QGenericArgumentHolder(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3521,7 +3521,7 @@ class QGenericReturnArgument(PySide6.QtCore.QGenericArgument):
     def __copy__(self, /) -> typing.Self: ...
 
 
-class QGenericReturnArgumentHolder(Shiboken.Object):
+class QGenericReturnArgumentHolder(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, arg__1: PySide6.QtCore.QGenericReturnArgumentHolder, /) -> None: ...
@@ -3534,7 +3534,7 @@ class QGenericReturnArgumentHolder(Shiboken.Object):
     def toGenericReturnArgument(self, /) -> PySide6.QtCore.QGenericReturnArgument: ...
 
 
-class QHashSeed(Shiboken.Object):
+class QHashSeed(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, QHashSeed: PySide6.QtCore.QHashSeed, /) -> None: ...
@@ -3621,7 +3621,7 @@ class QIODevice(PySide6.QtCore.QObject, PySide6.QtCore.QIODeviceBase):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QIODeviceBase(Shiboken.Object):
+class QIODeviceBase(shiboken6.Shiboken.Object):
 
     class OpenModeFlag(enum.Flag):
 
@@ -3684,7 +3684,7 @@ class QIdentityProxyModel(PySide6.QtCore.QAbstractProxyModel):
 class QIntList: ...
 
 
-class QItemSelection(Shiboken.Object):
+class QItemSelection(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3823,7 +3823,7 @@ class QItemSelectionModel(PySide6.QtCore.QObject):
     def setModel(self, model: PySide6.QtCore.QAbstractItemModel, /) -> None: ...
 
 
-class QItemSelectionRange(Shiboken.Object):
+class QItemSelectionRange(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3860,7 +3860,7 @@ class QItemSelectionRange(Shiboken.Object):
     def width(self, /) -> int: ...
 
 
-class QJsonArray(Shiboken.Object):
+class QJsonArray(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3910,7 +3910,7 @@ class QJsonArray(Shiboken.Object):
     def toVariantList(self, /) -> typing.List[typing.Any]: ...
 
 
-class QJsonDocument(Shiboken.Object):
+class QJsonDocument(shiboken6.Shiboken.Object):
 
     class JsonFormat(enum.Enum):
 
@@ -3948,7 +3948,7 @@ class QJsonDocument(Shiboken.Object):
     def toVariant(self, /) -> typing.Any: ...
 
 
-class QJsonParseError(Shiboken.Object):
+class QJsonParseError(shiboken6.Shiboken.Object):
 
     error                     = ...  # type: PySide6.QtCore.QJsonParseError.ParseError
 
@@ -3980,7 +3980,7 @@ class QJsonParseError(Shiboken.Object):
     def errorString(self, /) -> str: ...
 
 
-class QJsonValue(Shiboken.Object):
+class QJsonValue(shiboken6.Shiboken.Object):
 
     class Type(enum.Enum):
 
@@ -4061,7 +4061,7 @@ class QJsonValue(Shiboken.Object):
     def type(self, /) -> PySide6.QtCore.QJsonValue.Type: ...
 
 
-class QKeyCombination(Shiboken.Object):
+class QKeyCombination(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /, key: PySide6.QtCore.Qt.Key = ...) -> None: ...
@@ -4131,7 +4131,7 @@ class QLibrary(PySide6.QtCore.QObject):
     def unload(self, /) -> bool: ...
 
 
-class QLibraryInfo(Shiboken.Object):
+class QLibraryInfo(shiboken6.Shiboken.Object):
 
     class LibraryPath(enum.Enum):
 
@@ -4170,7 +4170,7 @@ class QLibraryInfo(Shiboken.Object):
     def version() -> PySide6.QtCore.QVersionNumber: ...
 
 
-class QLine(Shiboken.Object):
+class QLine(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -4219,7 +4219,7 @@ class QLine(Shiboken.Object):
     def y2(self, /) -> int: ...
 
 
-class QLineF(Shiboken.Object):
+class QLineF(shiboken6.Shiboken.Object):
 
     class IntersectionType(enum.Enum):
 
@@ -4287,7 +4287,7 @@ class QLineF(Shiboken.Object):
     def y2(self, /) -> float: ...
 
 
-class QLocale(Shiboken.Object):
+class QLocale(shiboken6.Shiboken.Object):
 
     class Country(enum.Enum):
 
@@ -5321,7 +5321,7 @@ class QLocale(Shiboken.Object):
     def zeroDigit(self, /) -> str: ...
 
 
-class QLocationPermission(Shiboken.Object):
+class QLocationPermission(shiboken6.Shiboken.Object):
 
     class Accuracy(enum.Enum):
 
@@ -5347,7 +5347,7 @@ class QLocationPermission(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QLocationPermission, /) -> None: ...
 
 
-class QLockFile(Shiboken.Object):
+class QLockFile(shiboken6.Shiboken.Object):
 
     class LockError(enum.Enum):
 
@@ -5372,7 +5372,7 @@ class QLockFile(Shiboken.Object):
     def unlock(self, /) -> None: ...
 
 
-class QLoggingCategory(Shiboken.Object):
+class QLoggingCategory(shiboken6.Shiboken.Object):
 
     def __init__(self, category: bytes | bytearray | memoryview, /, severityLevel: PySide6.QtCore.QtMsgType = ...) -> None: ...
 
@@ -5390,7 +5390,7 @@ class QLoggingCategory(Shiboken.Object):
     def setFilterRules(rules: str, /) -> None: ...
 
 
-class QMargins(Shiboken.Object):
+class QMargins(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5448,7 +5448,7 @@ class QMargins(Shiboken.Object):
     def top(self, /) -> int: ...
 
 
-class QMarginsF(Shiboken.Object):
+class QMarginsF(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5502,7 +5502,7 @@ class QMarginsF(Shiboken.Object):
     def top(self, /) -> float: ...
 
 
-class QMessageAuthenticationCode(Shiboken.Object):
+class QMessageAuthenticationCode(shiboken6.Shiboken.Object):
 
     def __init__(self, method: PySide6.QtCore.QCryptographicHash.Algorithm, /, key: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview = ...) -> None: ...
 
@@ -5521,7 +5521,7 @@ class QMessageAuthenticationCode(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QMessageAuthenticationCode, /) -> None: ...
 
 
-class QMessageLogContext(Shiboken.Object):
+class QMessageLogContext(shiboken6.Shiboken.Object):
 
     category                  = ...  # type: str
     file                      = ...  # type: str
@@ -5535,7 +5535,7 @@ class QMessageLogContext(Shiboken.Object):
     def __init__(self, fileName: bytes | bytearray | memoryview, lineNumber: int, functionName: bytes | bytearray | memoryview, categoryName: bytes | bytearray | memoryview, /) -> None: ...
 
 
-class QMessageLogger(Shiboken.Object):
+class QMessageLogger(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5567,7 +5567,7 @@ class QMessageLogger(Shiboken.Object):
     def warning(self, msg: str, /) -> None: ...
 
 
-class QMetaClassInfo(Shiboken.Object):
+class QMetaClassInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5579,7 +5579,7 @@ class QMetaClassInfo(Shiboken.Object):
     def value(self, /) -> bytes | bytearray | memoryview: ...
 
 
-class QMetaEnum(Shiboken.Object):
+class QMetaEnum(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5604,7 +5604,7 @@ class QMetaEnum(Shiboken.Object):
     def valueToKeys(self, value: int, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QMetaMethod(Shiboken.Object):
+class QMetaMethod(shiboken6.Shiboken.Object):
 
     class Access(enum.Enum):
 
@@ -5673,7 +5673,7 @@ class QMetaMethod(Shiboken.Object):
     def typeName(self, /) -> bytes | bytearray | memoryview: ...
 
 
-class QMetaObject(Shiboken.Object):
+class QMetaObject(shiboken6.Shiboken.Object):
 
     class Call(enum.Enum):
 
@@ -5689,7 +5689,7 @@ class QMetaObject(Shiboken.Object):
         CustomCall                = 0x9
         ConstructInPlace          = 0xa
 
-    class Connection(Shiboken.Object):
+    class Connection(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -5773,7 +5773,7 @@ class QMetaObject(Shiboken.Object):
     def userProperty(self, /) -> PySide6.QtCore.QMetaProperty: ...
 
 
-class QMetaProperty(Shiboken.Object):
+class QMetaProperty(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -5819,7 +5819,7 @@ class QMetaProperty(Shiboken.Object):
     def writeOnGadget(self, gadget: int, value: typing.Any, /) -> bool: ...
 
 
-class QMetaType(Shiboken.Object):
+class QMetaType(shiboken6.Shiboken.Object):
 
     class Type(enum.IntEnum):
 
@@ -6058,7 +6058,7 @@ class QMetaType(Shiboken.Object):
     def view(fromType: PySide6.QtCore.QMetaType | PySide6.QtCore.QMetaType.Type, from_: int, toType: PySide6.QtCore.QMetaType | PySide6.QtCore.QMetaType.Type, to: int, /) -> bool: ...
 
 
-class QMicrophonePermission(Shiboken.Object):
+class QMicrophonePermission(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6097,7 +6097,7 @@ class QMimeData(PySide6.QtCore.QObject):
     def urls(self, /) -> typing.List[PySide6.QtCore.QUrl]: ...
 
 
-class QMimeDatabase(Shiboken.Object):
+class QMimeDatabase(shiboken6.Shiboken.Object):
 
     class MatchMode(enum.Enum):
 
@@ -6127,7 +6127,7 @@ class QMimeDatabase(Shiboken.Object):
     def suffixForFileName(self, fileName: str, /) -> str: ...
 
 
-class QMimeType(Shiboken.Object):
+class QMimeType(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtCore.QMimeType, /, *, valid: bool | None = ..., isDefault: bool | None = ..., name: str | None = ..., comment: str | None = ..., genericIconName: str | None = ..., iconName: str | None = ..., globPatterns: collections.abc.Sequence[str] | None = ..., parentMimeTypes: collections.abc.Sequence[str] | None = ..., allAncestors: collections.abc.Sequence[str] | None = ..., aliases: collections.abc.Sequence[str] | None = ..., suffixes: collections.abc.Sequence[str] | None = ..., preferredSuffix: str | None = ..., filterString: str | None = ...) -> None: ...
@@ -6156,7 +6156,7 @@ class QMimeType(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QMimeType, /) -> None: ...
 
 
-class QModelIndex(Shiboken.Object):
+class QModelIndex(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6188,7 +6188,7 @@ class QModelIndex(Shiboken.Object):
     def siblingAtRow(self, row: int, /) -> PySide6.QtCore.QModelIndex: ...
 
 
-class QModelRoleData(Shiboken.Object):
+class QModelRoleData(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, QModelRoleData: PySide6.QtCore.QModelRoleData, /) -> None: ...
@@ -6202,7 +6202,7 @@ class QModelRoleData(Shiboken.Object):
     def setData(self, data: typing.Any, /) -> None: ...
 
 
-class QModelRoleDataSpan(Shiboken.Object):
+class QModelRoleDataSpan(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6234,7 +6234,7 @@ class QMutex(PySide6.QtCore.QBasicMutex):
     def try_lock(self, /) -> bool: ...
 
 
-class QMutexLocker(Shiboken.Object):
+class QMutexLocker(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, m: PySide6.QtCore.QMutex, /) -> None: ...
@@ -6249,7 +6249,7 @@ class QMutexLocker(Shiboken.Object):
     def unlock(self, /) -> None: ...
 
 
-class QNativeIpcKey(Shiboken.Object):
+class QNativeIpcKey(shiboken6.Shiboken.Object):
 
     DefaultTypeForOs          = 0x101
 
@@ -6287,7 +6287,7 @@ class QNativeIpcKey(Shiboken.Object):
     def type(self, /) -> PySide6.QtCore.QNativeIpcKey.Type: ...
 
 
-class QObject(Shiboken.Object):
+class QObject(shiboken6.Shiboken.Object):
 
     destroyed                : typing.ClassVar[Signal] = ... # destroyed(); destroyed(QObject*)
     objectNameChanged        : typing.ClassVar[Signal] = ... # objectNameChanged(QString)
@@ -6450,7 +6450,7 @@ class QOperatingSystemVersion(PySide6.QtCore.QOperatingSystemVersionBase):
     def type(self, /) -> PySide6.QtCore.QOperatingSystemVersion.OSType: ...
 
 
-class QOperatingSystemVersionBase(Shiboken.Object):
+class QOperatingSystemVersionBase(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6502,7 +6502,7 @@ class QPauseAnimation(PySide6.QtCore.QAbstractAnimation):
     def updateCurrentTime(self, arg__1: int, /) -> None: ...
 
 
-class QPermission(Shiboken.Object):
+class QPermission(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6514,7 +6514,7 @@ class QPermission(Shiboken.Object):
     def type(self, /) -> PySide6.QtCore.QMetaType: ...
 
 
-class QPersistentModelIndex(Shiboken.Object):
+class QPersistentModelIndex(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6567,7 +6567,7 @@ class QPluginLoader(PySide6.QtCore.QObject):
     def unload(self, /) -> bool: ...
 
 
-class QPoint(Shiboken.Object):
+class QPoint(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6615,7 +6615,7 @@ class QPoint(Shiboken.Object):
     def y(self, /) -> int: ...
 
 
-class QPointF(Shiboken.Object):
+class QPointF(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -6778,7 +6778,7 @@ class QProcess(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QProcessEnvironment(Shiboken.Object):
+class QProcessEnvironment(shiboken6.Shiboken.Object):
 
     class Initialization(enum.Enum):
 
@@ -6828,7 +6828,7 @@ class QPropertyAnimation(PySide6.QtCore.QVariantAnimation):
     def updateState(self, newState: PySide6.QtCore.QAbstractAnimation.State, oldState: PySide6.QtCore.QAbstractAnimation.State, /) -> None: ...
 
 
-class QRandomGenerator(Shiboken.Object):
+class QRandomGenerator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtCore.QRandomGenerator, /) -> None: ...
@@ -6952,7 +6952,7 @@ class QRangeModel(PySide6.QtCore.QAbstractItemModel):
     def supportedDropActions(self, /) -> PySide6.QtCore.Qt.DropAction: ...
 
 
-class QReadLocker(Shiboken.Object):
+class QReadLocker(shiboken6.Shiboken.Object):
 
     def __init__(self, readWriteLock: PySide6.QtCore.QReadWriteLock, /) -> None: ...
 
@@ -6987,7 +6987,7 @@ class QReadWriteLock(PySide6.QtCore.QBasicReadWriteLock):
     def tryLockForWrite(self, timeout: PySide6.QtCore.QDeadlineTimer | PySide6.QtCore.QDeadlineTimer.ForeverConstant | int, /) -> bool: ...
 
 
-class QRect(Shiboken.Object):
+class QRect(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7097,7 +7097,7 @@ class QRect(Shiboken.Object):
     def y(self, /) -> int: ...
 
 
-class QRectF(Shiboken.Object):
+class QRectF(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7205,7 +7205,7 @@ class QRectF(Shiboken.Object):
     def y(self, /) -> float: ...
 
 
-class QRecursiveMutex(Shiboken.Object):
+class QRecursiveMutex(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -7218,7 +7218,7 @@ class QRecursiveMutex(Shiboken.Object):
     def unlock(self, /) -> None: ...
 
 
-class QRegularExpression(Shiboken.Object):
+class QRegularExpression(shiboken6.Shiboken.Object):
 
     class MatchOption(enum.Flag):
 
@@ -7289,7 +7289,7 @@ class QRegularExpression(Shiboken.Object):
     def wildcardToRegularExpression(str: str, /, options: PySide6.QtCore.QRegularExpression.WildcardConversionOption = ...) -> str: ...
 
 
-class QRegularExpressionMatch(Shiboken.Object):
+class QRegularExpressionMatch(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7333,7 +7333,7 @@ class QRegularExpressionMatch(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QRegularExpressionMatch, /) -> None: ...
 
 
-class QRegularExpressionMatchIterator(Shiboken.Object):
+class QRegularExpressionMatchIterator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7351,7 +7351,7 @@ class QRegularExpressionMatchIterator(Shiboken.Object):
     def swap(self, other: PySide6.QtCore.QRegularExpressionMatchIterator, /) -> None: ...
 
 
-class QResource(Shiboken.Object):
+class QResource(shiboken6.Shiboken.Object):
 
     class Compression(enum.Enum):
 
@@ -7387,7 +7387,7 @@ class QResource(Shiboken.Object):
     def unregisterResourceData(rccData: bytes | bytearray | memoryview, /, resourceRoot: str = ...) -> bool: ...
 
 
-class QRunnable(Shiboken.Object):
+class QRunnable(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -7416,7 +7416,7 @@ class QSaveFile(PySide6.QtCore.QFileDevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QSemaphore(Shiboken.Object):
+class QSemaphore(shiboken6.Shiboken.Object):
 
     def __init__(self, /, n: int | None = ...) -> None: ...
 
@@ -7431,7 +7431,7 @@ class QSemaphore(Shiboken.Object):
     def tryAcquire(self, n: int, timeout: PySide6.QtCore.QDeadlineTimer | PySide6.QtCore.QDeadlineTimer.ForeverConstant | int, /) -> bool: ...
 
 
-class QSemaphoreReleaser(Shiboken.Object):
+class QSemaphoreReleaser(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7603,7 +7603,7 @@ class QSharedMemory(PySide6.QtCore.QObject):
     def unlock(self, /) -> bool: ...
 
 
-class QSignalBlocker(Shiboken.Object):
+class QSignalBlocker(shiboken6.Shiboken.Object):
 
     def __init__(self, o: PySide6.QtCore.QObject, /) -> None: ...
 
@@ -7641,7 +7641,7 @@ class QSignalMapper(PySide6.QtCore.QObject):
     def setMapping(self, sender: PySide6.QtCore.QObject, id: int, /) -> None: ...
 
 
-class QSize(Shiboken.Object):
+class QSize(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7693,7 +7693,7 @@ class QSize(Shiboken.Object):
     def width(self, /) -> int: ...
 
 
-class QSizeF(Shiboken.Object):
+class QSizeF(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7746,7 +7746,7 @@ class QSizeF(Shiboken.Object):
     def width(self, /) -> float: ...
 
 
-class QSocketDescriptor(Shiboken.Object):
+class QSocketDescriptor(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, QSocketDescriptor: PySide6.QtCore.QSocketDescriptor, /) -> None: ...
@@ -7878,7 +7878,7 @@ class QSortFilterProxyModel(PySide6.QtCore.QAbstractProxyModel):
     def supportedDropActions(self, /) -> PySide6.QtCore.Qt.DropAction: ...
 
 
-class QStandardPaths(Shiboken.Object):
+class QStandardPaths(shiboken6.Shiboken.Object):
 
     class LocateOption(enum.Flag):
 
@@ -7930,7 +7930,7 @@ class QStandardPaths(Shiboken.Object):
     def writableLocation(type: PySide6.QtCore.QStandardPaths.StandardLocation, /) -> str: ...
 
 
-class QStorageInfo(Shiboken.Object):
+class QStorageInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -8003,7 +8003,7 @@ class QStringConverter(PySide6.QtCore.QStringConverterBase):
     def resetState(self, /) -> None: ...
 
 
-class QStringConverterBase(Shiboken.Object):
+class QStringConverterBase(shiboken6.Shiboken.Object):
 
     class Flag(enum.Flag):
 
@@ -8014,7 +8014,7 @@ class QStringConverterBase(Shiboken.Object):
         ConvertInitialBom         = 0x8
         UsesIcu                   = 0x10
 
-    class State(Shiboken.Object):
+    class State(shiboken6.Shiboken.Object):
 
         flags                     = ...  # type: PySide6.QtCore.QStringConverterBase.Flag
         internalState             = ...  # type: int
@@ -8081,7 +8081,7 @@ class QStringListModel(PySide6.QtCore.QAbstractListModel):
     def supportedDropActions(self, /) -> PySide6.QtCore.Qt.DropAction: ...
 
 
-class QSysInfo(Shiboken.Object):
+class QSysInfo(shiboken6.Shiboken.Object):
 
     class Endian(enum.Enum):
 
@@ -8120,7 +8120,7 @@ class QSysInfo(Shiboken.Object):
     def productVersion() -> str: ...
 
 
-class QSystemSemaphore(Shiboken.Object):
+class QSystemSemaphore(shiboken6.Shiboken.Object):
 
     class AccessMode(enum.Enum):
 
@@ -8162,7 +8162,7 @@ class QSystemSemaphore(Shiboken.Object):
     def setNativeKey(self, key: PySide6.QtCore.QNativeIpcKey | str, /, initialValue: int | None = ..., arg__3: PySide6.QtCore.QSystemSemaphore.AccessMode = ...) -> None: ...
 
 
-class QTemporaryDir(Shiboken.Object):
+class QTemporaryDir(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -8209,7 +8209,7 @@ class QTemporaryFile(PySide6.QtCore.QFile):
     def setFileTemplate(self, name: str, /) -> None: ...
 
 
-class QTextBoundaryFinder(Shiboken.Object):
+class QTextBoundaryFinder(shiboken6.Shiboken.Object):
 
     class BoundaryReason(enum.Flag):
 
@@ -8341,7 +8341,7 @@ class QTextStream(PySide6.QtCore.QIODeviceBase):
     def string(self, /) -> typing.List[str]: ...
 
 
-class QTextStreamManipulator(Shiboken.Object):
+class QTextStreamManipulator(shiboken6.Shiboken.Object):
 
     def __init__(self, QTextStreamManipulator: PySide6.QtCore.QTextStreamManipulator, /) -> None: ...
 
@@ -8456,7 +8456,7 @@ class QThreadPool(PySide6.QtCore.QObject):
     def waitForDone(self, /, deadline: PySide6.QtCore.QDeadlineTimer | PySide6.QtCore.QDeadlineTimer.ForeverConstant | int = ...) -> bool: ...
 
 
-class QTime(Shiboken.Object):
+class QTime(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -8559,7 +8559,7 @@ class QTimeLine(PySide6.QtCore.QObject):
     def valueForTime(self, msec: int, /) -> float: ...
 
 
-class QTimeZone(Shiboken.Object):
+class QTimeZone(shiboken6.Shiboken.Object):
 
     class Initialization(enum.Enum):
 
@@ -8573,7 +8573,7 @@ class QTimeZone(Shiboken.Object):
         ShortName                 = 0x2
         OffsetName                = 0x3
 
-    class OffsetData(Shiboken.Object):
+    class OffsetData(shiboken6.Shiboken.Object):
 
         abbreviation              = ...  # type: str
         atUtc                     = ...  # type: PySide6.QtCore.QDateTime
@@ -8779,7 +8779,7 @@ class QTransposeProxyModel(PySide6.QtCore.QAbstractProxyModel):
     def span(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtCore.QSize: ...
 
 
-class QUrl(Shiboken.Object):
+class QUrl(shiboken6.Shiboken.Object):
 
     class AceProcessingOption(enum.Flag):
 
@@ -8909,7 +8909,7 @@ class QUrl(Shiboken.Object):
     def userName(self, /, options: PySide6.QtCore.QUrl.ComponentFormattingOption = ...) -> str: ...
 
 
-class QUrlQuery(Shiboken.Object):
+class QUrlQuery(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -8943,7 +8943,7 @@ class QUrlQuery(Shiboken.Object):
     def toString(self, /, encoding: PySide6.QtCore.QUrl.ComponentFormattingOption = ...) -> str: ...
 
 
-class QUuid(Shiboken.Object):
+class QUuid(shiboken6.Shiboken.Object):
 
     class StringFormat(enum.Enum):
 
@@ -9038,7 +9038,7 @@ class QVariantAnimation(PySide6.QtCore.QAbstractAnimation):
     def updateState(self, newState: PySide6.QtCore.QAbstractAnimation.State, oldState: PySide6.QtCore.QAbstractAnimation.State, /) -> None: ...
 
 
-class QVersionNumber(Shiboken.Object):
+class QVersionNumber(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9079,7 +9079,7 @@ class QVersionNumber(Shiboken.Object):
     def toString(self, /) -> str: ...
 
 
-class QWaitCondition(Shiboken.Object):
+class QWaitCondition(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -9113,7 +9113,7 @@ class QWinEventNotifier(PySide6.QtCore.QObject):
     def setHandle(self, hEvent: int, /) -> None: ...
 
 
-class QWriteLocker(Shiboken.Object):
+class QWriteLocker(shiboken6.Shiboken.Object):
 
     def __init__(self, readWriteLock: PySide6.QtCore.QReadWriteLock, /) -> None: ...
 
@@ -9124,7 +9124,7 @@ class QWriteLocker(Shiboken.Object):
     def unlock(self, /) -> None: ...
 
 
-class QXmlStreamAttribute(Shiboken.Object):
+class QXmlStreamAttribute(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9146,7 +9146,7 @@ class QXmlStreamAttribute(Shiboken.Object):
     def value(self, /) -> str: ...
 
 
-class QXmlStreamAttributes(Shiboken.Object):
+class QXmlStreamAttributes(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9229,7 +9229,7 @@ class QXmlStreamAttributes(Shiboken.Object):
     def value(self, namespaceUri: str, name: str, /) -> str: ...
 
 
-class QXmlStreamEntityDeclaration(Shiboken.Object):
+class QXmlStreamEntityDeclaration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9246,7 +9246,7 @@ class QXmlStreamEntityDeclaration(Shiboken.Object):
     def value(self, /) -> str: ...
 
 
-class QXmlStreamEntityResolver(Shiboken.Object):
+class QXmlStreamEntityResolver(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -9254,7 +9254,7 @@ class QXmlStreamEntityResolver(Shiboken.Object):
     def resolveUndeclaredEntity(self, name: str, /) -> str: ...
 
 
-class QXmlStreamNamespaceDeclaration(Shiboken.Object):
+class QXmlStreamNamespaceDeclaration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9270,7 +9270,7 @@ class QXmlStreamNamespaceDeclaration(Shiboken.Object):
     def prefix(self, /) -> str: ...
 
 
-class QXmlStreamNotationDeclaration(Shiboken.Object):
+class QXmlStreamNotationDeclaration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -9285,7 +9285,7 @@ class QXmlStreamNotationDeclaration(Shiboken.Object):
     def systemId(self, /) -> str: ...
 
 
-class QXmlStreamReader(Shiboken.Object):
+class QXmlStreamReader(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -9381,7 +9381,7 @@ class QXmlStreamReader(Shiboken.Object):
     def tokenType(self, /) -> PySide6.QtCore.QXmlStreamReader.TokenType: ...
 
 
-class QXmlStreamWriter(Shiboken.Object):
+class QXmlStreamWriter(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -9449,7 +9449,7 @@ class QXmlStreamWriter(Shiboken.Object):
     def writeTextElement(self, namespaceUri: str, name: str, text: str, /) -> None: ...
 
 
-class Qt(Shiboken.Object):
+class Qt(shiboken6.Shiboken.Object):
 
     class AlignmentFlag(enum.IntFlag):
 

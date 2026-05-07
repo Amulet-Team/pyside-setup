@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -119,7 +119,7 @@ class QQuickWebEngineProfile(PySide6.QtCore.QObject):
     def urlSchemeHandler(self, arg__1: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> PySide6.QtWebEngineCore.QWebEngineUrlSchemeHandler: ...
 
 
-class QtWebEngineQuick(Shiboken.Object):
+class QtWebEngineQuick(shiboken6.Shiboken.Object):
     @staticmethod
     def initialize() -> None: ...
 

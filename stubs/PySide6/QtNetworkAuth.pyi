@@ -15,7 +15,7 @@ import PySide6.QtNetwork
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractOAuth(PySide6.QtCore.QObject):
@@ -257,7 +257,7 @@ class QOAuth1(PySide6.QtNetworkAuth.QAbstractOAuth):
     def tokenSecret(self, /) -> str: ...
 
 
-class QOAuth1Signature(Shiboken.Object):
+class QOAuth1Signature(shiboken6.Shiboken.Object):
 
     class HttpRequestMethod(enum.Enum):
 

@@ -18,13 +18,13 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DRender(Shiboken.Object):
+class Qt3DRender(shiboken6.Shiboken.Object):
 
     class API(enum.Enum):
 
@@ -35,13 +35,13 @@ class Qt3DRender(Shiboken.Object):
         RHI                       = 0x4
         Null                      = 0x5
 
-    class PropertyReaderInterface(Shiboken.Object):
+    class PropertyReaderInterface(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
         def readProperty(self, v: typing.Any, /) -> typing.Any: ...
 
-    class PropertyReaderInterfacePtr(Shiboken.Object):
+    class PropertyReaderInterfacePtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -1026,7 +1026,7 @@ class Qt3DRender(Shiboken.Object):
         def thresholds(self, /) -> typing.List[float]: ...
         def volumeOverride(self, /) -> PySide6.Qt3DRender.Qt3DRender.QLevelOfDetailBoundingSphere: ...
 
-    class QLevelOfDetailBoundingSphere(Shiboken.Object):
+    class QLevelOfDetailBoundingSphere(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, other: PySide6.Qt3DRender.Qt3DRender.QLevelOfDetailBoundingSphere, /, *, center: PySide6.QtGui.QVector3D | None = ..., radius: float | None = ...) -> None: ...
@@ -1421,7 +1421,7 @@ class Qt3DRender(Shiboken.Object):
         @typing.overload
         def trigger(self, origin: PySide6.QtGui.QVector3D, direction: PySide6.QtGui.QVector3D, length: float, /) -> None: ...
 
-    class QRayCasterHit(Shiboken.Object):
+    class QRayCasterHit(shiboken6.Shiboken.Object):
 
         class HitType(enum.Enum):
 
@@ -2174,7 +2174,7 @@ class Qt3DRender(Shiboken.Object):
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
 
-    class QTextureData(Shiboken.Object):
+    class QTextureData(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -2211,7 +2211,7 @@ class Qt3DRender(Shiboken.Object):
         def wrapModeY(self, /) -> PySide6.Qt3DRender.Qt3DRender.QTextureWrapMode.WrapMode: ...
         def wrapModeZ(self, /) -> PySide6.Qt3DRender.Qt3DRender.QTextureWrapMode.WrapMode: ...
 
-    class QTextureDataUpdate(Shiboken.Object):
+    class QTextureDataUpdate(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -2261,7 +2261,7 @@ class Qt3DRender(Shiboken.Object):
         def source(self, /) -> PySide6.QtCore.QUrl: ...
         def status(self, /) -> PySide6.Qt3DRender.Qt3DRender.QTextureImage.Status: ...
 
-    class QTextureImageData(Shiboken.Object):
+    class QTextureImageData(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -2300,7 +2300,7 @@ class Qt3DRender(Shiboken.Object):
         def __call__(self, /) -> PySide6.Qt3DRender.Qt3DRender.QTextureImageDataPtr: ...
         def __eq__(self, other: PySide6.Qt3DRender.Qt3DRender.QTextureImageDataGenerator, /) -> bool: ...
 
-    class QTextureImageDataGeneratorPtr(Shiboken.Object):
+    class QTextureImageDataGeneratorPtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -2316,7 +2316,7 @@ class Qt3DRender(Shiboken.Object):
         @typing.overload
         def reset(self, t: PySide6.Qt3DRender.Qt3DRender.QTextureImageDataGenerator, /) -> None: ...
 
-    class QTextureImageDataPtr(Shiboken.Object):
+    class QTextureImageDataPtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...

@@ -17,7 +17,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal, SignalInstance
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractButton(PySide6.QtWidgets.QWidget):
@@ -931,7 +931,7 @@ class QColorDialog(PySide6.QtWidgets.QDialog):
     def testOption(self, option: PySide6.QtWidgets.QColorDialog.ColorDialogOption, /) -> bool: ...
 
 
-class QColormap(Shiboken.Object):
+class QColormap(shiboken6.Shiboken.Object):
 
     class Mode(enum.Enum):
 
@@ -1947,7 +1947,7 @@ class QFormLayout(PySide6.QtWidgets.QLayout):
         WrapLongRows              = 0x1
         WrapAllRows               = 0x2
 
-    class TakeRowResult(Shiboken.Object):
+    class TakeRowResult(shiboken6.Shiboken.Object):
 
         fieldItem                 = ...  # type: PySide6.QtWidgets.QLayoutItem
         labelItem                 = ...  # type: PySide6.QtWidgets.QLayoutItem
@@ -2157,7 +2157,7 @@ class QGestureEvent(PySide6.QtCore.QEvent):
     def widget(self, /) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QGestureRecognizer(Shiboken.Object):
+class QGestureRecognizer(shiboken6.Shiboken.Object):
 
     class ResultFlag(enum.Flag):
 
@@ -2391,7 +2391,7 @@ class QGraphicsGridLayout(PySide6.QtWidgets.QGraphicsLayout):
     def verticalSpacing(self, /) -> float: ...
 
 
-class QGraphicsItem(Shiboken.Object):
+class QGraphicsItem(shiboken6.Shiboken.Object):
 
     class CacheMode(enum.Enum):
 
@@ -2804,7 +2804,7 @@ class QGraphicsLayout(PySide6.QtWidgets.QGraphicsLayoutItem):
     def widgetEvent(self, e: PySide6.QtCore.QEvent, /) -> None: ...
 
 
-class QGraphicsLayoutItem(Shiboken.Object):
+class QGraphicsLayoutItem(shiboken6.Shiboken.Object):
 
     def __init__(self, /, parent: PySide6.QtWidgets.QGraphicsLayoutItem | None = ..., isLayout: bool = ...) -> None: ...
 
@@ -4174,7 +4174,7 @@ class QItemDelegate(PySide6.QtWidgets.QAbstractItemDelegate):
     def updateEditorGeometry(self, editor: PySide6.QtWidgets.QWidget, option: PySide6.QtWidgets.QStyleOptionViewItem, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> None: ...
 
 
-class QItemEditorCreatorBase(Shiboken.Object):
+class QItemEditorCreatorBase(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -4182,7 +4182,7 @@ class QItemEditorCreatorBase(Shiboken.Object):
     def valuePropertyName(self, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QItemEditorFactory(Shiboken.Object):
+class QItemEditorFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -4414,7 +4414,7 @@ class QLayout(PySide6.QtCore.QObject, PySide6.QtWidgets.QLayoutItem):
     def widgetEvent(self, arg__1: PySide6.QtCore.QEvent, /) -> None: ...
 
 
-class QLayoutItem(Shiboken.Object):
+class QLayoutItem(shiboken6.Shiboken.Object):
 
     align                     = ...  # type: PySide6.QtCore.Qt.AlignmentFlag
 
@@ -4768,7 +4768,7 @@ class QListWidget(PySide6.QtWidgets.QListView):
     def visualItemRect(self, item: PySide6.QtWidgets.QListWidgetItem, /) -> PySide6.QtCore.QRect: ...
 
 
-class QListWidgetItem(Shiboken.Object):
+class QListWidgetItem(shiboken6.Shiboken.Object):
 
     class ItemType(enum.IntEnum):
 
@@ -5911,7 +5911,7 @@ class QScroller(PySide6.QtCore.QObject):
     def velocity(self, /) -> PySide6.QtCore.QPointF: ...
 
 
-class QScrollerProperties(Shiboken.Object):
+class QScrollerProperties(shiboken6.Shiboken.Object):
 
     class FrameRates(enum.Enum):
 
@@ -5984,7 +5984,7 @@ class QSizeGrip(PySide6.QtWidgets.QWidget):
     def sizeHint(self, /) -> PySide6.QtCore.QSize: ...
 
 
-class QSizePolicy(Shiboken.Object):
+class QSizePolicy(shiboken6.Shiboken.Object):
 
     class ControlType(enum.Flag):
 
@@ -6956,7 +6956,7 @@ class QStyle(PySide6.QtCore.QObject):
     def visualRect(direction: PySide6.QtCore.Qt.LayoutDirection, boundingRect: PySide6.QtCore.QRect, logicalRect: PySide6.QtCore.QRect, /) -> PySide6.QtCore.QRect: ...
 
 
-class QStyleFactory(Shiboken.Object):
+class QStyleFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -6966,7 +6966,7 @@ class QStyleFactory(Shiboken.Object):
     def keys() -> typing.List[str]: ...
 
 
-class QStyleHintReturn(Shiboken.Object):
+class QStyleHintReturn(shiboken6.Shiboken.Object):
 
     type                      = ...  # type: int
     version                   = ...  # type: int
@@ -7021,7 +7021,7 @@ class QStyleHintReturnVariant(PySide6.QtWidgets.QStyleHintReturn):
     def __init__(self, /) -> None: ...
 
 
-class QStyleOption(Shiboken.Object):
+class QStyleOption(shiboken6.Shiboken.Object):
 
     direction                 = ...  # type: PySide6.QtCore.Qt.LayoutDirection
     fontMetrics               = ...  # type: PySide6.QtGui.QFontMetrics
@@ -8347,7 +8347,7 @@ class QTableWidget(PySide6.QtWidgets.QTableView):
     def visualRow(self, logicalRow: int, /) -> int: ...
 
 
-class QTableWidgetItem(Shiboken.Object):
+class QTableWidgetItem(shiboken6.Shiboken.Object):
 
     class ItemType(enum.IntEnum):
 
@@ -8407,7 +8407,7 @@ class QTableWidgetItem(Shiboken.Object):
     def write(self, out: PySide6.QtCore.QDataStream, /) -> None: ...
 
 
-class QTableWidgetSelectionRange(Shiboken.Object):
+class QTableWidgetSelectionRange(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -8506,7 +8506,7 @@ class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
         AutoNone                  = 0x0
         AutoBulletList            = 0x1
 
-    class ExtraSelection(Shiboken.Object):
+    class ExtraSelection(shiboken6.Shiboken.Object):
 
         cursor                    = ...  # type: PySide6.QtGui.QTextCursor
         format                    = ...  # type: PySide6.QtGui.QTextCharFormat
@@ -8659,7 +8659,7 @@ class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
     def zoomOut(self, /, range: int = ...) -> None: ...
 
 
-class QTileRules(Shiboken.Object):
+class QTileRules(shiboken6.Shiboken.Object):
 
     horizontal                = ...  # type: PySide6.QtCore.Qt.TileRule
     vertical                  = ...  # type: PySide6.QtCore.Qt.TileRule
@@ -8813,7 +8813,7 @@ class QToolButton(PySide6.QtWidgets.QAbstractButton):
     def toolButtonStyle(self, /) -> PySide6.QtCore.Qt.ToolButtonStyle: ...
 
 
-class QToolTip(Shiboken.Object):
+class QToolTip(shiboken6.Shiboken.Object):
     @staticmethod
     def font() -> PySide6.QtGui.QFont: ...
     @staticmethod
@@ -9017,7 +9017,7 @@ class QTreeWidget(PySide6.QtWidgets.QTreeView):
     def visualItemRect(self, item: PySide6.QtWidgets.QTreeWidgetItem, /) -> PySide6.QtCore.QRect: ...
 
 
-class QTreeWidgetItem(Shiboken.Object):
+class QTreeWidgetItem(shiboken6.Shiboken.Object):
 
     class ChildIndicatorPolicy(enum.Enum):
 
@@ -9116,7 +9116,7 @@ class QTreeWidgetItem(Shiboken.Object):
     def write(self, out: PySide6.QtCore.QDataStream, /) -> None: ...
 
 
-class QTreeWidgetItemIterator(Shiboken.Object):
+class QTreeWidgetItemIterator(shiboken6.Shiboken.Object):
 
     class IteratorFlag(enum.Flag):
 
@@ -9184,7 +9184,7 @@ class QVBoxLayout(PySide6.QtWidgets.QBoxLayout):
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /) -> None: ...
 
 
-class QWhatsThis(Shiboken.Object):
+class QWhatsThis(shiboken6.Shiboken.Object):
     @staticmethod
     def createAction(parent: PySide6.QtCore.QObject | None = ...) -> PySide6.QtGui.QAction: ...
     @staticmethod

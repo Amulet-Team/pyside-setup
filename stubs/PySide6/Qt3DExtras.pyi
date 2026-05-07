@@ -17,13 +17,13 @@ import PySide6.Qt3DRender
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DExtras(Shiboken.Object):
+class Qt3DExtras(shiboken6.Shiboken.Object):
 
     class QAbstractCameraController(PySide6.Qt3DCore.Qt3DCore.QEntity):
 
@@ -33,7 +33,7 @@ class Qt3DExtras(Shiboken.Object):
         linearSpeedChanged       : typing.ClassVar[Signal] = ... # linearSpeedChanged()
         lookSpeedChanged         : typing.ClassVar[Signal] = ... # lookSpeedChanged()
 
-        class InputState(Shiboken.Object):
+        class InputState(shiboken6.Shiboken.Object):
 
             altKeyActive              = ...  # type: bool
             leftMouseButtonActive     = ...  # type: bool

@@ -16,10 +16,10 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QGeoAddress(Shiboken.Object):
+class QGeoAddress(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -56,7 +56,7 @@ class QGeoAddress(Shiboken.Object):
     def text(self, /) -> str: ...
 
 
-class QGeoAreaMonitorInfo(Shiboken.Object):
+class QGeoAreaMonitorInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtPositioning.QGeoAreaMonitorInfo, /) -> None: ...
@@ -153,7 +153,7 @@ class QGeoCircle(PySide6.QtPositioning.QGeoShape):
     def translated(self, degreesLatitude: float, degreesLongitude: float, /) -> PySide6.QtPositioning.QGeoCircle: ...
 
 
-class QGeoCoordinate(Shiboken.Object):
+class QGeoCoordinate(shiboken6.Shiboken.Object):
 
     class CoordinateFormat(enum.Enum):
 
@@ -202,7 +202,7 @@ class QGeoCoordinate(Shiboken.Object):
     def type(self, /) -> PySide6.QtPositioning.QGeoCoordinate.CoordinateType: ...
 
 
-class QGeoLocation(Shiboken.Object):
+class QGeoLocation(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -302,7 +302,7 @@ class QGeoPolygon(PySide6.QtPositioning.QGeoShape):
     def translated(self, degreesLatitude: float, degreesLongitude: float, /) -> PySide6.QtPositioning.QGeoPolygon: ...
 
 
-class QGeoPositionInfo(Shiboken.Object):
+class QGeoPositionInfo(shiboken6.Shiboken.Object):
 
     class Attribute(enum.Enum):
 
@@ -395,7 +395,7 @@ class QGeoPositionInfoSource(PySide6.QtCore.QObject):
     def updateInterval(self, /) -> int: ...
 
 
-class QGeoPositionInfoSourceFactory(Shiboken.Object):
+class QGeoPositionInfoSourceFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -450,7 +450,7 @@ class QGeoRectangle(PySide6.QtPositioning.QGeoShape):
     def width(self, /) -> float: ...
 
 
-class QGeoSatelliteInfo(Shiboken.Object):
+class QGeoSatelliteInfo(shiboken6.Shiboken.Object):
 
     class Attribute(enum.Enum):
 
@@ -537,7 +537,7 @@ class QGeoSatelliteInfoSource(PySide6.QtCore.QObject):
     def updateInterval(self, /) -> int: ...
 
 
-class QGeoShape(Shiboken.Object):
+class QGeoShape(shiboken6.Shiboken.Object):
 
     class ShapeType(enum.Enum):
 

@@ -17,13 +17,13 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DInput(Shiboken.Object):
+class Qt3DInput(shiboken6.Shiboken.Object):
 
     class QAbstractActionInput(PySide6.Qt3DCore.Qt3DCore.QNode): ...
 

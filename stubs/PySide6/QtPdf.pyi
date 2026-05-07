@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -124,7 +124,7 @@ class QPdfDocument(PySide6.QtCore.QObject):
     def status(self, /) -> PySide6.QtPdf.QPdfDocument.Status: ...
 
 
-class QPdfDocumentRenderOptions(Shiboken.Object):
+class QPdfDocumentRenderOptions(shiboken6.Shiboken.Object):
 
     class RenderFlag(enum.Flag):
 
@@ -163,7 +163,7 @@ class QPdfDocumentRenderOptions(Shiboken.Object):
     def setScaledSize(self, s: PySide6.QtCore.QSize, /) -> None: ...
 
 
-class QPdfLink(Shiboken.Object):
+class QPdfLink(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtPdf.QPdfLink, /, *, valid: bool | None = ..., page: int | None = ..., location: PySide6.QtCore.QPointF | None = ..., zoom: float | None = ..., url: PySide6.QtCore.QUrl | None = ..., contextBefore: str | None = ..., contextAfter: str | None = ..., rectangles: collections.abc.Sequence[PySide6.QtCore.QRectF] | None = ...) -> None: ...
@@ -302,7 +302,7 @@ class QPdfSearchModel(PySide6.QtCore.QAbstractListModel):
     def updatePage(self, page: int, /) -> None: ...
 
 
-class QPdfSelection(Shiboken.Object):
+class QPdfSelection(shiboken6.Shiboken.Object):
 
     def __init__(self, other: PySide6.QtPdf.QPdfSelection, /, *, valid: bool | None = ..., bounds: collections.abc.Sequence[PySide6.QtGui.QPolygonF] | None = ..., boundingRectangle: PySide6.QtCore.QRectF | None = ..., text: str | None = ..., startIndex: int | None = ..., endIndex: int | None = ...) -> None: ...
 

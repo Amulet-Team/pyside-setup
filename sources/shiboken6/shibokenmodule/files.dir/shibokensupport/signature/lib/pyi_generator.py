@@ -282,8 +282,8 @@ FROM_IMPORTS = [
     (None, ["typing"]),
     (None, ["collections.abc"]),
     ("PySide6.QtCore", ["PyClassProperty", "Signal", "SignalInstance"]),
-    ("shiboken6", ["Shiboken"]),
-    ]
+    (None, ["shiboken6"]),
+]
 
 
 def filter_from_imports(from_struct, text):

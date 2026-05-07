@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -59,7 +59,7 @@ class QWebView(PySide6.QtGui.QWindow):
     def url(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QWebViewLoadingInfo(Shiboken.Object):
+class QWebViewLoadingInfo(shiboken6.Shiboken.Object):
 
     class LoadStatus(enum.Enum):
 
@@ -81,7 +81,7 @@ class QWebViewLoadingInfo(Shiboken.Object):
     def url(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QWebViewSettings(Shiboken.Object):
+class QWebViewSettings(shiboken6.Shiboken.Object):
 
     class WebAttribute(enum.Enum):
 
@@ -95,7 +95,7 @@ class QWebViewSettings(Shiboken.Object):
     def testAttribute(self, attribute: PySide6.QtWebView.QWebViewSettings.WebAttribute, /) -> bool: ...
 
 
-class QtWebView(Shiboken.Object):
+class QtWebView(shiboken6.Shiboken.Object):
     @staticmethod
     def initialize() -> None: ...
 

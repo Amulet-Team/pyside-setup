@@ -16,15 +16,15 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class QNdefFilter(Shiboken.Object):
+class QNdefFilter(shiboken6.Shiboken.Object):
 
-    class Record(Shiboken.Object):
+    class Record(shiboken6.Shiboken.Object):
 
         maximum                   = ...  # type: typing.Any
         minimum                   = ...  # type: typing.Any
@@ -57,7 +57,7 @@ class QNdefFilter(Shiboken.Object):
     def setOrderMatch(self, on: bool, /) -> None: ...
 
 
-class QNdefMessage(Shiboken.Object):
+class QNdefMessage(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -257,7 +257,7 @@ class QNdefNfcUriRecord(PySide6.QtNfc.QNdefRecord):
     def uri(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QNdefRecord(Shiboken.Object):
+class QNdefRecord(shiboken6.Shiboken.Object):
 
     class TypeNameFormat(enum.Enum):
 
@@ -350,7 +350,7 @@ class QNearFieldTarget(PySide6.QtCore.QObject):
         TimeoutError              = 0xb
         UnsupportedTargetError    = 0xc
 
-    class RequestId(Shiboken.Object):
+    class RequestId(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...

@@ -17,7 +17,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractPrintDialog(PySide6.QtWidgets.QDialog):
@@ -94,7 +94,7 @@ class QPrintDialog(PySide6.QtPrintSupport.QAbstractPrintDialog):
     def testOption(self, option: PySide6.QtPrintSupport.QAbstractPrintDialog.PrintDialogOption, /) -> bool: ...
 
 
-class QPrintEngine(Shiboken.Object):
+class QPrintEngine(shiboken6.Shiboken.Object):
 
     class PrintEnginePropertyKey(enum.Enum):
 
@@ -344,7 +344,7 @@ class QPrinter(PySide6.QtGui.QPagedPaintDevice):
     def toPage(self, /) -> int: ...
 
 
-class QPrinterInfo(Shiboken.Object):
+class QPrinterInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

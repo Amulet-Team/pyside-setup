@@ -16,13 +16,13 @@ import PySide6.QtQml
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class QQuick3D(Shiboken.Object):
+class QQuick3D(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -35,7 +35,7 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
     geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged()
     geometryNodeDirty        : typing.ClassVar[Signal] = ... # geometryNodeDirty()
 
-    class Attribute(Shiboken.Object):
+    class Attribute(shiboken6.Shiboken.Object):
 
         componentType             = ...  # type: int
         offset                    = ...  # type: int
@@ -83,7 +83,7 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
         TriangleFan               = 0x4
         Triangles                 = 0x5
 
-    class TargetAttribute(Shiboken.Object):
+    class TargetAttribute(shiboken6.Shiboken.Object):
 
         attr                      = ...  # type: PySide6.QtQuick3D.QQuick3DGeometry.Attribute
         stride                    = ...  # type: int
@@ -156,7 +156,7 @@ class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
     shadowBoundsMaximumChanged: typing.ClassVar[Signal] = ... # shadowBoundsMaximumChanged()
     shadowBoundsMinimumChanged: typing.ClassVar[Signal] = ... # shadowBoundsMinimumChanged()
 
-    class InstanceTableEntry(Shiboken.Object):
+    class InstanceTableEntry(shiboken6.Shiboken.Object):
 
         color                     = ...  # type: PySide6.QtGui.QVector4D
         instanceData              = ...  # type: PySide6.QtGui.QVector4D

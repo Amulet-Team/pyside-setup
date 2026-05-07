@@ -18,13 +18,13 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DAnimation(Shiboken.Object):
+class Qt3DAnimation(shiboken6.Shiboken.Object):
 
     class QAbstractAnimation(PySide6.QtCore.QObject):
 
@@ -107,7 +107,7 @@ class Qt3DAnimation(Shiboken.Object):
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
-    class QAnimationCallback(Shiboken.Object):
+    class QAnimationCallback(shiboken6.Shiboken.Object):
 
         class Flag(enum.Flag):
 
@@ -128,7 +128,7 @@ class Qt3DAnimation(Shiboken.Object):
         def clipData(self, /) -> PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData: ...
         def setClipData(self, clipData: PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData, /) -> None: ...
 
-    class QAnimationClipData(Shiboken.Object):
+    class QAnimationClipData(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -240,7 +240,7 @@ class Qt3DAnimation(Shiboken.Object):
         def setCallback(self, type: int, callback: PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationCallback, /, flags: PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationCallback.Flag = ...) -> None: ...
         def setChannelName(self, channelName: str, /) -> None: ...
 
-    class QChannel(Shiboken.Object):
+    class QChannel(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -264,7 +264,7 @@ class Qt3DAnimation(Shiboken.Object):
         def setJointIndex(self, jointIndex: int, /) -> None: ...
         def setName(self, name: str, /) -> None: ...
 
-    class QChannelComponent(Shiboken.Object):
+    class QChannelComponent(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -339,7 +339,7 @@ class Qt3DAnimation(Shiboken.Object):
         def playbackRate(self, /) -> float: ...
         def setPlaybackRate(self, playbackRate: float, /) -> None: ...
 
-    class QKeyFrame(Shiboken.Object):
+    class QKeyFrame(shiboken6.Shiboken.Object):
 
         class InterpolationType(enum.Enum):
 

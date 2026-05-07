@@ -17,7 +17,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -119,7 +119,7 @@ class QWebSocket(PySide6.QtCore.QObject):
     def version(self, /) -> PySide6.QtWebSockets.QWebSocketProtocol.Version: ...
 
 
-class QWebSocketCorsAuthenticator(Shiboken.Object):
+class QWebSocketCorsAuthenticator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebSockets.QWebSocketCorsAuthenticator, /) -> None: ...
@@ -132,7 +132,7 @@ class QWebSocketCorsAuthenticator(Shiboken.Object):
     def swap(self, other: PySide6.QtWebSockets.QWebSocketCorsAuthenticator, /) -> None: ...
 
 
-class QWebSocketHandshakeOptions(Shiboken.Object):
+class QWebSocketHandshakeOptions(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -147,7 +147,7 @@ class QWebSocketHandshakeOptions(Shiboken.Object):
     def swap(self, other: PySide6.QtWebSockets.QWebSocketHandshakeOptions, /) -> None: ...
 
 
-class QWebSocketProtocol(Shiboken.Object):
+class QWebSocketProtocol(shiboken6.Shiboken.Object):
 
     class CloseCode(enum.Enum):
 

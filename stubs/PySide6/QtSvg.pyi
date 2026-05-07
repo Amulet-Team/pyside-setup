@@ -15,7 +15,7 @@ import PySide6.QtGui
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -110,7 +110,7 @@ class QSvgRenderer(PySide6.QtCore.QObject):
     def viewBoxF(self, /) -> PySide6.QtCore.QRectF: ...
 
 
-class QtSvg(Shiboken.Object):
+class QtSvg(shiboken6.Shiboken.Object):
 
     class Option(enum.Flag):
 

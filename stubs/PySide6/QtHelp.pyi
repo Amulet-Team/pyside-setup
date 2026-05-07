@@ -17,10 +17,10 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QCompressedHelpInfo(Shiboken.Object):
+class QCompressedHelpInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -37,7 +37,7 @@ class QCompressedHelpInfo(Shiboken.Object):
     def version(self, /) -> PySide6.QtCore.QVersionNumber: ...
 
 
-class QHelpContentItem(Shiboken.Object):
+class QHelpContentItem(shiboken6.Shiboken.Object):
     def child(self, row: int, /) -> PySide6.QtHelp.QHelpContentItem: ...
     def childCount(self, /) -> int: ...
     def childPosition(self, child: PySide6.QtHelp.QHelpContentItem, /) -> int: ...
@@ -141,7 +141,7 @@ class QHelpEngineCore(PySide6.QtCore.QObject):
     def usesFilterEngine(self, /) -> bool: ...
 
 
-class QHelpFilterData(Shiboken.Object):
+class QHelpFilterData(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -190,7 +190,7 @@ class QHelpFilterSettingsWidget(PySide6.QtWidgets.QWidget):
     def setAvailableVersions(self, versions: collections.abc.Sequence[PySide6.QtCore.QVersionNumber], /) -> None: ...
 
 
-class QHelpGlobal(Shiboken.Object):
+class QHelpGlobal(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -225,7 +225,7 @@ class QHelpIndexWidget(PySide6.QtWidgets.QListView):
     def filterIndices(self, filter: str, /, wildcard: str = ...) -> None: ...
 
 
-class QHelpLink(Shiboken.Object):
+class QHelpLink(shiboken6.Shiboken.Object):
 
     title                     = ...  # type: str
     url                       = ...  # type: PySide6.QtCore.QUrl
@@ -285,7 +285,7 @@ class QHelpSearchEngineCore(PySide6.QtCore.QObject):
     def searchResults(self, start: int, end: int, /) -> typing.List[PySide6.QtHelp.QHelpSearchResult]: ...
 
 
-class QHelpSearchQuery(Shiboken.Object):
+class QHelpSearchQuery(shiboken6.Shiboken.Object):
 
     fieldName                 = ...  # type: PySide6.QtHelp.QHelpSearchQuery.FieldName
     wordList                  = ...  # type: typing.List[str]
@@ -328,7 +328,7 @@ class QHelpSearchQueryWidget(PySide6.QtWidgets.QWidget):
     def setSearchInput(self, searchInput: str, /) -> None: ...
 
 
-class QHelpSearchResult(Shiboken.Object):
+class QHelpSearchResult(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

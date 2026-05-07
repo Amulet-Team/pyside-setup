@@ -13,10 +13,10 @@ import PySide6.QtCore
 
 import enum
 import typing
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QFutureQString(Shiboken.Object):
+class QFutureQString(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -49,7 +49,7 @@ class QFutureQString(Shiboken.Object):
     def waitForFinished(self, /) -> None: ...
 
 
-class QFutureVoid(Shiboken.Object):
+class QFutureVoid(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -98,7 +98,7 @@ class QFutureWatcherVoid(PySide6.QtCore.QObject):
 class QIntList: ...
 
 
-class QtConcurrent(Shiboken.Object):
+class QtConcurrent(shiboken6.Shiboken.Object):
 
     class FutureResult(enum.Enum):
 

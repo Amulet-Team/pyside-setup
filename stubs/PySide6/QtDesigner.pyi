@@ -17,17 +17,17 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QAbstractExtensionFactory(Shiboken.Object):
+class QAbstractExtensionFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
     def extension(self, object: PySide6.QtCore.QObject, iid: str, /) -> PySide6.QtCore.QObject: ...
 
 
-class QAbstractExtensionManager(Shiboken.Object):
+class QAbstractExtensionManager(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -36,7 +36,7 @@ class QAbstractExtensionManager(Shiboken.Object):
     def unregisterExtensions(self, factory: PySide6.QtDesigner.QAbstractExtensionFactory, iid: str, /) -> None: ...
 
 
-class QAbstractFormBuilder(Shiboken.Object):
+class QAbstractFormBuilder(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -67,7 +67,7 @@ class QDesignerActionEditorInterface(PySide6.QtWidgets.QWidget):
     def unmanageAction(self, action: PySide6.QtGui.QAction, /) -> None: ...
 
 
-class QDesignerContainerExtension(Shiboken.Object):
+class QDesignerContainerExtension(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -82,14 +82,14 @@ class QDesignerContainerExtension(Shiboken.Object):
     def widget(self, index: int, /) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QDesignerCustomWidgetCollectionInterface(Shiboken.Object):
+class QDesignerCustomWidgetCollectionInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
     def customWidgets(self, /) -> typing.List[PySide6.QtDesigner.QDesignerCustomWidgetInterface]: ...
 
 
-class QDesignerCustomWidgetInterface(Shiboken.Object):
+class QDesignerCustomWidgetInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -107,7 +107,7 @@ class QDesignerCustomWidgetInterface(Shiboken.Object):
     def whatsThis(self, /) -> str: ...
 
 
-class QDesignerDnDItemInterface(Shiboken.Object):
+class QDesignerDnDItemInterface(shiboken6.Shiboken.Object):
 
     class DropType(enum.Enum):
 
@@ -124,7 +124,7 @@ class QDesignerDnDItemInterface(Shiboken.Object):
     def widget(self, /) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QDesignerDynamicPropertySheetExtension(Shiboken.Object):
+class QDesignerDynamicPropertySheetExtension(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -159,7 +159,7 @@ class QDesignerFormEditorInterface(PySide6.QtCore.QObject):
     def widgetBox(self, /) -> PySide6.QtDesigner.QDesignerWidgetBoxInterface: ...
 
 
-class QDesignerFormWindowCursorInterface(Shiboken.Object):
+class QDesignerFormWindowCursorInterface(shiboken6.Shiboken.Object):
 
     class MoveMode(enum.Enum):
 
@@ -382,7 +382,7 @@ class QDesignerFormWindowToolInterface(PySide6.QtCore.QObject):
     def handleEvent(self, widget: PySide6.QtWidgets.QWidget, managedWidget: PySide6.QtWidgets.QWidget, event: PySide6.QtCore.QEvent, /) -> bool: ...
 
 
-class QDesignerMemberSheetExtension(Shiboken.Object):
+class QDesignerMemberSheetExtension(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -425,7 +425,7 @@ class QDesignerPropertyEditorInterface(PySide6.QtWidgets.QWidget):
     def setReadOnly(self, readOnly: bool, /) -> None: ...
 
 
-class QDesignerPropertySheetExtension(Shiboken.Object):
+class QDesignerPropertySheetExtension(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -447,7 +447,7 @@ class QDesignerPropertySheetExtension(Shiboken.Object):
     def setVisible(self, index: int, b: bool, /) -> None: ...
 
 
-class QDesignerTaskMenuExtension(Shiboken.Object):
+class QDesignerTaskMenuExtension(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -457,7 +457,7 @@ class QDesignerTaskMenuExtension(Shiboken.Object):
 
 class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
 
-    class Category(Shiboken.Object):
+    class Category(shiboken6.Shiboken.Object):
 
         class Type(enum.Enum):
 
@@ -481,7 +481,7 @@ class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
         def widget(self, idx: int, /) -> PySide6.QtDesigner.QDesignerWidgetBoxInterface.Widget: ...
         def widgetCount(self, /) -> int: ...
 
-    class Widget(Shiboken.Object):
+    class Widget(shiboken6.Shiboken.Object):
 
         class Type(enum.Enum):
 

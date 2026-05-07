@@ -14,7 +14,7 @@ import PySide6.QtCore
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -137,7 +137,7 @@ class QTextToSpeechEngine(PySide6.QtCore.QObject):
     def volume(self, /) -> float: ...
 
 
-class QVoice(Shiboken.Object):
+class QVoice(shiboken6.Shiboken.Object):
 
     class Age(enum.Enum):
 

@@ -14,13 +14,13 @@ import PySide6.Qt3DCore
 
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DLogic(Shiboken.Object):
+class Qt3DLogic(shiboken6.Shiboken.Object):
 
     class QFrameAction(PySide6.Qt3DCore.Qt3DCore.QComponent):
 

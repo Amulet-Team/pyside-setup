@@ -16,10 +16,10 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QAbstractOpenGLFunctions(Shiboken.Object):
+class QAbstractOpenGLFunctions(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -32,7 +32,7 @@ class QAbstractOpenGLFunctions(Shiboken.Object):
 class QIntList: ...
 
 
-class QOpenGLBuffer(Shiboken.Object):
+class QOpenGLBuffer(shiboken6.Shiboken.Object):
 
     class Access(enum.Enum):
 
@@ -134,7 +134,7 @@ class QOpenGLDebugLogger(PySide6.QtCore.QObject):
     def stopLogging(self, /) -> None: ...
 
 
-class QOpenGLDebugMessage(Shiboken.Object):
+class QOpenGLDebugMessage(shiboken6.Shiboken.Object):
 
     class Severity(enum.Flag):
 
@@ -195,7 +195,7 @@ class QOpenGLDebugMessage(Shiboken.Object):
     def type(self, /) -> PySide6.QtOpenGL.QOpenGLDebugMessage.Type: ...
 
 
-class QOpenGLFramebufferObject(Shiboken.Object):
+class QOpenGLFramebufferObject(shiboken6.Shiboken.Object):
 
     class Attachment(enum.Enum):
 
@@ -269,7 +269,7 @@ class QOpenGLFramebufferObject(Shiboken.Object):
     def width(self, /) -> int: ...
 
 
-class QOpenGLFramebufferObjectFormat(Shiboken.Object):
+class QOpenGLFramebufferObjectFormat(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -13163,7 +13163,7 @@ class QOpenGLPaintDevice(PySide6.QtGui.QPaintDevice):
     def size(self, /) -> PySide6.QtCore.QSize: ...
 
 
-class QOpenGLPixelTransferOptions(Shiboken.Object):
+class QOpenGLPixelTransferOptions(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -13450,7 +13450,7 @@ class QOpenGLShaderProgram(PySide6.QtCore.QObject):
     def uniformLocation(self, name: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> int: ...
 
 
-class QOpenGLTexture(Shiboken.Object):
+class QOpenGLTexture(shiboken6.Shiboken.Object):
 
     class BindingTarget(enum.Enum):
 
@@ -13920,7 +13920,7 @@ class QOpenGLTexture(Shiboken.Object):
     def wrapMode(self, direction: PySide6.QtOpenGL.QOpenGLTexture.CoordinateDirection, /) -> PySide6.QtOpenGL.QOpenGLTexture.WrapMode: ...
 
 
-class QOpenGLTextureBlitter(Shiboken.Object):
+class QOpenGLTextureBlitter(shiboken6.Shiboken.Object):
 
     class Origin(enum.Enum):
 
@@ -13982,7 +13982,7 @@ class QOpenGLTimerQuery(PySide6.QtCore.QObject):
     def waitForTimestamp(self, /) -> int: ...
 
 
-class QOpenGLVersionFunctionsFactory(Shiboken.Object):
+class QOpenGLVersionFunctionsFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -13990,7 +13990,7 @@ class QOpenGLVersionFunctionsFactory(Shiboken.Object):
     def get(versionProfile: PySide6.QtOpenGL.QOpenGLVersionProfile = ..., context: PySide6.QtGui.QOpenGLContext | None = ...) -> PySide6.QtOpenGL.QAbstractOpenGLFunctions: ...
 
 
-class QOpenGLVersionProfile(Shiboken.Object):
+class QOpenGLVersionProfile(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -14015,7 +14015,7 @@ class QOpenGLVersionProfile(Shiboken.Object):
 
 class QOpenGLVertexArrayObject(PySide6.QtCore.QObject):
 
-    class Binder(Shiboken.Object):
+    class Binder(shiboken6.Shiboken.Object):
 
         def __init__(self, v: PySide6.QtOpenGL.QOpenGLVertexArrayObject, /) -> None: ...
 

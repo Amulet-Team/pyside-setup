@@ -16,10 +16,10 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QBluetooth(Shiboken.Object):
+class QBluetooth(shiboken6.Shiboken.Object):
 
     class AttAccessConstraint(enum.Flag):
 
@@ -36,7 +36,7 @@ class QBluetooth(Shiboken.Object):
         Secure                    = 0x8
 
 
-class QBluetoothAddress(Shiboken.Object):
+class QBluetoothAddress(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -106,7 +106,7 @@ class QBluetoothDeviceDiscoveryAgent(PySide6.QtCore.QObject):
     def supportedDiscoveryMethods() -> PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.DiscoveryMethod: ...
 
 
-class QBluetoothDeviceInfo(Shiboken.Object):
+class QBluetoothDeviceInfo(shiboken6.Shiboken.Object):
 
     class CoreConfiguration(enum.Flag):
 
@@ -298,7 +298,7 @@ class QBluetoothDeviceInfo(Shiboken.Object):
     def setServiceUuids(self, uuids: collections.abc.Sequence[PySide6.QtBluetooth.QBluetoothUuid], /) -> None: ...
 
 
-class QBluetoothHostInfo(Shiboken.Object):
+class QBluetoothHostInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -440,9 +440,9 @@ class QBluetoothServiceDiscoveryAgent(PySide6.QtCore.QObject):
     def uuidFilter(self, /) -> typing.List[PySide6.QtBluetooth.QBluetoothUuid]: ...
 
 
-class QBluetoothServiceInfo(Shiboken.Object):
+class QBluetoothServiceInfo(shiboken6.Shiboken.Object):
 
-    class Alternative(Shiboken.Object):
+    class Alternative(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -546,7 +546,7 @@ class QBluetoothServiceInfo(Shiboken.Object):
         L2capProtocol             = 0x1
         RfcommProtocol            = 0x2
 
-    class Sequence(Shiboken.Object):
+    class Sequence(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -1057,7 +1057,7 @@ class QBluetoothUuid(PySide6.QtCore.QUuid):
 class QIntList: ...
 
 
-class QLowEnergyAdvertisingData(Shiboken.Object):
+class QLowEnergyAdvertisingData(shiboken6.Shiboken.Object):
 
     class Discoverability(enum.Enum):
 
@@ -1092,9 +1092,9 @@ class QLowEnergyAdvertisingData(Shiboken.Object):
     def swap(self, other: PySide6.QtBluetooth.QLowEnergyAdvertisingData, /) -> None: ...
 
 
-class QLowEnergyAdvertisingParameters(Shiboken.Object):
+class QLowEnergyAdvertisingParameters(shiboken6.Shiboken.Object):
 
-    class AddressInfo(Shiboken.Object):
+    class AddressInfo(shiboken6.Shiboken.Object):
 
         address                   = ...  # type: PySide6.QtBluetooth.QBluetoothAddress
         type                      = ...  # type: PySide6.QtBluetooth.QLowEnergyController.RemoteAddressType
@@ -1143,7 +1143,7 @@ class QLowEnergyAdvertisingParameters(Shiboken.Object):
     def whiteList(self, /) -> typing.List[PySide6.QtBluetooth.QLowEnergyAdvertisingParameters.AddressInfo]: ...
 
 
-class QLowEnergyCharacteristic(Shiboken.Object):
+class QLowEnergyCharacteristic(shiboken6.Shiboken.Object):
 
     CCCDDisable               = ...  # type: PySide6.QtCore.QByteArray
     CCCDEnableIndication      = ...  # type: PySide6.QtCore.QByteArray
@@ -1180,7 +1180,7 @@ class QLowEnergyCharacteristic(Shiboken.Object):
     def value(self, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QLowEnergyCharacteristicData(Shiboken.Object):
+class QLowEnergyCharacteristicData(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1210,7 +1210,7 @@ class QLowEnergyCharacteristicData(Shiboken.Object):
     def writeConstraints(self, /) -> PySide6.QtBluetooth.QBluetooth.AttAccessConstraint: ...
 
 
-class QLowEnergyConnectionParameters(Shiboken.Object):
+class QLowEnergyConnectionParameters(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1312,7 +1312,7 @@ class QLowEnergyController(PySide6.QtCore.QObject):
     def stopAdvertising(self, /) -> None: ...
 
 
-class QLowEnergyDescriptor(Shiboken.Object):
+class QLowEnergyDescriptor(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1329,7 +1329,7 @@ class QLowEnergyDescriptor(Shiboken.Object):
     def value(self, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QLowEnergyDescriptorData(Shiboken.Object):
+class QLowEnergyDescriptorData(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1422,7 +1422,7 @@ class QLowEnergyService(PySide6.QtCore.QObject):
     def writeDescriptor(self, descriptor: PySide6.QtBluetooth.QLowEnergyDescriptor, newValue: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> None: ...
 
 
-class QLowEnergyServiceData(Shiboken.Object):
+class QLowEnergyServiceData(shiboken6.Shiboken.Object):
 
     class ServiceType(enum.Enum):
 

@@ -15,13 +15,13 @@ import PySide6.QtWidgets
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class QSql(Shiboken.Object):
+class QSql(shiboken6.Shiboken.Object):
 
     class Location(enum.Enum):
 
@@ -50,7 +50,7 @@ class QSql(Shiboken.Object):
         AllTables                 = 0xff
 
 
-class QSqlDatabase(Shiboken.Object):
+class QSqlDatabase(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, driver: PySide6.QtSql.QSqlDriver, /, *, numericalPrecisionPolicy: PySide6.QtSql.QSql.NumericalPrecisionPolicy | None = ...) -> None: ...
@@ -216,14 +216,14 @@ class QSqlDriver(PySide6.QtCore.QObject):
     def unsubscribeFromNotification(self, name: str, /) -> bool: ...
 
 
-class QSqlDriverCreatorBase(Shiboken.Object):
+class QSqlDriverCreatorBase(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
     def createObject(self, /) -> PySide6.QtSql.QSqlDriver: ...
 
 
-class QSqlError(Shiboken.Object):
+class QSqlError(shiboken6.Shiboken.Object):
 
     class ErrorType(enum.Enum):
 
@@ -252,7 +252,7 @@ class QSqlError(Shiboken.Object):
     def type(self, /) -> PySide6.QtSql.QSqlError.ErrorType: ...
 
 
-class QSqlField(Shiboken.Object):
+class QSqlField(shiboken6.Shiboken.Object):
 
     class RequiredStatus(enum.Enum):
 
@@ -322,7 +322,7 @@ class QSqlIndex(PySide6.QtSql.QSqlRecord):
     def swap(self, other: PySide6.QtSql.QSqlIndex, /) -> None: ...
 
 
-class QSqlQuery(Shiboken.Object):
+class QSqlQuery(shiboken6.Shiboken.Object):
 
     class BatchExecutionMode(enum.Enum):
 
@@ -441,7 +441,7 @@ class QSqlQueryModel(PySide6.QtCore.QAbstractTableModel):
     def setQuery(self, query: str, /, db: PySide6.QtSql.QSqlDatabase = ...) -> None: ...
 
 
-class QSqlRecord(Shiboken.Object):
+class QSqlRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -495,7 +495,7 @@ class QSqlRecord(Shiboken.Object):
     def value(self, i: int, /) -> typing.Any: ...
 
 
-class QSqlRelation(Shiboken.Object):
+class QSqlRelation(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -548,7 +548,7 @@ class QSqlRelationalTableModel(PySide6.QtSql.QSqlTableModel):
     def updateRowInTable(self, row: int, values: PySide6.QtSql.QSqlRecord, /) -> bool: ...
 
 
-class QSqlResult(Shiboken.Object):
+class QSqlResult(shiboken6.Shiboken.Object):
 
     class BindingSyntax(enum.Enum):
 

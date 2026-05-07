@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAccelerometer(PySide6.QtSensors.QSensor):
@@ -521,21 +521,21 @@ class QSensorBackend(PySide6.QtCore.QObject):
     def stop(self, /) -> None: ...
 
 
-class QSensorBackendFactory(Shiboken.Object):
+class QSensorBackendFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
     def createBackend(self, sensor: PySide6.QtSensors.QSensor, /) -> PySide6.QtSensors.QSensorBackend: ...
 
 
-class QSensorChangesInterface(Shiboken.Object):
+class QSensorChangesInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
     def sensorsChanged(self, /) -> None: ...
 
 
-class QSensorFilter(Shiboken.Object):
+class QSensorFilter(shiboken6.Shiboken.Object):
 
     m_sensor                  = ...  # type: PySide6.QtSensors.QSensor
 
@@ -545,7 +545,7 @@ class QSensorFilter(Shiboken.Object):
     def setSensor(self, sensor: PySide6.QtSensors.QSensor, /) -> None: ...
 
 
-class QSensorManager(Shiboken.Object):
+class QSensorManager(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -561,7 +561,7 @@ class QSensorManager(Shiboken.Object):
     def unregisterBackend(type: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, identifier: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, /) -> None: ...
 
 
-class QSensorPluginInterface(Shiboken.Object):
+class QSensorPluginInterface(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -648,7 +648,7 @@ class QTiltSensor(PySide6.QtSensors.QSensor):
     def reading(self, /) -> PySide6.QtSensors.QTiltReading: ...
 
 
-class qoutputrange(Shiboken.Object):
+class qoutputrange(shiboken6.Shiboken.Object):
 
     accuracy                  = ...  # type: float
     maximum                   = ...  # type: float

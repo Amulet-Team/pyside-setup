@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractItemModelReplica(PySide6.QtCore.QAbstractItemModel):
@@ -159,7 +159,7 @@ class QRemoteObjectNode(PySide6.QtCore.QObject):
     def waitForRegistry(self, /, timeout: int = ...) -> bool: ...
 
 
-class QRemoteObjectPendingCall(Shiboken.Object):
+class QRemoteObjectPendingCall(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -256,7 +256,7 @@ class QRemoteObjectSettingsStore(PySide6.QtRemoteObjects.QRemoteObjectAbstractPe
     def saveProperties(self, repName: str, repSig: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, values: collections.abc.Sequence[typing.Any], /) -> None: ...
 
 
-class QRemoteObjectSourceLocationInfo(Shiboken.Object):
+class QRemoteObjectSourceLocationInfo(shiboken6.Shiboken.Object):
 
     hostUrl                   = ...  # type: PySide6.QtCore.QUrl
     typeName                  = ...  # type: str
@@ -276,7 +276,7 @@ class QRemoteObjectSourceLocationInfo(Shiboken.Object):
     def __rshift__(self, stream: PySide6.QtCore.QDataStream, /) -> PySide6.QtCore.QDataStream: ...
 
 
-class QtROClientFactory(Shiboken.Object):
+class QtROClientFactory(shiboken6.Shiboken.Object):
     def create(self, url: PySide6.QtCore.QUrl | str, /, parent: PySide6.QtCore.QObject | None = ...) -> PySide6.QtRemoteObjects.QtROClientIoDevice: ...
     @staticmethod
     def instance() -> PySide6.QtRemoteObjects.QtROClientFactory: ...
@@ -323,7 +323,7 @@ class QtROIoDeviceBase(PySide6.QtCore.QObject):
     def write(self, data: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, arg__2: int, /) -> None: ...
 
 
-class QtROServerFactory(Shiboken.Object):
+class QtROServerFactory(shiboken6.Shiboken.Object):
     def create(self, url: PySide6.QtCore.QUrl | str, /, parent: PySide6.QtCore.QObject | None = ...) -> PySide6.QtRemoteObjects.QConnectionAbstractServer: ...
     @staticmethod
     def instance() -> PySide6.QtRemoteObjects.QtROServerFactory: ...
@@ -337,7 +337,7 @@ class QtROServerIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
     def deviceType(self, /) -> str: ...
 
 
-class QtRemoteObjects(Shiboken.Object):
+class QtRemoteObjects(shiboken6.Shiboken.Object):
 
     class InitialAction(enum.Enum):
 

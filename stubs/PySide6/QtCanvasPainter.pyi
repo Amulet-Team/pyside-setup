@@ -18,7 +18,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QCanvasBoxGradient(PySide6.QtCanvasPainter.QCanvasGradient):
@@ -85,7 +85,7 @@ class QCanvasBoxShadow(PySide6.QtCanvasPainter.QCanvasBrush):
     def topRightRadius(self, /) -> float: ...
 
 
-class QCanvasBrush(Shiboken.Object):
+class QCanvasBrush(shiboken6.Shiboken.Object):
 
     class BrushType(enum.Enum):
 
@@ -218,7 +218,7 @@ class QCanvasGridPattern(PySide6.QtCanvasPainter.QCanvasBrush):
     def startPosition(self, /) -> PySide6.QtCore.QPointF: ...
 
 
-class QCanvasImage(Shiboken.Object):
+class QCanvasImage(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -301,7 +301,7 @@ class QCanvasLinearGradient(PySide6.QtCanvasPainter.QCanvasGradient):
     def startPosition(self, /) -> PySide6.QtCore.QPointF: ...
 
 
-class QCanvasOffscreenCanvas(Shiboken.Object):
+class QCanvasOffscreenCanvas(shiboken6.Shiboken.Object):
 
     class Flag(enum.Flag):
 
@@ -325,7 +325,7 @@ class QCanvasOffscreenCanvas(Shiboken.Object):
     def texture(self, /) -> PySide6.QtGui.QRhiTexture: ...
 
 
-class QCanvasPainter(Shiboken.Object):
+class QCanvasPainter(shiboken6.Shiboken.Object):
 
     class CompositeOperation(enum.Enum):
 
@@ -574,7 +574,7 @@ class QCanvasPainter(Shiboken.Object):
     def translate(self, x: float, y: float, /) -> None: ...
 
 
-class QCanvasPainterFactory(Shiboken.Object):
+class QCanvasPainterFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -649,7 +649,7 @@ class QCanvasPainterWidget(PySide6.QtWidgets.QRhiWidget):
     def setSharedPainter(self, enable: bool, /) -> None: ...
 
 
-class QCanvasPath(Shiboken.Object):
+class QCanvasPath(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -753,7 +753,7 @@ class QCanvasRadialGradient(PySide6.QtCanvasPainter.QCanvasGradient):
     def setOuterRadius(self, radius: float, /) -> None: ...
 
 
-class QCanvasRhiPaintDriver(Shiboken.Object):
+class QCanvasRhiPaintDriver(shiboken6.Shiboken.Object):
 
     class BeginPaintFlag(enum.Flag):
 

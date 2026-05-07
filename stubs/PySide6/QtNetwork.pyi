@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QAbstractNetworkCache(PySide6.QtCore.QObject):
@@ -176,7 +176,7 @@ class QAbstractSocket(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QAuthenticator(Shiboken.Object):
+class QAuthenticator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -199,7 +199,7 @@ class QAuthenticator(Shiboken.Object):
     def user(self, /) -> str: ...
 
 
-class QDnsDomainNameRecord(Shiboken.Object):
+class QDnsDomainNameRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -213,7 +213,7 @@ class QDnsDomainNameRecord(Shiboken.Object):
     def value(self, /) -> str: ...
 
 
-class QDnsHostAddressRecord(Shiboken.Object):
+class QDnsHostAddressRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -315,7 +315,7 @@ class QDnsLookup(PySide6.QtCore.QObject):
     def type(self, /) -> PySide6.QtNetwork.QDnsLookup.Type: ...
 
 
-class QDnsMailExchangeRecord(Shiboken.Object):
+class QDnsMailExchangeRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -330,7 +330,7 @@ class QDnsMailExchangeRecord(Shiboken.Object):
     def timeToLive(self, /) -> int: ...
 
 
-class QDnsServiceRecord(Shiboken.Object):
+class QDnsServiceRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -347,7 +347,7 @@ class QDnsServiceRecord(Shiboken.Object):
     def weight(self, /) -> int: ...
 
 
-class QDnsTextRecord(Shiboken.Object):
+class QDnsTextRecord(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -361,7 +361,7 @@ class QDnsTextRecord(Shiboken.Object):
     def values(self, /) -> typing.List[PySide6.QtCore.QByteArray]: ...
 
 
-class QDnsTlsAssociationRecord(Shiboken.Object):
+class QDnsTlsAssociationRecord(shiboken6.Shiboken.Object):
 
     class CertificateUsage(enum.Enum):
 
@@ -455,7 +455,7 @@ class QDtls(PySide6.QtCore.QObject):
 
 class QDtlsClientVerifier(PySide6.QtCore.QObject):
 
-    class GeneratorParameters(Shiboken.Object):
+    class GeneratorParameters(shiboken6.Shiboken.Object):
 
         hash                      = ...  # type: PySide6.QtCore.QCryptographicHash.Algorithm
         secret                    = ...  # type: PySide6.QtCore.QByteArray
@@ -493,7 +493,7 @@ class QDtlsError(enum.Enum):
     TlsNonFatalError          = 0x8
 
 
-class QFormDataBuilder(Shiboken.Object):
+class QFormDataBuilder(shiboken6.Shiboken.Object):
 
     class Option(enum.Flag):
 
@@ -510,7 +510,7 @@ class QFormDataBuilder(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QFormDataBuilder, /) -> None: ...
 
 
-class QFormDataPartBuilder(Shiboken.Object):
+class QFormDataPartBuilder(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -520,7 +520,7 @@ class QFormDataPartBuilder(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QFormDataPartBuilder, /) -> None: ...
 
 
-class QHostAddress(Shiboken.Object):
+class QHostAddress(shiboken6.Shiboken.Object):
 
     UnknownNetworkLayerProtocol = -1
     IPv4Protocol              = 0x0
@@ -607,7 +607,7 @@ class QHostAddress(Shiboken.Object):
     def toString(self, /) -> str: ...
 
 
-class QHostInfo(Shiboken.Object):
+class QHostInfo(shiboken6.Shiboken.Object):
 
     class HostInfoError(enum.Enum):
 
@@ -648,7 +648,7 @@ class QHostInfo(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QHostInfo | int, /) -> None: ...
 
 
-class QHstsPolicy(Shiboken.Object):
+class QHstsPolicy(shiboken6.Shiboken.Object):
 
     class PolicyFlag(enum.Flag):
 
@@ -675,7 +675,7 @@ class QHstsPolicy(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QHstsPolicy, /) -> None: ...
 
 
-class QHttp1Configuration(Shiboken.Object):
+class QHttp1Configuration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -691,7 +691,7 @@ class QHttp1Configuration(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QHttp1Configuration, /) -> None: ...
 
 
-class QHttp2Configuration(Shiboken.Object):
+class QHttp2Configuration(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -716,7 +716,7 @@ class QHttp2Configuration(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QHttp2Configuration, /) -> None: ...
 
 
-class QHttpHeaders(Shiboken.Object):
+class QHttpHeaders(shiboken6.Shiboken.Object):
 
     class WellKnownHeader(enum.Enum):
 
@@ -987,7 +987,7 @@ class QHttpMultiPart(PySide6.QtCore.QObject):
     def setContentType(self, contentType: PySide6.QtNetwork.QHttpMultiPart.ContentType, /) -> None: ...
 
 
-class QHttpPart(Shiboken.Object):
+class QHttpPart(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1004,7 +1004,7 @@ class QHttpPart(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QHttpPart, /) -> None: ...
 
 
-class QIPv6Address(Shiboken.Object):
+class QIPv6Address(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1211,7 +1211,7 @@ class QNetworkAccessManager(PySide6.QtCore.QObject):
     def transferTimeoutAsDuration(self, /) -> int: ...
 
 
-class QNetworkAddressEntry(Shiboken.Object):
+class QNetworkAddressEntry(shiboken6.Shiboken.Object):
 
     class DnsEligibilityStatus(enum.Enum):
 
@@ -1249,7 +1249,7 @@ class QNetworkAddressEntry(Shiboken.Object):
     def validityLifetime(self, /) -> PySide6.QtCore.QDeadlineTimer: ...
 
 
-class QNetworkCacheMetaData(Shiboken.Object):
+class QNetworkCacheMetaData(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1279,7 +1279,7 @@ class QNetworkCacheMetaData(Shiboken.Object):
     def url(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QNetworkCookie(Shiboken.Object):
+class QNetworkCookie(shiboken6.Shiboken.Object):
 
     class RawForm(enum.Enum):
 
@@ -1342,7 +1342,7 @@ class QNetworkCookieJar(PySide6.QtCore.QObject):
     def validateCookie(self, cookie: PySide6.QtNetwork.QNetworkCookie, url: PySide6.QtCore.QUrl | str, /) -> bool: ...
 
 
-class QNetworkDatagram(Shiboken.Object):
+class QNetworkDatagram(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1447,7 +1447,7 @@ class QNetworkInformation(PySide6.QtCore.QObject):
     def transportMedium(self, /) -> PySide6.QtNetwork.QNetworkInformation.TransportMedium: ...
 
 
-class QNetworkInterface(Shiboken.Object):
+class QNetworkInterface(shiboken6.Shiboken.Object):
 
     class InterfaceFlag(enum.Flag):
 
@@ -1508,7 +1508,7 @@ class QNetworkInterface(Shiboken.Object):
     def type(self, /) -> PySide6.QtNetwork.QNetworkInterface.InterfaceType: ...
 
 
-class QNetworkProxy(Shiboken.Object):
+class QNetworkProxy(shiboken6.Shiboken.Object):
 
     class Capability(enum.Flag):
 
@@ -1570,7 +1570,7 @@ class QNetworkProxy(Shiboken.Object):
     def user(self, /) -> str: ...
 
 
-class QNetworkProxyFactory(Shiboken.Object):
+class QNetworkProxyFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -1587,7 +1587,7 @@ class QNetworkProxyFactory(Shiboken.Object):
     def usesSystemConfiguration() -> bool: ...
 
 
-class QNetworkProxyQuery(Shiboken.Object):
+class QNetworkProxyQuery(shiboken6.Shiboken.Object):
 
     class QueryType(enum.Enum):
 
@@ -1725,7 +1725,7 @@ class QNetworkReply(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, len: int, /) -> int: ...
 
 
-class QNetworkRequest(Shiboken.Object):
+class QNetworkRequest(shiboken6.Shiboken.Object):
 
     class Attribute(enum.Enum):
 
@@ -1859,7 +1859,7 @@ class QNetworkRequest(Shiboken.Object):
     def url(self, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QNetworkRequestFactory(Shiboken.Object):
+class QNetworkRequestFactory(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1917,7 +1917,7 @@ class QOcspCertificateStatus(enum.Enum):
     Unknown                   = 0x2
 
 
-class QOcspResponse(Shiboken.Object):
+class QOcspResponse(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1948,7 +1948,7 @@ class QOcspRevocationReason(enum.Enum):
     RemoveFromCRL             = 0x7
 
 
-class QPasswordDigestor(Shiboken.Object):
+class QPasswordDigestor(shiboken6.Shiboken.Object):
     @staticmethod
     def deriveKeyPbkdf1(algorithm: PySide6.QtCore.QCryptographicHash.Algorithm, password: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, salt: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, iterations: int, dkLen: int, /) -> PySide6.QtCore.QByteArray: ...
     @staticmethod
@@ -2054,7 +2054,7 @@ class QRestAccessManager(PySide6.QtCore.QObject):
     def sendCustomRequest(self, request: PySide6.QtNetwork.QNetworkRequest, method: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, data: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview, context: PySide6.QtCore.QObject, slot: collections.abc.Callable[..., typing.Any], /) -> PySide6.QtNetwork.QNetworkReply: ...
 
 
-class QRestReply(Shiboken.Object):
+class QRestReply(shiboken6.Shiboken.Object):
 
     def __init__(self, reply: PySide6.QtNetwork.QNetworkReply, /) -> None: ...
 
@@ -2071,7 +2071,7 @@ class QRestReply(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QRestReply, /) -> None: ...
 
 
-class QSsl(Shiboken.Object):
+class QSsl(shiboken6.Shiboken.Object):
 
     class AlertLevel(enum.Enum):
 
@@ -2191,7 +2191,7 @@ class QSsl(Shiboken.Object):
         Alerts                    = 0x6
 
 
-class QSslCertificate(Shiboken.Object):
+class QSslCertificate(shiboken6.Shiboken.Object):
 
     class PatternSyntax(enum.Enum):
 
@@ -2267,7 +2267,7 @@ class QSslCertificate(Shiboken.Object):
     def version(self, /) -> PySide6.QtCore.QByteArray: ...
 
 
-class QSslCertificateExtension(Shiboken.Object):
+class QSslCertificateExtension(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2283,7 +2283,7 @@ class QSslCertificateExtension(Shiboken.Object):
     def value(self, /) -> typing.Any: ...
 
 
-class QSslCipher(Shiboken.Object):
+class QSslCipher(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2310,7 +2310,7 @@ class QSslCipher(Shiboken.Object):
     def usedBits(self, /) -> int: ...
 
 
-class QSslConfiguration(Shiboken.Object):
+class QSslConfiguration(shiboken6.Shiboken.Object):
 
     class NextProtocolNegotiationStatus(enum.Enum):
 
@@ -2400,7 +2400,7 @@ class QSslConfiguration(Shiboken.Object):
     def testSslOption(self, option: PySide6.QtNetwork.QSsl.SslOption, /) -> bool: ...
 
 
-class QSslDiffieHellmanParameters(Shiboken.Object):
+class QSslDiffieHellmanParameters(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -2434,7 +2434,7 @@ class QSslDiffieHellmanParameters(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QSslDiffieHellmanParameters, /) -> None: ...
 
 
-class QSslEllipticCurve(Shiboken.Object):
+class QSslEllipticCurve(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2456,7 +2456,7 @@ class QSslEllipticCurve(Shiboken.Object):
     def shortName(self, /) -> str: ...
 
 
-class QSslError(Shiboken.Object):
+class QSslError(shiboken6.Shiboken.Object):
 
     class SslError(enum.Enum):
 
@@ -2520,7 +2520,7 @@ class QSslError(Shiboken.Object):
     def swap(self, other: PySide6.QtNetwork.QSslError, /) -> None: ...
 
 
-class QSslKey(Shiboken.Object):
+class QSslKey(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2548,7 +2548,7 @@ class QSslKey(Shiboken.Object):
     def type(self, /) -> PySide6.QtNetwork.QSsl.KeyType: ...
 
 
-class QSslPreSharedKeyAuthenticator(Shiboken.Object):
+class QSslPreSharedKeyAuthenticator(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

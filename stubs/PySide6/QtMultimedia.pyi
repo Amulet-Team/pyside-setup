@@ -17,12 +17,12 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
-class QAbstractVideoBuffer(Shiboken.Object):
+class QAbstractVideoBuffer(shiboken6.Shiboken.Object):
 
-    class MapData(Shiboken.Object):
+    class MapData(shiboken6.Shiboken.Object):
 
         planeCount                = ...  # type: int
 
@@ -41,7 +41,7 @@ class QAbstractVideoBuffer(Shiboken.Object):
     def unmap(self, /) -> None: ...
 
 
-class QAudio(Shiboken.Object):
+class QAudio(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -70,7 +70,7 @@ class QAudio(Shiboken.Object):
     def convertVolume(volume: float, from_: PySide6.QtMultimedia.QAudio.VolumeScale, to: PySide6.QtMultimedia.QAudio.VolumeScale, /) -> float: ...
 
 
-class QAudioBuffer(Shiboken.Object):
+class QAudioBuffer(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -160,7 +160,7 @@ class QAudioDecoder(PySide6.QtCore.QObject):
     def stop(self, /) -> None: ...
 
 
-class QAudioDevice(Shiboken.Object):
+class QAudioDevice(shiboken6.Shiboken.Object):
 
     class Mode(enum.Enum):
 
@@ -193,7 +193,7 @@ class QAudioDevice(Shiboken.Object):
     def swap(self, other: PySide6.QtMultimedia.QAudioDevice, /) -> None: ...
 
 
-class QAudioFormat(Shiboken.Object):
+class QAudioFormat(shiboken6.Shiboken.Object):
 
     class AudioChannelPosition(enum.Enum):
 
@@ -545,7 +545,7 @@ class QCamera(PySide6.QtCore.QObject):
     def zoomTo(self, zoom: float, rate: float, /) -> None: ...
 
 
-class QCameraDevice(Shiboken.Object):
+class QCameraDevice(shiboken6.Shiboken.Object):
 
     class Position(enum.Enum):
 
@@ -573,7 +573,7 @@ class QCameraDevice(Shiboken.Object):
     def videoFormats(self, /) -> typing.List[PySide6.QtMultimedia.QCameraFormat]: ...
 
 
-class QCameraFormat(Shiboken.Object):
+class QCameraFormat(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtMultimedia.QCameraFormat, /, *, resolution: PySide6.QtCore.QSize | None = ..., pixelFormat: PySide6.QtMultimedia.QVideoFrameFormat.PixelFormat | None = ..., minFrameRate: float | None = ..., maxFrameRate: float | None = ...) -> None: ...
@@ -590,7 +590,7 @@ class QCameraFormat(Shiboken.Object):
     def resolution(self, /) -> PySide6.QtCore.QSize: ...
 
 
-class QCapturableWindow(Shiboken.Object):
+class QCapturableWindow(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, window: PySide6.QtGui.QWindow, /, *, description: str | None = ..., isValid: bool | None = ...) -> None: ...
@@ -742,7 +742,7 @@ class QMediaDevices(PySide6.QtCore.QObject):
     def videoInputs() -> typing.List[PySide6.QtMultimedia.QCameraDevice]: ...
 
 
-class QMediaFormat(Shiboken.Object):
+class QMediaFormat(shiboken6.Shiboken.Object):
 
     audio                     = ...  # type: PySide6.QtMultimedia.QMediaFormat.AudioCodec
     fmt                       = ...  # type: PySide6.QtMultimedia.QMediaFormat.FileFormat
@@ -844,7 +844,7 @@ class QMediaFormat(Shiboken.Object):
     def videoCodecName(codec: PySide6.QtMultimedia.QMediaFormat.VideoCodec, /) -> str: ...
 
 
-class QMediaMetaData(Shiboken.Object):
+class QMediaMetaData(shiboken6.Shiboken.Object):
 
     data                      = ...  # type: typing.Dict[PySide6.QtMultimedia.QMediaMetaData.Key, typing.Any]
 
@@ -1111,9 +1111,9 @@ class QMediaRecorder(PySide6.QtCore.QObject):
     def videoResolution(self, /) -> PySide6.QtCore.QSize: ...
 
 
-class QMediaTimeRange(Shiboken.Object):
+class QMediaTimeRange(shiboken6.Shiboken.Object):
 
-    class Interval(Shiboken.Object):
+    class Interval(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -1177,7 +1177,7 @@ class QMediaTimeRange(Shiboken.Object):
     def swap(self, other: PySide6.QtMultimedia.QMediaTimeRange | PySide6.QtMultimedia.QMediaTimeRange.Interval, /) -> None: ...
 
 
-class QPlaybackOptions(Shiboken.Object):
+class QPlaybackOptions(shiboken6.Shiboken.Object):
 
     class PlaybackIntent(enum.Enum):
 
@@ -1287,7 +1287,7 @@ class QSoundEffect(PySide6.QtCore.QObject):
     def volume(self, /) -> float: ...
 
 
-class QVideoFrame(Shiboken.Object):
+class QVideoFrame(shiboken6.Shiboken.Object):
 
     class HandleType(enum.Enum):
 
@@ -1301,7 +1301,7 @@ class QVideoFrame(Shiboken.Object):
         WriteOnly                 = 0x2
         ReadWrite                 = 0x3
 
-    class PaintOptions(Shiboken.Object):
+    class PaintOptions(shiboken6.Shiboken.Object):
 
         aspectRatioMode           = ...  # type: PySide6.QtCore.Qt.AspectRatioMode
         backgroundColor           = ...  # type: PySide6.QtGui.QColor
@@ -1379,7 +1379,7 @@ class QVideoFrame(Shiboken.Object):
     def width(self, /) -> int: ...
 
 
-class QVideoFrameFormat(Shiboken.Object):
+class QVideoFrameFormat(shiboken6.Shiboken.Object):
 
     class ColorRange(enum.Enum):
 
@@ -1600,7 +1600,7 @@ class QWindowCapture(PySide6.QtCore.QObject):
     def window(self, /) -> PySide6.QtMultimedia.QCapturableWindow: ...
 
 
-class QtAudio(Shiboken.Object):
+class QtAudio(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -1629,7 +1629,7 @@ class QtAudio(Shiboken.Object):
     def convertVolume(volume: float, from_: PySide6.QtMultimedia.QtAudio.VolumeScale, to: PySide6.QtMultimedia.QtAudio.VolumeScale, /) -> float: ...
 
 
-class QtVideo(Shiboken.Object):
+class QtVideo(shiboken6.Shiboken.Object):
 
     class Rotation(enum.Enum):
 

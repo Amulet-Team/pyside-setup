@@ -12,7 +12,7 @@ import PySide6.QtQuickControls2
 import PySide6.QtCore
 
 import typing
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -28,7 +28,7 @@ class QQuickAttachedPropertyPropagator(PySide6.QtCore.QObject):
     def initialize(self, /) -> None: ...
 
 
-class QQuickStyle(Shiboken.Object):
+class QQuickStyle(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 

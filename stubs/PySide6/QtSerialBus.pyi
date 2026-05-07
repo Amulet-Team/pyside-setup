@@ -16,7 +16,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QCanBus(PySide6.QtCore.QObject):
@@ -81,7 +81,7 @@ class QCanBusDevice(PySide6.QtCore.QObject):
         Output                    = 0x2
         AllDirections             = 0x3
 
-    class Filter(Shiboken.Object):
+    class Filter(shiboken6.Shiboken.Object):
 
         format                    = ...  # type: PySide6.QtSerialBus.QCanBusDevice.Filter.FormatFilter
         frameId                   = ...  # type: typing.Any
@@ -145,7 +145,7 @@ class QCanBusDevice(PySide6.QtCore.QObject):
     def writeFrame(self, frame: PySide6.QtSerialBus.QCanBusFrame | PySide6.QtSerialBus.QCanBusFrame.FrameType, /) -> bool: ...
 
 
-class QCanBusDeviceInfo(Shiboken.Object):
+class QCanBusDeviceInfo(shiboken6.Shiboken.Object):
 
     def __init__(self, other: PySide6.QtSerialBus.QCanBusDeviceInfo, /) -> None: ...
 
@@ -160,7 +160,7 @@ class QCanBusDeviceInfo(Shiboken.Object):
     def serialNumber(self, /) -> str: ...
 
 
-class QCanBusFactory(Shiboken.Object):
+class QCanBusFactory(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -168,7 +168,7 @@ class QCanBusFactory(Shiboken.Object):
     def createDevice(self, interfaceName: str, /) -> typing.Tuple[PySide6.QtSerialBus.QCanBusDevice, str]: ...
 
 
-class QCanBusFrame(Shiboken.Object):
+class QCanBusFrame(shiboken6.Shiboken.Object):
 
     class FrameError(enum.Flag):
 
@@ -193,7 +193,7 @@ class QCanBusFrame(Shiboken.Object):
         RemoteRequestFrame        = 0x3
         InvalidFrame              = 0x4
 
-    class TimeStamp(Shiboken.Object):
+    class TimeStamp(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, TimeStamp: PySide6.QtSerialBus.QCanBusFrame.TimeStamp, /) -> None: ...
@@ -241,7 +241,7 @@ class QCanBusFrame(Shiboken.Object):
     def toString(self, /) -> str: ...
 
 
-class QCanDbcFileParser(Shiboken.Object):
+class QCanDbcFileParser(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -266,7 +266,7 @@ class QCanDbcFileParser(Shiboken.Object):
     def warnings(self, /) -> typing.List[str]: ...
 
 
-class QCanFrameProcessor(Shiboken.Object):
+class QCanFrameProcessor(shiboken6.Shiboken.Object):
 
     class Error(enum.Enum):
 
@@ -276,7 +276,7 @@ class QCanFrameProcessor(Shiboken.Object):
         Decoding                  = 0x3
         Encoding                  = 0x4
 
-    class ParseResult(Shiboken.Object):
+    class ParseResult(shiboken6.Shiboken.Object):
 
         signalValues              = ...  # type: typing.Dict[str, typing.Any]
         uniqueId                  = ...  # type: PySide6.QtSerialBus.QtCanBus.UniqueId
@@ -304,7 +304,7 @@ class QCanFrameProcessor(Shiboken.Object):
     def warnings(self, /) -> typing.List[str]: ...
 
 
-class QCanMessageDescription(Shiboken.Object):
+class QCanMessageDescription(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -332,9 +332,9 @@ class QCanMessageDescription(Shiboken.Object):
     def uniqueId(self, /) -> PySide6.QtSerialBus.QtCanBus.UniqueId: ...
 
 
-class QCanSignalDescription(Shiboken.Object):
+class QCanSignalDescription(shiboken6.Shiboken.Object):
 
-    class MultiplexValueRange(Shiboken.Object):
+    class MultiplexValueRange(shiboken6.Shiboken.Object):
 
         maximum                   = ...  # type: typing.Any
         minimum                   = ...  # type: typing.Any
@@ -397,7 +397,7 @@ class QCanSignalDescription(Shiboken.Object):
     def swap(self, other: PySide6.QtSerialBus.QCanSignalDescription, /) -> None: ...
 
 
-class QCanUniqueIdDescription(Shiboken.Object):
+class QCanUniqueIdDescription(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -438,7 +438,7 @@ class QModbusClient(PySide6.QtSerialBus.QModbusDevice):
     def timeout(self, /) -> int: ...
 
 
-class QModbusDataUnit(Shiboken.Object):
+class QModbusDataUnit(shiboken6.Shiboken.Object):
 
     class RegisterType(enum.Enum):
 
@@ -531,7 +531,7 @@ class QModbusDevice(PySide6.QtCore.QObject):
     def state(self, /) -> PySide6.QtSerialBus.QModbusDevice.State: ...
 
 
-class QModbusDeviceIdentification(Shiboken.Object):
+class QModbusDeviceIdentification(shiboken6.Shiboken.Object):
 
     class ConformityLevel(enum.Enum):
 
@@ -594,7 +594,7 @@ class QModbusExceptionResponse(PySide6.QtSerialBus.QModbusResponse):
     def setFunctionCode(self, c: PySide6.QtSerialBus.QModbusPdu.FunctionCode, /) -> None: ...
 
 
-class QModbusPdu(Shiboken.Object):
+class QModbusPdu(shiboken6.Shiboken.Object):
 
     class ExceptionCode(enum.Enum):
 
@@ -791,7 +791,7 @@ class QModbusTcpClient(PySide6.QtSerialBus.QModbusClient):
     def open(self, /) -> bool: ...
 
 
-class QModbusTcpConnectionObserver(Shiboken.Object):
+class QModbusTcpConnectionObserver(shiboken6.Shiboken.Object):
 
     def __init__(self, /) -> None: ...
 
@@ -810,7 +810,7 @@ class QModbusTcpServer(PySide6.QtSerialBus.QModbusServer):
     def processRequest(self, request: PySide6.QtSerialBus.QModbusPdu, /) -> PySide6.QtSerialBus.QModbusResponse: ...
 
 
-class QtCanBus(Shiboken.Object):
+class QtCanBus(shiboken6.Shiboken.Object):
 
     class DataFormat(enum.Enum):
 

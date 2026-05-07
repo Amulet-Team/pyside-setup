@@ -14,7 +14,7 @@ import PySide6.QtCore
 import enum
 import typing
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
@@ -155,7 +155,7 @@ class QSerialPort(PySide6.QtCore.QIODevice):
     def writeData(self, data: bytes | bytearray | memoryview, maxSize: int, /) -> int: ...
 
 
-class QSerialPortInfo(Shiboken.Object):
+class QSerialPortInfo(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...

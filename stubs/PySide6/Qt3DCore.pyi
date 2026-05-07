@@ -16,13 +16,13 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class QIntList: ...
 
 
-class Qt3DCore(Shiboken.Object):
+class Qt3DCore(shiboken6.Shiboken.Object):
 
     class QAbstractAspect(PySide6.QtCore.QObject):
 
@@ -34,7 +34,7 @@ class Qt3DCore(Shiboken.Object):
         def scheduleSingleShotJob(self, job: PySide6.Qt3DCore.Qt3DCore.QAspectJobPtr, /) -> None: ...
         def unregisterBackendType(self, arg__1: PySide6.QtCore.QMetaObject, /) -> None: ...
 
-    class QAbstractFunctor(Shiboken.Object):
+    class QAbstractFunctor(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -83,7 +83,7 @@ class Qt3DCore(Shiboken.Object):
         @typing.overload
         def unregisterAspect(self, name: str, /) -> None: ...
 
-    class QAspectJob(Shiboken.Object):
+    class QAspectJob(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -91,7 +91,7 @@ class Qt3DCore(Shiboken.Object):
         def postFrame(self, aspectEngine: PySide6.Qt3DCore.Qt3DCore.QAspectEngine, /) -> None: ...
         def run(self, /) -> None: ...
 
-    class QAspectJobPtr(Shiboken.Object):
+    class QAspectJobPtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -184,7 +184,7 @@ class Qt3DCore(Shiboken.Object):
         def vertexBaseType(self, /) -> PySide6.Qt3DCore.Qt3DCore.QAttribute.VertexBaseType: ...
         def vertexSize(self, /) -> int: ...
 
-    class QBackendNode(Shiboken.Object):
+    class QBackendNode(shiboken6.Shiboken.Object):
 
         class Mode(enum.Enum):
 
@@ -200,7 +200,7 @@ class Qt3DCore(Shiboken.Object):
         def setEnabled(self, enabled: bool, /) -> None: ...
         def syncFromFrontEnd(self, frontEnd: PySide6.Qt3DCore.Qt3DCore.QNode, firstTime: bool, /) -> None: ...
 
-    class QBackendNodeMapper(Shiboken.Object):
+    class QBackendNodeMapper(shiboken6.Shiboken.Object):
 
         def __init__(self, /) -> None: ...
 
@@ -208,7 +208,7 @@ class Qt3DCore(Shiboken.Object):
         def destroy(self, id: PySide6.Qt3DCore.Qt3DCore.QNodeId, /) -> None: ...
         def get(self, id: PySide6.Qt3DCore.Qt3DCore.QNodeId, /) -> PySide6.Qt3DCore.Qt3DCore.QBackendNode: ...
 
-    class QBackendNodeMapperPtr(Shiboken.Object):
+    class QBackendNodeMapperPtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -318,7 +318,7 @@ class Qt3DCore(Shiboken.Object):
         def parentEntity(self, /) -> PySide6.Qt3DCore.Qt3DCore.QEntity: ...
         def removeComponent(self, comp: PySide6.Qt3DCore.Qt3DCore.QComponent, /) -> None: ...
 
-    class QEntityPtr(Shiboken.Object):
+    class QEntityPtr(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -456,7 +456,7 @@ class Qt3DCore(Shiboken.Object):
         def setEnabled(self, isEnabled: bool, /) -> None: ...
         def setParent(self, parent: PySide6.Qt3DCore.Qt3DCore.QNode, /) -> None: ...
 
-    class QNodeId(Shiboken.Object):
+    class QNodeId(shiboken6.Shiboken.Object):
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -474,7 +474,7 @@ class Qt3DCore(Shiboken.Object):
         def id(self, /) -> int: ...
         def isNull(self, /) -> bool: ...
 
-    class QNodeIdTypePair(Shiboken.Object):
+    class QNodeIdTypePair(shiboken6.Shiboken.Object):
 
         id                        = ...  # type: PySide6.Qt3DCore.Qt3DCore.QNodeId
         type                      = ...  # type: PySide6.QtCore.QMetaObject

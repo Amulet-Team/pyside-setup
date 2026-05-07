@@ -19,7 +19,7 @@ import enum
 import typing
 import collections.abc
 from PySide6.QtCore import Signal
-from shiboken6 import Shiboken
+import shiboken6
 
 
 class Q3DScene(PySide6.QtCore.QObject):
@@ -473,7 +473,7 @@ class QBarCategoryAxis(PySide6.QtGraphs.QAbstractAxis):
     def type(self, /) -> PySide6.QtGraphs.QAbstractAxis.AxisType: ...
 
 
-class QBarDataItem(Shiboken.Object):
+class QBarDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -961,7 +961,7 @@ class QDateTimeAxis(PySide6.QtGraphs.QAbstractAxis):
     def zoom(self, /) -> float: ...
 
 
-class QGraphsLine(Shiboken.Object):
+class QGraphsLine(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, other: PySide6.QtGraphs.QGraphsLine, /, *, mainColor: PySide6.QtGui.QColor | None = ..., subColor: PySide6.QtGui.QColor | None = ..., mainWidth: float | None = ..., subWidth: float | None = ..., labelTextColor: PySide6.QtGui.QColor | None = ...) -> None: ...
@@ -1119,7 +1119,7 @@ class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
     def themeDirty(self, /) -> bool: ...
 
 
-class QGraphsThemeDirtyBitField(Shiboken.Object):
+class QGraphsThemeDirtyBitField(shiboken6.Shiboken.Object):
 
     axisXDirty                = ...  # type: bool
     axisYDirty                = ...  # type: bool
@@ -1449,7 +1449,7 @@ class QItemModelSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
     def zPosRoleReplace(self, /) -> str: ...
 
 
-class QLegendData(Shiboken.Object):
+class QLegendData(shiboken6.Shiboken.Object):
 
     borderColor               = ...  # type: PySide6.QtGui.QColor
     color                     = ...  # type: PySide6.QtGui.QColor
@@ -1777,7 +1777,7 @@ class QScatter3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
     def setSelectedItem(self, index: int, /) -> None: ...
 
 
-class QScatterDataItem(Shiboken.Object):
+class QScatterDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1957,7 +1957,7 @@ class QSurface3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
     def wireframeColor(self, /) -> PySide6.QtGui.QColor: ...
 
 
-class QSurfaceDataItem(Shiboken.Object):
+class QSurfaceDataItem(shiboken6.Shiboken.Object):
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -2226,7 +2226,7 @@ class QXYSeries(PySide6.QtGraphs.QAbstractSeries):
     def toggleSelection(self, indexes: collections.abc.Sequence[int], /) -> None: ...
 
 
-class QtGraphs3D(Shiboken.Object):
+class QtGraphs3D(shiboken6.Shiboken.Object):
 
     class CameraPreset(enum.Enum):
 
