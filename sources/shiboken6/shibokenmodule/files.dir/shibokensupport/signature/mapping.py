@@ -154,6 +154,13 @@ class ArrayLikeVariable(_Parameterized):
     pass
 
 
+class AsymmetricType:
+    """A type with a different type hint when converting from and to Python."""
+    def __init__(self, arg_type, return_type):
+        self.arg_type = arg_type
+        self.return_type = return_type
+
+
 StringList = ArrayLikeVariable(str)
 
 

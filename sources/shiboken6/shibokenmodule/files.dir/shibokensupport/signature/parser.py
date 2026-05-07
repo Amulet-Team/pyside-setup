@@ -14,8 +14,9 @@ import collections.abc
 import abc
 
 from types import SimpleNamespace
+import shiboken6
 from shibokensupport.signature.mapping import (type_map, type_map_tuple, update_mapping,
-    namespace, _NotCalled, ResultVariable, ArrayLikeVariable, pyside_modules)  # noqa E:128
+    namespace, _NotCalled, ResultVariable, ArrayLikeVariable, AsymmetricType, pyside_modules)  # noqa E:128
 from shibokensupport.signature.lib.tool import build_brace_pattern
 from shibokensupport.signature import make_snake_case_name
 
@@ -414,6 +415,8 @@ def handle_argvar(obj):
     Currently, the best approximation is types.Sequence.
     We want to change that to types.Iterable in the near future.
     """
+    if isinstance(obj, AsymmetricType):
+        obj = obj.arg_type
     return _handle_generic(obj, collections.abc.Sequence)
 
 
@@ -423,6 +426,8 @@ def handle_retvar(obj):
 
     This will probably stay typing.List forever.
     """
+    if isinstance(obj, AsymmetricType):
+        obj = obj.return_type
     return _handle_generic(obj, typing.List)
 
 
@@ -481,6 +486,9 @@ def calculate_props(line):
 
 def fix_variables(props, line):
     annos = props.annotations
+    for name, ann in annos.items():
+        if isinstance(ann, AsymmetricType):
+            annos[name] = ann.return_type if name == "return" else ann.arg_type
     if not any(isinstance(ann, (ResultVariable, ArrayLikeVariable))
                for ann in annos.values()):
         return
