@@ -324,7 +324,6 @@ type_map.update({
     "unsigned short int": int,  # 5.6, RHEL 6.6
     "unsigned short": int,
     "ushort": int,
-    "void": int,  # be more specific?
     "WId": WId,
     # This can be refined by importing numpy.typing optionally, but better than nothing.
     "numpy.ndarray": typing.List[typing.Any],
@@ -498,6 +497,8 @@ def init_PySide6_QtCore():
     from PySide6.QtCore import Qt, QUrl, QDir, QByteArray
     from PySide6.QtCore import QRect, QRectF, QSize, QPoint
     from PySide6.QtCore import QMarginsF  # 5.9
+    import shiboken6
+    import collections.abc
 
     type_map.update({
         "' '": " ",
@@ -553,7 +554,11 @@ def init_PySide6_QtCore():
         "QVariantMap": typing.Dict[str, Variant],
         "std.chrono.seconds{5}" : ellipsis,
         "Internal.defaultTryTimeout": 5000,
-        "static_cast<int>(Internal.defaultTryTimeout.count())": 5000
+        "static_cast<int>(Internal.defaultTryTimeout.count())": 5000,
+        "void": AsymmetricType(
+            typing.Union[shiboken6.VoidPtr, shiboken6.Object, collections.abc.Buffer] if sys.version_info >= (3, 12) else typing.Union[shiboken6.VoidPtr, shiboken6.Object],
+            typing.Union[shiboken6.VoidPtr, None],
+        ),
     })
     from shibokensupport.signature.parser import using_snake_case
     if using_snake_case():
