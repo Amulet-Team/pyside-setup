@@ -526,7 +526,14 @@ def init_PySide6_QtCore():
             PySide6.QtCore.QUrl.ComponentFormattingOption,  # mismatch option/enum, why???
         "PyUnicode": typing.Text,
         "QByteArray": typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray, memoryview],
-        "QByteArrayView": PySide6.QtCore.QByteArray,
+        "QByteArrayView": AsymmetricType(
+            typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray],
+            PySide6.QtCore.QByteArray
+        ),
+        "PySide6.QtCore.QByteArray": AsymmetricType(
+            typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray],
+            PySide6.QtCore.QByteArray
+        ),
         "Q_NULLPTR": None,
         "QCalendar.Unspecified": PySide6.QtCore.QCalendar.Unspecified,
         "QCborTag(-1)": ulong_max,
