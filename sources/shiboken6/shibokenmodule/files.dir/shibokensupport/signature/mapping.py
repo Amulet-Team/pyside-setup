@@ -356,7 +356,7 @@ type_map.update({
 
 type_map.update({
     # Special cases:
-    "char*"         : typing.Union[bytes, bytearray, memoryview],
+    "char*"         : str,
     "QChar*"        : typing.Union[bytes, bytearray, memoryview],
     "quint32*"      : int,        # only for QRandomGenerator
     "quint8*"       : bytearray,  # only for QCborStreamReader and QCborValue
