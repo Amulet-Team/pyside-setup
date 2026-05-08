@@ -481,6 +481,9 @@ def calculate_props(line):
     props.fullname = funcname
     props.multi = parsed.multi
     fix_variables(props, line)
+
+    if shortname == "__copy__" and annotations.get("return", None) is typing._Self:
+        annotations["return"] = eval(funcname.split(".__copy__")[0], globals(), namespace)
     return vars(props)
 
 
