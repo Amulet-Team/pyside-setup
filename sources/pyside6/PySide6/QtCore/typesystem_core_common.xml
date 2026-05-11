@@ -2164,6 +2164,7 @@
     <inject-code class="target" position="end" file="../glue/qtcore.cpp" snippet="qbytearray-py3"/>
 
    <modify-function signature="data()">
+       <modify-argument index="return" pyi-type="bytes"/>
        <inject-code class="target" position="beginning" file="../glue/qtcore.cpp" snippet="qbytearray-data"/>
    </modify-function>
 
