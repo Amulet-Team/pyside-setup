@@ -2177,8 +2177,10 @@
     <!--### Functions removed because they return STL-like iterators -->
     <modify-function signature="begin()" remove="all"/>
     <modify-function signature="begin()const" remove="all"/>
+    <modify-function signature="cbegin()const" remove="all"/>
     <modify-function signature="constBegin()const" remove="all"/>
     <modify-function signature="constData()const" remove="all"/>
+    <modify-function signature="cend()const" remove="all"/>
     <modify-function signature="constEnd()const" remove="all"/>
     <modify-function signature="end()" remove="all"/>
     <modify-function signature="end()const" remove="all"/>
