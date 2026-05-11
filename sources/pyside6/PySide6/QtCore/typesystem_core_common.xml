@@ -2159,12 +2159,6 @@
             </insert-template>
         </inject-code>
     </add-function>
-    <add-function signature="QByteArray(PyByteArray@data@)">
-         <inject-code class="target" position="beginning" file="../glue/qtcore.cpp" snippet="qbytearray-2"/>
-    </add-function>
-    <add-function signature="QByteArray(PyBytes@data@)">
-        <inject-code class="target" position="beginning" file="../glue/qtcore.cpp" snippet="qbytearray-3"/>
-    </add-function>
     <!-- buffer protocol -->
     <inject-code class="native" position="beginning" file="../glue/qtcore.cpp" snippet="qbytearray-bufferprotocol"/>
     <inject-code class="target" position="end" file="../glue/qtcore.cpp" snippet="qbytearray-py3"/>
