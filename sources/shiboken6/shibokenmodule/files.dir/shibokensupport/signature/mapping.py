@@ -796,6 +796,7 @@ missing_optional_return = {
     "PySide6.QtWidgets.QListWidget.itemAt",
     "PySide6.QtWidgets.QScrollArea.widget",
     "PySide6.QtWidgets.QSplitter.widget",
+    "PySide6.QtWidgets.QSplitter.replaceWidget",
     "PySide6.QtWidgets.QStackedLayout.itemAt",
     "PySide6.QtWidgets.QStackedLayout.takeAt",
     "PySide6.QtWidgets.QStackedLayout.widget",
