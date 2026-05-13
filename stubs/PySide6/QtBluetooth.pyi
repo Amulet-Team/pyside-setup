@@ -1096,8 +1096,14 @@ class QLowEnergyAdvertisingParameters(shiboken6.Shiboken.Object):
 
     class AddressInfo(shiboken6.Shiboken.Object):
 
-        address                   = ...  # type: PySide6.QtBluetooth.QBluetoothAddress
-        type                      = ...  # type: PySide6.QtBluetooth.QLowEnergyController.RemoteAddressType
+        @property
+        def address(self) -> PySide6.QtBluetooth.QBluetoothAddress: ...
+        @address.setter
+        def address(self, address: PySide6.QtBluetooth.QBluetoothAddress) -> None: ...
+        @property
+        def type(self) -> PySide6.QtBluetooth.QLowEnergyController.RemoteAddressType: ...
+        @type.setter
+        def type(self, type: PySide6.QtBluetooth.QLowEnergyController.RemoteAddressType) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...

@@ -83,10 +83,22 @@ class QCanBusDevice(PySide6.QtCore.QObject):
 
     class Filter(shiboken6.Shiboken.Object):
 
-        format                    = ...  # type: PySide6.QtSerialBus.QCanBusDevice.Filter.FormatFilter
-        frameId                   = ...  # type: typing.Any
-        frameIdMask               = ...  # type: typing.Any
-        type                      = ...  # type: PySide6.QtSerialBus.QCanBusFrame.FrameType
+        @property
+        def format(self) -> PySide6.QtSerialBus.QCanBusDevice.Filter.FormatFilter: ...
+        @format.setter
+        def format(self, format: PySide6.QtSerialBus.QCanBusDevice.Filter.FormatFilter) -> None: ...
+        @property
+        def frameId(self) -> typing.Any: ...
+        @frameId.setter
+        def frameId(self, frameId: typing.Any) -> None: ...
+        @property
+        def frameIdMask(self) -> typing.Any: ...
+        @frameIdMask.setter
+        def frameIdMask(self, frameIdMask: typing.Any) -> None: ...
+        @property
+        def type(self) -> PySide6.QtSerialBus.QCanBusFrame.FrameType: ...
+        @type.setter
+        def type(self, type: PySide6.QtSerialBus.QCanBusFrame.FrameType) -> None: ...
 
         class FormatFilter(enum.Flag):
 
@@ -278,8 +290,14 @@ class QCanFrameProcessor(shiboken6.Shiboken.Object):
 
     class ParseResult(shiboken6.Shiboken.Object):
 
-        signalValues              = ...  # type: typing.Dict[str, typing.Any]
-        uniqueId                  = ...  # type: PySide6.QtSerialBus.QtCanBus.UniqueId
+        @property
+        def signalValues(self) -> typing.Dict[str, typing.Any]: ...
+        @signalValues.setter
+        def signalValues(self, signalValues: typing.Dict[str, typing.Any]) -> None: ...
+        @property
+        def uniqueId(self) -> PySide6.QtSerialBus.QtCanBus.UniqueId: ...
+        @uniqueId.setter
+        def uniqueId(self, uniqueId: PySide6.QtSerialBus.QtCanBus.UniqueId) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -336,8 +354,14 @@ class QCanSignalDescription(shiboken6.Shiboken.Object):
 
     class MultiplexValueRange(shiboken6.Shiboken.Object):
 
-        maximum                   = ...  # type: typing.Any
-        minimum                   = ...  # type: typing.Any
+        @property
+        def maximum(self) -> typing.Any: ...
+        @maximum.setter
+        def maximum(self, maximum: typing.Any) -> None: ...
+        @property
+        def minimum(self) -> typing.Any: ...
+        @minimum.setter
+        def minimum(self, minimum: typing.Any) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...

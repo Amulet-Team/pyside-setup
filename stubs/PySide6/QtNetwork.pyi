@@ -457,8 +457,14 @@ class QDtlsClientVerifier(PySide6.QtCore.QObject):
 
     class GeneratorParameters(shiboken6.Shiboken.Object):
 
-        hash                      = ...  # type: PySide6.QtCore.QCryptographicHash.Algorithm
-        secret                    = ...  # type: PySide6.QtCore.QByteArray
+        @property
+        def hash(self) -> PySide6.QtCore.QCryptographicHash.Algorithm: ...
+        @hash.setter
+        def hash(self, hash: PySide6.QtCore.QCryptographicHash.Algorithm) -> None: ...
+        @property
+        def secret(self) -> PySide6.QtCore.QByteArray: ...
+        @secret.setter
+        def secret(self, secret: PySide6.QtCore.QByteArray) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
