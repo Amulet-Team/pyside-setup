@@ -46,10 +46,22 @@ static PyObject *slotCall(PyObject *, PyObject *, PyObject *);
 
 // Class Definition -----------------------------------------------
 
+static PyObject *slotClassGetItem(PyObject *self, PyObject * /* args */)
+{
+    Py_INCREF(self);
+    return self;
+}
+
+static PyMethodDef Slot_methods[] = {
+    {"__class_getitem__", slotClassGetItem, METH_O | METH_CLASS, nullptr},
+    {nullptr, nullptr, 0, nullptr}  /* Sentinel */
+};
+
 static PyTypeObject *createSlotType()
 {
     PyType_Slot PySideSlotType_slots[] = {
         {Py_tp_call, reinterpret_cast<void *>(slotCall)},
+        {Py_tp_methods, reinterpret_cast<void *>(Slot_methods)},
         {Py_tp_init, reinterpret_cast<void *>(slotTpInit)},
         {Py_tp_new, reinterpret_cast<void *>(PyType_GenericNew)},
         {Py_tp_dealloc, reinterpret_cast<void *>(Sbk_object_dealloc)},
@@ -173,8 +185,6 @@ DataList *dataListFromCapsule(PyObject *capsule)
 }
 
 static const char *Slot_SignatureStrings[] = {
-    "PySide6.QtCore.Slot(self,*types:typing.Union[type,str],name:str=nullptr,result:typing.Union[type,str]=nullptr)",
-    "PySide6.QtCore.Slot.__call__(self,function:_SlotFunc)->_SlotFunc",
     nullptr}; // Sentinel
 
 void init(PyObject *module)

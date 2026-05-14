@@ -146,6 +146,12 @@ namespace PySide::Signal {
 extern "C"
 {
 
+static PyObject *signalClassGetItem(PyObject *self, PyObject * /* args */)
+{
+    Py_INCREF(self);
+    return self;
+}
+
 // Signal methods
 static int signalTpInit(PyObject *, PyObject *, PyObject *);
 static void signalFree(void *);
@@ -202,6 +208,11 @@ static PyTypeObject *PySideMetaSignal_TypeF()
     return type;
 }
 
+static PyMethodDef Signal_methods[] = {
+    {"__class_getitem__", signalClassGetItem, METH_O | METH_CLASS, nullptr},
+    {nullptr, nullptr, 0, nullptr}  /* Sentinel */
+};
+
 static PyTypeObject *createSignalType()
 {
     PyType_Slot PySideSignalType_slots[] = {
@@ -209,6 +220,7 @@ static PyTypeObject *createSignalType()
         {Py_tp_getattro,    reinterpret_cast<void *>(signalGetAttr)},
         {Py_tp_descr_get,   reinterpret_cast<void *>(signalDescrGet)},
         {Py_tp_call,        reinterpret_cast<void *>(signalCall)},
+        {Py_tp_methods,     reinterpret_cast<void *>(Signal_methods)},
         {Py_tp_str,         reinterpret_cast<void *>(signalToString)},
         {Py_tp_init,        reinterpret_cast<void *>(signalTpInit)},
         {Py_tp_new,         reinterpret_cast<void *>(PyType_GenericNew)},
@@ -248,6 +260,7 @@ static PyMethodDef SignalInstance_methods[] = {
                 METH_VARARGS|METH_KEYWORDS, nullptr},
     {"disconnect", signalInstanceDisconnect, METH_VARARGS, nullptr},
     {"emit", signalInstanceEmit, METH_VARARGS, nullptr},
+    {"__class_getitem__", signalClassGetItem, METH_O | METH_CLASS, nullptr},
     {nullptr, nullptr, 0, nullptr}  /* Sentinel */
 };
 
@@ -891,19 +904,9 @@ static const char *MetaSignal_SignatureStrings[] = {
     nullptr}; // Sentinel
 
 static const char *Signal_SignatureStrings[] = {
-    "PySide6.QtCore.Signal(self,*types:type,name:str=nullptr,arguments:typing.List[str]=nullptr)",
-    "1:PySide6.QtCore.Signal.__get__(self,instance:None,owner:Optional[typing.Any])->"
-        "PySide6.QtCore.Signal",
-    "0:PySide6.QtCore.Signal.__get__(self,instance:PySide6.QtCore.QObject,"
-        "owner:Optional[typing.Any])->PySide6.QtCore.SignalInstance",
     nullptr}; // Sentinel
 
 static const char *SignalInstance_SignatureStrings[] = {
-    "PySide6.QtCore.SignalInstance.connect(self,slot:object,"
-        "type:PySide6.QtCore.Qt.ConnectionType=PySide6.QtCore.Qt.ConnectionType.AutoConnection)"
-        "->PySide6.QtCore.QMetaObject.Connection",
-    "PySide6.QtCore.SignalInstance.disconnect(self,slot:object=nullptr)->bool",
-    "PySide6.QtCore.SignalInstance.emit(self,*args:typing.Any)",
     nullptr}; // Sentinel
 
 void init(PyObject *module)

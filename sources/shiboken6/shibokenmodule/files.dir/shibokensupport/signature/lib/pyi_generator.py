@@ -65,6 +65,65 @@ TYPE_MAP = {
 }
 
 
+def get_signal_constructors() -> str:
+    def get_stub(arg_count: int) -> str:
+        if arg_count >= 0:
+            if arg_count >= 1:
+                arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
+            else:
+                arg_params = "()"
+            self_hint = f": PySide6.QtCore.Signal[{arg_params}]"
+            args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
+        else:
+            self_hint = ""
+            args = "*types: type, "
+        return f"""\
+@typing.overload
+def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...
+"""
+
+    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
+
+
+def get_slot_constructors() -> str:
+    def get_stub(arg_count: int) -> str:
+        if arg_count >= 0:
+            arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
+            self_hint = f": PySide6.QtCore.Slot[[{arg_params}], R]"
+            args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
+        else:
+            self_hint = ""
+            args = "*types: type | str, "
+        return f"""\
+@typing.overload
+def __init__(self{self_hint}, /, {args}name: str = "", result: type[R] | str | None = None, tag: str = "") -> None: ...
+"""
+
+    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
+
+
+StubOverrides: dict[tuple[str, str], tuple[str, str]] = {
+    ("PySide6.QtCore", "Signal"): ("class Signal(typing.Generic[*Ts]):", f"""\
+{get_signal_constructors()}\
+
+@typing.overload
+def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[*Ts]: ...
+@typing.overload
+def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[*Ts]: ...
+"""),
+    ("PySide6.QtCore", "SignalInstance"): ("class SignalInstance(typing.Generic[*Ts]):", """\
+def connect(self, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any], /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...
+def disconnect(self, /, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any] | None = None) -> bool: ...
+def emit(self, /, *args: *Ts) -> None: ...
+"""),
+    ("PySide6.QtCore", "Slot"): ("class Slot(typing.Generic[P, R]):", f"""\
+{get_slot_constructors()}\
+
+def __call__(self, function: typing.Callable[typing.Concatenate[T, P], R], /) -> typing.Callable[typing.Concatenate[T, P], R]: ...
+"""),
+}
+
+
 class Writer:
     def __init__(self, outfile, *args):
         self.outfile = outfile
@@ -165,10 +224,7 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
     def last_fixups(cls, source):
         # PYSIDE-2517: findChild/findChildren type hints:
         # PlaceholderType fix to avoid the '~' from TypeVar.__repr__
-        if "~PlaceholderType" in source:
-            source = source.replace("~PlaceholderType", "PlaceholderType")
-        if "~_SlotFunc" in source:
-            source = source.replace("~_SlotFunc", "_SlotFunc")
+        source = source.replace("~PlaceholderType", "PlaceholderType")
         # Replace all "NoneType" strings by "None" which is a typing convention.
         return source.replace("NoneType", "None")
 
@@ -192,18 +248,25 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
 
     @contextmanager
     def klass(self, class_name: str, class_str: str, has_misc_error: bool = False):
-        err_ignore = "  # type: ignore[misc]"
-        opt_comment = err_ignore if has_misc_error else ""
+        override = StubOverrides.get((self.mod_name, class_name), None)
         spaces = indent * self.level
-        while "." in class_name:
-            class_name = class_name.split(".", 1)[-1]
-            class_str = class_str.split(".", 1)[-1]
-        if self.have_body:
-            self.print(f"{spaces}class {class_str}:{opt_comment}")
+        if override is not None:
+            self.print(f"{spaces}{override[0]}")
         else:
-            self.print(f"{spaces}class {class_str}: ...{opt_comment}")
+            err_ignore = "  # type: ignore[misc]"
+            opt_comment = err_ignore if has_misc_error else ""
+            while "." in class_name:
+                class_name = class_name.split(".", 1)[-1]
+                class_str = class_str.split(".", 1)[-1]
+            if self.have_body:
+                self.print(f"{spaces}class {class_str}:{opt_comment}")
+            else:
+                self.print(f"{spaces}class {class_str}: ...{opt_comment}")
         self.level += 1
         yield
+        if override is not None:
+            spaces = indent * self.level
+            self.print(spaces + f"\n{spaces}".join(override[1].split("\n")))
         self.level -= 1
 
     @contextmanager
@@ -397,8 +460,12 @@ def generate_pyi(import_name, outpath, options):
                 if import_name == "PySide6.QtCore":
                     wr.print("PlaceholderType = typing.TypeVar(\"PlaceholderType\", "
                              "bound=PySide6.QtCore.QObject)")
-                    wr.print("_SlotFunc = typing.TypeVar(\"_SlotFunc\", "
-                             "bound=collections.abc.Callable[..., object])")
+                    wr.print('T = typing.TypeVar("T")')
+                    for num in range(1, 17):
+                        wr.print(f'T{num} = typing.TypeVar("T{num}")')
+                    wr.print('Ts = typing.TypeVarTuple("Ts")')
+                    wr.print('P = typing.ParamSpec("P")')
+                    wr.print('R = typing.TypeVar("R")')
                 wr.print()
             else:
                 wr.print(line)
