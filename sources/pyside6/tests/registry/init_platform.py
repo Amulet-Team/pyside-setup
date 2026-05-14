@@ -98,13 +98,13 @@ all_modules.append("testbinding")
 from shiboken6 import Shiboken  # noqa: E402 F401
 all_modules.append("shiboken6.Shiboken")
 
-from shibokensupport.signature.lib.enum_sig import SimplifyingEnumerator  # noqa: E402
+from shibokensupport.signature.lib.enum_sig import SimplifyingEnumerator, BaseFormatter  # noqa: E402
 
 # Make sure not to get .pyc in Python2.
 sourcepath = os.path.splitext(__file__)[0] + ".py"
 
 
-class Formatter:
+class Formatter(BaseFormatter):
     """
     Formatter is formatting the signature listing of an enumerator.
 
@@ -113,6 +113,7 @@ class Formatter:
     unrelated tasks of enumeration and formatting apart.
     """
     def __init__(self, outfile):
+        BaseFormatter.__init__(self)
         self.outfile = outfile
         self.last_level = 0
 
@@ -131,7 +132,9 @@ class Formatter:
     def klass(self, class_name, class_str, *other):
         self.print()
         self.print(f"# class {self.mod_name}.{class_name}:")
+        self.level += 1
         yield
+        self.level -= 1
 
     @contextmanager
     def function(self, func_name, signature, *other):

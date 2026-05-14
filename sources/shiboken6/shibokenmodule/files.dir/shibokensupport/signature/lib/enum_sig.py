@@ -16,6 +16,9 @@ import inspect
 import sys
 import types
 import collections
+from abc import ABC, abstractmethod
+import typing
+import contextlib
 from shibokensupport.signature import get_signature as get_sig
 from shibokensupport.signature.layout import DEFAULT_PARAM_KIND
 from enum import Enum
@@ -59,6 +62,51 @@ def is_relevant_type(thing):
             and "QMetaObject" not in t)
 
 
+class BaseFormatter(ABC):
+    def __init__(self) -> None:
+        self.level = 0
+        self.mod_name = ""
+        self.class_name: typing.Union[str, None] = None
+        self.have_body = False
+        self.is_method: typing.Callable[[], bool] = lambda: False
+
+    @abstractmethod
+    def module(self, mod_name: str) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+    @abstractmethod
+    def klass(self, class_name: str, class_str: str, has_misc_error: bool = False) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+    @abstractmethod
+    def function(self, func_name: str, signature: typing.Union[str, list[str]], decorator=None, aug_ass=None, incon_err=None) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+
+class SectionFormatter(ABC):
+    @abstractmethod
+    def section(self) -> None:
+        raise NotImplementedError
+
+
+class EnumFormatter(ABC):
+    @abstractmethod
+    def enum(self, class_name: str, enum_name: str, value: int) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+
+class AttributeFormatter(ABC):
+    @abstractmethod
+    def attribute(self, attr_name: str, attr_value) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+
+class SignalFormatter(ABC):
+    @abstractmethod
+    def signal(self, class_name: str, sig_name: str, sig_str: str) -> contextlib.AbstractContextManager:
+        raise NotImplementedError
+
+
 class ExactEnumerator:
     """
     ExactEnumerator enumerates all signatures in a module as they are.
@@ -82,22 +130,21 @@ class ExactEnumerator:
     mypy_misc_class_errors = set()
     mypy_misc_class_errors.add("QPyDesignerPropertySheetExtension")
 
-    def __init__(self, formatter, result_type=dict):
-        global EnumMeta, Signal, SignalInstance
+    def __init__(self, formatter: BaseFormatter, result_type=dict):
+        global Signal, SignalInstance
         try:
             # Lazy import
-            from PySide6.QtCore import Qt, Signal, SignalInstance
-            EnumMeta = type(Qt.Key)
+            from PySide6.QtCore import Signal, SignalInstance
         except ImportError:
-            EnumMeta = Signal = SignalInstance = None
+            Signal = SignalInstance = None
 
         self.fmt = formatter
         self.result_type = result_type
-        self.fmt.level = 0
         self.fmt.is_method = self.is_method
         self.collision_candidates = {"property", "overload"}
+        self.func = None
 
-    def is_method(self):
+    def is_method(self) -> bool:
         """
         Is this function a method?
         We check if it is a simple function.
@@ -105,11 +152,11 @@ class ExactEnumerator:
         tp = type(self.func)
         return tp not in _normal_functions
 
-    def section(self):
-        if hasattr(self.fmt, "section"):
+    def section(self) -> None:
+        if isinstance(self.fmt, SectionFormatter):
             self.fmt.section()
 
-    def module(self, mod_name):
+    def module(self, mod_name: str):
         __import__(mod_name)
         self.fmt.mod_name = mod_name
         with self.fmt.module(mod_name):
@@ -131,9 +178,9 @@ class ExactEnumerator:
                 self.section()
             return ret
 
-    def klass(self, class_name, klass):
+    def klass(self, class_name: str, klass: type):
         ret = self.result_type()
-        if ("._") in class_name:
+        if "._" in class_name:
             # This happens when introspecting enum.Enum etc. Python 3.8.8 does not
             # like this, but we want to remove that, anyway.
             return ret
@@ -155,7 +202,7 @@ class ExactEnumerator:
         class_members = sorted(list(klass.__dict__.items()))
         subclasses = []
         functions = []
-        enums = []
+        enums: list[tuple[str, str, Enum]] = []
         properties = []
         signals = []
         attributes = {}
@@ -175,7 +222,7 @@ class ExactEnumerator:
             elif inspect.isroutine(thing):
                 func_name = thing_name.split(".")[0]   # remove ".overload"
                 functions.append((func_name, thing))
-            elif type(type(thing)) is EnumMeta:
+            elif isinstance(thing, Enum):
                 # take the real enum name, not what is in the dict
                 if not thing_name.startswith("_"):
                     enums.append((thing_name, type(thing).__qualname__, thing))
@@ -230,16 +277,18 @@ class ExactEnumerator:
             # PYSIDE-2846: We keep the empty enum and ignore the error.
             has_misc_error = True
         with self.fmt.klass(class_name, class_str, has_misc_error):
-            self.fmt.level += 1
             self.fmt.class_name = class_name
-            if hasattr(self.fmt, "enum"):
+            if isinstance(self.fmt, EnumFormatter):
                 # this is an optional feature
                 if len(enums):
                     self.section()
                 for enum_name, enum_class_name, value in enums:
-                    with self.fmt.enum(enum_class_name, enum_name, value.value):
+                    enum_value = value.value
+                    if not isinstance(enum_value, int):
+                        raise TypeError(f"Enum {enum_name} has non-integer value {enum_value}")
+                    with self.fmt.enum(enum_class_name, enum_name, enum_value):
                         pass
-            if hasattr(self.fmt, "signal"):
+            if isinstance(self.fmt, SignalFormatter):
                 # this is an optional feature
                 if len(signals):
                     self.section()
@@ -249,7 +298,7 @@ class ExactEnumerator:
                     sig_str = str(signal)
                     with self.fmt.signal(sig_class_name, signal_name, sig_str):
                         pass
-            if hasattr(self.fmt, "attribute"):
+            if isinstance(self.fmt, AttributeFormatter):
                 if len(attributes):
                     self.section()
                 for class_name, attrs in attributes.items():
@@ -272,16 +321,15 @@ class ExactEnumerator:
                         ret.update(self.fproperty(func_name, func))
                     else:
                         ret.update(self.function(func_name, func))
-            self.fmt.level -= 1
-            if len(func_prop):
-                self.section()
+        if len(func_prop):
+            self.section()
         return ret
 
     @staticmethod
     def get_signature(func):
         return get_sig(func)
 
-    def function(self, func_name, func, decorator=None):
+    def function(self, func_name: str, func, decorator: typing.Union[str, None] = None):
         self.func = func    # for is_method()
         ret = self.result_type()
         if decorator in self.collision_track:
@@ -300,7 +348,7 @@ class ExactEnumerator:
             aug_ass = func in self.mypy_aug_ass_errors
             with self.fmt.function(func_name, signature, decorator, aug_ass, incon_err) as key:
                 ret[key] = signature
-        del self.func
+        self.func = None
         return ret
 
     def fproperty(self, prop_name, prop):
@@ -332,7 +380,7 @@ class SimplifyingEnumerator(ExactEnumerator):
     is desired.
     """
 
-    def function(self, func_name, func):
+    def function(self, func_name: str, func, decorator: typing.Union[str, None] = None):
         ret = self.result_type()
         signature = get_sig(func, 'existence')
         sig = stringify(signature) if signature is not None else None

@@ -27,7 +27,7 @@ from pathlib import Path
 from contextlib import contextmanager
 from textwrap import dedent
 
-from shibokensupport.signature.lib.enum_sig import HintingEnumerator
+from shibokensupport.signature.lib.enum_sig import HintingEnumerator, BaseFormatter, EnumFormatter, SignalFormatter, AttributeFormatter, SectionFormatter
 from shibokensupport.signature.lib.tool import build_brace_pattern
 
 indent = " " * 4
@@ -84,7 +84,7 @@ class Writer:
                 self.history.append(False)
 
 
-class Formatter(Writer):
+class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, AttributeFormatter, SectionFormatter):
     """
     Formatter is formatting the signature listing of an enumerator.
 
@@ -94,8 +94,9 @@ class Formatter(Writer):
     """
 
     def __init__(self, outfile, options, *args):
-        self.options = options
         Writer.__init__(self, outfile, *args)
+        BaseFormatter.__init__(self)
+        self.options = options
 
     # Re-add the `typing` prefix that inspect would throw away.
     # We do that by overwriting the relevant part of the function.
@@ -171,10 +172,9 @@ class Formatter(Writer):
         # Replace all "NoneType" strings by "None" which is a typing convention.
         return source.replace("NoneType", "None")
 
-    # self.level is maintained by enum_sig.py
     # self.is_method() is true for non-plain functions.
 
-    def section(self):
+    def section(self) -> None:
         if self.level == 0:
             self.print()
         self.print()
@@ -191,7 +191,7 @@ class Formatter(Writer):
         yield
 
     @contextmanager
-    def klass(self, class_name, class_str, has_misc_error=None):
+    def klass(self, class_name: str, class_str: str, has_misc_error: bool = False):
         err_ignore = "  # type: ignore[misc]"
         opt_comment = err_ignore if has_misc_error else ""
         spaces = indent * self.level
@@ -202,7 +202,9 @@ class Formatter(Writer):
             self.print(f"{spaces}class {class_str}:{opt_comment}")
         else:
             self.print(f"{spaces}class {class_str}: ...{opt_comment}")
+        self.level += 1
         yield
+        self.level -= 1
 
     @contextmanager
     def function(self, func_name, signature, decorator=None, aug_ass=None, incon_err=None):
@@ -245,14 +247,14 @@ class Formatter(Writer):
         self.print(f'{spaces}def {func_name}{signature}: ...{opt_comment}')
 
     @contextmanager
-    def enum(self, class_name, enum_name, value):
+    def enum(self, class_name: str, enum_name: str, value: int):
         spaces = indent * self.level
         hexval = hex(value)
         self.print(f"{spaces}{enum_name:25} = {hexval if value >= 0 else value}")
         yield
 
     @contextmanager
-    def attribute(self, attr_name, attr_value):
+    def attribute(self, attr_name: str, attr_value):
         spaces = indent * self.level
         # PYSIDE-2903: Use a fully qualified name in the type comment.
         full_name = f"{type(attr_value).__module__}.{type(attr_value).__qualname__}"
@@ -268,7 +270,7 @@ class Formatter(Writer):
         yield
 
     @contextmanager
-    def signal(self, class_name, sig_name, sig_str):
+    def signal(self, class_name: str, sig_name: str, sig_str: str):
         spaces = indent * self.level
         self.print(f"{spaces}{sig_name:25}: typing.ClassVar[{class_name}] = ... # {sig_str}")
         yield
