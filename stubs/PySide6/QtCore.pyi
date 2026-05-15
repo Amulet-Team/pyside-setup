@@ -10664,6 +10664,8 @@ class QtMsgType(enum.IntEnum):
 
 
 class Signal(typing.Generic[*Ts]):
+    signatures: tuple[str, ...]
+
     @typing.overload
     def __init__(self: PySide6.QtCore.Signal[()], /, *, name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...
     @typing.overload

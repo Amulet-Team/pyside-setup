@@ -110,6 +110,8 @@ def __init__(self{self_hint}, /, {args}name: str = "", result: type[R] | str | N
 
 StubOverrides: dict[tuple[str, str], tuple[str, str]] = {
     ("PySide6.QtCore", "Signal"): ("class Signal(typing.Generic[*Ts]):", f"""\
+signatures: tuple[str, ...]
+
 {get_signal_constructors()}\
 
 @typing.overload
