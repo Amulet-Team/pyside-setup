@@ -19,9 +19,7 @@ import shiboken6
 
 
 class QDBus(shiboken6.Shiboken.Object):
-
     class CallMode(enum.Enum):
-
         NoBlock                   = 0x0
         Block                     = 0x1
         BlockWithGui              = 0x2
@@ -29,7 +27,6 @@ class QDBus(shiboken6.Shiboken.Object):
 
 
 class QDBusAbstractAdaptor(PySide6.QtCore.QObject):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /) -> None: ...
 
     def autoRelaySignals(self, /) -> bool: ...
@@ -37,7 +34,6 @@ class QDBusAbstractAdaptor(PySide6.QtCore.QObject):
 
 
 class QDBusAbstractInterface(PySide6.QtDBus.QDBusAbstractInterfaceBase):
-
     def __init__(self, service: str, path: str, interface: str, connection: PySide6.QtDBus.QDBusConnection, parent: PySide6.QtCore.QObject, /) -> None: ...
 
     def asyncCall(self, method: str, /) -> PySide6.QtDBus.QDBusPendingCall: ...
@@ -92,13 +88,12 @@ class QDBusAbstractInterface(PySide6.QtDBus.QDBusAbstractInterfaceBase):
     def timeout(self, /) -> int: ...
 
 
-class QDBusAbstractInterfaceBase(PySide6.QtCore.QObject): ...
+class QDBusAbstractInterfaceBase(PySide6.QtCore.QObject):
+    ...
 
 
 class QDBusArgument(shiboken6.Shiboken.Object):
-
     class ElementType(enum.Enum):
-
         UnknownType               = -1
         BasicType                 = 0x0
         VariantType               = 0x1
@@ -106,7 +101,6 @@ class QDBusArgument(shiboken6.Shiboken.Object):
         StructureType             = 0x3
         MapType                   = 0x4
         MapEntryType              = 0x5
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -231,19 +225,15 @@ class QDBusArgument(shiboken6.Shiboken.Object):
 
 
 class QDBusConnection(shiboken6.Shiboken.Object):
-
     class BusType(enum.Enum):
-
         SessionBus                = 0x0
         SystemBus                 = 0x1
         ActivationBus             = 0x2
 
     class ConnectionCapability(enum.Flag):
-
         UnixFileDescriptorPassing = 0x1
 
     class RegisterOption(enum.Flag):
-
         ExportAdaptors            = 0x1
         ExportScriptableSlots     = 0x10
         ExportScriptableSignals   = 0x20
@@ -264,15 +254,12 @@ class QDBusConnection(shiboken6.Shiboken.Object):
         ExportChildObjects        = 0x1000
 
     class UnregisterMode(enum.Enum):
-
         UnregisterNode            = 0x0
         UnregisterTree            = 0x1
 
     class VirtualObjectRegisterOption(enum.Flag):
-
         SingleNode                = 0x0
         SubPath                   = 0x1
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtDBus.QDBusConnection, /) -> None: ...
@@ -337,7 +324,6 @@ class QDBusConnection(shiboken6.Shiboken.Object):
 
 
 class QDBusConnectionInterface(PySide6.QtDBus.QDBusAbstractInterface):
-
     NameAcquired             : typing.ClassVar[Signal] = ... # NameAcquired(QString)
     NameLost                 : typing.ClassVar[Signal] = ... # NameLost(QString)
     NameOwnerChanged         : typing.ClassVar[Signal] = ... # NameOwnerChanged(QString,QString,QString)
@@ -347,22 +333,18 @@ class QDBusConnectionInterface(PySide6.QtDBus.QDBusAbstractInterface):
     serviceUnregistered      : typing.ClassVar[Signal] = ... # serviceUnregistered(QString)
 
     class RegisterServiceReply(enum.Enum):
-
         ServiceNotRegistered      = 0x0
         ServiceRegistered         = 0x1
         ServiceQueued             = 0x2
 
     class ServiceQueueOptions(enum.Enum):
-
         DontQueueService          = 0x0
         QueueService              = 0x1
         ReplaceExistingService    = 0x2
 
     class ServiceReplacementOptions(enum.Enum):
-
         DontAllowReplacement      = 0x0
         AllowReplacement          = 0x1
-
 
     def activatableServiceNames(self, /) -> PySide6.QtDBus.QDBusReply: ...
     def connectNotify(self, arg__1: PySide6.QtCore.QMetaMethod, /) -> None: ...
@@ -378,7 +360,6 @@ class QDBusConnectionInterface(PySide6.QtDBus.QDBusAbstractInterface):
 
 
 class QDBusContext(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -397,9 +378,7 @@ class QDBusContext(shiboken6.Shiboken.Object):
 
 
 class QDBusError(shiboken6.Shiboken.Object):
-
     class ErrorType(enum.Enum):
-
         NoError                   = 0x0
         Other                     = 0x1
         Failed                    = 0x2
@@ -430,7 +409,6 @@ class QDBusError(shiboken6.Shiboken.Object):
         InvalidMember             = 0x1b
         LastErrorType             = 0x1b
 
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -452,20 +430,16 @@ class QDBusError(shiboken6.Shiboken.Object):
 
 
 class QDBusInterface(PySide6.QtDBus.QDBusAbstractInterface):
-
     def __init__(self, service: str, path: str, /, interface: str = ..., connection: PySide6.QtDBus.QDBusConnection = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
 class QDBusMessage(shiboken6.Shiboken.Object):
-
     class MessageType(enum.Enum):
-
         InvalidMessage            = 0x0
         MethodCallMessage         = 0x1
         ReplyMessage              = 0x2
         ErrorMessage              = 0x3
         SignalMessage             = 0x4
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -521,7 +495,6 @@ class QDBusMessage(shiboken6.Shiboken.Object):
 
 
 class QDBusObjectPath(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -540,7 +513,6 @@ class QDBusObjectPath(shiboken6.Shiboken.Object):
 
 
 class QDBusPendingCall(shiboken6.Shiboken.Object):
-
     def __init__(self, other: PySide6.QtDBus.QDBusPendingCall, /) -> None: ...
 
     def error(self, /) -> PySide6.QtDBus.QDBusError: ...
@@ -557,7 +529,6 @@ class QDBusPendingCall(shiboken6.Shiboken.Object):
 
 
 class QDBusPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtDBus.QDBusPendingCall):
-
     finished                 : typing.ClassVar[Signal] = ... # finished(); finished(QDBusPendingCallWatcher*)
 
     def __init__(self, call: PySide6.QtDBus.QDBusPendingCall, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -566,7 +537,6 @@ class QDBusPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtDBus.QDBusPendin
 
 
 class QDBusReply(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -578,7 +548,6 @@ class QDBusReply(shiboken6.Shiboken.Object):
 
 
 class QDBusServer(PySide6.QtCore.QObject):
-
     newConnection            : typing.ClassVar[Signal] = ... # newConnection(QDBusConnection)
 
     @typing.overload
@@ -594,17 +563,14 @@ class QDBusServer(PySide6.QtCore.QObject):
 
 
 class QDBusServiceWatcher(PySide6.QtCore.QObject):
-
     serviceOwnerChanged      : typing.ClassVar[Signal] = ... # serviceOwnerChanged(QString,QString,QString)
     serviceRegistered        : typing.ClassVar[Signal] = ... # serviceRegistered(QString)
     serviceUnregistered      : typing.ClassVar[Signal] = ... # serviceUnregistered(QString)
 
     class WatchModeFlag(enum.Flag):
-
         WatchForRegistration      = 0x1
         WatchForUnregistration    = 0x2
         WatchForOwnerChange       = 0x3
-
 
     @typing.overload
     def __init__(self, service: str, connection: PySide6.QtDBus.QDBusConnection, /, watchMode: PySide6.QtDBus.QDBusServiceWatcher.WatchModeFlag = ..., parent: PySide6.QtCore.QObject | None = ..., *, watchedServices: collections.abc.Sequence[str] | None = ...) -> None: ...
@@ -622,7 +588,6 @@ class QDBusServiceWatcher(PySide6.QtCore.QObject):
 
 
 class QDBusSignature(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -638,7 +603,6 @@ class QDBusSignature(shiboken6.Shiboken.Object):
 
 
 class QDBusUnixFileDescriptor(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -658,7 +622,6 @@ class QDBusUnixFileDescriptor(shiboken6.Shiboken.Object):
 
 
 class QDBusVariant(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -674,14 +637,14 @@ class QDBusVariant(shiboken6.Shiboken.Object):
 
 
 class QDBusVirtualObject(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def handleMessage(self, message: PySide6.QtDBus.QDBusMessage, connection: PySide6.QtDBus.QDBusConnection, /) -> bool: ...
     def introspect(self, path: str, /) -> str: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

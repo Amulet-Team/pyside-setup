@@ -19,11 +19,11 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QWebView(PySide6.QtGui.QWindow):
-
     cookieAdded              : typing.ClassVar[Signal] = ... # cookieAdded(QString,QString)
     cookieRemoved            : typing.ClassVar[Signal] = ... # cookieRemoved(QString,QString)
     httpUserAgentStringChanged: typing.ClassVar[Signal] = ... # httpUserAgentStringChanged(QString)
@@ -60,14 +60,11 @@ class QWebView(PySide6.QtGui.QWindow):
 
 
 class QWebViewLoadingInfo(shiboken6.Shiboken.Object):
-
     class LoadStatus(enum.Enum):
-
         Started                   = 0x0
         Stopped                   = 0x1
         Succeeded                 = 0x2
         Failed                    = 0x3
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebView.QWebViewLoadingInfo, /, *, url: PySide6.QtCore.QUrl | None = ..., status: PySide6.QtWebView.QWebViewLoadingInfo.LoadStatus | None = ..., errorString: str | None = ...) -> None: ...
@@ -82,14 +79,11 @@ class QWebViewLoadingInfo(shiboken6.Shiboken.Object):
 
 
 class QWebViewSettings(shiboken6.Shiboken.Object):
-
     class WebAttribute(enum.Enum):
-
         LocalStorageEnabled       = 0x0
         JavaScriptEnabled         = 0x1
         AllowFileAccess           = 0x2
         LocalContentCanAccessFileUrls = 0x3
-
 
     def setAttribute(self, attribute: PySide6.QtWebView.QWebViewSettings.WebAttribute, value: bool, /) -> None: ...
     def testAttribute(self, attribute: PySide6.QtWebView.QWebViewSettings.WebAttribute, /) -> bool: ...

@@ -17,7 +17,6 @@ import shiboken6
 
 
 class QFutureQString(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -50,7 +49,6 @@ class QFutureQString(shiboken6.Shiboken.Object):
 
 
 class QFutureVoid(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -83,7 +81,6 @@ class QFutureVoid(shiboken6.Shiboken.Object):
 
 
 class QFutureWatcherQString(PySide6.QtCore.QObject):
-
     def __init__(self, /, _parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def future(self, /) -> PySide6.QtConcurrent.QFutureQString: ...
@@ -91,27 +88,23 @@ class QFutureWatcherQString(PySide6.QtCore.QObject):
 
 
 class QFutureWatcherVoid(PySide6.QtCore.QObject):
-
     def __init__(self, /, _parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QtConcurrent(shiboken6.Shiboken.Object):
-
     class FutureResult(enum.Enum):
-
         Ignore                    = 0x0
 
     class ReduceOption(enum.Flag):
-
         UnorderedReduce           = 0x1
         OrderedReduce             = 0x2
         SequentialReduce          = 0x4
 
     class ThreadFunctionResult(enum.Enum):
-
         ThrottleThread            = 0x0
         ThreadFinished            = 0x1
 

@@ -79,7 +79,7 @@ class BaseFormatter(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def function(self, func_name: str, signature: typing.Union[str, list[str]], decorator=None, aug_ass=None, incon_err=None) -> contextlib.AbstractContextManager:
+    def function(self, func_name: str, signature: typing.Union[inspect.Signature, list[inspect.Signature]], decorator=None, aug_ass=None, incon_err=None) -> contextlib.AbstractContextManager:
         raise NotImplementedError
 
 
@@ -167,14 +167,19 @@ class ExactEnumerator:
             functions = inspect.getmembers(module, inspect.isroutine)
             ret = self.result_type()
             self.fmt.class_name = None
-            for class_name, klass in members:
-                self.collision_track = set()
-                ret.update(self.klass(class_name, klass))
-            if len(members):
+
+            if members:
+                for class_name, klass in members:
+                    self.collision_track = set()
+                    ret.update(self.klass(class_name, klass))
+                    self.section()
+
+            if functions:
+                for func_name, func in functions:
+                    ret.update(self.function(func_name, func))
                 self.section()
-            for func_name, func in functions:
-                ret.update(self.function(func_name, func))
-            if len(functions):
+
+            if not functions and not members:
                 self.section()
             return ret
 
@@ -211,12 +216,6 @@ class ExactEnumerator:
             if signal_check(thing):
                 signals.append((thing_name, thing))
             elif inspect.isclass(thing):
-                # If this is the only member of the class, it causes the stub
-                # to be printed empty without ..., as self.fmt.have_body will
-                # then be True. (Example: QtCore.QCborTag). Skip it to avoid
-                # this problem.
-                if thing_name == "_member_type_":
-                    continue
                 subclass_name = ".".join((class_name, thing_name))
                 subclasses.append((subclass_name, thing))
             elif inspect.isroutine(thing):
@@ -252,25 +251,13 @@ class ExactEnumerator:
                         func = klass.__dict__[aug_ass]
                         self.mypy_aug_ass_errors.add(func)
 
-        init_signature = getattr(klass, "__signature__", None)
-        # PYSIDE-2752: Enums without values will not have a constructor, so
-        # we set the init_signature to None, to avoid having an empty pyi
-        # entry, like:
-        #    class QCborTag(enum.IntEnum):
-        #  or
-        #    class BeginFrameFlag(enum.Flag):
-        if issubclass(klass, Enum):
-            init_signature = None
         # sort by class then enum value
         enums.sort(key=lambda tup: (tup[1], tup[2].value))
 
         # We want to handle functions and properties together.
         func_prop = sorted(functions + properties, key=lambda tup: tup[0])
 
-        # find out how many functions create a signature
-        sigs = list(_ for _ in functions if get_sig(_[1]))
-        self.fmt.have_body = bool(subclasses or sigs or properties or enums or  # noqa W:504
-                                  init_signature or signals or attributes)
+        self.fmt.have_body = False
 
         has_misc_error = class_name in self.mypy_misc_class_errors
         if issubclass(klass, Enum) and not len(enums):
@@ -278,58 +265,70 @@ class ExactEnumerator:
             has_misc_error = True
         with self.fmt.klass(class_name, class_str, has_misc_error):
             self.fmt.class_name = class_name
-            if isinstance(self.fmt, EnumFormatter):
+
+            if isinstance(self.fmt, EnumFormatter) and enums:
                 # this is an optional feature
-                if len(enums):
-                    self.section()
                 for enum_name, enum_class_name, value in enums:
                     enum_value = value.value
                     if not isinstance(enum_value, int):
                         raise TypeError(f"Enum {enum_name} has non-integer value {enum_value}")
                     with self.fmt.enum(enum_class_name, enum_name, enum_value):
                         pass
-            if isinstance(self.fmt, SignalFormatter):
+                self.section()
+                self.fmt.have_body = True
+
+            if isinstance(self.fmt, SignalFormatter) and signals:
                 # this is an optional feature
-                if len(signals):
-                    self.section()
                 for signal_name, signal in signals:
                     sig_class = type(signal)
                     sig_class_name = f"{sig_class.__qualname__}"
                     sig_str = str(signal)
                     with self.fmt.signal(sig_class_name, signal_name, sig_str):
                         pass
-            if isinstance(self.fmt, AttributeFormatter):
-                if len(attributes):
-                    self.section()
+                self.section()
+                self.fmt.have_body = True
+
+            if isinstance(self.fmt, AttributeFormatter) and attributes:
                 for class_name, attrs in attributes.items():
                     for attr_name, attr_value in attrs.items():
                         with self.fmt.attribute(attr_name, attr_value):
                             pass
-            if len(subclasses):
                 self.section()
-            for subclass_name, subclass in subclasses:
-                save = self.collision_track.copy()
-                ret.update(self.klass(subclass_name, subclass))
-                self.collision_track = save
-                self.fmt.class_name = class_name
-            if len(subclasses):
+                self.fmt.have_body = True
+
+            if subclasses:
+                for subclass_name, subclass in subclasses:
+                    save = self.collision_track.copy()
+                    ret.update(self.klass(subclass_name, subclass))
+                    self.collision_track = save
+                    self.fmt.class_name = class_name
+
+            ret_ = self.function("__init__", klass)
+            ret.update(ret_)
+            if ret_:
                 self.section()
-            ret.update(self.function("__init__", klass))
-            for func_name, func in func_prop:
-                if func_name != "__init__":
-                    if isinstance(func, property):
-                        ret.update(self.fproperty(func_name, func))
-                    else:
-                        ret.update(self.function(func_name, func))
-        if len(func_prop):
-            self.section()
+                self.fmt.have_body = True
+
+            if func_prop:
+                has_function_section = False
+                for func_name, func in func_prop:
+                    if func_name != "__init__":
+                        if isinstance(func, property):
+                            ret_ = self.fproperty(func_name, func)
+                        else:
+                            ret_ = self.function(func_name, func)
+                        has_function_section |= bool(ret_)
+                        ret.update(ret_)
+                if has_function_section:
+                    self.section()
+                    self.fmt.have_body = True
         return ret
 
     @staticmethod
     def get_signature(func):
         return get_sig(func)
 
-    def function(self, func_name: str, func, decorator: typing.Union[str, None] = None):
+    def function(self, func_name: str, func: typing.Callable, decorator: typing.Union[str, None] = None):
         self.func = func    # for is_method()
         ret = self.result_type()
         if decorator in self.collision_track:
@@ -351,7 +350,7 @@ class ExactEnumerator:
         self.func = None
         return ret
 
-    def fproperty(self, prop_name, prop):
+    def fproperty(self, prop_name: str, prop: property):
         ret = self.function(prop_name, prop.fget, type(prop).__qualname__)
         if prop.fset:
             ret.update(self.function(prop_name, prop.fset, f"{prop_name}.setter"))
@@ -380,11 +379,13 @@ class SimplifyingEnumerator(ExactEnumerator):
     is desired.
     """
 
-    def function(self, func_name: str, func, decorator: typing.Union[str, None] = None):
+    def function(self, func_name: str, func, decorator: typing.Union[str, None] = None, add_section: bool = False):
         ret = self.result_type()
         signature = get_sig(func, 'existence')
         sig = stringify(signature) if signature is not None else None
         if sig is not None:
+            if add_section:
+                self.section()
             with self.fmt.function(func_name, sig) as key:
                 ret[key] = sig
         return ret

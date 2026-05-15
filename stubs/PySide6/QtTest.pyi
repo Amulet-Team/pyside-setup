@@ -20,13 +20,10 @@ import shiboken6
 
 
 class QAbstractItemModelTester(PySide6.QtCore.QObject):
-
     class FailureReportingMode(enum.Enum):
-
         QtTest                    = 0x0
         Warning                   = 0x1
         Fatal                     = 0x2
-
 
     @typing.overload
     def __init__(self, model: PySide6.QtCore.QAbstractItemModel, mode: PySide6.QtTest.QAbstractItemModelTester.FailureReportingMode, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -38,11 +35,11 @@ class QAbstractItemModelTester(PySide6.QtCore.QObject):
     def setUseFetchMore(self, value: bool, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSignalSpy(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, obj: PySide6.QtCore.QObject, signal: PySide6.QtCore.QMetaMethod, /) -> None: ...
     @typing.overload
@@ -59,9 +56,7 @@ class QSignalSpy(shiboken6.Shiboken.Object):
 
 
 class QTest(shiboken6.Shiboken.Object):
-
     class ComparisonOperation(enum.Enum):
-
         CustomCompare             = 0x0
         Equal                     = 0x1
         NotEqual                  = 0x2
@@ -72,14 +67,12 @@ class QTest(shiboken6.Shiboken.Object):
         ThreeWayCompare           = 0x7
 
     class KeyAction(enum.Enum):
-
         Press                     = 0x0
         Release                   = 0x1
         Click                     = 0x2
         Shortcut                  = 0x3
 
     class MouseAction(enum.Enum):
-
         MousePress                = 0x0
         MouseRelease              = 0x1
         MouseClick                = 0x2
@@ -87,7 +80,6 @@ class QTest(shiboken6.Shiboken.Object):
         MouseMove                 = 0x4
 
     class QBenchmarkMetric(enum.Enum):
-
         FramesPerSecond           = 0x0
         BitsPerSecond             = 0x1
         BytesPerSecond            = 0x2
@@ -137,10 +129,8 @@ class QTest(shiboken6.Shiboken.Object):
         def stationary(self, touchId: int, /) -> PySide6.QtTest.QTest.QTouchEventSequence: ...
 
     class TestFailMode(enum.Enum):
-
         Abort                     = 0x1
         Continue                  = 0x2
-
 
     @staticmethod
     def addColumnInternal(id: int, name: str, /) -> None: ...

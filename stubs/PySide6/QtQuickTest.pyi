@@ -13,11 +13,11 @@ import PySide6.QtQuickTest
 import collections.abc
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 def QUICK_TEST_MAIN(name: str, /, argv: collections.abc.Sequence[str] = ..., dir: str = ...) -> int: ...
 def QUICK_TEST_MAIN_WITH_SETUP(name: str, setup: type, /, argv: collections.abc.Sequence[str] = ..., dir: str = ...) -> int: ...
-
 
 # eof

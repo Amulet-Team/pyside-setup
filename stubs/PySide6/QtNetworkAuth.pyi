@@ -19,7 +19,6 @@ import shiboken6
 
 
 class QAbstractOAuth(PySide6.QtCore.QObject):
-
     authorizationUrlChanged  : typing.ClassVar[Signal] = ... # authorizationUrlChanged(QUrl)
     authorizeWithBrowser     : typing.ClassVar[Signal] = ... # authorizeWithBrowser(QUrl)
     clientIdentifierChanged  : typing.ClassVar[Signal] = ... # clientIdentifierChanged(QString)
@@ -33,12 +32,10 @@ class QAbstractOAuth(PySide6.QtCore.QObject):
     tokenChanged             : typing.ClassVar[Signal] = ... # tokenChanged(QString)
 
     class ContentType(enum.Enum):
-
         WwwFormUrlEncoded         = 0x0
         Json                      = 0x1
 
     class Error(enum.Enum):
-
         NoError                   = 0x0
         NetworkError              = 0x1
         ServerError               = 0x2
@@ -49,19 +46,16 @@ class QAbstractOAuth(PySide6.QtCore.QObject):
         ExpiredError              = 0x7
 
     class Stage(enum.Enum):
-
         RequestingTemporaryCredentials = 0x0
         RequestingAuthorization   = 0x1
         RequestingAccessToken     = 0x2
         RefreshingAccessToken     = 0x3
 
     class Status(enum.Enum):
-
         NotAuthenticated          = 0x0
         TemporaryCredentialsReceived = 0x1
         Granted                   = 0x2
         RefreshingToken           = 0x3
-
 
     def authorizationUrl(self, /) -> PySide6.QtCore.QUrl: ...
     def callback(self, /) -> str: ...
@@ -93,7 +87,6 @@ class QAbstractOAuth(PySide6.QtCore.QObject):
 
 
 class QAbstractOAuth2(PySide6.QtNetworkAuth.QAbstractOAuth):
-
     accessTokenAboutToExpire : typing.ClassVar[Signal] = ... # accessTokenAboutToExpire()
     authorizationCallbackReceived: typing.ClassVar[Signal] = ... # authorizationCallbackReceived(QVariantMap)
     autoRefreshChanged       : typing.ClassVar[Signal] = ... # autoRefreshChanged(bool)
@@ -116,11 +109,9 @@ class QAbstractOAuth2(PySide6.QtNetworkAuth.QAbstractOAuth):
     userAgentChanged         : typing.ClassVar[Signal] = ... # userAgentChanged(QString)
 
     class NonceMode(enum.Enum):
-
         Automatic                 = 0x0
         Enabled                   = 0x1
         Disabled                  = 0x2
-
 
     @typing.overload
     def __init__(self, manager: PySide6.QtNetwork.QNetworkAccessManager, /, parent: PySide6.QtCore.QObject | None = ..., *, scope: str | None = ..., grantedScopeTokens: typing.Optional[typing.Set[typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray]]] = ..., requestedScopeTokens: typing.Optional[typing.Set[typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray]]] = ..., userAgent: str | None = ..., clientIdentifierSharedKey: str | None = ..., state: str | None = ..., expiration: PySide6.QtCore.QDateTime | None = ..., refreshToken: str | None = ..., refreshLeadTime: int | None = ..., autoRefresh: bool | None = ..., nonceMode: PySide6.QtNetworkAuth.QAbstractOAuth2.NonceMode | None = ..., nonce: str | None = ..., idToken: str | None = ..., tokenUrl: PySide6.QtCore.QUrl | None = ...) -> None: ...
@@ -179,7 +170,6 @@ class QAbstractOAuth2(PySide6.QtNetworkAuth.QAbstractOAuth):
 
 
 class QAbstractOAuthReplyHandler(PySide6.QtCore.QObject):
-
     callbackDataReceived     : typing.ClassVar[Signal] = ... # callbackDataReceived(QByteArray)
     callbackReceived         : typing.ClassVar[Signal] = ... # callbackReceived(QVariantMap)
     replyDataReceived        : typing.ClassVar[Signal] = ... # replyDataReceived(QByteArray)
@@ -192,11 +182,11 @@ class QAbstractOAuthReplyHandler(PySide6.QtCore.QObject):
     def networkReplyFinished(self, reply: PySide6.QtNetwork.QNetworkReply, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QOAuth1(PySide6.QtNetworkAuth.QAbstractOAuth):
-
     clientSharedSecretChanged: typing.ClassVar[Signal] = ... # clientSharedSecretChanged(QString)
     signatureMethodChanged   : typing.ClassVar[Signal] = ... # signatureMethodChanged(QOAuth1::SignatureMethod)
     temporaryCredentialsUrlChanged: typing.ClassVar[Signal] = ... # temporaryCredentialsUrlChanged(QUrl)
@@ -204,11 +194,9 @@ class QOAuth1(PySide6.QtNetworkAuth.QAbstractOAuth):
     tokenSecretChanged       : typing.ClassVar[Signal] = ... # tokenSecretChanged(QString)
 
     class SignatureMethod(enum.Enum):
-
         Hmac_Sha1                 = 0x0
         Rsa_Sha1                  = 0x1
         PlainText                 = 0x2
-
 
     @typing.overload
     def __init__(self, manager: PySide6.QtNetwork.QNetworkAccessManager, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -258,9 +246,7 @@ class QOAuth1(PySide6.QtNetworkAuth.QAbstractOAuth):
 
 
 class QOAuth1Signature(shiboken6.Shiboken.Object):
-
     class HttpRequestMethod(enum.Enum):
-
         Unknown                   = 0x0
         Head                      = 0x1
         Get                       = 0x2
@@ -268,7 +254,6 @@ class QOAuth1Signature(shiboken6.Shiboken.Object):
         Post                      = 0x4
         Delete                    = 0x5
         Custom                    = 0x6
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtNetworkAuth.QOAuth1Signature, /) -> None: ...
@@ -306,15 +291,12 @@ class QOAuth1Signature(shiboken6.Shiboken.Object):
 
 
 class QOAuth2AuthorizationCodeFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
-
     accessTokenUrlChanged    : typing.ClassVar[Signal] = ... # accessTokenUrlChanged(QUrl)
 
     class PkceMethod(enum.Enum):
-
         S256                      = 0x0
         Plain                     = 0x1
         None_                     = 0xff
-
 
     @typing.overload
     def __init__(self, manager: PySide6.QtNetwork.QNetworkAccessManager, /, parent: PySide6.QtCore.QObject | None = ..., *, accessTokenUrl: PySide6.QtCore.QUrl | None = ...) -> None: ...
@@ -340,7 +322,6 @@ class QOAuth2AuthorizationCodeFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
 
 
 class QOAuth2DeviceAuthorizationFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
-
     authorizeWithUserCode    : typing.ClassVar[Signal] = ... # authorizeWithUserCode(QUrl,QString,QUrl)
     completeVerificationUrlChanged: typing.ClassVar[Signal] = ... # completeVerificationUrlChanged(QUrl)
     pollingChanged           : typing.ClassVar[Signal] = ... # pollingChanged(bool)
@@ -368,7 +349,6 @@ class QOAuth2DeviceAuthorizationFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
 
 
 class QOAuthHttpServerReplyHandler(PySide6.QtNetworkAuth.QOAuthOobReplyHandler):
-
     @typing.overload
     def __init__(self, address: PySide6.QtNetwork.QHostAddress | PySide6.QtNetwork.QHostAddress.SpecialAddress, port: int, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
     @typing.overload
@@ -393,7 +373,6 @@ class QOAuthHttpServerReplyHandler(PySide6.QtNetworkAuth.QOAuthOobReplyHandler):
 
 
 class QOAuthOobReplyHandler(PySide6.QtNetworkAuth.QAbstractOAuthReplyHandler):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def callback(self, /) -> str: ...
@@ -401,7 +380,6 @@ class QOAuthOobReplyHandler(PySide6.QtNetworkAuth.QAbstractOAuthReplyHandler):
 
 
 class QOAuthUriSchemeReplyHandler(PySide6.QtNetworkAuth.QOAuthOobReplyHandler):
-
     redirectUrlChanged       : typing.ClassVar[Signal] = ... # redirectUrlChanged()
 
     @typing.overload

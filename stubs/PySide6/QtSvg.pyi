@@ -18,16 +18,14 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSvgGenerator(PySide6.QtGui.QPaintDevice):
-
     class SvgVersion(enum.Enum):
-
         SvgTiny12                 = 0x0
         Svg11                     = 0x1
-
 
     @typing.overload
     def __init__(self, version: PySide6.QtSvg.QSvgGenerator.SvgVersion, /, *, size: PySide6.QtCore.QSize | None = ..., viewBox: PySide6.QtCore.QRectF | None = ..., title: str | None = ..., description: str | None = ..., fileName: str | None = ..., outputDevice: PySide6.QtCore.QIODevice | None = ..., resolution: int | None = ...) -> None: ...
@@ -59,7 +57,6 @@ class QSvgGenerator(PySide6.QtGui.QPaintDevice):
 
 
 class QSvgRenderer(PySide6.QtCore.QObject):
-
     repaintNeeded            : typing.ClassVar[Signal] = ... # repaintNeeded()
 
     @typing.overload
@@ -111,9 +108,7 @@ class QSvgRenderer(PySide6.QtCore.QObject):
 
 
 class QtSvg(shiboken6.Shiboken.Object):
-
     class Option(enum.Flag):
-
         NoOption                  = 0x0
         Tiny12FeaturesOnly        = 0x1
         AssumeTrustedSource       = 0x2

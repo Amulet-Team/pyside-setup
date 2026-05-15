@@ -21,7 +21,6 @@ import shiboken6
 
 
 class QAxBase(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def __lshift__(self, s: PySide6.QtCore.QDataStream, /) -> PySide6.QtCore.QDataStream: ...
@@ -61,21 +60,18 @@ class QAxBase(shiboken6.Shiboken.Object):
 
 
 class QAxBaseObject(PySide6.QtCore.QObject, PySide6.QtAxContainer.QAxObjectInterface):
-
     exception                : typing.ClassVar[Signal] = ... # exception(int,QString,QString,QString)
     propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString)
     signal                   : typing.ClassVar[Signal] = ... # signal(QString,int,void*)
 
 
 class QAxBaseWidget(PySide6.QtWidgets.QWidget, PySide6.QtAxContainer.QAxObjectInterface):
-
     exception                : typing.ClassVar[Signal] = ... # exception(int,QString,QString,QString)
     propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString)
     signal                   : typing.ClassVar[Signal] = ... # signal(QString,int,void*)
 
 
 class QAxObject(PySide6.QtAxContainer.QAxBaseObject, PySide6.QtAxContainer.QAxBase):
-
     @typing.overload
     def __init__(self, c: str, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
     @typing.overload
@@ -91,7 +87,6 @@ class QAxObject(PySide6.QtAxContainer.QAxBaseObject, PySide6.QtAxContainer.QAxBa
 
 
 class QAxObjectInterface(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def classContext(self, /) -> int: ...
@@ -102,17 +97,14 @@ class QAxObjectInterface(shiboken6.Shiboken.Object):
 
 
 class QAxScript(PySide6.QtCore.QObject):
-
     entered                  : typing.ClassVar[Signal] = ... # entered()
     error                    : typing.ClassVar[Signal] = ... # error(int,QString,int,QString)
     finished                 : typing.ClassVar[Signal] = ... # finished(); finished(QVariant); finished(int,QString,QString,QString)
     stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(int)
 
     class FunctionFlags(enum.Enum):
-
         FunctionNames             = 0x0
         FunctionSignatures        = 0x1
-
 
     def __init__(self, name: str, manager: PySide6.QtAxContainer.QAxScriptManager, /) -> None: ...
 
@@ -128,16 +120,13 @@ class QAxScript(PySide6.QtCore.QObject):
 
 
 class QAxScriptEngine(PySide6.QtAxContainer.QAxObject):
-
     class State(enum.Enum):
-
         Uninitialized             = 0x0
         Started                   = 0x1
         Connected                 = 0x2
         Disconnected              = 0x3
         Closed                    = 0x4
         Initialized               = 0x5
-
 
     def __init__(self, language: str, script: PySide6.QtAxContainer.QAxScript, /) -> None: ...
 
@@ -150,7 +139,6 @@ class QAxScriptEngine(PySide6.QtAxContainer.QAxObject):
 
 
 class QAxScriptManager(PySide6.QtCore.QObject):
-
     error                    : typing.ClassVar[Signal] = ... # error(QAxScript*,int,QString,int,QString)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -174,14 +162,11 @@ class QAxScriptManager(PySide6.QtCore.QObject):
 
 
 class QAxSelect(PySide6.QtWidgets.QDialog):
-
     class SandboxingLevel(enum.Enum):
-
         SandboxingNone            = 0x0
         SandboxingProcess         = 0x1
         SandboxingLowIntegrity    = 0x2
         SandboxingAppContainer    = 0x3
-
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ..., flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
@@ -190,7 +175,6 @@ class QAxSelect(PySide6.QtWidgets.QDialog):
 
 
 class QAxWidget(PySide6.QtAxContainer.QAxBaseWidget, PySide6.QtAxContainer.QAxBase):
-
     @typing.overload
     def __init__(self, c: str, /, parent: PySide6.QtWidgets.QWidget | None = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
     @typing.overload
@@ -214,7 +198,8 @@ class QAxWidget(PySide6.QtAxContainer.QAxBaseWidget, PySide6.QtAxContainer.QAxBa
     def translateKeyEvent(self, message: int, keycode: int, /) -> bool: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

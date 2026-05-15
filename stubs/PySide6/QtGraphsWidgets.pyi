@@ -20,7 +20,6 @@ from PySide6.QtCore import Signal
 
 
 class Q3DBarsWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
-
     barSeriesMarginChanged   : typing.ClassVar[Signal] = ... # barSeriesMarginChanged(QSizeF)
     barSpacingChanged        : typing.ClassVar[Signal] = ... # barSpacingChanged(QSizeF)
     barSpacingRelativeChanged: typing.ClassVar[Signal] = ... # barSpacingRelativeChanged(bool)
@@ -69,7 +68,6 @@ class Q3DBarsWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
 
 
 class Q3DGraphsWidgetItem(PySide6.QtCore.QObject):
-
     activeThemeChanged       : typing.ClassVar[Signal] = ... # activeThemeChanged(QGraphsTheme*)
     ambientLightStrengthChanged: typing.ClassVar[Signal] = ... # ambientLightStrengthChanged()
     aspectRatioChanged       : typing.ClassVar[Signal] = ... # aspectRatioChanged(double)
@@ -118,6 +116,7 @@ class Q3DGraphsWidgetItem(PySide6.QtCore.QObject):
     wrapCameraYRotationChanged: typing.ClassVar[Signal] = ... # wrapCameraYRotationChanged(bool)
     zoomAtTargetEnabledChanged: typing.ClassVar[Signal] = ... # zoomAtTargetEnabledChanged(bool)
     zoomEnabledChanged       : typing.ClassVar[Signal] = ... # zoomEnabledChanged(bool)
+
     def activeTheme(self, /) -> PySide6.QtGraphs.QGraphsTheme: ...
     def addCustomItem(self, item: PySide6.QtGraphs.QCustom3DItem, /) -> int: ...
     def addTheme(self, theme: PySide6.QtGraphs.QGraphsTheme, /) -> None: ...
@@ -231,7 +230,6 @@ class Q3DGraphsWidgetItem(PySide6.QtCore.QObject):
 
 
 class Q3DScatterWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -256,7 +254,6 @@ class Q3DScatterWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
 
 
 class Q3DSurfaceWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -285,7 +282,8 @@ class Q3DSurfaceWidgetItem(PySide6.QtGraphsWidgets.Q3DGraphsWidgetItem):
     def setFlipHorizontalGrid(self, flip: bool, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

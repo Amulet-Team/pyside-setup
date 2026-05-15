@@ -21,7 +21,6 @@ import shiboken6
 
 
 class QCompressedHelpInfo(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -48,9 +47,9 @@ class QHelpContentItem(shiboken6.Shiboken.Object):
 
 
 class QHelpContentModel(PySide6.QtCore.QAbstractItemModel):
-
     contentsCreated          : typing.ClassVar[Signal] = ... # contentsCreated()
     contentsCreationStarted  : typing.ClassVar[Signal] = ... # contentsCreationStarted()
+
     def columnCount(self, /, parent: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex = ...) -> int: ...
     def contentItemAt(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtHelp.QHelpContentItem: ...
     def createContents(self, customFilterName: str, /) -> None: ...
@@ -66,13 +65,12 @@ class QHelpContentModel(PySide6.QtCore.QAbstractItemModel):
 
 
 class QHelpContentWidget(PySide6.QtWidgets.QTreeView):
-
     linkActivated            : typing.ClassVar[Signal] = ... # linkActivated(QUrl)
+
     def indexOf(self, link: PySide6.QtCore.QUrl | str, /) -> PySide6.QtCore.QModelIndex: ...
 
 
 class QHelpEngine(PySide6.QtHelp.QHelpEngineCore):
-
     def __init__(self, collectionFile: str, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def contentModel(self, /) -> PySide6.QtHelp.QHelpContentModel: ...
@@ -83,7 +81,6 @@ class QHelpEngine(PySide6.QtHelp.QHelpEngineCore):
 
 
 class QHelpEngineCore(PySide6.QtCore.QObject):
-
     currentFilterChanged     : typing.ClassVar[Signal] = ... # currentFilterChanged(QString)
     readersAboutToBeInvalidated: typing.ClassVar[Signal] = ... # readersAboutToBeInvalidated()
     setupFinished            : typing.ClassVar[Signal] = ... # setupFinished()
@@ -142,7 +139,6 @@ class QHelpEngineCore(PySide6.QtCore.QObject):
 
 
 class QHelpFilterData(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -158,7 +154,6 @@ class QHelpFilterData(shiboken6.Shiboken.Object):
 
 
 class QHelpFilterEngine(PySide6.QtCore.QObject):
-
     filterActivated          : typing.ClassVar[Signal] = ... # filterActivated(QString)
 
     def __init__(self, helpEngine: PySide6.QtHelp.QHelpEngineCore, /) -> None: ...
@@ -181,7 +176,6 @@ class QHelpFilterEngine(PySide6.QtCore.QObject):
 
 
 class QHelpFilterSettingsWidget(PySide6.QtWidgets.QWidget):
-
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
 
     def applySettings(self, filterEngine: PySide6.QtHelp.QHelpFilterEngine, /) -> bool: ...
@@ -191,7 +185,6 @@ class QHelpFilterSettingsWidget(PySide6.QtWidgets.QWidget):
 
 
 class QHelpGlobal(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -205,9 +198,9 @@ class QHelpGlobal(shiboken6.Shiboken.Object):
 
 
 class QHelpIndexModel(PySide6.QtCore.QStringListModel):
-
     indexCreated             : typing.ClassVar[Signal] = ... # indexCreated()
     indexCreationStarted     : typing.ClassVar[Signal] = ... # indexCreationStarted()
+
     def createIndex(self, customFilterName: str, /) -> None: ...
     def createIndexForCurrentFilter(self, /) -> None: ...
     def filter(self, filter: str, /, wildcard: str = ...) -> PySide6.QtCore.QModelIndex: ...
@@ -216,17 +209,16 @@ class QHelpIndexModel(PySide6.QtCore.QStringListModel):
 
 
 class QHelpIndexWidget(PySide6.QtWidgets.QListView):
-
     documentActivated        : typing.ClassVar[Signal] = ... # documentActivated(QHelpLink,QString)
     documentsActivated       : typing.ClassVar[Signal] = ... # documentsActivated(QList<QHelpLink>,QString)
     linkActivated            : typing.ClassVar[Signal] = ... # linkActivated(QUrl,QString)
     linksActivated           : typing.ClassVar[Signal] = ... # linksActivated(QMultiMap<QString,QUrl>,QString)
+
     def activateCurrentItem(self, /) -> None: ...
     def filterIndices(self, filter: str, /, wildcard: str = ...) -> None: ...
 
 
 class QHelpLink(shiboken6.Shiboken.Object):
-
     @property
     def title(self) -> str: ...
     @title.setter
@@ -245,7 +237,6 @@ class QHelpLink(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchEngine(PySide6.QtCore.QObject):
-
     indexingFinished         : typing.ClassVar[Signal] = ... # indexingFinished()
     indexingStarted          : typing.ClassVar[Signal] = ... # indexingStarted()
     searchingFinished        : typing.ClassVar[Signal] = ... # searchingFinished(int)
@@ -273,7 +264,6 @@ class QHelpSearchEngine(PySide6.QtCore.QObject):
 
 
 class QHelpSearchEngineCore(PySide6.QtCore.QObject):
-
     indexingFinished         : typing.ClassVar[Signal] = ... # indexingFinished()
     indexingStarted          : typing.ClassVar[Signal] = ... # indexingStarted()
     searchingFinished        : typing.ClassVar[Signal] = ... # searchingFinished()
@@ -292,7 +282,6 @@ class QHelpSearchEngineCore(PySide6.QtCore.QObject):
 
 
 class QHelpSearchQuery(shiboken6.Shiboken.Object):
-
     @property
     def fieldName(self) -> PySide6.QtHelp.QHelpSearchQuery.FieldName: ...
     @fieldName.setter
@@ -303,14 +292,12 @@ class QHelpSearchQuery(shiboken6.Shiboken.Object):
     def wordList(self, wordList: typing.List[str]) -> None: ...
 
     class FieldName(enum.Enum):
-
         DEFAULT                   = 0x0
         FUZZY                     = 0x1
         WITHOUT                   = 0x2
         PHRASE                    = 0x3
         ALL                       = 0x4
         ATLEAST                   = 0x5
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -323,7 +310,6 @@ class QHelpSearchQuery(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchQueryWidget(PySide6.QtWidgets.QWidget):
-
     search                   : typing.ClassVar[Signal] = ... # search()
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
@@ -341,7 +327,6 @@ class QHelpSearchQueryWidget(PySide6.QtWidgets.QWidget):
 
 
 class QHelpSearchResult(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -355,13 +340,14 @@ class QHelpSearchResult(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchResultWidget(PySide6.QtWidgets.QWidget):
-
     requestShowLink          : typing.ClassVar[Signal] = ... # requestShowLink(QUrl)
+
     def changeEvent(self, event: PySide6.QtCore.QEvent, /) -> None: ...
     def linkAt(self, point: PySide6.QtCore.QPoint, /) -> PySide6.QtCore.QUrl: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

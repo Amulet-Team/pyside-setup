@@ -18,7 +18,6 @@ import typing
 
 
 class QGraphicsSvgItem(PySide6.QtWidgets.QGraphicsObject):
-
     @typing.overload
     def __init__(self, fileName: str, /, parentItem: PySide6.QtWidgets.QGraphicsItem | None = ..., *, elementId: str | None = ..., maximumCacheSize: PySide6.QtCore.QSize | None = ...) -> None: ...
     @typing.overload
@@ -37,11 +36,11 @@ class QGraphicsSvgItem(PySide6.QtWidgets.QGraphicsObject):
     def type(self, /) -> int: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSvgWidget(PySide6.QtWidgets.QWidget):
-
     @typing.overload
     def __init__(self, file: str, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
     @typing.overload

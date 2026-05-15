@@ -15,11 +15,11 @@ import typing
 from PySide6.QtCore import Signal
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QWebChannel(PySide6.QtCore.QObject):
-
     blockUpdatesChanged      : typing.ClassVar[Signal] = ... # blockUpdatesChanged(bool)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, blockUpdates: bool | None = ..., propertyUpdateInterval: int | None = ...) -> None: ...
@@ -37,7 +37,6 @@ class QWebChannel(PySide6.QtCore.QObject):
 
 
 class QWebChannelAbstractTransport(PySide6.QtCore.QObject):
-
     messageReceived          : typing.ClassVar[Signal] = ... # messageReceived(QJsonObject,QWebChannelAbstractTransport*)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...

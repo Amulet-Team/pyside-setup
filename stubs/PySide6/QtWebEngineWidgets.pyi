@@ -20,11 +20,11 @@ import collections.abc
 from PySide6.QtCore import Signal
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QWebEngineView(PySide6.QtWidgets.QWidget):
-
     iconChanged              : typing.ClassVar[Signal] = ... # iconChanged(QIcon)
     iconUrlChanged           : typing.ClassVar[Signal] = ... # iconUrlChanged(QUrl)
     loadFinished             : typing.ClassVar[Signal] = ... # loadFinished(bool)

@@ -231,8 +231,6 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
     # self.is_method() is true for non-plain functions.
 
     def section(self) -> None:
-        if self.level == 0:
-            self.print()
         self.print()
 
     @contextmanager
@@ -249,30 +247,28 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
     @contextmanager
     def klass(self, class_name: str, class_str: str, has_misc_error: bool = False):
         override = StubOverrides.get((self.mod_name, class_name), None)
-        spaces = indent * self.level
+        spaces_1 = indent * self.level
         if override is not None:
-            self.print(f"{spaces}{override[0]}")
+            self.print(f"{spaces_1}{override[0]}")
         else:
             err_ignore = "  # type: ignore[misc]"
             opt_comment = err_ignore if has_misc_error else ""
             while "." in class_name:
                 class_name = class_name.split(".", 1)[-1]
                 class_str = class_str.split(".", 1)[-1]
-            if self.have_body:
-                self.print(f"{spaces}class {class_str}:{opt_comment}")
-            else:
-                self.print(f"{spaces}class {class_str}: ...{opt_comment}")
+            self.print(f"{spaces_1}class {class_str}:{opt_comment}")
         self.level += 1
         yield
+        spaces_2 = indent * self.level
         if override is not None:
-            spaces = indent * self.level
-            self.print(spaces + f"\n{spaces}".join(override[1].split("\n")))
+            self.print(spaces_2 + f"\n{spaces_2}".join(override[1].split("\n")))
+        elif not self.have_body:
+            self.print(f"{spaces_2}...")
+            self.print()
         self.level -= 1
 
     @contextmanager
-    def function(self, func_name, signature, decorator=None, aug_ass=None, incon_err=None):
-        if func_name == "__init__":
-            self.print()
+    def function(self, func_name: str, signature: typing.Union[inspect.Signature, list[inspect.Signature]], decorator=None, aug_ass=None, incon_err=None):
         key = func_name
         spaces = indent * self.level
         err_ignore = "  # type: ignore[misc]"
@@ -292,11 +288,9 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
         else:
             opt_comment = err_ignore if aug_ass else ""
             self._function(func_name, signature, spaces, decorator, opt_comment)
-        if func_name == "__init__":
-            self.print()
         yield key
 
-    def _function(self, func_name, signature, spaces, decorator=None, opt_comment=""):
+    def _function(self, func_name: str, signature: inspect.Signature, spaces, decorator=None, opt_comment=""):
         if decorator:
             # In case of a PyClassProperty the classmethod decorator is not used.
             self.print(f'{spaces}@{decorator}')
@@ -454,7 +448,6 @@ def generate_pyi(import_name, outpath, options):
                     else:
                         wr.print(f"from {mod} import {import_args}")
                 wr.print()
-                wr.print()
                 # We use it only in QtCore at the moment, but this
                 # could be extended to other modules. (must import QObject then)
                 if import_name == "PySide6.QtCore":
@@ -466,7 +459,7 @@ def generate_pyi(import_name, outpath, options):
                     wr.print('Ts = typing.TypeVarTuple("Ts")')
                     wr.print('P = typing.ParamSpec("P")')
                     wr.print('R = typing.TypeVar("R")')
-                wr.print()
+                    wr.print()
             else:
                 wr.print(line)
     if not options.quiet:

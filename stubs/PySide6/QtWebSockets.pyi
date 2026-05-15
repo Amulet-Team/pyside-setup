@@ -20,11 +20,11 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QMaskGenerator(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def nextMask(self, /) -> int: ...
@@ -32,7 +32,6 @@ class QMaskGenerator(PySide6.QtCore.QObject):
 
 
 class QWebSocket(PySide6.QtCore.QObject):
-
     aboutToClose             : typing.ClassVar[Signal] = ... # aboutToClose()
     alertReceived            : typing.ClassVar[Signal] = ... # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
     alertSent                : typing.ClassVar[Signal] = ... # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
@@ -120,7 +119,6 @@ class QWebSocket(PySide6.QtCore.QObject):
 
 
 class QWebSocketCorsAuthenticator(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebSockets.QWebSocketCorsAuthenticator, /) -> None: ...
     @typing.overload
@@ -133,7 +131,6 @@ class QWebSocketCorsAuthenticator(shiboken6.Shiboken.Object):
 
 
 class QWebSocketHandshakeOptions(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -148,9 +145,7 @@ class QWebSocketHandshakeOptions(shiboken6.Shiboken.Object):
 
 
 class QWebSocketProtocol(shiboken6.Shiboken.Object):
-
     class CloseCode(enum.Enum):
-
         CloseCodeNormal           = 0x3e8
         CloseCodeGoingAway        = 0x3e9
         CloseCodeProtocolError    = 0x3ea
@@ -166,7 +161,6 @@ class QWebSocketProtocol(shiboken6.Shiboken.Object):
         CloseCodeTlsHandshakeFailed = 0x3f7
 
     class Version(enum.Enum):
-
         VersionUnknown            = -1
         Version0                  = 0x0
         Version4                  = 0x4
@@ -179,7 +173,6 @@ class QWebSocketProtocol(shiboken6.Shiboken.Object):
 
 
 class QWebSocketServer(PySide6.QtCore.QObject):
-
     acceptError              : typing.ClassVar[Signal] = ... # acceptError(QAbstractSocket::SocketError)
     alertReceived            : typing.ClassVar[Signal] = ... # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
     alertSent                : typing.ClassVar[Signal] = ... # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
@@ -194,10 +187,8 @@ class QWebSocketServer(PySide6.QtCore.QObject):
     sslErrorsOccurred        : typing.ClassVar[Signal] = ... # sslErrorsOccurred(QSslSocket*,QList<QSslError>)
 
     class SslMode(enum.Enum):
-
         SecureMode                = 0x0
         NonSecureMode             = 0x1
-
 
     def __init__(self, serverName: str, secureMode: PySide6.QtWebSockets.QWebSocketServer.SslMode, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

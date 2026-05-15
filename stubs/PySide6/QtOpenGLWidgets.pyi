@@ -18,26 +18,23 @@ import typing
 from PySide6.QtCore import Signal
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QOpenGLWidget(PySide6.QtWidgets.QWidget):
-
     aboutToCompose           : typing.ClassVar[Signal] = ... # aboutToCompose()
     aboutToResize            : typing.ClassVar[Signal] = ... # aboutToResize()
     frameSwapped             : typing.ClassVar[Signal] = ... # frameSwapped()
     resized                  : typing.ClassVar[Signal] = ... # resized()
 
     class TargetBuffer(enum.Enum):
-
         LeftBuffer                = 0x0
         RightBuffer               = 0x1
 
     class UpdateBehavior(enum.Enum):
-
         NoPartialUpdate           = 0x0
         PartialUpdate             = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 

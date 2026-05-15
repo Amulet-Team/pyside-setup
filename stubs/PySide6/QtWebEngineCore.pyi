@@ -21,13 +21,12 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QWebEngineCertificateError(shiboken6.Shiboken.Object):
-
     class Type(enum.Enum):
-
         SslObsoleteVersion        = -218
         CertificateKnownInterceptionBlocked = -217
         CertificateSymantecLegacy = -215
@@ -48,7 +47,6 @@ class QWebEngineCertificateError(shiboken6.Shiboken.Object):
         SslPinnedKeyNotInCertificateChain = -150
         Ok                        = 0x0
 
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineCertificateError, /, *, url: PySide6.QtCore.QUrl | None = ..., type: PySide6.QtWebEngineCore.QWebEngineCertificateError.Type | None = ..., description: str | None = ..., overridable: bool | None = ..., isMainFrame: bool | None = ...) -> None: ...
     @typing.overload
@@ -67,7 +65,6 @@ class QWebEngineCertificateError(shiboken6.Shiboken.Object):
 
 
 class QWebEngineClientCertificateSelection(shiboken6.Shiboken.Object):
-
     def __init__(self, arg__1: PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection, /) -> None: ...
 
     def __copy__(self, /) -> PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection: ...
@@ -111,9 +108,7 @@ class QWebEngineClientHints(PySide6.QtCore.QObject):
 
 
 class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
-
     class EditFlag(enum.Flag):
-
         CanUndo                   = 0x1
         CanRedo                   = 0x2
         CanCut                    = 0x4
@@ -125,7 +120,6 @@ class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
         CanEditRichly             = 0x100
 
     class MediaFlag(enum.Flag):
-
         MediaInError              = 0x1
         MediaPaused               = 0x2
         MediaMuted                = 0x4
@@ -138,7 +132,6 @@ class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
         MediaCanRotate            = 0x200
 
     class MediaType(enum.Enum):
-
         MediaTypeNone             = 0x0
         MediaTypeImage            = 0x1
         MediaTypeVideo            = 0x2
@@ -146,7 +139,6 @@ class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
         MediaTypeCanvas           = 0x4
         MediaTypeFile             = 0x5
         MediaTypePlugin           = 0x6
-
 
     def editFlags(self, /) -> PySide6.QtWebEngineCore.QWebEngineContextMenuRequest.EditFlag: ...
     def isAccepted(self, /) -> bool: ...
@@ -164,12 +156,10 @@ class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineCookieStore(PySide6.QtCore.QObject):
-
     cookieAdded              : typing.ClassVar[Signal] = ... # cookieAdded(QNetworkCookie)
     cookieRemoved            : typing.ClassVar[Signal] = ... # cookieRemoved(QNetworkCookie)
 
     class FilterRequest(shiboken6.Shiboken.Object):
-
         @property
         def _reservedFlag(self) -> bool: ...
         @_reservedFlag.setter
@@ -198,7 +188,6 @@ class QWebEngineCookieStore(PySide6.QtCore.QObject):
 
         def __copy__(self, /) -> PySide6.QtWebEngineCore.QWebEngineCookieStore.FilterRequest: ...
 
-
     def deleteAllCookies(self, /) -> None: ...
     def deleteCookie(self, cookie: PySide6.QtNetwork.QNetworkCookie, /, origin: PySide6.QtCore.QUrl | str = ...) -> None: ...
     def deleteSessionCookies(self, /) -> None: ...
@@ -208,7 +197,6 @@ class QWebEngineCookieStore(PySide6.QtCore.QObject):
 
 
 class QWebEngineDesktopMediaRequest(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest, /, *, screensModel: PySide6.QtCore.QAbstractListModel | None = ..., windowsModel: PySide6.QtCore.QAbstractListModel | None = ...) -> None: ...
     @typing.overload
@@ -223,7 +211,6 @@ class QWebEngineDesktopMediaRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
-
     downloadDirectoryChanged : typing.ClassVar[Signal] = ... # downloadDirectoryChanged()
     downloadFileNameChanged  : typing.ClassVar[Signal] = ... # downloadFileNameChanged()
     interruptReasonChanged   : typing.ClassVar[Signal] = ... # interruptReasonChanged()
@@ -235,7 +222,6 @@ class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
     totalBytesChanged        : typing.ClassVar[Signal] = ... # totalBytesChanged()
 
     class DownloadInterruptReason(enum.Enum):
-
         NoReason                  = 0x0
         FileFailed                = 0x1
         FileAccessDenied          = 0x2
@@ -262,7 +248,6 @@ class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
         UserCanceled              = 0x28
 
     class DownloadState(enum.Enum):
-
         DownloadRequested         = 0x0
         DownloadInProgress        = 0x1
         DownloadCompleted         = 0x2
@@ -270,12 +255,10 @@ class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
         DownloadInterrupted       = 0x4
 
     class SavePageFormat(enum.Enum):
-
         UnknownSaveFormat         = -1
         SingleHtmlSaveFormat      = 0x0
         CompleteHtmlSaveFormat    = 0x1
         MimeHtmlSaveFormat        = 0x2
-
 
     def accept(self, /) -> None: ...
     def cancel(self, /) -> None: ...
@@ -303,7 +286,6 @@ class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineExtensionInfo(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineExtensionInfo, /, *, name: str | None = ..., id: str | None = ..., description: str | None = ..., path: str | None = ..., error: str | None = ..., actionPopupUrl: PySide6.QtCore.QUrl | None = ..., isEnabled: bool | None = ..., isLoaded: bool | None = ..., isInstalled: bool | None = ...) -> None: ...
     @typing.overload
@@ -323,11 +305,11 @@ class QWebEngineExtensionInfo(shiboken6.Shiboken.Object):
 
 
 class QWebEngineExtensionManager(PySide6.QtCore.QObject):
-
     installFinished          : typing.ClassVar[Signal] = ... # installFinished(QWebEngineExtensionInfo)
     loadFinished             : typing.ClassVar[Signal] = ... # loadFinished(QWebEngineExtensionInfo)
     uninstallFinished        : typing.ClassVar[Signal] = ... # uninstallFinished(QWebEngineExtensionInfo)
     unloadFinished           : typing.ClassVar[Signal] = ... # unloadFinished(QWebEngineExtensionInfo)
+
     def event(self, e: PySide6.QtCore.QEvent, /) -> bool: ...
     def extensions(self, /) -> typing.List[PySide6.QtWebEngineCore.QWebEngineExtensionInfo]: ...
     def installExtension(self, path: str, /) -> None: ...
@@ -339,17 +321,13 @@ class QWebEngineExtensionManager(PySide6.QtCore.QObject):
 
 
 class QWebEngineFileSystemAccessRequest(shiboken6.Shiboken.Object):
-
     class AccessFlag(enum.Flag):
-
         Read                      = 0x1
         Write                     = 0x2
 
     class HandleType(enum.Enum):
-
         File                      = 0x0
         Directory                 = 0x1
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest, /, *, origin: PySide6.QtCore.QUrl | None = ..., filePath: PySide6.QtCore.QUrl | None = ..., handleType: PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest.HandleType | None = ..., accessFlags: PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest.AccessFlag | None = ...) -> None: ...
@@ -368,7 +346,6 @@ class QWebEngineFileSystemAccessRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineFindTextResult(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineFindTextResult, /, *, numberOfMatches: int | None = ..., activeMatch: int | None = ...) -> None: ...
     @typing.overload
@@ -380,7 +357,6 @@ class QWebEngineFindTextResult(shiboken6.Shiboken.Object):
 
 
 class QWebEngineFrame(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineFrame, /, *, isValid: bool | None = ..., name: str | None = ..., htmlName: str | None = ..., url: PySide6.QtCore.QUrl | None = ..., size: PySide6.QtCore.QSizeF | None = ..., isMainFrame: bool | None = ..., children: collections.abc.Sequence[PySide6.QtWebEngineCore.QWebEngineFrame] | None = ...) -> None: ...
     @typing.overload
@@ -407,7 +383,6 @@ class QWebEngineFrame(shiboken6.Shiboken.Object):
 
 
 class QWebEngineFullScreenRequest(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineFullScreenRequest, /, *, toggleOn: bool | None = ..., origin: PySide6.QtCore.QUrl | None = ...) -> None: ...
     @typing.overload
@@ -421,9 +396,7 @@ class QWebEngineFullScreenRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineGlobalSettings(shiboken6.Shiboken.Object):
-
     class DnsMode(shiboken6.Shiboken.Object):
-
         @property
         def secureMode(self) -> PySide6.QtWebEngineCore.QWebEngineGlobalSettings.SecureDnsMode: ...
         @secureMode.setter
@@ -441,11 +414,9 @@ class QWebEngineGlobalSettings(shiboken6.Shiboken.Object):
         def __copy__(self, /) -> PySide6.QtWebEngineCore.QWebEngineGlobalSettings.DnsMode: ...
 
     class SecureDnsMode(enum.Enum):
-
         SystemOnly                = 0x0
         SecureWithFallback        = 0x1
         SecureOnly                = 0x2
-
 
     @staticmethod
     def setDnsMode(dnsMode: PySide6.QtWebEngineCore.QWebEngineGlobalSettings.DnsMode, /) -> bool: ...
@@ -475,7 +446,6 @@ class QWebEngineHistory(PySide6.QtCore.QObject):
 
 
 class QWebEngineHistoryItem(shiboken6.Shiboken.Object):
-
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineHistoryItem, /) -> None: ...
 
     def __copy__(self, /) -> PySide6.QtWebEngineCore.QWebEngineHistoryItem: ...
@@ -488,14 +458,11 @@ class QWebEngineHistoryItem(shiboken6.Shiboken.Object):
 
 
 class QWebEngineHistoryModel(PySide6.QtCore.QAbstractListModel):
-
     class Roles(enum.Enum):
-
         UrlRole                   = 0x100
         TitleRole                 = 0x101
         OffsetRole                = 0x102
         IconUrlRole               = 0x103
-
 
     def data(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /, role: int = ...) -> typing.Any: ...
     def reset(self, /) -> None: ...
@@ -504,12 +471,9 @@ class QWebEngineHistoryModel(PySide6.QtCore.QAbstractListModel):
 
 
 class QWebEngineHttpRequest(shiboken6.Shiboken.Object):
-
     class Method(enum.Enum):
-
         Get                       = 0x0
         Post                      = 0x1
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineHttpRequest, /) -> None: ...
@@ -535,9 +499,7 @@ class QWebEngineHttpRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineLoadingInfo(shiboken6.Shiboken.Object):
-
     class ErrorDomain(enum.Enum):
-
         NoErrorDomain             = 0x0
         InternalErrorDomain       = 0x1
         ConnectionErrorDomain     = 0x2
@@ -548,12 +510,10 @@ class QWebEngineLoadingInfo(shiboken6.Shiboken.Object):
         HttpStatusCodeDomain      = 0x7
 
     class LoadStatus(enum.Enum):
-
         LoadStartedStatus         = 0x0
         LoadStoppedStatus         = 0x1
         LoadSucceededStatus       = 0x2
         LoadFailedStatus          = 0x3
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineLoadingInfo, /, *, url: PySide6.QtCore.QUrl | None = ..., isErrorPage: bool | None = ..., status: PySide6.QtWebEngineCore.QWebEngineLoadingInfo.LoadStatus | None = ..., errorString: str | None = ..., errorDomain: PySide6.QtWebEngineCore.QWebEngineLoadingInfo.ErrorDomain | None = ..., errorCode: int | None = ..., responseHeaders: typing.Optional[typing.Dict[typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray], typing.Union[PySide6.QtCore.QByteArray, bytes, bytearray]]] = ..., isDownload: bool | None = ...) -> None: ...
@@ -572,16 +532,13 @@ class QWebEngineLoadingInfo(shiboken6.Shiboken.Object):
 
 
 class QWebEngineNavigationRequest(PySide6.QtCore.QObject):
-
     actionChanged            : typing.ClassVar[Signal] = ... # actionChanged()
 
     class NavigationRequestAction(enum.Enum):
-
         AcceptRequest             = 0x0
         IgnoreRequest             = 0xff
 
     class NavigationType(enum.Enum):
-
         LinkClickedNavigation     = 0x0
         TypedNavigation           = 0x1
         FormSubmittedNavigation   = 0x2
@@ -589,7 +546,6 @@ class QWebEngineNavigationRequest(PySide6.QtCore.QObject):
         ReloadNavigation          = 0x4
         OtherNavigation           = 0x5
         RedirectNavigation        = 0x6
-
 
     def accept(self, /) -> None: ...
     def hasFormData(self, /) -> bool: ...
@@ -600,14 +556,11 @@ class QWebEngineNavigationRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineNewWindowRequest(PySide6.QtCore.QObject):
-
     class DestinationType(enum.Enum):
-
         InNewWindow               = 0x0
         InNewTab                  = 0x1
         InNewDialog               = 0x2
         InNewBackgroundTab        = 0x3
-
 
     def destination(self, /) -> PySide6.QtWebEngineCore.QWebEngineNewWindowRequest.DestinationType: ...
     def isUserInitiated(self, /) -> bool: ...
@@ -617,8 +570,8 @@ class QWebEngineNewWindowRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineNotification(PySide6.QtCore.QObject):
-
     closed                   : typing.ClassVar[Signal] = ... # closed()
+
     def click(self, /) -> None: ...
     def close(self, /) -> None: ...
     def direction(self, /) -> PySide6.QtCore.Qt.LayoutDirection: ...
@@ -633,7 +586,6 @@ class QWebEngineNotification(PySide6.QtCore.QObject):
 
 
 class QWebEnginePage(PySide6.QtCore.QObject):
-
     _q_aboutToDelete         : typing.ClassVar[Signal] = ... # _q_aboutToDelete()
     audioMutedChanged        : typing.ClassVar[Signal] = ... # audioMutedChanged(bool)
     authenticationRequired   : typing.ClassVar[Signal] = ... # authenticationRequired(QUrl,QAuthenticator*)
@@ -678,7 +630,6 @@ class QWebEnginePage(PySide6.QtCore.QObject):
     zoomFactorChanged        : typing.ClassVar[Signal] = ... # zoomFactorChanged(double)
 
     class Feature(enum.Enum):
-
         Notifications             = 0x0
         Geolocation               = 0x1
         MediaAudioCapture         = 0x2
@@ -691,31 +642,26 @@ class QWebEnginePage(PySide6.QtCore.QObject):
         LocalFontsAccess          = 0x9
 
     class FileSelectionMode(enum.Enum):
-
         FileSelectOpen            = 0x0
         FileSelectOpenMultiple    = 0x1
         FileSelectUploadFolder    = 0x2
         FileSelectSave            = 0x3
 
     class FindFlag(enum.Flag):
-
         FindBackward              = 0x1
         FindCaseSensitively       = 0x2
 
     class JavaScriptConsoleMessageLevel(enum.Enum):
-
         InfoMessageLevel          = 0x0
         WarningMessageLevel       = 0x1
         ErrorMessageLevel         = 0x2
 
     class LifecycleState(enum.Enum):
-
         Active                    = 0x0
         Frozen                    = 0x1
         Discarded                 = 0x2
 
     class NavigationType(enum.Enum):
-
         NavigationTypeLinkClicked = 0x0
         NavigationTypeTyped       = 0x1
         NavigationTypeFormSubmitted = 0x2
@@ -725,20 +671,17 @@ class QWebEnginePage(PySide6.QtCore.QObject):
         NavigationTypeRedirect    = 0x6
 
     class PermissionPolicy(enum.Enum):
-
         PermissionUnknown         = 0x0
         PermissionGrantedByUser   = 0x1
         PermissionDeniedByUser    = 0x2
 
     class RenderProcessTerminationStatus(enum.Enum):
-
         NormalTerminationStatus   = 0x0
         AbnormalTerminationStatus = 0x1
         CrashedTerminationStatus  = 0x2
         KilledTerminationStatus   = 0x3
 
     class WebAction(enum.Enum):
-
         NoWebAction               = -1
         Back                      = 0x0
         Forward                   = 0x1
@@ -790,12 +733,10 @@ class QWebEnginePage(PySide6.QtCore.QObject):
         WebActionCount            = 0x2f
 
     class WebWindowType(enum.Enum):
-
         WebBrowserWindow          = 0x0
         WebBrowserTab             = 0x1
         WebDialog                 = 0x2
         WebBrowserBackgroundTab   = 0x3
-
 
     @typing.overload
     def __init__(self, profile: PySide6.QtWebEngineCore.QWebEngineProfile, /, parent: PySide6.QtCore.QObject | None = ..., *, selectedText: str | None = ..., hasSelection: bool | None = ..., requestedUrl: PySide6.QtCore.QUrl | None = ..., zoomFactor: float | None = ..., title: str | None = ..., url: PySide6.QtCore.QUrl | None = ..., iconUrl: PySide6.QtCore.QUrl | None = ..., icon: PySide6.QtGui.QIcon | None = ..., backgroundColor: PySide6.QtGui.QColor | None = ..., contentsSize: PySide6.QtCore.QSizeF | None = ..., scrollPosition: PySide6.QtCore.QPointF | None = ..., audioMuted: bool | None = ..., recentlyAudible: bool | None = ..., visible: bool | None = ..., lifecycleState: PySide6.QtWebEngineCore.QWebEnginePage.LifecycleState | None = ..., recommendedState: PySide6.QtWebEngineCore.QWebEnginePage.LifecycleState | None = ..., renderProcessPid: int | None = ..., loading: bool | None = ...) -> None: ...
@@ -878,9 +819,7 @@ class QWebEnginePage(PySide6.QtCore.QObject):
 
 
 class QWebEnginePermission(shiboken6.Shiboken.Object):
-
     class PermissionType(enum.Enum):
-
         Unsupported               = 0x0
         MediaAudioCapture         = 0x1
         MediaVideoCapture         = 0x2
@@ -894,12 +833,10 @@ class QWebEnginePermission(shiboken6.Shiboken.Object):
         LocalFontsAccess          = 0xa
 
     class State(enum.Enum):
-
         Invalid                   = 0x0
         Ask                       = 0x1
         Granted                   = 0x2
         Denied                    = 0x3
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEnginePermission, /, *, origin: PySide6.QtCore.QUrl | None = ..., permissionType: PySide6.QtWebEngineCore.QWebEnginePermission.PermissionType | None = ..., state: PySide6.QtWebEngineCore.QWebEnginePermission.State | None = ..., isValid: bool | None = ...) -> None: ...
@@ -922,29 +859,24 @@ class QWebEnginePermission(shiboken6.Shiboken.Object):
 
 
 class QWebEngineProfile(PySide6.QtCore.QObject):
-
     clearHttpCacheCompleted  : typing.ClassVar[Signal] = ... # clearHttpCacheCompleted()
     downloadRequested        : typing.ClassVar[Signal] = ... # downloadRequested(QWebEngineDownloadRequest*)
 
     class HttpCacheType(enum.Enum):
-
         MemoryHttpCache           = 0x0
         DiskHttpCache             = 0x1
         NoCache                   = 0x2
 
     class PersistentCookiesPolicy(enum.Enum):
-
         NoPersistentCookies       = 0x0
         AllowPersistentCookies    = 0x1
         ForcePersistentCookies    = 0x2
         OnlyPersistentCookies     = 0x3
 
     class PersistentPermissionsPolicy(enum.Enum):
-
         AskEveryTime              = 0x0
         StoreInMemory             = 0x1
         StoreOnDisk               = 0x2
-
 
     @typing.overload
     def __init__(self, name: str, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -1004,7 +936,6 @@ class QWebEngineProfile(PySide6.QtCore.QObject):
 
 
 class QWebEngineProfileBuilder(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod
@@ -1020,7 +951,6 @@ class QWebEngineProfileBuilder(shiboken6.Shiboken.Object):
 
 
 class QWebEngineQuotaRequest(shiboken6.Shiboken.Object):
-
     def __init__(self, /, *, origin: PySide6.QtCore.QUrl | None = ..., requestedSize: int | None = ...) -> None: ...
 
     def __eq__(self, arg__1: PySide6.QtWebEngineCore.QWebEngineQuotaRequest, /) -> bool: ...
@@ -1032,7 +962,6 @@ class QWebEngineQuotaRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineRegisterProtocolHandlerRequest(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, QWebEngineRegisterProtocolHandlerRequest: PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest, /, *, origin: PySide6.QtCore.QUrl | None = ..., scheme: str | None = ...) -> None: ...
     @typing.overload
@@ -1048,19 +977,15 @@ class QWebEngineRegisterProtocolHandlerRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineScript(shiboken6.Shiboken.Object):
-
     class InjectionPoint(enum.Enum):
-
         Deferred                  = 0x0
         DocumentReady             = 0x1
         DocumentCreation          = 0x2
 
     class ScriptWorldId(enum.IntEnum):
-
         MainWorld                 = 0x0
         ApplicationWorld          = 0x1
         UserWorld                 = 0x2
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtWebEngineCore.QWebEngineScript, /, *, name: str | None = ..., sourceUrl: PySide6.QtCore.QUrl | None = ..., sourceCode: str | None = ..., injectionPoint: PySide6.QtWebEngineCore.QWebEngineScript.InjectionPoint | None = ..., worldId: int | None = ..., runsOnSubFrames: bool | None = ...) -> None: ...
@@ -1101,9 +1026,7 @@ class QWebEngineScriptCollection(shiboken6.Shiboken.Object):
 
 
 class QWebEngineSettings(shiboken6.Shiboken.Object):
-
     class FontFamily(enum.Enum):
-
         StandardFont              = 0x0
         FixedFont                 = 0x1
         SerifFont                 = 0x2
@@ -1113,28 +1036,24 @@ class QWebEngineSettings(shiboken6.Shiboken.Object):
         PictographFont            = 0x6
 
     class FontSize(enum.Enum):
-
         MinimumFontSize           = 0x0
         MinimumLogicalFontSize    = 0x1
         DefaultFontSize           = 0x2
         DefaultFixedFontSize      = 0x3
 
     class ImageAnimationPolicy(enum.Enum):
-
         Inherited                 = 0x0
         Allow                     = 0x1
         AnimateOnce               = 0x2
         Disallow                  = 0x3
 
     class UnknownUrlSchemePolicy(enum.Enum):
-
         InheritedUnknownUrlSchemePolicy = 0x0
         DisallowUnknownUrlSchemes = 0x1
         AllowUnknownUrlSchemesFromUserInteraction = 0x2
         AllowAllUnknownUrlSchemes = 0x3
 
     class WebAttribute(enum.Enum):
-
         AutoLoadImages            = 0x0
         JavascriptEnabled         = 0x1
         JavascriptCanOpenWindows  = 0x2
@@ -1175,7 +1094,6 @@ class QWebEngineSettings(shiboken6.Shiboken.Object):
         BackForwardCacheEnabled   = 0x25
         TrimAccessibilityIdentifiers = 0x26
 
-
     def defaultTextEncoding(self, /) -> str: ...
     def fontFamily(self, which: PySide6.QtWebEngineCore.QWebEngineSettings.FontFamily, /) -> str: ...
     def fontSize(self, type: PySide6.QtWebEngineCore.QWebEngineSettings.FontSize, /) -> int: ...
@@ -1196,9 +1114,7 @@ class QWebEngineSettings(shiboken6.Shiboken.Object):
 
 
 class QWebEngineUrlRequestInfo(shiboken6.Shiboken.Object):
-
     class NavigationType(enum.Enum):
-
         NavigationTypeLink        = 0x0
         NavigationTypeTyped       = 0x1
         NavigationTypeFormSubmitted = 0x2
@@ -1208,7 +1124,6 @@ class QWebEngineUrlRequestInfo(shiboken6.Shiboken.Object):
         NavigationTypeRedirect    = 0x6
 
     class ResourceType(enum.Enum):
-
         ResourceTypeMainFrame     = 0x0
         ResourceTypeSubFrame      = 0x1
         ResourceTypeStylesheet    = 0x2
@@ -1234,7 +1149,6 @@ class QWebEngineUrlRequestInfo(shiboken6.Shiboken.Object):
         ResourceTypeWebSocket     = 0xfe
         ResourceTypeUnknown       = 0xff
 
-
     def block(self, shouldBlock: bool, /) -> None: ...
     def changed(self, /) -> bool: ...
     def firstPartyUrl(self, /) -> PySide6.QtCore.QUrl: ...
@@ -1251,23 +1165,19 @@ class QWebEngineUrlRequestInfo(shiboken6.Shiboken.Object):
 
 
 class QWebEngineUrlRequestInterceptor(PySide6.QtCore.QObject):
-
     def __init__(self, /, p: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def interceptRequest(self, info: PySide6.QtWebEngineCore.QWebEngineUrlRequestInfo, /) -> None: ...
 
 
 class QWebEngineUrlRequestJob(PySide6.QtCore.QObject):
-
     class Error(enum.Enum):
-
         NoError                   = 0x0
         UrlNotFound               = 0x1
         UrlInvalid                = 0x2
         RequestAborted            = 0x3
         RequestDenied             = 0x4
         RequestFailed             = 0x5
-
 
     def fail(self, error: PySide6.QtWebEngineCore.QWebEngineUrlRequestJob.Error, /) -> None: ...
     def initiator(self, /) -> PySide6.QtCore.QUrl: ...
@@ -1281,9 +1191,7 @@ class QWebEngineUrlRequestJob(PySide6.QtCore.QObject):
 
 
 class QWebEngineUrlScheme(shiboken6.Shiboken.Object):
-
     class Flag(enum.Flag):
-
         SecureScheme              = 0x1
         LocalScheme               = 0x2
         LocalAccessAllowed        = 0x4
@@ -1295,16 +1203,13 @@ class QWebEngineUrlScheme(shiboken6.Shiboken.Object):
         FetchApiAllowed           = 0x100
 
     class SpecialPort(enum.Enum):
-
         PortUnspecified           = -1
 
     class Syntax(enum.Enum):
-
         HostPortAndUserInformation = 0x0
         HostAndPort               = 0x1
         Host                      = 0x2
         Path                      = 0x3
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1331,14 +1236,12 @@ class QWebEngineUrlScheme(shiboken6.Shiboken.Object):
 
 
 class QWebEngineUrlSchemeHandler(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def requestStarted(self, arg__1: PySide6.QtWebEngineCore.QWebEngineUrlRequestJob, /) -> None: ...
 
 
 class QWebEngineWebAuthPinRequest(shiboken6.Shiboken.Object):
-
     @property
     def error(self) -> PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.PinEntryError: ...
     @error.setter
@@ -1365,11 +1268,9 @@ class QWebEngineWebAuthPinRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
-
     stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QWebEngineWebAuthUxRequest::WebAuthUxState)
 
     class PinEntryError(enum.Enum):
-
         NoError                   = 0x0
         InternalUvLocked          = 0x1
         WrongPin                  = 0x2
@@ -1378,13 +1279,11 @@ class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
         SameAsCurrentPin          = 0x5
 
     class PinEntryReason(enum.Enum):
-
         Set                       = 0x0
         Change                    = 0x1
         Challenge                 = 0x2
 
     class RequestFailureReason(enum.Enum):
-
         Timeout                   = 0x0
         KeyNotRegistered          = 0x1
         KeyAlreadyRegistered      = 0x2
@@ -1400,7 +1299,6 @@ class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
         WinUserCancelled          = 0xc
 
     class WebAuthUxState(enum.Enum):
-
         NotStarted                = 0x0
         SelectAccount             = 0x1
         CollectPin                = 0x2
@@ -1408,7 +1306,6 @@ class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
         RequestFailed             = 0x4
         Cancelled                 = 0x5
         Completed                 = 0x6
-
 
     def cancel(self, /) -> None: ...
     def pinRequest(self, /) -> PySide6.QtWebEngineCore.QWebEngineWebAuthPinRequest: ...
@@ -1424,6 +1321,5 @@ class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
 def qWebEngineChromiumSecurityPatchVersion() -> str: ...
 def qWebEngineChromiumVersion() -> str: ...
 def qWebEngineVersion() -> str: ...
-
 
 # eof

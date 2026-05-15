@@ -21,23 +21,21 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QQuickAsyncImageProvider(PySide6.QtQuick.QQuickImageProvider):
-
     def __init__(self, /) -> None: ...
 
     def requestImageResponse(self, id: str, requestedSize: PySide6.QtCore.QSize, /) -> PySide6.QtQuick.QQuickImageResponse: ...
 
 
 class QQuickFramebufferObject(PySide6.QtQuick.QQuickItem):
-
     mirrorVerticallyChanged  : typing.ClassVar[Signal] = ... # mirrorVerticallyChanged(bool)
     textureFollowsItemSizeChanged: typing.ClassVar[Signal] = ... # textureFollowsItemSizeChanged(bool)
 
     class Renderer(shiboken6.Shiboken.Object):
-
         def __init__(self, /) -> None: ...
 
         def createFramebufferObject(self, size: PySide6.QtCore.QSize, /) -> PySide6.QtOpenGL.QOpenGLFramebufferObject: ...
@@ -46,7 +44,6 @@ class QQuickFramebufferObject(PySide6.QtQuick.QQuickItem):
         def render(self, /) -> None: ...
         def synchronize(self, arg__1: PySide6.QtQuick.QQuickFramebufferObject, /) -> None: ...
         def update(self, /) -> None: ...
-
 
     def __init__(self, /, parent: PySide6.QtQuick.QQuickItem | None = ..., *, textureFollowsItemSize: bool | None = ..., mirrorVertically: bool | None = ...) -> None: ...
 
@@ -63,7 +60,6 @@ class QQuickFramebufferObject(PySide6.QtQuick.QQuickItem):
 
 
 class QQuickGraphicsConfiguration(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -93,7 +89,6 @@ class QQuickGraphicsConfiguration(shiboken6.Shiboken.Object):
 
 
 class QQuickGraphicsDevice(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -114,7 +109,6 @@ class QQuickGraphicsDevice(shiboken6.Shiboken.Object):
 
 
 class QQuickImageProvider(PySide6.QtQml.QQmlImageProviderBase):
-
     def __init__(self, type: PySide6.QtQml.QQmlImageProviderBase.ImageType, /, flags: PySide6.QtQml.QQmlImageProviderBase.Flag = ...) -> None: ...
 
     def flags(self, /) -> PySide6.QtQml.QQmlImageProviderBase.Flag: ...
@@ -125,7 +119,6 @@ class QQuickImageProvider(PySide6.QtQml.QQmlImageProviderBase):
 
 
 class QQuickImageResponse(PySide6.QtCore.QObject):
-
     finished                 : typing.ClassVar[Signal] = ... # finished()
 
     def __init__(self, /) -> None: ...
@@ -136,7 +129,6 @@ class QQuickImageResponse(PySide6.QtCore.QObject):
 
 
 class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-
     activeFocusChanged       : typing.ClassVar[Signal] = ... # activeFocusChanged(bool)
     activeFocusOnTabChanged  : typing.ClassVar[Signal] = ... # activeFocusOnTabChanged(bool)
     antialiasingChanged      : typing.ClassVar[Signal] = ... # antialiasingChanged(bool)
@@ -169,7 +161,6 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
     zChanged                 : typing.ClassVar[Signal] = ... # zChanged()
 
     class Flag(enum.Flag):
-
         ItemClipsChildrenToShape  = 0x1
         ItemAcceptsInputMethod    = 0x2
         ItemIsFocusScope          = 0x4
@@ -179,7 +170,6 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         ItemObservesViewport      = 0x40
 
     class ItemChange(enum.Enum):
-
         ItemChildAddedChange      = 0x0
         ItemChildRemovedChange    = 0x1
         ItemSceneChange           = 0x2
@@ -195,7 +185,6 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         ItemTransformHasChanged   = 0xc
 
     class TransformOrigin(enum.Enum):
-
         TopLeft                   = 0x0
         Top                       = 0x1
         TopRight                  = 0x2
@@ -207,7 +196,6 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         BottomRight               = 0x8
 
     class UpdatePaintNodeData(shiboken6.Shiboken.Object):
-
         @property
         def transformNode(self) -> PySide6.QtQuick.QSGTransformNode: ...
         @transformNode.setter
@@ -216,7 +204,6 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         def __init__(self, UpdatePaintNodeData: PySide6.QtQuick.QQuickItem.UpdatePaintNodeData, /) -> None: ...
 
         def __copy__(self, /) -> PySide6.QtQuick.QQuickItem.UpdatePaintNodeData: ...
-
 
     def __init__(self, /, parent: PySide6.QtQuick.QQuickItem | None = ..., *, x: float | None = ..., y: float | None = ..., z: float | None = ..., width: float | None = ..., height: float | None = ..., opacity: float | None = ..., enabled: bool | None = ..., visible: bool | None = ..., state: str | None = ..., childrenRect: PySide6.QtCore.QRectF | None = ..., baselineOffset: float | None = ..., clip: bool | None = ..., focus: bool | None = ..., activeFocus: bool | None = ..., activeFocusOnTab: bool | None = ..., focusPolicy: PySide6.QtCore.Qt.FocusPolicy | None = ..., rotation: float | None = ..., scale: float | None = ..., transformOrigin: PySide6.QtQuick.QQuickItem.TransformOrigin | None = ..., transformOriginPoint: PySide6.QtCore.QPointF | None = ..., smooth: bool | None = ..., antialiasing: bool | None = ..., implicitWidth: float | None = ..., implicitHeight: float | None = ..., containmentMask: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -399,8 +386,8 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QQuickItemGrabResult(PySide6.QtCore.QObject):
-
     ready                    : typing.ClassVar[Signal] = ... # ready()
+
     def event(self, arg__1: PySide6.QtCore.QEvent, /) -> bool: ...
     def image(self, /) -> PySide6.QtGui.QImage: ...
     @typing.overload
@@ -416,7 +403,6 @@ class QQuickOpenGLUtils(shiboken6.Shiboken.Object):
 
 
 class QQuickPaintedItem(PySide6.QtQuick.QQuickItem):
-
     contentsScaleChanged     : typing.ClassVar[Signal] = ... # contentsScaleChanged()
     contentsSizeChanged      : typing.ClassVar[Signal] = ... # contentsSizeChanged()
     fillColorChanged         : typing.ClassVar[Signal] = ... # fillColorChanged()
@@ -424,15 +410,12 @@ class QQuickPaintedItem(PySide6.QtQuick.QQuickItem):
     textureSizeChanged       : typing.ClassVar[Signal] = ... # textureSizeChanged()
 
     class PerformanceHint(enum.Flag):
-
         FastFBOResizing           = 0x1
 
     class RenderTarget(enum.Enum):
-
         Image                     = 0x0
         FramebufferObject         = 0x1
         InvertedYFramebufferObject = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtQuick.QQuickItem | None = ..., *, contentsSize: PySide6.QtCore.QSize | None = ..., fillColor: PySide6.QtGui.QColor | None = ..., contentsScale: float | None = ..., renderTarget: PySide6.QtQuick.QQuickPaintedItem.RenderTarget | None = ..., textureSize: PySide6.QtCore.QSize | None = ...) -> None: ...
 
@@ -466,7 +449,6 @@ class QQuickPaintedItem(PySide6.QtQuick.QQuickItem):
 
 
 class QQuickRenderControl(PySide6.QtCore.QObject):
-
     renderRequested          : typing.ClassVar[Signal] = ... # renderRequested()
     sceneChanged             : typing.ClassVar[Signal] = ... # sceneChanged()
 
@@ -491,11 +473,8 @@ class QQuickRenderControl(PySide6.QtCore.QObject):
 
 
 class QQuickRenderTarget(shiboken6.Shiboken.Object):
-
     class Flag(enum.Flag):
-
         MultisampleResolve        = 0x1
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -545,7 +524,6 @@ class QQuickRenderTarget(shiboken6.Shiboken.Object):
 
 
 class QQuickRhiItem(PySide6.QtQuick.QQuickItem):
-
     alphaBlendingChanged     : typing.ClassVar[Signal] = ... # alphaBlendingChanged()
     autoRenderTargetChanged  : typing.ClassVar[Signal] = ... # autoRenderTargetChanged()
     colorBufferFormatChanged : typing.ClassVar[Signal] = ... # colorBufferFormatChanged()
@@ -556,12 +534,10 @@ class QQuickRhiItem(PySide6.QtQuick.QQuickItem):
     sampleCountChanged       : typing.ClassVar[Signal] = ... # sampleCountChanged()
 
     class TextureFormat(enum.Enum):
-
         RGBA8                     = 0x0
         RGBA16F                   = 0x1
         RGBA32F                   = 0x2
         RGB10A2                   = 0x3
-
 
     def __init__(self, /, parent: PySide6.QtQuick.QQuickItem | None = ..., *, sampleCount: int | None = ..., colorBufferFormat: PySide6.QtQuick.QQuickRhiItem.TextureFormat | None = ..., mirrorVertically: bool | None = ..., alphaBlending: bool | None = ..., fixedColorBufferWidth: int | None = ..., fixedColorBufferHeight: int | None = ..., effectiveColorBufferSize: PySide6.QtCore.QSize | None = ...) -> None: ...
 
@@ -590,7 +566,6 @@ class QQuickRhiItem(PySide6.QtQuick.QQuickItem):
 
 
 class QQuickRhiItemRenderer(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def colorTexture(self, /) -> PySide6.QtGui.QRhiTexture: ...
@@ -606,7 +581,6 @@ class QQuickRhiItemRenderer(shiboken6.Shiboken.Object):
 
 
 class QQuickTextDocument(PySide6.QtCore.QObject):
-
     errorStringChanged       : typing.ClassVar[Signal] = ... # errorStringChanged()
     modifiedChanged          : typing.ClassVar[Signal] = ... # modifiedChanged()
     sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
@@ -614,7 +588,6 @@ class QQuickTextDocument(PySide6.QtCore.QObject):
     textDocumentChanged      : typing.ClassVar[Signal] = ... # textDocumentChanged()
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Loading                   = 0x1
         Loaded                    = 0x2
@@ -623,7 +596,6 @@ class QQuickTextDocument(PySide6.QtCore.QObject):
         ReadError                 = 0x5
         WriteError                = 0x6
         NonLocalFileError         = 0x7
-
 
     def __init__(self, parent: PySide6.QtQuick.QQuickItem, /, *, source: PySide6.QtCore.QUrl | None = ..., modified: bool | None = ..., status: PySide6.QtQuick.QQuickTextDocument.Status | None = ..., errorString: str | None = ...) -> None: ...
 
@@ -640,7 +612,6 @@ class QQuickTextDocument(PySide6.QtCore.QObject):
 
 
 class QQuickTextureFactory(PySide6.QtCore.QObject):
-
     def __init__(self, /) -> None: ...
 
     def createTexture(self, window: PySide6.QtQuick.QQuickWindow, /) -> PySide6.QtQuick.QSGTexture: ...
@@ -652,7 +623,6 @@ class QQuickTextureFactory(PySide6.QtCore.QObject):
 
 
 class QQuickTransform(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def appendToItem(self, arg__1: PySide6.QtQuick.QQuickItem, /) -> None: ...
@@ -662,21 +632,17 @@ class QQuickTransform(PySide6.QtCore.QObject):
 
 
 class QQuickView(PySide6.QtQuick.QQuickWindow):
-
     statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQuickView::Status)
 
     class ResizeMode(enum.Enum):
-
         SizeViewToRootObject      = 0x0
         SizeRootObjectToView      = 0x1
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Ready                     = 0x1
         Loading                   = 0x2
         Error                     = 0x3
-
 
     @typing.overload
     def __init__(self, engine: PySide6.QtQml.QQmlEngine, parent: PySide6.QtGui.QWindow, /, *, resizeMode: PySide6.QtQuick.QQuickView.ResizeMode | None = ..., status: PySide6.QtQuick.QQuickView.Status | None = ..., source: PySide6.QtCore.QUrl | None = ...) -> None: ...
@@ -713,7 +679,6 @@ class QQuickView(PySide6.QtQuick.QQuickWindow):
 
 
 class QQuickWindow(PySide6.QtGui.QWindow):
-
     activeFocusItemChanged   : typing.ClassVar[Signal] = ... # activeFocusItemChanged()
     afterAnimating           : typing.ClassVar[Signal] = ... # afterAnimating()
     afterFrameEnd            : typing.ClassVar[Signal] = ... # afterFrameEnd()
@@ -736,7 +701,6 @@ class QQuickWindow(PySide6.QtGui.QWindow):
     sceneGraphInvalidated    : typing.ClassVar[Signal] = ... # sceneGraphInvalidated()
 
     class CreateTextureOption(enum.Flag):
-
         TextureHasAlphaChannel    = 0x1
         TextureHasMipmaps         = 0x2
         TextureOwnsGLTexture      = 0x4
@@ -744,7 +708,6 @@ class QQuickWindow(PySide6.QtGui.QWindow):
         TextureIsOpaque           = 0x10
 
     class GraphicsStateInfo(shiboken6.Shiboken.Object):
-
         @property
         def currentFrameSlot(self) -> int: ...
         @currentFrameSlot.setter
@@ -762,7 +725,6 @@ class QQuickWindow(PySide6.QtGui.QWindow):
         def __copy__(self, /) -> PySide6.QtQuick.QQuickWindow.GraphicsStateInfo: ...
 
     class RenderStage(enum.Enum):
-
         BeforeSynchronizingStage  = 0x0
         AfterSynchronizingStage   = 0x1
         BeforeRenderingStage      = 0x2
@@ -771,15 +733,12 @@ class QQuickWindow(PySide6.QtGui.QWindow):
         NoStage                   = 0x5
 
     class SceneGraphError(enum.Enum):
-
         ContextNotAvailable       = 0x1
 
     class TextRenderType(enum.Enum):
-
         QtTextRendering           = 0x0
         NativeTextRendering       = 0x1
         CurveTextRendering        = 0x2
-
 
     @typing.overload
     def __init__(self, renderControl: PySide6.QtQuick.QQuickRenderControl, /, *, color: PySide6.QtGui.QColor | None = ..., contentItem: PySide6.QtQuick.QQuickItem | None = ..., activeFocusItem: PySide6.QtQuick.QQuickItem | None = ..., devicePixelRatio: float | None = ...) -> None: ...
@@ -861,7 +820,6 @@ class QQuickWindow(PySide6.QtGui.QWindow):
 
 
 class QSGBasicGeometryNode(PySide6.QtQuick.QSGNode):
-
     def __init__(self, type: PySide6.QtQuick.QSGNode.NodeType, /) -> None: ...
 
     def clipList(self, /) -> PySide6.QtQuick.QSGClipNode: ...
@@ -873,7 +831,6 @@ class QSGBasicGeometryNode(PySide6.QtQuick.QSGNode):
 
 
 class QSGClipNode(PySide6.QtQuick.QSGBasicGeometryNode):
-
     def __init__(self, /) -> None: ...
 
     def clipRect(self, /) -> PySide6.QtCore.QRectF: ...
@@ -883,14 +840,12 @@ class QSGClipNode(PySide6.QtQuick.QSGBasicGeometryNode):
 
 
 class QSGDynamicTexture(PySide6.QtQuick.QSGTexture):
-
     def __init__(self, /) -> None: ...
 
     def updateTexture(self, /) -> bool: ...
 
 
 class QSGFlatColorMaterial(PySide6.QtQuick.QSGMaterial):
-
     def __init__(self, /) -> None: ...
 
     def color(self, /) -> PySide6.QtGui.QColor: ...
@@ -901,9 +856,7 @@ class QSGFlatColorMaterial(PySide6.QtQuick.QSGMaterial):
 
 
 class QSGGeometry(shiboken6.Shiboken.Object):
-
     class Attribute(shiboken6.Shiboken.Object):
-
         @property
         def attributeType(self) -> PySide6.QtQuick.QSGGeometry.AttributeType: ...
         @attributeType.setter
@@ -941,7 +894,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         def createWithAttributeType(pos: int, tupleSize: int, primitiveType: int, attributeType: PySide6.QtQuick.QSGGeometry.AttributeType, /) -> PySide6.QtQuick.QSGGeometry.Attribute: ...
 
     class AttributeSet(shiboken6.Shiboken.Object):
-
         @property
         def attributes(self) -> PySide6.QtQuick.QSGGeometry.Attribute: ...
         @attributes.setter
@@ -963,7 +915,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         def __copy__(self, /) -> PySide6.QtQuick.QSGGeometry.AttributeSet: ...
 
     class AttributeType(enum.Enum):
-
         UnknownAttribute          = 0x0
         PositionAttribute         = 0x1
         ColorAttribute            = 0x2
@@ -972,7 +923,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         TexCoord2Attribute        = 0x5
 
     class ColoredPoint2D(shiboken6.Shiboken.Object):
-
         @property
         def a(self) -> typing.Any: ...
         @a.setter
@@ -1007,14 +957,12 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         def set(self, nx: float, ny: float, nr: int, ng: int, nb: int, na: int, /) -> None: ...
 
     class DataPattern(enum.Enum):
-
         AlwaysUploadPattern       = 0x0
         StreamPattern             = 0x1
         DynamicPattern            = 0x2
         StaticPattern             = 0x3
 
     class DrawingMode(enum.IntEnum):
-
         DrawPoints                = 0x0
         DrawLines                 = 0x1
         DrawLineLoop              = 0x2
@@ -1024,7 +972,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         DrawTriangleFan           = 0x6
 
     class Point2D(shiboken6.Shiboken.Object):
-
         @property
         def x(self) -> float: ...
         @x.setter
@@ -1043,7 +990,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         def set(self, nx: float, ny: float, /) -> None: ...
 
     class TexturedPoint2D(shiboken6.Shiboken.Object):
-
         @property
         def tx(self) -> float: ...
         @tx.setter
@@ -1070,7 +1016,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         def set(self, nx: float, ny: float, ntx: float, nty: float, /) -> None: ...
 
     class Type(enum.Enum):
-
         ByteType                  = 0x1400
         UnsignedByteType          = 0x1401
         ShortType                 = 0x1402
@@ -1082,7 +1027,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
         Bytes3Type                = 0x1408
         Bytes4Type                = 0x1409
         DoubleType                = 0x140a
-
 
     def __init__(self, attribs: PySide6.QtQuick.QSGGeometry.AttributeSet, vertexCount: int, /, indexCount: int | None = ..., indexType: int = ...) -> None: ...
 
@@ -1129,7 +1073,6 @@ class QSGGeometry(shiboken6.Shiboken.Object):
 
 
 class QSGGeometryNode(PySide6.QtQuick.QSGBasicGeometryNode):
-
     def __init__(self, /) -> None: ...
 
     def __repr__(self, /) -> str: ...
@@ -1145,13 +1088,10 @@ class QSGGeometryNode(PySide6.QtQuick.QSGBasicGeometryNode):
 
 
 class QSGImageNode(PySide6.QtQuick.QSGGeometryNode):
-
     class TextureCoordinatesTransformFlag(enum.Flag):
-
         NoTransform               = 0x0
         MirrorHorizontally        = 0x1
         MirrorVertically          = 0x2
-
 
     def __init__(self, /) -> None: ...
 
@@ -1182,9 +1122,7 @@ class QSGImageNode(PySide6.QtQuick.QSGGeometryNode):
 
 
 class QSGMaterial(shiboken6.Shiboken.Object):
-
     class Flag(enum.Flag):
-
         Blending                  = 0x1
         RequiresDeterminant       = 0x2
         RequiresFullMatrixExceptTranslate = 0x6
@@ -1194,7 +1132,6 @@ class QSGMaterial(shiboken6.Shiboken.Object):
         MultiView2                = 0x10000
         MultiView3                = 0x20000
         MultiView4                = 0x40000
-
 
     def __init__(self, /) -> None: ...
 
@@ -1207,13 +1144,10 @@ class QSGMaterial(shiboken6.Shiboken.Object):
 
 
 class QSGMaterialShader(shiboken6.Shiboken.Object):
-
     class Flag(enum.Flag):
-
         UpdatesGraphicsPipelineState = 0x1
 
     class GraphicsPipelineState(shiboken6.Shiboken.Object):
-
         @property
         def blendConstant(self) -> PySide6.QtGui.QColor: ...
         @blendConstant.setter
@@ -1264,7 +1198,6 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
         def srcColor(self, srcColor: PySide6.QtQuick.QSGMaterialShader.GraphicsPipelineState.BlendFactor) -> None: ...
 
         class BlendFactor(enum.Enum):
-
             Zero                      = 0x0
             One                       = 0x1
             SrcColor                  = 0x2
@@ -1286,7 +1219,6 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
             OneMinusSrc1Alpha         = 0x12
 
         class BlendOp(enum.Enum):
-
             Add                       = 0x0
             Subtract                  = 0x1
             ReverseSubtract           = 0x2
@@ -1294,23 +1226,19 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
             Max                       = 0x4
 
         class ColorMaskComponent(enum.Flag):
-
             R                         = 0x1
             G                         = 0x2
             B                         = 0x4
             A                         = 0x8
 
         class CullMode(enum.Enum):
-
             CullNone                  = 0x0
             CullFront                 = 0x1
             CullBack                  = 0x2
 
         class PolygonMode(enum.Enum):
-
             Fill                      = 0x0
             Line                      = 0x1
-
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -1320,14 +1248,11 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
         def __copy__(self, /) -> PySide6.QtQuick.QSGMaterialShader.GraphicsPipelineState: ...
 
     class RenderState(shiboken6.Shiboken.Object):
-
         class DirtyState(enum.Flag):
-
             DirtyMatrix               = 0x1
             DirtyOpacity              = 0x2
             DirtyCachedMaterialData   = 0x4
             DirtyAll                  = 0xffff
-
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -1358,10 +1283,8 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
         def viewportRect(self, /) -> PySide6.QtCore.QRect: ...
 
     class Stage(enum.Enum):
-
         VertexStage               = 0x0
         FragmentStage             = 0x1
-
 
     def __init__(self, /) -> None: ...
 
@@ -1378,12 +1301,10 @@ class QSGMaterialShader(shiboken6.Shiboken.Object):
 
 
 class QSGMaterialType(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
 
 class QSGNinePatchNode(PySide6.QtQuick.QSGGeometryNode):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod
@@ -1396,9 +1317,7 @@ class QSGNinePatchNode(PySide6.QtQuick.QSGGeometryNode):
 
 
 class QSGNode(shiboken6.Shiboken.Object):
-
     class DirtyStateBit(enum.Flag):
-
         DirtyUsePreprocess        = 0x2
         DirtySubtreeBlocked       = 0x80
         DirtyMatrix               = 0x100
@@ -1411,7 +1330,6 @@ class QSGNode(shiboken6.Shiboken.Object):
         DirtyPropagationMask      = 0xc500
 
     class Flag(enum.Flag):
-
         OwnedByParent             = 0x1
         UsePreprocess             = 0x2
         OwnsGeometry              = 0x10000
@@ -1420,7 +1338,6 @@ class QSGNode(shiboken6.Shiboken.Object):
         IsVisitableNode           = 0x1000000
 
     class NodeType(enum.Enum):
-
         BasicNodeType             = 0x0
         GeometryNodeType          = 0x1
         TransformNodeType         = 0x2
@@ -1428,7 +1345,6 @@ class QSGNode(shiboken6.Shiboken.Object):
         OpacityNodeType           = 0x4
         RootNodeType              = 0x5
         RenderNodeType            = 0x6
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1462,7 +1378,6 @@ class QSGNode(shiboken6.Shiboken.Object):
 
 
 class QSGNodeVisitor(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def enterClipNode(self, arg__1: PySide6.QtQuick.QSGClipNode, /) -> None: ...
@@ -1478,7 +1393,6 @@ class QSGNodeVisitor(shiboken6.Shiboken.Object):
 
 
 class QSGOpacityNode(PySide6.QtQuick.QSGNode):
-
     def __init__(self, /) -> None: ...
 
     def __repr__(self, /) -> str: ...
@@ -1490,7 +1404,6 @@ class QSGOpacityNode(PySide6.QtQuick.QSGNode):
 
 
 class QSGOpaqueTextureMaterial(PySide6.QtQuick.QSGMaterial):
-
     @property
     def m_anisotropy_level(self) -> int: ...
     @m_anisotropy_level.setter
@@ -1540,7 +1453,6 @@ class QSGOpaqueTextureMaterial(PySide6.QtQuick.QSGMaterial):
 
 
 class QSGRectangleNode(PySide6.QtQuick.QSGGeometryNode):
-
     def __init__(self, /) -> None: ...
 
     def color(self, /) -> PySide6.QtGui.QColor: ...
@@ -1553,9 +1465,7 @@ class QSGRectangleNode(PySide6.QtQuick.QSGGeometryNode):
 
 
 class QSGRenderNode(PySide6.QtQuick.QSGNode):
-
     class RenderState(shiboken6.Shiboken.Object):
-
         def __init__(self, /) -> None: ...
 
         def clipRegion(self, /) -> PySide6.QtGui.QRegion: ...
@@ -1567,14 +1477,12 @@ class QSGRenderNode(PySide6.QtQuick.QSGNode):
         def stencilValue(self, /) -> int: ...
 
     class RenderingFlag(enum.Flag):
-
         BoundedRectRendering      = 0x1
         DepthAwareRendering       = 0x2
         OpaqueRendering           = 0x4
         NoExternalRendering       = 0x8
 
     class StateFlag(enum.Flag):
-
         DepthState                = 0x1
         StencilState              = 0x2
         ScissorState              = 0x4
@@ -1583,7 +1491,6 @@ class QSGRenderNode(PySide6.QtQuick.QSGNode):
         CullState                 = 0x20
         ViewportState             = 0x40
         RenderTargetState         = 0x80
-
 
     def __init__(self, /) -> None: ...
 
@@ -1605,9 +1512,7 @@ class QSGRenderNode(PySide6.QtQuick.QSGNode):
 
 
 class QSGRendererInterface(shiboken6.Shiboken.Object):
-
     class GraphicsApi(enum.Enum):
-
         Unknown                   = 0x0
         Software                  = 0x1
         OpenVG                    = 0x2
@@ -1624,13 +1529,11 @@ class QSGRendererInterface(shiboken6.Shiboken.Object):
         Direct3D12                = 0x8
 
     class RenderMode(enum.Enum):
-
         RenderMode2D              = 0x0
         RenderMode2DNoDepthBuffer = 0x1
         RenderMode3D              = 0x2
 
     class Resource(enum.Enum):
-
         DeviceResource            = 0x0
         CommandQueueResource      = 0x1
         CommandListResource       = 0x2
@@ -1650,23 +1553,19 @@ class QSGRendererInterface(shiboken6.Shiboken.Object):
         GraphicsQueueIndexResource = 0x10
 
     class ShaderCompilationType(enum.Flag):
-
         RuntimeCompilation        = 0x1
         OfflineCompilation        = 0x2
 
     class ShaderSourceType(enum.Flag):
-
         ShaderSourceString        = 0x1
         ShaderSourceFile          = 0x2
         ShaderByteCode            = 0x4
 
     class ShaderType(enum.Enum):
-
         UnknownShadingLanguage    = 0x0
         GLSL                      = 0x1
         HLSL                      = 0x2
         RhiShader                 = 0x3
-
 
     def __init__(self, /) -> None: ...
 
@@ -1683,14 +1582,12 @@ class QSGRendererInterface(shiboken6.Shiboken.Object):
 
 
 class QSGRootNode(PySide6.QtQuick.QSGNode):
-
     def __init__(self, /) -> None: ...
 
     def __repr__(self, /) -> str: ...
 
 
 class QSGSimpleRectNode(PySide6.QtQuick.QSGGeometryNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -1706,13 +1603,10 @@ class QSGSimpleRectNode(PySide6.QtQuick.QSGGeometryNode):
 
 
 class QSGSimpleTextureNode(PySide6.QtQuick.QSGGeometryNode):
-
     class TextureCoordinatesTransformFlag(enum.Flag):
-
         NoTransform               = 0x0
         MirrorHorizontally        = 0x1
         MirrorVertically          = 0x2
-
 
     def __init__(self, /) -> None: ...
 
@@ -1737,20 +1631,16 @@ class QSGSimpleTextureNode(PySide6.QtQuick.QSGGeometryNode):
 
 
 class QSGTextNode(PySide6.QtQuick.QSGTransformNode):
-
     class RenderType(enum.Enum):
-
         QtRendering               = 0x0
         NativeRendering           = 0x1
         CurveRendering            = 0x2
 
     class TextStyle(enum.Enum):
-
         Normal                    = 0x0
         Outline                   = 0x1
         Raised                    = 0x2
         Sunken                    = 0x3
-
 
     def __init__(self, /) -> None: ...
 
@@ -1780,9 +1670,7 @@ class QSGTextNode(PySide6.QtQuick.QSGTransformNode):
 
 
 class QSGTexture(PySide6.QtCore.QObject):
-
     class AnisotropyLevel(enum.Enum):
-
         AnisotropyNone            = 0x0
         Anisotropy2x              = 0x1
         Anisotropy4x              = 0x2
@@ -1790,17 +1678,14 @@ class QSGTexture(PySide6.QtCore.QObject):
         Anisotropy16x             = 0x4
 
     class Filtering(enum.Enum):
-
         None_                     = 0x0
         Nearest                   = 0x1
         Linear                    = 0x2
 
     class WrapMode(enum.Enum):
-
         Repeat                    = 0x0
         ClampToEdge               = 0x1
         MirroredRepeat            = 0x2
-
 
     def __init__(self, /) -> None: ...
 
@@ -1828,7 +1713,6 @@ class QSGTexture(PySide6.QtCore.QObject):
 
 
 class QSGTextureMaterial(PySide6.QtQuick.QSGOpaqueTextureMaterial):
-
     def __init__(self, /) -> None: ...
 
     def createShader(self, renderMode: PySide6.QtQuick.QSGRendererInterface.RenderMode, /) -> PySide6.QtQuick.QSGMaterialShader: ...
@@ -1836,7 +1720,6 @@ class QSGTextureMaterial(PySide6.QtQuick.QSGOpaqueTextureMaterial):
 
 
 class QSGTextureProvider(PySide6.QtCore.QObject):
-
     textureChanged           : typing.ClassVar[Signal] = ... # textureChanged()
 
     def __init__(self, /) -> None: ...
@@ -1845,7 +1728,6 @@ class QSGTextureProvider(PySide6.QtCore.QObject):
 
 
 class QSGTransformNode(PySide6.QtQuick.QSGNode):
-
     def __init__(self, /) -> None: ...
 
     def __repr__(self, /) -> str: ...
@@ -1856,7 +1738,6 @@ class QSGTransformNode(PySide6.QtQuick.QSGNode):
 
 
 class QSGVertexColorMaterial(PySide6.QtQuick.QSGMaterial):
-
     def __init__(self, /) -> None: ...
 
     def compare(self, other: PySide6.QtQuick.QSGMaterial, /) -> int: ...
@@ -1865,7 +1746,6 @@ class QSGVertexColorMaterial(PySide6.QtQuick.QSGMaterial):
 
 
 class QSharedPointer_QQuickItemGrabResult(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload

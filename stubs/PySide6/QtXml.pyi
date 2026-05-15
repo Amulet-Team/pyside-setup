@@ -17,7 +17,6 @@ import shiboken6
 
 
 class QDomAttr(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -33,7 +32,6 @@ class QDomAttr(PySide6.QtXml.QDomNode):
 
 
 class QDomCDATASection(PySide6.QtXml.QDomText):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -44,7 +42,6 @@ class QDomCDATASection(PySide6.QtXml.QDomText):
 
 
 class QDomCharacterData(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -63,7 +60,6 @@ class QDomCharacterData(PySide6.QtXml.QDomNode):
 
 
 class QDomComment(PySide6.QtXml.QDomCharacterData):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -74,15 +70,12 @@ class QDomComment(PySide6.QtXml.QDomCharacterData):
 
 
 class QDomDocument(PySide6.QtXml.QDomNode):
-
     class ParseOption(enum.Flag):
-
         Default                   = 0x0
         UseNamespaceProcessing    = 0x1
         PreserveSpacingOnlyNodes  = 0x2
 
     class ParseResult(shiboken6.Shiboken.Object):
-
         @property
         def errorColumn(self) -> int: ...
         @errorColumn.setter
@@ -102,7 +95,6 @@ class QDomDocument(PySide6.QtXml.QDomNode):
         def __init__(self, ParseResult: PySide6.QtXml.QDomDocument.ParseResult, /) -> None: ...
 
         def __copy__(self, /) -> PySide6.QtXml.QDomDocument.ParseResult: ...
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -159,7 +151,6 @@ class QDomDocument(PySide6.QtXml.QDomNode):
 
 
 class QDomDocumentFragment(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -170,7 +161,6 @@ class QDomDocumentFragment(PySide6.QtXml.QDomNode):
 
 
 class QDomDocumentType(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -187,7 +177,6 @@ class QDomDocumentType(PySide6.QtXml.QDomNode):
 
 
 class QDomElement(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -227,7 +216,6 @@ class QDomElement(PySide6.QtXml.QDomNode):
 
 
 class QDomEntity(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -241,7 +229,6 @@ class QDomEntity(PySide6.QtXml.QDomNode):
 
 
 class QDomEntityReference(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -252,13 +239,10 @@ class QDomEntityReference(PySide6.QtXml.QDomNode):
 
 
 class QDomImplementation(shiboken6.Shiboken.Object):
-
     class InvalidDataPolicy(enum.Enum):
-
         AcceptInvalidChars        = 0x0
         DropInvalidChars          = 0x1
         ReturnNullNode            = 0x2
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -279,7 +263,6 @@ class QDomImplementation(shiboken6.Shiboken.Object):
 
 
 class QDomNamedNodeMap(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -303,14 +286,11 @@ class QDomNamedNodeMap(shiboken6.Shiboken.Object):
 
 
 class QDomNode(shiboken6.Shiboken.Object):
-
     class EncodingPolicy(enum.Enum):
-
         EncodingFromDocument      = 0x1
         EncodingFromTextStream    = 0x2
 
     class NodeType(enum.Enum):
-
         ElementNode               = 0x1
         AttributeNode             = 0x2
         TextNode                  = 0x3
@@ -325,7 +305,6 @@ class QDomNode(shiboken6.Shiboken.Object):
         NotationNode              = 0xc
         BaseNode                  = 0x15
         CharacterDataNode         = 0x16
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -401,7 +380,6 @@ class QDomNode(shiboken6.Shiboken.Object):
 
 
 class QDomNodeList(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -419,7 +397,6 @@ class QDomNodeList(shiboken6.Shiboken.Object):
 
 
 class QDomNotation(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -432,7 +409,6 @@ class QDomNotation(PySide6.QtXml.QDomNode):
 
 
 class QDomProcessingInstruction(PySide6.QtXml.QDomNode):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -446,7 +422,6 @@ class QDomProcessingInstruction(PySide6.QtXml.QDomNode):
 
 
 class QDomText(PySide6.QtXml.QDomCharacterData):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -457,7 +432,8 @@ class QDomText(PySide6.QtXml.QDomCharacterData):
     def splitText(self, offset: int, /) -> PySide6.QtXml.QDomText: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

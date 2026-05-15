@@ -20,15 +20,12 @@ import shiboken6
 
 
 class QAccelerometer(PySide6.QtSensors.QSensor):
-
     accelerationModeChanged  : typing.ClassVar[Signal] = ... # accelerationModeChanged(AccelerationMode)
 
     class AccelerationMode(enum.Enum):
-
         Combined                  = 0x0
         Gravity                   = 0x1
         User                      = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, accelerationMode: PySide6.QtSensors.QAccelerometer.AccelerationMode | None = ...) -> None: ...
 
@@ -45,7 +42,6 @@ class QAccelerometerFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QAccelerometerReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, x: float | None = ..., y: float | None = ..., z: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -65,16 +61,13 @@ class QAmbientLightFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QAmbientLightReading(PySide6.QtSensors.QSensorReading):
-
     class LightLevel(enum.Enum):
-
         Undefined                 = 0x0
         Dark                      = 0x1
         Twilight                  = 0x2
         Light                     = 0x3
         Bright                    = 0x4
         Sunny                     = 0x5
-
 
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, lightLevel: PySide6.QtSensors.QAmbientLightReading.LightLevel | None = ...) -> None: ...
 
@@ -84,7 +77,6 @@ class QAmbientLightReading(PySide6.QtSensors.QSensorReading):
 
 
 class QAmbientLightSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QAmbientLightReading: ...
@@ -98,7 +90,6 @@ class QAmbientTemperatureFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QAmbientTemperatureReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, temperature: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -107,14 +98,12 @@ class QAmbientTemperatureReading(PySide6.QtSensors.QSensorReading):
 
 
 class QAmbientTemperatureSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QAmbientTemperatureReading: ...
 
 
 class QCompass(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QCompassReading: ...
@@ -128,7 +117,6 @@ class QCompassFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QCompassReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, azimuth: float | None = ..., calibrationLevel: float | None = ...) -> None: ...
 
     def azimuth(self, /) -> float: ...
@@ -139,7 +127,6 @@ class QCompassReading(PySide6.QtSensors.QSensorReading):
 
 
 class QGyroscope(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QGyroscopeReading: ...
@@ -153,7 +140,6 @@ class QGyroscopeFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QGyroscopeReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, x: float | None = ..., y: float | None = ..., z: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -173,7 +159,6 @@ class QHumidityFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QHumidityReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, relativeHumidity: float | None = ..., absoluteHumidity: float | None = ...) -> None: ...
 
     def absoluteHumidity(self, /) -> float: ...
@@ -184,7 +169,6 @@ class QHumidityReading(PySide6.QtSensors.QSensorReading):
 
 
 class QHumiditySensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QHumidityReading: ...
@@ -198,7 +182,6 @@ class QIRProximityFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QIRProximityReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, reflectance: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -207,13 +190,13 @@ class QIRProximityReading(PySide6.QtSensors.QSensorReading):
 
 
 class QIRProximitySensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QIRProximityReading: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QLidFilter(PySide6.QtSensors.QSensorFilter):
@@ -224,7 +207,6 @@ class QLidFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QLidReading(PySide6.QtSensors.QSensorReading):
-
     backLidChanged           : typing.ClassVar[Signal] = ... # backLidChanged(bool)
     frontLidChanged          : typing.ClassVar[Signal] = ... # frontLidChanged(bool)
 
@@ -238,7 +220,6 @@ class QLidReading(PySide6.QtSensors.QSensorReading):
 
 
 class QLidSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QLidReading: ...
@@ -252,7 +233,6 @@ class QLightFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QLightReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, lux: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -261,7 +241,6 @@ class QLightReading(PySide6.QtSensors.QSensorReading):
 
 
 class QLightSensor(PySide6.QtSensors.QSensor):
-
     fieldOfViewChanged       : typing.ClassVar[Signal] = ... # fieldOfViewChanged(double)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, fieldOfView: float | None = ...) -> None: ...
@@ -272,7 +251,6 @@ class QLightSensor(PySide6.QtSensors.QSensor):
 
 
 class QMagnetometer(PySide6.QtSensors.QSensor):
-
     returnGeoValuesChanged   : typing.ClassVar[Signal] = ... # returnGeoValuesChanged(bool)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, returnGeoValues: bool | None = ...) -> None: ...
@@ -290,7 +268,6 @@ class QMagnetometerFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QMagnetometerReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, x: float | None = ..., y: float | None = ..., z: float | None = ..., calibrationLevel: float | None = ...) -> None: ...
 
     def calibrationLevel(self, /) -> float: ...
@@ -312,9 +289,7 @@ class QOrientationFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QOrientationReading(PySide6.QtSensors.QSensorReading):
-
     class Orientation(enum.Enum):
-
         Undefined                 = 0x0
         TopUp                     = 0x1
         TopDown                   = 0x2
@@ -322,7 +297,6 @@ class QOrientationReading(PySide6.QtSensors.QSensorReading):
         RightUp                   = 0x4
         FaceUp                    = 0x5
         FaceDown                  = 0x6
-
 
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, orientation: PySide6.QtSensors.QOrientationReading.Orientation | None = ...) -> None: ...
 
@@ -332,7 +306,6 @@ class QOrientationReading(PySide6.QtSensors.QSensorReading):
 
 
 class QOrientationSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QOrientationReading: ...
@@ -346,7 +319,6 @@ class QPressureFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QPressureReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, pressure: float | None = ..., temperature: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -357,7 +329,6 @@ class QPressureReading(PySide6.QtSensors.QSensorReading):
 
 
 class QPressureSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QPressureReading: ...
@@ -371,7 +342,6 @@ class QProximityFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QProximityReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, close: bool | None = ...) -> None: ...
 
     def close(self, /) -> bool: ...
@@ -380,7 +350,6 @@ class QProximityReading(PySide6.QtSensors.QSensorReading):
 
 
 class QProximitySensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def reading(self, /) -> PySide6.QtSensors.QProximityReading: ...
@@ -394,7 +363,6 @@ class QRotationFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QRotationReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, x: float | None = ..., y: float | None = ..., z: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -405,7 +373,6 @@ class QRotationReading(PySide6.QtSensors.QSensorReading):
 
 
 class QRotationSensor(PySide6.QtSensors.QSensor):
-
     hasZChanged              : typing.ClassVar[Signal] = ... # hasZChanged(bool)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, hasZ: bool | None = ...) -> None: ...
@@ -416,7 +383,6 @@ class QRotationSensor(PySide6.QtSensors.QSensor):
 
 
 class QSensor(PySide6.QtCore.QObject):
-
     activeChanged            : typing.ClassVar[Signal] = ... # activeChanged()
     alwaysOnChanged          : typing.ClassVar[Signal] = ... # alwaysOnChanged()
     availableSensorsChanged  : typing.ClassVar[Signal] = ... # availableSensorsChanged()
@@ -434,13 +400,11 @@ class QSensor(PySide6.QtCore.QObject):
     userOrientationChanged   : typing.ClassVar[Signal] = ... # userOrientationChanged(int)
 
     class AxesOrientationMode(enum.Enum):
-
         FixedOrientation          = 0x0
         AutomaticOrientation      = 0x1
         UserOrientation           = 0x2
 
     class Feature(enum.Enum):
-
         Buffering                 = 0x0
         AlwaysOn                  = 0x1
         GeoValues                 = 0x2
@@ -450,7 +414,6 @@ class QSensor(PySide6.QtCore.QObject):
         AxesOrientation           = 0x6
         PressureSensorTemperature = 0x7
         Reserved                  = 0x101
-
 
     def __init__(self, type: PySide6.QtCore.QByteArray | bytes | bytearray | str, /, parent: PySide6.QtCore.QObject | None = ..., *, identifier: PySide6.QtCore.QByteArray | bytes | bytearray | memoryview | None = ..., connectedToBackend: bool | None = ..., availableDataRates: collections.abc.Sequence[typing.Tuple[int, int]] | None = ..., dataRate: int | None = ..., reading: PySide6.QtSensors.QSensorReading | None = ..., busy: bool | None = ..., active: bool | None = ..., outputRanges: collections.abc.Sequence[PySide6.QtSensors.qoutputrange] | None = ..., outputRange: int | None = ..., description: str | None = ..., error: int | None = ..., alwaysOn: bool | None = ..., skipDuplicates: bool | None = ..., axesOrientationMode: PySide6.QtSensors.QSensor.AxesOrientationMode | None = ..., currentOrientation: int | None = ..., userOrientation: int | None = ..., maxBufferSize: int | None = ..., efficientBufferSize: int | None = ..., bufferSize: int | None = ...) -> None: ...
 
@@ -503,7 +466,6 @@ class QSensor(PySide6.QtCore.QObject):
 
 
 class QSensorBackend(PySide6.QtCore.QObject):
-
     def __init__(self, sensor: PySide6.QtSensors.QSensor, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def addDataRate(self, min: float, max: float, /) -> None: ...
@@ -522,21 +484,18 @@ class QSensorBackend(PySide6.QtCore.QObject):
 
 
 class QSensorBackendFactory(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def createBackend(self, sensor: PySide6.QtSensors.QSensor, /) -> PySide6.QtSensors.QSensorBackend: ...
 
 
 class QSensorChangesInterface(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def sensorsChanged(self, /) -> None: ...
 
 
 class QSensorFilter(shiboken6.Shiboken.Object):
-
     @property
     def m_sensor(self) -> PySide6.QtSensors.QSensor: ...
     @m_sensor.setter
@@ -549,7 +508,6 @@ class QSensorFilter(shiboken6.Shiboken.Object):
 
 
 class QSensorManager(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod
@@ -565,7 +523,6 @@ class QSensorManager(shiboken6.Shiboken.Object):
 
 
 class QSensorPluginInterface(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def registerSensors(self, /) -> None: ...
@@ -587,9 +544,7 @@ class QTapFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QTapReading(PySide6.QtSensors.QSensorReading):
-
     class TapDirection(enum.Enum):
-
         Undefined                 = 0x0
         X                         = 0x1
         Y                         = 0x2
@@ -604,7 +559,6 @@ class QTapReading(PySide6.QtSensors.QSensorReading):
         Z_Neg                     = 0x404
         Z_Both                    = 0x444
 
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, tapDirection: PySide6.QtSensors.QTapReading.TapDirection | None = ..., doubleTap: bool | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -615,7 +569,6 @@ class QTapReading(PySide6.QtSensors.QSensorReading):
 
 
 class QTapSensor(PySide6.QtSensors.QSensor):
-
     returnDoubleTapEventsChanged: typing.ClassVar[Signal] = ... # returnDoubleTapEventsChanged(bool)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, returnDoubleTapEvents: bool | None = ...) -> None: ...
@@ -633,7 +586,6 @@ class QTiltFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QTiltReading(PySide6.QtSensors.QSensorReading):
-
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, yRotation: float | None = ..., xRotation: float | None = ...) -> None: ...
 
     def copyValuesFrom(self, other: PySide6.QtSensors.QSensorReading, /) -> None: ...
@@ -644,7 +596,6 @@ class QTiltReading(PySide6.QtSensors.QSensorReading):
 
 
 class QTiltSensor(PySide6.QtSensors.QSensor):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def calibrate(self, /) -> None: ...
@@ -652,7 +603,6 @@ class QTiltSensor(PySide6.QtSensors.QSensor):
 
 
 class qoutputrange(shiboken6.Shiboken.Object):
-
     @property
     def accuracy(self) -> float: ...
     @accuracy.setter

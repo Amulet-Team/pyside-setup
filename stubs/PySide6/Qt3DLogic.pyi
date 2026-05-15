@@ -17,20 +17,17 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class Qt3DLogic(shiboken6.Shiboken.Object):
-
     class QFrameAction(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         triggered                : typing.ClassVar[Signal] = ... # triggered(float)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
-
     class QLogicAspect(PySide6.Qt3DCore.Qt3DCore.QAbstractAspect):
-
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 

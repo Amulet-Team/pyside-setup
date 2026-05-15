@@ -19,11 +19,11 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QQuick3D(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod
@@ -31,12 +31,10 @@ class QQuick3D(shiboken6.Shiboken.Object):
 
 
 class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
-
     geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged()
     geometryNodeDirty        : typing.ClassVar[Signal] = ... # geometryNodeDirty()
 
     class Attribute(shiboken6.Shiboken.Object):
-
         @property
         def componentType(self) -> int: ...
         @componentType.setter
@@ -51,14 +49,12 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
         def semantic(self, semantic: int) -> None: ...
 
         class ComponentType(enum.Enum):
-
             U16Type                   = 0x0
             U32Type                   = 0x1
             I32Type                   = 0x2
             F32Type                   = 0x3
 
         class Semantic(enum.Enum):
-
             IndexSemantic             = 0x0
             PositionSemantic          = 0x1
             NormalSemantic            = 0x2
@@ -75,7 +71,6 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
             TargetBinormalSemantic    = 0xc
             TexCoord1Semantic         = 0xd
 
-
         @typing.overload
         def __init__(self, /) -> None: ...
         @typing.overload
@@ -84,7 +79,6 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
         def __copy__(self, /) -> PySide6.QtQuick3D.QQuick3DGeometry.Attribute: ...
 
     class PrimitiveType(enum.Enum):
-
         Points                    = 0x0
         LineStrip                 = 0x1
         Lines                     = 0x2
@@ -93,7 +87,6 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
         Triangles                 = 0x5
 
     class TargetAttribute(shiboken6.Shiboken.Object):
-
         @property
         def attr(self) -> PySide6.QtQuick3D.QQuick3DGeometry.Attribute: ...
         @attr.setter
@@ -113,7 +106,6 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
         def __init__(self, TargetAttribute: PySide6.QtQuick3D.QQuick3DGeometry.TargetAttribute, /) -> None: ...
 
         def __copy__(self, /) -> PySide6.QtQuick3D.QQuick3DGeometry.TargetAttribute: ...
-
 
     def __init__(self, /, parent: PySide6.QtQuick3D.QQuick3DObject | None = ...) -> None: ...
 
@@ -165,7 +157,6 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
 
 
 class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
-
     depthSortingEnabledChanged: typing.ClassVar[Signal] = ... # depthSortingEnabledChanged()
     hasTransparencyChanged   : typing.ClassVar[Signal] = ... # hasTransparencyChanged()
     instanceCountOverrideChanged: typing.ClassVar[Signal] = ... # instanceCountOverrideChanged()
@@ -175,7 +166,6 @@ class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
     shadowBoundsMinimumChanged: typing.ClassVar[Signal] = ... # shadowBoundsMinimumChanged()
 
     class InstanceTableEntry(shiboken6.Shiboken.Object):
-
         @property
         def color(self) -> PySide6.QtGui.QVector4D: ...
         @color.setter
@@ -208,7 +198,6 @@ class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
         def getRotation(self, /) -> PySide6.QtGui.QQuaternion: ...
         def getScale(self, /) -> PySide6.QtGui.QVector3D: ...
 
-
     def __init__(self, /, parent: PySide6.QtQuick3D.QQuick3DObject | None = ..., *, instanceCountOverride: int | None = ..., hasTransparency: bool | None = ..., depthSortingEnabled: bool | None = ..., shadowBoundsMinimum: PySide6.QtGui.QVector3D | None = ..., shadowBoundsMaximum: PySide6.QtGui.QVector3D | None = ...) -> None: ...
 
     @staticmethod
@@ -236,13 +225,11 @@ class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
 
 
 class QQuick3DObject(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-
     childrenChanged          : typing.ClassVar[Signal] = ... # childrenChanged()
     parentChanged            : typing.ClassVar[Signal] = ... # parentChanged()
     stateChanged             : typing.ClassVar[Signal] = ... # stateChanged()
 
     class ItemChange(enum.Enum):
-
         ItemChildAddedChange      = 0x0
         ItemChildRemovedChange    = 0x1
         ItemSceneChange           = 0x2
@@ -254,7 +241,6 @@ class QQuick3DObject(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         ItemAntialiasingHasChanged = 0x8
         ItemDevicePixelRatioHasChanged = 0x9
         ItemEnabledHasChanged     = 0xa
-
 
     def childItems(self, /) -> typing.List[PySide6.QtQuick3D.QQuick3DObject]: ...
     def classBegin(self, /) -> None: ...
@@ -270,16 +256,13 @@ class QQuick3DObject(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QQuick3DRenderExtension(PySide6.QtQuick3D.QQuick3DObject):
-
     def __init__(self, /, parent: PySide6.QtQuick3D.QQuick3DObject | None = ...) -> None: ...
 
 
 class QQuick3DTextureData(PySide6.QtQuick3D.QQuick3DObject):
-
     textureDataNodeDirty     : typing.ClassVar[Signal] = ... # textureDataNodeDirty()
 
     class Format(enum.Enum):
-
         None_                     = 0x0
         RGBA8                     = 0x1
         RGBA16F                   = 0x2
@@ -317,7 +300,6 @@ class QQuick3DTextureData(PySide6.QtQuick3D.QQuick3DObject):
         ASTC_10x10                = 0x22
         ASTC_12x10                = 0x23
         ASTC_12x12                = 0x24
-
 
     def __init__(self, /, parent: PySide6.QtQuick3D.QQuick3DObject | None = ...) -> None: ...
 

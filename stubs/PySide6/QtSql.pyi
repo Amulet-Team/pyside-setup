@@ -18,32 +18,28 @@ from PySide6.QtCore import Signal
 import shiboken6
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSql(shiboken6.Shiboken.Object):
-
     class Location(enum.Enum):
-
         AfterLastRow              = -2
         BeforeFirstRow            = -1
 
     class NumericalPrecisionPolicy(enum.Enum):
-
         HighPrecision             = 0x0
         LowPrecisionInt32         = 0x1
         LowPrecisionInt64         = 0x2
         LowPrecisionDouble        = 0x4
 
     class ParamTypeFlag(enum.Flag):
-
         In                        = 0x1
         Out                       = 0x2
         InOut                     = 0x3
         Binary                    = 0x4
 
     class TableType(enum.Enum):
-
         Tables                    = 0x1
         SystemTables              = 0x2
         Views                     = 0x4
@@ -51,7 +47,6 @@ class QSql(shiboken6.Shiboken.Object):
 
 
 class QSqlDatabase(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, driver: PySide6.QtSql.QSqlDriver, /, *, numericalPrecisionPolicy: PySide6.QtSql.QSql.NumericalPrecisionPolicy | None = ...) -> None: ...
     @typing.overload
@@ -128,11 +123,9 @@ class QSqlDatabase(shiboken6.Shiboken.Object):
 
 
 class QSqlDriver(PySide6.QtCore.QObject):
-
     notification             : typing.ClassVar[Signal] = ... # notification(QString,QSqlDriver::NotificationSource,QVariant)
 
     class DbmsType(enum.Enum):
-
         UnknownDbms               = 0x0
         MSSqlServer               = 0x1
         MySqlServer               = 0x2
@@ -145,7 +138,6 @@ class QSqlDriver(PySide6.QtCore.QObject):
         MimerSQL                  = 0x9
 
     class DriverFeature(enum.Enum):
-
         Transactions              = 0x0
         QuerySize                 = 0x1
         BLOB                      = 0x2
@@ -163,24 +155,20 @@ class QSqlDriver(PySide6.QtCore.QObject):
         CancelQuery               = 0xe
 
     class IdentifierType(enum.Enum):
-
         FieldName                 = 0x0
         TableName                 = 0x1
 
     class NotificationSource(enum.Enum):
-
         UnknownSource             = 0x0
         SelfSource                = 0x1
         OtherSource               = 0x2
 
     class StatementType(enum.Enum):
-
         WhereStatement            = 0x0
         SelectStatement           = 0x1
         UpdateStatement           = 0x2
         InsertStatement           = 0x3
         DeleteStatement           = 0x4
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, numericalPrecisionPolicy: PySide6.QtSql.QSql.NumericalPrecisionPolicy | None = ...) -> None: ...
 
@@ -217,22 +205,18 @@ class QSqlDriver(PySide6.QtCore.QObject):
 
 
 class QSqlDriverCreatorBase(shiboken6.Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def createObject(self, /) -> PySide6.QtSql.QSqlDriver: ...
 
 
 class QSqlError(shiboken6.Shiboken.Object):
-
     class ErrorType(enum.Enum):
-
         NoError                   = 0x0
         ConnectionError           = 0x1
         StatementError            = 0x2
         TransactionError          = 0x3
         UnknownError              = 0x4
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtSql.QSqlError, /) -> None: ...
@@ -253,13 +237,10 @@ class QSqlError(shiboken6.Shiboken.Object):
 
 
 class QSqlField(shiboken6.Shiboken.Object):
-
     class RequiredStatus(enum.Enum):
-
         Unknown                   = -1
         Optional                  = 0x0
         Required                  = 0x1
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtSql.QSqlField, /, *, value: typing.Any | None = ..., defaultValue: typing.Any | None = ..., name: str | None = ..., tableName: str | None = ..., metaType: PySide6.QtCore.QMetaType | None = ..., requiredStatus: PySide6.QtSql.QSqlField.RequiredStatus | None = ..., readOnly: bool | None = ..., generated: bool | None = ..., autoValue: bool | None = ..., length: int | None = ..., precision: int | None = ...) -> None: ...
@@ -302,7 +283,6 @@ class QSqlField(shiboken6.Shiboken.Object):
 
 
 class QSqlIndex(PySide6.QtSql.QSqlRecord):
-
     @typing.overload
     def __init__(self, other: PySide6.QtSql.QSqlIndex, /, *, name: str | None = ..., cursorName: str | None = ...) -> None: ...
     @typing.overload
@@ -323,12 +303,9 @@ class QSqlIndex(PySide6.QtSql.QSqlRecord):
 
 
 class QSqlQuery(shiboken6.Shiboken.Object):
-
     class BatchExecutionMode(enum.Enum):
-
         ValuesAsRows              = 0x0
         ValuesAsColumns           = 0x1
-
 
     @typing.overload
     def __init__(self, db: PySide6.QtSql.QSqlDatabase, /, *, forwardOnly: bool | None = ..., positionalBindingEnabled: bool | None = ..., numericalPrecisionPolicy: PySide6.QtSql.QSql.NumericalPrecisionPolicy | None = ...) -> None: ...
@@ -401,7 +378,6 @@ class QSqlQuery(shiboken6.Shiboken.Object):
 
 
 class QSqlQueryModel(PySide6.QtCore.QAbstractTableModel):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def beginInsertColumns(self, parent: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, first: int, last: int, /) -> None: ...
@@ -442,7 +418,6 @@ class QSqlQueryModel(PySide6.QtCore.QAbstractTableModel):
 
 
 class QSqlRecord(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -496,7 +471,6 @@ class QSqlRecord(shiboken6.Shiboken.Object):
 
 
 class QSqlRelation(shiboken6.Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -513,7 +487,6 @@ class QSqlRelation(shiboken6.Shiboken.Object):
 
 
 class QSqlRelationalDelegate(PySide6.QtWidgets.QStyledItemDelegate):
-
     def __init__(self, /, aParent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def createEditor(self, aParent: PySide6.QtWidgets.QWidget, option: PySide6.QtWidgets.QStyleOptionViewItem, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtWidgets.QWidget: ...
@@ -522,12 +495,9 @@ class QSqlRelationalDelegate(PySide6.QtWidgets.QStyledItemDelegate):
 
 
 class QSqlRelationalTableModel(PySide6.QtSql.QSqlTableModel):
-
     class JoinMode(enum.Enum):
-
         InnerJoin                 = 0x0
         LeftJoin                  = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., db: PySide6.QtSql.QSqlDatabase = ...) -> None: ...
 
@@ -549,14 +519,12 @@ class QSqlRelationalTableModel(PySide6.QtSql.QSqlTableModel):
 
 
 class QSqlResult(shiboken6.Shiboken.Object):
-
     class BindingSyntax(enum.Enum):
-
         PositionalBinding         = 0x0
         NamedBinding              = 0x1
 
-    class VirtualHookOperation(enum.Enum): ...  # type: ignore[misc]
-
+    class VirtualHookOperation(enum.Enum):  # type: ignore[misc]
+        ...
 
     def __init__(self, db: PySide6.QtSql.QSqlDriver, /) -> None: ...
 
@@ -623,18 +591,15 @@ class QSqlResult(shiboken6.Shiboken.Object):
 
 
 class QSqlTableModel(PySide6.QtSql.QSqlQueryModel):
-
     beforeDelete             : typing.ClassVar[Signal] = ... # beforeDelete(int)
     beforeInsert             : typing.ClassVar[Signal] = ... # beforeInsert(QSqlRecord&)
     beforeUpdate             : typing.ClassVar[Signal] = ... # beforeUpdate(int,QSqlRecord&)
     primeInsert              : typing.ClassVar[Signal] = ... # primeInsert(int,QSqlRecord&)
 
     class EditStrategy(enum.Enum):
-
         OnFieldChange             = 0x0
         OnRowChange               = 0x1
         OnManualSubmit            = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., db: PySide6.QtSql.QSqlDatabase = ...) -> None: ...
 

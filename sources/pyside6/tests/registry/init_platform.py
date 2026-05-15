@@ -17,6 +17,8 @@ shiboken and pysidetest projects.
 
 import sys
 import os
+import typing
+import inspect
 from contextlib import contextmanager
 from textwrap import dedent
 from util import get_refpath, get_script_dir
@@ -137,7 +139,7 @@ class Formatter(BaseFormatter):
         self.level -= 1
 
     @contextmanager
-    def function(self, func_name, signature, *other):
+    def function(self, func_name: str, signature: typing.Union[inspect.Signature, list[inspect.Signature]], *other):
         if self.last_level > self.level:
             self.print()
         self.last_level = self.level

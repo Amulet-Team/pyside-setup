@@ -20,8 +20,8 @@ import shiboken6
 
 
 class QAbstractItemModelReplica(PySide6.QtCore.QAbstractItemModel):
-
     initialized              : typing.ClassVar[Signal] = ... # initialized()
+
     def availableRoles(self, /) -> typing.List[int]: ...
     def columnCount(self, /, parent: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex = ...) -> int: ...
     def data(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /, role: int = ...) -> typing.Any: ...
@@ -45,7 +45,6 @@ class QAbstractItemModelReplica(PySide6.QtCore.QAbstractItemModel):
 
 
 class QConnectionAbstractServer(PySide6.QtCore.QObject):
-
     newConnection            : typing.ClassVar[Signal] = ... # newConnection()
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -59,22 +58,22 @@ class QConnectionAbstractServer(PySide6.QtCore.QObject):
     def serverError(self, /) -> PySide6.QtNetwork.QAbstractSocket.SocketError: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QRemoteObjectAbstractPersistedStore(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def restoreProperties(self, repName: str, repSig: PySide6.QtCore.QByteArray | bytes | bytearray | str, /) -> typing.List[typing.Any]: ...
     def saveProperties(self, repName: str, repSig: PySide6.QtCore.QByteArray | bytes | bytearray | str, values: collections.abc.Sequence[typing.Any], /) -> None: ...
 
 
-class QRemoteObjectDynamicReplica(PySide6.QtRemoteObjects.QRemoteObjectReplica): ...
+class QRemoteObjectDynamicReplica(PySide6.QtRemoteObjects.QRemoteObjectReplica):
+    ...
 
 
 class QRemoteObjectHost(PySide6.QtRemoteObjects.QRemoteObjectHostBase):
-
     hostUrlChanged           : typing.ClassVar[Signal] = ... # hostUrlChanged()
 
     @typing.overload
@@ -91,12 +90,9 @@ class QRemoteObjectHost(PySide6.QtRemoteObjects.QRemoteObjectHostBase):
 
 
 class QRemoteObjectHostBase(PySide6.QtRemoteObjects.QRemoteObjectNode):
-
     class AllowedSchemas(enum.Enum):
-
         BuiltInSchemasOnly        = 0x0
         AllowExternalRegistration = 0x1
-
 
     def addHostSideConnection(self, ioDevice: PySide6.QtCore.QIODevice, /) -> None: ...
     def disableRemoting(self, remoteObject: PySide6.QtCore.QObject, /) -> bool: ...
@@ -112,14 +108,12 @@ class QRemoteObjectHostBase(PySide6.QtRemoteObjects.QRemoteObjectNode):
 
 
 class QRemoteObjectNode(PySide6.QtCore.QObject):
-
     error                    : typing.ClassVar[Signal] = ... # error(QRemoteObjectNode::ErrorCode)
     heartbeatIntervalChanged : typing.ClassVar[Signal] = ... # heartbeatIntervalChanged(int)
     remoteObjectAdded        : typing.ClassVar[Signal] = ... # remoteObjectAdded(QRemoteObjectSourceLocation)
     remoteObjectRemoved      : typing.ClassVar[Signal] = ... # remoteObjectRemoved(QRemoteObjectSourceLocation)
 
     class ErrorCode(enum.Enum):
-
         NoError                   = 0x0
         RegistryNotAcquired       = 0x1
         RegistryAlreadyHosted     = 0x2
@@ -133,7 +127,6 @@ class QRemoteObjectNode(PySide6.QtCore.QObject):
         ProtocolMismatch          = 0xa
         ListenFailed              = 0xb
         SocketAccessError         = 0xc
-
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, registryUrl: PySide6.QtCore.QUrl | None = ..., persistedStore: PySide6.QtRemoteObjects.QRemoteObjectAbstractPersistedStore | None = ..., heartbeatInterval: int | None = ...) -> None: ...
@@ -160,12 +153,9 @@ class QRemoteObjectNode(PySide6.QtCore.QObject):
 
 
 class QRemoteObjectPendingCall(shiboken6.Shiboken.Object):
-
     class Error(enum.Enum):
-
         NoError                   = 0x0
         InvalidMessage            = 0x1
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -181,7 +171,6 @@ class QRemoteObjectPendingCall(shiboken6.Shiboken.Object):
 
 
 class QRemoteObjectPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtRemoteObjects.QRemoteObjectPendingCall):
-
     finished                 : typing.ClassVar[Signal] = ... # finished(QRemoteObjectPendingCallWatcher*)
 
     def __init__(self, call: PySide6.QtRemoteObjects.QRemoteObjectPendingCall, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -191,9 +180,9 @@ class QRemoteObjectPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtRemoteOb
 
 
 class QRemoteObjectRegistry(PySide6.QtRemoteObjects.QRemoteObjectReplica):
-
     remoteObjectAdded        : typing.ClassVar[Signal] = ... # remoteObjectAdded(QRemoteObjectSourceLocation)
     remoteObjectRemoved      : typing.ClassVar[Signal] = ... # remoteObjectRemoved(QRemoteObjectSourceLocation)
+
     def addSource(self, entry: typing.Tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo], /) -> None: ...
     def initialize(self, /) -> None: ...
     def pushToRegistryIfNeeded(self, /) -> None: ...
@@ -204,31 +193,26 @@ class QRemoteObjectRegistry(PySide6.QtRemoteObjects.QRemoteObjectReplica):
 
 
 class QRemoteObjectRegistryHost(PySide6.QtRemoteObjects.QRemoteObjectHostBase):
-
     def __init__(self, /, registryAddress: PySide6.QtCore.QUrl | str = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def setRegistryUrl(self, registryUrl: PySide6.QtCore.QUrl | str, /) -> bool: ...
 
 
 class QRemoteObjectReplica(PySide6.QtCore.QObject):
-
     initialized              : typing.ClassVar[Signal] = ... # initialized()
     notified                 : typing.ClassVar[Signal] = ... # notified()
     stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(State,State)
 
     class ConstructorType(enum.IntEnum):
-
         DefaultConstructor        = 0x0
         ConstructWithNode         = 0x1
 
     class State(enum.Enum):
-
         Uninitialized             = 0x0
         Default                   = 0x1
         Valid                     = 0x2
         Suspect                   = 0x3
         SignatureMismatch         = 0x4
-
 
     def __init__(self, /, t: PySide6.QtRemoteObjects.QRemoteObjectReplica.ConstructorType = ..., *, node: PySide6.QtRemoteObjects.QRemoteObjectNode | None = ..., state: PySide6.QtRemoteObjects.QRemoteObjectReplica.State | None = ...) -> None: ...
 
@@ -249,7 +233,6 @@ class QRemoteObjectReplica(PySide6.QtCore.QObject):
 
 
 class QRemoteObjectSettingsStore(PySide6.QtRemoteObjects.QRemoteObjectAbstractPersistedStore):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def restoreProperties(self, repName: str, repSig: PySide6.QtCore.QByteArray | bytes | bytearray | str, /) -> typing.List[typing.Any]: ...
@@ -257,7 +240,6 @@ class QRemoteObjectSettingsStore(PySide6.QtRemoteObjects.QRemoteObjectAbstractPe
 
 
 class QRemoteObjectSourceLocationInfo(shiboken6.Shiboken.Object):
-
     @property
     def hostUrl(self) -> PySide6.QtCore.QUrl: ...
     @hostUrl.setter
@@ -290,7 +272,6 @@ class QtROClientFactory(shiboken6.Shiboken.Object):
 
 
 class QtROClientIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
-
     setError                 : typing.ClassVar[Signal] = ... # setError(QRemoteObjectNode::ErrorCode)
     shouldReconnect          : typing.ClassVar[Signal] = ... # shouldReconnect(QtROClientIoDevice*)
 
@@ -305,7 +286,6 @@ class QtROClientIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
 
 
 class QtROIoDeviceBase(PySide6.QtCore.QObject):
-
     disconnected             : typing.ClassVar[Signal] = ... # disconnected()
     readyRead                : typing.ClassVar[Signal] = ... # readyRead()
 
@@ -337,21 +317,17 @@ class QtROServerFactory(shiboken6.Shiboken.Object):
 
 
 class QtROServerIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def deviceType(self, /) -> str: ...
 
 
 class QtRemoteObjects(shiboken6.Shiboken.Object):
-
     class InitialAction(enum.Enum):
-
         FetchRootSize             = 0x0
         PrefetchData              = 0x1
 
     class QRemoteObjectPacketTypeEnum(enum.Enum):
-
         Invalid                   = 0x0
         Handshake                 = 0x1
         InitPacket                = 0x2
@@ -365,7 +341,6 @@ class QtRemoteObjects(shiboken6.Shiboken.Object):
         Ping                      = 0xa
         Pong                      = 0xb
 
-
     @typing.overload
     @staticmethod
     def copyStoredProperties(mo: PySide6.QtCore.QMetaObject, src: PySide6.QtCore.QDataStream, dst: shiboken6.Shiboken.VoidPtr | shiboken6.Shiboken.Object, /) -> None: ...
@@ -378,7 +353,6 @@ class QtRemoteObjects(shiboken6.Shiboken.Object):
 
 
 class RepFile:
-
     @property
     def pod(self) -> typing.Any: ...
     @pod.setter

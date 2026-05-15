@@ -20,26 +20,23 @@ import typing
 from PySide6.QtCore import Signal
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QQuickWidget(PySide6.QtWidgets.QWidget):
-
     sceneGraphError          : typing.ClassVar[Signal] = ... # sceneGraphError(QQuickWindow::SceneGraphError,QString)
     statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQuickWidget::Status)
 
     class ResizeMode(enum.Enum):
-
         SizeViewToRootObject      = 0x0
         SizeRootObjectToView      = 0x1
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Ready                     = 0x1
         Loading                   = 0x2
         Error                     = 0x3
-
 
     @typing.overload
     def __init__(self, engine: PySide6.QtQml.QQmlEngine, parent: PySide6.QtWidgets.QWidget, /, *, resizeMode: PySide6.QtQuickWidgets.QQuickWidget.ResizeMode | None = ..., status: PySide6.QtQuickWidgets.QQuickWidget.Status | None = ..., source: PySide6.QtCore.QUrl | None = ...) -> None: ...
