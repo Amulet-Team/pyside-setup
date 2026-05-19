@@ -26,11 +26,31 @@ class QIntList:
 
 class Qt3DExtras(shiboken6.Shiboken.Object):
     class QAbstractCameraController(PySide6.Qt3DCore.Qt3DCore.QEntity):
-        accelerationChanged      : typing.ClassVar[Signal] = ... # accelerationChanged(float)
-        cameraChanged            : typing.ClassVar[Signal] = ... # cameraChanged()
-        decelerationChanged      : typing.ClassVar[Signal] = ... # decelerationChanged(float)
-        linearSpeedChanged       : typing.ClassVar[Signal] = ... # linearSpeedChanged()
-        lookSpeedChanged         : typing.ClassVar[Signal] = ... # lookSpeedChanged()
+        # accelerationChanged(float)
+        accelerationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # cameraChanged()
+        cameraChanged: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # decelerationChanged(float)
+        decelerationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # linearSpeedChanged()
+        linearSpeedChanged: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # lookSpeedChanged()
+        lookSpeedChanged: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
 
         class InputState(shiboken6.Shiboken.Object):
             @property
@@ -95,9 +115,21 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def setLookSpeed(self, lookSpeed: float, /) -> None: ...
 
     class QAbstractSpriteSheet(PySide6.Qt3DCore.Qt3DCore.QNode):
-        currentIndexChanged      : typing.ClassVar[Signal] = ... # currentIndexChanged(int)
-        textureChanged           : typing.ClassVar[Signal] = ... # textureChanged(Qt3DRender::QAbstractTexture*)
-        textureTransformChanged  : typing.ClassVar[Signal] = ... # textureTransformChanged(QMatrix3x3)
+        # currentIndexChanged(int)
+        currentIndexChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # textureChanged(Qt3DRender::QAbstractTexture*)
+        textureChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # textureTransformChanged(QMatrix3x3)
+        textureTransformChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QMatrix3x3], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3]
+        ]]
 
         def currentIndex(self, /) -> int: ...
         def setCurrentIndex(self, currentIndex: int, /) -> None: ...
@@ -106,13 +138,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureTransform(self, /) -> PySide6.QtGui.QMatrix3x3: ...
 
     class QConeGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        bottomRadiusChanged      : typing.ClassVar[Signal] = ... # bottomRadiusChanged(float)
-        hasBottomEndcapChanged   : typing.ClassVar[Signal] = ... # hasBottomEndcapChanged(bool)
-        hasTopEndcapChanged      : typing.ClassVar[Signal] = ... # hasTopEndcapChanged(bool)
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
-        topRadiusChanged         : typing.ClassVar[Signal] = ... # topRadiusChanged(float)
+        # bottomRadiusChanged(float)
+        bottomRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # hasBottomEndcapChanged(bool)
+        hasBottomEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # hasTopEndcapChanged(bool)
+        hasTopEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # topRadiusChanged(float)
+        topRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, hasTopEndcap: bool | None = ..., hasBottomEndcap: bool | None = ..., rings: int | None = ..., slices: int | None = ..., topRadius: float | None = ..., bottomRadius: float | None = ..., length: float | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -138,13 +198,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def updateVertices(self, /) -> None: ...
 
     class QConeGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        bottomRadiusChanged      : typing.ClassVar[Signal] = ... # bottomRadiusChanged(float)
-        hasBottomEndcapChanged   : typing.ClassVar[Signal] = ... # hasBottomEndcapChanged(bool)
-        hasTopEndcapChanged      : typing.ClassVar[Signal] = ... # hasTopEndcapChanged(bool)
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
-        topRadiusChanged         : typing.ClassVar[Signal] = ... # topRadiusChanged(float)
+        # bottomRadiusChanged(float)
+        bottomRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # hasBottomEndcapChanged(bool)
+        hasBottomEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # hasTopEndcapChanged(bool)
+        hasTopEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # topRadiusChanged(float)
+        topRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., hasTopEndcap: bool | None = ..., hasBottomEndcap: bool | None = ..., topRadius: float | None = ..., bottomRadius: float | None = ..., length: float | None = ...) -> None: ...
 
@@ -172,13 +260,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def topRadius(self, /) -> float: ...
 
     class QConeMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        bottomRadiusChanged      : typing.ClassVar[Signal] = ... # bottomRadiusChanged(float)
-        hasBottomEndcapChanged   : typing.ClassVar[Signal] = ... # hasBottomEndcapChanged(bool)
-        hasTopEndcapChanged      : typing.ClassVar[Signal] = ... # hasTopEndcapChanged(bool)
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
-        topRadiusChanged         : typing.ClassVar[Signal] = ... # topRadiusChanged(float)
+        # bottomRadiusChanged(float)
+        bottomRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # hasBottomEndcapChanged(bool)
+        hasBottomEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # hasTopEndcapChanged(bool)
+        hasTopEndcapChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # topRadiusChanged(float)
+        topRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., hasTopEndcap: bool | None = ..., hasBottomEndcap: bool | None = ..., topRadius: float | None = ..., bottomRadius: float | None = ..., length: float | None = ...) -> None: ...
 
@@ -206,12 +322,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def topRadius(self, /) -> float: ...
 
     class QCuboidGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        xExtentChanged           : typing.ClassVar[Signal] = ... # xExtentChanged(float)
-        xyMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xyMeshResolutionChanged(QSize)
-        xzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xzMeshResolutionChanged(QSize)
-        yExtentChanged           : typing.ClassVar[Signal] = ... # yExtentChanged(float)
-        yzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # yzMeshResolutionChanged(QSize)
-        zExtentChanged           : typing.ClassVar[Signal] = ... # zExtentChanged(float)
+        # xExtentChanged(float)
+        xExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # xyMeshResolutionChanged(QSize)
+        xyMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # xzMeshResolutionChanged(QSize)
+        xzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # yExtentChanged(float)
+        yExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # yzMeshResolutionChanged(QSize)
+        yzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # zExtentChanged(float)
+        zExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, xExtent: float | None = ..., yExtent: float | None = ..., zExtent: float | None = ..., xyMeshResolution: PySide6.QtCore.QSize | None = ..., yzMeshResolution: PySide6.QtCore.QSize | None = ..., xzMeshResolution: PySide6.QtCore.QSize | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., tangentAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -236,12 +376,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def zExtent(self, /) -> float: ...
 
     class QCuboidGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        xExtentChanged           : typing.ClassVar[Signal] = ... # xExtentChanged(float)
-        xyMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xyMeshResolutionChanged(QSize)
-        xzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xzMeshResolutionChanged(QSize)
-        yExtentChanged           : typing.ClassVar[Signal] = ... # yExtentChanged(float)
-        yzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # yzMeshResolutionChanged(QSize)
-        zExtentChanged           : typing.ClassVar[Signal] = ... # zExtentChanged(float)
+        # xExtentChanged(float)
+        xExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # xyMeshResolutionChanged(QSize)
+        xyMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # xzMeshResolutionChanged(QSize)
+        xzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # yExtentChanged(float)
+        yExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # yzMeshResolutionChanged(QSize)
+        yzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # zExtentChanged(float)
+        zExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, xExtent: float | None = ..., yExtent: float | None = ..., zExtent: float | None = ..., yzMeshResolution: PySide6.QtCore.QSize | None = ..., xzMeshResolution: PySide6.QtCore.QSize | None = ..., xyMeshResolution: PySide6.QtCore.QSize | None = ...) -> None: ...
 
@@ -267,12 +431,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def zExtent(self, /) -> float: ...
 
     class QCuboidMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        xExtentChanged           : typing.ClassVar[Signal] = ... # xExtentChanged(float)
-        xyMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xyMeshResolutionChanged(QSize)
-        xzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # xzMeshResolutionChanged(QSize)
-        yExtentChanged           : typing.ClassVar[Signal] = ... # yExtentChanged(float)
-        yzMeshResolutionChanged  : typing.ClassVar[Signal] = ... # yzMeshResolutionChanged(QSize)
-        zExtentChanged           : typing.ClassVar[Signal] = ... # zExtentChanged(float)
+        # xExtentChanged(float)
+        xExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # xyMeshResolutionChanged(QSize)
+        xyMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # xzMeshResolutionChanged(QSize)
+        xzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # yExtentChanged(float)
+        yExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # yzMeshResolutionChanged(QSize)
+        yzMeshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # zExtentChanged(float)
+        zExtentChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, xExtent: float | None = ..., yExtent: float | None = ..., zExtent: float | None = ..., yzMeshResolution: PySide6.QtCore.QSize | None = ..., xzMeshResolution: PySide6.QtCore.QSize | None = ..., xyMeshResolution: PySide6.QtCore.QSize | None = ...) -> None: ...
 
@@ -298,10 +486,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def zExtent(self, /) -> float: ...
 
     class QCylinderGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., length: float | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -321,10 +525,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def updateVertices(self, /) -> None: ...
 
     class QCylinderGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., length: float | None = ...) -> None: ...
 
@@ -346,10 +566,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def slices(self, /) -> int: ...
 
     class QCylinderMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        lengthChanged            : typing.ClassVar[Signal] = ... # lengthChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # lengthChanged(float)
+        lengthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., length: float | None = ...) -> None: ...
 
@@ -371,11 +607,31 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def slices(self, /) -> int: ...
 
     class QDiffuseMapMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(Qt3DRender::QAbstractTexture*)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(Qt3DRender::QAbstractTexture*)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., shininess: float | None = ..., diffuse: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., textureScale: float | None = ...) -> None: ...
 
@@ -391,11 +647,31 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QDiffuseSpecularMapMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(Qt3DRender::QAbstractTexture*)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(Qt3DRender::QAbstractTexture*)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(Qt3DRender::QAbstractTexture*)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(Qt3DRender::QAbstractTexture*)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., shininess: float | None = ..., specular: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., diffuse: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., textureScale: float | None = ...) -> None: ...
 
@@ -411,13 +687,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QDiffuseSpecularMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        alphaBlendingEnabledChanged: typing.ClassVar[Signal] = ... # alphaBlendingEnabledChanged(bool)
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(QVariant)
-        normalChanged            : typing.ClassVar[Signal] = ... # normalChanged(QVariant)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QVariant)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # alphaBlendingEnabledChanged(bool)
+        alphaBlendingEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(QVariant)
+        diffuseChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # normalChanged(QVariant)
+        normalChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QVariant)
+        specularChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., diffuse: typing.Any | None = ..., specular: typing.Any | None = ..., shininess: float | None = ..., normal: typing.Any | None = ..., textureScale: float | None = ..., alphaBlending: bool | None = ...) -> None: ...
 
@@ -437,9 +741,21 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QExtrudedTextGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        depthChanged             : typing.ClassVar[Signal] = ... # depthChanged(float)
-        fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-        textChanged              : typing.ClassVar[Signal] = ... # textChanged(QString)
+        # depthChanged(float)
+        depthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # fontChanged(QFont)
+        fontChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+        ]]
+        # textChanged(QString)
+        textChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, text: str | None = ..., font: PySide6.QtGui.QFont | None = ..., extrusionLength: float | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -454,9 +770,21 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def text(self, /) -> str: ...
 
     class QExtrudedTextMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        depthChanged             : typing.ClassVar[Signal] = ... # depthChanged(float)
-        fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-        textChanged              : typing.ClassVar[Signal] = ... # textChanged(QString)
+        # depthChanged(float)
+        depthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # fontChanged(QFont)
+        fontChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+        ]]
+        # textChanged(QString)
+        textChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, text: str | None = ..., font: PySide6.QtGui.QFont | None = ..., depth: float | None = ...) -> None: ...
 
@@ -471,15 +799,51 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
     class QForwardRenderer(PySide6.Qt3DRender.Qt3DRender.QTechniqueFilter):
-        buffersToClearChanged    : typing.ClassVar[Signal] = ... # buffersToClearChanged(Qt3DRender::QClearBuffers::BufferType)
-        cameraChanged            : typing.ClassVar[Signal] = ... # cameraChanged(Qt3DCore::QEntity*)
-        clearColorChanged        : typing.ClassVar[Signal] = ... # clearColorChanged(QColor)
-        externalRenderTargetSizeChanged: typing.ClassVar[Signal] = ... # externalRenderTargetSizeChanged(QSize)
-        frustumCullingEnabledChanged: typing.ClassVar[Signal] = ... # frustumCullingEnabledChanged(bool)
-        gammaChanged             : typing.ClassVar[Signal] = ... # gammaChanged(float)
-        showDebugOverlayChanged  : typing.ClassVar[Signal] = ... # showDebugOverlayChanged(bool)
-        surfaceChanged           : typing.ClassVar[Signal] = ... # surfaceChanged(QObject*)
-        viewportRectChanged      : typing.ClassVar[Signal] = ... # viewportRectChanged(QRectF)
+        # buffersToClearChanged(Qt3DRender::QClearBuffers::BufferType)
+        buffersToClearChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType], [PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType]
+        ]]
+        # cameraChanged(Qt3DCore::QEntity*)
+        cameraChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity]
+        ]]
+        # clearColorChanged(QColor)
+        clearColorChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # externalRenderTargetSizeChanged(QSize)
+        externalRenderTargetSizeChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # frustumCullingEnabledChanged(bool)
+        frustumCullingEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # gammaChanged(float)
+        gammaChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # showDebugOverlayChanged(bool)
+        showDebugOverlayChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # surfaceChanged(QObject*)
+        surfaceChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+        ]]
+        # viewportRectChanged(QRectF)
+        viewportRectChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QRectF], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, surface: PySide6.QtCore.QObject | None = ..., window: PySide6.QtCore.QObject | None = ..., viewportRect: PySide6.QtCore.QRectF | None = ..., clearColor: PySide6.QtGui.QColor | None = ..., buffersToClear: PySide6.Qt3DRender.Qt3DRender.QClearBuffers.BufferType | None = ..., camera: PySide6.Qt3DCore.Qt3DCore.QEntity | None = ..., externalRenderTargetSize: PySide6.QtCore.QSize | None = ..., frustumCulling: bool | None = ..., gamma: float | None = ..., showDebugOverlay: bool | None = ...) -> None: ...
 
@@ -503,13 +867,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def viewportRect(self, /) -> PySide6.QtCore.QRectF: ...
 
     class QGoochMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        alphaChanged             : typing.ClassVar[Signal] = ... # alphaChanged(float)
-        betaChanged              : typing.ClassVar[Signal] = ... # betaChanged(float)
-        coolChanged              : typing.ClassVar[Signal] = ... # coolChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(QColor)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
-        warmChanged              : typing.ClassVar[Signal] = ... # warmChanged(QColor)
+        # alphaChanged(float)
+        alphaChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # betaChanged(float)
+        betaChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # coolChanged(QColor)
+        coolChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(QColor)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # warmChanged(QColor)
+        warmChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, diffuse: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., cool: PySide6.QtGui.QColor | None = ..., warm: PySide6.QtGui.QColor | None = ..., alpha: float | None = ..., beta: float | None = ..., shininess: float | None = ...) -> None: ...
 
@@ -529,12 +921,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def warm(self, /) -> PySide6.QtGui.QColor: ...
 
     class QMetalRoughMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientOcclusionChanged  : typing.ClassVar[Signal] = ... # ambientOcclusionChanged(QVariant)
-        baseColorChanged         : typing.ClassVar[Signal] = ... # baseColorChanged(QVariant)
-        metalnessChanged         : typing.ClassVar[Signal] = ... # metalnessChanged(QVariant)
-        normalChanged            : typing.ClassVar[Signal] = ... # normalChanged(QVariant)
-        roughnessChanged         : typing.ClassVar[Signal] = ... # roughnessChanged(QVariant)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # ambientOcclusionChanged(QVariant)
+        ambientOcclusionChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # baseColorChanged(QVariant)
+        baseColorChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # metalnessChanged(QVariant)
+        metalnessChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # normalChanged(QVariant)
+        normalChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # roughnessChanged(QVariant)
+        roughnessChanged: typing.ClassVar[Signal[
+            [typing.Any], [], [], [], [], [], [], [],
+            [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, baseColor: typing.Any | None = ..., metalness: typing.Any | None = ..., roughness: typing.Any | None = ..., ambientOcclusion: typing.Any | None = ..., normal: typing.Any | None = ..., textureScale: float | None = ...) -> None: ...
 
@@ -552,11 +968,31 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QMorphPhongMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(QColor)
-        interpolatorChanged      : typing.ClassVar[Signal] = ... # interpolatorChanged(float)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(QColor)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # interpolatorChanged(float)
+        interpolatorChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., diffuse: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., shininess: float | None = ..., interpolator: float | None = ...) -> None: ...
 
@@ -575,12 +1011,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
     class QNormalDiffuseMapMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(Qt3DRender::QAbstractTexture*)
-        normalChanged            : typing.ClassVar[Signal] = ... # normalChanged(Qt3DRender::QAbstractTexture*)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(Qt3DRender::QAbstractTexture*)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # normalChanged(Qt3DRender::QAbstractTexture*)
+        normalChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., diffuse: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., normal: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., shininess: float | None = ..., textureScale: float | None = ...) -> None: ...
 
@@ -598,12 +1058,36 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QNormalDiffuseSpecularMapMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(Qt3DRender::QAbstractTexture*)
-        normalChanged            : typing.ClassVar[Signal] = ... # normalChanged(Qt3DRender::QAbstractTexture*)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(Qt3DRender::QAbstractTexture*)
-        textureScaleChanged      : typing.ClassVar[Signal] = ... # textureScaleChanged(float)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(Qt3DRender::QAbstractTexture*)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # normalChanged(Qt3DRender::QAbstractTexture*)
+        normalChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(Qt3DRender::QAbstractTexture*)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # textureScaleChanged(float)
+        textureScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., diffuse: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., normal: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., specular: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., shininess: float | None = ..., textureScale: float | None = ...) -> None: ...
 
@@ -621,13 +1105,41 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureScale(self, /) -> float: ...
 
     class QOrbitCameraController(PySide6.Qt3DExtras.Qt3DExtras.QAbstractCameraController):
-        inversePanChanged        : typing.ClassVar[Signal] = ... # inversePanChanged(bool)
-        inverseTiltChanged       : typing.ClassVar[Signal] = ... # inverseTiltChanged(bool)
-        inverseXTranslateChanged : typing.ClassVar[Signal] = ... # inverseXTranslateChanged(bool)
-        inverseYTranslateChanged : typing.ClassVar[Signal] = ... # inverseYTranslateChanged(bool)
-        upVectorChanged          : typing.ClassVar[Signal] = ... # upVectorChanged(QVector3D)
-        zoomInLimitChanged       : typing.ClassVar[Signal] = ... # zoomInLimitChanged()
-        zoomTranslateViewCenterChanged: typing.ClassVar[Signal] = ... # zoomTranslateViewCenterChanged(bool)
+        # inversePanChanged(bool)
+        inversePanChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # inverseTiltChanged(bool)
+        inverseTiltChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # inverseXTranslateChanged(bool)
+        inverseXTranslateChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # inverseYTranslateChanged(bool)
+        inverseYTranslateChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # upVectorChanged(QVector3D)
+        upVectorChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # zoomInLimitChanged()
+        zoomInLimitChanged: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # zoomTranslateViewCenterChanged(bool)
+        zoomTranslateViewCenterChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, zoomInLimit: float | None = ..., upVector: PySide6.QtGui.QVector3D | None = ..., inverseXTranslate: bool | None = ..., inverseYTranslate: bool | None = ..., inversePan: bool | None = ..., inverseTilt: bool | None = ..., zoomTranslateViewCenter: bool | None = ...) -> None: ...
 
@@ -650,16 +1162,56 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
     class QPhongAlphaMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        alphaChanged             : typing.ClassVar[Signal] = ... # alphaChanged(float)
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        blendFunctionArgChanged  : typing.ClassVar[Signal] = ... # blendFunctionArgChanged(Qt3DRender::QBlendEquation::BlendFunction)
-        destinationAlphaArgChanged: typing.ClassVar[Signal] = ... # destinationAlphaArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
-        destinationRgbArgChanged : typing.ClassVar[Signal] = ... # destinationRgbArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(QColor)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        sourceAlphaArgChanged    : typing.ClassVar[Signal] = ... # sourceAlphaArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
-        sourceRgbArgChanged      : typing.ClassVar[Signal] = ... # sourceRgbArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
+        # alphaChanged(float)
+        alphaChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # blendFunctionArgChanged(Qt3DRender::QBlendEquation::BlendFunction)
+        blendFunctionArgChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction], [PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction]
+        ]]
+        # destinationAlphaArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
+        destinationAlphaArgChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending]
+        ]]
+        # destinationRgbArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
+        destinationRgbArgChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending]
+        ]]
+        # diffuseChanged(QColor)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # sourceAlphaArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
+        sourceAlphaArgChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending]
+        ]]
+        # sourceRgbArgChanged(Qt3DRender::QBlendEquationArguments::Blending)
+        sourceRgbArgChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending], [PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., diffuse: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., shininess: float | None = ..., alpha: float | None = ..., sourceRgbArg: PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending | None = ..., destinationRgbArg: PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending | None = ..., sourceAlphaArg: PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending | None = ..., destinationAlphaArg: PySide6.Qt3DRender.Qt3DRender.QBlendEquationArguments.Blending | None = ..., blendFunctionArg: PySide6.Qt3DRender.Qt3DRender.QBlendEquation.BlendFunction | None = ...) -> None: ...
 
@@ -685,10 +1237,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def specular(self, /) -> PySide6.QtGui.QColor: ...
 
     class QPhongMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        ambientChanged           : typing.ClassVar[Signal] = ... # ambientChanged(QColor)
-        diffuseChanged           : typing.ClassVar[Signal] = ... # diffuseChanged(QColor)
-        shininessChanged         : typing.ClassVar[Signal] = ... # shininessChanged(float)
-        specularChanged          : typing.ClassVar[Signal] = ... # specularChanged(QColor)
+        # ambientChanged(QColor)
+        ambientChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # diffuseChanged(QColor)
+        diffuseChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # shininessChanged(float)
+        shininessChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # specularChanged(QColor)
+        specularChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, ambient: PySide6.QtGui.QColor | None = ..., diffuse: PySide6.QtGui.QColor | None = ..., specular: PySide6.QtGui.QColor | None = ..., shininess: float | None = ...) -> None: ...
 
@@ -702,10 +1270,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def specular(self, /) -> PySide6.QtGui.QColor: ...
 
     class QPlaneGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(float)
-        mirroredChanged          : typing.ClassVar[Signal] = ... # mirroredChanged(bool)
-        resolutionChanged        : typing.ClassVar[Signal] = ... # resolutionChanged(QSize)
-        widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(float)
+        # heightChanged(float)
+        heightChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # mirroredChanged(bool)
+        mirroredChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # resolutionChanged(QSize)
+        resolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # widthChanged(float)
+        widthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, width: float | None = ..., height: float | None = ..., resolution: PySide6.QtCore.QSize | None = ..., mirrored: bool | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., tangentAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -726,10 +1310,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def width(self, /) -> float: ...
 
     class QPlaneGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(float)
-        meshResolutionChanged    : typing.ClassVar[Signal] = ... # meshResolutionChanged(QSize)
-        mirroredChanged          : typing.ClassVar[Signal] = ... # mirroredChanged(bool)
-        widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(float)
+        # heightChanged(float)
+        heightChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # meshResolutionChanged(QSize)
+        meshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # mirroredChanged(bool)
+        mirroredChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # widthChanged(float)
+        widthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, width: float | None = ..., height: float | None = ..., meshResolution: PySide6.QtCore.QSize | None = ..., mirrored: bool | None = ...) -> None: ...
 
@@ -751,10 +1351,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def width(self, /) -> float: ...
 
     class QPlaneMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(float)
-        meshResolutionChanged    : typing.ClassVar[Signal] = ... # meshResolutionChanged(QSize)
-        mirroredChanged          : typing.ClassVar[Signal] = ... # mirroredChanged(bool)
-        widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(float)
+        # heightChanged(float)
+        heightChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # meshResolutionChanged(QSize)
+        meshResolutionChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+        ]]
+        # mirroredChanged(bool)
+        mirroredChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # widthChanged(float)
+        widthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, width: float | None = ..., height: float | None = ..., meshResolution: PySide6.QtCore.QSize | None = ..., mirrored: bool | None = ...) -> None: ...
 
@@ -776,9 +1392,21 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def width(self, /) -> float: ...
 
     class QSkyboxEntity(PySide6.Qt3DCore.Qt3DCore.QEntity):
-        baseNameChanged          : typing.ClassVar[Signal] = ... # baseNameChanged(QString)
-        extensionChanged         : typing.ClassVar[Signal] = ... # extensionChanged(QString)
-        gammaCorrectEnabledChanged: typing.ClassVar[Signal] = ... # gammaCorrectEnabledChanged(bool)
+        # baseNameChanged(QString)
+        baseNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # extensionChanged(QString)
+        extensionChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # gammaCorrectEnabledChanged(bool)
+        gammaCorrectEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, baseName: str | None = ..., extension: str | None = ..., gammaCorrect: bool | None = ...) -> None: ...
 
@@ -790,10 +1418,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def setGammaCorrectEnabled(self, enabled: bool, /) -> None: ...
 
     class QSphereGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        generateTangentsChanged  : typing.ClassVar[Signal] = ... # generateTangentsChanged(bool)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # generateTangentsChanged(bool)
+        generateTangentsChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., generateTangents: bool | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., tangentAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -814,10 +1458,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def updateVertices(self, /) -> None: ...
 
     class QSphereGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        generateTangentsChanged  : typing.ClassVar[Signal] = ... # generateTangentsChanged(bool)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # generateTangentsChanged(bool)
+        generateTangentsChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., generateTangents: bool | None = ...) -> None: ...
 
@@ -838,10 +1498,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def slices(self, /) -> int: ...
 
     class QSphereMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        generateTangentsChanged  : typing.ClassVar[Signal] = ... # generateTangentsChanged(bool)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # generateTangentsChanged(bool)
+        generateTangentsChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., generateTangents: bool | None = ...) -> None: ...
 
@@ -862,8 +1538,16 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def slices(self, /) -> int: ...
 
     class QSpriteGrid(PySide6.Qt3DExtras.Qt3DExtras.QAbstractSpriteSheet):
-        columnsChanged           : typing.ClassVar[Signal] = ... # columnsChanged(int)
-        rowsChanged              : typing.ClassVar[Signal] = ... # rowsChanged(int)
+        # columnsChanged(int)
+        columnsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # rowsChanged(int)
+        rowsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rows: int | None = ..., columns: int | None = ...) -> None: ...
 
@@ -873,7 +1557,11 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def setRows(self, rows: int, /) -> None: ...
 
     class QSpriteSheet(PySide6.Qt3DExtras.Qt3DExtras.QAbstractSpriteSheet):
-        spritesChanged           : typing.ClassVar[Signal] = ... # spritesChanged(QList<QSpriteSheetItem*>)
+        # spritesChanged(QList<QSpriteSheetItem*>)
+        spritesChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]], [collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sprites: collections.abc.Sequence[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem] | None = ...) -> None: ...
 
@@ -886,10 +1574,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def sprites(self, /) -> typing.List[PySide6.Qt3DExtras.Qt3DExtras.QSpriteSheetItem]: ...
 
     class QSpriteSheetItem(PySide6.Qt3DCore.Qt3DCore.QNode):
-        heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(int)
-        widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(int)
-        xChanged                 : typing.ClassVar[Signal] = ... # xChanged(int)
-        yChanged                 : typing.ClassVar[Signal] = ... # yChanged(int)
+        # heightChanged(int)
+        heightChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # widthChanged(int)
+        widthChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # xChanged(int)
+        xChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # yChanged(int)
+        yChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, x: int | None = ..., y: int | None = ..., width: int | None = ..., height: int | None = ...) -> None: ...
 
@@ -903,11 +1607,31 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def y(self, /) -> int: ...
 
     class QText2DEntity(PySide6.Qt3DCore.Qt3DCore.QEntity):
-        colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-        fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-        heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(float)
-        textChanged              : typing.ClassVar[Signal] = ... # textChanged(QString)
-        widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(float)
+        # colorChanged(QColor)
+        colorChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+        ]]
+        # fontChanged(QFont)
+        fontChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+        ]]
+        # heightChanged(float)
+        heightChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # textChanged(QString)
+        textChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # widthChanged(float)
+        widthChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, font: PySide6.QtGui.QFont | None = ..., text: str | None = ..., color: PySide6.QtGui.QColor | None = ..., width: float | None = ..., height: float | None = ..., alignment: PySide6.QtCore.Qt.AlignmentFlag | None = ...) -> None: ...
 
@@ -925,10 +1649,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def width(self, /) -> float: ...
 
     class QTextureMaterial(PySide6.Qt3DRender.Qt3DRender.QMaterial):
-        alphaBlendingEnabledChanged: typing.ClassVar[Signal] = ... # alphaBlendingEnabledChanged(bool)
-        textureChanged           : typing.ClassVar[Signal] = ... # textureChanged(Qt3DRender::QAbstractTexture*)
-        textureOffsetChanged     : typing.ClassVar[Signal] = ... # textureOffsetChanged(QVector2D)
-        textureTransformChanged  : typing.ClassVar[Signal] = ... # textureTransformChanged(QMatrix3x3)
+        # alphaBlendingEnabledChanged(bool)
+        alphaBlendingEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # textureChanged(Qt3DRender::QAbstractTexture*)
+        textureChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture], [PySide6.Qt3DRender.Qt3DRender.QAbstractTexture]
+        ]]
+        # textureOffsetChanged(QVector2D)
+        textureOffsetChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector2D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D], [PySide6.QtGui.QVector2D]
+        ]]
+        # textureTransformChanged(QMatrix3x3)
+        textureTransformChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QMatrix3x3], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3], [PySide6.QtGui.QMatrix3x3]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, texture: PySide6.Qt3DRender.Qt3DRender.QAbstractTexture | None = ..., textureOffset: PySide6.QtGui.QVector2D | None = ..., textureTransform: PySide6.QtGui.QMatrix3x3 | None = ..., alphaBlending: bool | None = ...) -> None: ...
 
@@ -942,10 +1682,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def textureTransform(self, /) -> PySide6.QtGui.QMatrix3x3: ...
 
     class QTorusGeometry(PySide6.Qt3DCore.Qt3DCore.QGeometry):
-        minorRadiusChanged       : typing.ClassVar[Signal] = ... # minorRadiusChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # minorRadiusChanged(float)
+        minorRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., minorRadius: float | None = ..., positionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., normalAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., texCoordAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., indexAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ...) -> None: ...
 
@@ -965,10 +1721,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def updateVertices(self, /) -> None: ...
 
     class QTorusGeometryView(PySide6.Qt3DCore.Qt3DCore.QGeometryView):
-        minorRadiusChanged       : typing.ClassVar[Signal] = ... # minorRadiusChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # minorRadiusChanged(float)
+        minorRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., minorRadius: float | None = ...) -> None: ...
 
@@ -990,10 +1762,26 @@ class Qt3DExtras(shiboken6.Shiboken.Object):
         def slices(self, /) -> int: ...
 
     class QTorusMesh(PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer):
-        minorRadiusChanged       : typing.ClassVar[Signal] = ... # minorRadiusChanged(float)
-        radiusChanged            : typing.ClassVar[Signal] = ... # radiusChanged(float)
-        ringsChanged             : typing.ClassVar[Signal] = ... # ringsChanged(int)
-        slicesChanged            : typing.ClassVar[Signal] = ... # slicesChanged(int)
+        # minorRadiusChanged(float)
+        minorRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # radiusChanged(float)
+        radiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # ringsChanged(int)
+        ringsChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # slicesChanged(int)
+        slicesChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rings: int | None = ..., slices: int | None = ..., radius: float | None = ..., minorRadius: float | None = ...) -> None: ...
 

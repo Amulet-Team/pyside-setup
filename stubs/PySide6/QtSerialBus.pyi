@@ -31,10 +31,26 @@ class QCanBus(PySide6.QtCore.QObject):
 
 
 class QCanBusDevice(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QCanBusDevice::CanBusError)
-    framesReceived           : typing.ClassVar[Signal] = ... # framesReceived()
-    framesWritten            : typing.ClassVar[Signal] = ... # framesWritten(qlonglong)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QCanBusDevice::CanBusDeviceState)
+    # errorOccurred(QCanBusDevice::CanBusError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError], [PySide6.QtSerialBus.QCanBusDevice.CanBusError]
+    ]]
+    # framesReceived()
+    framesReceived: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # framesWritten(qlonglong)
+    framesWritten: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # stateChanged(QCanBusDevice::CanBusDeviceState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState], [PySide6.QtSerialBus.QCanBusDevice.CanBusDeviceState]
+    ]]
 
     class CanBusDeviceState(enum.Enum):
         UnconnectedState          = 0x0
@@ -417,7 +433,11 @@ class QIntList:
 
 
 class QModbusClient(PySide6.QtSerialBus.QModbusDevice):
-    timeoutChanged           : typing.ClassVar[Signal] = ... # timeoutChanged(int)
+    # timeoutChanged(int)
+    timeoutChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -467,8 +487,16 @@ class QModbusDataUnit(shiboken6.Shiboken.Object):
 
 
 class QModbusDevice(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QModbusDevice::Error)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QModbusDevice::State)
+    # errorOccurred(QModbusDevice::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QModbusDevice.Error], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error]
+    ]]
+    # stateChanged(QModbusDevice::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QModbusDevice.State], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State], [PySide6.QtSerialBus.QModbusDevice.State]
+    ]]
 
     class ConnectionParameter(enum.Enum):
         SerialPortNameParameter   = 0x0
@@ -632,9 +660,21 @@ class QModbusPdu(shiboken6.Shiboken.Object):
 
 
 class QModbusReply(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QModbusDevice::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    intermediateErrorOccurred: typing.ClassVar[Signal] = ... # intermediateErrorOccurred(QModbusDevice::IntermediateError)
+    # errorOccurred(QModbusDevice::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QModbusDevice.Error], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error], [PySide6.QtSerialBus.QModbusDevice.Error]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # intermediateErrorOccurred(QModbusDevice::IntermediateError)
+    intermediateErrorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [], [], [], [], [], [], [],
+        [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError], [PySide6.QtSerialBus.QModbusDevice.IntermediateError]
+    ]]
 
     class ReplyType(enum.Enum):
         Raw                       = 0x0
@@ -713,7 +753,11 @@ class QModbusRtuSerialServer(PySide6.QtSerialBus.QModbusServer):
 
 
 class QModbusServer(PySide6.QtSerialBus.QModbusDevice):
-    dataWritten              : typing.ClassVar[Signal] = ... # dataWritten(QModbusDataUnit::RegisterType,int,int)
+    # dataWritten(QModbusDataUnit::RegisterType,int,int)
+    dataWritten: typing.ClassVar[Signal[
+        [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType], [], [], [], [], [],
+        [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int], [PySide6.QtSerialBus.QModbusDataUnit.RegisterType, int, int]
+    ]]
 
     class Option(enum.Enum):
         DiagnosticRegister        = 0x0
@@ -763,7 +807,11 @@ class QModbusTcpConnectionObserver(shiboken6.Shiboken.Object):
 
 
 class QModbusTcpServer(PySide6.QtSerialBus.QModbusServer):
-    modbusClientDisconnected : typing.ClassVar[Signal] = ... # modbusClientDisconnected(QTcpSocket*)
+    # modbusClientDisconnected(QTcpSocket*)
+    modbusClientDisconnected: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QTcpSocket], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket], [PySide6.QtNetwork.QTcpSocket]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

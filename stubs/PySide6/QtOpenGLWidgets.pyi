@@ -23,10 +23,26 @@ class QIntList:
 
 
 class QOpenGLWidget(PySide6.QtWidgets.QWidget):
-    aboutToCompose           : typing.ClassVar[Signal] = ... # aboutToCompose()
-    aboutToResize            : typing.ClassVar[Signal] = ... # aboutToResize()
-    frameSwapped             : typing.ClassVar[Signal] = ... # frameSwapped()
-    resized                  : typing.ClassVar[Signal] = ... # resized()
+    # aboutToCompose()
+    aboutToCompose: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # aboutToResize()
+    aboutToResize: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # frameSwapped()
+    frameSwapped: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # resized()
+    resized: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class TargetBuffer(enum.Enum):
         LeftBuffer                = 0x0

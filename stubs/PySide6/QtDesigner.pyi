@@ -182,20 +182,76 @@ class QDesignerFormWindowCursorInterface(shiboken6.Shiboken.Object):
 
 
 class QDesignerFormWindowInterface(PySide6.QtWidgets.QWidget):
-    aboutToUnmanageWidget    : typing.ClassVar[Signal] = ... # aboutToUnmanageWidget(QWidget*)
-    activated                : typing.ClassVar[Signal] = ... # activated(QWidget*)
-    changed                  : typing.ClassVar[Signal] = ... # changed()
-    featureChanged           : typing.ClassVar[Signal] = ... # featureChanged(Feature)
-    fileNameChanged          : typing.ClassVar[Signal] = ... # fileNameChanged(QString)
-    geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged()
-    mainContainerChanged     : typing.ClassVar[Signal] = ... # mainContainerChanged(QWidget*)
-    objectRemoved            : typing.ClassVar[Signal] = ... # objectRemoved(QObject*)
-    resourceFilesChanged     : typing.ClassVar[Signal] = ... # resourceFilesChanged()
-    selectionChanged         : typing.ClassVar[Signal] = ... # selectionChanged()
-    toolChanged              : typing.ClassVar[Signal] = ... # toolChanged(int)
-    widgetManaged            : typing.ClassVar[Signal] = ... # widgetManaged(QWidget*)
-    widgetRemoved            : typing.ClassVar[Signal] = ... # widgetRemoved(QWidget*)
-    widgetUnmanaged          : typing.ClassVar[Signal] = ... # widgetUnmanaged(QWidget*)
+    # aboutToUnmanageWidget(QWidget*)
+    aboutToUnmanageWidget: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
+    # activated(QWidget*)
+    activated: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
+    # changed()
+    changed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # featureChanged(Feature)
+    featureChanged: typing.ClassVar[Signal[
+        [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [], [], [], [], [], [], [],
+        [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag], [PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag]
+    ]]
+    # fileNameChanged(QString)
+    fileNameChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # geometryChanged()
+    geometryChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mainContainerChanged(QWidget*)
+    mainContainerChanged: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
+    # objectRemoved(QObject*)
+    objectRemoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+    ]]
+    # resourceFilesChanged()
+    resourceFilesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # selectionChanged()
+    selectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # toolChanged(int)
+    toolChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # widgetManaged(QWidget*)
+    widgetManaged: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
+    # widgetRemoved(QWidget*)
+    widgetRemoved: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
+    # widgetUnmanaged(QWidget*)
+    widgetUnmanaged: typing.ClassVar[Signal[
+        [PySide6.QtWidgets.QWidget], [], [], [], [], [], [], [],
+        [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget], [PySide6.QtWidgets.QWidget]
+    ]]
 
     class FeatureFlag(enum.Flag):
         EditFeature               = 0x1
@@ -278,10 +334,26 @@ class QDesignerFormWindowInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerFormWindowManagerInterface(PySide6.QtCore.QObject):
-    activeFormWindowChanged  : typing.ClassVar[Signal] = ... # activeFormWindowChanged(QDesignerFormWindowInterface*)
-    formWindowAdded          : typing.ClassVar[Signal] = ... # formWindowAdded(QDesignerFormWindowInterface*)
-    formWindowRemoved        : typing.ClassVar[Signal] = ... # formWindowRemoved(QDesignerFormWindowInterface*)
-    formWindowSettingsChanged: typing.ClassVar[Signal] = ... # formWindowSettingsChanged(QDesignerFormWindowInterface*)
+    # activeFormWindowChanged(QDesignerFormWindowInterface*)
+    activeFormWindowChanged: typing.ClassVar[Signal[
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [], [], [], [], [], [], [],
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface]
+    ]]
+    # formWindowAdded(QDesignerFormWindowInterface*)
+    formWindowAdded: typing.ClassVar[Signal[
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [], [], [], [], [], [], [],
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface]
+    ]]
+    # formWindowRemoved(QDesignerFormWindowInterface*)
+    formWindowRemoved: typing.ClassVar[Signal[
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [], [], [], [], [], [], [],
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface]
+    ]]
+    # formWindowSettingsChanged(QDesignerFormWindowInterface*)
+    formWindowSettingsChanged: typing.ClassVar[Signal[
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [], [], [], [], [], [], [],
+        [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface], [PySide6.QtDesigner.QDesignerFormWindowInterface]
+    ]]
 
     class Action(enum.Enum):
         CutAction                 = 0x64
@@ -384,7 +456,11 @@ class QDesignerObjectInspectorInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerPropertyEditorInterface(PySide6.QtWidgets.QWidget):
-    propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString,QVariant)
+    # propertyChanged(QString,QVariant)
+    propertyChanged: typing.ClassVar[Signal[
+        [str, typing.Any], [str], [], [], [], [], [], [],
+        [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any]
+    ]]
 
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 

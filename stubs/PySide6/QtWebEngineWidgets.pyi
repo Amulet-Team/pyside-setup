@@ -25,19 +25,71 @@ class QIntList:
 
 
 class QWebEngineView(PySide6.QtWidgets.QWidget):
-    iconChanged              : typing.ClassVar[Signal] = ... # iconChanged(QIcon)
-    iconUrlChanged           : typing.ClassVar[Signal] = ... # iconUrlChanged(QUrl)
-    loadFinished             : typing.ClassVar[Signal] = ... # loadFinished(bool)
-    loadProgress             : typing.ClassVar[Signal] = ... # loadProgress(int)
-    loadStarted              : typing.ClassVar[Signal] = ... # loadStarted()
-    pdfPrintingFinished      : typing.ClassVar[Signal] = ... # pdfPrintingFinished(QString,bool)
-    printFinished            : typing.ClassVar[Signal] = ... # printFinished(bool)
-    printRequested           : typing.ClassVar[Signal] = ... # printRequested()
-    printRequestedByFrame    : typing.ClassVar[Signal] = ... # printRequestedByFrame(QWebEngineFrame)
-    renderProcessTerminated  : typing.ClassVar[Signal] = ... # renderProcessTerminated(QWebEnginePage::RenderProcessTerminationStatus,int)
-    selectionChanged         : typing.ClassVar[Signal] = ... # selectionChanged()
-    titleChanged             : typing.ClassVar[Signal] = ... # titleChanged(QString)
-    urlChanged               : typing.ClassVar[Signal] = ... # urlChanged(QUrl)
+    # iconChanged(QIcon)
+    iconChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QIcon], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon]
+    ]]
+    # iconUrlChanged(QUrl)
+    iconUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # loadFinished(bool)
+    loadFinished: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # loadProgress(int)
+    loadProgress: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # loadStarted()
+    loadStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pdfPrintingFinished(QString,bool)
+    pdfPrintingFinished: typing.ClassVar[Signal[
+        [str, bool], [str], [], [], [], [], [], [],
+        [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool]
+    ]]
+    # printFinished(bool)
+    printFinished: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # printRequested()
+    printRequested: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # printRequestedByFrame(QWebEngineFrame)
+    printRequestedByFrame: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineFrame], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame]
+    ]]
+    # renderProcessTerminated(QWebEnginePage::RenderProcessTerminationStatus,int)
+    renderProcessTerminated: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int], [PySide6.QtWebEngineCore.QWebEnginePage.RenderProcessTerminationStatus, int]
+    ]]
+    # selectionChanged()
+    selectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # titleChanged(QString)
+    titleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # urlChanged(QUrl)
+    urlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     @typing.overload
     def __init__(self, page: PySide6.QtWebEngineCore.QWebEnginePage, /, parent: PySide6.QtWidgets.QWidget | None = ..., *, title: str | None = ..., url: PySide6.QtCore.QUrl | None = ..., iconUrl: PySide6.QtCore.QUrl | None = ..., icon: PySide6.QtGui.QIcon | None = ..., selectedText: str | None = ..., hasSelection: bool | None = ..., zoomFactor: float | None = ...) -> None: ...

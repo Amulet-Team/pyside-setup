@@ -10,6 +10,7 @@ PySide6.QtTextToSpeech, except for defaults which are replaced by "...".
 
 import PySide6.QtTextToSpeech
 import PySide6.QtCore
+import PySide6.QtMultimedia
 
 import enum
 import typing
@@ -22,16 +23,56 @@ class QIntList:
 
 
 class QTextToSpeech(PySide6.QtCore.QObject):
-    aboutToSynthesize        : typing.ClassVar[Signal] = ... # aboutToSynthesize(qsizetype)
-    engineChanged            : typing.ClassVar[Signal] = ... # engineChanged(QString)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QTextToSpeech::ErrorReason,QString)
-    localeChanged            : typing.ClassVar[Signal] = ... # localeChanged(QLocale)
-    pitchChanged             : typing.ClassVar[Signal] = ... # pitchChanged(double)
-    rateChanged              : typing.ClassVar[Signal] = ... # rateChanged(double)
-    sayingWord               : typing.ClassVar[Signal] = ... # sayingWord(QString,qsizetype,qsizetype,qsizetype)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QTextToSpeech::State)
-    voiceChanged             : typing.ClassVar[Signal] = ... # voiceChanged(QVoice)
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged(double)
+    # aboutToSynthesize(qsizetype)
+    aboutToSynthesize: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # engineChanged(QString)
+    engineChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # errorOccurred(QTextToSpeech::ErrorReason,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason], [], [], [], [], [], [],
+        [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str]
+    ]]
+    # localeChanged(QLocale)
+    localeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QLocale], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale], [PySide6.QtCore.QLocale]
+    ]]
+    # pitchChanged(double)
+    pitchChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # rateChanged(double)
+    rateChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # sayingWord(QString,qsizetype,qsizetype,qsizetype)
+    sayingWord: typing.ClassVar[Signal[
+        [str, int, int, int], [str, int, int], [str, int], [str], [], [], [], [],
+        [str, int, int, int], [str, int, int, int], [str, int, int, int], [str, int, int, int], [str, int, int, int], [str, int, int, int], [str, int, int, int], [str, int, int, int]
+    ]]
+    # stateChanged(QTextToSpeech::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtTextToSpeech.QTextToSpeech.State], [], [], [], [], [], [], [],
+        [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State]
+    ]]
+    # voiceChanged(QVoice)
+    voiceChanged: typing.ClassVar[Signal[
+        [PySide6.QtTextToSpeech.QVoice], [], [], [], [], [], [], [],
+        [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice], [PySide6.QtTextToSpeech.QVoice]
+    ]]
+    # volumeChanged(double)
+    volumeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class BoundaryHint(enum.Enum):
         Default                   = 0x0
@@ -97,10 +138,26 @@ class QTextToSpeech(PySide6.QtCore.QObject):
 
 
 class QTextToSpeechEngine(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QTextToSpeech::ErrorReason,QString)
-    sayingWord               : typing.ClassVar[Signal] = ... # sayingWord(QString,qsizetype,qsizetype)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QTextToSpeech::State)
-    synthesized              : typing.ClassVar[Signal] = ... # synthesized(QAudioFormat,QByteArray)
+    # errorOccurred(QTextToSpeech::ErrorReason,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason], [], [], [], [], [], [],
+        [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str], [PySide6.QtTextToSpeech.QTextToSpeech.ErrorReason, str]
+    ]]
+    # sayingWord(QString,qsizetype,qsizetype)
+    sayingWord: typing.ClassVar[Signal[
+        [str, int, int], [str, int], [str], [], [], [], [], [],
+        [str, int, int], [str, int, int], [str, int, int], [str, int, int], [str, int, int], [str, int, int], [str, int, int], [str, int, int]
+    ]]
+    # stateChanged(QTextToSpeech::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtTextToSpeech.QTextToSpeech.State], [], [], [], [], [], [], [],
+        [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State], [PySide6.QtTextToSpeech.QTextToSpeech.State]
+    ]]
+    # synthesized(QAudioFormat,QByteArray)
+    synthesized: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray], [PySide6.QtMultimedia.QAudioFormat, PySide6.QtCore.QByteArray]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

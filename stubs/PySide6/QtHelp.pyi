@@ -47,8 +47,16 @@ class QHelpContentItem(shiboken6.Shiboken.Object):
 
 
 class QHelpContentModel(PySide6.QtCore.QAbstractItemModel):
-    contentsCreated          : typing.ClassVar[Signal] = ... # contentsCreated()
-    contentsCreationStarted  : typing.ClassVar[Signal] = ... # contentsCreationStarted()
+    # contentsCreated()
+    contentsCreated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # contentsCreationStarted()
+    contentsCreationStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def columnCount(self, /, parent: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex = ...) -> int: ...
     def contentItemAt(self, index: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex, /) -> PySide6.QtHelp.QHelpContentItem: ...
@@ -65,7 +73,11 @@ class QHelpContentModel(PySide6.QtCore.QAbstractItemModel):
 
 
 class QHelpContentWidget(PySide6.QtWidgets.QTreeView):
-    linkActivated            : typing.ClassVar[Signal] = ... # linkActivated(QUrl)
+    # linkActivated(QUrl)
+    linkActivated: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     def indexOf(self, link: PySide6.QtCore.QUrl | str, /) -> PySide6.QtCore.QModelIndex: ...
 
@@ -81,11 +93,31 @@ class QHelpEngine(PySide6.QtHelp.QHelpEngineCore):
 
 
 class QHelpEngineCore(PySide6.QtCore.QObject):
-    currentFilterChanged     : typing.ClassVar[Signal] = ... # currentFilterChanged(QString)
-    readersAboutToBeInvalidated: typing.ClassVar[Signal] = ... # readersAboutToBeInvalidated()
-    setupFinished            : typing.ClassVar[Signal] = ... # setupFinished()
-    setupStarted             : typing.ClassVar[Signal] = ... # setupStarted()
-    warning                  : typing.ClassVar[Signal] = ... # warning(QString)
+    # currentFilterChanged(QString)
+    currentFilterChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # readersAboutToBeInvalidated()
+    readersAboutToBeInvalidated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # setupFinished()
+    setupFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # setupStarted()
+    setupStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # warning(QString)
+    warning: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, collectionFile: str, /, parent: PySide6.QtCore.QObject | None = ..., *, autoSaveFilter: bool | None = ..., readOnly: bool | None = ..., currentFilter: str | None = ...) -> None: ...
 
@@ -154,7 +186,11 @@ class QHelpFilterData(shiboken6.Shiboken.Object):
 
 
 class QHelpFilterEngine(PySide6.QtCore.QObject):
-    filterActivated          : typing.ClassVar[Signal] = ... # filterActivated(QString)
+    # filterActivated(QString)
+    filterActivated: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, helpEngine: PySide6.QtHelp.QHelpEngineCore, /) -> None: ...
 
@@ -198,8 +234,16 @@ class QHelpGlobal(shiboken6.Shiboken.Object):
 
 
 class QHelpIndexModel(PySide6.QtCore.QStringListModel):
-    indexCreated             : typing.ClassVar[Signal] = ... # indexCreated()
-    indexCreationStarted     : typing.ClassVar[Signal] = ... # indexCreationStarted()
+    # indexCreated()
+    indexCreated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # indexCreationStarted()
+    indexCreationStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def createIndex(self, customFilterName: str, /) -> None: ...
     def createIndexForCurrentFilter(self, /) -> None: ...
@@ -209,10 +253,26 @@ class QHelpIndexModel(PySide6.QtCore.QStringListModel):
 
 
 class QHelpIndexWidget(PySide6.QtWidgets.QListView):
-    documentActivated        : typing.ClassVar[Signal] = ... # documentActivated(QHelpLink,QString)
-    documentsActivated       : typing.ClassVar[Signal] = ... # documentsActivated(QList<QHelpLink>,QString)
-    linkActivated            : typing.ClassVar[Signal] = ... # linkActivated(QUrl,QString)
-    linksActivated           : typing.ClassVar[Signal] = ... # linksActivated(QMultiMap<QString,QUrl>,QString)
+    # documentActivated(QHelpLink,QString)
+    documentActivated: typing.ClassVar[Signal[
+        [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink], [], [], [], [], [], [],
+        [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str], [PySide6.QtHelp.QHelpLink, str]
+    ]]
+    # documentsActivated(QList<QHelpLink>,QString)
+    documentsActivated: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink]], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str], [collections.abc.Sequence[PySide6.QtHelp.QHelpLink], str]
+    ]]
+    # linkActivated(QUrl,QString)
+    linkActivated: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl, str]
+    ]]
+    # linksActivated(QMultiMap<QString,QUrl>,QString)
+    linksActivated: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl]], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str], [collections.abc.Mapping[str, PySide6.QtCore.QUrl], str]
+    ]]
 
     def activateCurrentItem(self, /) -> None: ...
     def filterIndices(self, filter: str, /, wildcard: str = ...) -> None: ...
@@ -237,10 +297,26 @@ class QHelpLink(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchEngine(PySide6.QtCore.QObject):
-    indexingFinished         : typing.ClassVar[Signal] = ... # indexingFinished()
-    indexingStarted          : typing.ClassVar[Signal] = ... # indexingStarted()
-    searchingFinished        : typing.ClassVar[Signal] = ... # searchingFinished(int)
-    searchingStarted         : typing.ClassVar[Signal] = ... # searchingStarted()
+    # indexingFinished()
+    indexingFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # indexingStarted()
+    indexingStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # searchingFinished(int)
+    searchingFinished: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # searchingStarted()
+    searchingStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, helpEngine: PySide6.QtHelp.QHelpEngineCore, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -264,10 +340,26 @@ class QHelpSearchEngine(PySide6.QtCore.QObject):
 
 
 class QHelpSearchEngineCore(PySide6.QtCore.QObject):
-    indexingFinished         : typing.ClassVar[Signal] = ... # indexingFinished()
-    indexingStarted          : typing.ClassVar[Signal] = ... # indexingStarted()
-    searchingFinished        : typing.ClassVar[Signal] = ... # searchingFinished()
-    searchingStarted         : typing.ClassVar[Signal] = ... # searchingStarted()
+    # indexingFinished()
+    indexingFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # indexingStarted()
+    indexingStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # searchingFinished()
+    searchingFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # searchingStarted()
+    searchingStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, helpEngine: PySide6.QtHelp.QHelpEngineCore, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -310,7 +402,11 @@ class QHelpSearchQuery(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchQueryWidget(PySide6.QtWidgets.QWidget):
-    search                   : typing.ClassVar[Signal] = ... # search()
+    # search()
+    search: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
 
@@ -340,7 +436,11 @@ class QHelpSearchResult(shiboken6.Shiboken.Object):
 
 
 class QHelpSearchResultWidget(PySide6.QtWidgets.QWidget):
-    requestShowLink          : typing.ClassVar[Signal] = ... # requestShowLink(QUrl)
+    # requestShowLink(QUrl)
+    requestShowLink: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     def changeEvent(self, event: PySide6.QtCore.QEvent, /) -> None: ...
     def linkAt(self, point: PySide6.QtCore.QPoint, /) -> PySide6.QtCore.QUrl: ...

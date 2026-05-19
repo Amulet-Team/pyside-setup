@@ -27,9 +27,21 @@ class QIntList:
 
 class Qt3DAnimation(shiboken6.Shiboken.Object):
     class QAbstractAnimation(PySide6.QtCore.QObject):
-        animationNameChanged     : typing.ClassVar[Signal] = ... # animationNameChanged(QString)
-        durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(float)
-        positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(float)
+        # animationNameChanged(QString)
+        animationNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # durationChanged(float)
+        durationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # positionChanged(float)
+        positionChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         class AnimationType(enum.Enum):
             KeyframeAnimation         = 0x1
@@ -45,7 +57,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setPosition(self, position: float, /) -> None: ...
 
     class QAbstractAnimationClip(PySide6.Qt3DCore.Qt3DCore.QNode):
-        durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(float)
+        # durationChanged(float)
+        durationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def duration(self, /) -> float: ...
 
@@ -53,11 +69,31 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         ...
 
     class QAbstractClipAnimator(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        channelMapperChanged     : typing.ClassVar[Signal] = ... # channelMapperChanged(Qt3DAnimation::QChannelMapper*)
-        clockChanged             : typing.ClassVar[Signal] = ... # clockChanged(Qt3DAnimation::QClock*)
-        loopCountChanged         : typing.ClassVar[Signal] = ... # loopCountChanged(int)
-        normalizedTimeChanged    : typing.ClassVar[Signal] = ... # normalizedTimeChanged(float)
-        runningChanged           : typing.ClassVar[Signal] = ... # runningChanged(bool)
+        # channelMapperChanged(Qt3DAnimation::QChannelMapper*)
+        channelMapperChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper], [PySide6.Qt3DAnimation.Qt3DAnimation.QChannelMapper]
+        ]]
+        # clockChanged(Qt3DAnimation::QClock*)
+        clockChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock], [PySide6.Qt3DAnimation.Qt3DAnimation.QClock]
+        ]]
+        # loopCountChanged(int)
+        loopCountChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # normalizedTimeChanged(float)
+        normalizedTimeChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # runningChanged(bool)
+        runningChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         class Loops(enum.Enum):
             Infinite                  = -1
@@ -81,9 +117,21 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
     class QAdditiveClipBlend(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode):
-        additiveClipChanged      : typing.ClassVar[Signal] = ... # additiveClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
-        additiveFactorChanged    : typing.ClassVar[Signal] = ... # additiveFactorChanged(float)
-        baseClipChanged          : typing.ClassVar[Signal] = ... # baseClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        # additiveClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        additiveClipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode]
+        ]]
+        # additiveFactorChanged(float)
+        additiveFactorChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # baseClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        baseClipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, baseClip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode | None = ..., additiveClip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode | None = ..., additiveFactor: float | None = ...) -> None: ...
 
@@ -107,7 +155,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def valueChanged(self, value: typing.Any, /) -> None: ...
 
     class QAnimationClip(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip):
-        clipDataChanged          : typing.ClassVar[Signal] = ... # clipDataChanged(Qt3DAnimation::QAnimationClipData)
+        # clipDataChanged(Qt3DAnimation::QAnimationClipData)
+        clipDataChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData], [PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, clipData: PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipData | None = ...) -> None: ...
 
@@ -137,8 +189,16 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setName(self, name: str, /) -> None: ...
 
     class QAnimationClipLoader(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip):
-        sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged(QUrl)
-        statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(Status)
+        # sourceChanged(QUrl)
+        sourceChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+        ]]
+        # statusChanged(Status)
+        statusChanged: typing.ClassVar[Signal[
+            [Status], [], [], [], [], [], [], [],
+            [Status], [Status], [Status], [Status], [Status], [Status], [Status], [Status]
+        ]]
 
         class Status(enum.Enum):
             NotReady                  = 0x0
@@ -155,12 +215,36 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def status(self, /) -> PySide6.Qt3DAnimation.Qt3DAnimation.QAnimationClipLoader.Status: ...
 
     class QAnimationController(PySide6.QtCore.QObject):
-        activeAnimationGroupChanged: typing.ClassVar[Signal] = ... # activeAnimationGroupChanged(int)
-        entityChanged            : typing.ClassVar[Signal] = ... # entityChanged(Qt3DCore::QEntity*)
-        positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(float)
-        positionOffsetChanged    : typing.ClassVar[Signal] = ... # positionOffsetChanged(float)
-        positionScaleChanged     : typing.ClassVar[Signal] = ... # positionScaleChanged(float)
-        recursiveChanged         : typing.ClassVar[Signal] = ... # recursiveChanged(bool)
+        # activeAnimationGroupChanged(int)
+        activeAnimationGroupChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # entityChanged(Qt3DCore::QEntity*)
+        entityChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity]
+        ]]
+        # positionChanged(float)
+        positionChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # positionOffsetChanged(float)
+        positionOffsetChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # positionScaleChanged(float)
+        positionScaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # recursiveChanged(bool)
+        recursiveChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, activeAnimationGroup: int | None = ..., position: float | None = ..., positionScale: float | None = ..., positionOffset: float | None = ..., entity: PySide6.Qt3DCore.Qt3DCore.QEntity | None = ..., recursive: bool | None = ...) -> None: ...
 
@@ -184,9 +268,21 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setRecursive(self, recursive: bool, /) -> None: ...
 
     class QAnimationGroup(PySide6.QtCore.QObject):
-        durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(float)
-        nameChanged              : typing.ClassVar[Signal] = ... # nameChanged(QString)
-        positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(float)
+        # durationChanged(float)
+        durationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # nameChanged(QString)
+        nameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # positionChanged(float)
+        positionChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, name: str | None = ..., position: float | None = ..., duration: float | None = ...) -> None: ...
 
@@ -201,7 +297,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setPosition(self, position: float, /) -> None: ...
 
     class QBlendedClipAnimator(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipAnimator):
-        blendTreeChanged         : typing.ClassVar[Signal] = ... # blendTreeChanged(QAbstractClipBlendNode*)
+        # blendTreeChanged(QAbstractClipBlendNode*)
+        blendTreeChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, blendTree: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode | None = ...) -> None: ...
 
@@ -209,7 +309,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setBlendTree(self, blendTree: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode, /) -> None: ...
 
     class QCallbackMapping(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractChannelMapping):
-        channelNameChanged       : typing.ClassVar[Signal] = ... # channelNameChanged(QString)
+        # channelNameChanged(QString)
+        channelNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, channelName: str | None = ...) -> None: ...
 
@@ -270,9 +374,21 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def removeMapping(self, mapping: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractChannelMapping, /) -> None: ...
 
     class QChannelMapping(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractChannelMapping):
-        channelNameChanged       : typing.ClassVar[Signal] = ... # channelNameChanged(QString)
-        propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString)
-        targetChanged            : typing.ClassVar[Signal] = ... # targetChanged(Qt3DCore::QNode*)
+        # channelNameChanged(QString)
+        channelNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # propertyChanged(QString)
+        propertyChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # targetChanged(Qt3DCore::QNode*)
+        targetChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode], [PySide6.Qt3DCore.Qt3DCore.QNode]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, channelName: str | None = ..., target: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., property: str | None = ...) -> None: ...
 
@@ -284,7 +400,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def target(self, /) -> PySide6.Qt3DCore.Qt3DCore.QNode: ...
 
     class QClipAnimator(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipAnimator):
-        clipChanged              : typing.ClassVar[Signal] = ... # clipChanged(Qt3DAnimation::QAbstractAnimationClip*)
+        # clipChanged(Qt3DAnimation::QAbstractAnimationClip*)
+        clipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, clip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip | None = ...) -> None: ...
 
@@ -292,7 +412,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setClip(self, clip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip, /) -> None: ...
 
     class QClipBlendValue(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode):
-        clipChanged              : typing.ClassVar[Signal] = ... # clipChanged(Qt3DAnimation::QAbstractAnimationClip*)
+        # clipChanged(Qt3DAnimation::QAbstractAnimationClip*)
+        clipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip]
+        ]]
 
         @typing.overload
         def __init__(self, clip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
@@ -303,7 +427,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setClip(self, clip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimationClip, /) -> None: ...
 
     class QClock(PySide6.Qt3DCore.Qt3DCore.QNode):
-        playbackRateChanged      : typing.ClassVar[Signal] = ... # playbackRateChanged(double)
+        # playbackRateChanged(double)
+        playbackRateChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, playbackRate: float | None = ...) -> None: ...
 
@@ -335,12 +463,36 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setRightControlPoint(self, rh: PySide6.QtGui.QVector2D, /) -> None: ...
 
     class QKeyframeAnimation(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimation):
-        easingChanged            : typing.ClassVar[Signal] = ... # easingChanged(QEasingCurve)
-        endModeChanged           : typing.ClassVar[Signal] = ... # endModeChanged(QKeyframeAnimation::RepeatMode)
-        framePositionsChanged    : typing.ClassVar[Signal] = ... # framePositionsChanged(QList<float>)
-        startModeChanged         : typing.ClassVar[Signal] = ... # startModeChanged(QKeyframeAnimation::RepeatMode)
-        targetChanged            : typing.ClassVar[Signal] = ... # targetChanged(Qt3DCore::QTransform*)
-        targetNameChanged        : typing.ClassVar[Signal] = ... # targetNameChanged(QString)
+        # easingChanged(QEasingCurve)
+        easingChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QEasingCurve], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve]
+        ]]
+        # endModeChanged(QKeyframeAnimation::RepeatMode)
+        endModeChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode]
+        ]]
+        # framePositionsChanged(QList<float>)
+        framePositionsChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[float]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]]
+        ]]
+        # startModeChanged(QKeyframeAnimation::RepeatMode)
+        startModeChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode], [PySide6.Qt3DAnimation.Qt3DAnimation.QKeyframeAnimation.RepeatMode]
+        ]]
+        # targetChanged(Qt3DCore::QTransform*)
+        targetChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QTransform], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform], [PySide6.Qt3DCore.Qt3DCore.QTransform]
+        ]]
+        # targetNameChanged(QString)
+        targetNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
 
         class RepeatMode(enum.Enum):
             None_                     = 0x0
@@ -367,9 +519,21 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def targetName(self, /) -> str: ...
 
     class QLerpClipBlend(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode):
-        blendFactorChanged       : typing.ClassVar[Signal] = ... # blendFactorChanged(float)
-        endClipChanged           : typing.ClassVar[Signal] = ... # endClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
-        startClipChanged         : typing.ClassVar[Signal] = ... # startClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        # blendFactorChanged(float)
+        blendFactorChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # endClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        endClipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode]
+        ]]
+        # startClipChanged(Qt3DAnimation::QAbstractClipBlendNode*)
+        startClipChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode], [PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, startClip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode | None = ..., endClip: PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode | None = ..., blendFactor: float | None = ...) -> None: ...
 
@@ -381,7 +545,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def startClip(self, /) -> PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractClipBlendNode: ...
 
     class QMorphTarget(PySide6.QtCore.QObject):
-        attributeNamesChanged    : typing.ClassVar[Signal] = ... # attributeNamesChanged(QStringList)
+        # attributeNamesChanged(QStringList)
+        attributeNamesChanged: typing.ClassVar[Signal[
+            [typing.List[str]], [], [], [], [], [], [], [],
+            [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]]
+        ]]
 
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, attributeNames: collections.abc.Sequence[str] | None = ...) -> None: ...
 
@@ -394,12 +562,36 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def setAttributes(self, attributes: collections.abc.Sequence[PySide6.Qt3DCore.Qt3DCore.QAttribute], /) -> None: ...
 
     class QMorphingAnimation(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimation):
-        easingChanged            : typing.ClassVar[Signal] = ... # easingChanged(QEasingCurve)
-        interpolatorChanged      : typing.ClassVar[Signal] = ... # interpolatorChanged(float)
-        methodChanged            : typing.ClassVar[Signal] = ... # methodChanged(QMorphingAnimation::Method)
-        targetChanged            : typing.ClassVar[Signal] = ... # targetChanged(Qt3DRender::QGeometryRenderer*)
-        targetNameChanged        : typing.ClassVar[Signal] = ... # targetNameChanged(QString)
-        targetPositionsChanged   : typing.ClassVar[Signal] = ... # targetPositionsChanged(QList<float>)
+        # easingChanged(QEasingCurve)
+        easingChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QEasingCurve], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve], [PySide6.QtCore.QEasingCurve]
+        ]]
+        # interpolatorChanged(float)
+        interpolatorChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # methodChanged(QMorphingAnimation::Method)
+        methodChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [], [], [], [], [], [], [],
+            [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method], [PySide6.Qt3DAnimation.Qt3DAnimation.QMorphingAnimation.Method]
+        ]]
+        # targetChanged(Qt3DRender::QGeometryRenderer*)
+        targetChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer]
+        ]]
+        # targetNameChanged(QString)
+        targetNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # targetPositionsChanged(QList<float>)
+        targetPositionsChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[float]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]]
+        ]]
 
         class Method(enum.Enum):
             Normalized                = 0x0
@@ -426,7 +618,11 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def targetPositions(self, /) -> typing.List[float]: ...
 
     class QSkeletonMapping(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractChannelMapping):
-        skeletonChanged          : typing.ClassVar[Signal] = ... # skeletonChanged(Qt3DCore::QAbstractSkeleton*)
+        # skeletonChanged(Qt3DCore::QAbstractSkeleton*)
+        skeletonChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, skeleton: PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton | None = ...) -> None: ...
 
@@ -434,10 +630,26 @@ class Qt3DAnimation(shiboken6.Shiboken.Object):
         def skeleton(self, /) -> PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton: ...
 
     class QVertexBlendAnimation(PySide6.Qt3DAnimation.Qt3DAnimation.QAbstractAnimation):
-        interpolatorChanged      : typing.ClassVar[Signal] = ... # interpolatorChanged(float)
-        targetChanged            : typing.ClassVar[Signal] = ... # targetChanged(Qt3DRender::QGeometryRenderer*)
-        targetNameChanged        : typing.ClassVar[Signal] = ... # targetNameChanged(QString)
-        targetPositionsChanged   : typing.ClassVar[Signal] = ... # targetPositionsChanged(QList<float>)
+        # interpolatorChanged(float)
+        interpolatorChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # targetChanged(Qt3DRender::QGeometryRenderer*)
+        targetChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [], [], [], [], [], [], [],
+            [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer], [PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer]
+        ]]
+        # targetNameChanged(QString)
+        targetNameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # targetPositionsChanged(QList<float>)
+        targetPositionsChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[float]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]]
+        ]]
 
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, targetPositions: collections.abc.Sequence[float] | None = ..., interpolator: float | None = ..., target: PySide6.Qt3DRender.Qt3DRender.QGeometryRenderer | None = ..., targetName: str | None = ...) -> None: ...
 

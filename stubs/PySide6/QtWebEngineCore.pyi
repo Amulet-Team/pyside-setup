@@ -156,8 +156,16 @@ class QWebEngineContextMenuRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineCookieStore(PySide6.QtCore.QObject):
-    cookieAdded              : typing.ClassVar[Signal] = ... # cookieAdded(QNetworkCookie)
-    cookieRemoved            : typing.ClassVar[Signal] = ... # cookieRemoved(QNetworkCookie)
+    # cookieAdded(QNetworkCookie)
+    cookieAdded: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QNetworkCookie], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie]
+    ]]
+    # cookieRemoved(QNetworkCookie)
+    cookieRemoved: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QNetworkCookie], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie], [PySide6.QtNetwork.QNetworkCookie]
+    ]]
 
     class FilterRequest(shiboken6.Shiboken.Object):
         @property
@@ -211,15 +219,51 @@ class QWebEngineDesktopMediaRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineDownloadRequest(PySide6.QtCore.QObject):
-    downloadDirectoryChanged : typing.ClassVar[Signal] = ... # downloadDirectoryChanged()
-    downloadFileNameChanged  : typing.ClassVar[Signal] = ... # downloadFileNameChanged()
-    interruptReasonChanged   : typing.ClassVar[Signal] = ... # interruptReasonChanged()
-    isFinishedChanged        : typing.ClassVar[Signal] = ... # isFinishedChanged()
-    isPausedChanged          : typing.ClassVar[Signal] = ... # isPausedChanged()
-    receivedBytesChanged     : typing.ClassVar[Signal] = ... # receivedBytesChanged()
-    savePageFormatChanged    : typing.ClassVar[Signal] = ... # savePageFormatChanged()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QWebEngineDownloadRequest::DownloadState)
-    totalBytesChanged        : typing.ClassVar[Signal] = ... # totalBytesChanged()
+    # downloadDirectoryChanged()
+    downloadDirectoryChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # downloadFileNameChanged()
+    downloadFileNameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # interruptReasonChanged()
+    interruptReasonChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # isFinishedChanged()
+    isFinishedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # isPausedChanged()
+    isPausedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # receivedBytesChanged()
+    receivedBytesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # savePageFormatChanged()
+    savePageFormatChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged(QWebEngineDownloadRequest::DownloadState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest.DownloadState]
+    ]]
+    # totalBytesChanged()
+    totalBytesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class DownloadInterruptReason(enum.Enum):
         NoReason                  = 0x0
@@ -305,10 +349,26 @@ class QWebEngineExtensionInfo(shiboken6.Shiboken.Object):
 
 
 class QWebEngineExtensionManager(PySide6.QtCore.QObject):
-    installFinished          : typing.ClassVar[Signal] = ... # installFinished(QWebEngineExtensionInfo)
-    loadFinished             : typing.ClassVar[Signal] = ... # loadFinished(QWebEngineExtensionInfo)
-    uninstallFinished        : typing.ClassVar[Signal] = ... # uninstallFinished(QWebEngineExtensionInfo)
-    unloadFinished           : typing.ClassVar[Signal] = ... # unloadFinished(QWebEngineExtensionInfo)
+    # installFinished(QWebEngineExtensionInfo)
+    installFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo]
+    ]]
+    # loadFinished(QWebEngineExtensionInfo)
+    loadFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo]
+    ]]
+    # uninstallFinished(QWebEngineExtensionInfo)
+    uninstallFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo]
+    ]]
+    # unloadFinished(QWebEngineExtensionInfo)
+    unloadFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo], [PySide6.QtWebEngineCore.QWebEngineExtensionInfo]
+    ]]
 
     def event(self, e: PySide6.QtCore.QEvent, /) -> bool: ...
     def extensions(self, /) -> typing.List[PySide6.QtWebEngineCore.QWebEngineExtensionInfo]: ...
@@ -532,7 +592,11 @@ class QWebEngineLoadingInfo(shiboken6.Shiboken.Object):
 
 
 class QWebEngineNavigationRequest(PySide6.QtCore.QObject):
-    actionChanged            : typing.ClassVar[Signal] = ... # actionChanged()
+    # actionChanged()
+    actionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class NavigationRequestAction(enum.Enum):
         AcceptRequest             = 0x0
@@ -570,7 +634,11 @@ class QWebEngineNewWindowRequest(PySide6.QtCore.QObject):
 
 
 class QWebEngineNotification(PySide6.QtCore.QObject):
-    closed                   : typing.ClassVar[Signal] = ... # closed()
+    # closed()
+    closed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def click(self, /) -> None: ...
     def close(self, /) -> None: ...
@@ -586,48 +654,216 @@ class QWebEngineNotification(PySide6.QtCore.QObject):
 
 
 class QWebEnginePage(PySide6.QtCore.QObject):
-    _q_aboutToDelete         : typing.ClassVar[Signal] = ... # _q_aboutToDelete()
-    audioMutedChanged        : typing.ClassVar[Signal] = ... # audioMutedChanged(bool)
-    authenticationRequired   : typing.ClassVar[Signal] = ... # authenticationRequired(QUrl,QAuthenticator*)
-    certificateError         : typing.ClassVar[Signal] = ... # certificateError(QWebEngineCertificateError)
-    contentsSizeChanged      : typing.ClassVar[Signal] = ... # contentsSizeChanged(QSizeF)
-    desktopMediaRequested    : typing.ClassVar[Signal] = ... # desktopMediaRequested(QWebEngineDesktopMediaRequest)
-    featurePermissionRequestCanceled: typing.ClassVar[Signal] = ... # featurePermissionRequestCanceled(QUrl,QWebEnginePage::Feature)
-    featurePermissionRequested: typing.ClassVar[Signal] = ... # featurePermissionRequested(QUrl,QWebEnginePage::Feature)
-    fileSystemAccessRequested: typing.ClassVar[Signal] = ... # fileSystemAccessRequested(QWebEngineFileSystemAccessRequest)
-    findTextFinished         : typing.ClassVar[Signal] = ... # findTextFinished(QWebEngineFindTextResult)
-    fullScreenRequested      : typing.ClassVar[Signal] = ... # fullScreenRequested(QWebEngineFullScreenRequest)
-    geometryChangeRequested  : typing.ClassVar[Signal] = ... # geometryChangeRequested(QRect)
-    iconChanged              : typing.ClassVar[Signal] = ... # iconChanged(QIcon)
-    iconUrlChanged           : typing.ClassVar[Signal] = ... # iconUrlChanged(QUrl)
-    lifecycleStateChanged    : typing.ClassVar[Signal] = ... # lifecycleStateChanged(LifecycleState)
-    linkHovered              : typing.ClassVar[Signal] = ... # linkHovered(QString)
-    loadFinished             : typing.ClassVar[Signal] = ... # loadFinished(bool)
-    loadProgress             : typing.ClassVar[Signal] = ... # loadProgress(int)
-    loadStarted              : typing.ClassVar[Signal] = ... # loadStarted()
-    loadingChanged           : typing.ClassVar[Signal] = ... # loadingChanged(QWebEngineLoadingInfo)
-    navigationRequested      : typing.ClassVar[Signal] = ... # navigationRequested(QWebEngineNavigationRequest&)
-    newWindowRequested       : typing.ClassVar[Signal] = ... # newWindowRequested(QWebEngineNewWindowRequest&)
-    pdfPrintingFinished      : typing.ClassVar[Signal] = ... # pdfPrintingFinished(QString,bool)
-    permissionRequested      : typing.ClassVar[Signal] = ... # permissionRequested(QWebEnginePermission)
-    printRequested           : typing.ClassVar[Signal] = ... # printRequested()
-    printRequestedByFrame    : typing.ClassVar[Signal] = ... # printRequestedByFrame(QWebEngineFrame)
-    proxyAuthenticationRequired: typing.ClassVar[Signal] = ... # proxyAuthenticationRequired(QUrl,QAuthenticator*,QString)
-    quotaRequested           : typing.ClassVar[Signal] = ... # quotaRequested(QWebEngineQuotaRequest)
-    recentlyAudibleChanged   : typing.ClassVar[Signal] = ... # recentlyAudibleChanged(bool)
-    recommendedStateChanged  : typing.ClassVar[Signal] = ... # recommendedStateChanged(LifecycleState)
-    registerProtocolHandlerRequested: typing.ClassVar[Signal] = ... # registerProtocolHandlerRequested(QWebEngineRegisterProtocolHandlerRequest)
-    renderProcessPidChanged  : typing.ClassVar[Signal] = ... # renderProcessPidChanged(qlonglong)
-    renderProcessTerminated  : typing.ClassVar[Signal] = ... # renderProcessTerminated(RenderProcessTerminationStatus,int)
-    scrollPositionChanged    : typing.ClassVar[Signal] = ... # scrollPositionChanged(QPointF)
-    selectClientCertificate  : typing.ClassVar[Signal] = ... # selectClientCertificate(QWebEngineClientCertificateSelection)
-    selectionChanged         : typing.ClassVar[Signal] = ... # selectionChanged()
-    titleChanged             : typing.ClassVar[Signal] = ... # titleChanged(QString)
-    urlChanged               : typing.ClassVar[Signal] = ... # urlChanged(QUrl)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
-    webAuthUxRequested       : typing.ClassVar[Signal] = ... # webAuthUxRequested(QWebEngineWebAuthUxRequest*)
-    windowCloseRequested     : typing.ClassVar[Signal] = ... # windowCloseRequested()
-    zoomFactorChanged        : typing.ClassVar[Signal] = ... # zoomFactorChanged(double)
+    # _q_aboutToDelete()
+    _q_aboutToDelete: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioMutedChanged(bool)
+    audioMutedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # authenticationRequired(QUrl,QAuthenticator*)
+    authenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator]
+    ]]
+    # certificateError(QWebEngineCertificateError)
+    certificateError: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineCertificateError], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError], [PySide6.QtWebEngineCore.QWebEngineCertificateError]
+    ]]
+    # contentsSizeChanged(QSizeF)
+    contentsSizeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSizeF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF]
+    ]]
+    # desktopMediaRequested(QWebEngineDesktopMediaRequest)
+    desktopMediaRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest], [PySide6.QtWebEngineCore.QWebEngineDesktopMediaRequest]
+    ]]
+    # featurePermissionRequestCanceled(QUrl,QWebEnginePage::Feature)
+    featurePermissionRequestCanceled: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature]
+    ]]
+    # featurePermissionRequested(QUrl,QWebEnginePage::Feature)
+    featurePermissionRequested: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature], [PySide6.QtCore.QUrl, PySide6.QtWebEngineCore.QWebEnginePage.Feature]
+    ]]
+    # fileSystemAccessRequested(QWebEngineFileSystemAccessRequest)
+    fileSystemAccessRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest], [PySide6.QtWebEngineCore.QWebEngineFileSystemAccessRequest]
+    ]]
+    # findTextFinished(QWebEngineFindTextResult)
+    findTextFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult], [PySide6.QtWebEngineCore.QWebEngineFindTextResult]
+    ]]
+    # fullScreenRequested(QWebEngineFullScreenRequest)
+    fullScreenRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest], [PySide6.QtWebEngineCore.QWebEngineFullScreenRequest]
+    ]]
+    # geometryChangeRequested(QRect)
+    geometryChangeRequested: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # iconChanged(QIcon)
+    iconChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QIcon], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon], [PySide6.QtGui.QIcon]
+    ]]
+    # iconUrlChanged(QUrl)
+    iconUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # lifecycleStateChanged(LifecycleState)
+    lifecycleStateChanged: typing.ClassVar[Signal[
+        [LifecycleState], [], [], [], [], [], [], [],
+        [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState]
+    ]]
+    # linkHovered(QString)
+    linkHovered: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # loadFinished(bool)
+    loadFinished: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # loadProgress(int)
+    loadProgress: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # loadStarted()
+    loadStarted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loadingChanged(QWebEngineLoadingInfo)
+    loadingChanged: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo], [PySide6.QtWebEngineCore.QWebEngineLoadingInfo]
+    ]]
+    # navigationRequested(QWebEngineNavigationRequest&)
+    navigationRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest], [PySide6.QtWebEngineCore.QWebEngineNavigationRequest]
+    ]]
+    # newWindowRequested(QWebEngineNewWindowRequest&)
+    newWindowRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest], [PySide6.QtWebEngineCore.QWebEngineNewWindowRequest]
+    ]]
+    # pdfPrintingFinished(QString,bool)
+    pdfPrintingFinished: typing.ClassVar[Signal[
+        [str, bool], [str], [], [], [], [], [], [],
+        [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool]
+    ]]
+    # permissionRequested(QWebEnginePermission)
+    permissionRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEnginePermission], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission], [PySide6.QtWebEngineCore.QWebEnginePermission]
+    ]]
+    # printRequested()
+    printRequested: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # printRequestedByFrame(QWebEngineFrame)
+    printRequestedByFrame: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineFrame], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame], [PySide6.QtWebEngineCore.QWebEngineFrame]
+    ]]
+    # proxyAuthenticationRequired(QUrl,QAuthenticator*,QString)
+    proxyAuthenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator], [PySide6.QtCore.QUrl], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str], [PySide6.QtCore.QUrl, PySide6.QtNetwork.QAuthenticator, str]
+    ]]
+    # quotaRequested(QWebEngineQuotaRequest)
+    quotaRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest], [PySide6.QtWebEngineCore.QWebEngineQuotaRequest]
+    ]]
+    # recentlyAudibleChanged(bool)
+    recentlyAudibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # recommendedStateChanged(LifecycleState)
+    recommendedStateChanged: typing.ClassVar[Signal[
+        [LifecycleState], [], [], [], [], [], [], [],
+        [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState], [LifecycleState]
+    ]]
+    # registerProtocolHandlerRequested(QWebEngineRegisterProtocolHandlerRequest)
+    registerProtocolHandlerRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest], [PySide6.QtWebEngineCore.QWebEngineRegisterProtocolHandlerRequest]
+    ]]
+    # renderProcessPidChanged(qlonglong)
+    renderProcessPidChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # renderProcessTerminated(RenderProcessTerminationStatus,int)
+    renderProcessTerminated: typing.ClassVar[Signal[
+        [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus], [], [], [], [], [], [],
+        [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int], [RenderProcessTerminationStatus, int]
+    ]]
+    # scrollPositionChanged(QPointF)
+    scrollPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # selectClientCertificate(QWebEngineClientCertificateSelection)
+    selectClientCertificate: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection], [PySide6.QtWebEngineCore.QWebEngineClientCertificateSelection]
+    ]]
+    # selectionChanged()
+    selectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # titleChanged(QString)
+    titleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # urlChanged(QUrl)
+    urlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # webAuthUxRequested(QWebEngineWebAuthUxRequest*)
+    webAuthUxRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest]
+    ]]
+    # windowCloseRequested()
+    windowCloseRequested: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # zoomFactorChanged(double)
+    zoomFactorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class Feature(enum.Enum):
         Notifications             = 0x0
@@ -859,8 +1095,16 @@ class QWebEnginePermission(shiboken6.Shiboken.Object):
 
 
 class QWebEngineProfile(PySide6.QtCore.QObject):
-    clearHttpCacheCompleted  : typing.ClassVar[Signal] = ... # clearHttpCacheCompleted()
-    downloadRequested        : typing.ClassVar[Signal] = ... # downloadRequested(QWebEngineDownloadRequest*)
+    # clearHttpCacheCompleted()
+    clearHttpCacheCompleted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # downloadRequested(QWebEngineDownloadRequest*)
+    downloadRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest], [PySide6.QtWebEngineCore.QWebEngineDownloadRequest]
+    ]]
 
     class HttpCacheType(enum.Enum):
         MemoryHttpCache           = 0x0
@@ -1268,7 +1512,11 @@ class QWebEngineWebAuthPinRequest(shiboken6.Shiboken.Object):
 
 
 class QWebEngineWebAuthUxRequest(PySide6.QtCore.QObject):
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QWebEngineWebAuthUxRequest::WebAuthUxState)
+    # stateChanged(QWebEngineWebAuthUxRequest::WebAuthUxState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState], [PySide6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState]
+    ]]
 
     class PinEntryError(enum.Enum):
         NoError                   = 0x0

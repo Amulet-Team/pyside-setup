@@ -31,6 +31,7 @@ from shibokensupport.signature.lib.enum_sig import HintingEnumerator, BaseFormat
 from shibokensupport.signature.lib.tool import build_brace_pattern
 
 indent = " " * 4
+MaxSignalSignatures = 8
 
 TYPE_MAP = {
     # Qt integer types
@@ -40,15 +41,20 @@ TYPE_MAP = {
     "qsizetype": "int",
     "quint32": "int",
     "quint64": "int",
+    "qlonglong": "int",
+    "qulonglong": "int",
     "size_t": "int",
     "uint": "int",
     "ushort": "int",
     "ulong": "int",
     "unsigned char": "int",
     "unsigned int": "int",
+    "short": "int",
+    "uchar": "int",
 
     # Qt floating types
     "qreal": "float",
+    "double": "float",
 
     # Qt string-like
     "QString": "str",
@@ -62,34 +68,143 @@ TYPE_MAP = {
     # C strings
     "char*": "str",
     "const char*": "str",
+
+    # Types used in signals
+    "PySide6.QtCore.Qt.WindowFlags": "PySide6.QtCore.Qt.WindowType",
+    "PySide6.QtCore.Qt.DockWidgetAreas": "PySide6.QtCore.Qt.DockWidgetArea",
+    "PySide6.QtCore.Qt.WindowStates": "PySide6.QtCore.Qt.WindowState",
+    "PySide6.QtCore.Qt.ToolBarAreas": "PySide6.QtCore.Qt.ToolBarArea",
+    "PySide6.QtCore.Qt.Alignment": "PySide6.QtCore.Qt.AlignmentFlag",
+    "PySide6.Qt3DRender.Qt3DRender.QAbstractRayCaster.Hits": "collections.abc.Sequence[PySide6.Qt3DRender.Qt3DRender.QRayCasterHit]",
+    "PySide6.Qt3DRender.Qt3DRender.QMemoryBarrier.Operations": "PySide6.Qt3DRender.Qt3DRender.QMemoryBarrier.Operation",
+    "PySide6.QtBluetooth.QBluetoothDeviceInfo.Fields": "PySide6.QtBluetooth.QBluetoothDeviceInfo.Field",
+    "BlurHints": "PySide6.QtWidgets.QGraphicsBlurEffect.BlurHint",
+    "Capabilities": "PySide6.QtGui.QInputDevice.Capability",
+    "Feature": "PySide6.QtDesigner.QDesignerFormWindowInterface.FeatureFlag",
+    "PySide6.QtDataVisualization.QAbstract3DGraph.OptimizationHints": "PySide6.QtDataVisualization.QAbstract3DGraph.OptimizationHint",
+    "PySide6.QtDataVisualization.QAbstract3DGraph.SelectionFlags": "PySide6.QtDataVisualization.QAbstract3DGraph.SelectionFlag",
+    "PySide6.QtGraphs.QSurface3DSeries.DrawFlags": "PySide6.QtGraphs.QSurface3DSeries.DrawFlag",
+    "PySide6.QtGraphs.QValueAxis.TickType": "PySide6.QtCharts.QValueAxis.TickType",
+    "PySide6.QtGraphs.QXYSeries.PointsConfigurationHash": "typing.Any",
+    "PySide6.QtGraphs.QtGraphs3D.SelectionFlags": "PySide6.QtGraphs.QtGraphs3D.SelectionFlag",
+    "PySide6.QtSerialPort.QSerialPort.Directions": "PySide6.QtSerialPort.QSerialPort.Direction",
+    "PySide6.QtWidgets.QDockWidget.DockWidgetFeatures": "PySide6.QtWidgets.QDockWidget.DockWidgetFeature",
+    "QBarDataArray": "collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]",
+    "QModelIndexList": "collections.abc.Sequence[PySide6.QtCore.QModelIndex]",
+    "QRemoteObjectSourceLocation": "tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]",
+    "QScatterDataArray": "collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]",
+    "QSurfaceDataArray": "collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]",
+    "QJsonObject": "typing.Dict[str, PySide6.QtCore.QJsonValue]",
+    "QVariantMap": "collections.abc.Mapping[str, typing.Any]",
+    "std.chrono.seconds": "int",
+    "HANDLE": "int",
+
+    # These are private but exposed in Python for some reason
+    "QQuickCloseEvent": "typing.Any",
+    "QQuickShapeGradient": "typing.Any",
 }
 
 
-def get_signal_constructors() -> str:
-    def get_stub(arg_count: int) -> str:
+QtObjMap: dict[str, str] = {}
+
+
+def get_qt_obj_map() -> dict[str, str]:
+    if not QtObjMap:
+        import importlib
+        import PySide6
+        module_names = list(PySide6.__all__)
+        graphs_i = module_names.index("QtGraphs")
+        charts_i = module_names.index("QtCharts")
+        if charts_i < graphs_i:
+            module_names[charts_i], module_names[graphs_i] = module_names[graphs_i], module_names[charts_i]
+        for mod_name in module_names:
+            mod = importlib.import_module(f"PySide6.{mod_name}")
+            for obj_name in dir(mod):
+                QtObjMap.setdefault(obj_name, f"PySide6.{mod_name}.{obj_name}")
+                if obj_name == mod_name:
+                    obj = getattr(mod, obj_name)
+                    for obj_name_2 in dir(obj):
+                        QtObjMap.setdefault(obj_name_2, f"PySide6.{mod_name}.{obj_name}.{obj_name_2}")
+    return QtObjMap
+
+
+def cpp_to_py(cpp_type: str) -> str:
+    cpp_type = cpp_type.rstrip("*&")
+    if cpp_type.endswith(">"):
+        if cpp_type.startswith("QList<"):
+            return f"collections.abc.Sequence[{cpp_to_py(cpp_type[6:-1])}]"
+        elif cpp_type.startswith("QMultiMap<"):
+            args = cpp_type[10:-1]
+            comma_index = args.find(",")
+            return f"collections.abc.Mapping[{cpp_to_py(args[:comma_index])}, {cpp_to_py(args[comma_index+1:])}]"
+        elif cpp_type.startswith("QSet<"):
+            return f"collections.abc.Set[{cpp_to_py(cpp_type[5:-1])}]"
+    if "::" in cpp_type:
+        cls, extra = cpp_type.split("::", 1)
+        extra = extra.replace("::", ".")
+        cpp_type = f"{get_qt_obj_map().get(cls, cls)}.{extra}"
+    else:
+        cpp_type = get_qt_obj_map().get(cpp_type, cpp_type)
+    cpp_type = TYPE_MAP.get(cpp_type, cpp_type)
+    return cpp_type
+
+
+EmitTypeVars = ", ".join(f"EmitT{num}" for num in range(1, MaxSignalSignatures + 1))
+ArgsTypeVars = ", ".join(f"ArgsT{num}" for num in range(1, MaxSignalSignatures + 1))
+
+
+def get_signal_hint() -> str:
+    lines = [
+        "signatures: tuple[str, ...]",
+        ""
+    ]
+    for arg_count in [*range(MaxSignalSignatures), -1]:
         if arg_count >= 0:
-            if arg_count >= 1:
-                arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
-            else:
-                arg_params = "()"
-            self_hint = f": PySide6.QtCore.Signal[{arg_params}]"
+            arg_hints =  ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count_2 + 1)) + "]" if arg_count_2 <= arg_count else "[]" for arg_count_2 in range(MaxSignalSignatures))
+            emit_hints = ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count + 1)) + "]" for _ in range(MaxSignalSignatures))
+            self_hint = f": Signal[{arg_hints}, {emit_hints}]"
             args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
         else:
             self_hint = ""
             args = "*types: type, "
-        return f"""\
+        lines.append(f"""\
 @typing.overload
-def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...
-"""
+def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...""")
 
-    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
+    lines.append(f"""\
+
+@typing.overload
+def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[{ArgsTypeVars}, {EmitTypeVars}]: ...
+@typing.overload
+def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[{ArgsTypeVars}, {EmitTypeVars}]: ...
+""")
+
+    return "\n".join(lines)
+
+
+def get_signal_instance_hint() -> str:
+    lines = []
+
+    slot_hint = " | ".join([
+        *[f"PySide6.QtCore._SignalInstance[ArgsT{num}]" for num in range(1, MaxSignalSignatures + 1)],
+        *[f"typing.Callable[ArgsT{num}, typing.Any]" for num in range(1, MaxSignalSignatures + 1)]
+    ])
+
+    lines.append(f"def connect(self, slot: {slot_hint}, /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...")
+    lines.append(f"def disconnect(self, /, slot: {slot_hint} | None = None) -> bool: ...")
+
+    for arg_i in range(1, MaxSignalSignatures + 1):
+        lines.append("@typing.overload")
+        lines.append(f"def emit(self, /, *args: EmitT{arg_i}.args, **kwargs: EmitT{arg_i}.kwargs) -> bool: ...")
+    lines.append("")
+    return "\n".join(lines)
 
 
 def get_slot_constructors() -> str:
     def get_stub(arg_count: int) -> str:
         if arg_count >= 0:
             arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
-            self_hint = f": PySide6.QtCore.Slot[[{arg_params}], R]"
+            self_hint = f": Slot[[{arg_params}], R]"
             args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
         else:
             self_hint = ""
@@ -99,25 +214,16 @@ def get_slot_constructors() -> str:
 def __init__(self{self_hint}, /, {args}name: str = "", result: type[R] | str | None = None, tag: str = "") -> None: ...
 """
 
-    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
-
+    return "".join(map(get_stub, range(MaxSignalSignatures))) + get_stub(-1)
 
 StubOverrides: dict[tuple[str, str], tuple[str, str]] = {
-    ("PySide6.QtCore", "Signal"): ("class Signal(typing.Generic[*Ts]):", f"""\
-signatures: tuple[str, ...]
+    ("PySide6.QtCore", "Signal"): (f"class Signal(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):", get_signal_hint()),
+    ("PySide6.QtCore", "SignalInstance"): (f"""\
+class _SignalInstance(typing.Protocol[P]):
+    def emit(self, /, *args: P.args, **kwargs: P.kwargs) -> bool: ...
 
-{get_signal_constructors()}\
 
-@typing.overload
-def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[*Ts]: ...
-@typing.overload
-def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[*Ts]: ...
-"""),
-    ("PySide6.QtCore", "SignalInstance"): ("class SignalInstance(typing.Generic[*Ts]):", """\
-def connect(self, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any], /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...
-def disconnect(self, /, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any] | None = None) -> bool: ...
-def emit(self, /, *args: *Ts) -> None: ...
-"""),
+class SignalInstance(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):""", get_signal_instance_hint()),
     ("PySide6.QtCore", "Slot"): ("class Slot(typing.Generic[P, R]):", f"""\
 {get_slot_constructors()}\
 
@@ -329,9 +435,49 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
         yield
 
     @contextmanager
-    def signal(self, class_name: str, sig_name: str, sig_str: str):
+    def signal(self, class_name: str, sig_name: str, sig_strs: list[str]):
         spaces = indent * self.level
-        self.print(f"{spaces}{sig_name:25}: typing.ClassVar[{class_name}] = ... # {sig_str}")
+        spaces_2 = indent * (self.level + 1)
+
+        emit_signatures: list[list[str]] = []
+        for sig_str in sig_strs:
+            sig = []
+            signatures = sig_str.split("(", 1)[1].rsplit(")", 1)[0].split(",")
+            while signatures:
+                type_hint = signatures.pop(0)
+                if type_hint.count("<") != type_hint.count(">"):
+                    type_hint += f",{signatures.pop(0)}"
+                type_hint = type_hint.strip()
+                if not type_hint:
+                    continue
+                type_hint = cpp_to_py(type_hint)
+                sig.append(self.normalize_type(type_hint))
+            if sig not in emit_signatures:
+                emit_signatures.append(sig)
+
+        arg_signatures: list[list[str]] = [[]]
+        for sigs in emit_signatures:
+            while sigs:
+                if sigs not in arg_signatures:
+                    arg_signatures.insert(-1, sigs)
+                sigs = sigs[:-1]
+
+        if len(arg_signatures) > MaxSignalSignatures:
+            raise RuntimeError(f"{sig_name} has more signatures than has been configured. ({len(arg_signatures)} > {MaxSignalSignatures})")
+
+        # Pad unused signatures with the first signature.
+        emit_signatures += [emit_signatures[0]] * (MaxSignalSignatures - len(emit_signatures))
+        arg_signatures += [arg_signatures[-1]] * (MaxSignalSignatures - len(arg_signatures))
+
+        emit_hints = ", ".join([f"[{', '.join(sig)}]" for sig in emit_signatures])
+        arg_hints = ", ".join([f"[{', '.join(sig)}]" for sig in arg_signatures])
+        signature_comment = "; ".join(sig_strs)
+        self.print(f"{spaces}# {signature_comment}")
+        self.print(f"{spaces}{sig_name}: typing.ClassVar[{class_name}[")
+        self.print(f"{spaces_2}{arg_hints},")
+        self.print(f"{spaces_2}{emit_hints}")
+        self.print(f"{spaces}]]")
+
         yield
 
 
@@ -456,11 +602,14 @@ def generate_pyi(import_name, outpath, options):
                     wr.print("PlaceholderType = typing.TypeVar(\"PlaceholderType\", "
                              "bound=PySide6.QtCore.QObject)")
                     wr.print('T = typing.TypeVar("T")')
-                    for num in range(1, 17):
+                    for num in range(1, MaxSignalSignatures + 1):
                         wr.print(f'T{num} = typing.TypeVar("T{num}")')
-                    wr.print('Ts = typing.TypeVarTuple("Ts")')
                     wr.print('P = typing.ParamSpec("P")')
                     wr.print('R = typing.TypeVar("R")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'EmitT{num} = typing.ParamSpec("EmitT{num}")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'ArgsT{num} = typing.ParamSpec("ArgsT{num}")')
                     wr.print()
             else:
                 wr.print(line)

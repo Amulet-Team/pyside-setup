@@ -24,13 +24,41 @@ class QIntList:
 
 
 class QWebView(PySide6.QtGui.QWindow):
-    cookieAdded              : typing.ClassVar[Signal] = ... # cookieAdded(QString,QString)
-    cookieRemoved            : typing.ClassVar[Signal] = ... # cookieRemoved(QString,QString)
-    httpUserAgentStringChanged: typing.ClassVar[Signal] = ... # httpUserAgentStringChanged(QString)
-    loadProgressChanged      : typing.ClassVar[Signal] = ... # loadProgressChanged(int)
-    loadingChanged           : typing.ClassVar[Signal] = ... # loadingChanged(QWebViewLoadingInfo)
-    titleChanged             : typing.ClassVar[Signal] = ... # titleChanged(QString)
-    urlChanged               : typing.ClassVar[Signal] = ... # urlChanged(QUrl)
+    # cookieAdded(QString,QString)
+    cookieAdded: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # cookieRemoved(QString,QString)
+    cookieRemoved: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # httpUserAgentStringChanged(QString)
+    httpUserAgentStringChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # loadProgressChanged(int)
+    loadProgressChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # loadingChanged(QWebViewLoadingInfo)
+    loadingChanged: typing.ClassVar[Signal[
+        [PySide6.QtWebView.QWebViewLoadingInfo], [], [], [], [], [], [], [],
+        [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo], [PySide6.QtWebView.QWebViewLoadingInfo]
+    ]]
+    # titleChanged(QString)
+    titleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # urlChanged(QUrl)
+    urlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     @typing.overload
     def __init__(self, parent: PySide6.QtGui.QWindow, /, *, httpUserAgentString: str | None = ..., url: PySide6.QtCore.QUrl | None = ..., loading: bool | None = ..., loadProgress: int | None = ..., title: str | None = ..., settings: PySide6.QtWebView.QWebViewSettings | None = ...) -> None: ...

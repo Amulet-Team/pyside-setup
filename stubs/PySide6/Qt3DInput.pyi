@@ -29,7 +29,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         ...
 
     class QAbstractAxisInput(PySide6.Qt3DCore.Qt3DCore.QNode):
-        sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QAbstractPhysicalDevice*)
+        # sourceDeviceChanged(QAbstractPhysicalDevice*)
+        sourceDeviceChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice]
+        ]]
 
         def setSourceDevice(self, sourceDevice: PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice, /) -> None: ...
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
@@ -48,7 +52,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def removeAxisSetting(self, axisSetting: PySide6.Qt3DInput.Qt3DInput.QAxisSetting, /) -> None: ...
 
     class QAction(PySide6.Qt3DCore.Qt3DCore.QNode):
-        activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
+        # activeChanged(bool)
+        activeChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, active: bool | None = ...) -> None: ...
 
@@ -58,8 +66,16 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def removeInput(self, input: PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput, /) -> None: ...
 
     class QActionInput(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-        buttonsChanged           : typing.ClassVar[Signal] = ... # buttonsChanged(QList<int>)
-        sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QAbstractPhysicalDevice*)
+        # buttonsChanged(QList<int>)
+        buttonsChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+        ]]
+        # sourceDeviceChanged(QAbstractPhysicalDevice*)
+        sourceDeviceChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice], [PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sourceDevice: PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice | None = ..., buttons: collections.abc.Sequence[int] | None = ...) -> None: ...
 
@@ -69,7 +85,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
 
     class QAnalogAxisInput(PySide6.Qt3DInput.Qt3DInput.QAbstractAxisInput):
-        axisChanged              : typing.ClassVar[Signal] = ... # axisChanged(int)
+        # axisChanged(int)
+        axisChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, axis: int | None = ...) -> None: ...
 
@@ -77,7 +97,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def setAxis(self, axis: int, /) -> None: ...
 
     class QAxis(PySide6.Qt3DCore.Qt3DCore.QNode):
-        valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(float)
+        # valueChanged(float)
+        valueChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, value: float | None = ...) -> None: ...
 
@@ -87,11 +111,31 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def value(self, /) -> float: ...
 
     class QAxisAccumulator(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged(float)
-        sourceAxisChanged        : typing.ClassVar[Signal] = ... # sourceAxisChanged(Qt3DInput::QAxis*)
-        sourceAxisTypeChanged    : typing.ClassVar[Signal] = ... # sourceAxisTypeChanged(QAxisAccumulator::SourceAxisType)
-        valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(float)
-        velocityChanged          : typing.ClassVar[Signal] = ... # velocityChanged(float)
+        # scaleChanged(float)
+        scaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # sourceAxisChanged(Qt3DInput::QAxis*)
+        sourceAxisChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QAxis], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis], [PySide6.Qt3DInput.Qt3DInput.QAxis]
+        ]]
+        # sourceAxisTypeChanged(QAxisAccumulator::SourceAxisType)
+        sourceAxisTypeChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType], [PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType]
+        ]]
+        # valueChanged(float)
+        valueChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # velocityChanged(float)
+        velocityChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         class SourceAxisType(enum.Enum):
             Velocity                  = 0x0
@@ -109,9 +153,21 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def velocity(self, /) -> float: ...
 
     class QAxisSetting(PySide6.Qt3DCore.Qt3DCore.QNode):
-        axesChanged              : typing.ClassVar[Signal] = ... # axesChanged(QList<int>)
-        deadZoneRadiusChanged    : typing.ClassVar[Signal] = ... # deadZoneRadiusChanged(float)
-        smoothChanged            : typing.ClassVar[Signal] = ... # smoothChanged(bool)
+        # axesChanged(QList<int>)
+        axesChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+        ]]
+        # deadZoneRadiusChanged(float)
+        deadZoneRadiusChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # smoothChanged(bool)
+        smoothChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, deadZoneRadius: float | None = ..., axes: collections.abc.Sequence[int] | None = ..., smooth: bool | None = ...) -> None: ...
 
@@ -123,10 +179,26 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def setSmoothEnabled(self, enabled: bool, /) -> None: ...
 
     class QButtonAxisInput(PySide6.Qt3DInput.Qt3DInput.QAbstractAxisInput):
-        accelerationChanged      : typing.ClassVar[Signal] = ... # accelerationChanged(float)
-        buttonsChanged           : typing.ClassVar[Signal] = ... # buttonsChanged(QList<int>)
-        decelerationChanged      : typing.ClassVar[Signal] = ... # decelerationChanged(float)
-        scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged(float)
+        # accelerationChanged(float)
+        accelerationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # buttonsChanged(QList<int>)
+        buttonsChanged: typing.ClassVar[Signal[
+            [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+            [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+        ]]
+        # decelerationChanged(float)
+        decelerationChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # scaleChanged(float)
+        scaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, scale: float | None = ..., buttons: collections.abc.Sequence[int] | None = ..., acceleration: float | None = ..., deceleration: float | None = ...) -> None: ...
 
@@ -146,7 +218,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def createPhysicalDevice(self, name: str, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
 
     class QInputChord(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-        timeoutChanged           : typing.ClassVar[Signal] = ... # timeoutChanged(int)
+        # timeoutChanged(int)
+        timeoutChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, timeout: int | None = ...) -> None: ...
 
@@ -157,8 +233,16 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def timeout(self, /) -> int: ...
 
     class QInputSequence(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-        buttonIntervalChanged    : typing.ClassVar[Signal] = ... # buttonIntervalChanged(int)
-        timeoutChanged           : typing.ClassVar[Signal] = ... # timeoutChanged(int)
+        # buttonIntervalChanged(int)
+        buttonIntervalChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # timeoutChanged(int)
+        timeoutChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, timeout: int | None = ..., buttonInterval: int | None = ...) -> None: ...
 
@@ -171,7 +255,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def timeout(self, /) -> int: ...
 
     class QInputSettings(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        eventSourceChanged       : typing.ClassVar[Signal] = ... # eventSourceChanged(QObject*)
+        # eventSourceChanged(QObject*)
+        eventSourceChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, eventSource: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -196,7 +284,11 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def type(self, /) -> PySide6.QtCore.QEvent.Type: ...
 
     class QKeyboardDevice(PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice):
-        activeInputChanged       : typing.ClassVar[Signal] = ... # activeInputChanged(QKeyboardHandler*)
+        # activeInputChanged(QKeyboardHandler*)
+        activeInputChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler], [PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, activeInput: PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler | None = ...) -> None: ...
 
@@ -209,48 +301,216 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def buttonNames(self, /) -> typing.List[str]: ...
 
     class QKeyboardHandler(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        asteriskPressed          : typing.ClassVar[Signal] = ... # asteriskPressed(Qt3DInput::QKeyEvent*)
-        backPressed              : typing.ClassVar[Signal] = ... # backPressed(Qt3DInput::QKeyEvent*)
-        backtabPressed           : typing.ClassVar[Signal] = ... # backtabPressed(Qt3DInput::QKeyEvent*)
-        callPressed              : typing.ClassVar[Signal] = ... # callPressed(Qt3DInput::QKeyEvent*)
-        cancelPressed            : typing.ClassVar[Signal] = ... # cancelPressed(Qt3DInput::QKeyEvent*)
-        context1Pressed          : typing.ClassVar[Signal] = ... # context1Pressed(Qt3DInput::QKeyEvent*)
-        context2Pressed          : typing.ClassVar[Signal] = ... # context2Pressed(Qt3DInput::QKeyEvent*)
-        context3Pressed          : typing.ClassVar[Signal] = ... # context3Pressed(Qt3DInput::QKeyEvent*)
-        context4Pressed          : typing.ClassVar[Signal] = ... # context4Pressed(Qt3DInput::QKeyEvent*)
-        deletePressed            : typing.ClassVar[Signal] = ... # deletePressed(Qt3DInput::QKeyEvent*)
-        digit0Pressed            : typing.ClassVar[Signal] = ... # digit0Pressed(Qt3DInput::QKeyEvent*)
-        digit1Pressed            : typing.ClassVar[Signal] = ... # digit1Pressed(Qt3DInput::QKeyEvent*)
-        digit2Pressed            : typing.ClassVar[Signal] = ... # digit2Pressed(Qt3DInput::QKeyEvent*)
-        digit3Pressed            : typing.ClassVar[Signal] = ... # digit3Pressed(Qt3DInput::QKeyEvent*)
-        digit4Pressed            : typing.ClassVar[Signal] = ... # digit4Pressed(Qt3DInput::QKeyEvent*)
-        digit5Pressed            : typing.ClassVar[Signal] = ... # digit5Pressed(Qt3DInput::QKeyEvent*)
-        digit6Pressed            : typing.ClassVar[Signal] = ... # digit6Pressed(Qt3DInput::QKeyEvent*)
-        digit7Pressed            : typing.ClassVar[Signal] = ... # digit7Pressed(Qt3DInput::QKeyEvent*)
-        digit8Pressed            : typing.ClassVar[Signal] = ... # digit8Pressed(Qt3DInput::QKeyEvent*)
-        digit9Pressed            : typing.ClassVar[Signal] = ... # digit9Pressed(Qt3DInput::QKeyEvent*)
-        downPressed              : typing.ClassVar[Signal] = ... # downPressed(Qt3DInput::QKeyEvent*)
-        enterPressed             : typing.ClassVar[Signal] = ... # enterPressed(Qt3DInput::QKeyEvent*)
-        escapePressed            : typing.ClassVar[Signal] = ... # escapePressed(Qt3DInput::QKeyEvent*)
-        flipPressed              : typing.ClassVar[Signal] = ... # flipPressed(Qt3DInput::QKeyEvent*)
-        focusChanged             : typing.ClassVar[Signal] = ... # focusChanged(bool)
-        hangupPressed            : typing.ClassVar[Signal] = ... # hangupPressed(Qt3DInput::QKeyEvent*)
-        leftPressed              : typing.ClassVar[Signal] = ... # leftPressed(Qt3DInput::QKeyEvent*)
-        menuPressed              : typing.ClassVar[Signal] = ... # menuPressed(Qt3DInput::QKeyEvent*)
-        noPressed                : typing.ClassVar[Signal] = ... # noPressed(Qt3DInput::QKeyEvent*)
-        numberSignPressed        : typing.ClassVar[Signal] = ... # numberSignPressed(Qt3DInput::QKeyEvent*)
-        pressed                  : typing.ClassVar[Signal] = ... # pressed(Qt3DInput::QKeyEvent*)
-        released                 : typing.ClassVar[Signal] = ... # released(Qt3DInput::QKeyEvent*)
-        returnPressed            : typing.ClassVar[Signal] = ... # returnPressed(Qt3DInput::QKeyEvent*)
-        rightPressed             : typing.ClassVar[Signal] = ... # rightPressed(Qt3DInput::QKeyEvent*)
-        selectPressed            : typing.ClassVar[Signal] = ... # selectPressed(Qt3DInput::QKeyEvent*)
-        sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QKeyboardDevice*)
-        spacePressed             : typing.ClassVar[Signal] = ... # spacePressed(Qt3DInput::QKeyEvent*)
-        tabPressed               : typing.ClassVar[Signal] = ... # tabPressed(Qt3DInput::QKeyEvent*)
-        upPressed                : typing.ClassVar[Signal] = ... # upPressed(Qt3DInput::QKeyEvent*)
-        volumeDownPressed        : typing.ClassVar[Signal] = ... # volumeDownPressed(Qt3DInput::QKeyEvent*)
-        volumeUpPressed          : typing.ClassVar[Signal] = ... # volumeUpPressed(Qt3DInput::QKeyEvent*)
-        yesPressed               : typing.ClassVar[Signal] = ... # yesPressed(Qt3DInput::QKeyEvent*)
+        # asteriskPressed(Qt3DInput::QKeyEvent*)
+        asteriskPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # backPressed(Qt3DInput::QKeyEvent*)
+        backPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # backtabPressed(Qt3DInput::QKeyEvent*)
+        backtabPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # callPressed(Qt3DInput::QKeyEvent*)
+        callPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # cancelPressed(Qt3DInput::QKeyEvent*)
+        cancelPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # context1Pressed(Qt3DInput::QKeyEvent*)
+        context1Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # context2Pressed(Qt3DInput::QKeyEvent*)
+        context2Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # context3Pressed(Qt3DInput::QKeyEvent*)
+        context3Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # context4Pressed(Qt3DInput::QKeyEvent*)
+        context4Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # deletePressed(Qt3DInput::QKeyEvent*)
+        deletePressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit0Pressed(Qt3DInput::QKeyEvent*)
+        digit0Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit1Pressed(Qt3DInput::QKeyEvent*)
+        digit1Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit2Pressed(Qt3DInput::QKeyEvent*)
+        digit2Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit3Pressed(Qt3DInput::QKeyEvent*)
+        digit3Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit4Pressed(Qt3DInput::QKeyEvent*)
+        digit4Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit5Pressed(Qt3DInput::QKeyEvent*)
+        digit5Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit6Pressed(Qt3DInput::QKeyEvent*)
+        digit6Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit7Pressed(Qt3DInput::QKeyEvent*)
+        digit7Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit8Pressed(Qt3DInput::QKeyEvent*)
+        digit8Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # digit9Pressed(Qt3DInput::QKeyEvent*)
+        digit9Pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # downPressed(Qt3DInput::QKeyEvent*)
+        downPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # enterPressed(Qt3DInput::QKeyEvent*)
+        enterPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # escapePressed(Qt3DInput::QKeyEvent*)
+        escapePressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # flipPressed(Qt3DInput::QKeyEvent*)
+        flipPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # focusChanged(bool)
+        focusChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # hangupPressed(Qt3DInput::QKeyEvent*)
+        hangupPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # leftPressed(Qt3DInput::QKeyEvent*)
+        leftPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # menuPressed(Qt3DInput::QKeyEvent*)
+        menuPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # noPressed(Qt3DInput::QKeyEvent*)
+        noPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # numberSignPressed(Qt3DInput::QKeyEvent*)
+        numberSignPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # pressed(Qt3DInput::QKeyEvent*)
+        pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # released(Qt3DInput::QKeyEvent*)
+        released: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # returnPressed(Qt3DInput::QKeyEvent*)
+        returnPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # rightPressed(Qt3DInput::QKeyEvent*)
+        rightPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # selectPressed(Qt3DInput::QKeyEvent*)
+        selectPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # sourceDeviceChanged(QKeyboardDevice*)
+        sourceDeviceChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice], [PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice]
+        ]]
+        # spacePressed(Qt3DInput::QKeyEvent*)
+        spacePressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # tabPressed(Qt3DInput::QKeyEvent*)
+        tabPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # upPressed(Qt3DInput::QKeyEvent*)
+        upPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # volumeDownPressed(Qt3DInput::QKeyEvent*)
+        volumeDownPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # volumeUpPressed(Qt3DInput::QKeyEvent*)
+        volumeUpPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
+        # yesPressed(Qt3DInput::QKeyEvent*)
+        yesPressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent], [PySide6.Qt3DInput.Qt3DInput.QKeyEvent]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sourceDevice: PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice | None = ..., focus: bool | None = ...) -> None: ...
 
@@ -270,8 +530,16 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def removeAxis(self, axis: PySide6.Qt3DInput.Qt3DInput.QAxis, /) -> None: ...
 
     class QMouseDevice(PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice):
-        sensitivityChanged       : typing.ClassVar[Signal] = ... # sensitivityChanged(float)
-        updateAxesContinuouslyChanged: typing.ClassVar[Signal] = ... # updateAxesContinuouslyChanged(bool)
+        # sensitivityChanged(float)
+        sensitivityChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # updateAxesContinuouslyChanged(bool)
+        updateAxesContinuouslyChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         class Axis(enum.Enum):
             X                         = 0x0
@@ -321,17 +589,61 @@ class Qt3DInput(shiboken6.Shiboken.Object):
         def y(self, /) -> int: ...
 
     class QMouseHandler(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        clicked                  : typing.ClassVar[Signal] = ... # clicked(Qt3DInput::QMouseEvent*)
-        containsMouseChanged     : typing.ClassVar[Signal] = ... # containsMouseChanged(bool)
-        doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(Qt3DInput::QMouseEvent*)
-        entered                  : typing.ClassVar[Signal] = ... # entered()
-        exited                   : typing.ClassVar[Signal] = ... # exited()
-        positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(Qt3DInput::QMouseEvent*)
-        pressAndHold             : typing.ClassVar[Signal] = ... # pressAndHold(Qt3DInput::QMouseEvent*)
-        pressed                  : typing.ClassVar[Signal] = ... # pressed(Qt3DInput::QMouseEvent*)
-        released                 : typing.ClassVar[Signal] = ... # released(Qt3DInput::QMouseEvent*)
-        sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QMouseDevice*)
-        wheel                    : typing.ClassVar[Signal] = ... # wheel(Qt3DInput::QWheelEvent*)
+        # clicked(Qt3DInput::QMouseEvent*)
+        clicked: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # containsMouseChanged(bool)
+        containsMouseChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # doubleClicked(Qt3DInput::QMouseEvent*)
+        doubleClicked: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # entered()
+        entered: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # exited()
+        exited: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # positionChanged(Qt3DInput::QMouseEvent*)
+        positionChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # pressAndHold(Qt3DInput::QMouseEvent*)
+        pressAndHold: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # pressed(Qt3DInput::QMouseEvent*)
+        pressed: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # released(Qt3DInput::QMouseEvent*)
+        released: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent], [PySide6.Qt3DInput.Qt3DInput.QMouseEvent]
+        ]]
+        # sourceDeviceChanged(QMouseDevice*)
+        sourceDeviceChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice], [PySide6.Qt3DInput.Qt3DInput.QMouseDevice]
+        ]]
+        # wheel(Qt3DInput::QWheelEvent*)
+        wheel: typing.ClassVar[Signal[
+            [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [], [], [], [], [], [], [],
+            [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent], [PySide6.Qt3DInput.Qt3DInput.QWheelEvent]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sourceDevice: PySide6.Qt3DInput.Qt3DInput.QMouseDevice | None = ..., containsMouse: bool | None = ...) -> None: ...
 

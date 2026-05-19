@@ -19,9 +19,21 @@ from PySide6.QtCore import Signal
 
 
 class QAbstractState(PySide6.QtCore.QObject):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
-    entered                  : typing.ClassVar[Signal] = ... # entered()
-    exited                   : typing.ClassVar[Signal] = ... # exited()
+    # activeChanged(bool)
+    activeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # entered()
+    entered: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # exited()
+    exited: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtStateMachine.QState | None = ..., *, active: bool | None = ...) -> None: ...
 
@@ -34,9 +46,21 @@ class QAbstractState(PySide6.QtCore.QObject):
 
 
 class QAbstractTransition(PySide6.QtCore.QObject):
-    targetStateChanged       : typing.ClassVar[Signal] = ... # targetStateChanged()
-    targetStatesChanged      : typing.ClassVar[Signal] = ... # targetStatesChanged()
-    triggered                : typing.ClassVar[Signal] = ... # triggered()
+    # targetStateChanged()
+    targetStateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # targetStatesChanged()
+    targetStatesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # triggered()
+    triggered: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class TransitionType(enum.Enum):
         ExternalTransition        = 0x0
@@ -84,9 +108,21 @@ class QFinalState(PySide6.QtStateMachine.QAbstractState):
 
 
 class QHistoryState(PySide6.QtStateMachine.QAbstractState):
-    defaultStateChanged      : typing.ClassVar[Signal] = ... # defaultStateChanged()
-    defaultTransitionChanged : typing.ClassVar[Signal] = ... # defaultTransitionChanged()
-    historyTypeChanged       : typing.ClassVar[Signal] = ... # historyTypeChanged()
+    # defaultStateChanged()
+    defaultStateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # defaultTransitionChanged()
+    defaultTransitionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # historyTypeChanged()
+    historyTypeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class HistoryType(enum.Enum):
         ShallowHistory            = 0x0
@@ -143,8 +179,16 @@ class QMouseEventTransition(PySide6.QtStateMachine.QEventTransition):
 
 
 class QSignalTransition(PySide6.QtStateMachine.QAbstractTransition):
-    senderObjectChanged      : typing.ClassVar[Signal] = ... # senderObjectChanged()
-    signalChanged            : typing.ClassVar[Signal] = ... # signalChanged()
+    # senderObjectChanged()
+    senderObjectChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # signalChanged()
+    signalChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, sender: PySide6.QtCore.QObject, signal: str, /, sourceState: PySide6.QtStateMachine.QState | None = ..., *, senderObject: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -163,11 +207,31 @@ class QSignalTransition(PySide6.QtStateMachine.QAbstractTransition):
 
 
 class QState(PySide6.QtStateMachine.QAbstractState):
-    childModeChanged         : typing.ClassVar[Signal] = ... # childModeChanged()
-    errorStateChanged        : typing.ClassVar[Signal] = ... # errorStateChanged()
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    initialStateChanged      : typing.ClassVar[Signal] = ... # initialStateChanged()
-    propertiesAssigned       : typing.ClassVar[Signal] = ... # propertiesAssigned()
+    # childModeChanged()
+    childModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorStateChanged()
+    errorStateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # initialStateChanged()
+    initialStateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # propertiesAssigned()
+    propertiesAssigned: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ChildMode(enum.Enum):
         ExclusiveStates           = 0x0
@@ -205,9 +269,21 @@ class QState(PySide6.QtStateMachine.QAbstractState):
 
 
 class QStateMachine(PySide6.QtStateMachine.QState):
-    runningChanged           : typing.ClassVar[Signal] = ... # runningChanged(bool)
-    started                  : typing.ClassVar[Signal] = ... # started()
-    stopped                  : typing.ClassVar[Signal] = ... # stopped()
+    # runningChanged(bool)
+    runningChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # started()
+    started: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stopped()
+    stopped: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0

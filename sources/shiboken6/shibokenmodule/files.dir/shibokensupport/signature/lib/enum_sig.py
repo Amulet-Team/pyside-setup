@@ -43,10 +43,6 @@ if hasattr(sys, "pypy_version_info"):
     _normal_functions += (type(get_sig),)
 
 
-def signal_check(thing):
-    return thing and type(thing) in (Signal, SignalInstance)
-
-
 def is_inconsistent_overload(signatures):
     if not isinstance(signatures, list):
         return False
@@ -131,13 +127,6 @@ class ExactEnumerator:
     mypy_misc_class_errors.add("QPyDesignerPropertySheetExtension")
 
     def __init__(self, formatter: BaseFormatter, result_type=dict):
-        global Signal, SignalInstance
-        try:
-            # Lazy import
-            from PySide6.QtCore import Signal, SignalInstance
-        except ImportError:
-            Signal = SignalInstance = None
-
         self.fmt = formatter
         self.result_type = result_type
         self.fmt.is_method = self.is_method
@@ -184,6 +173,8 @@ class ExactEnumerator:
             return ret
 
     def klass(self, class_name: str, klass: type):
+        from PySide6.QtCore import Signal, SignalInstance
+
         ret = self.result_type()
         if "._" in class_name:
             # This happens when introspecting enum.Enum etc. Python 3.8.8 does not
@@ -209,11 +200,11 @@ class ExactEnumerator:
         functions = []
         enums: list[tuple[str, str, Enum]] = []
         properties = []
-        signals = []
+        signals: list[tuple[str, typing.Union[Signal, SignalInstance]]] = []
         attributes = {}
 
         for thing_name, thing in class_members:
-            if signal_check(thing):
+            if isinstance(thing, (Signal, SignalInstance)):
                 signals.append((thing_name, thing))
             elif inspect.isclass(thing):
                 subclass_name = ".".join((class_name, thing_name))
@@ -282,8 +273,8 @@ class ExactEnumerator:
                 for signal_name, signal in signals:
                     sig_class = type(signal)
                     sig_class_name = f"{sig_class.__qualname__}"
-                    sig_str = str(signal)
-                    with self.fmt.signal(sig_class_name, signal_name, sig_str):
+                    sig_strs = signal.signatures
+                    with self.fmt.signal(sig_class_name, signal_name, sig_strs):
                         pass
                 self.section()
                 self.fmt.have_body = True

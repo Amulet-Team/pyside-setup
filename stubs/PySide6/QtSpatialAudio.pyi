@@ -19,10 +19,26 @@ from PySide6.QtCore import Signal
 
 
 class QAmbientSound(PySide6.QtCore.QObject):
-    autoPlayChanged          : typing.ClassVar[Signal] = ... # autoPlayChanged()
-    loopsChanged             : typing.ClassVar[Signal] = ... # loopsChanged()
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged()
+    # autoPlayChanged()
+    autoPlayChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loopsChanged()
+    loopsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sourceChanged()
+    sourceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # volumeChanged()
+    volumeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Loops(enum.IntEnum):
         Infinite                  = -1
@@ -45,11 +61,31 @@ class QAmbientSound(PySide6.QtCore.QObject):
 
 
 class QAudioEngine(PySide6.QtCore.QObject):
-    distanceScaleChanged     : typing.ClassVar[Signal] = ... # distanceScaleChanged()
-    masterVolumeChanged      : typing.ClassVar[Signal] = ... # masterVolumeChanged()
-    outputDeviceChanged      : typing.ClassVar[Signal] = ... # outputDeviceChanged()
-    outputModeChanged        : typing.ClassVar[Signal] = ... # outputModeChanged()
-    pausedChanged            : typing.ClassVar[Signal] = ... # pausedChanged()
+    # distanceScaleChanged()
+    distanceScaleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # masterVolumeChanged()
+    masterVolumeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # outputDeviceChanged()
+    outputDeviceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # outputModeChanged()
+    outputModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pausedChanged()
+    pausedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class OutputMode(enum.Enum):
         Surround                  = 0x0
@@ -93,14 +129,46 @@ class QAudioListener(PySide6.QtCore.QObject):
 
 
 class QAudioRoom(PySide6.QtCore.QObject):
-    dimensionsChanged        : typing.ClassVar[Signal] = ... # dimensionsChanged()
-    positionChanged          : typing.ClassVar[Signal] = ... # positionChanged()
-    reflectionGainChanged    : typing.ClassVar[Signal] = ... # reflectionGainChanged()
-    reverbBrightnessChanged  : typing.ClassVar[Signal] = ... # reverbBrightnessChanged()
-    reverbGainChanged        : typing.ClassVar[Signal] = ... # reverbGainChanged()
-    reverbTimeChanged        : typing.ClassVar[Signal] = ... # reverbTimeChanged()
-    rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged()
-    wallsChanged             : typing.ClassVar[Signal] = ... # wallsChanged()
+    # dimensionsChanged()
+    dimensionsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # positionChanged()
+    positionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # reflectionGainChanged()
+    reflectionGainChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # reverbBrightnessChanged()
+    reverbBrightnessChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # reverbGainChanged()
+    reverbGainChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # reverbTimeChanged()
+    reverbTimeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rotationChanged()
+    rotationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # wallsChanged()
+    wallsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Material(enum.Enum):
         Transparent               = 0x0
@@ -161,20 +229,76 @@ class QIntList:
 
 
 class QSpatialSound(PySide6.QtCore.QObject):
-    autoPlayChanged          : typing.ClassVar[Signal] = ... # autoPlayChanged()
-    directivityChanged       : typing.ClassVar[Signal] = ... # directivityChanged()
-    directivityOrderChanged  : typing.ClassVar[Signal] = ... # directivityOrderChanged()
-    distanceCutoffChanged    : typing.ClassVar[Signal] = ... # distanceCutoffChanged()
-    distanceModelChanged     : typing.ClassVar[Signal] = ... # distanceModelChanged()
-    loopsChanged             : typing.ClassVar[Signal] = ... # loopsChanged()
-    manualAttenuationChanged : typing.ClassVar[Signal] = ... # manualAttenuationChanged()
-    nearFieldGainChanged     : typing.ClassVar[Signal] = ... # nearFieldGainChanged()
-    occlusionIntensityChanged: typing.ClassVar[Signal] = ... # occlusionIntensityChanged()
-    positionChanged          : typing.ClassVar[Signal] = ... # positionChanged()
-    rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged()
-    sizeChanged              : typing.ClassVar[Signal] = ... # sizeChanged()
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged()
+    # autoPlayChanged()
+    autoPlayChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # directivityChanged()
+    directivityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # directivityOrderChanged()
+    directivityOrderChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # distanceCutoffChanged()
+    distanceCutoffChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # distanceModelChanged()
+    distanceModelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loopsChanged()
+    loopsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # manualAttenuationChanged()
+    manualAttenuationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # nearFieldGainChanged()
+    nearFieldGainChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # occlusionIntensityChanged()
+    occlusionIntensityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # positionChanged()
+    positionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rotationChanged()
+    rotationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sizeChanged()
+    sizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sourceChanged()
+    sourceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # volumeChanged()
+    volumeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class DistanceModel(enum.Enum):
         Logarithmic               = 0x0

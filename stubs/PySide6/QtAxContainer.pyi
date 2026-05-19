@@ -60,15 +60,39 @@ class QAxBase(shiboken6.Shiboken.Object):
 
 
 class QAxBaseObject(PySide6.QtCore.QObject, PySide6.QtAxContainer.QAxObjectInterface):
-    exception                : typing.ClassVar[Signal] = ... # exception(int,QString,QString,QString)
-    propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString)
-    signal                   : typing.ClassVar[Signal] = ... # signal(QString,int,void*)
+    # exception(int,QString,QString,QString)
+    exception: typing.ClassVar[Signal[
+        [int, str, str, str], [int, str, str], [int, str], [int], [], [], [], [],
+        [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str]
+    ]]
+    # propertyChanged(QString)
+    propertyChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # signal(QString,int,void*)
+    signal: typing.ClassVar[Signal[
+        [str, int, typing.Any], [str, int], [str], [], [], [], [], [],
+        [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any]
+    ]]
 
 
 class QAxBaseWidget(PySide6.QtWidgets.QWidget, PySide6.QtAxContainer.QAxObjectInterface):
-    exception                : typing.ClassVar[Signal] = ... # exception(int,QString,QString,QString)
-    propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString)
-    signal                   : typing.ClassVar[Signal] = ... # signal(QString,int,void*)
+    # exception(int,QString,QString,QString)
+    exception: typing.ClassVar[Signal[
+        [int, str, str, str], [int, str, str], [int, str], [int], [], [], [], [],
+        [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str], [int, str, str, str]
+    ]]
+    # propertyChanged(QString)
+    propertyChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # signal(QString,int,void*)
+    signal: typing.ClassVar[Signal[
+        [str, int, typing.Any], [str, int], [str], [], [], [], [], [],
+        [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any], [str, int, typing.Any]
+    ]]
 
 
 class QAxObject(PySide6.QtAxContainer.QAxBaseObject, PySide6.QtAxContainer.QAxBase):
@@ -97,10 +121,26 @@ class QAxObjectInterface(shiboken6.Shiboken.Object):
 
 
 class QAxScript(PySide6.QtCore.QObject):
-    entered                  : typing.ClassVar[Signal] = ... # entered()
-    error                    : typing.ClassVar[Signal] = ... # error(int,QString,int,QString)
-    finished                 : typing.ClassVar[Signal] = ... # finished(); finished(QVariant); finished(int,QString,QString,QString)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(int)
+    # entered()
+    entered: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # error(int,QString,int,QString)
+    error: typing.ClassVar[Signal[
+        [int, str, int, str], [int, str, int], [int, str], [int], [], [], [], [],
+        [int, str, int, str], [int, str, int, str], [int, str, int, str], [int, str, int, str], [int, str, int, str], [int, str, int, str], [int, str, int, str], [int, str, int, str]
+    ]]
+    # finished(); finished(QVariant); finished(int,QString,QString,QString)
+    finished: typing.ClassVar[Signal[
+        [typing.Any], [int, str, str, str], [int, str, str], [int, str], [int], [], [], [],
+        [], [typing.Any], [int, str, str, str], [], [], [], [], []
+    ]]
+    # stateChanged(int)
+    stateChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class FunctionFlags(enum.Enum):
         FunctionNames             = 0x0
@@ -139,7 +179,11 @@ class QAxScriptEngine(PySide6.QtAxContainer.QAxObject):
 
 
 class QAxScriptManager(PySide6.QtCore.QObject):
-    error                    : typing.ClassVar[Signal] = ... # error(QAxScript*,int,QString,int,QString)
+    # error(QAxScript*,int,QString,int,QString)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int], [PySide6.QtAxContainer.QAxScript, int, str], [PySide6.QtAxContainer.QAxScript, int], [PySide6.QtAxContainer.QAxScript], [], [], [],
+        [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str], [PySide6.QtAxContainer.QAxScript, int, str, int, str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

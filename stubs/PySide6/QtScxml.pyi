@@ -54,7 +54,11 @@ class QScxmlCppDataModel(PySide6.QtScxml.QScxmlDataModel):
 
 
 class QScxmlDataModel(PySide6.QtCore.QObject):
-    stateMachineChanged      : typing.ClassVar[Signal] = ... # stateMachineChanged(QScxmlStateMachine*)
+    # stateMachineChanged(QScxmlStateMachine*)
+    stateMachineChanged: typing.ClassVar[Signal[
+        [PySide6.QtScxml.QScxmlStateMachine], [], [], [], [], [], [], [],
+        [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine], [PySide6.QtScxml.QScxmlStateMachine]
+    ]]
 
     class ForeachLoopBody(shiboken6.Shiboken.Object):
         def __init__(self, /) -> None: ...
@@ -299,16 +303,56 @@ class QScxmlNullDataModel(PySide6.QtScxml.QScxmlDataModel):
 
 
 class QScxmlStateMachine(PySide6.QtCore.QObject):
-    dataModelChanged         : typing.ClassVar[Signal] = ... # dataModelChanged(QScxmlDataModel*)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    initialValuesChanged     : typing.ClassVar[Signal] = ... # initialValuesChanged(QVariantMap)
-    initializedChanged       : typing.ClassVar[Signal] = ... # initializedChanged(bool)
-    invokedServicesChanged   : typing.ClassVar[Signal] = ... # invokedServicesChanged(QList<QScxmlInvokableService*>)
-    loaderChanged            : typing.ClassVar[Signal] = ... # loaderChanged(QScxmlCompiler::Loader*)
-    log                      : typing.ClassVar[Signal] = ... # log(QString,QString)
-    reachedStableState       : typing.ClassVar[Signal] = ... # reachedStableState()
-    runningChanged           : typing.ClassVar[Signal] = ... # runningChanged(bool)
-    tableDataChanged         : typing.ClassVar[Signal] = ... # tableDataChanged(QScxmlTableData*)
+    # dataModelChanged(QScxmlDataModel*)
+    dataModelChanged: typing.ClassVar[Signal[
+        [PySide6.QtScxml.QScxmlDataModel], [], [], [], [], [], [], [],
+        [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel], [PySide6.QtScxml.QScxmlDataModel]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # initialValuesChanged(QVariantMap)
+    initialValuesChanged: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, typing.Any]], [], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]]
+    ]]
+    # initializedChanged(bool)
+    initializedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # invokedServicesChanged(QList<QScxmlInvokableService*>)
+    invokedServicesChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]], [collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService]]
+    ]]
+    # loaderChanged(QScxmlCompiler::Loader*)
+    loaderChanged: typing.ClassVar[Signal[
+        [PySide6.QtScxml.QScxmlCompiler.Loader], [], [], [], [], [], [], [],
+        [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader], [PySide6.QtScxml.QScxmlCompiler.Loader]
+    ]]
+    # log(QString,QString)
+    log: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # reachedStableState()
+    reachedStableState: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # runningChanged(bool)
+    runningChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # tableDataChanged(QScxmlTableData*)
+    tableDataChanged: typing.ClassVar[Signal[
+        [PySide6.QtScxml.QScxmlTableData], [], [], [], [], [], [], [],
+        [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData], [PySide6.QtScxml.QScxmlTableData]
+    ]]
 
     def __init__(self, metaObject: PySide6.QtCore.QMetaObject, /, parent: PySide6.QtCore.QObject | None = ..., *, running: bool | None = ..., initialized: bool | None = ..., dataModel: PySide6.QtScxml.QScxmlDataModel | None = ..., initialValues: typing.Optional[typing.Dict[str, typing.Any]] = ..., invokedServices: collections.abc.Sequence[PySide6.QtScxml.QScxmlInvokableService] | None = ..., sessionId: str | None = ..., name: str | None = ..., invoked: bool | None = ..., parseErrors: collections.abc.Sequence[PySide6.QtScxml.QScxmlError] | None = ..., loader: PySide6.QtScxml.QScxmlCompiler.Loader | None = ..., tableData: PySide6.QtScxml.QScxmlTableData | None = ...) -> None: ...
 

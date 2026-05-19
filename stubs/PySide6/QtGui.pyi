@@ -44,10 +44,26 @@ class QAbstractFileIconProvider(shiboken6.Shiboken.Object):
 
 
 class QAbstractTextDocumentLayout(PySide6.QtCore.QObject):
-    documentSizeChanged      : typing.ClassVar[Signal] = ... # documentSizeChanged(QSizeF)
-    pageCountChanged         : typing.ClassVar[Signal] = ... # pageCountChanged(int)
-    update                   : typing.ClassVar[Signal] = ... # update(); update(QRectF)
-    updateBlock              : typing.ClassVar[Signal] = ... # updateBlock(QTextBlock)
+    # documentSizeChanged(QSizeF)
+    documentSizeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSizeF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF]
+    ]]
+    # pageCountChanged(int)
+    pageCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # update(); update(QRectF)
+    update: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRectF], [], [], [], [], [], [], [],
+        [], [PySide6.QtCore.QRectF], [], [], [], [], [], []
+    ]]
+    # updateBlock(QTextBlock)
+    updateBlock: typing.ClassVar[Signal[
+        [PySide6.QtGui.QTextBlock], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock], [PySide6.QtGui.QTextBlock]
+    ]]
 
     class PaintContext(shiboken6.Shiboken.Object):
         @property
@@ -118,7 +134,11 @@ class QAbstractTextDocumentLayout(PySide6.QtCore.QObject):
 
 
 class QAccessibilityHints(PySide6.QtCore.QObject):
-    contrastPreferenceChanged: typing.ClassVar[Signal] = ... # contrastPreferenceChanged(Qt::ContrastPreference)
+    # contrastPreferenceChanged(Qt::ContrastPreference)
+    contrastPreferenceChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ContrastPreference], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference], [PySide6.QtCore.Qt.ContrastPreference]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, contrastPreference: PySide6.QtCore.Qt.ContrastPreference | None = ...) -> None: ...
 
@@ -796,13 +816,41 @@ class QAccessibleValueInterface(shiboken6.Shiboken.Object):
 
 
 class QAction(PySide6.QtCore.QObject):
-    changed                  : typing.ClassVar[Signal] = ... # changed()
-    checkableChanged         : typing.ClassVar[Signal] = ... # checkableChanged(bool)
-    enabledChanged           : typing.ClassVar[Signal] = ... # enabledChanged(bool)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered()
-    toggled                  : typing.ClassVar[Signal] = ... # toggled(bool)
-    triggered                : typing.ClassVar[Signal] = ... # triggered(); triggered(bool)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
+    # changed()
+    changed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # checkableChanged(bool)
+    checkableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # enabledChanged(bool)
+    enabledChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # hovered()
+    hovered: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # toggled(bool)
+    toggled: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # triggered(); triggered(bool)
+    triggered: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [], [bool], [], [], [], [], [], []
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ActionEvent(enum.Enum):
         Trigger                   = 0x0
@@ -905,8 +953,16 @@ class QActionEvent(PySide6.QtCore.QEvent):
 
 
 class QActionGroup(PySide6.QtCore.QObject):
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(QAction*)
-    triggered                : typing.ClassVar[Signal] = ... # triggered(QAction*)
+    # hovered(QAction*)
+    hovered: typing.ClassVar[Signal[
+        [PySide6.QtGui.QAction], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction]
+    ]]
+    # triggered(QAction*)
+    triggered: typing.ClassVar[Signal[
+        [PySide6.QtGui.QAction], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction], [PySide6.QtGui.QAction]
+    ]]
 
     class ExclusionPolicy(enum.Enum):
         None_                     = 0x0
@@ -1048,10 +1104,26 @@ class QChildWindowEvent(PySide6.QtCore.QEvent):
 
 
 class QClipboard(PySide6.QtCore.QObject):
-    changed                  : typing.ClassVar[Signal] = ... # changed(QClipboard::Mode)
-    dataChanged              : typing.ClassVar[Signal] = ... # dataChanged()
-    findBufferChanged        : typing.ClassVar[Signal] = ... # findBufferChanged()
-    selectionChanged         : typing.ClassVar[Signal] = ... # selectionChanged()
+    # changed(QClipboard::Mode)
+    changed: typing.ClassVar[Signal[
+        [PySide6.QtGui.QClipboard.Mode], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode], [PySide6.QtGui.QClipboard.Mode]
+    ]]
+    # dataChanged()
+    dataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # findBufferChanged()
+    findBufferChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # selectionChanged()
+    selectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Mode(enum.Enum):
         Clipboard                 = 0x0
@@ -1655,10 +1727,26 @@ class QDesktopServices(shiboken6.Shiboken.Object):
 
 
 class QDoubleValidator(PySide6.QtGui.QValidator):
-    bottomChanged            : typing.ClassVar[Signal] = ... # bottomChanged(double)
-    decimalsChanged          : typing.ClassVar[Signal] = ... # decimalsChanged(int)
-    notationChanged          : typing.ClassVar[Signal] = ... # notationChanged(QDoubleValidator::Notation)
-    topChanged               : typing.ClassVar[Signal] = ... # topChanged(double)
+    # bottomChanged(double)
+    bottomChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # decimalsChanged(int)
+    decimalsChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # notationChanged(QDoubleValidator::Notation)
+    notationChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QDoubleValidator.Notation], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation], [PySide6.QtGui.QDoubleValidator.Notation]
+    ]]
+    # topChanged(double)
+    topChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class Notation(enum.Enum):
         StandardNotation          = 0x0
@@ -1686,8 +1774,16 @@ class QDoubleValidator(PySide6.QtGui.QValidator):
 
 
 class QDrag(PySide6.QtCore.QObject):
-    actionChanged            : typing.ClassVar[Signal] = ... # actionChanged(Qt::DropAction)
-    targetChanged            : typing.ClassVar[Signal] = ... # targetChanged(QObject*)
+    # actionChanged(Qt::DropAction)
+    actionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.DropAction], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction], [PySide6.QtCore.Qt.DropAction]
+    ]]
+    # targetChanged(QObject*)
+    targetChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+    ]]
 
     def __init__(self, dragSource: PySide6.QtCore.QObject, /) -> None: ...
 
@@ -2638,20 +2734,76 @@ class QGradient(shiboken6.Shiboken.Object):
 
 
 class QGuiApplication(PySide6.QtCore.QCoreApplication):
-    applicationDisplayNameChanged: typing.ClassVar[Signal] = ... # applicationDisplayNameChanged()
-    applicationStateChanged  : typing.ClassVar[Signal] = ... # applicationStateChanged(Qt::ApplicationState)
-    commitDataRequest        : typing.ClassVar[Signal] = ... # commitDataRequest(QSessionManager&)
-    focusObjectChanged       : typing.ClassVar[Signal] = ... # focusObjectChanged(QObject*)
-    focusWindowChanged       : typing.ClassVar[Signal] = ... # focusWindowChanged(QWindow*)
-    fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-    fontDatabaseChanged      : typing.ClassVar[Signal] = ... # fontDatabaseChanged()
-    lastWindowClosed         : typing.ClassVar[Signal] = ... # lastWindowClosed()
-    layoutDirectionChanged   : typing.ClassVar[Signal] = ... # layoutDirectionChanged(Qt::LayoutDirection)
-    paletteChanged           : typing.ClassVar[Signal] = ... # paletteChanged(QPalette)
-    primaryScreenChanged     : typing.ClassVar[Signal] = ... # primaryScreenChanged(QScreen*)
-    saveStateRequest         : typing.ClassVar[Signal] = ... # saveStateRequest(QSessionManager&)
-    screenAdded              : typing.ClassVar[Signal] = ... # screenAdded(QScreen*)
-    screenRemoved            : typing.ClassVar[Signal] = ... # screenRemoved(QScreen*)
+    # applicationDisplayNameChanged()
+    applicationDisplayNameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # applicationStateChanged(Qt::ApplicationState)
+    applicationStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ApplicationState], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState], [PySide6.QtCore.Qt.ApplicationState]
+    ]]
+    # commitDataRequest(QSessionManager&)
+    commitDataRequest: typing.ClassVar[Signal[
+        [PySide6.QtGui.QSessionManager], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager]
+    ]]
+    # focusObjectChanged(QObject*)
+    focusObjectChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+    ]]
+    # focusWindowChanged(QWindow*)
+    focusWindowChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QWindow], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow]
+    ]]
+    # fontChanged(QFont)
+    fontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # fontDatabaseChanged()
+    fontDatabaseChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastWindowClosed()
+    lastWindowClosed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # layoutDirectionChanged(Qt::LayoutDirection)
+    layoutDirectionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.LayoutDirection], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection]
+    ]]
+    # paletteChanged(QPalette)
+    paletteChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPalette], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette], [PySide6.QtGui.QPalette]
+    ]]
+    # primaryScreenChanged(QScreen*)
+    primaryScreenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
+    # saveStateRequest(QSessionManager&)
+    saveStateRequest: typing.ClassVar[Signal[
+        [PySide6.QtGui.QSessionManager], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager], [PySide6.QtGui.QSessionManager]
+    ]]
+    # screenAdded(QScreen*)
+    screenAdded: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
+    # screenRemoved(QScreen*)
+    screenRemoved: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
 
     @typing.overload
     def __init__(self, arguments: collections.abc.Sequence[str], /, *, windowIcon: PySide6.QtGui.QIcon | None = ..., applicationDisplayName: str | None = ..., desktopFileName: str | None = ..., layoutDirection: PySide6.QtCore.Qt.LayoutDirection | None = ..., platformName: str | None = ..., quitOnLastWindowClosed: bool | None = ..., primaryScreen: PySide6.QtGui.QScreen | None = ...) -> None: ...
@@ -3504,8 +3656,16 @@ class QImageWriter(shiboken6.Shiboken.Object):
 
 
 class QInputDevice(PySide6.QtCore.QObject):
-    availableVirtualGeometryChanged: typing.ClassVar[Signal] = ... # availableVirtualGeometryChanged(QRect)
-    capabilitiesChanged      : typing.ClassVar[Signal] = ... # capabilitiesChanged(Capabilities)
+    # availableVirtualGeometryChanged(QRect)
+    availableVirtualGeometryChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # capabilitiesChanged(Capabilities)
+    capabilitiesChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QInputDevice.Capability], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability], [PySide6.QtGui.QInputDevice.Capability]
+    ]]
 
     class Capability(enum.Flag):
         None_                     = 0x0
@@ -3574,14 +3734,46 @@ class QInputEvent(PySide6.QtCore.QEvent):
 
 
 class QInputMethod(PySide6.QtCore.QObject):
-    anchorRectangleChanged   : typing.ClassVar[Signal] = ... # anchorRectangleChanged()
-    animatingChanged         : typing.ClassVar[Signal] = ... # animatingChanged()
-    cursorRectangleChanged   : typing.ClassVar[Signal] = ... # cursorRectangleChanged()
-    inputDirectionChanged    : typing.ClassVar[Signal] = ... # inputDirectionChanged(Qt::LayoutDirection)
-    inputItemClipRectangleChanged: typing.ClassVar[Signal] = ... # inputItemClipRectangleChanged()
-    keyboardRectangleChanged : typing.ClassVar[Signal] = ... # keyboardRectangleChanged()
-    localeChanged            : typing.ClassVar[Signal] = ... # localeChanged()
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
+    # anchorRectangleChanged()
+    anchorRectangleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # animatingChanged()
+    animatingChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cursorRectangleChanged()
+    cursorRectangleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # inputDirectionChanged(Qt::LayoutDirection)
+    inputDirectionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.LayoutDirection], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection], [PySide6.QtCore.Qt.LayoutDirection]
+    ]]
+    # inputItemClipRectangleChanged()
+    inputItemClipRectangleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # keyboardRectangleChanged()
+    keyboardRectangleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # localeChanged()
+    localeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Action(enum.Enum):
         Click                     = 0x0
@@ -3682,8 +3874,16 @@ class QIntList:
 
 
 class QIntValidator(PySide6.QtGui.QValidator):
-    bottomChanged            : typing.ClassVar[Signal] = ... # bottomChanged(int)
-    topChanged               : typing.ClassVar[Signal] = ... # topChanged(int)
+    # bottomChanged(int)
+    bottomChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # topChanged(int)
+    topChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, bottom: int | None = ..., top: int | None = ...) -> None: ...
@@ -4223,13 +4423,41 @@ class QMoveEvent(PySide6.QtCore.QEvent):
 
 
 class QMovie(PySide6.QtCore.QObject):
-    error                    : typing.ClassVar[Signal] = ... # error(QImageReader::ImageReaderError)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    frameChanged             : typing.ClassVar[Signal] = ... # frameChanged(int)
-    resized                  : typing.ClassVar[Signal] = ... # resized(QSize)
-    started                  : typing.ClassVar[Signal] = ... # started()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QMovie::MovieState)
-    updated                  : typing.ClassVar[Signal] = ... # updated(QRect)
+    # error(QImageReader::ImageReaderError)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImageReader.ImageReaderError], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError], [PySide6.QtGui.QImageReader.ImageReaderError]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # frameChanged(int)
+    frameChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # resized(QSize)
+    resized: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSize], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize], [PySide6.QtCore.QSize]
+    ]]
+    # started()
+    started: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged(QMovie::MovieState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QMovie.MovieState], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState], [PySide6.QtGui.QMovie.MovieState]
+    ]]
+    # updated(QRect)
+    updated: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
 
     class CacheMode(enum.Enum):
         CacheNone                 = 0x0
@@ -4309,7 +4537,11 @@ class QNativeInterface(shiboken6.Shiboken.Object):
 
 
 class QOffscreenSurface(PySide6.QtCore.QObject, PySide6.QtGui.QSurface):
-    screenChanged            : typing.ClassVar[Signal] = ... # screenChanged(QScreen*)
+    # screenChanged(QScreen*)
+    screenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
 
     def __init__(self, /, screen: PySide6.QtGui.QScreen | None = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -4328,7 +4560,11 @@ class QOffscreenSurface(PySide6.QtCore.QObject, PySide6.QtGui.QSurface):
 
 
 class QOpenGLContext(PySide6.QtCore.QObject):
-    aboutToBeDestroyed       : typing.ClassVar[Signal] = ... # aboutToBeDestroyed()
+    # aboutToBeDestroyed()
+    aboutToBeDestroyed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class OpenGLModuleType(enum.Enum):
         LibGL                     = 0x0
@@ -6480,7 +6716,11 @@ class QPointerEvent(PySide6.QtGui.QInputEvent):
 
 
 class QPointingDevice(PySide6.QtGui.QInputDevice):
-    grabChanged              : typing.ClassVar[Signal] = ... # grabChanged(QObject*,GrabTransition,const QPointerEvent*,QEventPoint)
+    # grabChanged(QObject*,GrabTransition,const QPointerEvent*,QEventPoint)
+    grabChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any], [PySide6.QtCore.QObject, GrabTransition], [PySide6.QtCore.QObject], [], [], [], [],
+        [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint], [PySide6.QtCore.QObject, GrabTransition, typing.Any, PySide6.QtGui.QEventPoint]
+    ]]
 
     class GrabTransition(enum.Enum):
         GrabPassive               = 0x1
@@ -7042,7 +7282,11 @@ class QRegion(shiboken6.Shiboken.Object):
 
 
 class QRegularExpressionValidator(PySide6.QtGui.QValidator):
-    regularExpressionChanged : typing.ClassVar[Signal] = ... # regularExpressionChanged(QRegularExpression)
+    # regularExpressionChanged(QRegularExpression)
+    regularExpressionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, regularExpression: PySide6.QtCore.QRegularExpression | None = ...) -> None: ...
@@ -8899,15 +9143,51 @@ class QRhiViewport(shiboken6.Shiboken.Object):
 
 
 class QScreen(PySide6.QtCore.QObject):
-    availableGeometryChanged : typing.ClassVar[Signal] = ... # availableGeometryChanged(QRect)
-    geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged(QRect)
-    logicalDotsPerInchChanged: typing.ClassVar[Signal] = ... # logicalDotsPerInchChanged(double)
-    orientationChanged       : typing.ClassVar[Signal] = ... # orientationChanged(Qt::ScreenOrientation)
-    physicalDotsPerInchChanged: typing.ClassVar[Signal] = ... # physicalDotsPerInchChanged(double)
-    physicalSizeChanged      : typing.ClassVar[Signal] = ... # physicalSizeChanged(QSizeF)
-    primaryOrientationChanged: typing.ClassVar[Signal] = ... # primaryOrientationChanged(Qt::ScreenOrientation)
-    refreshRateChanged       : typing.ClassVar[Signal] = ... # refreshRateChanged(double)
-    virtualGeometryChanged   : typing.ClassVar[Signal] = ... # virtualGeometryChanged(QRect)
+    # availableGeometryChanged(QRect)
+    availableGeometryChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # geometryChanged(QRect)
+    geometryChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # logicalDotsPerInchChanged(double)
+    logicalDotsPerInchChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # orientationChanged(Qt::ScreenOrientation)
+    orientationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ScreenOrientation], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation]
+    ]]
+    # physicalDotsPerInchChanged(double)
+    physicalDotsPerInchChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # physicalSizeChanged(QSizeF)
+    physicalSizeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSizeF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF]
+    ]]
+    # primaryOrientationChanged(Qt::ScreenOrientation)
+    primaryOrientationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ScreenOrientation], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation]
+    ]]
+    # refreshRateChanged(double)
+    refreshRateChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # virtualGeometryChanged(QRect)
+    virtualGeometryChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
 
     def __repr__(self, /) -> str: ...
     def angleBetween(self, a: PySide6.QtCore.Qt.ScreenOrientation, b: PySide6.QtCore.Qt.ScreenOrientation, /) -> int: ...
@@ -9130,8 +9410,16 @@ class QShaderVersion(shiboken6.Shiboken.Object):
 
 
 class QShortcut(PySide6.QtCore.QObject):
-    activated                : typing.ClassVar[Signal] = ... # activated()
-    activatedAmbiguously     : typing.ClassVar[Signal] = ... # activatedAmbiguously()
+    # activated()
+    activated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # activatedAmbiguously()
+    activatedAmbiguously: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, key: PySide6.QtGui.QKeySequence | None = ..., enabled: bool | None = ..., autoRepeat: bool | None = ..., context: PySide6.QtCore.Qt.ShortcutContext | None = ...) -> None: ...
@@ -9321,7 +9609,11 @@ class QStandardItem(shiboken6.Shiboken.Object):
 
 
 class QStandardItemModel(PySide6.QtCore.QAbstractItemModel):
-    itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(QStandardItem*)
+    # itemChanged(QStandardItem*)
+    itemChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QStandardItem], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem], [PySide6.QtGui.QStandardItem]
+    ]]
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, sortRole: int | None = ...) -> None: ...
@@ -9441,19 +9733,71 @@ class QStatusTipEvent(PySide6.QtCore.QEvent):
 
 
 class QStyleHints(PySide6.QtCore.QObject):
-    colorSchemeChanged       : typing.ClassVar[Signal] = ... # colorSchemeChanged(Qt::ColorScheme)
-    contextMenuTriggerChanged: typing.ClassVar[Signal] = ... # contextMenuTriggerChanged(Qt::ContextMenuTrigger)
-    cursorFlashTimeChanged   : typing.ClassVar[Signal] = ... # cursorFlashTimeChanged(int)
-    keyboardInputIntervalChanged: typing.ClassVar[Signal] = ... # keyboardInputIntervalChanged(int)
-    mouseDoubleClickIntervalChanged: typing.ClassVar[Signal] = ... # mouseDoubleClickIntervalChanged(int)
-    mousePressAndHoldIntervalChanged: typing.ClassVar[Signal] = ... # mousePressAndHoldIntervalChanged(int)
-    mouseQuickSelectionThresholdChanged: typing.ClassVar[Signal] = ... # mouseQuickSelectionThresholdChanged(int)
-    showShortcutsInContextMenusChanged: typing.ClassVar[Signal] = ... # showShortcutsInContextMenusChanged(bool)
-    startDragDistanceChanged : typing.ClassVar[Signal] = ... # startDragDistanceChanged(int)
-    startDragTimeChanged     : typing.ClassVar[Signal] = ... # startDragTimeChanged(int)
-    tabFocusBehaviorChanged  : typing.ClassVar[Signal] = ... # tabFocusBehaviorChanged(Qt::TabFocusBehavior)
-    useHoverEffectsChanged   : typing.ClassVar[Signal] = ... # useHoverEffectsChanged(bool)
-    wheelScrollLinesChanged  : typing.ClassVar[Signal] = ... # wheelScrollLinesChanged(int)
+    # colorSchemeChanged(Qt::ColorScheme)
+    colorSchemeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ColorScheme], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme], [PySide6.QtCore.Qt.ColorScheme]
+    ]]
+    # contextMenuTriggerChanged(Qt::ContextMenuTrigger)
+    contextMenuTriggerChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ContextMenuTrigger], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger], [PySide6.QtCore.Qt.ContextMenuTrigger]
+    ]]
+    # cursorFlashTimeChanged(int)
+    cursorFlashTimeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # keyboardInputIntervalChanged(int)
+    keyboardInputIntervalChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # mouseDoubleClickIntervalChanged(int)
+    mouseDoubleClickIntervalChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # mousePressAndHoldIntervalChanged(int)
+    mousePressAndHoldIntervalChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # mouseQuickSelectionThresholdChanged(int)
+    mouseQuickSelectionThresholdChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # showShortcutsInContextMenusChanged(bool)
+    showShortcutsInContextMenusChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # startDragDistanceChanged(int)
+    startDragDistanceChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # startDragTimeChanged(int)
+    startDragTimeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # tabFocusBehaviorChanged(Qt::TabFocusBehavior)
+    tabFocusBehaviorChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.TabFocusBehavior], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior], [PySide6.QtCore.Qt.TabFocusBehavior]
+    ]]
+    # useHoverEffectsChanged(bool)
+    useHoverEffectsChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # wheelScrollLinesChanged(int)
+    wheelScrollLinesChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def accessibility(self, /) -> PySide6.QtGui.QAccessibilityHints: ...
     def colorScheme(self, /) -> PySide6.QtCore.Qt.ColorScheme: ...
@@ -10042,16 +10386,56 @@ class QTextCursor(shiboken6.Shiboken.Object):
 
 
 class QTextDocument(PySide6.QtCore.QObject):
-    baseUrlChanged           : typing.ClassVar[Signal] = ... # baseUrlChanged(QUrl)
-    blockCountChanged        : typing.ClassVar[Signal] = ... # blockCountChanged(int)
-    contentsChange           : typing.ClassVar[Signal] = ... # contentsChange(int,int,int)
-    contentsChanged          : typing.ClassVar[Signal] = ... # contentsChanged()
-    cursorPositionChanged    : typing.ClassVar[Signal] = ... # cursorPositionChanged(QTextCursor)
-    documentLayoutChanged    : typing.ClassVar[Signal] = ... # documentLayoutChanged()
-    modificationChanged      : typing.ClassVar[Signal] = ... # modificationChanged(bool)
-    redoAvailable            : typing.ClassVar[Signal] = ... # redoAvailable(bool)
-    undoAvailable            : typing.ClassVar[Signal] = ... # undoAvailable(bool)
-    undoCommandAdded         : typing.ClassVar[Signal] = ... # undoCommandAdded()
+    # baseUrlChanged(QUrl)
+    baseUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # blockCountChanged(int)
+    blockCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # contentsChange(int,int,int)
+    contentsChange: typing.ClassVar[Signal[
+        [int, int, int], [int, int], [int], [], [], [], [], [],
+        [int, int, int], [int, int, int], [int, int, int], [int, int, int], [int, int, int], [int, int, int], [int, int, int], [int, int, int]
+    ]]
+    # contentsChanged()
+    contentsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cursorPositionChanged(QTextCursor)
+    cursorPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QTextCursor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor], [PySide6.QtGui.QTextCursor]
+    ]]
+    # documentLayoutChanged()
+    documentLayoutChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modificationChanged(bool)
+    modificationChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # redoAvailable(bool)
+    redoAvailable: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # undoAvailable(bool)
+    undoAvailable: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # undoCommandAdded()
+    undoCommandAdded: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class FindFlag(enum.Flag):
         FindBackward              = 0x1
@@ -11216,13 +11600,41 @@ class QUndoCommand(shiboken6.Shiboken.Object):
 
 
 class QUndoGroup(PySide6.QtCore.QObject):
-    activeStackChanged       : typing.ClassVar[Signal] = ... # activeStackChanged(QUndoStack*)
-    canRedoChanged           : typing.ClassVar[Signal] = ... # canRedoChanged(bool)
-    canUndoChanged           : typing.ClassVar[Signal] = ... # canUndoChanged(bool)
-    cleanChanged             : typing.ClassVar[Signal] = ... # cleanChanged(bool)
-    indexChanged             : typing.ClassVar[Signal] = ... # indexChanged(int)
-    redoTextChanged          : typing.ClassVar[Signal] = ... # redoTextChanged(QString)
-    undoTextChanged          : typing.ClassVar[Signal] = ... # undoTextChanged(QString)
+    # activeStackChanged(QUndoStack*)
+    activeStackChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QUndoStack], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack], [PySide6.QtGui.QUndoStack]
+    ]]
+    # canRedoChanged(bool)
+    canRedoChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # canUndoChanged(bool)
+    canUndoChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # cleanChanged(bool)
+    cleanChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # indexChanged(int)
+    indexChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # redoTextChanged(QString)
+    redoTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # undoTextChanged(QString)
+    undoTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -11243,12 +11655,36 @@ class QUndoGroup(PySide6.QtCore.QObject):
 
 
 class QUndoStack(PySide6.QtCore.QObject):
-    canRedoChanged           : typing.ClassVar[Signal] = ... # canRedoChanged(bool)
-    canUndoChanged           : typing.ClassVar[Signal] = ... # canUndoChanged(bool)
-    cleanChanged             : typing.ClassVar[Signal] = ... # cleanChanged(bool)
-    indexChanged             : typing.ClassVar[Signal] = ... # indexChanged(int)
-    redoTextChanged          : typing.ClassVar[Signal] = ... # redoTextChanged(QString)
-    undoTextChanged          : typing.ClassVar[Signal] = ... # undoTextChanged(QString)
+    # canRedoChanged(bool)
+    canRedoChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # canUndoChanged(bool)
+    canUndoChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # cleanChanged(bool)
+    cleanChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # indexChanged(int)
+    indexChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # redoTextChanged(QString)
+    redoTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # undoTextChanged(QString)
+    undoTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, active: bool | None = ..., undoLimit: int | None = ..., canUndo: bool | None = ..., canRedo: bool | None = ..., undoText: str | None = ..., redoText: str | None = ..., clean: bool | None = ...) -> None: ...
 
@@ -11280,7 +11716,11 @@ class QUndoStack(PySide6.QtCore.QObject):
 
 
 class QValidator(PySide6.QtCore.QObject):
-    changed                  : typing.ClassVar[Signal] = ... # changed()
+    # changed()
+    changed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class State(enum.Enum):
         Invalid                   = 0x0
@@ -11538,27 +11978,111 @@ class QWheelEvent(PySide6.QtGui.QSinglePointEvent):
 
 
 class QWindow(PySide6.QtCore.QObject, PySide6.QtGui.QSurface):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged()
-    contentOrientationChanged: typing.ClassVar[Signal] = ... # contentOrientationChanged(Qt::ScreenOrientation)
-    flagsChanged             : typing.ClassVar[Signal] = ... # flagsChanged(Qt::WindowFlags)
-    focusObjectChanged       : typing.ClassVar[Signal] = ... # focusObjectChanged(QObject*)
-    heightChanged            : typing.ClassVar[Signal] = ... # heightChanged(int)
-    maximumHeightChanged     : typing.ClassVar[Signal] = ... # maximumHeightChanged(int)
-    maximumWidthChanged      : typing.ClassVar[Signal] = ... # maximumWidthChanged(int)
-    minimumHeightChanged     : typing.ClassVar[Signal] = ... # minimumHeightChanged(int)
-    minimumWidthChanged      : typing.ClassVar[Signal] = ... # minimumWidthChanged(int)
-    modalityChanged          : typing.ClassVar[Signal] = ... # modalityChanged(Qt::WindowModality)
-    opacityChanged           : typing.ClassVar[Signal] = ... # opacityChanged(double)
-    safeAreaMarginsChanged   : typing.ClassVar[Signal] = ... # safeAreaMarginsChanged(QMargins)
-    screenChanged            : typing.ClassVar[Signal] = ... # screenChanged(QScreen*)
-    transientParentChanged   : typing.ClassVar[Signal] = ... # transientParentChanged(QWindow*)
-    visibilityChanged        : typing.ClassVar[Signal] = ... # visibilityChanged(QWindow::Visibility)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
-    widthChanged             : typing.ClassVar[Signal] = ... # widthChanged(int)
-    windowStateChanged       : typing.ClassVar[Signal] = ... # windowStateChanged(Qt::WindowState)
-    windowTitleChanged       : typing.ClassVar[Signal] = ... # windowTitleChanged(QString)
-    xChanged                 : typing.ClassVar[Signal] = ... # xChanged(int)
-    yChanged                 : typing.ClassVar[Signal] = ... # yChanged(int)
+    # activeChanged()
+    activeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # contentOrientationChanged(Qt::ScreenOrientation)
+    contentOrientationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.ScreenOrientation], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation], [PySide6.QtCore.Qt.ScreenOrientation]
+    ]]
+    # flagsChanged(Qt::WindowFlags)
+    flagsChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.WindowType], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType], [PySide6.QtCore.Qt.WindowType]
+    ]]
+    # focusObjectChanged(QObject*)
+    focusObjectChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+    ]]
+    # heightChanged(int)
+    heightChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # maximumHeightChanged(int)
+    maximumHeightChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # maximumWidthChanged(int)
+    maximumWidthChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # minimumHeightChanged(int)
+    minimumHeightChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # minimumWidthChanged(int)
+    minimumWidthChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # modalityChanged(Qt::WindowModality)
+    modalityChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.WindowModality], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality], [PySide6.QtCore.Qt.WindowModality]
+    ]]
+    # opacityChanged(double)
+    opacityChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # safeAreaMarginsChanged(QMargins)
+    safeAreaMarginsChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QMargins], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins]
+    ]]
+    # screenChanged(QScreen*)
+    screenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
+    # transientParentChanged(QWindow*)
+    transientParentChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QWindow], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow], [PySide6.QtGui.QWindow]
+    ]]
+    # visibilityChanged(QWindow::Visibility)
+    visibilityChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QWindow.Visibility], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility], [PySide6.QtGui.QWindow.Visibility]
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # widthChanged(int)
+    widthChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # windowStateChanged(Qt::WindowState)
+    windowStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.WindowState], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState], [PySide6.QtCore.Qt.WindowState]
+    ]]
+    # windowTitleChanged(QString)
+    windowTitleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # xChanged(int)
+    xChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # yChanged(int)
+    yChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class AncestorMode(enum.Enum):
         ExcludeTransients         = 0x0

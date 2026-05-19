@@ -28,24 +28,96 @@ class QQuickWebEngineDownloadRequest(PySide6.QtWebEngineCore.QWebEngineDownloadR
 
 
 class QQuickWebEngineProfile(PySide6.QtCore.QObject):
-    cachePathChanged         : typing.ClassVar[Signal] = ... # cachePathChanged()
-    clearHttpCacheCompleted  : typing.ClassVar[Signal] = ... # clearHttpCacheCompleted()
-    downloadFinished         : typing.ClassVar[Signal] = ... # downloadFinished(QQuickWebEngineDownloadRequest*)
-    downloadPathChanged      : typing.ClassVar[Signal] = ... # downloadPathChanged()
-    downloadRequested        : typing.ClassVar[Signal] = ... # downloadRequested(QQuickWebEngineDownloadRequest*)
-    httpAcceptLanguageChanged: typing.ClassVar[Signal] = ... # httpAcceptLanguageChanged()
-    httpCacheMaximumSizeChanged: typing.ClassVar[Signal] = ... # httpCacheMaximumSizeChanged()
-    httpCacheTypeChanged     : typing.ClassVar[Signal] = ... # httpCacheTypeChanged()
-    httpUserAgentChanged     : typing.ClassVar[Signal] = ... # httpUserAgentChanged()
-    offTheRecordChanged      : typing.ClassVar[Signal] = ... # offTheRecordChanged()
-    persistentCookiesPolicyChanged: typing.ClassVar[Signal] = ... # persistentCookiesPolicyChanged()
-    persistentPermissionsPolicyChanged: typing.ClassVar[Signal] = ... # persistentPermissionsPolicyChanged()
-    persistentStoragePathChanged: typing.ClassVar[Signal] = ... # persistentStoragePathChanged()
-    presentNotification      : typing.ClassVar[Signal] = ... # presentNotification(QWebEngineNotification*)
-    pushServiceEnabledChanged: typing.ClassVar[Signal] = ... # pushServiceEnabledChanged()
-    spellCheckEnabledChanged : typing.ClassVar[Signal] = ... # spellCheckEnabledChanged()
-    spellCheckLanguagesChanged: typing.ClassVar[Signal] = ... # spellCheckLanguagesChanged()
-    storageNameChanged       : typing.ClassVar[Signal] = ... # storageNameChanged()
+    # cachePathChanged()
+    cachePathChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clearHttpCacheCompleted()
+    clearHttpCacheCompleted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # downloadFinished(QQuickWebEngineDownloadRequest*)
+    downloadFinished: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest]
+    ]]
+    # downloadPathChanged()
+    downloadPathChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # downloadRequested(QQuickWebEngineDownloadRequest*)
+    downloadRequested: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest], [PySide6.QtWebEngineQuick.QQuickWebEngineDownloadRequest]
+    ]]
+    # httpAcceptLanguageChanged()
+    httpAcceptLanguageChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # httpCacheMaximumSizeChanged()
+    httpCacheMaximumSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # httpCacheTypeChanged()
+    httpCacheTypeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # httpUserAgentChanged()
+    httpUserAgentChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # offTheRecordChanged()
+    offTheRecordChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # persistentCookiesPolicyChanged()
+    persistentCookiesPolicyChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # persistentPermissionsPolicyChanged()
+    persistentPermissionsPolicyChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # persistentStoragePathChanged()
+    persistentStoragePathChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # presentNotification(QWebEngineNotification*)
+    presentNotification: typing.ClassVar[Signal[
+        [PySide6.QtWebEngineCore.QWebEngineNotification], [], [], [], [], [], [], [],
+        [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification], [PySide6.QtWebEngineCore.QWebEngineNotification]
+    ]]
+    # pushServiceEnabledChanged()
+    pushServiceEnabledChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # spellCheckEnabledChanged()
+    spellCheckEnabledChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # spellCheckLanguagesChanged()
+    spellCheckLanguagesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # storageNameChanged()
+    storageNameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class HttpCacheType(enum.Enum):
         MemoryHttpCache           = 0x0

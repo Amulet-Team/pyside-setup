@@ -20,7 +20,11 @@ class QIntList:
 
 
 class QWebChannel(PySide6.QtCore.QObject):
-    blockUpdatesChanged      : typing.ClassVar[Signal] = ... # blockUpdatesChanged(bool)
+    # blockUpdatesChanged(bool)
+    blockUpdatesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, blockUpdates: bool | None = ..., propertyUpdateInterval: int | None = ...) -> None: ...
 
@@ -37,7 +41,11 @@ class QWebChannel(PySide6.QtCore.QObject):
 
 
 class QWebChannelAbstractTransport(PySide6.QtCore.QObject):
-    messageReceived          : typing.ClassVar[Signal] = ... # messageReceived(QJsonObject,QWebChannelAbstractTransport*)
+    # messageReceived(QJsonObject,QWebChannelAbstractTransport*)
+    messageReceived: typing.ClassVar[Signal[
+        [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue]], [], [], [], [], [], [],
+        [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport], [typing.Dict[str, PySide6.QtCore.QJsonValue], PySide6.QtWebChannel.QWebChannelAbstractTransport]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

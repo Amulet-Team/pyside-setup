@@ -20,7 +20,11 @@ import shiboken6
 
 
 class QAbstractItemModelReplica(PySide6.QtCore.QAbstractItemModel):
-    initialized              : typing.ClassVar[Signal] = ... # initialized()
+    # initialized()
+    initialized: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def availableRoles(self, /) -> typing.List[int]: ...
     def columnCount(self, /, parent: PySide6.QtCore.QModelIndex | PySide6.QtCore.QPersistentModelIndex = ...) -> int: ...
@@ -45,7 +49,11 @@ class QAbstractItemModelReplica(PySide6.QtCore.QAbstractItemModel):
 
 
 class QConnectionAbstractServer(PySide6.QtCore.QObject):
-    newConnection            : typing.ClassVar[Signal] = ... # newConnection()
+    # newConnection()
+    newConnection: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -74,7 +82,11 @@ class QRemoteObjectDynamicReplica(PySide6.QtRemoteObjects.QRemoteObjectReplica):
 
 
 class QRemoteObjectHost(PySide6.QtRemoteObjects.QRemoteObjectHostBase):
-    hostUrlChanged           : typing.ClassVar[Signal] = ... # hostUrlChanged()
+    # hostUrlChanged()
+    hostUrlChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, hostUrl: PySide6.QtCore.QUrl | None = ...) -> None: ...
@@ -108,10 +120,26 @@ class QRemoteObjectHostBase(PySide6.QtRemoteObjects.QRemoteObjectNode):
 
 
 class QRemoteObjectNode(PySide6.QtCore.QObject):
-    error                    : typing.ClassVar[Signal] = ... # error(QRemoteObjectNode::ErrorCode)
-    heartbeatIntervalChanged : typing.ClassVar[Signal] = ... # heartbeatIntervalChanged(int)
-    remoteObjectAdded        : typing.ClassVar[Signal] = ... # remoteObjectAdded(QRemoteObjectSourceLocation)
-    remoteObjectRemoved      : typing.ClassVar[Signal] = ... # remoteObjectRemoved(QRemoteObjectSourceLocation)
+    # error(QRemoteObjectNode::ErrorCode)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [], [], [], [], [], [], [],
+        [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode]
+    ]]
+    # heartbeatIntervalChanged(int)
+    heartbeatIntervalChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # remoteObjectAdded(QRemoteObjectSourceLocation)
+    remoteObjectAdded: typing.ClassVar[Signal[
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [], [], [], [], [], [], [],
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]]
+    ]]
+    # remoteObjectRemoved(QRemoteObjectSourceLocation)
+    remoteObjectRemoved: typing.ClassVar[Signal[
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [], [], [], [], [], [], [],
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]]
+    ]]
 
     class ErrorCode(enum.Enum):
         NoError                   = 0x0
@@ -171,7 +199,11 @@ class QRemoteObjectPendingCall(shiboken6.Shiboken.Object):
 
 
 class QRemoteObjectPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtRemoteObjects.QRemoteObjectPendingCall):
-    finished                 : typing.ClassVar[Signal] = ... # finished(QRemoteObjectPendingCallWatcher*)
+    # finished(QRemoteObjectPendingCallWatcher*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [], [], [], [], [], [], [],
+        [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher], [PySide6.QtRemoteObjects.QRemoteObjectPendingCallWatcher]
+    ]]
 
     def __init__(self, call: PySide6.QtRemoteObjects.QRemoteObjectPendingCall, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -180,8 +212,16 @@ class QRemoteObjectPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtRemoteOb
 
 
 class QRemoteObjectRegistry(PySide6.QtRemoteObjects.QRemoteObjectReplica):
-    remoteObjectAdded        : typing.ClassVar[Signal] = ... # remoteObjectAdded(QRemoteObjectSourceLocation)
-    remoteObjectRemoved      : typing.ClassVar[Signal] = ... # remoteObjectRemoved(QRemoteObjectSourceLocation)
+    # remoteObjectAdded(QRemoteObjectSourceLocation)
+    remoteObjectAdded: typing.ClassVar[Signal[
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [], [], [], [], [], [], [],
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]]
+    ]]
+    # remoteObjectRemoved(QRemoteObjectSourceLocation)
+    remoteObjectRemoved: typing.ClassVar[Signal[
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [], [], [], [], [], [], [],
+        [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]], [tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo]]
+    ]]
 
     def addSource(self, entry: typing.Tuple[str, PySide6.QtRemoteObjects.QRemoteObjectSourceLocationInfo], /) -> None: ...
     def initialize(self, /) -> None: ...
@@ -199,9 +239,21 @@ class QRemoteObjectRegistryHost(PySide6.QtRemoteObjects.QRemoteObjectHostBase):
 
 
 class QRemoteObjectReplica(PySide6.QtCore.QObject):
-    initialized              : typing.ClassVar[Signal] = ... # initialized()
-    notified                 : typing.ClassVar[Signal] = ... # notified()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(State,State)
+    # initialized()
+    initialized: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # notified()
+    notified: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged(State,State)
+    stateChanged: typing.ClassVar[Signal[
+        [State, State], [State], [], [], [], [], [], [],
+        [State, State], [State, State], [State, State], [State, State], [State, State], [State, State], [State, State], [State, State]
+    ]]
 
     class ConstructorType(enum.IntEnum):
         DefaultConstructor        = 0x0
@@ -272,8 +324,16 @@ class QtROClientFactory(shiboken6.Shiboken.Object):
 
 
 class QtROClientIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
-    setError                 : typing.ClassVar[Signal] = ... # setError(QRemoteObjectNode::ErrorCode)
-    shouldReconnect          : typing.ClassVar[Signal] = ... # shouldReconnect(QtROClientIoDevice*)
+    # setError(QRemoteObjectNode::ErrorCode)
+    setError: typing.ClassVar[Signal[
+        [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [], [], [], [], [], [], [],
+        [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode], [PySide6.QtRemoteObjects.QRemoteObjectNode.ErrorCode]
+    ]]
+    # shouldReconnect(QtROClientIoDevice*)
+    shouldReconnect: typing.ClassVar[Signal[
+        [PySide6.QtRemoteObjects.QtROClientIoDevice], [], [], [], [], [], [], [],
+        [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice], [PySide6.QtRemoteObjects.QtROClientIoDevice]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -286,8 +346,16 @@ class QtROClientIoDevice(PySide6.QtRemoteObjects.QtROIoDeviceBase):
 
 
 class QtROIoDeviceBase(PySide6.QtCore.QObject):
-    disconnected             : typing.ClassVar[Signal] = ... # disconnected()
-    readyRead                : typing.ClassVar[Signal] = ... # readyRead()
+    # disconnected()
+    disconnected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # readyRead()
+    readyRead: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

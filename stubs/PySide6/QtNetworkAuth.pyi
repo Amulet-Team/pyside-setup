@@ -14,22 +14,67 @@ import PySide6.QtNetwork
 
 import enum
 import typing
+import collections.abc
 from PySide6.QtCore import Signal
 import shiboken6
 
 
 class QAbstractOAuth(PySide6.QtCore.QObject):
-    authorizationUrlChanged  : typing.ClassVar[Signal] = ... # authorizationUrlChanged(QUrl)
-    authorizeWithBrowser     : typing.ClassVar[Signal] = ... # authorizeWithBrowser(QUrl)
-    clientIdentifierChanged  : typing.ClassVar[Signal] = ... # clientIdentifierChanged(QString)
-    contentTypeChanged       : typing.ClassVar[Signal] = ... # contentTypeChanged(ContentType)
-    extraTokensChanged       : typing.ClassVar[Signal] = ... # extraTokensChanged(QVariantMap)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QNetworkReply*)
-    granted                  : typing.ClassVar[Signal] = ... # granted()
-    replyDataReceived        : typing.ClassVar[Signal] = ... # replyDataReceived(QByteArray)
-    requestFailed            : typing.ClassVar[Signal] = ... # requestFailed(Error)
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(Status)
-    tokenChanged             : typing.ClassVar[Signal] = ... # tokenChanged(QString)
+    # authorizationUrlChanged(QUrl)
+    authorizationUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # authorizeWithBrowser(QUrl)
+    authorizeWithBrowser: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # clientIdentifierChanged(QString)
+    clientIdentifierChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # contentTypeChanged(ContentType)
+    contentTypeChanged: typing.ClassVar[Signal[
+        [ContentType], [], [], [], [], [], [], [],
+        [ContentType], [ContentType], [ContentType], [ContentType], [ContentType], [ContentType], [ContentType], [ContentType]
+    ]]
+    # extraTokensChanged(QVariantMap)
+    extraTokensChanged: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, typing.Any]], [], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]]
+    ]]
+    # finished(QNetworkReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QNetworkReply], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply], [PySide6.QtNetwork.QNetworkReply]
+    ]]
+    # granted()
+    granted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # replyDataReceived(QByteArray)
+    replyDataReceived: typing.ClassVar[Signal[
+        [PySide6.QtCore.QByteArray], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray]
+    ]]
+    # requestFailed(Error)
+    requestFailed: typing.ClassVar[Signal[
+        [Error], [], [], [], [], [], [], [],
+        [Error], [Error], [Error], [Error], [Error], [Error], [Error], [Error]
+    ]]
+    # statusChanged(Status)
+    statusChanged: typing.ClassVar[Signal[
+        [Status], [], [], [], [], [], [], [],
+        [Status], [Status], [Status], [Status], [Status], [Status], [Status], [Status]
+    ]]
+    # tokenChanged(QString)
+    tokenChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class ContentType(enum.Enum):
         WwwFormUrlEncoded         = 0x0
@@ -87,26 +132,106 @@ class QAbstractOAuth(PySide6.QtCore.QObject):
 
 
 class QAbstractOAuth2(PySide6.QtNetworkAuth.QAbstractOAuth):
-    accessTokenAboutToExpire : typing.ClassVar[Signal] = ... # accessTokenAboutToExpire()
-    authorizationCallbackReceived: typing.ClassVar[Signal] = ... # authorizationCallbackReceived(QVariantMap)
-    autoRefreshChanged       : typing.ClassVar[Signal] = ... # autoRefreshChanged(bool)
-    clientIdentifierSharedKeyChanged: typing.ClassVar[Signal] = ... # clientIdentifierSharedKeyChanged(QString)
-    error                    : typing.ClassVar[Signal] = ... # error(QString,QString,QUrl)
-    expirationAtChanged      : typing.ClassVar[Signal] = ... # expirationAtChanged(QDateTime)
-    grantedScopeTokensChanged: typing.ClassVar[Signal] = ... # grantedScopeTokensChanged(QSet<QByteArray>)
-    idTokenChanged           : typing.ClassVar[Signal] = ... # idTokenChanged(QString)
-    nonceChanged             : typing.ClassVar[Signal] = ... # nonceChanged(QString)
-    nonceModeChanged         : typing.ClassVar[Signal] = ... # nonceModeChanged(NonceMode)
-    refreshLeadTimeChanged   : typing.ClassVar[Signal] = ... # refreshLeadTimeChanged(std::chrono::seconds)
-    refreshTokenChanged      : typing.ClassVar[Signal] = ... # refreshTokenChanged(QString)
-    requestedScopeTokensChanged: typing.ClassVar[Signal] = ... # requestedScopeTokensChanged(QSet<QByteArray>)
-    responseTypeChanged      : typing.ClassVar[Signal] = ... # responseTypeChanged(QString)
-    scopeChanged             : typing.ClassVar[Signal] = ... # scopeChanged(QString)
-    serverReportedErrorOccurred: typing.ClassVar[Signal] = ... # serverReportedErrorOccurred(QString,QString,QUrl)
-    sslConfigurationChanged  : typing.ClassVar[Signal] = ... # sslConfigurationChanged(QSslConfiguration)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QString)
-    tokenUrlChanged          : typing.ClassVar[Signal] = ... # tokenUrlChanged(QUrl)
-    userAgentChanged         : typing.ClassVar[Signal] = ... # userAgentChanged(QString)
+    # accessTokenAboutToExpire()
+    accessTokenAboutToExpire: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # authorizationCallbackReceived(QVariantMap)
+    authorizationCallbackReceived: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, typing.Any]], [], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]]
+    ]]
+    # autoRefreshChanged(bool)
+    autoRefreshChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # clientIdentifierSharedKeyChanged(QString)
+    clientIdentifierSharedKeyChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # error(QString,QString,QUrl)
+    error: typing.ClassVar[Signal[
+        [str, str, PySide6.QtCore.QUrl], [str, str], [str], [], [], [], [], [],
+        [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl]
+    ]]
+    # expirationAtChanged(QDateTime)
+    expirationAtChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # grantedScopeTokensChanged(QSet<QByteArray>)
+    grantedScopeTokensChanged: typing.ClassVar[Signal[
+        [collections.abc.Set[PySide6.QtCore.QByteArray]], [], [], [], [], [], [], [],
+        [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]]
+    ]]
+    # idTokenChanged(QString)
+    idTokenChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # nonceChanged(QString)
+    nonceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # nonceModeChanged(NonceMode)
+    nonceModeChanged: typing.ClassVar[Signal[
+        [NonceMode], [], [], [], [], [], [], [],
+        [NonceMode], [NonceMode], [NonceMode], [NonceMode], [NonceMode], [NonceMode], [NonceMode], [NonceMode]
+    ]]
+    # refreshLeadTimeChanged(std::chrono::seconds)
+    refreshLeadTimeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # refreshTokenChanged(QString)
+    refreshTokenChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # requestedScopeTokensChanged(QSet<QByteArray>)
+    requestedScopeTokensChanged: typing.ClassVar[Signal[
+        [collections.abc.Set[PySide6.QtCore.QByteArray]], [], [], [], [], [], [], [],
+        [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]], [collections.abc.Set[PySide6.QtCore.QByteArray]]
+    ]]
+    # responseTypeChanged(QString)
+    responseTypeChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # scopeChanged(QString)
+    scopeChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # serverReportedErrorOccurred(QString,QString,QUrl)
+    serverReportedErrorOccurred: typing.ClassVar[Signal[
+        [str, str, PySide6.QtCore.QUrl], [str, str], [str], [], [], [], [], [],
+        [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl], [str, str, PySide6.QtCore.QUrl]
+    ]]
+    # sslConfigurationChanged(QSslConfiguration)
+    sslConfigurationChanged: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslConfiguration], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration], [PySide6.QtNetwork.QSslConfiguration]
+    ]]
+    # stateChanged(QString)
+    stateChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # tokenUrlChanged(QUrl)
+    tokenUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # userAgentChanged(QString)
+    userAgentChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class NonceMode(enum.Enum):
         Automatic                 = 0x0
@@ -170,11 +295,31 @@ class QAbstractOAuth2(PySide6.QtNetworkAuth.QAbstractOAuth):
 
 
 class QAbstractOAuthReplyHandler(PySide6.QtCore.QObject):
-    callbackDataReceived     : typing.ClassVar[Signal] = ... # callbackDataReceived(QByteArray)
-    callbackReceived         : typing.ClassVar[Signal] = ... # callbackReceived(QVariantMap)
-    replyDataReceived        : typing.ClassVar[Signal] = ... # replyDataReceived(QByteArray)
-    tokenRequestErrorOccurred: typing.ClassVar[Signal] = ... # tokenRequestErrorOccurred(QAbstractOAuth::Error,QString)
-    tokensReceived           : typing.ClassVar[Signal] = ... # tokensReceived(QVariantMap)
+    # callbackDataReceived(QByteArray)
+    callbackDataReceived: typing.ClassVar[Signal[
+        [PySide6.QtCore.QByteArray], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray]
+    ]]
+    # callbackReceived(QVariantMap)
+    callbackReceived: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, typing.Any]], [], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]]
+    ]]
+    # replyDataReceived(QByteArray)
+    replyDataReceived: typing.ClassVar[Signal[
+        [PySide6.QtCore.QByteArray], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray]
+    ]]
+    # tokenRequestErrorOccurred(QAbstractOAuth::Error,QString)
+    tokenRequestErrorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error], [], [], [], [], [], [],
+        [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str], [PySide6.QtNetworkAuth.QAbstractOAuth.Error, str]
+    ]]
+    # tokensReceived(QVariantMap)
+    tokensReceived: typing.ClassVar[Signal[
+        [collections.abc.Mapping[str, typing.Any]], [], [], [], [], [], [], [],
+        [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]], [collections.abc.Mapping[str, typing.Any]]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -187,11 +332,31 @@ class QIntList:
 
 
 class QOAuth1(PySide6.QtNetworkAuth.QAbstractOAuth):
-    clientSharedSecretChanged: typing.ClassVar[Signal] = ... # clientSharedSecretChanged(QString)
-    signatureMethodChanged   : typing.ClassVar[Signal] = ... # signatureMethodChanged(QOAuth1::SignatureMethod)
-    temporaryCredentialsUrlChanged: typing.ClassVar[Signal] = ... # temporaryCredentialsUrlChanged(QUrl)
-    tokenCredentialsUrlChanged: typing.ClassVar[Signal] = ... # tokenCredentialsUrlChanged(QUrl)
-    tokenSecretChanged       : typing.ClassVar[Signal] = ... # tokenSecretChanged(QString)
+    # clientSharedSecretChanged(QString)
+    clientSharedSecretChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # signatureMethodChanged(QOAuth1::SignatureMethod)
+    signatureMethodChanged: typing.ClassVar[Signal[
+        [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [], [], [], [], [], [], [],
+        [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod], [PySide6.QtNetworkAuth.QOAuth1.SignatureMethod]
+    ]]
+    # temporaryCredentialsUrlChanged(QUrl)
+    temporaryCredentialsUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # tokenCredentialsUrlChanged(QUrl)
+    tokenCredentialsUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # tokenSecretChanged(QString)
+    tokenSecretChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class SignatureMethod(enum.Enum):
         Hmac_Sha1                 = 0x0
@@ -291,7 +456,11 @@ class QOAuth1Signature(shiboken6.Shiboken.Object):
 
 
 class QOAuth2AuthorizationCodeFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
-    accessTokenUrlChanged    : typing.ClassVar[Signal] = ... # accessTokenUrlChanged(QUrl)
+    # accessTokenUrlChanged(QUrl)
+    accessTokenUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     class PkceMethod(enum.Enum):
         S256                      = 0x0
@@ -322,12 +491,36 @@ class QOAuth2AuthorizationCodeFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
 
 
 class QOAuth2DeviceAuthorizationFlow(PySide6.QtNetworkAuth.QAbstractOAuth2):
-    authorizeWithUserCode    : typing.ClassVar[Signal] = ... # authorizeWithUserCode(QUrl,QString,QUrl)
-    completeVerificationUrlChanged: typing.ClassVar[Signal] = ... # completeVerificationUrlChanged(QUrl)
-    pollingChanged           : typing.ClassVar[Signal] = ... # pollingChanged(bool)
-    userCodeChanged          : typing.ClassVar[Signal] = ... # userCodeChanged(QString)
-    userCodeExpirationAtChanged: typing.ClassVar[Signal] = ... # userCodeExpirationAtChanged(QDateTime)
-    verificationUrlChanged   : typing.ClassVar[Signal] = ... # verificationUrlChanged(QUrl)
+    # authorizeWithUserCode(QUrl,QString,QUrl)
+    authorizeWithUserCode: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str], [PySide6.QtCore.QUrl], [], [], [], [], [],
+        [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl, str, PySide6.QtCore.QUrl]
+    ]]
+    # completeVerificationUrlChanged(QUrl)
+    completeVerificationUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # pollingChanged(bool)
+    pollingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # userCodeChanged(QString)
+    userCodeChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # userCodeExpirationAtChanged(QDateTime)
+    userCodeExpirationAtChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # verificationUrlChanged(QUrl)
+    verificationUrlChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     @typing.overload
     def __init__(self, manager: PySide6.QtNetwork.QNetworkAccessManager, /, parent: PySide6.QtCore.QObject | None = ..., *, userCode: str | None = ..., verificationUrl: PySide6.QtCore.QUrl | None = ..., completeVerificationUrl: PySide6.QtCore.QUrl | None = ..., polling: bool | None = ..., userCodeExpirationAt: PySide6.QtCore.QDateTime | None = ...) -> None: ...
@@ -380,7 +573,11 @@ class QOAuthOobReplyHandler(PySide6.QtNetworkAuth.QAbstractOAuthReplyHandler):
 
 
 class QOAuthUriSchemeReplyHandler(PySide6.QtNetworkAuth.QOAuthOobReplyHandler):
-    redirectUrlChanged       : typing.ClassVar[Signal] = ... # redirectUrlChanged()
+    # redirectUrlChanged()
+    redirectUrlChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, redirectUrl: PySide6.QtCore.QUrl | None = ...) -> None: ...

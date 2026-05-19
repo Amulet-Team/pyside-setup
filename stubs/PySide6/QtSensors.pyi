@@ -20,7 +20,11 @@ import shiboken6
 
 
 class QAccelerometer(PySide6.QtSensors.QSensor):
-    accelerationModeChanged  : typing.ClassVar[Signal] = ... # accelerationModeChanged(AccelerationMode)
+    # accelerationModeChanged(AccelerationMode)
+    accelerationModeChanged: typing.ClassVar[Signal[
+        [AccelerationMode], [], [], [], [], [], [], [],
+        [AccelerationMode], [AccelerationMode], [AccelerationMode], [AccelerationMode], [AccelerationMode], [AccelerationMode], [AccelerationMode], [AccelerationMode]
+    ]]
 
     class AccelerationMode(enum.Enum):
         Combined                  = 0x0
@@ -207,8 +211,16 @@ class QLidFilter(PySide6.QtSensors.QSensorFilter):
 
 
 class QLidReading(PySide6.QtSensors.QSensorReading):
-    backLidChanged           : typing.ClassVar[Signal] = ... # backLidChanged(bool)
-    frontLidChanged          : typing.ClassVar[Signal] = ... # frontLidChanged(bool)
+    # backLidChanged(bool)
+    backLidChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # frontLidChanged(bool)
+    frontLidChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, backLidClosed: bool | None = ..., frontLidClosed: bool | None = ...) -> None: ...
 
@@ -241,7 +253,11 @@ class QLightReading(PySide6.QtSensors.QSensorReading):
 
 
 class QLightSensor(PySide6.QtSensors.QSensor):
-    fieldOfViewChanged       : typing.ClassVar[Signal] = ... # fieldOfViewChanged(double)
+    # fieldOfViewChanged(double)
+    fieldOfViewChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, fieldOfView: float | None = ...) -> None: ...
 
@@ -251,7 +267,11 @@ class QLightSensor(PySide6.QtSensors.QSensor):
 
 
 class QMagnetometer(PySide6.QtSensors.QSensor):
-    returnGeoValuesChanged   : typing.ClassVar[Signal] = ... # returnGeoValuesChanged(bool)
+    # returnGeoValuesChanged(bool)
+    returnGeoValuesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, returnGeoValues: bool | None = ...) -> None: ...
 
@@ -373,7 +393,11 @@ class QRotationReading(PySide6.QtSensors.QSensorReading):
 
 
 class QRotationSensor(PySide6.QtSensors.QSensor):
-    hasZChanged              : typing.ClassVar[Signal] = ... # hasZChanged(bool)
+    # hasZChanged(bool)
+    hasZChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, hasZ: bool | None = ...) -> None: ...
 
@@ -383,21 +407,81 @@ class QRotationSensor(PySide6.QtSensors.QSensor):
 
 
 class QSensor(PySide6.QtCore.QObject):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged()
-    alwaysOnChanged          : typing.ClassVar[Signal] = ... # alwaysOnChanged()
-    availableSensorsChanged  : typing.ClassVar[Signal] = ... # availableSensorsChanged()
-    axesOrientationModeChanged: typing.ClassVar[Signal] = ... # axesOrientationModeChanged(AxesOrientationMode)
-    bufferSizeChanged        : typing.ClassVar[Signal] = ... # bufferSizeChanged(int)
-    busyChanged              : typing.ClassVar[Signal] = ... # busyChanged()
-    currentOrientationChanged: typing.ClassVar[Signal] = ... # currentOrientationChanged(int)
-    dataRateChanged          : typing.ClassVar[Signal] = ... # dataRateChanged()
-    efficientBufferSizeChanged: typing.ClassVar[Signal] = ... # efficientBufferSizeChanged(int)
-    identifierChanged        : typing.ClassVar[Signal] = ... # identifierChanged()
-    maxBufferSizeChanged     : typing.ClassVar[Signal] = ... # maxBufferSizeChanged(int)
-    readingChanged           : typing.ClassVar[Signal] = ... # readingChanged()
-    sensorError              : typing.ClassVar[Signal] = ... # sensorError(int)
-    skipDuplicatesChanged    : typing.ClassVar[Signal] = ... # skipDuplicatesChanged(bool)
-    userOrientationChanged   : typing.ClassVar[Signal] = ... # userOrientationChanged(int)
+    # activeChanged()
+    activeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # alwaysOnChanged()
+    alwaysOnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # availableSensorsChanged()
+    availableSensorsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axesOrientationModeChanged(AxesOrientationMode)
+    axesOrientationModeChanged: typing.ClassVar[Signal[
+        [AxesOrientationMode], [], [], [], [], [], [], [],
+        [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode], [AxesOrientationMode]
+    ]]
+    # bufferSizeChanged(int)
+    bufferSizeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # busyChanged()
+    busyChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # currentOrientationChanged(int)
+    currentOrientationChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # dataRateChanged()
+    dataRateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # efficientBufferSizeChanged(int)
+    efficientBufferSizeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # identifierChanged()
+    identifierChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # maxBufferSizeChanged(int)
+    maxBufferSizeChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # readingChanged()
+    readingChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sensorError(int)
+    sensorError: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # skipDuplicatesChanged(bool)
+    skipDuplicatesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # userOrientationChanged(int)
+    userOrientationChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class AxesOrientationMode(enum.Enum):
         FixedOrientation          = 0x0
@@ -569,7 +653,11 @@ class QTapReading(PySide6.QtSensors.QSensorReading):
 
 
 class QTapSensor(PySide6.QtSensors.QSensor):
-    returnDoubleTapEventsChanged: typing.ClassVar[Signal] = ... # returnDoubleTapEventsChanged(bool)
+    # returnDoubleTapEventsChanged(bool)
+    returnDoubleTapEventsChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, returnDoubleTapEvents: bool | None = ...) -> None: ...
 

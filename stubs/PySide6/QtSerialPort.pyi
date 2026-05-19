@@ -22,16 +22,56 @@ class QIntList:
 
 
 class QSerialPort(PySide6.QtCore.QIODevice):
-    baudRateChanged          : typing.ClassVar[Signal] = ... # baudRateChanged(int,QSerialPort::Directions)
-    breakEnabledChanged      : typing.ClassVar[Signal] = ... # breakEnabledChanged(bool)
-    dataBitsChanged          : typing.ClassVar[Signal] = ... # dataBitsChanged(QSerialPort::DataBits)
-    dataTerminalReadyChanged : typing.ClassVar[Signal] = ... # dataTerminalReadyChanged(bool)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QSerialPort::SerialPortError)
-    flowControlChanged       : typing.ClassVar[Signal] = ... # flowControlChanged(QSerialPort::FlowControl)
-    parityChanged            : typing.ClassVar[Signal] = ... # parityChanged(QSerialPort::Parity)
-    requestToSendChanged     : typing.ClassVar[Signal] = ... # requestToSendChanged(bool)
-    settingsRestoredOnCloseChanged: typing.ClassVar[Signal] = ... # settingsRestoredOnCloseChanged(bool)
-    stopBitsChanged          : typing.ClassVar[Signal] = ... # stopBitsChanged(QSerialPort::StopBits)
+    # baudRateChanged(int,QSerialPort::Directions)
+    baudRateChanged: typing.ClassVar[Signal[
+        [int, PySide6.QtSerialPort.QSerialPort.Direction], [int], [], [], [], [], [], [],
+        [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction], [int, PySide6.QtSerialPort.QSerialPort.Direction]
+    ]]
+    # breakEnabledChanged(bool)
+    breakEnabledChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # dataBitsChanged(QSerialPort::DataBits)
+    dataBitsChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialPort.QSerialPort.DataBits], [], [], [], [], [], [], [],
+        [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits], [PySide6.QtSerialPort.QSerialPort.DataBits]
+    ]]
+    # dataTerminalReadyChanged(bool)
+    dataTerminalReadyChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # errorOccurred(QSerialPort::SerialPortError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtSerialPort.QSerialPort.SerialPortError], [], [], [], [], [], [], [],
+        [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError], [PySide6.QtSerialPort.QSerialPort.SerialPortError]
+    ]]
+    # flowControlChanged(QSerialPort::FlowControl)
+    flowControlChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialPort.QSerialPort.FlowControl], [], [], [], [], [], [], [],
+        [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl], [PySide6.QtSerialPort.QSerialPort.FlowControl]
+    ]]
+    # parityChanged(QSerialPort::Parity)
+    parityChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialPort.QSerialPort.Parity], [], [], [], [], [], [], [],
+        [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity], [PySide6.QtSerialPort.QSerialPort.Parity]
+    ]]
+    # requestToSendChanged(bool)
+    requestToSendChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # settingsRestoredOnCloseChanged(bool)
+    settingsRestoredOnCloseChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # stopBitsChanged(QSerialPort::StopBits)
+    stopBitsChanged: typing.ClassVar[Signal[
+        [PySide6.QtSerialPort.QSerialPort.StopBits], [], [], [], [], [], [], [],
+        [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits], [PySide6.QtSerialPort.QSerialPort.StopBits]
+    ]]
 
     class BaudRate(enum.IntEnum):
         Baud1200                  = 0x4b0

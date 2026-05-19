@@ -123,7 +123,11 @@ class QSqlDatabase(shiboken6.Shiboken.Object):
 
 
 class QSqlDriver(PySide6.QtCore.QObject):
-    notification             : typing.ClassVar[Signal] = ... # notification(QString,QSqlDriver::NotificationSource,QVariant)
+    # notification(QString,QSqlDriver::NotificationSource,QVariant)
+    notification: typing.ClassVar[Signal[
+        [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource], [str], [], [], [], [], [],
+        [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any], [str, PySide6.QtSql.QSqlDriver.NotificationSource, typing.Any]
+    ]]
 
     class DbmsType(enum.Enum):
         UnknownDbms               = 0x0
@@ -591,10 +595,26 @@ class QSqlResult(shiboken6.Shiboken.Object):
 
 
 class QSqlTableModel(PySide6.QtSql.QSqlQueryModel):
-    beforeDelete             : typing.ClassVar[Signal] = ... # beforeDelete(int)
-    beforeInsert             : typing.ClassVar[Signal] = ... # beforeInsert(QSqlRecord&)
-    beforeUpdate             : typing.ClassVar[Signal] = ... # beforeUpdate(int,QSqlRecord&)
-    primeInsert              : typing.ClassVar[Signal] = ... # primeInsert(int,QSqlRecord&)
+    # beforeDelete(int)
+    beforeDelete: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # beforeInsert(QSqlRecord&)
+    beforeInsert: typing.ClassVar[Signal[
+        [PySide6.QtSql.QSqlRecord], [], [], [], [], [], [], [],
+        [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord], [PySide6.QtSql.QSqlRecord]
+    ]]
+    # beforeUpdate(int,QSqlRecord&)
+    beforeUpdate: typing.ClassVar[Signal[
+        [int, PySide6.QtSql.QSqlRecord], [int], [], [], [], [], [], [],
+        [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord]
+    ]]
+    # primeInsert(int,QSqlRecord&)
+    primeInsert: typing.ClassVar[Signal[
+        [int, PySide6.QtSql.QSqlRecord], [int], [], [], [], [], [], [],
+        [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord], [int, PySide6.QtSql.QSqlRecord]
+    ]]
 
     class EditStrategy(enum.Enum):
         OnFieldChange             = 0x0

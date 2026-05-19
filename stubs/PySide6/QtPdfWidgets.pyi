@@ -24,9 +24,21 @@ class QIntList:
 
 
 class QPdfPageSelector(PySide6.QtWidgets.QWidget):
-    currentPageChanged       : typing.ClassVar[Signal] = ... # currentPageChanged(int)
-    currentPageLabelChanged  : typing.ClassVar[Signal] = ... # currentPageLabelChanged(QString)
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
+    # currentPageChanged(int)
+    currentPageChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # currentPageLabelChanged(QString)
+    currentPageLabelChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # documentChanged(QPdfDocument*)
+    documentChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfDocument], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument]
+    ]]
 
     @typing.overload
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, *, document: PySide6.QtPdf.QPdfDocument | None = ..., currentPage: int | None = ..., currentPageLabel: str | None = ...) -> None: ...
@@ -41,14 +53,46 @@ class QPdfPageSelector(PySide6.QtWidgets.QWidget):
 
 
 class QPdfView(PySide6.QtWidgets.QAbstractScrollArea):
-    currentSearchResultIndexChanged: typing.ClassVar[Signal] = ... # currentSearchResultIndexChanged(int)
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
-    documentMarginsChanged   : typing.ClassVar[Signal] = ... # documentMarginsChanged(QMargins)
-    pageModeChanged          : typing.ClassVar[Signal] = ... # pageModeChanged(QPdfView::PageMode)
-    pageSpacingChanged       : typing.ClassVar[Signal] = ... # pageSpacingChanged(int)
-    searchModelChanged       : typing.ClassVar[Signal] = ... # searchModelChanged(QPdfSearchModel*)
-    zoomFactorChanged        : typing.ClassVar[Signal] = ... # zoomFactorChanged(double)
-    zoomModeChanged          : typing.ClassVar[Signal] = ... # zoomModeChanged(QPdfView::ZoomMode)
+    # currentSearchResultIndexChanged(int)
+    currentSearchResultIndexChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # documentChanged(QPdfDocument*)
+    documentChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfDocument], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument]
+    ]]
+    # documentMarginsChanged(QMargins)
+    documentMarginsChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QMargins], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins], [PySide6.QtCore.QMargins]
+    ]]
+    # pageModeChanged(QPdfView::PageMode)
+    pageModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdfWidgets.QPdfView.PageMode], [], [], [], [], [], [], [],
+        [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode], [PySide6.QtPdfWidgets.QPdfView.PageMode]
+    ]]
+    # pageSpacingChanged(int)
+    pageSpacingChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # searchModelChanged(QPdfSearchModel*)
+    searchModelChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfSearchModel], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel], [PySide6.QtPdf.QPdfSearchModel]
+    ]]
+    # zoomFactorChanged(double)
+    zoomFactorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # zoomModeChanged(QPdfView::ZoomMode)
+    zoomModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [], [], [], [], [], [], [],
+        [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode], [PySide6.QtPdfWidgets.QPdfView.ZoomMode]
+    ]]
 
     class PageMode(enum.Enum):
         SinglePage                = 0x0

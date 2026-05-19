@@ -24,7 +24,11 @@ class QIntList:
 
 
 class QPdfBookmarkModel(PySide6.QtCore.QAbstractItemModel):
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
+    # documentChanged(QPdfDocument*)
+    documentChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfDocument], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument]
+    ]]
 
     class Role(enum.IntEnum):
         Title                     = 0x100
@@ -53,11 +57,31 @@ class QPdfBookmarkModel(PySide6.QtCore.QAbstractItemModel):
 
 
 class QPdfDocument(PySide6.QtCore.QObject):
-    pageCountChanged         : typing.ClassVar[Signal] = ... # pageCountChanged(int)
-    pageModelChanged         : typing.ClassVar[Signal] = ... # pageModelChanged()
-    passwordChanged          : typing.ClassVar[Signal] = ... # passwordChanged()
-    passwordRequired         : typing.ClassVar[Signal] = ... # passwordRequired()
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QPdfDocument::Status)
+    # pageCountChanged(int)
+    pageCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pageModelChanged()
+    pageModelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # passwordChanged()
+    passwordChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # passwordRequired()
+    passwordRequired: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # statusChanged(QPdfDocument::Status)
+    statusChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfDocument.Status], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status], [PySide6.QtPdf.QPdfDocument.Status]
+    ]]
 
     class Error(enum.Enum):
         None_                     = 0x0
@@ -173,8 +197,16 @@ class QPdfLink(shiboken6.Shiboken.Object):
 
 
 class QPdfLinkModel(PySide6.QtCore.QAbstractListModel):
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged()
-    pageChanged              : typing.ClassVar[Signal] = ... # pageChanged(int)
+    # documentChanged()
+    documentChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pageChanged(int)
+    pageChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class Role(enum.Enum):
         Link                      = 0x100
@@ -198,12 +230,36 @@ class QPdfLinkModel(PySide6.QtCore.QAbstractListModel):
 
 
 class QPdfPageNavigator(PySide6.QtCore.QObject):
-    backAvailableChanged     : typing.ClassVar[Signal] = ... # backAvailableChanged(bool)
-    currentLocationChanged   : typing.ClassVar[Signal] = ... # currentLocationChanged(QPointF)
-    currentPageChanged       : typing.ClassVar[Signal] = ... # currentPageChanged(int)
-    currentZoomChanged       : typing.ClassVar[Signal] = ... # currentZoomChanged(double)
-    forwardAvailableChanged  : typing.ClassVar[Signal] = ... # forwardAvailableChanged(bool)
-    jumped                   : typing.ClassVar[Signal] = ... # jumped(QPdfLink)
+    # backAvailableChanged(bool)
+    backAvailableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # currentLocationChanged(QPointF)
+    currentLocationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # currentPageChanged(int)
+    currentPageChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # currentZoomChanged(double)
+    currentZoomChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # forwardAvailableChanged(bool)
+    forwardAvailableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # jumped(QPdfLink)
+    jumped: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfLink], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink], [PySide6.QtPdf.QPdfLink]
+    ]]
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, currentPage: int | None = ..., currentLocation: PySide6.QtCore.QPointF | None = ..., currentZoom: float | None = ..., backAvailable: bool | None = ..., forwardAvailable: bool | None = ...) -> None: ...
@@ -227,9 +283,21 @@ class QPdfPageNavigator(PySide6.QtCore.QObject):
 
 
 class QPdfPageRenderer(PySide6.QtCore.QObject):
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
-    pageRendered             : typing.ClassVar[Signal] = ... # pageRendered(int,QSize,QImage,QPdfDocumentRenderOptions,qulonglong)
-    renderModeChanged        : typing.ClassVar[Signal] = ... # renderModeChanged(QPdfPageRenderer::RenderMode)
+    # documentChanged(QPdfDocument*)
+    documentChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfDocument], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument], [PySide6.QtPdf.QPdfDocument]
+    ]]
+    # pageRendered(int,QSize,QImage,QPdfDocumentRenderOptions,qulonglong)
+    pageRendered: typing.ClassVar[Signal[
+        [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage], [int, PySide6.QtCore.QSize], [int], [], [], [],
+        [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int], [int, PySide6.QtCore.QSize, PySide6.QtGui.QImage, PySide6.QtPdf.QPdfDocumentRenderOptions, int]
+    ]]
+    # renderModeChanged(QPdfPageRenderer::RenderMode)
+    renderModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [], [], [], [], [], [], [],
+        [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode], [PySide6.QtPdf.QPdfPageRenderer.RenderMode]
+    ]]
 
     class RenderMode(enum.Enum):
         MultiThreaded             = 0x0
@@ -248,9 +316,21 @@ class QPdfPageRenderer(PySide6.QtCore.QObject):
 
 
 class QPdfSearchModel(PySide6.QtCore.QAbstractListModel):
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    documentChanged          : typing.ClassVar[Signal] = ... # documentChanged()
-    searchStringChanged      : typing.ClassVar[Signal] = ... # searchStringChanged()
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # documentChanged()
+    documentChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # searchStringChanged()
+    searchStringChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Role(enum.Enum):
         Page                      = 0x100
