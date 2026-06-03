@@ -14,7 +14,6 @@ import collections.abc
 import abc
 
 from types import SimpleNamespace
-import shiboken6
 from shibokensupport.signature.mapping import (type_map, type_map_tuple, update_mapping,
     namespace, _NotCalled, ResultVariable, ArrayLikeVariable, AsymmetricType, pyside_modules)  # noqa E:128
 from shibokensupport.signature.lib.tool import build_brace_pattern
