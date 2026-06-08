@@ -1884,31 +1884,37 @@
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+	  <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidget]"/>
     </modify-function>
     <modify-function signature="QTreeWidgetItem(QTreeWidget*,const QStringList&amp;,int)">
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+	  <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidget]"/>
     </modify-function>
     <modify-function signature="QTreeWidgetItem(QTreeWidget*,QTreeWidgetItem*,int)">
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+	  <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidget]"/>
     </modify-function>
     <modify-function signature="QTreeWidgetItem(QTreeWidgetItem*,int)">
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+      <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidgetItem]"/>
     </modify-function>
     <modify-function signature="QTreeWidgetItem(QTreeWidgetItem*,const QStringList &amp;,int)">
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+      <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidgetItem]"/>
     </modify-function>
     <modify-function signature="QTreeWidgetItem(QTreeWidgetItem*,QTreeWidgetItem*,int)">
       <modify-argument index="this">
         <parent index="1" action="add"/>
       </modify-argument>
+      <modify-argument index="1" pyi-type="Optional[PySide6.QtWidgets.QTreeWidgetItem]"/>
     </modify-function>
     <modify-function signature="addChild(QTreeWidgetItem*)">
       <modify-argument index="1">
