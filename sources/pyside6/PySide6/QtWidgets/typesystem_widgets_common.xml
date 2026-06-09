@@ -1936,7 +1936,7 @@
       </modify-argument>
     </modify-function>
     <modify-function signature="takeChild(int)">
-      <modify-argument index="return">
+      <modify-argument index="return" pyi-type="Optional[PySide6.QtWidgets.QTreeWidgetItem]">
         <parent index="this" action="add"/>
       </modify-argument>
     </modify-function>
