@@ -867,7 +867,8 @@
       </modify-argument>
     </modify-function>
 
-    <add-function signature="addAction(QString&amp;@text@,PyObject*,QKeySequence&amp;@shortcut@)">
+    <add-function signature="addAction(QString&amp;@text@,PyObject*@callable@,QKeySequence&amp;@shortcut@)">
+      <modify-argument index="2" pyi-type="collections.abc.Callable[[], typing.Any]"/>
       <modify-argument index="3">
         <replace-default-expression with="0"/>
       </modify-argument>
