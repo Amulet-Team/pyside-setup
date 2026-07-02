@@ -2477,6 +2477,9 @@ static TypeEntryCPtr findTypeEntryUsingContext(const AbstractMetaClassCPtr &meta
     QStringList context = metaClass->qualifiedCppName().split(u"::"_s);
     while (!type && !context.isEmpty()) {
         type = TypeDatabase::instance()->findType(context.join(u"::"_s) + u"::"_s + qualifiedName);
+        if (!type) {
+            type = TypeDatabase::instance()->findFlagsType(context.join(u"::"_s) + u"::"_s + qualifiedName);
+        }
         context.removeLast();
     }
     return type;
