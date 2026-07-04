@@ -537,7 +537,10 @@ class QSensorChangesInterface(Shiboken.Object):
 
 class QSensorFilter(Shiboken.Object):
 
-    m_sensor                  = ...  # type: PySide6.QtSensors.QSensor
+    @property
+    def m_sensor(self) -> PySide6.QtSensors.QSensor: ...
+    @m_sensor.setter
+    def m_sensor(self, m_sensor: PySide6.QtSensors.QSensor) -> None: ...
 
     def __init__(self, /) -> None: ...
 
@@ -650,9 +653,18 @@ class QTiltSensor(PySide6.QtSensors.QSensor):
 
 class qoutputrange(Shiboken.Object):
 
-    accuracy                  = ...  # type: float
-    maximum                   = ...  # type: float
-    minimum                   = ...  # type: float
+    @property
+    def accuracy(self) -> float: ...
+    @accuracy.setter
+    def accuracy(self, accuracy: float) -> None: ...
+    @property
+    def maximum(self) -> float: ...
+    @maximum.setter
+    def maximum(self, maximum: float) -> None: ...
+    @property
+    def minimum(self) -> float: ...
+    @minimum.setter
+    def minimum(self, minimum: float) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...

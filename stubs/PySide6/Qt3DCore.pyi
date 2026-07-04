@@ -476,8 +476,14 @@ class Qt3DCore(Shiboken.Object):
 
     class QNodeIdTypePair(Shiboken.Object):
 
-        id                        = ...  # type: PySide6.Qt3DCore.Qt3DCore.QNodeId
-        type                      = ...  # type: PySide6.QtCore.QMetaObject
+        @property
+        def id(self) -> PySide6.Qt3DCore.Qt3DCore.QNodeId: ...
+        @id.setter
+        def id(self, id: PySide6.Qt3DCore.Qt3DCore.QNodeId) -> None: ...
+        @property
+        def type(self) -> PySide6.QtCore.QMetaObject: ...
+        @type.setter
+        def type(self, type: PySide6.QtCore.QMetaObject) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...

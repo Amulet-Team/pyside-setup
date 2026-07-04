@@ -47,11 +47,26 @@ class MetaSignal(type):
 
 class Property:
 
-    __doc__                   = ...  # type: typing.Any
-    fdel                      = ...  # type: typing.Any
-    fget                      = ...  # type: typing.Any
-    freset                    = ...  # type: typing.Any
-    fset                      = ...  # type: typing.Any
+    @property
+    def __doc__(self) -> typing.Any: ...
+    @__doc__.setter
+    def __doc__(self, __doc__: typing.Any) -> None: ...
+    @property
+    def fdel(self) -> typing.Any: ...
+    @fdel.setter
+    def fdel(self, fdel: typing.Any) -> None: ...
+    @property
+    def fget(self) -> typing.Any: ...
+    @fget.setter
+    def fget(self, fget: typing.Any) -> None: ...
+    @property
+    def freset(self) -> typing.Any: ...
+    @freset.setter
+    def freset(self, freset: typing.Any) -> None: ...
+    @property
+    def fset(self) -> typing.Any: ...
+    @fset.setter
+    def fset(self, fset: typing.Any) -> None: ...
 
     def __init__(self, type: type, /, fget: collections.abc.Callable[[typing.Any], typing.Any] | None = ..., fset: collections.abc.Callable[[typing.Any, typing.Any], None] | None = ..., freset: collections.abc.Callable[[typing.Any, typing.Any], None] | None = ..., doc: str | None = ..., notify: PySide6.QtCore.Signal | None = ..., designable: bool = ..., scriptable: bool = ..., stored: bool = ..., user: bool = ..., constant: bool = ..., final: bool = ...) -> None: ...
 
@@ -65,7 +80,10 @@ class Property:
 
 class PyClassProperty(property):
 
-    __isabstractmethod__      = ...  # type: typing.Any
+    @property
+    def __isabstractmethod__(self) -> typing.Any: ...
+    @__isabstractmethod__.setter
+    def __isabstractmethod__(self, __isabstractmethod__: typing.Any) -> None: ...
 
     @classmethod
     def __init__(cls, /, fget: collections.abc.Callable[[typing.Any], typing.Any] | None = ..., fset: collections.abc.Callable[[typing.Any, typing.Any], None] | None = ..., fdel: collections.abc.Callable[[typing.Any], None] | None = ..., doc: str | None = ...) -> None: ...
@@ -127,9 +145,18 @@ class QAbstractEventDispatcher(PySide6.QtCore.QObject):
 
     class TimerInfo(Shiboken.Object):
 
-        interval                  = ...  # type: int
-        timerId                   = ...  # type: int
-        timerType                 = ...  # type: PySide6.QtCore.Qt.TimerType
+        @property
+        def interval(self) -> int: ...
+        @interval.setter
+        def interval(self, interval: int) -> None: ...
+        @property
+        def timerId(self) -> int: ...
+        @timerId.setter
+        def timerId(self, timerId: int) -> None: ...
+        @property
+        def timerType(self) -> PySide6.QtCore.Qt.TimerType: ...
+        @timerType.setter
+        def timerType(self, timerType: PySide6.QtCore.Qt.TimerType) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -537,8 +564,14 @@ class QByteArray(Shiboken.Object):
 
     class FromBase64Result(Shiboken.Object):
 
-        decoded                   = ...  # type: PySide6.QtCore.QByteArray
-        decodingStatus            = ...  # type: PySide6.QtCore.QByteArray.Base64DecodingStatus
+        @property
+        def decoded(self) -> PySide6.QtCore.QByteArray: ...
+        @decoded.setter
+        def decoded(self, decoded: PySide6.QtCore.QByteArray) -> None: ...
+        @property
+        def decodingStatus(self) -> PySide6.QtCore.QByteArray.Base64DecodingStatus: ...
+        @decodingStatus.setter
+        def decodingStatus(self, decodingStatus: PySide6.QtCore.QByteArray.Base64DecodingStatus) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -825,9 +858,18 @@ class QCalendar(Shiboken.Object):
 
     class YearMonthDay(Shiboken.Object):
 
-        day                       = ...  # type: int
-        month                     = ...  # type: int
-        year                      = ...  # type: int
+        @property
+        def day(self) -> int: ...
+        @day.setter
+        def day(self, day: int) -> None: ...
+        @property
+        def month(self) -> int: ...
+        @month.setter
+        def month(self, month: int) -> None: ...
+        @property
+        def year(self) -> int: ...
+        @year.setter
+        def year(self, year: int) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -987,7 +1029,10 @@ class QCborArray(Shiboken.Object):
 
 class QCborError(Shiboken.Object):
 
-    c                         = ...  # type: PySide6.QtCore.QCborError.Code
+    @property
+    def c(self) -> PySide6.QtCore.QCborError.Code: ...
+    @c.setter
+    def c(self, c: PySide6.QtCore.QCborError.Code) -> None: ...
 
     class Code(enum.Enum):
 
@@ -1123,8 +1168,14 @@ class QCborMap(Shiboken.Object):
 
 class QCborParserError(Shiboken.Object):
 
-    error                     = ...  # type: PySide6.QtCore.QCborError
-    offset                    = ...  # type: int
+    @property
+    def error(self) -> PySide6.QtCore.QCborError: ...
+    @error.setter
+    def error(self, error: PySide6.QtCore.QCborError) -> None: ...
+    @property
+    def offset(self) -> int: ...
+    @offset.setter
+    def offset(self, offset: int) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1290,8 +1341,14 @@ class QCborStreamWriter(Shiboken.Object):
 
 class QCborStringResultByteArray(Shiboken.Object):
 
-    data                      = ...  # type: PySide6.QtCore.QByteArray
-    status                    = ...  # type: PySide6.QtCore.QCborStreamReader.StringResultCode
+    @property
+    def data(self) -> PySide6.QtCore.QByteArray: ...
+    @data.setter
+    def data(self, data: PySide6.QtCore.QByteArray) -> None: ...
+    @property
+    def status(self) -> PySide6.QtCore.QCborStreamReader.StringResultCode: ...
+    @status.setter
+    def status(self, status: PySide6.QtCore.QCborStreamReader.StringResultCode) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -1303,8 +1360,14 @@ class QCborStringResultByteArray(Shiboken.Object):
 
 class QCborStringResultString(Shiboken.Object):
 
-    data                      = ...  # type: str
-    status                    = ...  # type: PySide6.QtCore.QCborStreamReader.StringResultCode
+    @property
+    def data(self) -> str: ...
+    @data.setter
+    def data(self, data: str) -> None: ...
+    @property
+    def status(self) -> PySide6.QtCore.QCborStreamReader.StringResultCode: ...
+    @status.setter
+    def status(self, status: PySide6.QtCore.QCborStreamReader.StringResultCode) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3957,7 +4020,10 @@ class QJsonDocument(Shiboken.Object):
 
 class QJsonParseError(Shiboken.Object):
 
-    error                     = ...  # type: PySide6.QtCore.QJsonParseError.ParseError
+    @property
+    def error(self) -> PySide6.QtCore.QJsonParseError.ParseError: ...
+    @error.setter
+    def error(self, error: PySide6.QtCore.QJsonParseError.ParseError) -> None: ...
 
     class ParseError(enum.Enum):
 
@@ -5538,11 +5604,26 @@ class QMessageAuthenticationCode(Shiboken.Object):
 
 class QMessageLogContext(Shiboken.Object):
 
-    category                  = ...  # type: str
-    file                      = ...  # type: str
-    function                  = ...  # type: str
-    line                      = ...  # type: int
-    version                   = ...  # type: int
+    @property
+    def category(self) -> str: ...
+    @category.setter
+    def category(self, category: str) -> None: ...
+    @property
+    def file(self) -> str: ...
+    @file.setter
+    def file(self, file: str) -> None: ...
+    @property
+    def function(self) -> str: ...
+    @function.setter
+    def function(self, function: str) -> None: ...
+    @property
+    def line(self) -> int: ...
+    @line.setter
+    def line(self, line: int) -> None: ...
+    @property
+    def version(self) -> int: ...
+    @version.setter
+    def version(self, version: int) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -7995,7 +8076,10 @@ class QStorageInfo(Shiboken.Object):
 
 class QStringConverter(PySide6.QtCore.QStringConverterBase):
 
-    state                     = ...  # type: PySide6.QtCore.QStringConverterBase.State
+    @property
+    def state(self) -> PySide6.QtCore.QStringConverterBase.State: ...
+    @state.setter
+    def state(self, state: PySide6.QtCore.QStringConverterBase.State) -> None: ...
 
     class Encoding(enum.Enum):
 
@@ -8041,10 +8125,22 @@ class QStringConverterBase(Shiboken.Object):
 
     class State(Shiboken.Object):
 
-        flags                     = ...  # type: PySide6.QtCore.QStringConverterBase.Flag
-        internalState             = ...  # type: int
-        invalidChars              = ...  # type: int
-        remainingChars            = ...  # type: int
+        @property
+        def flags(self) -> PySide6.QtCore.QStringConverterBase.Flag: ...
+        @flags.setter
+        def flags(self, flags: PySide6.QtCore.QStringConverterBase.Flag) -> None: ...
+        @property
+        def internalState(self) -> int: ...
+        @internalState.setter
+        def internalState(self, internalState: int) -> None: ...
+        @property
+        def invalidChars(self) -> int: ...
+        @invalidChars.setter
+        def invalidChars(self, invalidChars: int) -> None: ...
+        @property
+        def remainingChars(self) -> int: ...
+        @remainingChars.setter
+        def remainingChars(self, remainingChars: int) -> None: ...
 
         def __init__(self, /, f: PySide6.QtCore.QStringConverterBase.Flag = ...) -> None: ...
 
@@ -8600,11 +8696,26 @@ class QTimeZone(Shiboken.Object):
 
     class OffsetData(Shiboken.Object):
 
-        abbreviation              = ...  # type: str
-        atUtc                     = ...  # type: PySide6.QtCore.QDateTime
-        daylightTimeOffset        = ...  # type: int
-        offsetFromUtc             = ...  # type: int
-        standardTimeOffset        = ...  # type: int
+        @property
+        def abbreviation(self) -> str: ...
+        @abbreviation.setter
+        def abbreviation(self, abbreviation: str) -> None: ...
+        @property
+        def atUtc(self) -> PySide6.QtCore.QDateTime: ...
+        @atUtc.setter
+        def atUtc(self, atUtc: PySide6.QtCore.QDateTime) -> None: ...
+        @property
+        def daylightTimeOffset(self) -> int: ...
+        @daylightTimeOffset.setter
+        def daylightTimeOffset(self, daylightTimeOffset: int) -> None: ...
+        @property
+        def offsetFromUtc(self) -> int: ...
+        @offsetFromUtc.setter
+        def offsetFromUtc(self, offsetFromUtc: int) -> None: ...
+        @property
+        def standardTimeOffset(self) -> int: ...
+        @standardTimeOffset.setter
+        def standardTimeOffset(self, standardTimeOffset: int) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -8745,7 +8856,10 @@ class QTimer(PySide6.QtCore.QObject):
 
 class QTimerEvent(PySide6.QtCore.QEvent):
 
-    m_id                      = ...  # type: PySide6.QtCore.Qt.TimerId
+    @property
+    def m_id(self) -> PySide6.QtCore.Qt.TimerId: ...
+    @m_id.setter
+    def m_id(self, m_id: PySide6.QtCore.Qt.TimerId) -> None: ...
 
     @typing.overload
     def __init__(self, arg__1: PySide6.QtCore.QTimerEvent, /) -> None: ...

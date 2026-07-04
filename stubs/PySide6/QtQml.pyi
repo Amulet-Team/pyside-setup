@@ -451,8 +451,14 @@ class QQmlContext(PySide6.QtCore.QObject):
 
     class PropertyPair(Shiboken.Object):
 
-        name                      = ...  # type: str
-        value                     = ...  # type: typing.Any
+        @property
+        def name(self) -> str: ...
+        @name.setter
+        def name(self, name: str) -> None: ...
+        @property
+        def value(self) -> typing.Any: ...
+        @value.setter
+        def value(self, value: typing.Any) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...

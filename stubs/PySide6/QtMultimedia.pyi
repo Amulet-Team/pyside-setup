@@ -24,7 +24,10 @@ class QAbstractVideoBuffer(Shiboken.Object):
 
     class MapData(Shiboken.Object):
 
-        planeCount                = ...  # type: int
+        @property
+        def planeCount(self) -> int: ...
+        @planeCount.setter
+        def planeCount(self, planeCount: int) -> None: ...
 
         @typing.overload
         def __init__(self, /) -> None: ...
@@ -744,9 +747,18 @@ class QMediaDevices(PySide6.QtCore.QObject):
 
 class QMediaFormat(Shiboken.Object):
 
-    audio                     = ...  # type: PySide6.QtMultimedia.QMediaFormat.AudioCodec
-    fmt                       = ...  # type: PySide6.QtMultimedia.QMediaFormat.FileFormat
-    video                     = ...  # type: PySide6.QtMultimedia.QMediaFormat.VideoCodec
+    @property
+    def audio(self) -> PySide6.QtMultimedia.QMediaFormat.AudioCodec: ...
+    @audio.setter
+    def audio(self, audio: PySide6.QtMultimedia.QMediaFormat.AudioCodec) -> None: ...
+    @property
+    def fmt(self) -> PySide6.QtMultimedia.QMediaFormat.FileFormat: ...
+    @fmt.setter
+    def fmt(self, fmt: PySide6.QtMultimedia.QMediaFormat.FileFormat) -> None: ...
+    @property
+    def video(self) -> PySide6.QtMultimedia.QMediaFormat.VideoCodec: ...
+    @video.setter
+    def video(self, video: PySide6.QtMultimedia.QMediaFormat.VideoCodec) -> None: ...
 
     class AudioCodec(enum.Enum):
 
@@ -846,7 +858,10 @@ class QMediaFormat(Shiboken.Object):
 
 class QMediaMetaData(Shiboken.Object):
 
-    data                      = ...  # type: typing.Dict[PySide6.QtMultimedia.QMediaMetaData.Key, typing.Any]
+    @property
+    def data(self) -> typing.Dict[PySide6.QtMultimedia.QMediaMetaData.Key, typing.Any]: ...
+    @data.setter
+    def data(self, data: typing.Dict[PySide6.QtMultimedia.QMediaMetaData.Key, typing.Any]) -> None: ...
 
     class Key(enum.Enum):
 
@@ -1303,9 +1318,18 @@ class QVideoFrame(Shiboken.Object):
 
     class PaintOptions(Shiboken.Object):
 
-        aspectRatioMode           = ...  # type: PySide6.QtCore.Qt.AspectRatioMode
-        backgroundColor           = ...  # type: PySide6.QtGui.QColor
-        paintFlags                = ...  # type: PySide6.QtMultimedia.QVideoFrame.PaintOptions.PaintFlag
+        @property
+        def aspectRatioMode(self) -> PySide6.QtCore.Qt.AspectRatioMode: ...
+        @aspectRatioMode.setter
+        def aspectRatioMode(self, aspectRatioMode: PySide6.QtCore.Qt.AspectRatioMode) -> None: ...
+        @property
+        def backgroundColor(self) -> PySide6.QtGui.QColor: ...
+        @backgroundColor.setter
+        def backgroundColor(self, backgroundColor: PySide6.QtGui.QColor) -> None: ...
+        @property
+        def paintFlags(self) -> PySide6.QtMultimedia.QVideoFrame.PaintOptions.PaintFlag: ...
+        @paintFlags.setter
+        def paintFlags(self, paintFlags: PySide6.QtMultimedia.QVideoFrame.PaintOptions.PaintFlag) -> None: ...
 
         class PaintFlag(enum.Flag):
 

@@ -227,8 +227,14 @@ class QHelpIndexWidget(PySide6.QtWidgets.QListView):
 
 class QHelpLink(Shiboken.Object):
 
-    title                     = ...  # type: str
-    url                       = ...  # type: PySide6.QtCore.QUrl
+    @property
+    def title(self) -> str: ...
+    @title.setter
+    def title(self, title: str) -> None: ...
+    @property
+    def url(self) -> PySide6.QtCore.QUrl: ...
+    @url.setter
+    def url(self, url: PySide6.QtCore.QUrl) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -287,8 +293,14 @@ class QHelpSearchEngineCore(PySide6.QtCore.QObject):
 
 class QHelpSearchQuery(Shiboken.Object):
 
-    fieldName                 = ...  # type: PySide6.QtHelp.QHelpSearchQuery.FieldName
-    wordList                  = ...  # type: typing.List[str]
+    @property
+    def fieldName(self) -> PySide6.QtHelp.QHelpSearchQuery.FieldName: ...
+    @fieldName.setter
+    def fieldName(self, fieldName: PySide6.QtHelp.QHelpSearchQuery.FieldName) -> None: ...
+    @property
+    def wordList(self) -> typing.List[str]: ...
+    @wordList.setter
+    def wordList(self, wordList: typing.List[str]) -> None: ...
 
     class FieldName(enum.Enum):
 

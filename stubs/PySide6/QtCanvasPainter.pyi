@@ -183,8 +183,14 @@ class QCanvasGradient(PySide6.QtCanvasPainter.QCanvasBrush):
 
 class QCanvasGradientStop(Shiboken.Object):
 
-    color                     = ...  # type: PySide6.QtGui.QColor
-    position                  = ...  # type: float
+    @property
+    def color(self) -> PySide6.QtGui.QColor: ...
+    @color.setter
+    def color(self, color: PySide6.QtGui.QColor) -> None: ...
+    @property
+    def position(self) -> float: ...
+    @position.setter
+    def position(self, position: float) -> None: ...
 
     @typing.overload
     def __init__(self, /) -> None: ...

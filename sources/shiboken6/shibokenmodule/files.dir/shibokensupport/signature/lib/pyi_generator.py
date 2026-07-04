@@ -261,9 +261,12 @@ class Formatter(Writer):
         if full_name == "builtins.getset_descriptor":
             # PYSIDE-3034: Public variable types added to __doc__
             type_repr = self.normalize_type(attr_value.__doc__)
+            self.print(f"{spaces}@property")
+            self.print(f"{spaces}def {attr_name}(self) -> {type_repr}: ...")
+            self.print(f"{spaces}@{attr_name}.setter")
+            self.print(f"{spaces}def {attr_name}(self, {attr_name}: {type_repr}) -> None: ...")
         else:
-            type_repr = full_name
-        self.print(f"{spaces}{attr_name:25} = ...  # type: {type_repr}")
+            self.print(f"{spaces}{attr_name:25} = ...  # type: {full_name}")
         yield
 
     @contextmanager
