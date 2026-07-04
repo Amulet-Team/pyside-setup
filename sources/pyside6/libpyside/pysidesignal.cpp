@@ -894,19 +894,9 @@ static const char *MetaSignal_SignatureStrings[] = {
     nullptr}; // Sentinel
 
 static const char *Signal_SignatureStrings[] = {
-    "PySide6.QtCore.Signal(self,*types:type,name:str=nullptr,arguments:typing.List[str]=nullptr)",
-    "1:PySide6.QtCore.Signal.__get__(self,instance:None,owner:Optional[typing.Any])->"
-        "PySide6.QtCore.Signal",
-    "0:PySide6.QtCore.Signal.__get__(self,instance:PySide6.QtCore.QObject,"
-        "owner:Optional[typing.Any])->PySide6.QtCore.SignalInstance",
     nullptr}; // Sentinel
 
 static const char *SignalInstance_SignatureStrings[] = {
-    "PySide6.QtCore.SignalInstance.connect(self,slot:object,"
-        "type:PySide6.QtCore.Qt.ConnectionType=PySide6.QtCore.Qt.ConnectionType.AutoConnection)"
-        "->PySide6.QtCore.QMetaObject.Connection",
-    "PySide6.QtCore.SignalInstance.disconnect(self,slot:object=nullptr)->bool",
-    "PySide6.QtCore.SignalInstance.emit(self,*args:typing.Any)",
     nullptr}; // Sentinel
 
 void init(PyObject *module)
