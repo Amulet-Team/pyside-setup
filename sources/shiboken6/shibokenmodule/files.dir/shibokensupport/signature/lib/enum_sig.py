@@ -285,6 +285,8 @@ class ExactEnumerator:
                 if len(enums):
                     self.section()
                 for enum_name, enum_class_name, value in enums:
+                    if not isinstance(value.value, int):
+                        raise TypeError(f"Enum {enum_name} has non-integer value {value.value}")
                     with self.fmt.enum(enum_class_name, enum_name, value.value):
                         pass
             if isinstance(self.fmt, SignalFormatter):
