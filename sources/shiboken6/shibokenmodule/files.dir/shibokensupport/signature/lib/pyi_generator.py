@@ -37,6 +37,7 @@ from shibokensupport.signature.lib.enum_sig import (
 from shibokensupport.signature.lib.tool import build_brace_pattern
 
 indent = " " * 4
+MaxSignalSignatures = 8
 
 TYPE_MAP = {
     # Qt integer types
@@ -68,6 +69,89 @@ TYPE_MAP = {
     # C strings
     "char*": "str",
     "const char*": "str",
+}
+
+
+EmitTypeVars = ", ".join(f"EmitT{num}" for num in range(1, MaxSignalSignatures + 1))
+ArgsTypeVars = ", ".join(f"ArgsT{num}" for num in range(1, MaxSignalSignatures + 1))
+
+
+def get_signal_hint() -> str:
+    lines = [
+        "signatures: tuple[str, ...]",
+        ""
+    ]
+    for arg_count in [*range(MaxSignalSignatures), -1]:
+        if arg_count >= 0:
+            arg_hints =  ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count_2 + 1)) + "]" if arg_count_2 <= arg_count else "[]" for arg_count_2 in range(MaxSignalSignatures))
+            emit_hints = ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count + 1)) + "]" for _ in range(MaxSignalSignatures))
+            self_hint = f": Signal[{arg_hints}, {emit_hints}]"
+            args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
+        else:
+            self_hint = ""
+            args = "*types: type, "
+        lines.append(f"""\
+@typing.overload
+def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...""")
+
+    lines.append(f"""\
+
+@typing.overload
+def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[{ArgsTypeVars}, {EmitTypeVars}]: ...
+@typing.overload
+def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[{ArgsTypeVars}, {EmitTypeVars}]: ...
+""")
+
+    return "\n".join(lines)
+
+
+def get_signal_instance_hint() -> str:
+    lines = []
+
+    slot_hint = " | ".join([
+        *[f"PySide6.QtCore._SignalInstance[ArgsT{num}]" for num in range(1, MaxSignalSignatures + 1)],
+        *[f"typing.Callable[ArgsT{num}, typing.Any]" for num in range(1, MaxSignalSignatures + 1)]
+    ])
+
+    lines.append(f"def connect(self, slot: {slot_hint}, /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...")
+    lines.append(f"def disconnect(self, /, slot: {slot_hint} | None = None) -> bool: ...")
+
+    for arg_i in range(1, MaxSignalSignatures + 1):
+        lines.append("@typing.overload")
+        lines.append(f"def emit(self, /, *args: EmitT{arg_i}.args, **kwargs: EmitT{arg_i}.kwargs) -> bool: ...")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def get_slot_constructors() -> str:
+    def get_stub(arg_count: int) -> str:
+        if arg_count >= 0:
+            arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
+            self_hint = f": Slot[[{arg_params}], R]"
+            args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
+        else:
+            self_hint = ""
+            args = "*types: type | str, "
+        return f"""\
+@typing.overload
+def __init__(self{self_hint}, /, {args}name: str = "", result: type[R] | str | None = None, tag: str = "") -> None: ...
+"""
+
+    return "".join(map(get_stub, range(MaxSignalSignatures))) + get_stub(-1)
+
+StubOverrides: dict[tuple[str, str], tuple[str, str]] = {
+    ("PySide6.QtCore", "Signal"): (f"class Signal(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):", get_signal_hint()),
+    ("PySide6.QtCore", "SignalInstance"): (f"""\
+class _SignalInstance(typing.Protocol[P]):
+    def emit(self, /, *args: P.args, **kwargs: P.kwargs) -> bool: ...
+
+
+class SignalInstance(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):""", get_signal_instance_hint()),
+    ("PySide6.QtCore", "Slot"): ("class Slot(typing.Generic[P, R]):", f"""\
+{get_slot_constructors()}\
+
+def __call__(self, function: typing.Callable[typing.Concatenate[T, P], R], /) -> typing.Callable[typing.Concatenate[T, P], R]: ...
+"""),
 }
 
 
@@ -173,8 +257,6 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
         # PlaceholderType fix to avoid the '~' from TypeVar.__repr__
         if "~PlaceholderType" in source:
             source = source.replace("~PlaceholderType", "PlaceholderType")
-        if "~_SlotFunc" in source:
-            source = source.replace("~_SlotFunc", "_SlotFunc")
         if "~_QmlType" in source:
             source = source.replace("~_QmlType", "_QmlType")
         # Replace all "NoneType" strings by "None" which is a typing convention.
@@ -198,17 +280,23 @@ class Formatter(Writer, BaseFormatter, EnumFormatter, SignalFormatter, Attribute
 
     @contextmanager
     def klass(self, class_name, class_str, has_misc_error=None):
-        err_ignore = "  # type: ignore[misc]"
-        opt_comment = err_ignore if has_misc_error else ""
+        override = StubOverrides.get((self.mod_name, class_name), None)
         spaces = indent * self.level
-        while "." in class_name:
-            class_name = class_name.split(".", 1)[-1]
-            class_str = class_str.split(".", 1)[-1]
-        self.print(f"{spaces}class {class_str}:{opt_comment}")
+        if override is not None:
+            self.print(f"{spaces}{override[0]}")
+        else:
+            err_ignore = "  # type: ignore[misc]"
+            opt_comment = err_ignore if has_misc_error else ""
+            while "." in class_name:
+                class_name = class_name.split(".", 1)[-1]
+                class_str = class_str.split(".", 1)[-1]
+            self.print(f"{spaces}class {class_str}:{opt_comment}")
         self.level += 1
         yield
         spaces_2 = indent * self.level
-        if not self.have_body:
+        if override is not None:
+            self.print(spaces_2 + f"\n{spaces_2}".join(override[1].split("\n")))
+        elif not self.have_body:
             self.print(f"{spaces_2}...")
             self.print()
         self.level -= 1
@@ -399,8 +487,15 @@ def generate_pyi(import_name, outpath, options):
                 if import_name == "PySide6.QtCore":
                     wr.print("PlaceholderType = typing.TypeVar(\"PlaceholderType\", "
                              "bound=PySide6.QtCore.QObject)")
-                    wr.print("_SlotFunc = typing.TypeVar(\"_SlotFunc\", "
-                             "bound=collections.abc.Callable[..., object])")
+                    wr.print('T = typing.TypeVar("T")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'T{num} = typing.TypeVar("T{num}")')
+                    wr.print('P = typing.ParamSpec("P")')
+                    wr.print('R = typing.TypeVar("R")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'EmitT{num} = typing.ParamSpec("EmitT{num}")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'ArgsT{num} = typing.ParamSpec("ArgsT{num}")')
                     wr.print()
                     # PYSIDE-2516: Qt.KeyboardModifier and Qt.Modifier support cross-type | with
                     # Qt.Key producing QKeyCombination, which enum.Flag.__or__ cannot express.
