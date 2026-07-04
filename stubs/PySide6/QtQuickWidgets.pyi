@@ -25,8 +25,16 @@ class QIntList:
 
 
 class QQuickWidget(PySide6.QtWidgets.QWidget):
-    sceneGraphError          : typing.ClassVar[Signal] = ... # sceneGraphError(QQuickWindow::SceneGraphError,QString)
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQuickWidget::Status)
+    # sceneGraphError(QQuickWindow::SceneGraphError,QString)
+    sceneGraphError: typing.ClassVar[Signal[
+        [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError], [], [], [], [], [], [],
+        [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str]
+    ]]
+    # statusChanged(QQuickWidget::Status)
+    statusChanged: typing.ClassVar[Signal[
+        [PySide6.QtQuickWidgets.QQuickWidget.Status], [], [], [], [], [], [], [],
+        [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status], [PySide6.QtQuickWidgets.QQuickWidget.Status]
+    ]]
 
     class ResizeMode(enum.Enum):
         SizeViewToRootObject      = 0x0

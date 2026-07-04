@@ -57,7 +57,11 @@ class QSvgGenerator(PySide6.QtGui.QPaintDevice):
 
 
 class QSvgRenderer(PySide6.QtCore.QObject):
-    repaintNeeded            : typing.ClassVar[Signal] = ... # repaintNeeded()
+    # repaintNeeded()
+    repaintNeeded: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, contents: PySide6.QtCore.QXmlStreamReader, /, parent: PySide6.QtCore.QObject | None = ..., *, viewBox: PySide6.QtCore.QRectF | None = ..., framesPerSecond: int | None = ..., currentFrame: int | None = ..., aspectRatioMode: PySide6.QtCore.Qt.AspectRatioMode | None = ..., options: PySide6.QtSvg.QtSvg.Option | None = ..., animationEnabled: bool | None = ...) -> None: ...

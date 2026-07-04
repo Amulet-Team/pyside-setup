@@ -32,27 +32,111 @@ class QMaskGenerator(PySide6.QtCore.QObject):
 
 
 class QWebSocket(PySide6.QtCore.QObject):
-    aboutToClose             : typing.ClassVar[Signal] = ... # aboutToClose()
-    alertReceived            : typing.ClassVar[Signal] = ... # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
-    alertSent                : typing.ClassVar[Signal] = ... # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
-    authenticationRequired   : typing.ClassVar[Signal] = ... # authenticationRequired(QAuthenticator*)
-    binaryFrameReceived      : typing.ClassVar[Signal] = ... # binaryFrameReceived(QByteArray,bool)
-    binaryMessageReceived    : typing.ClassVar[Signal] = ... # binaryMessageReceived(QByteArray)
-    bytesWritten             : typing.ClassVar[Signal] = ... # bytesWritten(qlonglong)
-    connected                : typing.ClassVar[Signal] = ... # connected()
-    disconnected             : typing.ClassVar[Signal] = ... # disconnected()
-    error                    : typing.ClassVar[Signal] = ... # error(QAbstractSocket::SocketError)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QAbstractSocket::SocketError)
-    handshakeInterruptedOnError: typing.ClassVar[Signal] = ... # handshakeInterruptedOnError(QSslError)
-    peerVerifyError          : typing.ClassVar[Signal] = ... # peerVerifyError(QSslError)
-    pong                     : typing.ClassVar[Signal] = ... # pong(qulonglong,QByteArray)
-    preSharedKeyAuthenticationRequired: typing.ClassVar[Signal] = ... # preSharedKeyAuthenticationRequired(QSslPreSharedKeyAuthenticator*)
-    proxyAuthenticationRequired: typing.ClassVar[Signal] = ... # proxyAuthenticationRequired(QNetworkProxy,QAuthenticator*)
-    readChannelFinished      : typing.ClassVar[Signal] = ... # readChannelFinished()
-    sslErrors                : typing.ClassVar[Signal] = ... # sslErrors(QList<QSslError>)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QAbstractSocket::SocketState)
-    textFrameReceived        : typing.ClassVar[Signal] = ... # textFrameReceived(QString,bool)
-    textMessageReceived      : typing.ClassVar[Signal] = ... # textMessageReceived(QString)
+    # aboutToClose()
+    aboutToClose: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
+    alertReceived: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType], [PySide6.QtNetwork.QSsl.AlertLevel], [], [], [], [], [],
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str]
+    ]]
+    # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
+    alertSent: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType], [PySide6.QtNetwork.QSsl.AlertLevel], [], [], [], [], [],
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str]
+    ]]
+    # authenticationRequired(QAuthenticator*)
+    authenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QAuthenticator], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QAuthenticator]
+    ]]
+    # binaryFrameReceived(QByteArray,bool)
+    binaryFrameReceived: typing.ClassVar[Signal[
+        [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray], [], [], [], [], [], [],
+        [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool], [PySide6.QtCore.QByteArray, bool]
+    ]]
+    # binaryMessageReceived(QByteArray)
+    binaryMessageReceived: typing.ClassVar[Signal[
+        [PySide6.QtCore.QByteArray], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray]
+    ]]
+    # bytesWritten(qlonglong)
+    bytesWritten: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # connected()
+    connected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # disconnected()
+    disconnected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # error(QAbstractSocket::SocketError)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError]
+    ]]
+    # errorOccurred(QAbstractSocket::SocketError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError]
+    ]]
+    # handshakeInterruptedOnError(QSslError)
+    handshakeInterruptedOnError: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError]
+    ]]
+    # peerVerifyError(QSslError)
+    peerVerifyError: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError]
+    ]]
+    # pong(qulonglong,QByteArray)
+    pong: typing.ClassVar[Signal[
+        [int, PySide6.QtCore.QByteArray], [int], [], [], [], [], [], [],
+        [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray], [int, PySide6.QtCore.QByteArray]
+    ]]
+    # preSharedKeyAuthenticationRequired(QSslPreSharedKeyAuthenticator*)
+    preSharedKeyAuthenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator]
+    ]]
+    # proxyAuthenticationRequired(QNetworkProxy,QAuthenticator*)
+    proxyAuthenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator], [PySide6.QtNetwork.QNetworkProxy, PySide6.QtNetwork.QAuthenticator]
+    ]]
+    # readChannelFinished()
+    readChannelFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sslErrors(QList<QSslError>)
+    sslErrors: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]]
+    ]]
+    # stateChanged(QAbstractSocket::SocketState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QAbstractSocket.SocketState], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState], [PySide6.QtNetwork.QAbstractSocket.SocketState]
+    ]]
+    # textFrameReceived(QString,bool)
+    textFrameReceived: typing.ClassVar[Signal[
+        [str, bool], [str], [], [], [], [], [], [],
+        [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool], [str, bool]
+    ]]
+    # textMessageReceived(QString)
+    textMessageReceived: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, /, origin: str = ..., version: PySide6.QtWebSockets.QWebSocketProtocol.Version = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -173,18 +257,66 @@ class QWebSocketProtocol(Shiboken.Object):
 
 
 class QWebSocketServer(PySide6.QtCore.QObject):
-    acceptError              : typing.ClassVar[Signal] = ... # acceptError(QAbstractSocket::SocketError)
-    alertReceived            : typing.ClassVar[Signal] = ... # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
-    alertSent                : typing.ClassVar[Signal] = ... # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
-    closed                   : typing.ClassVar[Signal] = ... # closed()
-    handshakeInterruptedOnError: typing.ClassVar[Signal] = ... # handshakeInterruptedOnError(QSslError)
-    newConnection            : typing.ClassVar[Signal] = ... # newConnection()
-    originAuthenticationRequired: typing.ClassVar[Signal] = ... # originAuthenticationRequired(QWebSocketCorsAuthenticator*)
-    peerVerifyError          : typing.ClassVar[Signal] = ... # peerVerifyError(QSslError)
-    preSharedKeyAuthenticationRequired: typing.ClassVar[Signal] = ... # preSharedKeyAuthenticationRequired(QSslPreSharedKeyAuthenticator*)
-    serverError              : typing.ClassVar[Signal] = ... # serverError(QWebSocketProtocol::CloseCode)
-    sslErrors                : typing.ClassVar[Signal] = ... # sslErrors(QList<QSslError>)
-    sslErrorsOccurred        : typing.ClassVar[Signal] = ... # sslErrorsOccurred(QSslSocket*,QList<QSslError>)
+    # acceptError(QAbstractSocket::SocketError)
+    acceptError: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError], [PySide6.QtNetwork.QAbstractSocket.SocketError]
+    ]]
+    # alertReceived(QSsl::AlertLevel,QSsl::AlertType,QString)
+    alertReceived: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType], [PySide6.QtNetwork.QSsl.AlertLevel], [], [], [], [], [],
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str]
+    ]]
+    # alertSent(QSsl::AlertLevel,QSsl::AlertType,QString)
+    alertSent: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType], [PySide6.QtNetwork.QSsl.AlertLevel], [], [], [], [], [],
+        [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str], [PySide6.QtNetwork.QSsl.AlertLevel, PySide6.QtNetwork.QSsl.AlertType, str]
+    ]]
+    # closed()
+    closed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # handshakeInterruptedOnError(QSslError)
+    handshakeInterruptedOnError: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError]
+    ]]
+    # newConnection()
+    newConnection: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # originAuthenticationRequired(QWebSocketCorsAuthenticator*)
+    originAuthenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [], [], [], [], [], [], [],
+        [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator], [PySide6.QtWebSockets.QWebSocketCorsAuthenticator]
+    ]]
+    # peerVerifyError(QSslError)
+    peerVerifyError: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslError], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError], [PySide6.QtNetwork.QSslError]
+    ]]
+    # preSharedKeyAuthenticationRequired(QSslPreSharedKeyAuthenticator*)
+    preSharedKeyAuthenticationRequired: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator], [PySide6.QtNetwork.QSslPreSharedKeyAuthenticator]
+    ]]
+    # serverError(QWebSocketProtocol::CloseCode)
+    serverError: typing.ClassVar[Signal[
+        [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [], [], [], [], [], [], [],
+        [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode], [PySide6.QtWebSockets.QWebSocketProtocol.CloseCode]
+    ]]
+    # sslErrors(QList<QSslError>)
+    sslErrors: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [collections.abc.Sequence[PySide6.QtNetwork.QSslError]]
+    ]]
+    # sslErrorsOccurred(QSslSocket*,QList<QSslError>)
+    sslErrorsOccurred: typing.ClassVar[Signal[
+        [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket], [], [], [], [], [], [],
+        [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]], [PySide6.QtNetwork.QSslSocket, collections.abc.Sequence[PySide6.QtNetwork.QSslError]]
+    ]]
 
     class SslMode(enum.Enum):
         SecureMode                = 0x0

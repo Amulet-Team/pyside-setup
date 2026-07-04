@@ -21,9 +21,21 @@ from shiboken6 import Shiboken
 
 
 class QGeoCodeReply(PySide6.QtCore.QObject):
-    aborted                  : typing.ClassVar[Signal] = ... # aborted()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
+    # aborted()
+    aborted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error], [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply.Error, str]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -57,8 +69,16 @@ class QGeoCodeReply(PySide6.QtCore.QObject):
 
 
 class QGeoCodingManager(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QGeoCodeReply*)
+    # errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error], [PySide6.QtLocation.QGeoCodeReply], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str]
+    ]]
+    # finished(QGeoCodeReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoCodeReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply]
+    ]]
 
     @typing.overload
     def geocode(self, address: PySide6.QtPositioning.QGeoAddress, /, bounds: PySide6.QtPositioning.QGeoShape = ...) -> PySide6.QtLocation.QGeoCodeReply: ...
@@ -72,8 +92,16 @@ class QGeoCodingManager(PySide6.QtCore.QObject):
 
 
 class QGeoCodingManagerEngine(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QGeoCodeReply*)
+    # errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error,QString); errorOccurred(QGeoCodeReply*,QGeoCodeReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error], [PySide6.QtLocation.QGeoCodeReply], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str], [PySide6.QtLocation.QGeoCodeReply, PySide6.QtLocation.QGeoCodeReply.Error, str]
+    ]]
+    # finished(QGeoCodeReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoCodeReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply], [PySide6.QtLocation.QGeoCodeReply]
+    ]]
 
     def __init__(self, parameters: typing.Dict[str, typing.Any], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -168,9 +196,21 @@ class QGeoRoute(Shiboken.Object):
 
 
 class QGeoRouteReply(PySide6.QtCore.QObject):
-    aborted                  : typing.ClassVar[Signal] = ... # aborted()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
+    # aborted()
+    aborted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error], [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply.Error, str]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -294,8 +334,16 @@ class QGeoRouteSegment(Shiboken.Object):
 
 
 class QGeoRoutingManager(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QGeoRouteReply*)
+    # errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error], [PySide6.QtLocation.QGeoRouteReply], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str]
+    ]]
+    # finished(QGeoRouteReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoRouteReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply]
+    ]]
 
     def calculateRoute(self, request: PySide6.QtLocation.QGeoRouteRequest, /) -> PySide6.QtLocation.QGeoRouteReply: ...
     def locale(self, /) -> PySide6.QtCore.QLocale: ...
@@ -314,8 +362,16 @@ class QGeoRoutingManager(PySide6.QtCore.QObject):
 
 
 class QGeoRoutingManagerEngine(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QGeoRouteReply*)
+    # errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error,QString); errorOccurred(QGeoRouteReply*,QGeoRouteReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error], [PySide6.QtLocation.QGeoRouteReply], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str], [PySide6.QtLocation.QGeoRouteReply, PySide6.QtLocation.QGeoRouteReply.Error, str]
+    ]]
+    # finished(QGeoRouteReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QGeoRouteReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply], [PySide6.QtLocation.QGeoRouteReply]
+    ]]
 
     def __init__(self, parameters: typing.Dict[str, typing.Any], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -678,15 +734,51 @@ class QPlaceIdReply(PySide6.QtLocation.QPlaceReply):
 
 
 class QPlaceManager(PySide6.QtCore.QObject):
-    categoryAdded            : typing.ClassVar[Signal] = ... # categoryAdded(QPlaceCategory,QString)
-    categoryRemoved          : typing.ClassVar[Signal] = ... # categoryRemoved(QString,QString)
-    categoryUpdated          : typing.ClassVar[Signal] = ... # categoryUpdated(QPlaceCategory,QString)
-    dataChanged              : typing.ClassVar[Signal] = ... # dataChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QPlaceReply*,QPlaceReply::Error,QString); errorOccurred(QPlaceReply*,QPlaceReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QPlaceReply*)
-    placeAdded               : typing.ClassVar[Signal] = ... # placeAdded(QString)
-    placeRemoved             : typing.ClassVar[Signal] = ... # placeRemoved(QString)
-    placeUpdated             : typing.ClassVar[Signal] = ... # placeUpdated(QString)
+    # categoryAdded(QPlaceCategory,QString)
+    categoryAdded: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str]
+    ]]
+    # categoryRemoved(QString,QString)
+    categoryRemoved: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # categoryUpdated(QPlaceCategory,QString)
+    categoryUpdated: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str]
+    ]]
+    # dataChanged()
+    dataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QPlaceReply*,QPlaceReply::Error,QString); errorOccurred(QPlaceReply*,QPlaceReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error], [PySide6.QtLocation.QPlaceReply], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str]
+    ]]
+    # finished(QPlaceReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply]
+    ]]
+    # placeAdded(QString)
+    placeAdded: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # placeRemoved(QString)
+    placeRemoved: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # placeUpdated(QString)
+    placeUpdated: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def category(self, categoryId: str, /) -> PySide6.QtLocation.QPlaceCategory: ...
     def childCategories(self, /, parentId: str = ...) -> typing.List[PySide6.QtLocation.QPlaceCategory]: ...
@@ -711,15 +803,51 @@ class QPlaceManager(PySide6.QtCore.QObject):
 
 
 class QPlaceManagerEngine(PySide6.QtCore.QObject):
-    categoryAdded            : typing.ClassVar[Signal] = ... # categoryAdded(QPlaceCategory,QString)
-    categoryRemoved          : typing.ClassVar[Signal] = ... # categoryRemoved(QString,QString)
-    categoryUpdated          : typing.ClassVar[Signal] = ... # categoryUpdated(QPlaceCategory,QString)
-    dataChanged              : typing.ClassVar[Signal] = ... # dataChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QPlaceReply*,QPlaceReply::Error,QString); errorOccurred(QPlaceReply*,QPlaceReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished(QPlaceReply*)
-    placeAdded               : typing.ClassVar[Signal] = ... # placeAdded(QString)
-    placeRemoved             : typing.ClassVar[Signal] = ... # placeRemoved(QString)
-    placeUpdated             : typing.ClassVar[Signal] = ... # placeUpdated(QString)
+    # categoryAdded(QPlaceCategory,QString)
+    categoryAdded: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str]
+    ]]
+    # categoryRemoved(QString,QString)
+    categoryRemoved: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # categoryUpdated(QPlaceCategory,QString)
+    categoryUpdated: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str], [PySide6.QtLocation.QPlaceCategory, str]
+    ]]
+    # dataChanged()
+    dataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QPlaceReply*,QPlaceReply::Error,QString); errorOccurred(QPlaceReply*,QPlaceReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error], [PySide6.QtLocation.QPlaceReply], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply, PySide6.QtLocation.QPlaceReply.Error, str]
+    ]]
+    # finished(QPlaceReply*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceReply], [], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply], [PySide6.QtLocation.QPlaceReply]
+    ]]
+    # placeAdded(QString)
+    placeAdded: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # placeRemoved(QString)
+    placeRemoved: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # placeUpdated(QString)
+    placeUpdated: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, parameters: typing.Dict[str, typing.Any], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -804,10 +932,26 @@ class QPlaceRatings(Shiboken.Object):
 
 
 class QPlaceReply(PySide6.QtCore.QObject):
-    aborted                  : typing.ClassVar[Signal] = ... # aborted()
-    contentUpdated           : typing.ClassVar[Signal] = ... # contentUpdated()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QPlaceReply::Error,QString); errorOccurred(QPlaceReply::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
+    # aborted()
+    aborted: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # contentUpdated()
+    contentUpdated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QPlaceReply::Error,QString); errorOccurred(QPlaceReply::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error], [], [], [], [], [], [],
+        [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error], [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error, str], [PySide6.QtLocation.QPlaceReply.Error, str]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0

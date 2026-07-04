@@ -112,10 +112,26 @@ class PyClassProperty(property):
 
 
 class QAbstractAnimation(PySide6.QtCore.QObject):
-    currentLoopChanged       : typing.ClassVar[Signal] = ... # currentLoopChanged(int)
-    directionChanged         : typing.ClassVar[Signal] = ... # directionChanged(QAbstractAnimation::Direction)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)
+    # currentLoopChanged(int)
+    currentLoopChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # directionChanged(QAbstractAnimation::Direction)
+    directionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QAbstractAnimation.Direction], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction], [PySide6.QtCore.QAbstractAnimation.Direction]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State], [], [], [], [], [], [],
+        [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State], [PySide6.QtCore.QAbstractAnimation.State, PySide6.QtCore.QAbstractAnimation.State]
+    ]]
 
     class DeletionPolicy(enum.Enum):
         KeepWhenStopped           = 0x0
@@ -156,8 +172,16 @@ class QAbstractAnimation(PySide6.QtCore.QObject):
 
 
 class QAbstractEventDispatcher(PySide6.QtCore.QObject):
-    aboutToBlock             : typing.ClassVar[Signal] = ... # aboutToBlock()
-    awake                    : typing.ClassVar[Signal] = ... # awake()
+    # aboutToBlock()
+    aboutToBlock: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # awake()
+    awake: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class TimerInfo(Shiboken.Object):
         @property
@@ -210,24 +234,96 @@ class QAbstractEventDispatcher(PySide6.QtCore.QObject):
 
 
 class QAbstractItemModel(PySide6.QtCore.QObject):
-    columnsAboutToBeInserted : typing.ClassVar[Signal] = ... # columnsAboutToBeInserted(QModelIndex,int,int)
-    columnsAboutToBeMoved    : typing.ClassVar[Signal] = ... # columnsAboutToBeMoved(QModelIndex,int,int,QModelIndex,int)
-    columnsAboutToBeRemoved  : typing.ClassVar[Signal] = ... # columnsAboutToBeRemoved(QModelIndex,int,int)
-    columnsInserted          : typing.ClassVar[Signal] = ... # columnsInserted(QModelIndex,int,int)
-    columnsMoved             : typing.ClassVar[Signal] = ... # columnsMoved(QModelIndex,int,int,QModelIndex,int)
-    columnsRemoved           : typing.ClassVar[Signal] = ... # columnsRemoved(QModelIndex,int,int)
-    dataChanged              : typing.ClassVar[Signal] = ... # dataChanged(QModelIndex,QModelIndex,QList<int>); dataChanged(QModelIndex,QModelIndex)
-    headerDataChanged        : typing.ClassVar[Signal] = ... # headerDataChanged(Qt::Orientation,int,int)
-    layoutAboutToBeChanged   : typing.ClassVar[Signal] = ... # layoutAboutToBeChanged(); layoutAboutToBeChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint); layoutAboutToBeChanged(QList<QPersistentModelIndex>)
-    layoutChanged            : typing.ClassVar[Signal] = ... # layoutChanged(); layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint); layoutChanged(QList<QPersistentModelIndex>)
-    modelAboutToBeReset      : typing.ClassVar[Signal] = ... # modelAboutToBeReset()
-    modelReset               : typing.ClassVar[Signal] = ... # modelReset()
-    rowsAboutToBeInserted    : typing.ClassVar[Signal] = ... # rowsAboutToBeInserted(QModelIndex,int,int)
-    rowsAboutToBeMoved       : typing.ClassVar[Signal] = ... # rowsAboutToBeMoved(QModelIndex,int,int,QModelIndex,int)
-    rowsAboutToBeRemoved     : typing.ClassVar[Signal] = ... # rowsAboutToBeRemoved(QModelIndex,int,int)
-    rowsInserted             : typing.ClassVar[Signal] = ... # rowsInserted(QModelIndex,int,int)
-    rowsMoved                : typing.ClassVar[Signal] = ... # rowsMoved(QModelIndex,int,int,QModelIndex,int)
-    rowsRemoved              : typing.ClassVar[Signal] = ... # rowsRemoved(QModelIndex,int,int)
+    # columnsAboutToBeInserted(QModelIndex,int,int)
+    columnsAboutToBeInserted: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # columnsAboutToBeMoved(QModelIndex,int,int,QModelIndex,int)
+    columnsAboutToBeMoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int]
+    ]]
+    # columnsAboutToBeRemoved(QModelIndex,int,int)
+    columnsAboutToBeRemoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # columnsInserted(QModelIndex,int,int)
+    columnsInserted: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # columnsMoved(QModelIndex,int,int,QModelIndex,int)
+    columnsMoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int]
+    ]]
+    # columnsRemoved(QModelIndex,int,int)
+    columnsRemoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # dataChanged(QModelIndex,QModelIndex,QList<int>); dataChanged(QModelIndex,QModelIndex)
+    dataChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex, collections.abc.Sequence[int]]
+    ]]
+    # headerDataChanged(Qt::Orientation,int,int)
+    headerDataChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int], [PySide6.QtCore.Qt.Orientation], [], [], [], [], [],
+        [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int], [PySide6.QtCore.Qt.Orientation, int, int]
+    ]]
+    # layoutAboutToBeChanged(); layoutAboutToBeChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint); layoutAboutToBeChanged(QList<QPersistentModelIndex>)
+    layoutAboutToBeChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex], PySide6.QtCore.QAbstractItemModel.LayoutChangeHint], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex]], [], [], [], [], [], [],
+        [], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex], PySide6.QtCore.QAbstractItemModel.LayoutChangeHint], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex]], [], [], [], [], []
+    ]]
+    # layoutChanged(); layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint); layoutChanged(QList<QPersistentModelIndex>)
+    layoutChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex], PySide6.QtCore.QAbstractItemModel.LayoutChangeHint], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex]], [], [], [], [], [], [],
+        [], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex], PySide6.QtCore.QAbstractItemModel.LayoutChangeHint], [collections.abc.Sequence[PySide6.QtCore.QPersistentModelIndex]], [], [], [], [], []
+    ]]
+    # modelAboutToBeReset()
+    modelAboutToBeReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReset()
+    modelReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowsAboutToBeInserted(QModelIndex,int,int)
+    rowsAboutToBeInserted: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # rowsAboutToBeMoved(QModelIndex,int,int,QModelIndex,int)
+    rowsAboutToBeMoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int]
+    ]]
+    # rowsAboutToBeRemoved(QModelIndex,int,int)
+    rowsAboutToBeRemoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # rowsInserted(QModelIndex,int,int)
+    rowsInserted: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
+    # rowsMoved(QModelIndex,int,int,QModelIndex,int)
+    rowsMoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex, int, int, PySide6.QtCore.QModelIndex, int]
+    ]]
+    # rowsRemoved(QModelIndex,int,int)
+    rowsRemoved: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int], [PySide6.QtCore.QModelIndex], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int], [PySide6.QtCore.QModelIndex, int, int]
+    ]]
 
     class CheckIndexOption(enum.Flag):
         NoOption                  = 0x0
@@ -337,7 +433,11 @@ class QAbstractNativeEventFilter(Shiboken.Object):
 
 
 class QAbstractProxyModel(PySide6.QtCore.QAbstractItemModel):
-    sourceModelChanged       : typing.ClassVar[Signal] = ... # sourceModelChanged()
+    # sourceModelChanged()
+    sourceModelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, sourceModel: PySide6.QtCore.QAbstractItemModel | None = ...) -> None: ...
 
@@ -1704,11 +1804,31 @@ class QContactsPermission(Shiboken.Object):
 
 
 class QCoreApplication(PySide6.QtCore.QObject):
-    aboutToQuit              : typing.ClassVar[Signal] = ... # aboutToQuit()
-    applicationNameChanged   : typing.ClassVar[Signal] = ... # applicationNameChanged()
-    applicationVersionChanged: typing.ClassVar[Signal] = ... # applicationVersionChanged()
-    organizationDomainChanged: typing.ClassVar[Signal] = ... # organizationDomainChanged()
-    organizationNameChanged  : typing.ClassVar[Signal] = ... # organizationNameChanged()
+    # aboutToQuit()
+    aboutToQuit: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # applicationNameChanged()
+    applicationNameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # applicationVersionChanged()
+    applicationVersionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # organizationDomainChanged()
+    organizationDomainChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # organizationNameChanged()
+    organizationNameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, args: collections.abc.Sequence[str], /, *, applicationName: str | None = ..., applicationVersion: str | None = ..., organizationName: str | None = ..., organizationDomain: str | None = ..., quitLockEnabled: bool | None = ...) -> None: ...
@@ -3329,8 +3449,16 @@ class QFileSelector(PySide6.QtCore.QObject):
 
 
 class QFileSystemWatcher(PySide6.QtCore.QObject):
-    directoryChanged         : typing.ClassVar[Signal] = ... # directoryChanged(QString)
-    fileChanged              : typing.ClassVar[Signal] = ... # fileChanged(QString)
+    # directoryChanged(QString)
+    directoryChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # fileChanged(QString)
+    fileChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     @typing.overload
     def __init__(self, paths: collections.abc.Sequence[str], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -3504,12 +3632,36 @@ class QHashSeed(Shiboken.Object):
 
 
 class QIODevice(PySide6.QtCore.QObject, PySide6.QtCore.QIODeviceBase):
-    aboutToClose             : typing.ClassVar[Signal] = ... # aboutToClose()
-    bytesWritten             : typing.ClassVar[Signal] = ... # bytesWritten(qlonglong)
-    channelBytesWritten      : typing.ClassVar[Signal] = ... # channelBytesWritten(int,qlonglong)
-    channelReadyRead         : typing.ClassVar[Signal] = ... # channelReadyRead(int)
-    readChannelFinished      : typing.ClassVar[Signal] = ... # readChannelFinished()
-    readyRead                : typing.ClassVar[Signal] = ... # readyRead()
+    # aboutToClose()
+    aboutToClose: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # bytesWritten(qlonglong)
+    bytesWritten: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # channelBytesWritten(int,qlonglong)
+    channelBytesWritten: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # channelReadyRead(int)
+    channelReadyRead: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # readChannelFinished()
+    readChannelFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # readyRead()
+    readyRead: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -3718,11 +3870,31 @@ class QItemSelection(Shiboken.Object):
 
 
 class QItemSelectionModel(PySide6.QtCore.QObject):
-    currentChanged           : typing.ClassVar[Signal] = ... # currentChanged(QModelIndex,QModelIndex)
-    currentColumnChanged     : typing.ClassVar[Signal] = ... # currentColumnChanged(QModelIndex,QModelIndex)
-    currentRowChanged        : typing.ClassVar[Signal] = ... # currentRowChanged(QModelIndex,QModelIndex)
-    modelChanged             : typing.ClassVar[Signal] = ... # modelChanged(QAbstractItemModel*)
-    selectionChanged         : typing.ClassVar[Signal] = ... # selectionChanged(QItemSelection,QItemSelection)
+    # currentChanged(QModelIndex,QModelIndex)
+    currentChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex], [], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex]
+    ]]
+    # currentColumnChanged(QModelIndex,QModelIndex)
+    currentColumnChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex], [], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex]
+    ]]
+    # currentRowChanged(QModelIndex,QModelIndex)
+    currentRowChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex], [], [], [], [], [], [],
+        [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex], [PySide6.QtCore.QModelIndex, PySide6.QtCore.QModelIndex]
+    ]]
+    # modelChanged(QAbstractItemModel*)
+    modelChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QAbstractItemModel], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel], [PySide6.QtCore.QAbstractItemModel]
+    ]]
+    # selectionChanged(QItemSelection,QItemSelection)
+    selectionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection], [], [], [], [], [], [],
+        [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection], [PySide6.QtCore.QItemSelection, PySide6.QtCore.QItemSelection]
+    ]]
 
     class SelectionFlag(enum.Flag):
         NoUpdate                  = 0x0
@@ -6180,8 +6352,16 @@ class QNativeIpcKey(Shiboken.Object):
 
 
 class QObject(Shiboken.Object):
-    destroyed                : typing.ClassVar[Signal] = ... # destroyed(); destroyed(QObject*)
-    objectNameChanged        : typing.ClassVar[Signal] = ... # objectNameChanged(QString)
+    # destroyed(); destroyed(QObject*)
+    destroyed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [], [PySide6.QtCore.QObject], [], [], [], [], [], []
+    ]]
+    # objectNameChanged(QString)
+    objectNameChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, objectName: str | None = ...) -> None: ...
 
@@ -6551,12 +6731,36 @@ class QPointList:
 
 
 class QProcess(PySide6.QtCore.QIODevice):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QProcess::ProcessError)
-    finished                 : typing.ClassVar[Signal] = ... # finished(int,QProcess::ExitStatus); finished(int)
-    readyReadStandardError   : typing.ClassVar[Signal] = ... # readyReadStandardError()
-    readyReadStandardOutput  : typing.ClassVar[Signal] = ... # readyReadStandardOutput()
-    started                  : typing.ClassVar[Signal] = ... # started()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QProcess::ProcessState)
+    # errorOccurred(QProcess::ProcessError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtCore.QProcess.ProcessError], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError], [PySide6.QtCore.QProcess.ProcessError]
+    ]]
+    # finished(int,QProcess::ExitStatus); finished(int)
+    finished: typing.ClassVar[Signal[
+        [int, PySide6.QtCore.QProcess.ExitStatus], [int], [], [], [], [], [], [],
+        [int, PySide6.QtCore.QProcess.ExitStatus], [int], [int, PySide6.QtCore.QProcess.ExitStatus], [int, PySide6.QtCore.QProcess.ExitStatus], [int, PySide6.QtCore.QProcess.ExitStatus], [int, PySide6.QtCore.QProcess.ExitStatus], [int, PySide6.QtCore.QProcess.ExitStatus], [int, PySide6.QtCore.QProcess.ExitStatus]
+    ]]
+    # readyReadStandardError()
+    readyReadStandardError: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # readyReadStandardOutput()
+    readyReadStandardOutput: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # started()
+    started: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged(QProcess::ProcessState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QProcess.ProcessState], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState], [PySide6.QtCore.QProcess.ProcessState]
+    ]]
 
     class ExitStatus(enum.Enum):
         NormalExit                = 0x0
@@ -6757,8 +6961,16 @@ class QRandomGenerator64(PySide6.QtCore.QRandomGenerator):
 
 
 class QRangeModel(PySide6.QtCore.QAbstractItemModel):
-    autoConnectPolicyChanged : typing.ClassVar[Signal] = ... # autoConnectPolicyChanged(AutoConnectPolicy)
-    roleNamesChanged         : typing.ClassVar[Signal] = ... # roleNamesChanged()
+    # autoConnectPolicyChanged(AutoConnectPolicy)
+    autoConnectPolicyChanged: typing.ClassVar[Signal[
+        [AutoConnectPolicy], [], [], [], [], [], [], [],
+        [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy], [AutoConnectPolicy]
+    ]]
+    # roleNamesChanged()
+    roleNamesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class AutoConnectPolicy(enum.Enum):
         None_                     = 0x0
@@ -7290,7 +7502,11 @@ class QSemaphoreReleaser(Shiboken.Object):
 
 
 class QSequentialAnimationGroup(PySide6.QtCore.QAnimationGroup):
-    currentAnimationChanged  : typing.ClassVar[Signal] = ... # currentAnimationChanged(QAbstractAnimation*)
+    # currentAnimationChanged(QAbstractAnimation*)
+    currentAnimationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QAbstractAnimation], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation], [PySide6.QtCore.QAbstractAnimation]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, currentAnimation: PySide6.QtCore.QAbstractAnimation | None = ...) -> None: ...
 
@@ -7450,9 +7666,21 @@ class QSignalBlocker(Shiboken.Object):
 
 
 class QSignalMapper(PySide6.QtCore.QObject):
-    mappedInt                : typing.ClassVar[Signal] = ... # mappedInt(int)
-    mappedObject             : typing.ClassVar[Signal] = ... # mappedObject(QObject*)
-    mappedString             : typing.ClassVar[Signal] = ... # mappedString(QString)
+    # mappedInt(int)
+    mappedInt: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # mappedObject(QObject*)
+    mappedObject: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+    ]]
+    # mappedString(QString)
+    mappedString: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -7598,7 +7826,11 @@ class QSocketDescriptor(Shiboken.Object):
 
 
 class QSocketNotifier(PySide6.QtCore.QObject):
-    activated                : typing.ClassVar[Signal] = ... # activated(QSocketDescriptor,QSocketNotifier::Type); activated(QSocketDescriptor); activated(int)
+    # activated(QSocketDescriptor,QSocketNotifier::Type); activated(QSocketDescriptor); activated(int)
+    activated: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor], [int], [], [], [], [], [],
+        [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor], [int], [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type], [PySide6.QtCore.QSocketDescriptor, PySide6.QtCore.QSocketNotifier.Type]
+    ]]
 
     class Type(enum.Enum):
         Read                      = 0x0
@@ -7622,14 +7854,46 @@ class QSocketNotifier(PySide6.QtCore.QObject):
 
 
 class QSortFilterProxyModel(PySide6.QtCore.QAbstractProxyModel):
-    autoAcceptChildRowsChanged: typing.ClassVar[Signal] = ... # autoAcceptChildRowsChanged(bool)
-    dynamicSortFilterChanged : typing.ClassVar[Signal] = ... # dynamicSortFilterChanged(bool)
-    filterCaseSensitivityChanged: typing.ClassVar[Signal] = ... # filterCaseSensitivityChanged(Qt::CaseSensitivity)
-    filterRoleChanged        : typing.ClassVar[Signal] = ... # filterRoleChanged(int)
-    recursiveFilteringEnabledChanged: typing.ClassVar[Signal] = ... # recursiveFilteringEnabledChanged(bool)
-    sortCaseSensitivityChanged: typing.ClassVar[Signal] = ... # sortCaseSensitivityChanged(Qt::CaseSensitivity)
-    sortLocaleAwareChanged   : typing.ClassVar[Signal] = ... # sortLocaleAwareChanged(bool)
-    sortRoleChanged          : typing.ClassVar[Signal] = ... # sortRoleChanged(int)
+    # autoAcceptChildRowsChanged(bool)
+    autoAcceptChildRowsChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # dynamicSortFilterChanged(bool)
+    dynamicSortFilterChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # filterCaseSensitivityChanged(Qt::CaseSensitivity)
+    filterCaseSensitivityChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.CaseSensitivity], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity]
+    ]]
+    # filterRoleChanged(int)
+    filterRoleChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # recursiveFilteringEnabledChanged(bool)
+    recursiveFilteringEnabledChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # sortCaseSensitivityChanged(Qt::CaseSensitivity)
+    sortCaseSensitivityChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.CaseSensitivity], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity], [PySide6.QtCore.Qt.CaseSensitivity]
+    ]]
+    # sortLocaleAwareChanged(bool)
+    sortLocaleAwareChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # sortRoleChanged(int)
+    sortRoleChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class Direction(enum.Flag):
         Rows                      = 0x1
@@ -8161,8 +8425,16 @@ class QTextStreamManipulator(Shiboken.Object):
 
 
 class QThread(PySide6.QtCore.QObject):
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    started                  : typing.ClassVar[Signal] = ... # started()
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # started()
+    started: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Priority(enum.Enum):
         IdlePriority              = 0x0
@@ -8313,10 +8585,26 @@ class QTime(Shiboken.Object):
 
 
 class QTimeLine(PySide6.QtCore.QObject):
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    frameChanged             : typing.ClassVar[Signal] = ... # frameChanged(int)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QTimeLine::State)
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(double)
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # frameChanged(int)
+    frameChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # stateChanged(QTimeLine::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QTimeLine.State], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State], [PySide6.QtCore.QTimeLine.State]
+    ]]
+    # valueChanged(double)
+    valueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class Direction(enum.Enum):
         Forward                   = 0x0
@@ -8489,7 +8777,11 @@ class QTimeZone(Shiboken.Object):
 
 
 class QTimer(PySide6.QtCore.QObject):
-    timeout                  : typing.ClassVar[Signal] = ... # timeout()
+    # timeout()
+    timeout: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, singleShot: bool | None = ..., interval: int | None = ..., remainingTime: int | None = ..., timerType: PySide6.QtCore.Qt.TimerType | None = ..., active: bool | None = ...) -> None: ...
 
@@ -8808,7 +9100,11 @@ class QUuid(Shiboken.Object):
 
 
 class QVariantAnimation(PySide6.QtCore.QAbstractAnimation):
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(QVariant)
+    # valueChanged(QVariant)
+    valueChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, startValue: typing.Any | None = ..., endValue: typing.Any | None = ..., currentValue: typing.Any | None = ..., duration: int | None = ..., easingCurve: PySide6.QtCore.QEasingCurve | None = ...) -> None: ...
 
@@ -8890,7 +9186,11 @@ class QWaitCondition(Shiboken.Object):
 
 
 class QWinEventNotifier(PySide6.QtCore.QObject):
-    activated                : typing.ClassVar[Signal] = ... # activated(HANDLE)
+    # activated(HANDLE)
+    activated: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     @typing.overload
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...

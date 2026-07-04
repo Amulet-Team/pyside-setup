@@ -23,7 +23,11 @@ class QIntList:
 
 class Qt3DLogic(Shiboken.Object):
     class QFrameAction(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        triggered                : typing.ClassVar[Signal] = ... # triggered(float)
+        # triggered(float)
+        triggered: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 

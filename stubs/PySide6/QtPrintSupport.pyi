@@ -71,7 +71,11 @@ class QPageSetupDialog(PySide6.QtWidgets.QDialog):
 
 
 class QPrintDialog(PySide6.QtPrintSupport.QAbstractPrintDialog):
-    accepted                 : typing.ClassVar[Signal] = ... # accepted(QPrinter*)
+    # accepted(QPrinter*)
+    accepted: typing.ClassVar[Signal[
+        [PySide6.QtPrintSupport.QPrinter], [], [], [], [], [], [], [],
+        [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter]
+    ]]
 
     @typing.overload
     def __init__(self, printer: PySide6.QtPrintSupport.QPrinter, /, parent: PySide6.QtWidgets.QWidget | None = ..., *, options: PySide6.QtPrintSupport.QAbstractPrintDialog.PrintDialogOption | None = ...) -> None: ...
@@ -135,7 +139,11 @@ class QPrintEngine(Shiboken.Object):
 
 
 class QPrintPreviewDialog(PySide6.QtWidgets.QDialog):
-    paintRequested           : typing.ClassVar[Signal] = ... # paintRequested(QPrinter*)
+    # paintRequested(QPrinter*)
+    paintRequested: typing.ClassVar[Signal[
+        [PySide6.QtPrintSupport.QPrinter], [], [], [], [], [], [], [],
+        [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter]
+    ]]
 
     @typing.overload
     def __init__(self, printer: PySide6.QtPrintSupport.QPrinter, /, parent: PySide6.QtWidgets.QWidget | None = ..., flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
@@ -152,8 +160,16 @@ class QPrintPreviewDialog(PySide6.QtWidgets.QDialog):
 
 
 class QPrintPreviewWidget(PySide6.QtWidgets.QWidget):
-    paintRequested           : typing.ClassVar[Signal] = ... # paintRequested(QPrinter*)
-    previewChanged           : typing.ClassVar[Signal] = ... # previewChanged()
+    # paintRequested(QPrinter*)
+    paintRequested: typing.ClassVar[Signal[
+        [PySide6.QtPrintSupport.QPrinter], [], [], [], [], [], [], [],
+        [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter], [PySide6.QtPrintSupport.QPrinter]
+    ]]
+    # previewChanged()
+    previewChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ViewMode(enum.Enum):
         SinglePageView            = 0x0

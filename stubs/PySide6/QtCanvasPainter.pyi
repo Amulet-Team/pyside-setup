@@ -584,8 +584,16 @@ class QCanvasPainterFactory(Shiboken.Object):
 
 
 class QCanvasPainterItem(PySide6.QtQuick.QQuickRhiItem):
-    debugChanged             : typing.ClassVar[Signal] = ... # debugChanged()
-    fillColorChanged         : typing.ClassVar[Signal] = ... # fillColorChanged()
+    # debugChanged()
+    debugChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # fillColorChanged()
+    fillColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtQuick.QQuickItem | None = ..., *, fillColor: PySide6.QtGui.QColor | None = ..., debug: typing.Optional[typing.Dict[str, typing.Any]] = ...) -> None: ...
 

@@ -205,7 +205,7 @@ class ExactEnumerator:
         functions = []
         enums = []
         properties = []
-        signals = []
+        signals: list[tuple[str, Signal | SignalInstance]] = []
         attributes = {}
 
         for thing_name, thing in class_members:
@@ -277,8 +277,8 @@ class ExactEnumerator:
                 for signal_name, signal in signals:
                     sig_class = type(signal)
                     sig_class_name = f"{sig_class.__qualname__}"
-                    sig_str = str(signal)
-                    with self.fmt.signal(sig_class_name, signal_name, sig_str):
+                    sig_strs = signal.signatures
+                    with self.fmt.signal(sig_class_name, signal_name, sig_strs):
                         pass
                 self.section()
                 self.fmt.have_body = True

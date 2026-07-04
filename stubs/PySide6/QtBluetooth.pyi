@@ -56,11 +56,31 @@ class QBluetoothAddress(Shiboken.Object):
 
 
 class QBluetoothDeviceDiscoveryAgent(PySide6.QtCore.QObject):
-    canceled                 : typing.ClassVar[Signal] = ... # canceled()
-    deviceDiscovered         : typing.ClassVar[Signal] = ... # deviceDiscovered(QBluetoothDeviceInfo)
-    deviceUpdated            : typing.ClassVar[Signal] = ... # deviceUpdated(QBluetoothDeviceInfo,QBluetoothDeviceInfo::Fields)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QBluetoothDeviceDiscoveryAgent::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
+    # canceled()
+    canceled: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # deviceDiscovered(QBluetoothDeviceInfo)
+    deviceDiscovered: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothDeviceInfo], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [PySide6.QtBluetooth.QBluetoothDeviceInfo]
+    ]]
+    # deviceUpdated(QBluetoothDeviceInfo,QBluetoothDeviceInfo::Fields)
+    deviceUpdated: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field], [PySide6.QtBluetooth.QBluetoothDeviceInfo, PySide6.QtBluetooth.QBluetoothDeviceInfo.Field]
+    ]]
+    # errorOccurred(QBluetoothDeviceDiscoveryAgent::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothDeviceDiscoveryAgent.Error]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class DiscoveryMethod(enum.Flag):
         NoMethod                  = 0x0
@@ -290,11 +310,31 @@ class QBluetoothHostInfo(Shiboken.Object):
 
 
 class QBluetoothLocalDevice(PySide6.QtCore.QObject):
-    deviceConnected          : typing.ClassVar[Signal] = ... # deviceConnected(QBluetoothAddress)
-    deviceDisconnected       : typing.ClassVar[Signal] = ... # deviceDisconnected(QBluetoothAddress)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QBluetoothLocalDevice::Error)
-    hostModeStateChanged     : typing.ClassVar[Signal] = ... # hostModeStateChanged(QBluetoothLocalDevice::HostMode)
-    pairingFinished          : typing.ClassVar[Signal] = ... # pairingFinished(QBluetoothAddress,QBluetoothLocalDevice::Pairing)
+    # deviceConnected(QBluetoothAddress)
+    deviceConnected: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothAddress], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress]
+    ]]
+    # deviceDisconnected(QBluetoothAddress)
+    deviceDisconnected: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothAddress], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress], [PySide6.QtBluetooth.QBluetoothAddress]
+    ]]
+    # errorOccurred(QBluetoothLocalDevice::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error], [PySide6.QtBluetooth.QBluetoothLocalDevice.Error]
+    ]]
+    # hostModeStateChanged(QBluetoothLocalDevice::HostMode)
+    hostModeStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode], [PySide6.QtBluetooth.QBluetoothLocalDevice.HostMode]
+    ]]
+    # pairingFinished(QBluetoothAddress,QBluetoothLocalDevice::Pairing)
+    pairingFinished: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing], [PySide6.QtBluetooth.QBluetoothAddress, PySide6.QtBluetooth.QBluetoothLocalDevice.Pairing]
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -332,8 +372,16 @@ class QBluetoothLocalDevice(PySide6.QtCore.QObject):
 
 
 class QBluetoothServer(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QBluetoothServer::Error)
-    newConnection            : typing.ClassVar[Signal] = ... # newConnection()
+    # errorOccurred(QBluetoothServer::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothServer.Error], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error], [PySide6.QtBluetooth.QBluetoothServer.Error]
+    ]]
+    # newConnection()
+    newConnection: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -365,10 +413,26 @@ class QBluetoothServer(PySide6.QtCore.QObject):
 
 
 class QBluetoothServiceDiscoveryAgent(PySide6.QtCore.QObject):
-    canceled                 : typing.ClassVar[Signal] = ... # canceled()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QBluetoothServiceDiscoveryAgent::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    serviceDiscovered        : typing.ClassVar[Signal] = ... # serviceDiscovered(QBluetoothServiceInfo)
+    # canceled()
+    canceled: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QBluetoothServiceDiscoveryAgent::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error], [PySide6.QtBluetooth.QBluetoothServiceDiscoveryAgent.Error]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # serviceDiscovered(QBluetoothServiceInfo)
+    serviceDiscovered: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothServiceInfo], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo], [PySide6.QtBluetooth.QBluetoothServiceInfo]
+    ]]
 
     class DiscoveryMode(enum.Enum):
         MinimalDiscovery          = 0x0
@@ -625,10 +689,26 @@ class QBluetoothServiceInfo(Shiboken.Object):
 
 
 class QBluetoothSocket(PySide6.QtCore.QIODevice):
-    connected                : typing.ClassVar[Signal] = ... # connected()
-    disconnected             : typing.ClassVar[Signal] = ... # disconnected()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QBluetoothSocket::SocketError)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QBluetoothSocket::SocketState)
+    # connected()
+    connected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # disconnected()
+    disconnected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QBluetoothSocket::SocketError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError], [PySide6.QtBluetooth.QBluetoothSocket.SocketError]
+    ]]
+    # stateChanged(QBluetoothSocket::SocketState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState], [PySide6.QtBluetooth.QBluetoothSocket.SocketState]
+    ]]
 
     class SocketError(enum.Enum):
         NoSocketError             = 0x0
@@ -1173,15 +1253,51 @@ class QLowEnergyConnectionParameters(Shiboken.Object):
 
 
 class QLowEnergyController(PySide6.QtCore.QObject):
-    connected                : typing.ClassVar[Signal] = ... # connected()
-    connectionUpdated        : typing.ClassVar[Signal] = ... # connectionUpdated(QLowEnergyConnectionParameters)
-    disconnected             : typing.ClassVar[Signal] = ... # disconnected()
-    discoveryFinished        : typing.ClassVar[Signal] = ... # discoveryFinished()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QLowEnergyController::Error)
-    mtuChanged               : typing.ClassVar[Signal] = ... # mtuChanged(int)
-    rssiRead                 : typing.ClassVar[Signal] = ... # rssiRead(short)
-    serviceDiscovered        : typing.ClassVar[Signal] = ... # serviceDiscovered(QBluetoothUuid)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QLowEnergyController::ControllerState)
+    # connected()
+    connected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # connectionUpdated(QLowEnergyConnectionParameters)
+    connectionUpdated: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters], [PySide6.QtBluetooth.QLowEnergyConnectionParameters]
+    ]]
+    # disconnected()
+    disconnected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # discoveryFinished()
+    discoveryFinished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QLowEnergyController::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyController.Error], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error], [PySide6.QtBluetooth.QLowEnergyController.Error]
+    ]]
+    # mtuChanged(int)
+    mtuChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # rssiRead(short)
+    rssiRead: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # serviceDiscovered(QBluetoothUuid)
+    serviceDiscovered: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QBluetoothUuid], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid], [PySide6.QtBluetooth.QBluetoothUuid]
+    ]]
+    # stateChanged(QLowEnergyController::ControllerState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState], [PySide6.QtBluetooth.QLowEnergyController.ControllerState]
+    ]]
 
     class ControllerState(enum.Enum):
         UnconnectedState          = 0x0
@@ -1290,13 +1406,41 @@ class QLowEnergyDescriptorData(Shiboken.Object):
 
 
 class QLowEnergyService(PySide6.QtCore.QObject):
-    characteristicChanged    : typing.ClassVar[Signal] = ... # characteristicChanged(QLowEnergyCharacteristic,QByteArray)
-    characteristicRead       : typing.ClassVar[Signal] = ... # characteristicRead(QLowEnergyCharacteristic,QByteArray)
-    characteristicWritten    : typing.ClassVar[Signal] = ... # characteristicWritten(QLowEnergyCharacteristic,QByteArray)
-    descriptorRead           : typing.ClassVar[Signal] = ... # descriptorRead(QLowEnergyDescriptor,QByteArray)
-    descriptorWritten        : typing.ClassVar[Signal] = ... # descriptorWritten(QLowEnergyDescriptor,QByteArray)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QLowEnergyService::ServiceError)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QLowEnergyService::ServiceState)
+    # characteristicChanged(QLowEnergyCharacteristic,QByteArray)
+    characteristicChanged: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray]
+    ]]
+    # characteristicRead(QLowEnergyCharacteristic,QByteArray)
+    characteristicRead: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray]
+    ]]
+    # characteristicWritten(QLowEnergyCharacteristic,QByteArray)
+    characteristicWritten: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyCharacteristic, PySide6.QtCore.QByteArray]
+    ]]
+    # descriptorRead(QLowEnergyDescriptor,QByteArray)
+    descriptorRead: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray]
+    ]]
+    # descriptorWritten(QLowEnergyDescriptor,QByteArray)
+    descriptorWritten: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray], [PySide6.QtBluetooth.QLowEnergyDescriptor, PySide6.QtCore.QByteArray]
+    ]]
+    # errorOccurred(QLowEnergyService::ServiceError)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError], [PySide6.QtBluetooth.QLowEnergyService.ServiceError]
+    ]]
+    # stateChanged(QLowEnergyService::ServiceState)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [], [], [], [], [], [], [],
+        [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState], [PySide6.QtBluetooth.QLowEnergyService.ServiceState]
+    ]]
 
     class DiscoveryMode(enum.Enum):
         FullDiscovery             = 0x0

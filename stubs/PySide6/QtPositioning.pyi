@@ -84,10 +84,26 @@ class QGeoAreaMonitorInfo(Shiboken.Object):
 
 
 class QGeoAreaMonitorSource(PySide6.QtCore.QObject):
-    areaEntered              : typing.ClassVar[Signal] = ... # areaEntered(QGeoAreaMonitorInfo,QGeoPositionInfo)
-    areaExited               : typing.ClassVar[Signal] = ... # areaExited(QGeoAreaMonitorInfo,QGeoPositionInfo)
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoAreaMonitorSource::Error)
-    monitorExpired           : typing.ClassVar[Signal] = ... # monitorExpired(QGeoAreaMonitorInfo)
+    # areaEntered(QGeoAreaMonitorInfo,QGeoPositionInfo)
+    areaEntered: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo]
+    ]]
+    # areaExited(QGeoAreaMonitorInfo,QGeoPositionInfo)
+    areaExited: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo, PySide6.QtPositioning.QGeoPositionInfo]
+    ]]
+    # errorOccurred(QGeoAreaMonitorSource::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error], [PySide6.QtPositioning.QGeoAreaMonitorSource.Error]
+    ]]
+    # monitorExpired(QGeoAreaMonitorInfo)
+    monitorExpired: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo], [], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo], [PySide6.QtPositioning.QGeoAreaMonitorInfo]
+    ]]
 
     class AreaMonitorFeature(enum.Flag):
         AnyAreaMonitorFeature     = -1
@@ -325,9 +341,21 @@ class QGeoPositionInfo(Shiboken.Object):
 
 
 class QGeoPositionInfoSource(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoPositionInfoSource::Error)
-    positionUpdated          : typing.ClassVar[Signal] = ... # positionUpdated(QGeoPositionInfo)
-    supportedPositioningMethodsChanged: typing.ClassVar[Signal] = ... # supportedPositioningMethodsChanged()
+    # errorOccurred(QGeoPositionInfoSource::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error], [PySide6.QtPositioning.QGeoPositionInfoSource.Error]
+    ]]
+    # positionUpdated(QGeoPositionInfo)
+    positionUpdated: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoPositionInfo], [], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo], [PySide6.QtPositioning.QGeoPositionInfo]
+    ]]
+    # supportedPositioningMethodsChanged()
+    supportedPositioningMethodsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         AccessError               = 0x0
@@ -468,9 +496,21 @@ class QGeoSatelliteInfo(Shiboken.Object):
 
 
 class QGeoSatelliteInfoSource(PySide6.QtCore.QObject):
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QGeoSatelliteInfoSource::Error)
-    satellitesInUseUpdated   : typing.ClassVar[Signal] = ... # satellitesInUseUpdated(QList<QGeoSatelliteInfo>)
-    satellitesInViewUpdated  : typing.ClassVar[Signal] = ... # satellitesInViewUpdated(QList<QGeoSatelliteInfo>)
+    # errorOccurred(QGeoSatelliteInfoSource::Error)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [], [], [], [], [], [], [],
+        [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error], [PySide6.QtPositioning.QGeoSatelliteInfoSource.Error]
+    ]]
+    # satellitesInUseUpdated(QList<QGeoSatelliteInfo>)
+    satellitesInUseUpdated: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]]
+    ]]
+    # satellitesInViewUpdated(QList<QGeoSatelliteInfo>)
+    satellitesInViewUpdated: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]], [collections.abc.Sequence[PySide6.QtPositioning.QGeoSatelliteInfo]]
+    ]]
 
     class Error(enum.Enum):
         UnknownSourceError        = -1

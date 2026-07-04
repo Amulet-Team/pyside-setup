@@ -31,8 +31,16 @@ class QQuick3D(Shiboken.Object):
 
 
 class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
-    geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged()
-    geometryNodeDirty        : typing.ClassVar[Signal] = ... # geometryNodeDirty()
+    # geometryChanged()
+    geometryChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # geometryNodeDirty()
+    geometryNodeDirty: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Attribute(Shiboken.Object):
         @property
@@ -157,13 +165,41 @@ class QQuick3DGeometry(PySide6.QtQuick3D.QQuick3DObject):
 
 
 class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
-    depthSortingEnabledChanged: typing.ClassVar[Signal] = ... # depthSortingEnabledChanged()
-    hasTransparencyChanged   : typing.ClassVar[Signal] = ... # hasTransparencyChanged()
-    instanceCountOverrideChanged: typing.ClassVar[Signal] = ... # instanceCountOverrideChanged()
-    instanceNodeDirty        : typing.ClassVar[Signal] = ... # instanceNodeDirty()
-    instanceTableChanged     : typing.ClassVar[Signal] = ... # instanceTableChanged()
-    shadowBoundsMaximumChanged: typing.ClassVar[Signal] = ... # shadowBoundsMaximumChanged()
-    shadowBoundsMinimumChanged: typing.ClassVar[Signal] = ... # shadowBoundsMinimumChanged()
+    # depthSortingEnabledChanged()
+    depthSortingEnabledChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hasTransparencyChanged()
+    hasTransparencyChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # instanceCountOverrideChanged()
+    instanceCountOverrideChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # instanceNodeDirty()
+    instanceNodeDirty: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # instanceTableChanged()
+    instanceTableChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # shadowBoundsMaximumChanged()
+    shadowBoundsMaximumChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # shadowBoundsMinimumChanged()
+    shadowBoundsMinimumChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class InstanceTableEntry(Shiboken.Object):
         @property
@@ -225,9 +261,21 @@ class QQuick3DInstancing(PySide6.QtQuick3D.QQuick3DObject):
 
 
 class QQuick3DObject(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-    childrenChanged          : typing.ClassVar[Signal] = ... # childrenChanged()
-    parentChanged            : typing.ClassVar[Signal] = ... # parentChanged()
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged()
+    # childrenChanged()
+    childrenChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # parentChanged()
+    parentChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # stateChanged()
+    stateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ItemChange(enum.Enum):
         ItemChildAddedChange      = 0x0
@@ -260,7 +308,11 @@ class QQuick3DRenderExtension(PySide6.QtQuick3D.QQuick3DObject):
 
 
 class QQuick3DTextureData(PySide6.QtQuick3D.QQuick3DObject):
-    textureDataNodeDirty     : typing.ClassVar[Signal] = ... # textureDataNodeDirty()
+    # textureDataNodeDirty()
+    textureDataNodeDirty: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Format(enum.Enum):
         None_                     = 0x0

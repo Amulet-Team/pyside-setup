@@ -23,15 +23,51 @@ from shiboken6 import Shiboken
 
 
 class Q3DScene(PySide6.QtCore.QObject):
-    devicePixelRatioChanged  : typing.ClassVar[Signal] = ... # devicePixelRatioChanged(double)
-    graphPositionQueryChanged: typing.ClassVar[Signal] = ... # graphPositionQueryChanged(QPoint)
-    needRender               : typing.ClassVar[Signal] = ... # needRender()
-    primarySubViewportChanged: typing.ClassVar[Signal] = ... # primarySubViewportChanged(QRect)
-    secondarySubViewportChanged: typing.ClassVar[Signal] = ... # secondarySubViewportChanged(QRect)
-    secondarySubviewOnTopChanged: typing.ClassVar[Signal] = ... # secondarySubviewOnTopChanged(bool)
-    selectionQueryPositionChanged: typing.ClassVar[Signal] = ... # selectionQueryPositionChanged(QPoint)
-    slicingActiveChanged     : typing.ClassVar[Signal] = ... # slicingActiveChanged(bool)
-    viewportChanged          : typing.ClassVar[Signal] = ... # viewportChanged(QRect)
+    # devicePixelRatioChanged(double)
+    devicePixelRatioChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # graphPositionQueryChanged(QPoint)
+    graphPositionQueryChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # needRender()
+    needRender: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # primarySubViewportChanged(QRect)
+    primarySubViewportChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # secondarySubViewportChanged(QRect)
+    secondarySubViewportChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
+    # secondarySubviewOnTopChanged(bool)
+    secondarySubviewOnTopChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # selectionQueryPositionChanged(QPoint)
+    selectionQueryPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # slicingActiveChanged(bool)
+    slicingActiveChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # viewportChanged(QRect)
+    viewportChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRect], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect], [PySide6.QtCore.QRect]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, viewport: PySide6.QtCore.QRect | None = ..., primarySubViewport: PySide6.QtCore.QRect | None = ..., secondarySubViewport: PySide6.QtCore.QRect | None = ..., selectionQueryPosition: PySide6.QtCore.QPoint | None = ..., secondarySubviewOnTop: bool | None = ..., slicingActive: bool | None = ..., devicePixelRatio: float | None = ..., graphPositionQuery: PySide6.QtCore.QPoint | None = ..., invalidSelectionPoint: PySide6.QtCore.QPoint | None = ...) -> None: ...
 
@@ -56,20 +92,76 @@ class Q3DScene(PySide6.QtCore.QObject):
 
 
 class QAbstract3DAxis(PySide6.QtCore.QObject):
-    autoAdjustRangeChanged   : typing.ClassVar[Signal] = ... # autoAdjustRangeChanged(bool)
-    labelAutoAngleChanged    : typing.ClassVar[Signal] = ... # labelAutoAngleChanged(float)
-    labelSizeChanged         : typing.ClassVar[Signal] = ... # labelSizeChanged(double)
-    labelVisibleChanged      : typing.ClassVar[Signal] = ... # labelVisibleChanged(bool)
-    labelsChanged            : typing.ClassVar[Signal] = ... # labelsChanged()
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(float)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(float)
-    orientationChanged       : typing.ClassVar[Signal] = ... # orientationChanged(QAbstract3DAxis::AxisOrientation)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(float,float)
-    scaleLabelsByCountChanged: typing.ClassVar[Signal] = ... # scaleLabelsByCountChanged(bool)
-    titleChanged             : typing.ClassVar[Signal] = ... # titleChanged(QString)
-    titleFixedChanged        : typing.ClassVar[Signal] = ... # titleFixedChanged(bool)
-    titleOffsetChanged       : typing.ClassVar[Signal] = ... # titleOffsetChanged(float)
-    titleVisibleChanged      : typing.ClassVar[Signal] = ... # titleVisibleChanged(bool)
+    # autoAdjustRangeChanged(bool)
+    autoAdjustRangeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelAutoAngleChanged(float)
+    labelAutoAngleChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelSizeChanged(double)
+    labelSizeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelVisibleChanged(bool)
+    labelVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelsChanged()
+    labelsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # maxChanged(float)
+    maxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minChanged(float)
+    minChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # orientationChanged(QAbstract3DAxis::AxisOrientation)
+    orientationChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation], [PySide6.QtGraphs.QAbstract3DAxis.AxisOrientation]
+    ]]
+    # rangeChanged(float,float)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # scaleLabelsByCountChanged(bool)
+    scaleLabelsByCountChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # titleChanged(QString)
+    titleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # titleFixedChanged(bool)
+    titleFixedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # titleOffsetChanged(float)
+    titleOffsetChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # titleVisibleChanged(bool)
+    titleVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class AxisOrientation(enum.Enum):
         None_                     = 0x0
@@ -112,23 +204,91 @@ class QAbstract3DAxis(PySide6.QtCore.QObject):
 
 
 class QAbstract3DSeries(PySide6.QtCore.QObject):
-    baseColorChanged         : typing.ClassVar[Signal] = ... # baseColorChanged(QColor)
-    baseGradientChanged      : typing.ClassVar[Signal] = ... # baseGradientChanged(QLinearGradient)
-    colorStyleChanged        : typing.ClassVar[Signal] = ... # colorStyleChanged(QGraphsTheme::ColorStyle)
-    itemLabelChanged         : typing.ClassVar[Signal] = ... # itemLabelChanged(QString)
-    itemLabelFormatChanged   : typing.ClassVar[Signal] = ... # itemLabelFormatChanged(QString)
-    itemLabelVisibleChanged  : typing.ClassVar[Signal] = ... # itemLabelVisibleChanged(bool)
-    lightingModeChanged      : typing.ClassVar[Signal] = ... # lightingModeChanged(QAbstract3DSeries::LightingMode)
-    meshChanged              : typing.ClassVar[Signal] = ... # meshChanged(QAbstract3DSeries::Mesh)
-    meshRotationChanged      : typing.ClassVar[Signal] = ... # meshRotationChanged(QQuaternion)
-    meshSmoothChanged        : typing.ClassVar[Signal] = ... # meshSmoothChanged(bool)
-    multiHighlightColorChanged: typing.ClassVar[Signal] = ... # multiHighlightColorChanged(QColor)
-    multiHighlightGradientChanged: typing.ClassVar[Signal] = ... # multiHighlightGradientChanged(QLinearGradient)
-    nameChanged              : typing.ClassVar[Signal] = ... # nameChanged(QString)
-    singleHighlightColorChanged: typing.ClassVar[Signal] = ... # singleHighlightColorChanged(QColor)
-    singleHighlightGradientChanged: typing.ClassVar[Signal] = ... # singleHighlightGradientChanged(QLinearGradient)
-    userDefinedMeshChanged   : typing.ClassVar[Signal] = ... # userDefinedMeshChanged(QString)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
+    # baseColorChanged(QColor)
+    baseColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # baseGradientChanged(QLinearGradient)
+    baseGradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # colorStyleChanged(QGraphsTheme::ColorStyle)
+    colorStyleChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle]
+    ]]
+    # itemLabelChanged(QString)
+    itemLabelChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # itemLabelFormatChanged(QString)
+    itemLabelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # itemLabelVisibleChanged(bool)
+    itemLabelVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # lightingModeChanged(QAbstract3DSeries::LightingMode)
+    lightingModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode], [PySide6.QtGraphs.QAbstract3DSeries.LightingMode]
+    ]]
+    # meshChanged(QAbstract3DSeries::Mesh)
+    meshChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh], [PySide6.QtGraphs.QAbstract3DSeries.Mesh]
+    ]]
+    # meshRotationChanged(QQuaternion)
+    meshRotationChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QQuaternion], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion]
+    ]]
+    # meshSmoothChanged(bool)
+    meshSmoothChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # multiHighlightColorChanged(QColor)
+    multiHighlightColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # multiHighlightGradientChanged(QLinearGradient)
+    multiHighlightGradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # nameChanged(QString)
+    nameChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # singleHighlightColorChanged(QColor)
+    singleHighlightColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # singleHighlightGradientChanged(QLinearGradient)
+    singleHighlightGradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # userDefinedMeshChanged(QString)
+    userDefinedMeshChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class LightingMode(enum.Enum):
         Shaded                    = 0x0
@@ -192,23 +352,91 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
 
 
 class QAbstractAxis(PySide6.QtCore.QObject):
-    alignmentChanged         : typing.ClassVar[Signal] = ... # alignmentChanged(Qt::Alignment)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    gridVisibleChanged       : typing.ClassVar[Signal] = ... # gridVisibleChanged(bool)
-    labelDelegateChanged     : typing.ClassVar[Signal] = ... # labelDelegateChanged()
-    labelsAngleChanged       : typing.ClassVar[Signal] = ... # labelsAngleChanged(double)
-    labelsVisibleChanged     : typing.ClassVar[Signal] = ... # labelsVisibleChanged(bool)
-    lineVisibleChanged       : typing.ClassVar[Signal] = ... # lineVisibleChanged(bool)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(double,double)
-    subColorChanged          : typing.ClassVar[Signal] = ... # subColorChanged(QColor)
-    subGridVisibleChanged    : typing.ClassVar[Signal] = ... # subGridVisibleChanged(bool)
-    textElideModeChanged     : typing.ClassVar[Signal] = ... # textElideModeChanged(Qt::TextElideMode)
-    titleColorChanged        : typing.ClassVar[Signal] = ... # titleColorChanged(QColor)
-    titleFontChanged         : typing.ClassVar[Signal] = ... # titleFontChanged(QFont)
-    titleTextChanged         : typing.ClassVar[Signal] = ... # titleTextChanged(QString)
-    titleVisibleChanged      : typing.ClassVar[Signal] = ... # titleVisibleChanged(bool)
-    update                   : typing.ClassVar[Signal] = ... # update()
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
+    # alignmentChanged(Qt::Alignment)
+    alignmentChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.AlignmentFlag], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag], [PySide6.QtCore.Qt.AlignmentFlag]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # gridVisibleChanged(bool)
+    gridVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelDelegateChanged()
+    labelDelegateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsAngleChanged(double)
+    labelsAngleChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelsVisibleChanged(bool)
+    labelsVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # lineVisibleChanged(bool)
+    lineVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # rangeChanged(double,double)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # subColorChanged(QColor)
+    subColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # subGridVisibleChanged(bool)
+    subGridVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # textElideModeChanged(Qt::TextElideMode)
+    textElideModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.TextElideMode], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode], [PySide6.QtCore.Qt.TextElideMode]
+    ]]
+    # titleColorChanged(QColor)
+    titleColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # titleFontChanged(QFont)
+    titleFontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # titleTextChanged(QString)
+    titleTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # titleVisibleChanged(bool)
+    titleVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # update()
+    update: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class AxisType(enum.Enum):
         Value                     = 0x0
@@ -264,21 +492,81 @@ class QAbstractDataProxy(PySide6.QtCore.QObject):
 
 
 class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-    axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QAbstractAxis*)
-    axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QAbstractAxis*)
-    hover                    : typing.ClassVar[Signal] = ... # hover(QString,QPointF,QPointF)
-    hoverEnter               : typing.ClassVar[Signal] = ... # hoverEnter(QString,QPointF,QPointF)
-    hoverExit                : typing.ClassVar[Signal] = ... # hoverExit(QString,QPointF)
-    hoverableChanged         : typing.ClassVar[Signal] = ... # hoverableChanged()
-    hoveredChanged           : typing.ClassVar[Signal] = ... # hoveredChanged(bool)
-    legendDataChanged        : typing.ClassVar[Signal] = ... # legendDataChanged()
-    nameChanged              : typing.ClassVar[Signal] = ... # nameChanged()
-    opacityChanged           : typing.ClassVar[Signal] = ... # opacityChanged()
-    selectableChanged        : typing.ClassVar[Signal] = ... # selectableChanged()
-    update                   : typing.ClassVar[Signal] = ... # update()
-    valuesMultiplierChanged  : typing.ClassVar[Signal] = ... # valuesMultiplierChanged()
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
-    zValueChanged            : typing.ClassVar[Signal] = ... # zValueChanged(int)
+    # axisXChanged(QAbstractAxis*)
+    axisXChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QAbstractAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis]
+    ]]
+    # axisYChanged(QAbstractAxis*)
+    axisYChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QAbstractAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis], [PySide6.QtGraphs.QAbstractAxis]
+    ]]
+    # hover(QString,QPointF,QPointF)
+    hover: typing.ClassVar[Signal[
+        [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str], [], [], [], [], [],
+        [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF]
+    ]]
+    # hoverEnter(QString,QPointF,QPointF)
+    hoverEnter: typing.ClassVar[Signal[
+        [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str], [], [], [], [], [],
+        [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF, PySide6.QtCore.QPointF]
+    ]]
+    # hoverExit(QString,QPointF)
+    hoverExit: typing.ClassVar[Signal[
+        [str, PySide6.QtCore.QPointF], [str], [], [], [], [], [], [],
+        [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF], [str, PySide6.QtCore.QPointF]
+    ]]
+    # hoverableChanged()
+    hoverableChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hoveredChanged(bool)
+    hoveredChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # legendDataChanged()
+    legendDataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # nameChanged()
+    nameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # opacityChanged()
+    opacityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # selectableChanged()
+    selectableChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # update()
+    update: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valuesMultiplierChanged()
+    valuesMultiplierChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # zValueChanged(int)
+    zValueChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     class SeriesType(enum.Enum):
         Line                      = 0x0
@@ -319,20 +607,76 @@ class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QAreaSeries(PySide6.QtGraphs.QAbstractSeries):
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPoint)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPoint)
-    gradientChanged          : typing.ClassVar[Signal] = ... # gradientChanged(QQuickShapeGradient*)
-    lowerSeriesChanged       : typing.ClassVar[Signal] = ... # lowerSeriesChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPoint)
-    released                 : typing.ClassVar[Signal] = ... # released(QPoint)
-    selectedBorderColorChanged: typing.ClassVar[Signal] = ... # selectedBorderColorChanged(QColor)
-    selectedChanged          : typing.ClassVar[Signal] = ... # selectedChanged()
-    selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
-    selectedGradientChanged  : typing.ClassVar[Signal] = ... # selectedGradientChanged(QQuickShapeGradient*)
-    upperSeriesChanged       : typing.ClassVar[Signal] = ... # upperSeriesChanged()
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # borderWidthChanged()
+    borderWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked(QPoint)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # doubleClicked(QPoint)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # gradientChanged(QQuickShapeGradient*)
+    gradientChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # lowerSeriesChanged()
+    lowerSeriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QPoint)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # released(QPoint)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # selectedBorderColorChanged(QColor)
+    selectedBorderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # selectedChanged()
+    selectedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # selectedColorChanged(QColor)
+    selectedColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # selectedGradientChanged(QQuickShapeGradient*)
+    selectedGradientChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # upperSeriesChanged()
+    upperSeriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, color: PySide6.QtGui.QColor | None = ..., selectedColor: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., selectedBorderColor: PySide6.QtGui.QColor | None = ..., borderWidth: float | None = ..., selected: bool | None = ..., upperSeries: PySide6.QtGraphs.QXYSeries | None = ..., lowerSeries: PySide6.QtGraphs.QXYSeries | None = ...) -> None: ...
 
@@ -356,19 +700,71 @@ class QAreaSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QBar3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-    columnAxisChanged        : typing.ClassVar[Signal] = ... # columnAxisChanged(QCategory3DAxis*)
-    columnLabelsChanged      : typing.ClassVar[Signal] = ... # columnLabelsChanged()
-    customColumnLabelsChanged: typing.ClassVar[Signal] = ... # customColumnLabelsChanged(QStringList)
-    customRowLabelsChanged   : typing.ClassVar[Signal] = ... # customRowLabelsChanged(QStringList)
-    dataArrayChanged         : typing.ClassVar[Signal] = ... # dataArrayChanged(QBarDataArray)
-    dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QBarDataProxy*)
-    meshAngleChanged         : typing.ClassVar[Signal] = ... # meshAngleChanged(float)
-    rowAxisChanged           : typing.ClassVar[Signal] = ... # rowAxisChanged(QCategory3DAxis*)
-    rowColorsChanged         : typing.ClassVar[Signal] = ... # rowColorsChanged(QList<QColor>)
-    rowLabelsChanged         : typing.ClassVar[Signal] = ... # rowLabelsChanged()
-    selectedBarChanged       : typing.ClassVar[Signal] = ... # selectedBarChanged(QPoint)
-    valueAxisChanged         : typing.ClassVar[Signal] = ... # valueAxisChanged(QValue3DAxis*)
-    valueColoringEnabledChanged: typing.ClassVar[Signal] = ... # valueColoringEnabledChanged(bool)
+    # columnAxisChanged(QCategory3DAxis*)
+    columnAxisChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QCategory3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis]
+    ]]
+    # columnLabelsChanged()
+    columnLabelsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # customColumnLabelsChanged(QStringList)
+    customColumnLabelsChanged: typing.ClassVar[Signal[
+        [typing.List[str]], [], [], [], [], [], [], [],
+        [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]]
+    ]]
+    # customRowLabelsChanged(QStringList)
+    customRowLabelsChanged: typing.ClassVar[Signal[
+        [typing.List[str]], [], [], [], [], [], [], [],
+        [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]], [typing.List[str]]
+    ]]
+    # dataArrayChanged(QBarDataArray)
+    dataArrayChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[QBarDataItem]]]
+    ]]
+    # dataProxyChanged(QBarDataProxy*)
+    dataProxyChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QBarDataProxy], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy], [PySide6.QtGraphs.QBarDataProxy]
+    ]]
+    # meshAngleChanged(float)
+    meshAngleChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # rowAxisChanged(QCategory3DAxis*)
+    rowAxisChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QCategory3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis], [PySide6.QtGraphs.QCategory3DAxis]
+    ]]
+    # rowColorsChanged(QList<QColor>)
+    rowColorsChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGui.QColor]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]]
+    ]]
+    # rowLabelsChanged()
+    rowLabelsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # selectedBarChanged(QPoint)
+    selectedBarChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # valueAxisChanged(QValue3DAxis*)
+    valueAxisChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # valueColoringEnabledChanged(bool)
+    valueColoringEnabledChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     @typing.overload
     def __init__(self, dataProxy: PySide6.QtGraphs.QBarDataProxy, /, parent: PySide6.QtCore.QObject | None = ..., *, selectedBar: PySide6.QtCore.QPoint | None = ..., meshAngle: float | None = ..., rowColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., rowLabels: collections.abc.Sequence[str] | None = ..., columnLabels: collections.abc.Sequence[str] | None = ..., customRowLabels: collections.abc.Sequence[str] | None = ..., customColumnLabels: collections.abc.Sequence[str] | None = ..., dataArray: collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QBarDataItem]] | None = ..., valueColoringEnabled: bool | None = ..., rowAxis: PySide6.QtGraphs.QCategory3DAxis | None = ..., valueAxis: PySide6.QtGraphs.QValue3DAxis | None = ..., columnAxis: PySide6.QtGraphs.QCategory3DAxis | None = ...) -> None: ...
@@ -411,12 +807,36 @@ class QBar3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
 
 
 class QBarCategoryAxis(PySide6.QtGraphs.QAbstractAxis):
-    categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
-    categoryRangeChanged     : typing.ClassVar[Signal] = ... # categoryRangeChanged(QString,QString)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    labelPositionChanged     : typing.ClassVar[Signal] = ... # labelPositionChanged(LabelPosition)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QString)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(QString)
+    # categoriesChanged()
+    categoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # categoryRangeChanged(QString,QString)
+    categoryRangeChanged: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelPositionChanged(LabelPosition)
+    labelPositionChanged: typing.ClassVar[Signal[
+        [LabelPosition], [], [], [], [], [], [], [],
+        [LabelPosition], [LabelPosition], [LabelPosition], [LabelPosition], [LabelPosition], [LabelPosition], [LabelPosition], [LabelPosition]
+    ]]
+    # maxChanged(QString)
+    maxChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # minChanged(QString)
+    minChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class LabelPosition(enum.Enum):
         Center                    = 0x0
@@ -467,15 +887,51 @@ class QBarDataItem(Shiboken.Object):
 
 
 class QBarDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-    arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
-    colCountChanged          : typing.ClassVar[Signal] = ... # colCountChanged(qsizetype)
-    itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(qsizetype,qsizetype)
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged(qsizetype)
-    rowsAdded                : typing.ClassVar[Signal] = ... # rowsAdded(qsizetype,qsizetype)
-    rowsChanged              : typing.ClassVar[Signal] = ... # rowsChanged(qsizetype,qsizetype)
-    rowsInserted             : typing.ClassVar[Signal] = ... # rowsInserted(qsizetype,qsizetype)
-    rowsRemoved              : typing.ClassVar[Signal] = ... # rowsRemoved(qsizetype,qsizetype)
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged(QBar3DSeries*)
+    # arrayReset()
+    arrayReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colCountChanged(qsizetype)
+    colCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # itemChanged(qsizetype,qsizetype)
+    itemChanged: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowCountChanged(qsizetype)
+    rowCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # rowsAdded(qsizetype,qsizetype)
+    rowsAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsChanged(qsizetype,qsizetype)
+    rowsChanged: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsInserted(qsizetype,qsizetype)
+    rowsInserted: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsRemoved(qsizetype,qsizetype)
+    rowsRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # seriesChanged(QBar3DSeries*)
+    seriesChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QBar3DSeries], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries], [PySide6.QtGraphs.QBar3DSeries]
+    ]]
 
     class RemoveLabels(enum.Enum):
         No                        = 0x0
@@ -529,13 +985,41 @@ class QBarDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
 
 
 class QBarModelMapper(PySide6.QtCore.QObject):
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    firstBarSetSectionChanged: typing.ClassVar[Signal] = ... # firstBarSetSectionChanged()
-    firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
-    lastBarSetSectionChanged : typing.ClassVar[Signal] = ... # lastBarSetSectionChanged()
-    modelChanged             : typing.ClassVar[Signal] = ... # modelChanged()
-    orientationChanged       : typing.ClassVar[Signal] = ... # orientationChanged()
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged()
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstBarSetSectionChanged()
+    firstBarSetSectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstChanged()
+    firstChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastBarSetSectionChanged()
+    lastBarSetSectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelChanged()
+    modelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # orientationChanged()
+    orientationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesChanged()
+    seriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QBarSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., firstBarSetSection: int | None = ..., lastBarSetSection: int | None = ..., first: int | None = ..., count: int | None = ..., orientation: PySide6.QtCore.Qt.Orientation | None = ...) -> None: ...
 
@@ -556,30 +1040,126 @@ class QBarModelMapper(PySide6.QtCore.QObject):
 
 
 class QBarSeries(PySide6.QtGraphs.QAbstractSeries):
-    barDelegateChanged       : typing.ClassVar[Signal] = ... # barDelegateChanged()
-    barSetsChanged           : typing.ClassVar[Signal] = ... # barSetsChanged()
-    barWidthChanged          : typing.ClassVar[Signal] = ... # barWidthChanged()
-    barsTypeChanged          : typing.ClassVar[Signal] = ... # barsTypeChanged(QBarSeries::BarsType)
-    barsetsAdded             : typing.ClassVar[Signal] = ... # barsetsAdded(QList<QBarSet*>)
-    barsetsRemoved           : typing.ClassVar[Signal] = ... # barsetsRemoved(QList<QBarSet*>)
-    barsetsReplaced          : typing.ClassVar[Signal] = ... # barsetsReplaced(QList<QBarSet*>)
-    borderColorsChanged      : typing.ClassVar[Signal] = ... # borderColorsChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(qsizetype,QBarSet*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(qsizetype,QBarSet*)
-    labelsAngleChanged       : typing.ClassVar[Signal] = ... # labelsAngleChanged(double)
-    labelsFormatChanged      : typing.ClassVar[Signal] = ... # labelsFormatChanged(QString)
-    labelsMarginChanged      : typing.ClassVar[Signal] = ... # labelsMarginChanged(double)
-    labelsPositionChanged    : typing.ClassVar[Signal] = ... # labelsPositionChanged(QBarSeries::LabelsPosition)
-    labelsPrecisionChanged   : typing.ClassVar[Signal] = ... # labelsPrecisionChanged(int)
-    labelsVisibleChanged     : typing.ClassVar[Signal] = ... # labelsVisibleChanged(bool)
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(qsizetype,QBarSet*)
-    released                 : typing.ClassVar[Signal] = ... # released(qsizetype,QBarSet*)
-    seriesColorsChanged      : typing.ClassVar[Signal] = ... # seriesColorsChanged()
-    setValueAdded            : typing.ClassVar[Signal] = ... # setValueAdded(qsizetype,qsizetype,QBarSet*)
-    setValueChanged          : typing.ClassVar[Signal] = ... # setValueChanged(qsizetype,QBarSet*)
-    setValueRemoved          : typing.ClassVar[Signal] = ... # setValueRemoved(qsizetype,qsizetype,QBarSet*)
-    updatedBars              : typing.ClassVar[Signal] = ... # updatedBars()
+    # barDelegateChanged()
+    barDelegateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # barSetsChanged()
+    barSetsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # barWidthChanged()
+    barWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # barsTypeChanged(QBarSeries::BarsType)
+    barsTypeChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QBarSeries.BarsType], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType], [PySide6.QtGraphs.QBarSeries.BarsType]
+    ]]
+    # barsetsAdded(QList<QBarSet*>)
+    barsetsAdded: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]]
+    ]]
+    # barsetsRemoved(QList<QBarSet*>)
+    barsetsRemoved: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]]
+    ]]
+    # barsetsReplaced(QList<QBarSet*>)
+    barsetsReplaced: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]]
+    ]]
+    # borderColorsChanged()
+    borderColorsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked(qsizetype,QBarSet*)
+    clicked: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(qsizetype,QBarSet*)
+    doubleClicked: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # labelsAngleChanged(double)
+    labelsAngleChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelsFormatChanged(QString)
+    labelsFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # labelsMarginChanged(double)
+    labelsMarginChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelsPositionChanged(QBarSeries::LabelsPosition)
+    labelsPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QBarSeries.LabelsPosition], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition], [PySide6.QtGraphs.QBarSeries.LabelsPosition]
+    ]]
+    # labelsPrecisionChanged(int)
+    labelsPrecisionChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # labelsVisibleChanged(bool)
+    labelsVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # pressed(qsizetype,QBarSet*)
+    pressed: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # released(qsizetype,QBarSet*)
+    released: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # seriesColorsChanged()
+    seriesColorsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # setValueAdded(qsizetype,qsizetype,QBarSet*)
+    setValueAdded: typing.ClassVar[Signal[
+        [int, int, PySide6.QtGraphs.QBarSet], [int, int], [int], [], [], [], [], [],
+        [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # setValueChanged(qsizetype,QBarSet*)
+    setValueChanged: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # setValueRemoved(qsizetype,qsizetype,QBarSet*)
+    setValueRemoved: typing.ClassVar[Signal[
+        [int, int, PySide6.QtGraphs.QBarSet], [int, int], [int], [], [], [], [], [],
+        [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet], [int, int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # updatedBars()
+    updatedBars: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class BarsType(enum.Enum):
         Groups                    = 0x0
@@ -645,22 +1225,86 @@ class QBarSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QBarSet(PySide6.QtCore.QObject):
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged(double)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    labelChanged             : typing.ClassVar[Signal] = ... # labelChanged()
-    labelColorChanged        : typing.ClassVar[Signal] = ... # labelColorChanged(QColor)
-    selectedBarsChanged      : typing.ClassVar[Signal] = ... # selectedBarsChanged(QList<qsizetype>)
-    selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
-    update                   : typing.ClassVar[Signal] = ... # update()
-    updatedBars              : typing.ClassVar[Signal] = ... # updatedBars()
-    valueAdded               : typing.ClassVar[Signal] = ... # valueAdded(qsizetype,qsizetype)
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(qsizetype)
-    valueRemoved             : typing.ClassVar[Signal] = ... # valueRemoved(qsizetype,qsizetype)
-    valuesAdded              : typing.ClassVar[Signal] = ... # valuesAdded(qsizetype,qsizetype)
-    valuesChanged            : typing.ClassVar[Signal] = ... # valuesChanged()
-    valuesRemoved            : typing.ClassVar[Signal] = ... # valuesRemoved(qsizetype,qsizetype)
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # borderWidthChanged(double)
+    borderWidthChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelChanged()
+    labelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelColorChanged(QColor)
+    labelColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # selectedBarsChanged(QList<qsizetype>)
+    selectedBarsChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+    ]]
+    # selectedColorChanged(QColor)
+    selectedColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # update()
+    update: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # updatedBars()
+    updatedBars: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valueAdded(qsizetype,qsizetype)
+    valueAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # valueChanged(qsizetype)
+    valueChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # valueRemoved(qsizetype,qsizetype)
+    valueRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # valuesAdded(qsizetype,qsizetype)
+    valuesAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # valuesChanged()
+    valuesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valuesRemoved(qsizetype,qsizetype)
+    valuesRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
 
     @typing.overload
     def __init__(self, label: str, /, parent: PySide6.QtCore.QObject | None = ..., *, color: PySide6.QtGui.QColor | None = ..., selectedColor: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., labelColor: PySide6.QtGui.QColor | None = ..., values: collections.abc.Sequence[typing.Any] | None = ..., borderWidth: float | None = ..., count: int | None = ..., selectedBars: collections.abc.Sequence[int] | None = ...) -> None: ...
@@ -706,8 +1350,16 @@ class QBarSet(PySide6.QtCore.QObject):
 
 
 class QCategory3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
-    columnLabelsChanged      : typing.ClassVar[Signal] = ... # columnLabelsChanged()
-    rowLabelsChanged         : typing.ClassVar[Signal] = ... # rowLabelsChanged()
+    # columnLabelsChanged()
+    columnLabelsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowLabelsChanged()
+    rowLabelsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, labels: collections.abc.Sequence[str] | None = ...) -> None: ...
 
@@ -716,17 +1368,61 @@ class QCategory3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
 
 
 class QCustom3DItem(PySide6.QtCore.QObject):
-    meshFileChanged          : typing.ClassVar[Signal] = ... # meshFileChanged(QString)
-    needUpdate               : typing.ClassVar[Signal] = ... # needUpdate()
-    positionAbsoluteChanged  : typing.ClassVar[Signal] = ... # positionAbsoluteChanged(bool)
-    positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(QVector3D)
-    rotationAbsoluteChanged  : typing.ClassVar[Signal] = ... # rotationAbsoluteChanged(bool)
-    rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged(QQuaternion)
-    scalingAbsoluteChanged   : typing.ClassVar[Signal] = ... # scalingAbsoluteChanged(bool)
-    scalingChanged           : typing.ClassVar[Signal] = ... # scalingChanged(QVector3D)
-    shadowCastingChanged     : typing.ClassVar[Signal] = ... # shadowCastingChanged(bool)
-    textureFileChanged       : typing.ClassVar[Signal] = ... # textureFileChanged(QString)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
+    # meshFileChanged(QString)
+    meshFileChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # needUpdate()
+    needUpdate: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # positionAbsoluteChanged(bool)
+    positionAbsoluteChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # positionChanged(QVector3D)
+    positionChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+    ]]
+    # rotationAbsoluteChanged(bool)
+    rotationAbsoluteChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # rotationChanged(QQuaternion)
+    rotationChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QQuaternion], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion]
+    ]]
+    # scalingAbsoluteChanged(bool)
+    scalingAbsoluteChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # scalingChanged(QVector3D)
+    scalingChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+    ]]
+    # shadowCastingChanged(bool)
+    shadowCastingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # textureFileChanged(QString)
+    textureFileChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     @typing.overload
     def __init__(self, meshFile: str, position: PySide6.QtGui.QVector3D, scaling: PySide6.QtGui.QVector3D, rotation: PySide6.QtGui.QQuaternion, texture: PySide6.QtGui.QImage, /, parent: PySide6.QtCore.QObject | None = ..., *, textureFile: str | None = ..., positionAbsolute: bool | None = ..., visible: bool | None = ..., shadowCasting: bool | None = ..., scalingAbsolute: bool | None = ..., rotationAbsolute: bool | None = ...) -> None: ...
@@ -758,13 +1454,41 @@ class QCustom3DItem(PySide6.QtCore.QObject):
 
 
 class QCustom3DLabel(PySide6.QtGraphs.QCustom3DItem):
-    backgroundColorChanged   : typing.ClassVar[Signal] = ... # backgroundColorChanged(QColor)
-    backgroundVisibleChanged : typing.ClassVar[Signal] = ... # backgroundVisibleChanged(bool)
-    borderVisibleChanged     : typing.ClassVar[Signal] = ... # borderVisibleChanged(bool)
-    facingCameraChanged      : typing.ClassVar[Signal] = ... # facingCameraChanged(bool)
-    fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-    textChanged              : typing.ClassVar[Signal] = ... # textChanged(QString)
-    textColorChanged         : typing.ClassVar[Signal] = ... # textColorChanged(QColor)
+    # backgroundColorChanged(QColor)
+    backgroundColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # backgroundVisibleChanged(bool)
+    backgroundVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # borderVisibleChanged(bool)
+    borderVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # facingCameraChanged(bool)
+    facingCameraChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # fontChanged(QFont)
+    fontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # textChanged(QString)
+    textChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # textColorChanged(QColor)
+    textColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
 
     @typing.overload
     def __init__(self, text: str, font: PySide6.QtGui.QFont | str | collections.abc.Sequence[str], position: PySide6.QtGui.QVector3D, scaling: PySide6.QtGui.QVector3D, rotation: PySide6.QtGui.QQuaternion, /, parent: PySide6.QtCore.QObject | None = ..., *, textColor: PySide6.QtGui.QColor | None = ..., backgroundColor: PySide6.QtGui.QColor | None = ..., borderVisible: bool | None = ..., backgroundVisible: bool | None = ..., facingCamera: bool | None = ...) -> None: ...
@@ -788,24 +1512,96 @@ class QCustom3DLabel(PySide6.QtGraphs.QCustom3DItem):
 
 
 class QCustom3DVolume(PySide6.QtGraphs.QCustom3DItem):
-    alphaMultiplierChanged   : typing.ClassVar[Signal] = ... # alphaMultiplierChanged(float)
-    colorTableChanged        : typing.ClassVar[Signal] = ... # colorTableChanged()
-    drawSliceFramesChanged   : typing.ClassVar[Signal] = ... # drawSliceFramesChanged(bool)
-    drawSlicesChanged        : typing.ClassVar[Signal] = ... # drawSlicesChanged(bool)
-    preserveOpacityChanged   : typing.ClassVar[Signal] = ... # preserveOpacityChanged(bool)
-    sliceFrameColorChanged   : typing.ClassVar[Signal] = ... # sliceFrameColorChanged(QColor)
-    sliceFrameGapsChanged    : typing.ClassVar[Signal] = ... # sliceFrameGapsChanged(QVector3D)
-    sliceFrameThicknessesChanged: typing.ClassVar[Signal] = ... # sliceFrameThicknessesChanged(QVector3D)
-    sliceFrameWidthsChanged  : typing.ClassVar[Signal] = ... # sliceFrameWidthsChanged(QVector3D)
-    sliceIndexXChanged       : typing.ClassVar[Signal] = ... # sliceIndexXChanged(int)
-    sliceIndexYChanged       : typing.ClassVar[Signal] = ... # sliceIndexYChanged(int)
-    sliceIndexZChanged       : typing.ClassVar[Signal] = ... # sliceIndexZChanged(int)
-    textureDataChanged       : typing.ClassVar[Signal] = ... # textureDataChanged(QList<uchar>*)
-    textureDepthChanged      : typing.ClassVar[Signal] = ... # textureDepthChanged(int)
-    textureFormatChanged     : typing.ClassVar[Signal] = ... # textureFormatChanged(QImage::Format)
-    textureHeightChanged     : typing.ClassVar[Signal] = ... # textureHeightChanged(int)
-    textureWidthChanged      : typing.ClassVar[Signal] = ... # textureWidthChanged(int)
-    useHighDefShaderChanged  : typing.ClassVar[Signal] = ... # useHighDefShaderChanged(bool)
+    # alphaMultiplierChanged(float)
+    alphaMultiplierChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # colorTableChanged()
+    colorTableChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # drawSliceFramesChanged(bool)
+    drawSliceFramesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # drawSlicesChanged(bool)
+    drawSlicesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # preserveOpacityChanged(bool)
+    preserveOpacityChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # sliceFrameColorChanged(QColor)
+    sliceFrameColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # sliceFrameGapsChanged(QVector3D)
+    sliceFrameGapsChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+    ]]
+    # sliceFrameThicknessesChanged(QVector3D)
+    sliceFrameThicknessesChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+    ]]
+    # sliceFrameWidthsChanged(QVector3D)
+    sliceFrameWidthsChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+    ]]
+    # sliceIndexXChanged(int)
+    sliceIndexXChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # sliceIndexYChanged(int)
+    sliceIndexYChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # sliceIndexZChanged(int)
+    sliceIndexZChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # textureDataChanged(QList<uchar>*)
+    textureDataChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+    ]]
+    # textureDepthChanged(int)
+    textureDepthChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # textureFormatChanged(QImage::Format)
+    textureFormatChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImage.Format], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format], [PySide6.QtGui.QImage.Format]
+    ]]
+    # textureHeightChanged(int)
+    textureHeightChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # textureWidthChanged(int)
+    textureWidthChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # useHighDefShaderChanged(bool)
+    useHighDefShaderChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     @typing.overload
     def __init__(self, position: PySide6.QtGui.QVector3D, scaling: PySide6.QtGui.QVector3D, rotation: PySide6.QtGui.QQuaternion, textureWidth: int, textureHeight: int, textureDepth: int, textureData: collections.abc.Sequence[int], textureFormat: PySide6.QtGui.QImage.Format, colorTable: collections.abc.Sequence[int], /, parent: PySide6.QtCore.QObject | None = ..., *, sliceIndexX: int | None = ..., sliceIndexY: int | None = ..., sliceIndexZ: int | None = ..., alphaMultiplier: float | None = ..., preserveOpacity: bool | None = ..., useHighDefShader: bool | None = ..., drawSlices: bool | None = ..., drawSliceFrames: bool | None = ..., sliceFrameColor: PySide6.QtGui.QColor | None = ..., sliceFrameWidths: PySide6.QtGui.QVector3D | None = ..., sliceFrameGaps: PySide6.QtGui.QVector3D | None = ..., sliceFrameThicknesses: PySide6.QtGui.QVector3D | None = ...) -> None: ...
@@ -860,7 +1656,11 @@ class QCustom3DVolume(PySide6.QtGraphs.QCustom3DItem):
 
 
 class QCustomSeries(PySide6.QtGraphs.QAbstractSeries):
-    delegateChanged          : typing.ClassVar[Signal] = ... # delegateChanged()
+    # delegateChanged()
+    delegateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, delegate: PySide6.QtQml.QQmlComponent | None = ...) -> None: ...
 
@@ -885,16 +1685,56 @@ class QCustomSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QDateTimeAxis(PySide6.QtGraphs.QAbstractAxis):
-    labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QDateTime)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(QDateTime)
-    panChanged               : typing.ClassVar[Signal] = ... # panChanged(double)
-    subTickCountChanged      : typing.ClassVar[Signal] = ... # subTickCountChanged()
-    tickIntervalChanged      : typing.ClassVar[Signal] = ... # tickIntervalChanged()
-    timeZoneChanged          : typing.ClassVar[Signal] = ... # timeZoneChanged(QTimeZone)
-    visualMaxChanged         : typing.ClassVar[Signal] = ... # visualMaxChanged(QDateTime)
-    visualMinChanged         : typing.ClassVar[Signal] = ... # visualMinChanged(QDateTime)
-    zoomChanged              : typing.ClassVar[Signal] = ... # zoomChanged(double)
+    # labelFormatChanged(QString)
+    labelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxChanged(QDateTime)
+    maxChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # minChanged(QDateTime)
+    minChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # panChanged(double)
+    panChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # subTickCountChanged()
+    subTickCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # tickIntervalChanged()
+    tickIntervalChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # timeZoneChanged(QTimeZone)
+    timeZoneChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QTimeZone], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone], [PySide6.QtCore.QTimeZone]
+    ]]
+    # visualMaxChanged(QDateTime)
+    visualMaxChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # visualMinChanged(QDateTime)
+    visualMinChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # zoomChanged(double)
+    zoomChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, min: PySide6.QtCore.QDateTime | None = ..., max: PySide6.QtCore.QDateTime | None = ..., labelFormat: str | None = ..., subTickCount: int | None = ..., tickInterval: float | None = ..., timeZone: PySide6.QtCore.QTimeZone | None = ..., zoom: float | None = ..., pan: float | None = ..., visualMin: PySide6.QtCore.QDateTime | None = ..., visualMax: PySide6.QtCore.QDateTime | None = ...) -> None: ...
 
@@ -943,38 +1783,166 @@ class QGraphsLine(Shiboken.Object):
 
 
 class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-    axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged()
-    axisXLabelFontChanged    : typing.ClassVar[Signal] = ... # axisXLabelFontChanged()
-    axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged()
-    axisYLabelFontChanged    : typing.ClassVar[Signal] = ... # axisYLabelFontChanged()
-    axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged()
-    axisZLabelFontChanged    : typing.ClassVar[Signal] = ... # axisZLabelFontChanged()
-    backgroundColorChanged   : typing.ClassVar[Signal] = ... # backgroundColorChanged()
-    backgroundVisibleChanged : typing.ClassVar[Signal] = ... # backgroundVisibleChanged()
-    borderColorsChanged      : typing.ClassVar[Signal] = ... # borderColorsChanged()
-    borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
-    colorSchemeChanged       : typing.ClassVar[Signal] = ... # colorSchemeChanged()
-    colorStyleChanged        : typing.ClassVar[Signal] = ... # colorStyleChanged(QGraphsTheme::ColorStyle)
-    gridChanged              : typing.ClassVar[Signal] = ... # gridChanged()
-    gridVisibleChanged       : typing.ClassVar[Signal] = ... # gridVisibleChanged()
-    labelBackgroundColorChanged: typing.ClassVar[Signal] = ... # labelBackgroundColorChanged()
-    labelBackgroundVisibleChanged: typing.ClassVar[Signal] = ... # labelBackgroundVisibleChanged()
-    labelBorderVisibleChanged: typing.ClassVar[Signal] = ... # labelBorderVisibleChanged()
-    labelFontChanged         : typing.ClassVar[Signal] = ... # labelFontChanged()
-    labelTextColorChanged    : typing.ClassVar[Signal] = ... # labelTextColorChanged()
-    labelsVisibleChanged     : typing.ClassVar[Signal] = ... # labelsVisibleChanged()
-    multiHighlightColorChanged: typing.ClassVar[Signal] = ... # multiHighlightColorChanged(QColor)
-    multiHighlightGradientChanged: typing.ClassVar[Signal] = ... # multiHighlightGradientChanged(QLinearGradient)
-    multiHighlightGradientQMLChanged: typing.ClassVar[Signal] = ... # multiHighlightGradientQMLChanged()
-    plotAreaBackgroundColorChanged: typing.ClassVar[Signal] = ... # plotAreaBackgroundColorChanged()
-    plotAreaBackgroundVisibleChanged: typing.ClassVar[Signal] = ... # plotAreaBackgroundVisibleChanged()
-    seriesColorsChanged      : typing.ClassVar[Signal] = ... # seriesColorsChanged(QList<QColor>)
-    seriesGradientsChanged   : typing.ClassVar[Signal] = ... # seriesGradientsChanged(QList<QLinearGradient>)
-    singleHighlightColorChanged: typing.ClassVar[Signal] = ... # singleHighlightColorChanged(QColor)
-    singleHighlightGradientChanged: typing.ClassVar[Signal] = ... # singleHighlightGradientChanged(QLinearGradient)
-    singleHighlightGradientQMLChanged: typing.ClassVar[Signal] = ... # singleHighlightGradientQMLChanged()
-    themeChanged             : typing.ClassVar[Signal] = ... # themeChanged(QGraphsTheme::Theme)
-    update                   : typing.ClassVar[Signal] = ... # update()
+    # axisXChanged()
+    axisXChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axisXLabelFontChanged()
+    axisXLabelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axisYChanged()
+    axisYChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axisYLabelFontChanged()
+    axisYLabelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axisZChanged()
+    axisZChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # axisZLabelFontChanged()
+    axisZLabelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # backgroundColorChanged()
+    backgroundColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # backgroundVisibleChanged()
+    backgroundVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderColorsChanged()
+    borderColorsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderWidthChanged()
+    borderWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorSchemeChanged()
+    colorSchemeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorStyleChanged(QGraphsTheme::ColorStyle)
+    colorStyleChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle], [PySide6.QtGraphs.QGraphsTheme.ColorStyle]
+    ]]
+    # gridChanged()
+    gridChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # gridVisibleChanged()
+    gridVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelBackgroundColorChanged()
+    labelBackgroundColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelBackgroundVisibleChanged()
+    labelBackgroundVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelBorderVisibleChanged()
+    labelBorderVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelFontChanged()
+    labelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelTextColorChanged()
+    labelTextColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsVisibleChanged()
+    labelsVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # multiHighlightColorChanged(QColor)
+    multiHighlightColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # multiHighlightGradientChanged(QLinearGradient)
+    multiHighlightGradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # multiHighlightGradientQMLChanged()
+    multiHighlightGradientQMLChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # plotAreaBackgroundColorChanged()
+    plotAreaBackgroundColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # plotAreaBackgroundVisibleChanged()
+    plotAreaBackgroundVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesColorsChanged(QList<QColor>)
+    seriesColorsChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGui.QColor]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]], [collections.abc.Sequence[PySide6.QtGui.QColor]]
+    ]]
+    # seriesGradientsChanged(QList<QLinearGradient>)
+    seriesGradientsChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]], [collections.abc.Sequence[PySide6.QtGui.QLinearGradient]]
+    ]]
+    # singleHighlightColorChanged(QColor)
+    singleHighlightColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # singleHighlightGradientChanged(QLinearGradient)
+    singleHighlightGradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # singleHighlightGradientQMLChanged()
+    singleHighlightGradientQMLChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # themeChanged(QGraphsTheme::Theme)
+    themeChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QGraphsTheme.Theme], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme], [PySide6.QtGraphs.QGraphsTheme.Theme]
+    ]]
+    # update()
+    update: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ColorScheme(enum.Enum):
         Automatic                 = 0x0
@@ -1179,15 +2147,51 @@ class QGraphsThemeDirtyBitField(Shiboken.Object):
 
 
 class QHeightMapSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
-    autoScaleYChanged        : typing.ClassVar[Signal] = ... # autoScaleYChanged(bool)
-    heightMapChanged         : typing.ClassVar[Signal] = ... # heightMapChanged(QImage)
-    heightMapFileChanged     : typing.ClassVar[Signal] = ... # heightMapFileChanged(QString)
-    maxXValueChanged         : typing.ClassVar[Signal] = ... # maxXValueChanged(float)
-    maxYValueChanged         : typing.ClassVar[Signal] = ... # maxYValueChanged(float)
-    maxZValueChanged         : typing.ClassVar[Signal] = ... # maxZValueChanged(float)
-    minXValueChanged         : typing.ClassVar[Signal] = ... # minXValueChanged(float)
-    minYValueChanged         : typing.ClassVar[Signal] = ... # minYValueChanged(float)
-    minZValueChanged         : typing.ClassVar[Signal] = ... # minZValueChanged(float)
+    # autoScaleYChanged(bool)
+    autoScaleYChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # heightMapChanged(QImage)
+    heightMapChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImage], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage]
+    ]]
+    # heightMapFileChanged(QString)
+    heightMapFileChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxXValueChanged(float)
+    maxXValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # maxYValueChanged(float)
+    maxYValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # maxZValueChanged(float)
+    maxZValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minXValueChanged(float)
+    minXValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minYValueChanged(float)
+    minYValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minZValueChanged(float)
+    minZValueChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     @typing.overload
     def __init__(self, image: PySide6.QtGui.QImage, /, parent: PySide6.QtCore.QObject | None = ..., *, heightMap: PySide6.QtGui.QImage | None = ..., heightMapFile: str | None = ..., minXValue: float | None = ..., maxXValue: float | None = ..., minZValue: float | None = ..., maxZValue: float | None = ..., minYValue: float | None = ..., maxYValue: float | None = ..., autoScaleY: bool | None = ...) -> None: ...
@@ -1223,25 +2227,101 @@ class QIntList:
 
 
 class QItemModelBarDataProxy(PySide6.QtGraphs.QBarDataProxy):
-    autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
-    autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
-    columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
-    columnRoleChanged        : typing.ClassVar[Signal] = ... # columnRoleChanged(QString)
-    columnRolePatternChanged : typing.ClassVar[Signal] = ... # columnRolePatternChanged(QRegularExpression)
-    columnRoleReplaceChanged : typing.ClassVar[Signal] = ... # columnRoleReplaceChanged(QString)
-    itemModelChanged         : typing.ClassVar[Signal] = ... # itemModelChanged(const QAbstractItemModel*)
-    multiMatchBehaviorChanged: typing.ClassVar[Signal] = ... # multiMatchBehaviorChanged(QItemModelBarDataProxy::MultiMatchBehavior)
-    rotationRoleChanged      : typing.ClassVar[Signal] = ... # rotationRoleChanged(QString)
-    rotationRolePatternChanged: typing.ClassVar[Signal] = ... # rotationRolePatternChanged(QRegularExpression)
-    rotationRoleReplaceChanged: typing.ClassVar[Signal] = ... # rotationRoleReplaceChanged(QString)
-    rowCategoriesChanged     : typing.ClassVar[Signal] = ... # rowCategoriesChanged()
-    rowRoleChanged           : typing.ClassVar[Signal] = ... # rowRoleChanged(QString)
-    rowRolePatternChanged    : typing.ClassVar[Signal] = ... # rowRolePatternChanged(QRegularExpression)
-    rowRoleReplaceChanged    : typing.ClassVar[Signal] = ... # rowRoleReplaceChanged(QString)
-    useModelCategoriesChanged: typing.ClassVar[Signal] = ... # useModelCategoriesChanged(bool)
-    valueRoleChanged         : typing.ClassVar[Signal] = ... # valueRoleChanged(QString)
-    valueRolePatternChanged  : typing.ClassVar[Signal] = ... # valueRolePatternChanged(QRegularExpression)
-    valueRoleReplaceChanged  : typing.ClassVar[Signal] = ... # valueRoleReplaceChanged(QString)
+    # autoColumnCategoriesChanged(bool)
+    autoColumnCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # autoRowCategoriesChanged(bool)
+    autoRowCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # columnCategoriesChanged()
+    columnCategoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # columnRoleChanged(QString)
+    columnRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # columnRolePatternChanged(QRegularExpression)
+    columnRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # columnRoleReplaceChanged(QString)
+    columnRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # itemModelChanged(const QAbstractItemModel*)
+    itemModelChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # multiMatchBehaviorChanged(QItemModelBarDataProxy::MultiMatchBehavior)
+    multiMatchBehaviorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior]
+    ]]
+    # rotationRoleChanged(QString)
+    rotationRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rotationRolePatternChanged(QRegularExpression)
+    rotationRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # rotationRoleReplaceChanged(QString)
+    rotationRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rowCategoriesChanged()
+    rowCategoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowRoleChanged(QString)
+    rowRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rowRolePatternChanged(QRegularExpression)
+    rowRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # rowRoleReplaceChanged(QString)
+    rowRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # useModelCategoriesChanged(bool)
+    useModelCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # valueRoleChanged(QString)
+    valueRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # valueRolePatternChanged(QRegularExpression)
+    valueRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # valueRoleReplaceChanged(QString)
+    valueRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class MultiMatchBehavior(enum.Enum):
         First                     = 0x0
@@ -1308,22 +2388,86 @@ class QItemModelBarDataProxy(PySide6.QtGraphs.QBarDataProxy):
 
 
 class QItemModelScatterDataProxy(PySide6.QtGraphs.QScatterDataProxy):
-    itemModelChanged         : typing.ClassVar[Signal] = ... # itemModelChanged(const QAbstractItemModel*)
-    rotationRoleChanged      : typing.ClassVar[Signal] = ... # rotationRoleChanged(QString)
-    rotationRolePatternChanged: typing.ClassVar[Signal] = ... # rotationRolePatternChanged(QRegularExpression)
-    rotationRoleReplaceChanged: typing.ClassVar[Signal] = ... # rotationRoleReplaceChanged(QString)
-    scaleRoleChanged         : typing.ClassVar[Signal] = ... # scaleRoleChanged(QString)
-    scaleRolePatternChanged  : typing.ClassVar[Signal] = ... # scaleRolePatternChanged(QRegularExpression)
-    scaleRoleReplaceChanged  : typing.ClassVar[Signal] = ... # scaleRoleReplaceChanged(QString)
-    xPosRoleChanged          : typing.ClassVar[Signal] = ... # xPosRoleChanged(QString)
-    xPosRolePatternChanged   : typing.ClassVar[Signal] = ... # xPosRolePatternChanged(QRegularExpression)
-    xPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # xPosRoleReplaceChanged(QString)
-    yPosRoleChanged          : typing.ClassVar[Signal] = ... # yPosRoleChanged(QString)
-    yPosRolePatternChanged   : typing.ClassVar[Signal] = ... # yPosRolePatternChanged(QRegularExpression)
-    yPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # yPosRoleReplaceChanged(QString)
-    zPosRoleChanged          : typing.ClassVar[Signal] = ... # zPosRoleChanged(QString)
-    zPosRolePatternChanged   : typing.ClassVar[Signal] = ... # zPosRolePatternChanged(QRegularExpression)
-    zPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # zPosRoleReplaceChanged(QString)
+    # itemModelChanged(const QAbstractItemModel*)
+    itemModelChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # rotationRoleChanged(QString)
+    rotationRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rotationRolePatternChanged(QRegularExpression)
+    rotationRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # rotationRoleReplaceChanged(QString)
+    rotationRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # scaleRoleChanged(QString)
+    scaleRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # scaleRolePatternChanged(QRegularExpression)
+    scaleRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # scaleRoleReplaceChanged(QString)
+    scaleRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # xPosRoleChanged(QString)
+    xPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # xPosRolePatternChanged(QRegularExpression)
+    xPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # xPosRoleReplaceChanged(QString)
+    xPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # yPosRoleChanged(QString)
+    yPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # yPosRolePatternChanged(QRegularExpression)
+    yPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # yPosRoleReplaceChanged(QString)
+    yPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # zPosRoleChanged(QString)
+    zPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # zPosRolePatternChanged(QRegularExpression)
+    zPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # zPosRoleReplaceChanged(QString)
+    zPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     @typing.overload
     def __init__(self, itemModel: PySide6.QtCore.QAbstractItemModel, xPosRole: str, yPosRole: str, zPosRole: str, rotationRole: str, /, parent: PySide6.QtCore.QObject | None = ..., *, scaleRole: str | None = ..., xPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., yPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., zPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rotationRolePattern: PySide6.QtCore.QRegularExpression | None = ..., scaleRolePattern: PySide6.QtCore.QRegularExpression | None = ..., xPosRoleReplace: str | None = ..., yPosRoleReplace: str | None = ..., zPosRoleReplace: str | None = ..., rotationRoleReplace: str | None = ..., scaleRoleReplace: str | None = ...) -> None: ...
@@ -1373,28 +2517,116 @@ class QItemModelScatterDataProxy(PySide6.QtGraphs.QScatterDataProxy):
 
 
 class QItemModelSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
-    autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
-    autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
-    columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
-    columnRoleChanged        : typing.ClassVar[Signal] = ... # columnRoleChanged(QString)
-    columnRolePatternChanged : typing.ClassVar[Signal] = ... # columnRolePatternChanged(QRegularExpression)
-    columnRoleReplaceChanged : typing.ClassVar[Signal] = ... # columnRoleReplaceChanged(QString)
-    itemModelChanged         : typing.ClassVar[Signal] = ... # itemModelChanged(const QAbstractItemModel*)
-    multiMatchBehaviorChanged: typing.ClassVar[Signal] = ... # multiMatchBehaviorChanged(QItemModelSurfaceDataProxy::MultiMatchBehavior)
-    rowCategoriesChanged     : typing.ClassVar[Signal] = ... # rowCategoriesChanged()
-    rowRoleChanged           : typing.ClassVar[Signal] = ... # rowRoleChanged(QString)
-    rowRolePatternChanged    : typing.ClassVar[Signal] = ... # rowRolePatternChanged(QRegularExpression)
-    rowRoleReplaceChanged    : typing.ClassVar[Signal] = ... # rowRoleReplaceChanged(QString)
-    useModelCategoriesChanged: typing.ClassVar[Signal] = ... # useModelCategoriesChanged(bool)
-    xPosRoleChanged          : typing.ClassVar[Signal] = ... # xPosRoleChanged(QString)
-    xPosRolePatternChanged   : typing.ClassVar[Signal] = ... # xPosRolePatternChanged(QRegularExpression)
-    xPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # xPosRoleReplaceChanged(QString)
-    yPosRoleChanged          : typing.ClassVar[Signal] = ... # yPosRoleChanged(QString)
-    yPosRolePatternChanged   : typing.ClassVar[Signal] = ... # yPosRolePatternChanged(QRegularExpression)
-    yPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # yPosRoleReplaceChanged(QString)
-    zPosRoleChanged          : typing.ClassVar[Signal] = ... # zPosRoleChanged(QString)
-    zPosRolePatternChanged   : typing.ClassVar[Signal] = ... # zPosRolePatternChanged(QRegularExpression)
-    zPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # zPosRoleReplaceChanged(QString)
+    # autoColumnCategoriesChanged(bool)
+    autoColumnCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # autoRowCategoriesChanged(bool)
+    autoRowCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # columnCategoriesChanged()
+    columnCategoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # columnRoleChanged(QString)
+    columnRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # columnRolePatternChanged(QRegularExpression)
+    columnRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # columnRoleReplaceChanged(QString)
+    columnRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # itemModelChanged(const QAbstractItemModel*)
+    itemModelChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # multiMatchBehaviorChanged(QItemModelSurfaceDataProxy::MultiMatchBehavior)
+    multiMatchBehaviorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior], [PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior]
+    ]]
+    # rowCategoriesChanged()
+    rowCategoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowRoleChanged(QString)
+    rowRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rowRolePatternChanged(QRegularExpression)
+    rowRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # rowRoleReplaceChanged(QString)
+    rowRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # useModelCategoriesChanged(bool)
+    useModelCategoriesChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # xPosRoleChanged(QString)
+    xPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # xPosRolePatternChanged(QRegularExpression)
+    xPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # xPosRoleReplaceChanged(QString)
+    xPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # yPosRoleChanged(QString)
+    yPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # yPosRolePatternChanged(QRegularExpression)
+    yPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # yPosRoleReplaceChanged(QString)
+    yPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # zPosRoleChanged(QString)
+    zPosRoleChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # zPosRolePatternChanged(QRegularExpression)
+    zPosRolePatternChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRegularExpression], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression], [PySide6.QtCore.QRegularExpression]
+    ]]
+    # zPosRoleReplaceChanged(QString)
+    zPosRoleReplaceChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class MultiMatchBehavior(enum.Enum):
         First                     = 0x0
@@ -1489,13 +2721,41 @@ class QLegendData(Shiboken.Object):
 
 
 class QLineSeries(PySide6.QtGraphs.QXYSeries):
-    capStyleChanged          : typing.ClassVar[Signal] = ... # capStyleChanged()
-    dashOffsetChanged        : typing.ClassVar[Signal] = ... # dashOffsetChanged(double)
-    dashPatternChanged       : typing.ClassVar[Signal] = ... # dashPatternChanged(QList<qreal>)
-    joinStyleChanged         : typing.ClassVar[Signal] = ... # joinStyleChanged(Qt::PenJoinStyle)
-    lineStyleChanged         : typing.ClassVar[Signal] = ... # lineStyleChanged(QLineSeries::LineStyle)
-    strokeStyleChanged       : typing.ClassVar[Signal] = ... # strokeStyleChanged(QLineSeries::StrokeStyle)
-    widthChanged             : typing.ClassVar[Signal] = ... # widthChanged()
+    # capStyleChanged()
+    capStyleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # dashOffsetChanged(double)
+    dashOffsetChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # dashPatternChanged(QList<qreal>)
+    dashPatternChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[float]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]], [collections.abc.Sequence[float]]
+    ]]
+    # joinStyleChanged(Qt::PenJoinStyle)
+    joinStyleChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.PenJoinStyle], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle], [PySide6.QtCore.Qt.PenJoinStyle]
+    ]]
+    # lineStyleChanged(QLineSeries::LineStyle)
+    lineStyleChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QLineSeries.LineStyle], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle], [PySide6.QtGraphs.QLineSeries.LineStyle]
+    ]]
+    # strokeStyleChanged(QLineSeries::StrokeStyle)
+    strokeStyleChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QLineSeries.StrokeStyle], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle], [PySide6.QtGraphs.QLineSeries.StrokeStyle]
+    ]]
+    # widthChanged()
+    widthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class LineStyle(enum.Enum):
         Straight                  = 0x0
@@ -1529,9 +2789,21 @@ class QLineSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QLogValue3DAxisFormatter(PySide6.QtGraphs.QValue3DAxisFormatter):
-    autoSubGridChanged       : typing.ClassVar[Signal] = ... # autoSubGridChanged(bool)
-    baseChanged              : typing.ClassVar[Signal] = ... # baseChanged(double)
-    edgeLabelsVisibleChanged : typing.ClassVar[Signal] = ... # edgeLabelsVisibleChanged(bool)
+    # autoSubGridChanged(bool)
+    autoSubGridChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # baseChanged(double)
+    baseChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # edgeLabelsVisibleChanged(bool)
+    edgeLabelsVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, base: float | None = ..., autoSubGrid: bool | None = ..., edgeLabelsVisible: bool | None = ...) -> None: ...
 
@@ -1549,13 +2821,41 @@ class QLogValue3DAxisFormatter(PySide6.QtGraphs.QValue3DAxisFormatter):
 
 
 class QPieModelMapper(PySide6.QtCore.QObject):
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
-    labelsSectionChanged     : typing.ClassVar[Signal] = ... # labelsSectionChanged()
-    modelChanged             : typing.ClassVar[Signal] = ... # modelChanged()
-    orientationChanged       : typing.ClassVar[Signal] = ... # orientationChanged()
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged()
-    valuesSectionChanged     : typing.ClassVar[Signal] = ... # valuesSectionChanged()
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstChanged()
+    firstChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsSectionChanged()
+    labelsSectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelChanged()
+    modelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # orientationChanged()
+    orientationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesChanged()
+    seriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valuesSectionChanged()
+    valuesSectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QPieSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., valuesSection: int | None = ..., labelsSection: int | None = ..., first: int | None = ..., count: int | None = ..., orientation: PySide6.QtCore.Qt.Orientation | None = ...) -> None: ...
 
@@ -1578,23 +2878,91 @@ class QPieModelMapper(PySide6.QtCore.QObject):
 
 
 class QPieSeries(PySide6.QtGraphs.QAbstractSeries):
-    added                    : typing.ClassVar[Signal] = ... # added(QList<QPieSlice*>)
-    angleSpanLabelVisibilityChanged: typing.ClassVar[Signal] = ... # angleSpanLabelVisibilityChanged(LabelVisibility)
-    angleSpanVisibleLimitChanged: typing.ClassVar[Signal] = ... # angleSpanVisibleLimitChanged(double)
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPieSlice*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPieSlice*)
-    endAngleChanged          : typing.ClassVar[Signal] = ... # endAngleChanged()
-    holeSizeChanged          : typing.ClassVar[Signal] = ... # holeSizeChanged()
-    horizontalPositionChanged: typing.ClassVar[Signal] = ... # horizontalPositionChanged()
-    pieSizeChanged           : typing.ClassVar[Signal] = ... # pieSizeChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPieSlice*)
-    released                 : typing.ClassVar[Signal] = ... # released(QPieSlice*)
-    removed                  : typing.ClassVar[Signal] = ... # removed(QList<QPieSlice*>)
-    replaced                 : typing.ClassVar[Signal] = ... # replaced(QList<QPieSlice*>)
-    startAngleChanged        : typing.ClassVar[Signal] = ... # startAngleChanged()
-    sumChanged               : typing.ClassVar[Signal] = ... # sumChanged()
-    verticalPositionChanged  : typing.ClassVar[Signal] = ... # verticalPositionChanged()
+    # added(QList<QPieSlice*>)
+    added: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # angleSpanLabelVisibilityChanged(LabelVisibility)
+    angleSpanLabelVisibilityChanged: typing.ClassVar[Signal[
+        [LabelVisibility], [], [], [], [], [], [], [],
+        [LabelVisibility], [LabelVisibility], [LabelVisibility], [LabelVisibility], [LabelVisibility], [LabelVisibility], [LabelVisibility], [LabelVisibility]
+    ]]
+    # angleSpanVisibleLimitChanged(double)
+    angleSpanVisibleLimitChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # clicked(QPieSlice*)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(QPieSlice*)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # endAngleChanged()
+    endAngleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # holeSizeChanged()
+    holeSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # horizontalPositionChanged()
+    horizontalPositionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pieSizeChanged()
+    pieSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QPieSlice*)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # released(QPieSlice*)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # removed(QList<QPieSlice*>)
+    removed: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # replaced(QList<QPieSlice*>)
+    replaced: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # startAngleChanged()
+    startAngleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sumChanged()
+    sumChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # verticalPositionChanged()
+    verticalPositionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class LabelVisibility(enum.Enum):
         None_                     = 0x0
@@ -1655,28 +3023,116 @@ class QPieSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QPieSlice(PySide6.QtCore.QObject):
-    angleSpanChanged         : typing.ClassVar[Signal] = ... # angleSpanChanged()
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged()
-    borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged()
-    explodeDistanceFactorChanged: typing.ClassVar[Signal] = ... # explodeDistanceFactorChanged()
-    explodedChanged          : typing.ClassVar[Signal] = ... # explodedChanged()
-    labelArmLengthFactorChanged: typing.ClassVar[Signal] = ... # labelArmLengthFactorChanged()
-    labelChanged             : typing.ClassVar[Signal] = ... # labelChanged()
-    labelColorChanged        : typing.ClassVar[Signal] = ... # labelColorChanged()
-    labelFontChanged         : typing.ClassVar[Signal] = ... # labelFontChanged()
-    labelPositionChanged     : typing.ClassVar[Signal] = ... # labelPositionChanged()
-    labelVisibleChanged      : typing.ClassVar[Signal] = ... # labelVisibleChanged()
-    percentageChanged        : typing.ClassVar[Signal] = ... # percentageChanged()
-    sliceChanged             : typing.ClassVar[Signal] = ... # sliceChanged()
-    startAngleChanged        : typing.ClassVar[Signal] = ... # startAngleChanged()
-    subSlicesAdded           : typing.ClassVar[Signal] = ... # subSlicesAdded(QList<QPieSlice*>)
-    subSlicesCountChanged    : typing.ClassVar[Signal] = ... # subSlicesCountChanged(qsizetype)
-    subSlicesRatioChanged    : typing.ClassVar[Signal] = ... # subSlicesRatioChanged(double)
-    subSlicesRemoved         : typing.ClassVar[Signal] = ... # subSlicesRemoved(QList<QPieSlice*>)
-    subSlicesReplaced        : typing.ClassVar[Signal] = ... # subSlicesReplaced(QList<QPieSlice*>)
-    subSlicesSumChanged      : typing.ClassVar[Signal] = ... # subSlicesSumChanged(double)
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
+    # angleSpanChanged()
+    angleSpanChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderColorChanged()
+    borderColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderWidthChanged()
+    borderWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorChanged()
+    colorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # explodeDistanceFactorChanged()
+    explodeDistanceFactorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # explodedChanged()
+    explodedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelArmLengthFactorChanged()
+    labelArmLengthFactorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelChanged()
+    labelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelColorChanged()
+    labelColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelFontChanged()
+    labelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelPositionChanged()
+    labelPositionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelVisibleChanged()
+    labelVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # percentageChanged()
+    percentageChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sliceChanged()
+    sliceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # startAngleChanged()
+    startAngleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # subSlicesAdded(QList<QPieSlice*>)
+    subSlicesAdded: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # subSlicesCountChanged(qsizetype)
+    subSlicesCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # subSlicesRatioChanged(double)
+    subSlicesRatioChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # subSlicesRemoved(QList<QPieSlice*>)
+    subSlicesRemoved: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # subSlicesReplaced(QList<QPieSlice*>)
+    subSlicesReplaced: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # subSlicesSumChanged(double)
+    subSlicesSumChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # valueChanged()
+    valueChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class LabelPosition(enum.Enum):
         Outside                   = 0x0
@@ -1751,14 +3207,46 @@ class QPointFList:
 
 
 class QScatter3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-    axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
-    axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
-    axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
-    dataArrayChanged         : typing.ClassVar[Signal] = ... # dataArrayChanged(QScatterDataArray)
-    dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QScatterDataProxy*)
-    itemSizeChanged          : typing.ClassVar[Signal] = ... # itemSizeChanged(float)
-    scaleArrayChanged        : typing.ClassVar[Signal] = ... # scaleArrayChanged(QList<QVector3D>)
-    selectedItemChanged      : typing.ClassVar[Signal] = ... # selectedItemChanged(qsizetype)
+    # axisXChanged(QValue3DAxis*)
+    axisXChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # axisYChanged(QValue3DAxis*)
+    axisYChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # axisZChanged(QValue3DAxis*)
+    axisZChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # dataArrayChanged(QScatterDataArray)
+    dataArrayChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]], [collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem]]
+    ]]
+    # dataProxyChanged(QScatterDataProxy*)
+    dataProxyChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QScatterDataProxy], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy], [PySide6.QtGraphs.QScatterDataProxy]
+    ]]
+    # itemSizeChanged(float)
+    itemSizeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # scaleArrayChanged(QList<QVector3D>)
+    scaleArrayChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]], [collections.abc.Sequence[PySide6.QtGui.QVector3D]]
+    ]]
+    # selectedItemChanged(qsizetype)
+    selectedItemChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     @typing.overload
     def __init__(self, dataProxy: PySide6.QtGraphs.QScatterDataProxy, /, parent: PySide6.QtCore.QObject | None = ..., *, selectedItem: int | None = ..., itemSize: float | None = ..., dataArray: collections.abc.Sequence[PySide6.QtGraphs.QScatterDataItem] | None = ..., scaleArray: collections.abc.Sequence[PySide6.QtGui.QVector3D] | None = ..., axisX: PySide6.QtGraphs.QValue3DAxis | None = ..., axisY: PySide6.QtGraphs.QValue3DAxis | None = ..., axisZ: PySide6.QtGraphs.QValue3DAxis | None = ...) -> None: ...
@@ -1816,14 +3304,46 @@ class QScatterDataItem(Shiboken.Object):
 
 
 class QScatterDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-    arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
-    itemCountChanged         : typing.ClassVar[Signal] = ... # itemCountChanged(qsizetype)
-    itemsAdded               : typing.ClassVar[Signal] = ... # itemsAdded(qsizetype,qsizetype)
-    itemsChanged             : typing.ClassVar[Signal] = ... # itemsChanged(qsizetype,qsizetype)
-    itemsInserted            : typing.ClassVar[Signal] = ... # itemsInserted(qsizetype,qsizetype)
-    itemsRemoved             : typing.ClassVar[Signal] = ... # itemsRemoved(qsizetype,qsizetype)
-    scaleArrayReset          : typing.ClassVar[Signal] = ... # scaleArrayReset()
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged(QScatter3DSeries*)
+    # arrayReset()
+    arrayReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # itemCountChanged(qsizetype)
+    itemCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # itemsAdded(qsizetype,qsizetype)
+    itemsAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # itemsChanged(qsizetype,qsizetype)
+    itemsChanged: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # itemsInserted(qsizetype,qsizetype)
+    itemsInserted: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # itemsRemoved(qsizetype,qsizetype)
+    itemsRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # scaleArrayReset()
+    scaleArrayReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesChanged(QScatter3DSeries*)
+    seriesChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QScatter3DSeries], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries], [PySide6.QtGraphs.QScatter3DSeries]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, itemCount: int | None = ..., series: PySide6.QtGraphs.QScatter3DSeries | None = ...) -> None: ...
 
@@ -1853,12 +3373,36 @@ class QScatterSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QSpline3DSeries(PySide6.QtGraphs.QScatter3DSeries):
-    splineColorChanged       : typing.ClassVar[Signal] = ... # splineColorChanged(QColor)
-    splineKnottingChanged    : typing.ClassVar[Signal] = ... # splineKnottingChanged(double)
-    splineLoopingChanged     : typing.ClassVar[Signal] = ... # splineLoopingChanged(bool)
-    splineResolutionChanged  : typing.ClassVar[Signal] = ... # splineResolutionChanged(int)
-    splineTensionChanged     : typing.ClassVar[Signal] = ... # splineTensionChanged(double)
-    splineVisibilityChanged  : typing.ClassVar[Signal] = ... # splineVisibilityChanged(bool)
+    # splineColorChanged(QColor)
+    splineColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # splineKnottingChanged(double)
+    splineKnottingChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # splineLoopingChanged(bool)
+    splineLoopingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # splineResolutionChanged(int)
+    splineResolutionChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # splineTensionChanged(double)
+    splineTensionChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # splineVisibilityChanged(bool)
+    splineVisibilityChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     @typing.overload
     def __init__(self, dataProxy: PySide6.QtGraphs.QScatterDataProxy, /, parent: PySide6.QtCore.QObject | None = ..., *, splineVisible: bool | None = ..., splineTension: float | None = ..., splineKnotting: float | None = ..., splineLooping: bool | None = ..., splineColor: PySide6.QtGui.QColor | None = ..., splineResolution: int | None = ...) -> None: ...
@@ -1880,9 +3424,21 @@ class QSpline3DSeries(PySide6.QtGraphs.QScatter3DSeries):
 
 
 class QSplineSeries(PySide6.QtGraphs.QXYSeries):
-    capStyleChanged          : typing.ClassVar[Signal] = ... # capStyleChanged()
-    optimizedChanged         : typing.ClassVar[Signal] = ... # optimizedChanged(bool)
-    widthChanged             : typing.ClassVar[Signal] = ... # widthChanged()
+    # capStyleChanged()
+    capStyleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # optimizedChanged(bool)
+    optimizedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # widthChanged()
+    widthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, width: float | None = ..., capStyle: PySide6.QtCore.Qt.PenCapStyle | None = ..., optimized: bool | None = ...) -> None: ...
 
@@ -1898,19 +3454,71 @@ class QSplineSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QSurface3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-    axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
-    axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
-    axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
-    dataArrayChanged         : typing.ClassVar[Signal] = ... # dataArrayChanged(QSurfaceDataArray)
-    dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QSurfaceDataProxy*)
-    drawModeChanged          : typing.ClassVar[Signal] = ... # drawModeChanged(QSurface3DSeries::DrawFlags)
-    flatShadingSupportedChanged: typing.ClassVar[Signal] = ... # flatShadingSupportedChanged(bool)
-    rowsSanitizedChanged     : typing.ClassVar[Signal] = ... # rowsSanitizedChanged(bool)
-    selectedPointChanged     : typing.ClassVar[Signal] = ... # selectedPointChanged(QPoint)
-    shadingChanged           : typing.ClassVar[Signal] = ... # shadingChanged(Shading)
-    textureChanged           : typing.ClassVar[Signal] = ... # textureChanged(QImage)
-    textureFileChanged       : typing.ClassVar[Signal] = ... # textureFileChanged(QString)
-    wireframeColorChanged    : typing.ClassVar[Signal] = ... # wireframeColorChanged(QColor)
+    # axisXChanged(QValue3DAxis*)
+    axisXChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # axisYChanged(QValue3DAxis*)
+    axisYChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # axisZChanged(QValue3DAxis*)
+    axisZChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxis], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis], [PySide6.QtGraphs.QValue3DAxis]
+    ]]
+    # dataArrayChanged(QSurfaceDataArray)
+    dataArrayChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]], [collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]]]
+    ]]
+    # dataProxyChanged(QSurfaceDataProxy*)
+    dataProxyChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QSurfaceDataProxy], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy], [PySide6.QtGraphs.QSurfaceDataProxy]
+    ]]
+    # drawModeChanged(QSurface3DSeries::DrawFlags)
+    drawModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag], [PySide6.QtGraphs.QSurface3DSeries.DrawFlag]
+    ]]
+    # flatShadingSupportedChanged(bool)
+    flatShadingSupportedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # rowsSanitizedChanged(bool)
+    rowsSanitizedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # selectedPointChanged(QPoint)
+    selectedPointChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # shadingChanged(Shading)
+    shadingChanged: typing.ClassVar[Signal[
+        [Shading], [], [], [], [], [], [], [],
+        [Shading], [Shading], [Shading], [Shading], [Shading], [Shading], [Shading], [Shading]
+    ]]
+    # textureChanged(QImage)
+    textureChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImage], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage]
+    ]]
+    # textureFileChanged(QString)
+    textureFileChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # wireframeColorChanged(QColor)
+    wireframeColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
 
     class DrawFlag(enum.Flag):
         DrawWireframe             = 0x1
@@ -1983,15 +3591,51 @@ class QSurfaceDataItem(Shiboken.Object):
 
 
 class QSurfaceDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-    arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
-    columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged(qsizetype)
-    itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(qsizetype,qsizetype)
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged(qsizetype)
-    rowsAdded                : typing.ClassVar[Signal] = ... # rowsAdded(qsizetype,qsizetype)
-    rowsChanged              : typing.ClassVar[Signal] = ... # rowsChanged(qsizetype,qsizetype)
-    rowsInserted             : typing.ClassVar[Signal] = ... # rowsInserted(qsizetype,qsizetype)
-    rowsRemoved              : typing.ClassVar[Signal] = ... # rowsRemoved(qsizetype,qsizetype)
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged(QSurface3DSeries*)
+    # arrayReset()
+    arrayReset: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # columnCountChanged(qsizetype)
+    columnCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # itemChanged(qsizetype,qsizetype)
+    itemChanged: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowCountChanged(qsizetype)
+    rowCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # rowsAdded(qsizetype,qsizetype)
+    rowsAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsChanged(qsizetype,qsizetype)
+    rowsChanged: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsInserted(qsizetype,qsizetype)
+    rowsInserted: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # rowsRemoved(qsizetype,qsizetype)
+    rowsRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # seriesChanged(QSurface3DSeries*)
+    seriesChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QSurface3DSeries], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries], [PySide6.QtGraphs.QSurface3DSeries]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, rowCount: int | None = ..., columnCount: int | None = ..., series: PySide6.QtGraphs.QSurface3DSeries | None = ...) -> None: ...
 
@@ -2021,12 +3665,36 @@ class QSurfaceDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
 
 
 class QValue3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
-    formatterChanged         : typing.ClassVar[Signal] = ... # formatterChanged(QValue3DAxisFormatter*)
-    formatterDirty           : typing.ClassVar[Signal] = ... # formatterDirty()
-    labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
-    reversedChanged          : typing.ClassVar[Signal] = ... # reversedChanged(bool)
-    segmentCountChanged      : typing.ClassVar[Signal] = ... # segmentCountChanged(qsizetype)
-    subSegmentCountChanged   : typing.ClassVar[Signal] = ... # subSegmentCountChanged(qsizetype)
+    # formatterChanged(QValue3DAxisFormatter*)
+    formatterChanged: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QValue3DAxisFormatter], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter], [PySide6.QtGraphs.QValue3DAxisFormatter]
+    ]]
+    # formatterDirty()
+    formatterDirty: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelFormatChanged(QString)
+    labelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # reversedChanged(bool)
+    reversedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # segmentCountChanged(qsizetype)
+    segmentCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # subSegmentCountChanged(qsizetype)
+    subSegmentCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, segmentCount: int | None = ..., subSegmentCount: int | None = ..., labelFormat: str | None = ..., formatter: PySide6.QtGraphs.QValue3DAxisFormatter | None = ..., reversed: bool | None = ...) -> None: ...
 
@@ -2079,18 +3747,66 @@ class QValue3DAxisFormatter(PySide6.QtCore.QObject):
 
 
 class QValueAxis(PySide6.QtGraphs.QAbstractAxis):
-    labelDecimalsChanged     : typing.ClassVar[Signal] = ... # labelDecimalsChanged(int)
-    labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(double)
-    panChanged               : typing.ClassVar[Signal] = ... # panChanged(double)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(double,double)
-    subTickCountChanged      : typing.ClassVar[Signal] = ... # subTickCountChanged(qsizetype)
-    tickAnchorChanged        : typing.ClassVar[Signal] = ... # tickAnchorChanged(double)
-    tickIntervalChanged      : typing.ClassVar[Signal] = ... # tickIntervalChanged(double)
-    visualMaxChanged         : typing.ClassVar[Signal] = ... # visualMaxChanged(double)
-    visualMinChanged         : typing.ClassVar[Signal] = ... # visualMinChanged(double)
-    zoomChanged              : typing.ClassVar[Signal] = ... # zoomChanged(double)
+    # labelDecimalsChanged(int)
+    labelDecimalsChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # labelFormatChanged(QString)
+    labelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxChanged(double)
+    maxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minChanged(double)
+    minChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # panChanged(double)
+    panChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # rangeChanged(double,double)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # subTickCountChanged(qsizetype)
+    subTickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # tickAnchorChanged(double)
+    tickAnchorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # tickIntervalChanged(double)
+    tickIntervalChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # visualMaxChanged(double)
+    visualMaxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # visualMinChanged(double)
+    visualMinChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # zoomChanged(double)
+    zoomChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, min: float | None = ..., max: float | None = ..., labelFormat: str | None = ..., labelDecimals: int | None = ..., subTickCount: int | None = ..., tickAnchor: float | None = ..., tickInterval: float | None = ..., zoom: float | None = ..., pan: float | None = ..., visualMin: float | None = ..., visualMax: float | None = ...) -> None: ...
 
@@ -2123,13 +3839,41 @@ class QVector3DList:
 
 
 class QXYModelMapper(PySide6.QtCore.QObject):
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
-    modelChanged             : typing.ClassVar[Signal] = ... # modelChanged()
-    orientationChanged       : typing.ClassVar[Signal] = ... # orientationChanged()
-    seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged()
-    xSectionChanged          : typing.ClassVar[Signal] = ... # xSectionChanged()
-    ySectionChanged          : typing.ClassVar[Signal] = ... # ySectionChanged()
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstChanged()
+    firstChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelChanged()
+    modelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # orientationChanged()
+    orientationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesChanged()
+    seriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # xSectionChanged()
+    xSectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # ySectionChanged()
+    ySectionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QXYSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., xSection: int | None = ..., ySection: int | None = ..., first: int | None = ..., count: int | None = ..., orientation: PySide6.QtCore.Qt.Orientation | None = ...) -> None: ...
 
@@ -2150,23 +3894,91 @@ class QXYModelMapper(PySide6.QtCore.QObject):
 
 
 class QXYSeries(PySide6.QtGraphs.QAbstractSeries):
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPoint)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPoint)
-    draggableChanged         : typing.ClassVar[Signal] = ... # draggableChanged()
-    pointAdded               : typing.ClassVar[Signal] = ... # pointAdded(qsizetype)
-    pointDelegateChanged     : typing.ClassVar[Signal] = ... # pointDelegateChanged()
-    pointRemoved             : typing.ClassVar[Signal] = ... # pointRemoved(qsizetype)
-    pointReplaced            : typing.ClassVar[Signal] = ... # pointReplaced(qsizetype)
-    pointsAdded              : typing.ClassVar[Signal] = ... # pointsAdded(qsizetype,qsizetype)
-    pointsRemoved            : typing.ClassVar[Signal] = ... # pointsRemoved(qsizetype,qsizetype)
-    pointsReplaced           : typing.ClassVar[Signal] = ... # pointsReplaced()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPoint)
-    released                 : typing.ClassVar[Signal] = ... # released(QPoint)
-    selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
-    selectedPointsChanged    : typing.ClassVar[Signal] = ... # selectedPointsChanged()
-    seriesUpdated            : typing.ClassVar[Signal] = ... # seriesUpdated()
+    # clicked(QPoint)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(QPoint)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # draggableChanged()
+    draggableChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pointAdded(qsizetype)
+    pointAdded: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointDelegateChanged()
+    pointDelegateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pointRemoved(qsizetype)
+    pointRemoved: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointReplaced(qsizetype)
+    pointReplaced: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointsAdded(qsizetype,qsizetype)
+    pointsAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # pointsRemoved(qsizetype,qsizetype)
+    pointsRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # pointsReplaced()
+    pointsReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QPoint)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # released(QPoint)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPoint], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint], [PySide6.QtCore.QPoint]
+    ]]
+    # selectedColorChanged(QColor)
+    selectedColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # selectedPointsChanged()
+    selectedPointsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesUpdated()
+    seriesUpdated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __lshift__(self, points: collections.abc.Sequence[PySide6.QtCore.QPointF], /) -> PySide6.QtGraphs.QXYSeries: ...

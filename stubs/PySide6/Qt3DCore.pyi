@@ -39,12 +39,20 @@ class Qt3DCore(Shiboken.Object):
         def id(self, /) -> int: ...
 
     class QAbstractSkeleton(PySide6.Qt3DCore.Qt3DCore.QNode):
-        jointCountChanged        : typing.ClassVar[Signal] = ... # jointCountChanged(int)
+        # jointCountChanged(int)
+        jointCountChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         def jointCount(self, /) -> int: ...
 
     class QArmature(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        skeletonChanged          : typing.ClassVar[Signal] = ... # skeletonChanged(Qt3DCore::QAbstractSkeleton*)
+        # skeletonChanged(Qt3DCore::QAbstractSkeleton*)
+        skeletonChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton], [PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, skeleton: PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton | None = ...) -> None: ...
 
@@ -100,17 +108,61 @@ class Qt3DCore(Shiboken.Object):
         def reset(self, t: PySide6.Qt3DCore.Qt3DCore.QAspectJob, /) -> None: ...
 
     class QAttribute(PySide6.Qt3DCore.Qt3DCore.QNode):
-        attributeTypeChanged     : typing.ClassVar[Signal] = ... # attributeTypeChanged(AttributeType)
-        bufferChanged            : typing.ClassVar[Signal] = ... # bufferChanged(QBuffer*)
-        byteOffsetChanged        : typing.ClassVar[Signal] = ... # byteOffsetChanged(uint)
-        byteStrideChanged        : typing.ClassVar[Signal] = ... # byteStrideChanged(uint)
-        countChanged             : typing.ClassVar[Signal] = ... # countChanged(uint)
-        dataSizeChanged          : typing.ClassVar[Signal] = ... # dataSizeChanged(uint)
-        dataTypeChanged          : typing.ClassVar[Signal] = ... # dataTypeChanged(VertexBaseType)
-        divisorChanged           : typing.ClassVar[Signal] = ... # divisorChanged(uint)
-        nameChanged              : typing.ClassVar[Signal] = ... # nameChanged(QString)
-        vertexBaseTypeChanged    : typing.ClassVar[Signal] = ... # vertexBaseTypeChanged(VertexBaseType)
-        vertexSizeChanged        : typing.ClassVar[Signal] = ... # vertexSizeChanged(uint)
+        # attributeTypeChanged(AttributeType)
+        attributeTypeChanged: typing.ClassVar[Signal[
+            [AttributeType], [], [], [], [], [], [], [],
+            [AttributeType], [AttributeType], [AttributeType], [AttributeType], [AttributeType], [AttributeType], [AttributeType], [AttributeType]
+        ]]
+        # bufferChanged(QBuffer*)
+        bufferChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QBuffer], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer], [PySide6.QtCore.QBuffer]
+        ]]
+        # byteOffsetChanged(uint)
+        byteOffsetChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # byteStrideChanged(uint)
+        byteStrideChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # countChanged(uint)
+        countChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # dataSizeChanged(uint)
+        dataSizeChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # dataTypeChanged(VertexBaseType)
+        dataTypeChanged: typing.ClassVar[Signal[
+            [VertexBaseType], [], [], [], [], [], [], [],
+            [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType]
+        ]]
+        # divisorChanged(uint)
+        divisorChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # nameChanged(QString)
+        nameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # vertexBaseTypeChanged(VertexBaseType)
+        vertexBaseTypeChanged: typing.ClassVar[Signal[
+            [VertexBaseType], [], [], [], [], [], [], [],
+            [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType], [VertexBaseType]
+        ]]
+        # vertexSizeChanged(uint)
+        vertexSizeChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         class AttributeType(enum.Enum):
             VertexAttribute           = 0x0
@@ -208,12 +260,36 @@ class Qt3DCore(Shiboken.Object):
         def reset(self, t: PySide6.Qt3DCore.Qt3DCore.QBackendNodeMapper, /) -> None: ...
 
     class QBoundingVolume(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        implicitMaxPointChanged  : typing.ClassVar[Signal] = ... # implicitMaxPointChanged(QVector3D)
-        implicitMinPointChanged  : typing.ClassVar[Signal] = ... # implicitMinPointChanged(QVector3D)
-        implicitPointsValidChanged: typing.ClassVar[Signal] = ... # implicitPointsValidChanged(bool)
-        maxPointChanged          : typing.ClassVar[Signal] = ... # maxPointChanged(QVector3D)
-        minPointChanged          : typing.ClassVar[Signal] = ... # minPointChanged(QVector3D)
-        viewChanged              : typing.ClassVar[Signal] = ... # viewChanged(QGeometryView*)
+        # implicitMaxPointChanged(QVector3D)
+        implicitMaxPointChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # implicitMinPointChanged(QVector3D)
+        implicitMinPointChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # implicitPointsValidChanged(bool)
+        implicitPointsValidChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # maxPointChanged(QVector3D)
+        maxPointChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # minPointChanged(QVector3D)
+        minPointChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # viewChanged(QGeometryView*)
+        viewChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView], [PySide6.Qt3DCore.Qt3DCore.QGeometryView]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, view: PySide6.Qt3DCore.Qt3DCore.QGeometryView | None = ..., implicitMinPoint: PySide6.QtGui.QVector3D | None = ..., implicitMaxPoint: PySide6.QtGui.QVector3D | None = ..., implicitPointsValid: bool | None = ..., minPoint: PySide6.QtGui.QVector3D | None = ..., maxPoint: PySide6.QtGui.QVector3D | None = ...) -> None: ...
 
@@ -229,10 +305,26 @@ class Qt3DCore(Shiboken.Object):
         def view(self, /) -> PySide6.Qt3DCore.Qt3DCore.QGeometryView: ...
 
     class QBuffer(PySide6.Qt3DCore.Qt3DCore.QNode):
-        accessTypeChanged        : typing.ClassVar[Signal] = ... # accessTypeChanged(AccessType)
-        dataAvailable            : typing.ClassVar[Signal] = ... # dataAvailable()
-        dataChanged              : typing.ClassVar[Signal] = ... # dataChanged(QByteArray)
-        usageChanged             : typing.ClassVar[Signal] = ... # usageChanged(UsageType)
+        # accessTypeChanged(AccessType)
+        accessTypeChanged: typing.ClassVar[Signal[
+            [AccessType], [], [], [], [], [], [], [],
+            [AccessType], [AccessType], [AccessType], [AccessType], [AccessType], [AccessType], [AccessType], [AccessType]
+        ]]
+        # dataAvailable()
+        dataAvailable: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # dataChanged(QByteArray)
+        dataChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QByteArray], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray], [PySide6.QtCore.QByteArray]
+        ]]
+        # usageChanged(UsageType)
+        usageChanged: typing.ClassVar[Signal[
+            [UsageType], [], [], [], [], [], [], [],
+            [UsageType], [UsageType], [UsageType], [UsageType], [UsageType], [UsageType], [UsageType], [UsageType]
+        ]]
 
         class AccessType(enum.Enum):
             Write                     = 0x1
@@ -261,9 +353,21 @@ class Qt3DCore(Shiboken.Object):
         def usage(self, /) -> PySide6.Qt3DCore.Qt3DCore.QBuffer.UsageType: ...
 
     class QComponent(PySide6.Qt3DCore.Qt3DCore.QNode):
-        addedToEntity            : typing.ClassVar[Signal] = ... # addedToEntity(QEntity*)
-        removedFromEntity        : typing.ClassVar[Signal] = ... # removedFromEntity(QEntity*)
-        shareableChanged         : typing.ClassVar[Signal] = ... # shareableChanged(bool)
+        # addedToEntity(QEntity*)
+        addedToEntity: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity]
+        ]]
+        # removedFromEntity(QEntity*)
+        removedFromEntity: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity], [PySide6.Qt3DCore.Qt3DCore.QEntity]
+        ]]
+        # shareableChanged(bool)
+        shareableChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, isShareable: bool | None = ...) -> None: ...
 
@@ -277,7 +381,11 @@ class Qt3DCore(Shiboken.Object):
         def calculateBoundingVolumeJob(self, /) -> PySide6.Qt3DCore.Qt3DCore.QAspectJobPtr: ...
 
     class QCoreSettings(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        boundingVolumesEnabledChanged: typing.ClassVar[Signal] = ... # boundingVolumesEnabledChanged(bool)
+        # boundingVolumesEnabledChanged(bool)
+        boundingVolumesEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, boundingVolumesEnabled: bool | None = ...) -> None: ...
 
@@ -308,9 +416,21 @@ class Qt3DCore(Shiboken.Object):
         def reset(self, t: PySide6.Qt3DCore.Qt3DCore.QEntity, /) -> None: ...
 
     class QGeometry(PySide6.Qt3DCore.Qt3DCore.QNode):
-        boundingVolumePositionAttributeChanged: typing.ClassVar[Signal] = ... # boundingVolumePositionAttributeChanged(QAttribute*)
-        maxExtentChanged         : typing.ClassVar[Signal] = ... # maxExtentChanged(QVector3D)
-        minExtentChanged         : typing.ClassVar[Signal] = ... # minExtentChanged(QVector3D)
+        # boundingVolumePositionAttributeChanged(QAttribute*)
+        boundingVolumePositionAttributeChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QAttribute], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute], [PySide6.Qt3DCore.Qt3DCore.QAttribute]
+        ]]
+        # maxExtentChanged(QVector3D)
+        maxExtentChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # minExtentChanged(QVector3D)
+        minExtentChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, boundingVolumePositionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute | None = ..., minExtent: PySide6.QtGui.QVector3D | None = ..., maxExtent: PySide6.QtGui.QVector3D | None = ...) -> None: ...
 
@@ -323,17 +443,61 @@ class Qt3DCore(Shiboken.Object):
         def setBoundingVolumePositionAttribute(self, boundingVolumePositionAttribute: PySide6.Qt3DCore.Qt3DCore.QAttribute, /) -> None: ...
 
     class QGeometryView(PySide6.Qt3DCore.Qt3DCore.QNode):
-        firstInstanceChanged     : typing.ClassVar[Signal] = ... # firstInstanceChanged(int)
-        firstVertexChanged       : typing.ClassVar[Signal] = ... # firstVertexChanged(int)
-        geometryChanged          : typing.ClassVar[Signal] = ... # geometryChanged(QGeometry*)
-        indexBufferByteOffsetChanged: typing.ClassVar[Signal] = ... # indexBufferByteOffsetChanged(int)
-        indexOffsetChanged       : typing.ClassVar[Signal] = ... # indexOffsetChanged(int)
-        instanceCountChanged     : typing.ClassVar[Signal] = ... # instanceCountChanged(int)
-        primitiveRestartEnabledChanged: typing.ClassVar[Signal] = ... # primitiveRestartEnabledChanged(bool)
-        primitiveTypeChanged     : typing.ClassVar[Signal] = ... # primitiveTypeChanged(PrimitiveType)
-        restartIndexValueChanged : typing.ClassVar[Signal] = ... # restartIndexValueChanged(int)
-        vertexCountChanged       : typing.ClassVar[Signal] = ... # vertexCountChanged(int)
-        verticesPerPatchChanged  : typing.ClassVar[Signal] = ... # verticesPerPatchChanged(int)
+        # firstInstanceChanged(int)
+        firstInstanceChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # firstVertexChanged(int)
+        firstVertexChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # geometryChanged(QGeometry*)
+        geometryChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QGeometry], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry], [PySide6.Qt3DCore.Qt3DCore.QGeometry]
+        ]]
+        # indexBufferByteOffsetChanged(int)
+        indexBufferByteOffsetChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # indexOffsetChanged(int)
+        indexOffsetChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # instanceCountChanged(int)
+        instanceCountChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # primitiveRestartEnabledChanged(bool)
+        primitiveRestartEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # primitiveTypeChanged(PrimitiveType)
+        primitiveTypeChanged: typing.ClassVar[Signal[
+            [PrimitiveType], [], [], [], [], [], [], [],
+            [PrimitiveType], [PrimitiveType], [PrimitiveType], [PrimitiveType], [PrimitiveType], [PrimitiveType], [PrimitiveType], [PrimitiveType]
+        ]]
+        # restartIndexValueChanged(int)
+        restartIndexValueChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # vertexCountChanged(int)
+        vertexCountChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
+        # verticesPerPatchChanged(int)
+        verticesPerPatchChanged: typing.ClassVar[Signal[
+            [int], [], [], [], [], [], [], [],
+            [int], [int], [int], [int], [int], [int], [int], [int]
+        ]]
 
         class PrimitiveType(enum.Enum):
             Points                    = 0x0
@@ -375,14 +539,46 @@ class Qt3DCore(Shiboken.Object):
         def verticesPerPatch(self, /) -> int: ...
 
     class QJoint(PySide6.Qt3DCore.Qt3DCore.QNode):
-        inverseBindMatrixChanged : typing.ClassVar[Signal] = ... # inverseBindMatrixChanged(QMatrix4x4)
-        nameChanged              : typing.ClassVar[Signal] = ... # nameChanged(QString)
-        rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged(QQuaternion)
-        rotationXChanged         : typing.ClassVar[Signal] = ... # rotationXChanged(float)
-        rotationYChanged         : typing.ClassVar[Signal] = ... # rotationYChanged(float)
-        rotationZChanged         : typing.ClassVar[Signal] = ... # rotationZChanged(float)
-        scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged(QVector3D)
-        translationChanged       : typing.ClassVar[Signal] = ... # translationChanged(QVector3D)
+        # inverseBindMatrixChanged(QMatrix4x4)
+        inverseBindMatrixChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QMatrix4x4], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4]
+        ]]
+        # nameChanged(QString)
+        nameChanged: typing.ClassVar[Signal[
+            [str], [], [], [], [], [], [], [],
+            [str], [str], [str], [str], [str], [str], [str], [str]
+        ]]
+        # rotationChanged(QQuaternion)
+        rotationChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QQuaternion], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion]
+        ]]
+        # rotationXChanged(float)
+        rotationXChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # rotationYChanged(float)
+        rotationYChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # rotationZChanged(float)
+        rotationZChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # scaleChanged(QVector3D)
+        scaleChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # translationChanged(QVector3D)
+        translationChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, scale: PySide6.QtGui.QVector3D | None = ..., rotation: PySide6.QtGui.QQuaternion | None = ..., translation: PySide6.QtGui.QVector3D | None = ..., inverseBindMatrix: PySide6.QtGui.QMatrix4x4 | None = ..., rotationX: float | None = ..., rotationY: float | None = ..., rotationZ: float | None = ..., name: str | None = ...) -> None: ...
 
@@ -408,9 +604,21 @@ class Qt3DCore(Shiboken.Object):
         def translation(self, /) -> PySide6.QtGui.QVector3D: ...
 
     class QNode(PySide6.QtCore.QObject):
-        enabledChanged           : typing.ClassVar[Signal] = ... # enabledChanged(bool)
-        nodeDestroyed            : typing.ClassVar[Signal] = ... # nodeDestroyed()
-        parentChanged            : typing.ClassVar[Signal] = ... # parentChanged(QObject*)
+        # enabledChanged(bool)
+        enabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # nodeDestroyed()
+        nodeDestroyed: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # parentChanged(QObject*)
+        parentChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QObject], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject], [PySide6.QtCore.QObject]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, enabled: bool | None = ...) -> None: ...
 
@@ -460,7 +668,11 @@ class Qt3DCore(Shiboken.Object):
         def __copy__(self, /) -> typing.Self: ...
 
     class QSkeleton(PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton):
-        rootJointChanged         : typing.ClassVar[Signal] = ... # rootJointChanged(Qt3DCore::QJoint*)
+        # rootJointChanged(Qt3DCore::QJoint*)
+        rootJointChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QJoint], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, rootJoint: PySide6.Qt3DCore.Qt3DCore.QJoint | None = ...) -> None: ...
 
@@ -468,10 +680,26 @@ class Qt3DCore(Shiboken.Object):
         def setRootJoint(self, rootJoint: PySide6.Qt3DCore.Qt3DCore.QJoint, /) -> None: ...
 
     class QSkeletonLoader(PySide6.Qt3DCore.Qt3DCore.QAbstractSkeleton):
-        createJointsEnabledChanged: typing.ClassVar[Signal] = ... # createJointsEnabledChanged(bool)
-        rootJointChanged         : typing.ClassVar[Signal] = ... # rootJointChanged(Qt3DCore::QJoint*)
-        sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged(QUrl)
-        statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(Status)
+        # createJointsEnabledChanged(bool)
+        createJointsEnabledChanged: typing.ClassVar[Signal[
+            [bool], [], [], [], [], [], [], [],
+            [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+        ]]
+        # rootJointChanged(Qt3DCore::QJoint*)
+        rootJointChanged: typing.ClassVar[Signal[
+            [PySide6.Qt3DCore.Qt3DCore.QJoint], [], [], [], [], [], [], [],
+            [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint], [PySide6.Qt3DCore.Qt3DCore.QJoint]
+        ]]
+        # sourceChanged(QUrl)
+        sourceChanged: typing.ClassVar[Signal[
+            [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+            [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+        ]]
+        # statusChanged(Status)
+        statusChanged: typing.ClassVar[Signal[
+            [Status], [], [], [], [], [], [], [],
+            [Status], [Status], [Status], [Status], [Status], [Status], [Status], [Status]
+        ]]
 
         class Status(enum.Enum):
             NotReady                  = 0x0
@@ -491,15 +719,51 @@ class Qt3DCore(Shiboken.Object):
         def status(self, /) -> PySide6.Qt3DCore.Qt3DCore.QSkeletonLoader.Status: ...
 
     class QTransform(PySide6.Qt3DCore.Qt3DCore.QComponent):
-        matrixChanged            : typing.ClassVar[Signal] = ... # matrixChanged()
-        rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged(QQuaternion)
-        rotationXChanged         : typing.ClassVar[Signal] = ... # rotationXChanged(float)
-        rotationYChanged         : typing.ClassVar[Signal] = ... # rotationYChanged(float)
-        rotationZChanged         : typing.ClassVar[Signal] = ... # rotationZChanged(float)
-        scale3DChanged           : typing.ClassVar[Signal] = ... # scale3DChanged(QVector3D)
-        scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged(float)
-        translationChanged       : typing.ClassVar[Signal] = ... # translationChanged(QVector3D)
-        worldMatrixChanged       : typing.ClassVar[Signal] = ... # worldMatrixChanged(QMatrix4x4)
+        # matrixChanged()
+        matrixChanged: typing.ClassVar[Signal[
+            [], [], [], [], [], [], [], [],
+            [], [], [], [], [], [], [], []
+        ]]
+        # rotationChanged(QQuaternion)
+        rotationChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QQuaternion], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion], [PySide6.QtGui.QQuaternion]
+        ]]
+        # rotationXChanged(float)
+        rotationXChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # rotationYChanged(float)
+        rotationYChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # rotationZChanged(float)
+        rotationZChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # scale3DChanged(QVector3D)
+        scale3DChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # scaleChanged(float)
+        scaleChanged: typing.ClassVar[Signal[
+            [float], [], [], [], [], [], [], [],
+            [float], [float], [float], [float], [float], [float], [float], [float]
+        ]]
+        # translationChanged(QVector3D)
+        translationChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QVector3D], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D], [PySide6.QtGui.QVector3D]
+        ]]
+        # worldMatrixChanged(QMatrix4x4)
+        worldMatrixChanged: typing.ClassVar[Signal[
+            [PySide6.QtGui.QMatrix4x4], [], [], [], [], [], [], [],
+            [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4], [PySide6.QtGui.QMatrix4x4]
+        ]]
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, matrix: PySide6.QtGui.QMatrix4x4 | None = ..., scale: float | None = ..., scale3D: PySide6.QtGui.QVector3D | None = ..., rotation: PySide6.QtGui.QQuaternion | None = ..., translation: PySide6.QtGui.QVector3D | None = ..., rotationX: float | None = ..., rotationY: float | None = ..., rotationZ: float | None = ..., worldMatrix: PySide6.QtGui.QMatrix4x4 | None = ...) -> None: ...
 

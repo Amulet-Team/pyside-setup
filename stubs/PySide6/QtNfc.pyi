@@ -295,10 +295,26 @@ class QNdefRecord(Shiboken.Object):
 
 
 class QNearFieldManager(PySide6.QtCore.QObject):
-    adapterStateChanged      : typing.ClassVar[Signal] = ... # adapterStateChanged(QNearFieldManager::AdapterState)
-    targetDetected           : typing.ClassVar[Signal] = ... # targetDetected(QNearFieldTarget*)
-    targetDetectionStopped   : typing.ClassVar[Signal] = ... # targetDetectionStopped()
-    targetLost               : typing.ClassVar[Signal] = ... # targetLost(QNearFieldTarget*)
+    # adapterStateChanged(QNearFieldManager::AdapterState)
+    adapterStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNearFieldManager.AdapterState], [], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState], [PySide6.QtNfc.QNearFieldManager.AdapterState]
+    ]]
+    # targetDetected(QNearFieldTarget*)
+    targetDetected: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNearFieldTarget], [], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget]
+    ]]
+    # targetDetectionStopped()
+    targetDetectionStopped: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # targetLost(QNearFieldTarget*)
+    targetLost: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNearFieldTarget], [], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget], [PySide6.QtNfc.QNearFieldTarget]
+    ]]
 
     class AdapterState(enum.Enum):
         Offline                   = 0x1
@@ -316,10 +332,26 @@ class QNearFieldManager(PySide6.QtCore.QObject):
 
 
 class QNearFieldTarget(PySide6.QtCore.QObject):
-    disconnected             : typing.ClassVar[Signal] = ... # disconnected()
-    error                    : typing.ClassVar[Signal] = ... # error(QNearFieldTarget::Error,QNearFieldTarget::RequestId)
-    ndefMessageRead          : typing.ClassVar[Signal] = ... # ndefMessageRead(QNdefMessage)
-    requestCompleted         : typing.ClassVar[Signal] = ... # requestCompleted(QNearFieldTarget::RequestId)
+    # disconnected()
+    disconnected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # error(QNearFieldTarget::Error,QNearFieldTarget::RequestId)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.Error, PySide6.QtNfc.QNearFieldTarget.RequestId]
+    ]]
+    # ndefMessageRead(QNdefMessage)
+    ndefMessageRead: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNdefMessage], [], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage], [PySide6.QtNfc.QNdefMessage]
+    ]]
+    # requestCompleted(QNearFieldTarget::RequestId)
+    requestCompleted: typing.ClassVar[Signal[
+        [PySide6.QtNfc.QNearFieldTarget.RequestId], [], [], [], [], [], [], [],
+        [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId], [PySide6.QtNfc.QNearFieldTarget.RequestId]
+    ]]
 
     class AccessMethod(enum.Flag):
         UnknownAccess             = 0x0

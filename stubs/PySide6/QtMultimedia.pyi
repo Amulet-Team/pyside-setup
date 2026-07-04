@@ -89,7 +89,11 @@ class QAudioBuffer(Shiboken.Object):
 
 
 class QAudioBufferInput(PySide6.QtCore.QObject):
-    readyToSendAudioBuffer   : typing.ClassVar[Signal] = ... # readyToSendAudioBuffer()
+    # readyToSendAudioBuffer()
+    readyToSendAudioBuffer: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, format: PySide6.QtMultimedia.QAudioFormat, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -102,7 +106,11 @@ class QAudioBufferInput(PySide6.QtCore.QObject):
 
 
 class QAudioBufferOutput(PySide6.QtCore.QObject):
-    audioBufferReceived      : typing.ClassVar[Signal] = ... # audioBufferReceived(QAudioBuffer)
+    # audioBufferReceived(QAudioBuffer)
+    audioBufferReceived: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudioBuffer], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer], [PySide6.QtMultimedia.QAudioBuffer]
+    ]]
 
     @typing.overload
     def __init__(self, format: PySide6.QtMultimedia.QAudioFormat, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -113,15 +121,51 @@ class QAudioBufferOutput(PySide6.QtCore.QObject):
 
 
 class QAudioDecoder(PySide6.QtCore.QObject):
-    bufferAvailableChanged   : typing.ClassVar[Signal] = ... # bufferAvailableChanged(bool)
-    bufferReady              : typing.ClassVar[Signal] = ... # bufferReady()
-    durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(qlonglong)
-    error                    : typing.ClassVar[Signal] = ... # error(QAudioDecoder::Error)
-    finished                 : typing.ClassVar[Signal] = ... # finished()
-    formatChanged            : typing.ClassVar[Signal] = ... # formatChanged(QAudioFormat)
-    isDecodingChanged        : typing.ClassVar[Signal] = ... # isDecodingChanged(bool)
-    positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(qlonglong)
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
+    # bufferAvailableChanged(bool)
+    bufferAvailableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # bufferReady()
+    bufferReady: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # durationChanged(qlonglong)
+    durationChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # error(QAudioDecoder::Error)
+    error: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudioDecoder.Error], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error], [PySide6.QtMultimedia.QAudioDecoder.Error]
+    ]]
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # formatChanged(QAudioFormat)
+    formatChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudioFormat], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat], [PySide6.QtMultimedia.QAudioFormat]
+    ]]
+    # isDecodingChanged(bool)
+    isDecodingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # positionChanged(qlonglong)
+    positionChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # sourceChanged()
+    sourceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -260,9 +304,21 @@ class QAudioFormat(Shiboken.Object):
 
 
 class QAudioInput(PySide6.QtCore.QObject):
-    deviceChanged            : typing.ClassVar[Signal] = ... # deviceChanged()
-    mutedChanged             : typing.ClassVar[Signal] = ... # mutedChanged(bool)
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged(float)
+    # deviceChanged()
+    deviceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mutedChanged(bool)
+    mutedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # volumeChanged(float)
+    volumeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     @typing.overload
     def __init__(self, deviceInfo: PySide6.QtMultimedia.QAudioDevice, /, parent: PySide6.QtCore.QObject | None = ..., *, device: PySide6.QtMultimedia.QAudioDevice | None = ..., volume: float | None = ..., muted: bool | None = ...) -> None: ...
@@ -278,9 +334,21 @@ class QAudioInput(PySide6.QtCore.QObject):
 
 
 class QAudioOutput(PySide6.QtCore.QObject):
-    deviceChanged            : typing.ClassVar[Signal] = ... # deviceChanged()
-    mutedChanged             : typing.ClassVar[Signal] = ... # mutedChanged(bool)
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged(float)
+    # deviceChanged()
+    deviceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mutedChanged(bool)
+    mutedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # volumeChanged(float)
+    volumeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     @typing.overload
     def __init__(self, device: PySide6.QtMultimedia.QAudioDevice, /, parent: PySide6.QtCore.QObject | None = ..., *, volume: float | None = ..., muted: bool | None = ...) -> None: ...
@@ -296,7 +364,11 @@ class QAudioOutput(PySide6.QtCore.QObject):
 
 
 class QAudioSink(PySide6.QtCore.QObject):
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QAudio::State)
+    # stateChanged(QAudio::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudio.State], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State]
+    ]]
 
     @typing.overload
     def __init__(self, audioDeviceInfo: PySide6.QtMultimedia.QAudioDevice, /, format: PySide6.QtMultimedia.QAudioFormat = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -328,7 +400,11 @@ class QAudioSink(PySide6.QtCore.QObject):
 
 
 class QAudioSource(PySide6.QtCore.QObject):
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QAudio::State)
+    # stateChanged(QAudio::State)
+    stateChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QAudio.State], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State], [PySide6.QtMultimedia.QAudio.State]
+    ]]
 
     @typing.overload
     def __init__(self, audioDeviceInfo: PySide6.QtMultimedia.QAudioDevice, /, format: PySide6.QtMultimedia.QAudioFormat = ..., parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -360,34 +436,146 @@ class QAudioSource(PySide6.QtCore.QObject):
 
 
 class QCamera(PySide6.QtCore.QObject):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
-    brightnessChanged        : typing.ClassVar[Signal] = ... # brightnessChanged()
-    cameraDeviceChanged      : typing.ClassVar[Signal] = ... # cameraDeviceChanged()
-    cameraFormatChanged      : typing.ClassVar[Signal] = ... # cameraFormatChanged()
-    colorTemperatureChanged  : typing.ClassVar[Signal] = ... # colorTemperatureChanged()
-    contrastChanged          : typing.ClassVar[Signal] = ... # contrastChanged()
-    customFocusPointChanged  : typing.ClassVar[Signal] = ... # customFocusPointChanged()
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QCamera::Error,QString)
-    exposureCompensationChanged: typing.ClassVar[Signal] = ... # exposureCompensationChanged(float)
-    exposureModeChanged      : typing.ClassVar[Signal] = ... # exposureModeChanged()
-    exposureTimeChanged      : typing.ClassVar[Signal] = ... # exposureTimeChanged(float)
-    flashModeChanged         : typing.ClassVar[Signal] = ... # flashModeChanged()
-    flashReady               : typing.ClassVar[Signal] = ... # flashReady(bool)
-    focusDistanceChanged     : typing.ClassVar[Signal] = ... # focusDistanceChanged(float)
-    focusModeChanged         : typing.ClassVar[Signal] = ... # focusModeChanged()
-    focusPointChanged        : typing.ClassVar[Signal] = ... # focusPointChanged()
-    hueChanged               : typing.ClassVar[Signal] = ... # hueChanged()
-    isoSensitivityChanged    : typing.ClassVar[Signal] = ... # isoSensitivityChanged(int)
-    manualExposureTimeChanged: typing.ClassVar[Signal] = ... # manualExposureTimeChanged(float)
-    manualIsoSensitivityChanged: typing.ClassVar[Signal] = ... # manualIsoSensitivityChanged(int)
-    maximumZoomFactorChanged : typing.ClassVar[Signal] = ... # maximumZoomFactorChanged(float)
-    minimumZoomFactorChanged : typing.ClassVar[Signal] = ... # minimumZoomFactorChanged(float)
-    saturationChanged        : typing.ClassVar[Signal] = ... # saturationChanged()
-    supportedFeaturesChanged : typing.ClassVar[Signal] = ... # supportedFeaturesChanged()
-    torchModeChanged         : typing.ClassVar[Signal] = ... # torchModeChanged()
-    whiteBalanceModeChanged  : typing.ClassVar[Signal] = ... # whiteBalanceModeChanged()
-    zoomFactorChanged        : typing.ClassVar[Signal] = ... # zoomFactorChanged(float)
+    # activeChanged(bool)
+    activeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # brightnessChanged()
+    brightnessChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cameraDeviceChanged()
+    cameraDeviceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cameraFormatChanged()
+    cameraFormatChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorTemperatureChanged()
+    colorTemperatureChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # contrastChanged()
+    contrastChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # customFocusPointChanged()
+    customFocusPointChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QCamera::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str], [PySide6.QtMultimedia.QCamera.Error, str]
+    ]]
+    # exposureCompensationChanged(float)
+    exposureCompensationChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # exposureModeChanged()
+    exposureModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # exposureTimeChanged(float)
+    exposureTimeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # flashModeChanged()
+    flashModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # flashReady(bool)
+    flashReady: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # focusDistanceChanged(float)
+    focusDistanceChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # focusModeChanged()
+    focusModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # focusPointChanged()
+    focusPointChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hueChanged()
+    hueChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # isoSensitivityChanged(int)
+    isoSensitivityChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # manualExposureTimeChanged(float)
+    manualExposureTimeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # manualIsoSensitivityChanged(int)
+    manualIsoSensitivityChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # maximumZoomFactorChanged(float)
+    maximumZoomFactorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minimumZoomFactorChanged(float)
+    minimumZoomFactorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # saturationChanged()
+    saturationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # supportedFeaturesChanged()
+    supportedFeaturesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # torchModeChanged()
+    torchModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # whiteBalanceModeChanged()
+    whiteBalanceModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # zoomFactorChanged(float)
+    zoomFactorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -570,18 +758,66 @@ class QCapturableWindow(Shiboken.Object):
 
 
 class QImageCapture(PySide6.QtCore.QObject):
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(int,QImageCapture::Error,QString)
-    fileFormatChanged        : typing.ClassVar[Signal] = ... # fileFormatChanged()
-    imageAvailable           : typing.ClassVar[Signal] = ... # imageAvailable(int,QVideoFrame)
-    imageCaptured            : typing.ClassVar[Signal] = ... # imageCaptured(int,QImage)
-    imageExposed             : typing.ClassVar[Signal] = ... # imageExposed(int)
-    imageMetadataAvailable   : typing.ClassVar[Signal] = ... # imageMetadataAvailable(int,QMediaMetaData)
-    imageSaved               : typing.ClassVar[Signal] = ... # imageSaved(int,QString)
-    metaDataChanged          : typing.ClassVar[Signal] = ... # metaDataChanged()
-    qualityChanged           : typing.ClassVar[Signal] = ... # qualityChanged()
-    readyForCaptureChanged   : typing.ClassVar[Signal] = ... # readyForCaptureChanged(bool)
-    resolutionChanged        : typing.ClassVar[Signal] = ... # resolutionChanged()
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(int,QImageCapture::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error], [int], [], [], [], [], [],
+        [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str], [int, PySide6.QtMultimedia.QImageCapture.Error, str]
+    ]]
+    # fileFormatChanged()
+    fileFormatChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # imageAvailable(int,QVideoFrame)
+    imageAvailable: typing.ClassVar[Signal[
+        [int, PySide6.QtMultimedia.QVideoFrame], [int], [], [], [], [], [], [],
+        [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame], [int, PySide6.QtMultimedia.QVideoFrame]
+    ]]
+    # imageCaptured(int,QImage)
+    imageCaptured: typing.ClassVar[Signal[
+        [int, PySide6.QtGui.QImage], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage], [int, PySide6.QtGui.QImage]
+    ]]
+    # imageExposed(int)
+    imageExposed: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # imageMetadataAvailable(int,QMediaMetaData)
+    imageMetadataAvailable: typing.ClassVar[Signal[
+        [int, PySide6.QtMultimedia.QMediaMetaData], [int], [], [], [], [], [], [],
+        [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData], [int, PySide6.QtMultimedia.QMediaMetaData]
+    ]]
+    # imageSaved(int,QString)
+    imageSaved: typing.ClassVar[Signal[
+        [int, str], [int], [], [], [], [], [], [],
+        [int, str], [int, str], [int, str], [int, str], [int, str], [int, str], [int, str], [int, str]
+    ]]
+    # metaDataChanged()
+    metaDataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # qualityChanged()
+    qualityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # readyForCaptureChanged(bool)
+    readyForCaptureChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # resolutionChanged()
+    resolutionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -640,16 +876,56 @@ class QIntList:
 
 
 class QMediaCaptureSession(PySide6.QtCore.QObject):
-    audioBufferInputChanged  : typing.ClassVar[Signal] = ... # audioBufferInputChanged()
-    audioInputChanged        : typing.ClassVar[Signal] = ... # audioInputChanged()
-    audioOutputChanged       : typing.ClassVar[Signal] = ... # audioOutputChanged()
-    cameraChanged            : typing.ClassVar[Signal] = ... # cameraChanged()
-    imageCaptureChanged      : typing.ClassVar[Signal] = ... # imageCaptureChanged()
-    recorderChanged          : typing.ClassVar[Signal] = ... # recorderChanged()
-    screenCaptureChanged     : typing.ClassVar[Signal] = ... # screenCaptureChanged()
-    videoFrameInputChanged   : typing.ClassVar[Signal] = ... # videoFrameInputChanged()
-    videoOutputChanged       : typing.ClassVar[Signal] = ... # videoOutputChanged()
-    windowCaptureChanged     : typing.ClassVar[Signal] = ... # windowCaptureChanged()
+    # audioBufferInputChanged()
+    audioBufferInputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioInputChanged()
+    audioInputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioOutputChanged()
+    audioOutputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cameraChanged()
+    cameraChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # imageCaptureChanged()
+    imageCaptureChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # recorderChanged()
+    recorderChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # screenCaptureChanged()
+    screenCaptureChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoFrameInputChanged()
+    videoFrameInputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoOutputChanged()
+    videoOutputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # windowCaptureChanged()
+    windowCaptureChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, audioInput: PySide6.QtMultimedia.QAudioInput | None = ..., audioBufferInput: PySide6.QtMultimedia.QAudioBufferInput | None = ..., audioOutput: PySide6.QtMultimedia.QAudioOutput | None = ..., camera: PySide6.QtMultimedia.QCamera | None = ..., screenCapture: PySide6.QtMultimedia.QScreenCapture | None = ..., windowCapture: PySide6.QtMultimedia.QWindowCapture | None = ..., videoFrameInput: PySide6.QtMultimedia.QVideoFrameInput | None = ..., imageCapture: PySide6.QtMultimedia.QImageCapture | None = ..., recorder: PySide6.QtMultimedia.QMediaRecorder | None = ..., videoOutput: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -678,9 +954,21 @@ class QMediaCaptureSession(PySide6.QtCore.QObject):
 
 
 class QMediaDevices(PySide6.QtCore.QObject):
-    audioInputsChanged       : typing.ClassVar[Signal] = ... # audioInputsChanged()
-    audioOutputsChanged      : typing.ClassVar[Signal] = ... # audioOutputsChanged()
-    videoInputsChanged       : typing.ClassVar[Signal] = ... # videoInputsChanged()
+    # audioInputsChanged()
+    audioInputsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioOutputsChanged()
+    audioOutputsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoInputsChanged()
+    videoInputsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, audioInputs: collections.abc.Sequence[PySide6.QtMultimedia.QAudioDevice] | None = ..., audioOutputs: collections.abc.Sequence[PySide6.QtMultimedia.QAudioDevice] | None = ..., videoInputs: collections.abc.Sequence[PySide6.QtMultimedia.QCameraDevice] | None = ..., defaultAudioInput: PySide6.QtMultimedia.QAudioDevice | None = ..., defaultAudioOutput: PySide6.QtMultimedia.QAudioDevice | None = ..., defaultVideoInput: PySide6.QtMultimedia.QCameraDevice | None = ...) -> None: ...
 
@@ -862,28 +1150,116 @@ class QMediaMetaData(Shiboken.Object):
 
 
 class QMediaPlayer(PySide6.QtCore.QObject):
-    activeTracksChanged      : typing.ClassVar[Signal] = ... # activeTracksChanged()
-    audioBufferOutputChanged : typing.ClassVar[Signal] = ... # audioBufferOutputChanged()
-    audioOutputChanged       : typing.ClassVar[Signal] = ... # audioOutputChanged()
-    bufferProgressChanged    : typing.ClassVar[Signal] = ... # bufferProgressChanged(float)
-    durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(qlonglong)
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QMediaPlayer::Error,QString)
-    hasAudioChanged          : typing.ClassVar[Signal] = ... # hasAudioChanged(bool)
-    hasVideoChanged          : typing.ClassVar[Signal] = ... # hasVideoChanged(bool)
-    loopsChanged             : typing.ClassVar[Signal] = ... # loopsChanged()
-    mediaStatusChanged       : typing.ClassVar[Signal] = ... # mediaStatusChanged(QMediaPlayer::MediaStatus)
-    metaDataChanged          : typing.ClassVar[Signal] = ... # metaDataChanged()
-    pitchCompensationChanged : typing.ClassVar[Signal] = ... # pitchCompensationChanged(bool)
-    playbackOptionsChanged   : typing.ClassVar[Signal] = ... # playbackOptionsChanged()
-    playbackRateChanged      : typing.ClassVar[Signal] = ... # playbackRateChanged(double)
-    playbackStateChanged     : typing.ClassVar[Signal] = ... # playbackStateChanged(QMediaPlayer::PlaybackState)
-    playingChanged           : typing.ClassVar[Signal] = ... # playingChanged(bool)
-    positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(qlonglong)
-    seekableChanged          : typing.ClassVar[Signal] = ... # seekableChanged(bool)
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged(QUrl)
-    tracksChanged            : typing.ClassVar[Signal] = ... # tracksChanged()
-    videoOutputChanged       : typing.ClassVar[Signal] = ... # videoOutputChanged()
+    # activeTracksChanged()
+    activeTracksChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioBufferOutputChanged()
+    audioBufferOutputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioOutputChanged()
+    audioOutputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # bufferProgressChanged(float)
+    bufferProgressChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # durationChanged(qlonglong)
+    durationChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QMediaPlayer::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str], [PySide6.QtMultimedia.QMediaPlayer.Error, str]
+    ]]
+    # hasAudioChanged(bool)
+    hasAudioChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # hasVideoChanged(bool)
+    hasVideoChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # loopsChanged()
+    loopsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mediaStatusChanged(QMediaPlayer::MediaStatus)
+    mediaStatusChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus], [PySide6.QtMultimedia.QMediaPlayer.MediaStatus]
+    ]]
+    # metaDataChanged()
+    metaDataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pitchCompensationChanged(bool)
+    pitchCompensationChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # playbackOptionsChanged()
+    playbackOptionsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # playbackRateChanged(double)
+    playbackRateChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # playbackStateChanged(QMediaPlayer::PlaybackState)
+    playbackStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState], [PySide6.QtMultimedia.QMediaPlayer.PlaybackState]
+    ]]
+    # playingChanged(bool)
+    playingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # positionChanged(qlonglong)
+    positionChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # seekableChanged(bool)
+    seekableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # sourceChanged(QUrl)
+    sourceChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # tracksChanged()
+    tracksChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoOutputChanged()
+    videoOutputChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -970,23 +1346,91 @@ class QMediaPlayer(PySide6.QtCore.QObject):
 
 
 class QMediaRecorder(PySide6.QtCore.QObject):
-    actualLocationChanged    : typing.ClassVar[Signal] = ... # actualLocationChanged(QUrl)
-    audioBitRateChanged      : typing.ClassVar[Signal] = ... # audioBitRateChanged()
-    audioChannelCountChanged : typing.ClassVar[Signal] = ... # audioChannelCountChanged()
-    audioSampleRateChanged   : typing.ClassVar[Signal] = ... # audioSampleRateChanged()
-    autoStopChanged          : typing.ClassVar[Signal] = ... # autoStopChanged()
-    durationChanged          : typing.ClassVar[Signal] = ... # durationChanged(qlonglong)
-    encoderSettingsChanged   : typing.ClassVar[Signal] = ... # encoderSettingsChanged()
-    encodingModeChanged      : typing.ClassVar[Signal] = ... # encodingModeChanged()
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QMediaRecorder::Error,QString)
-    mediaFormatChanged       : typing.ClassVar[Signal] = ... # mediaFormatChanged()
-    metaDataChanged          : typing.ClassVar[Signal] = ... # metaDataChanged()
-    qualityChanged           : typing.ClassVar[Signal] = ... # qualityChanged()
-    recorderStateChanged     : typing.ClassVar[Signal] = ... # recorderStateChanged(QMediaRecorder::RecorderState)
-    videoBitRateChanged      : typing.ClassVar[Signal] = ... # videoBitRateChanged()
-    videoFrameRateChanged    : typing.ClassVar[Signal] = ... # videoFrameRateChanged()
-    videoResolutionChanged   : typing.ClassVar[Signal] = ... # videoResolutionChanged()
+    # actualLocationChanged(QUrl)
+    actualLocationChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
+    # audioBitRateChanged()
+    audioBitRateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioChannelCountChanged()
+    audioChannelCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # audioSampleRateChanged()
+    audioSampleRateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # autoStopChanged()
+    autoStopChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # durationChanged(qlonglong)
+    durationChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # encoderSettingsChanged()
+    encoderSettingsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # encodingModeChanged()
+    encodingModeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QMediaRecorder::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str], [PySide6.QtMultimedia.QMediaRecorder.Error, str]
+    ]]
+    # mediaFormatChanged()
+    mediaFormatChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # metaDataChanged()
+    metaDataChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # qualityChanged()
+    qualityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # recorderStateChanged(QMediaRecorder::RecorderState)
+    recorderStateChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState], [PySide6.QtMultimedia.QMediaRecorder.RecorderState]
+    ]]
+    # videoBitRateChanged()
+    videoBitRateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoFrameRateChanged()
+    videoFrameRateChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # videoResolutionChanged()
+    videoResolutionChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class EncodingMode(enum.Enum):
         ConstantQualityEncoding   = 0x0
@@ -1150,10 +1594,26 @@ class QPlaybackOptions(Shiboken.Object):
 
 
 class QScreenCapture(PySide6.QtCore.QObject):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QScreenCapture::Error,QString)
-    screenChanged            : typing.ClassVar[Signal] = ... # screenChanged(QScreen*)
+    # activeChanged(bool)
+    activeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QScreenCapture::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str], [PySide6.QtMultimedia.QScreenCapture.Error, str]
+    ]]
+    # screenChanged(QScreen*)
+    screenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QScreen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen], [PySide6.QtGui.QScreen]
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0
@@ -1176,15 +1636,51 @@ class QScreenCapture(PySide6.QtCore.QObject):
 
 
 class QSoundEffect(PySide6.QtCore.QObject):
-    audioDeviceChanged       : typing.ClassVar[Signal] = ... # audioDeviceChanged()
-    loadedChanged            : typing.ClassVar[Signal] = ... # loadedChanged()
-    loopCountChanged         : typing.ClassVar[Signal] = ... # loopCountChanged()
-    loopsRemainingChanged    : typing.ClassVar[Signal] = ... # loopsRemainingChanged()
-    mutedChanged             : typing.ClassVar[Signal] = ... # mutedChanged()
-    playingChanged           : typing.ClassVar[Signal] = ... # playingChanged()
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged()
-    volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged()
+    # audioDeviceChanged()
+    audioDeviceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loadedChanged()
+    loadedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loopCountChanged()
+    loopCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # loopsRemainingChanged()
+    loopsRemainingChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mutedChanged()
+    mutedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # playingChanged()
+    playingChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sourceChanged()
+    sourceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # statusChanged()
+    statusChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # volumeChanged()
+    volumeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Loop(enum.Enum):
         Infinite                  = -2
@@ -1439,7 +1935,11 @@ class QVideoFrameFormat(Shiboken.Object):
 
 
 class QVideoFrameInput(PySide6.QtCore.QObject):
-    readyToSendVideoFrame    : typing.ClassVar[Signal] = ... # readyToSendVideoFrame()
+    # readyToSendVideoFrame()
+    readyToSendVideoFrame: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, format: PySide6.QtMultimedia.QVideoFrameFormat, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -1452,9 +1952,21 @@ class QVideoFrameInput(PySide6.QtCore.QObject):
 
 
 class QVideoSink(PySide6.QtCore.QObject):
-    subtitleTextChanged      : typing.ClassVar[Signal] = ... # subtitleTextChanged(QString)
-    videoFrameChanged        : typing.ClassVar[Signal] = ... # videoFrameChanged(QVideoFrame)
-    videoSizeChanged         : typing.ClassVar[Signal] = ... # videoSizeChanged()
+    # subtitleTextChanged(QString)
+    subtitleTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # videoFrameChanged(QVideoFrame)
+    videoFrameChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QVideoFrame], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame], [PySide6.QtMultimedia.QVideoFrame]
+    ]]
+    # videoSizeChanged()
+    videoSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, subtitleText: str | None = ..., videoSize: PySide6.QtCore.QSize | None = ...) -> None: ...
 
@@ -1468,8 +1980,16 @@ class QVideoSink(PySide6.QtCore.QObject):
 
 
 class QWaveDecoder(PySide6.QtCore.QIODevice):
-    formatKnown              : typing.ClassVar[Signal] = ... # formatKnown()
-    parsingError             : typing.ClassVar[Signal] = ... # parsingError()
+    # formatKnown()
+    formatKnown: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # parsingError()
+    parsingError: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, device: PySide6.QtCore.QIODevice, format: PySide6.QtMultimedia.QAudioFormat, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -1493,10 +2013,26 @@ class QWaveDecoder(PySide6.QtCore.QIODevice):
 
 
 class QWindowCapture(PySide6.QtCore.QObject):
-    activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
-    errorChanged             : typing.ClassVar[Signal] = ... # errorChanged()
-    errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QWindowCapture::Error,QString)
-    windowChanged            : typing.ClassVar[Signal] = ... # windowChanged(QCapturableWindow)
+    # activeChanged(bool)
+    activeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # errorChanged()
+    errorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # errorOccurred(QWindowCapture::Error,QString)
+    errorOccurred: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str], [PySide6.QtMultimedia.QWindowCapture.Error, str]
+    ]]
+    # windowChanged(QCapturableWindow)
+    windowChanged: typing.ClassVar[Signal[
+        [PySide6.QtMultimedia.QCapturableWindow], [], [], [], [], [], [], [],
+        [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow], [PySide6.QtMultimedia.QCapturableWindow]
+    ]]
 
     class Error(enum.Enum):
         NoError                   = 0x0

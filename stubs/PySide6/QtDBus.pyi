@@ -324,13 +324,41 @@ class QDBusConnection(Shiboken.Object):
 
 
 class QDBusConnectionInterface(PySide6.QtDBus.QDBusAbstractInterface):
-    NameAcquired             : typing.ClassVar[Signal] = ... # NameAcquired(QString)
-    NameLost                 : typing.ClassVar[Signal] = ... # NameLost(QString)
-    NameOwnerChanged         : typing.ClassVar[Signal] = ... # NameOwnerChanged(QString,QString,QString)
-    callWithCallbackFailed   : typing.ClassVar[Signal] = ... # callWithCallbackFailed(QDBusError,QDBusMessage)
-    serviceOwnerChanged      : typing.ClassVar[Signal] = ... # serviceOwnerChanged(QString,QString,QString)
-    serviceRegistered        : typing.ClassVar[Signal] = ... # serviceRegistered(QString)
-    serviceUnregistered      : typing.ClassVar[Signal] = ... # serviceUnregistered(QString)
+    # NameAcquired(QString)
+    NameAcquired: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # NameLost(QString)
+    NameLost: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # NameOwnerChanged(QString,QString,QString)
+    NameOwnerChanged: typing.ClassVar[Signal[
+        [str, str, str], [str, str], [str], [], [], [], [], [],
+        [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str]
+    ]]
+    # callWithCallbackFailed(QDBusError,QDBusMessage)
+    callWithCallbackFailed: typing.ClassVar[Signal[
+        [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError], [], [], [], [], [], [],
+        [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage], [PySide6.QtDBus.QDBusError, PySide6.QtDBus.QDBusMessage]
+    ]]
+    # serviceOwnerChanged(QString,QString,QString)
+    serviceOwnerChanged: typing.ClassVar[Signal[
+        [str, str, str], [str, str], [str], [], [], [], [], [],
+        [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str]
+    ]]
+    # serviceRegistered(QString)
+    serviceRegistered: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # serviceUnregistered(QString)
+    serviceUnregistered: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class RegisterServiceReply(enum.Enum):
         ServiceNotRegistered      = 0x0
@@ -529,7 +557,11 @@ class QDBusPendingCall(Shiboken.Object):
 
 
 class QDBusPendingCallWatcher(PySide6.QtCore.QObject, PySide6.QtDBus.QDBusPendingCall):
-    finished                 : typing.ClassVar[Signal] = ... # finished(); finished(QDBusPendingCallWatcher*)
+    # finished(); finished(QDBusPendingCallWatcher*)
+    finished: typing.ClassVar[Signal[
+        [PySide6.QtDBus.QDBusPendingCallWatcher], [], [], [], [], [], [], [],
+        [], [PySide6.QtDBus.QDBusPendingCallWatcher], [], [], [], [], [], []
+    ]]
 
     def __init__(self, call: PySide6.QtDBus.QDBusPendingCall, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -548,7 +580,11 @@ class QDBusReply(Shiboken.Object):
 
 
 class QDBusServer(PySide6.QtCore.QObject):
-    newConnection            : typing.ClassVar[Signal] = ... # newConnection(QDBusConnection)
+    # newConnection(QDBusConnection)
+    newConnection: typing.ClassVar[Signal[
+        [PySide6.QtDBus.QDBusConnection], [], [], [], [], [], [], [],
+        [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection], [PySide6.QtDBus.QDBusConnection]
+    ]]
 
     @typing.overload
     def __init__(self, address: str, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -563,9 +599,21 @@ class QDBusServer(PySide6.QtCore.QObject):
 
 
 class QDBusServiceWatcher(PySide6.QtCore.QObject):
-    serviceOwnerChanged      : typing.ClassVar[Signal] = ... # serviceOwnerChanged(QString,QString,QString)
-    serviceRegistered        : typing.ClassVar[Signal] = ... # serviceRegistered(QString)
-    serviceUnregistered      : typing.ClassVar[Signal] = ... # serviceUnregistered(QString)
+    # serviceOwnerChanged(QString,QString,QString)
+    serviceOwnerChanged: typing.ClassVar[Signal[
+        [str, str, str], [str, str], [str], [], [], [], [], [],
+        [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str], [str, str, str]
+    ]]
+    # serviceRegistered(QString)
+    serviceRegistered: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # serviceUnregistered(QString)
+    serviceUnregistered: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
 
     class WatchModeFlag(enum.Flag):
         WatchForRegistration      = 0x1

@@ -12,6 +12,7 @@ import PySide6.QtCharts
 import PySide6.QtCore
 import PySide6.QtGui
 import PySide6.QtWidgets
+import PySide6.QtGraphs
 
 import os
 import enum
@@ -21,34 +22,146 @@ from PySide6.QtCore import Signal
 
 
 class QAbstractAxis(PySide6.QtCore.QObject):
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    gridLineColorChanged     : typing.ClassVar[Signal] = ... # gridLineColorChanged(QColor)
-    gridLinePenChanged       : typing.ClassVar[Signal] = ... # gridLinePenChanged(QPen)
-    gridVisibleChanged       : typing.ClassVar[Signal] = ... # gridVisibleChanged(bool)
-    labelsAngleChanged       : typing.ClassVar[Signal] = ... # labelsAngleChanged(int)
-    labelsBrushChanged       : typing.ClassVar[Signal] = ... # labelsBrushChanged(QBrush)
-    labelsColorChanged       : typing.ClassVar[Signal] = ... # labelsColorChanged(QColor)
-    labelsEditableChanged    : typing.ClassVar[Signal] = ... # labelsEditableChanged(bool)
-    labelsFontChanged        : typing.ClassVar[Signal] = ... # labelsFontChanged(QFont)
-    labelsTruncatedChanged   : typing.ClassVar[Signal] = ... # labelsTruncatedChanged(bool)
-    labelsVisibleChanged     : typing.ClassVar[Signal] = ... # labelsVisibleChanged(bool)
-    linePenChanged           : typing.ClassVar[Signal] = ... # linePenChanged(QPen)
-    lineVisibleChanged       : typing.ClassVar[Signal] = ... # lineVisibleChanged(bool)
-    minorGridLineColorChanged: typing.ClassVar[Signal] = ... # minorGridLineColorChanged(QColor)
-    minorGridLinePenChanged  : typing.ClassVar[Signal] = ... # minorGridLinePenChanged(QPen)
-    minorGridVisibleChanged  : typing.ClassVar[Signal] = ... # minorGridVisibleChanged(bool)
-    reverseChanged           : typing.ClassVar[Signal] = ... # reverseChanged(bool)
-    shadesBorderColorChanged : typing.ClassVar[Signal] = ... # shadesBorderColorChanged(QColor)
-    shadesBrushChanged       : typing.ClassVar[Signal] = ... # shadesBrushChanged(QBrush)
-    shadesColorChanged       : typing.ClassVar[Signal] = ... # shadesColorChanged(QColor)
-    shadesPenChanged         : typing.ClassVar[Signal] = ... # shadesPenChanged(QPen)
-    shadesVisibleChanged     : typing.ClassVar[Signal] = ... # shadesVisibleChanged(bool)
-    titleBrushChanged        : typing.ClassVar[Signal] = ... # titleBrushChanged(QBrush)
-    titleFontChanged         : typing.ClassVar[Signal] = ... # titleFontChanged(QFont)
-    titleTextChanged         : typing.ClassVar[Signal] = ... # titleTextChanged(QString)
-    titleVisibleChanged      : typing.ClassVar[Signal] = ... # titleVisibleChanged(bool)
-    truncateLabelsChanged    : typing.ClassVar[Signal] = ... # truncateLabelsChanged(bool)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # gridLineColorChanged(QColor)
+    gridLineColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # gridLinePenChanged(QPen)
+    gridLinePenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # gridVisibleChanged(bool)
+    gridVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelsAngleChanged(int)
+    labelsAngleChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # labelsBrushChanged(QBrush)
+    labelsBrushChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QBrush], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush]
+    ]]
+    # labelsColorChanged(QColor)
+    labelsColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # labelsEditableChanged(bool)
+    labelsEditableChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelsFontChanged(QFont)
+    labelsFontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # labelsTruncatedChanged(bool)
+    labelsTruncatedChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelsVisibleChanged(bool)
+    labelsVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # linePenChanged(QPen)
+    linePenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # lineVisibleChanged(bool)
+    lineVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # minorGridLineColorChanged(QColor)
+    minorGridLineColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # minorGridLinePenChanged(QPen)
+    minorGridLinePenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # minorGridVisibleChanged(bool)
+    minorGridVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # reverseChanged(bool)
+    reverseChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # shadesBorderColorChanged(QColor)
+    shadesBorderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # shadesBrushChanged(QBrush)
+    shadesBrushChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QBrush], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush]
+    ]]
+    # shadesColorChanged(QColor)
+    shadesColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # shadesPenChanged(QPen)
+    shadesPenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # shadesVisibleChanged(bool)
+    shadesVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # titleBrushChanged(QBrush)
+    titleBrushChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QBrush], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush], [PySide6.QtGui.QBrush]
+    ]]
+    # titleFontChanged(QFont)
+    titleFontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # titleTextChanged(QString)
+    titleTextChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # titleVisibleChanged(bool)
+    titleVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # truncateLabelsChanged(bool)
+    truncateLabelsChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # visibleChanged(bool)
+    visibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class AxisType(enum.Enum):
         AxisTypeNoAxis            = 0x0
@@ -125,19 +238,71 @@ class QAbstractAxis(PySide6.QtCore.QObject):
 
 
 class QAbstractBarSeries(PySide6.QtCharts.QAbstractSeries):
-    barsetsAdded             : typing.ClassVar[Signal] = ... # barsetsAdded(QList<QBarSet*>)
-    barsetsRemoved           : typing.ClassVar[Signal] = ... # barsetsRemoved(QList<QBarSet*>)
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(int,QBarSet*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(int,QBarSet*)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool,int,QBarSet*)
-    labelsAngleChanged       : typing.ClassVar[Signal] = ... # labelsAngleChanged(double)
-    labelsFormatChanged      : typing.ClassVar[Signal] = ... # labelsFormatChanged(QString)
-    labelsPositionChanged    : typing.ClassVar[Signal] = ... # labelsPositionChanged(QAbstractBarSeries::LabelsPosition)
-    labelsPrecisionChanged   : typing.ClassVar[Signal] = ... # labelsPrecisionChanged(int)
-    labelsVisibleChanged     : typing.ClassVar[Signal] = ... # labelsVisibleChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(int,QBarSet*)
-    released                 : typing.ClassVar[Signal] = ... # released(int,QBarSet*)
+    # barsetsAdded(QList<QBarSet*>)
+    barsetsAdded: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]]
+    ]]
+    # barsetsRemoved(QList<QBarSet*>)
+    barsetsRemoved: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]], [collections.abc.Sequence[PySide6.QtGraphs.QBarSet]]
+    ]]
+    # clicked(int,QBarSet*)
+    clicked: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(int,QBarSet*)
+    doubleClicked: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # hovered(bool,int,QBarSet*)
+    hovered: typing.ClassVar[Signal[
+        [bool, int, PySide6.QtGraphs.QBarSet], [bool, int], [bool], [], [], [], [], [],
+        [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet], [bool, int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # labelsAngleChanged(double)
+    labelsAngleChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelsFormatChanged(QString)
+    labelsFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # labelsPositionChanged(QAbstractBarSeries::LabelsPosition)
+    labelsPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition], [PySide6.QtCharts.QAbstractBarSeries.LabelsPosition]
+    ]]
+    # labelsPrecisionChanged(int)
+    labelsPrecisionChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # labelsVisibleChanged()
+    labelsVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(int,QBarSet*)
+    pressed: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
+    # released(int,QBarSet*)
+    released: typing.ClassVar[Signal[
+        [int, PySide6.QtGraphs.QBarSet], [int], [], [], [], [], [], [],
+        [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet], [int, PySide6.QtGraphs.QBarSet]
+    ]]
 
     class LabelsPosition(enum.Enum):
         LabelsCenter              = 0x0
@@ -170,10 +335,26 @@ class QAbstractBarSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QAbstractSeries(PySide6.QtCore.QObject):
-    nameChanged              : typing.ClassVar[Signal] = ... # nameChanged()
-    opacityChanged           : typing.ClassVar[Signal] = ... # opacityChanged()
-    useOpenGLChanged         : typing.ClassVar[Signal] = ... # useOpenGLChanged()
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
+    # nameChanged()
+    nameChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # opacityChanged()
+    opacityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # useOpenGLChanged()
+    useOpenGLChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class SeriesType(enum.Enum):
         SeriesTypeLine            = 0x0
@@ -215,24 +396,76 @@ class QAreaLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QAreaSeries(PySide6.QtCharts.QAbstractSeries):
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPointF)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPointF)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(QPointF,bool)
-    pointLabelsClippingChanged: typing.ClassVar[Signal] = ... # pointLabelsClippingChanged(bool)
-    pointLabelsColorChanged  : typing.ClassVar[Signal] = ... # pointLabelsColorChanged(QColor)
-    pointLabelsFontChanged   : typing.ClassVar[Signal] = ... # pointLabelsFontChanged(QFont)
-    pointLabelsFormatChanged : typing.ClassVar[Signal] = ... # pointLabelsFormatChanged(QString)
-    pointLabelsVisibilityChanged: typing.ClassVar[Signal] = ... # pointLabelsVisibilityChanged(bool)
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPointF)
-    released                 : typing.ClassVar[Signal] = ... # released(QPointF)
-    selected                 : typing.ClassVar[Signal] = ... # selected()
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # clicked(QPointF)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # doubleClicked(QPointF)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # hovered(QPointF,bool)
+    hovered: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool]
+    ]]
+    # pointLabelsClippingChanged(bool)
+    pointLabelsClippingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # pointLabelsColorChanged(QColor)
+    pointLabelsColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # pointLabelsFontChanged(QFont)
+    pointLabelsFontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # pointLabelsFormatChanged(QString)
+    pointLabelsFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # pointLabelsVisibilityChanged(bool)
+    pointLabelsVisibilityChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # pressed(QPointF)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # released(QPointF)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # selected()
+    selected: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, upperSeries: PySide6.QtCharts.QLineSeries, /, lowerSeries: PySide6.QtCharts.QLineSeries | None = ..., *, color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., pointLabelsFormat: str | None = ..., pointLabelsVisible: bool | None = ..., pointLabelsFont: PySide6.QtGui.QFont | None = ..., pointLabelsColor: PySide6.QtGui.QColor | None = ..., pointLabelsClipping: bool | None = ...) -> None: ...
     @typing.overload
-    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, upperSeries: PySide6.QtCharts.QLineSeries | None = ..., lowerSeries: PySide6.QtCharts.QLineSeries | None = ..., color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., pointLabelsFormat: str | None = ..., pointLabelsVisible: bool | None = ..., pointLabelsFont: PySide6.QtGui.QFont | None = ..., pointLabelsColor: PySide6.QtGui.QColor | None = ..., pointLabelsClipping: bool | None = ...) -> None: ...
+    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, upperSeries: PySide6.QtGraphs.QLineSeries | None = ..., lowerSeries: PySide6.QtGraphs.QLineSeries | None = ..., color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., pointLabelsFormat: str | None = ..., pointLabelsVisible: bool | None = ..., pointLabelsFont: PySide6.QtGui.QFont | None = ..., pointLabelsColor: PySide6.QtGui.QColor | None = ..., pointLabelsClipping: bool | None = ...) -> None: ...
 
     def borderColor(self, /) -> PySide6.QtGui.QColor: ...
     def brush(self, /) -> PySide6.QtGui.QBrush: ...
@@ -262,11 +495,31 @@ class QAreaSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QBarCategoryAxis(PySide6.QtCharts.QAbstractAxis):
-    categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QString)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(QString)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(QString,QString)
+    # categoriesChanged()
+    categoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # maxChanged(QString)
+    maxChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # minChanged(QString)
+    minChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # rangeChanged(QString,QString)
+    rangeChanged: typing.ClassVar[Signal[
+        [str, str], [str], [], [], [], [], [], [],
+        [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str], [str, str]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, categories: collections.abc.Sequence[str] | None = ..., min: str | None = ..., max: str | None = ..., count: int | None = ...) -> None: ...
 
@@ -324,24 +577,96 @@ class QBarSeries(PySide6.QtCharts.QAbstractBarSeries):
 
 
 class QBarSet(PySide6.QtCore.QObject):
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(int)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(int)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool,int)
-    labelBrushChanged        : typing.ClassVar[Signal] = ... # labelBrushChanged()
-    labelChanged             : typing.ClassVar[Signal] = ... # labelChanged()
-    labelColorChanged        : typing.ClassVar[Signal] = ... # labelColorChanged(QColor)
-    labelFontChanged         : typing.ClassVar[Signal] = ... # labelFontChanged()
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(int)
-    released                 : typing.ClassVar[Signal] = ... # released(int)
-    selectedBarsChanged      : typing.ClassVar[Signal] = ... # selectedBarsChanged(QList<int>)
-    selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(int)
-    valuesAdded              : typing.ClassVar[Signal] = ... # valuesAdded(int,int)
-    valuesRemoved            : typing.ClassVar[Signal] = ... # valuesRemoved(int,int)
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked(int)
+    clicked: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # doubleClicked(int)
+    doubleClicked: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # hovered(bool,int)
+    hovered: typing.ClassVar[Signal[
+        [bool, int], [bool], [], [], [], [], [], [],
+        [bool, int], [bool, int], [bool, int], [bool, int], [bool, int], [bool, int], [bool, int], [bool, int]
+    ]]
+    # labelBrushChanged()
+    labelBrushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelChanged()
+    labelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelColorChanged(QColor)
+    labelColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # labelFontChanged()
+    labelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(int)
+    pressed: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # released(int)
+    released: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # selectedBarsChanged(QList<int>)
+    selectedBarsChanged: typing.ClassVar[Signal[
+        [collections.abc.Sequence[int]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]], [collections.abc.Sequence[int]]
+    ]]
+    # selectedColorChanged(QColor)
+    selectedColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # valueChanged(int)
+    valueChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # valuesAdded(int,int)
+    valuesAdded: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # valuesRemoved(int,int)
+    valuesRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
 
     def __init__(self, label: str, /, parent: PySide6.QtCore.QObject | None = ..., *, pen: PySide6.QtGui.QPen | None = ..., brush: PySide6.QtGui.QBrush | None = ..., labelBrush: PySide6.QtGui.QBrush | None = ..., labelFont: PySide6.QtGui.QFont | None = ..., color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., labelColor: PySide6.QtGui.QColor | None = ...) -> None: ...
 
@@ -413,18 +738,66 @@ class QBoxPlotModelMapper(PySide6.QtCore.QObject):
 
 
 class QBoxPlotSeries(PySide6.QtCharts.QAbstractSeries):
-    boxOutlineVisibilityChanged: typing.ClassVar[Signal] = ... # boxOutlineVisibilityChanged()
-    boxWidthChanged          : typing.ClassVar[Signal] = ... # boxWidthChanged()
-    boxsetsAdded             : typing.ClassVar[Signal] = ... # boxsetsAdded(QList<QBoxSet*>)
-    boxsetsRemoved           : typing.ClassVar[Signal] = ... # boxsetsRemoved(QList<QBoxSet*>)
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QBoxSet*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QBoxSet*)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool,QBoxSet*)
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QBoxSet*)
-    released                 : typing.ClassVar[Signal] = ... # released(QBoxSet*)
+    # boxOutlineVisibilityChanged()
+    boxOutlineVisibilityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # boxWidthChanged()
+    boxWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # boxsetsAdded(QList<QBoxSet*>)
+    boxsetsAdded: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]]
+    ]]
+    # boxsetsRemoved(QList<QBoxSet*>)
+    boxsetsRemoved: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]], [collections.abc.Sequence[PySide6.QtCharts.QBoxSet]]
+    ]]
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked(QBoxSet*)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QBoxSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(QBoxSet*)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QBoxSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet]
+    ]]
+    # hovered(bool,QBoxSet*)
+    hovered: typing.ClassVar[Signal[
+        [bool, PySide6.QtCharts.QBoxSet], [bool], [], [], [], [], [], [],
+        [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet], [bool, PySide6.QtCharts.QBoxSet]
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QBoxSet*)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QBoxSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet]
+    ]]
+    # released(QBoxSet*)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QBoxSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet], [PySide6.QtCharts.QBoxSet]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, boxOutlineVisible: bool | None = ..., boxWidth: float | None = ..., pen: PySide6.QtGui.QPen | None = ..., brush: PySide6.QtGui.QBrush | None = ..., count: int | None = ...) -> None: ...
 
@@ -450,16 +823,56 @@ class QBoxPlotSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QBoxSet(PySide6.QtCore.QObject):
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    cleared                  : typing.ClassVar[Signal] = ... # cleared()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked()
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool)
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed()
-    released                 : typing.ClassVar[Signal] = ... # released()
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(int)
-    valuesChanged            : typing.ClassVar[Signal] = ... # valuesChanged()
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # cleared()
+    cleared: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked()
+    clicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked()
+    doubleClicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hovered(bool)
+    hovered: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed()
+    pressed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # released()
+    released: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valueChanged(int)
+    valueChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # valuesChanged()
+    valuesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class ValuePositions(enum.IntEnum):
         LowerExtreme              = 0x0
@@ -498,8 +911,16 @@ class QCandlestickLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QCandlestickModelMapper(PySide6.QtCore.QObject):
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, model: PySide6.QtCore.QAbstractItemModel | None = ..., series: PySide6.QtCharts.QCandlestickSeries | None = ...) -> None: ...
 
@@ -525,24 +946,96 @@ class QCandlestickModelMapper(PySide6.QtCore.QObject):
 
 
 class QCandlestickSeries(PySide6.QtCharts.QAbstractSeries):
-    bodyOutlineVisibilityChanged: typing.ClassVar[Signal] = ... # bodyOutlineVisibilityChanged()
-    bodyWidthChanged         : typing.ClassVar[Signal] = ... # bodyWidthChanged()
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    candlestickSetsAdded     : typing.ClassVar[Signal] = ... # candlestickSetsAdded(QList<QCandlestickSet*>)
-    candlestickSetsRemoved   : typing.ClassVar[Signal] = ... # candlestickSetsRemoved(QList<QCandlestickSet*>)
-    capsVisibilityChanged    : typing.ClassVar[Signal] = ... # capsVisibilityChanged()
-    capsWidthChanged         : typing.ClassVar[Signal] = ... # capsWidthChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QCandlestickSet*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    decreasingColorChanged   : typing.ClassVar[Signal] = ... # decreasingColorChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QCandlestickSet*)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool,QCandlestickSet*)
-    increasingColorChanged   : typing.ClassVar[Signal] = ... # increasingColorChanged()
-    maximumColumnWidthChanged: typing.ClassVar[Signal] = ... # maximumColumnWidthChanged()
-    minimumColumnWidthChanged: typing.ClassVar[Signal] = ... # minimumColumnWidthChanged()
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QCandlestickSet*)
-    released                 : typing.ClassVar[Signal] = ... # released(QCandlestickSet*)
+    # bodyOutlineVisibilityChanged()
+    bodyOutlineVisibilityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # bodyWidthChanged()
+    bodyWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # candlestickSetsAdded(QList<QCandlestickSet*>)
+    candlestickSetsAdded: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]]
+    ]]
+    # candlestickSetsRemoved(QList<QCandlestickSet*>)
+    candlestickSetsRemoved: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]], [collections.abc.Sequence[PySide6.QtCharts.QCandlestickSet]]
+    ]]
+    # capsVisibilityChanged()
+    capsVisibilityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # capsWidthChanged()
+    capsWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked(QCandlestickSet*)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QCandlestickSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # decreasingColorChanged()
+    decreasingColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(QCandlestickSet*)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QCandlestickSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet]
+    ]]
+    # hovered(bool,QCandlestickSet*)
+    hovered: typing.ClassVar[Signal[
+        [bool, PySide6.QtCharts.QCandlestickSet], [bool], [], [], [], [], [], [],
+        [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet], [bool, PySide6.QtCharts.QCandlestickSet]
+    ]]
+    # increasingColorChanged()
+    increasingColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # maximumColumnWidthChanged()
+    maximumColumnWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # minimumColumnWidthChanged()
+    minimumColumnWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QCandlestickSet*)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QCandlestickSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet]
+    ]]
+    # released(QCandlestickSet*)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QCandlestickSet], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet], [PySide6.QtCharts.QCandlestickSet]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, count: int | None = ..., maximumColumnWidth: float | None = ..., minimumColumnWidth: float | None = ..., bodyWidth: float | None = ..., bodyOutlineVisible: bool | None = ..., capsWidth: float | None = ..., capsVisible: bool | None = ..., increasingColor: PySide6.QtGui.QColor | None = ..., decreasingColor: PySide6.QtGui.QColor | None = ..., brush: PySide6.QtGui.QBrush | None = ..., pen: PySide6.QtGui.QPen | None = ...) -> None: ...
 
@@ -583,18 +1076,66 @@ class QCandlestickSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QCandlestickSet(PySide6.QtCore.QObject):
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked()
-    closeChanged             : typing.ClassVar[Signal] = ... # closeChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked()
-    highChanged              : typing.ClassVar[Signal] = ... # highChanged()
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool)
-    lowChanged               : typing.ClassVar[Signal] = ... # lowChanged()
-    openChanged              : typing.ClassVar[Signal] = ... # openChanged()
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed()
-    released                 : typing.ClassVar[Signal] = ... # released()
-    timestampChanged         : typing.ClassVar[Signal] = ... # timestampChanged()
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked()
+    clicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # closeChanged()
+    closeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked()
+    doubleClicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # highChanged()
+    highChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hovered(bool)
+    hovered: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # lowChanged()
+    lowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # openChanged()
+    openChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed()
+    pressed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # released()
+    released: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # timestampChanged()
+    timestampChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, /, timestamp: float = ..., parent: PySide6.QtCore.QObject | None = ..., *, open: float | None = ..., high: float | None = ..., low: float | None = ..., close: float | None = ..., brush: PySide6.QtGui.QBrush | None = ..., pen: PySide6.QtGui.QPen | None = ...) -> None: ...
@@ -618,8 +1159,16 @@ class QCandlestickSet(PySide6.QtCore.QObject):
 
 
 class QCategoryAxis(PySide6.QtCharts.QValueAxis):
-    categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
-    labelsPositionChanged    : typing.ClassVar[Signal] = ... # labelsPositionChanged(QCategoryAxis::AxisLabelsPosition)
+    # categoriesChanged()
+    categoriesChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsPositionChanged(QCategoryAxis::AxisLabelsPosition)
+    labelsPositionChanged: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition], [PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition]
+    ]]
 
     class AxisLabelsPosition(enum.Enum):
         AxisLabelsPositionCenter  = 0x0
@@ -641,7 +1190,11 @@ class QCategoryAxis(PySide6.QtCharts.QValueAxis):
 
 
 class QChart(PySide6.QtWidgets.QGraphicsWidget):
-    plotAreaChanged          : typing.ClassVar[Signal] = ... # plotAreaChanged(QRectF)
+    # plotAreaChanged(QRectF)
+    plotAreaChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRectF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF]
+    ]]
 
     class AnimationOption(enum.Flag):
         NoAnimation               = 0x0
@@ -758,13 +1311,41 @@ class QChartView(PySide6.QtWidgets.QGraphicsView):
 
 
 class QColorAxis(PySide6.QtCharts.QAbstractAxis):
-    autoRangeChanged         : typing.ClassVar[Signal] = ... # autoRangeChanged(bool)
-    gradientChanged          : typing.ClassVar[Signal] = ... # gradientChanged(QLinearGradient)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(double)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(double,double)
-    sizeChanged              : typing.ClassVar[Signal] = ... # sizeChanged(double)
-    tickCountChanged         : typing.ClassVar[Signal] = ... # tickCountChanged(int)
+    # autoRangeChanged(bool)
+    autoRangeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # gradientChanged(QLinearGradient)
+    gradientChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QLinearGradient], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient], [PySide6.QtGui.QLinearGradient]
+    ]]
+    # maxChanged(double)
+    maxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minChanged(double)
+    minChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # rangeChanged(double,double)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # sizeChanged(double)
+    sizeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # tickCountChanged(int)
+    tickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, tickCount: int | None = ..., min: float | None = ..., max: float | None = ..., size: float | None = ..., autoRange: bool | None = ...) -> None: ...
 
@@ -785,11 +1366,31 @@ class QColorAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QDateTimeAxis(PySide6.QtCharts.QAbstractAxis):
-    formatChanged            : typing.ClassVar[Signal] = ... # formatChanged(QString)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QDateTime)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(QDateTime)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(QDateTime,QDateTime)
-    tickCountChanged         : typing.ClassVar[Signal] = ... # tickCountChanged(int)
+    # formatChanged(QString)
+    formatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxChanged(QDateTime)
+    maxChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # minChanged(QDateTime)
+    minChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime]
+    ]]
+    # rangeChanged(QDateTime,QDateTime)
+    rangeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime], [], [], [], [], [], [],
+        [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime], [PySide6.QtCore.QDateTime, PySide6.QtCore.QDateTime]
+    ]]
+    # tickCountChanged(int)
+    tickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, tickCount: int | None = ..., min: PySide6.QtCore.QDateTime | None = ..., max: PySide6.QtCore.QDateTime | None = ..., format: str | None = ...) -> None: ...
 
@@ -806,12 +1407,36 @@ class QDateTimeAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QHBarModelMapper(PySide6.QtCharts.QBarModelMapper):
-    columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
-    firstBarSetRowChanged    : typing.ClassVar[Signal] = ... # firstBarSetRowChanged()
-    firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
-    lastBarSetRowChanged     : typing.ClassVar[Signal] = ... # lastBarSetRowChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
+    # columnCountChanged()
+    columnCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstBarSetRowChanged()
+    firstBarSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstColumnChanged()
+    firstColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastBarSetRowChanged()
+    lastBarSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QAbstractBarSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., firstBarSetRow: int | None = ..., lastBarSetRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
 
@@ -830,12 +1455,36 @@ class QHBarModelMapper(PySide6.QtCharts.QBarModelMapper):
 
 
 class QHBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
-    columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
-    firstBoxSetRowChanged    : typing.ClassVar[Signal] = ... # firstBoxSetRowChanged()
-    firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
-    lastBoxSetRowChanged     : typing.ClassVar[Signal] = ... # lastBoxSetRowChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
+    # columnCountChanged()
+    columnCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstBoxSetRowChanged()
+    firstBoxSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstColumnChanged()
+    firstColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastBoxSetRowChanged()
+    lastBoxSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QBoxPlotSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., firstBoxSetRow: int | None = ..., lastBoxSetRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
 
@@ -854,13 +1503,41 @@ class QHBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
 
 
 class QHCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
-    closeColumnChanged       : typing.ClassVar[Signal] = ... # closeColumnChanged()
-    firstSetRowChanged       : typing.ClassVar[Signal] = ... # firstSetRowChanged()
-    highColumnChanged        : typing.ClassVar[Signal] = ... # highColumnChanged()
-    lastSetRowChanged        : typing.ClassVar[Signal] = ... # lastSetRowChanged()
-    lowColumnChanged         : typing.ClassVar[Signal] = ... # lowColumnChanged()
-    openColumnChanged        : typing.ClassVar[Signal] = ... # openColumnChanged()
-    timestampColumnChanged   : typing.ClassVar[Signal] = ... # timestampColumnChanged()
+    # closeColumnChanged()
+    closeColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstSetRowChanged()
+    firstSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # highColumnChanged()
+    highColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastSetRowChanged()
+    lastSetRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lowColumnChanged()
+    lowColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # openColumnChanged()
+    openColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # timestampColumnChanged()
+    timestampColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, timestampColumn: int | None = ..., openColumn: int | None = ..., highColumn: int | None = ..., lowColumn: int | None = ..., closeColumn: int | None = ..., firstSetRow: int | None = ..., lastSetRow: int | None = ...) -> None: ...
 
@@ -882,14 +1559,38 @@ class QHCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
 
 
 class QHPieModelMapper(PySide6.QtCharts.QPieModelMapper):
-    columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
-    firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
-    labelsRowChanged         : typing.ClassVar[Signal] = ... # labelsRowChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
-    valuesRowChanged         : typing.ClassVar[Signal] = ... # valuesRowChanged()
+    # columnCountChanged()
+    columnCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstColumnChanged()
+    firstColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsRowChanged()
+    labelsRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valuesRowChanged()
+    valuesRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
-    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QPieSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., valuesRow: int | None = ..., labelsRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
+    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QPieSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., valuesRow: int | None = ..., labelsRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
 
     def columnCount(self, /) -> int: ...
     def firstColumn(self, /) -> int: ...
@@ -906,14 +1607,38 @@ class QHPieModelMapper(PySide6.QtCharts.QPieModelMapper):
 
 
 class QHXYModelMapper(PySide6.QtCharts.QXYModelMapper):
-    columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
-    firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
-    xRowChanged              : typing.ClassVar[Signal] = ... # xRowChanged()
-    yRowChanged              : typing.ClassVar[Signal] = ... # yRowChanged()
+    # columnCountChanged()
+    columnCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstColumnChanged()
+    firstColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # xRowChanged()
+    xRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # yRowChanged()
+    yRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
-    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QXYSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., xRow: int | None = ..., yRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
+    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QXYSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., xRow: int | None = ..., yRow: int | None = ..., firstColumn: int | None = ..., columnCount: int | None = ...) -> None: ...
 
     def columnCount(self, /) -> int: ...
     def firstColumn(self, /) -> int: ...
@@ -952,16 +1677,56 @@ class QIntList:
 
 
 class QLegend(PySide6.QtWidgets.QGraphicsWidget):
-    attachedToChartChanged   : typing.ClassVar[Signal] = ... # attachedToChartChanged(bool)
-    backgroundVisibleChanged : typing.ClassVar[Signal] = ... # backgroundVisibleChanged(bool)
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    fontChanged              : typing.ClassVar[Signal] = ... # fontChanged(QFont)
-    interactiveChanged       : typing.ClassVar[Signal] = ... # interactiveChanged(bool)
-    labelColorChanged        : typing.ClassVar[Signal] = ... # labelColorChanged(QColor)
-    markerShapeChanged       : typing.ClassVar[Signal] = ... # markerShapeChanged(MarkerShape)
-    reverseMarkersChanged    : typing.ClassVar[Signal] = ... # reverseMarkersChanged(bool)
-    showToolTipsChanged      : typing.ClassVar[Signal] = ... # showToolTipsChanged(bool)
+    # attachedToChartChanged(bool)
+    attachedToChartChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # backgroundVisibleChanged(bool)
+    backgroundVisibleChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # fontChanged(QFont)
+    fontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # interactiveChanged(bool)
+    interactiveChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelColorChanged(QColor)
+    labelColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # markerShapeChanged(MarkerShape)
+    markerShapeChanged: typing.ClassVar[Signal[
+        [MarkerShape], [], [], [], [], [], [], [],
+        [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape]
+    ]]
+    # reverseMarkersChanged(bool)
+    reverseMarkersChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # showToolTipsChanged(bool)
+    showToolTipsChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class MarkerShape(enum.Enum):
         MarkerShapeDefault        = 0x0
@@ -1009,15 +1774,51 @@ class QLegend(PySide6.QtWidgets.QGraphicsWidget):
 
 
 class QLegendMarker(PySide6.QtCore.QObject):
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked()
-    fontChanged              : typing.ClassVar[Signal] = ... # fontChanged()
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool)
-    labelBrushChanged        : typing.ClassVar[Signal] = ... # labelBrushChanged()
-    labelChanged             : typing.ClassVar[Signal] = ... # labelChanged()
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    shapeChanged             : typing.ClassVar[Signal] = ... # shapeChanged()
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked()
+    clicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # fontChanged()
+    fontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hovered(bool)
+    hovered: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelBrushChanged()
+    labelBrushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelChanged()
+    labelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # shapeChanged()
+    shapeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class LegendMarkerType(enum.Enum):
         LegendMarkerTypeArea      = 0x0
@@ -1052,13 +1853,41 @@ class QLineSeries(PySide6.QtCharts.QXYSeries):
 
 
 class QLogValueAxis(PySide6.QtCharts.QAbstractAxis):
-    baseChanged              : typing.ClassVar[Signal] = ... # baseChanged(double)
-    labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(double)
-    minorTickCountChanged    : typing.ClassVar[Signal] = ... # minorTickCountChanged(int)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(double,double)
-    tickCountChanged         : typing.ClassVar[Signal] = ... # tickCountChanged(int)
+    # baseChanged(double)
+    baseChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # labelFormatChanged(QString)
+    labelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxChanged(double)
+    maxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minChanged(double)
+    minChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minorTickCountChanged(int)
+    minorTickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # rangeChanged(double,double)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # tickCountChanged(int)
+    tickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, min: float | None = ..., max: float | None = ..., labelFormat: str | None = ..., base: float | None = ..., tickCount: int | None = ..., minorTickCount: int | None = ...) -> None: ...
 
@@ -1111,15 +1940,51 @@ class QPieModelMapper(PySide6.QtCore.QObject):
 
 
 class QPieSeries(PySide6.QtCharts.QAbstractSeries):
-    added                    : typing.ClassVar[Signal] = ... # added(QList<QPieSlice*>)
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPieSlice*)
-    countChanged             : typing.ClassVar[Signal] = ... # countChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPieSlice*)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(QPieSlice*,bool)
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPieSlice*)
-    released                 : typing.ClassVar[Signal] = ... # released(QPieSlice*)
-    removed                  : typing.ClassVar[Signal] = ... # removed(QList<QPieSlice*>)
-    sumChanged               : typing.ClassVar[Signal] = ... # sumChanged()
+    # added(QList<QPieSlice*>)
+    added: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # clicked(QPieSlice*)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # countChanged()
+    countChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked(QPieSlice*)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # hovered(QPieSlice*,bool)
+    hovered: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool], [PySide6.QtGraphs.QPieSlice, bool]
+    ]]
+    # pressed(QPieSlice*)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # released(QPieSlice*)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtGraphs.QPieSlice], [], [], [], [], [], [], [],
+        [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice], [PySide6.QtGraphs.QPieSlice]
+    ]]
+    # removed(QList<QPieSlice*>)
+    removed: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]], [collections.abc.Sequence[PySide6.QtGraphs.QPieSlice]]
+    ]]
+    # sumChanged()
+    sumChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, horizontalPosition: float | None = ..., verticalPosition: float | None = ..., size: float | None = ..., startAngle: float | None = ..., endAngle: float | None = ..., count: int | None = ..., sum: float | None = ..., holeSize: float | None = ...) -> None: ...
 
@@ -1156,25 +2021,101 @@ class QPieSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QPieSlice(PySide6.QtCore.QObject):
-    angleSpanChanged         : typing.ClassVar[Signal] = ... # angleSpanChanged()
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged()
-    borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
-    brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
-    clicked                  : typing.ClassVar[Signal] = ... # clicked()
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged()
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked()
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(bool)
-    labelBrushChanged        : typing.ClassVar[Signal] = ... # labelBrushChanged()
-    labelChanged             : typing.ClassVar[Signal] = ... # labelChanged()
-    labelColorChanged        : typing.ClassVar[Signal] = ... # labelColorChanged()
-    labelFontChanged         : typing.ClassVar[Signal] = ... # labelFontChanged()
-    labelVisibleChanged      : typing.ClassVar[Signal] = ... # labelVisibleChanged()
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged()
-    percentageChanged        : typing.ClassVar[Signal] = ... # percentageChanged()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed()
-    released                 : typing.ClassVar[Signal] = ... # released()
-    startAngleChanged        : typing.ClassVar[Signal] = ... # startAngleChanged()
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
+    # angleSpanChanged()
+    angleSpanChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderColorChanged()
+    borderColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # borderWidthChanged()
+    borderWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # brushChanged()
+    brushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # clicked()
+    clicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorChanged()
+    colorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # doubleClicked()
+    doubleClicked: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # hovered(bool)
+    hovered: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # labelBrushChanged()
+    labelBrushChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelChanged()
+    labelChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelColorChanged()
+    labelColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelFontChanged()
+    labelFontChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelVisibleChanged()
+    labelVisibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # penChanged()
+    penChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # percentageChanged()
+    percentageChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed()
+    pressed: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # released()
+    released: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # startAngleChanged()
+    startAngleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valueChanged()
+    valueChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class LabelPosition(enum.Enum):
         LabelOutside              = 0x0
@@ -1240,10 +2181,26 @@ class QPolarChart(PySide6.QtCharts.QChart):
 
 
 class QScatterSeries(PySide6.QtCharts.QXYSeries):
-    borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    markerShapeChanged       : typing.ClassVar[Signal] = ... # markerShapeChanged(MarkerShape)
-    markerSizeChanged        : typing.ClassVar[Signal] = ... # markerSizeChanged(double)
+    # borderColorChanged(QColor)
+    borderColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # markerShapeChanged(MarkerShape)
+    markerShapeChanged: typing.ClassVar[Signal[
+        [MarkerShape], [], [], [], [], [], [], [],
+        [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape], [MarkerShape]
+    ]]
+    # markerSizeChanged(double)
+    markerSizeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
 
     class MarkerShape(enum.Enum):
         MarkerShapeCircle         = 0x0
@@ -1282,12 +2239,36 @@ class QStackedBarSeries(PySide6.QtCharts.QAbstractBarSeries):
 
 
 class QVBarModelMapper(PySide6.QtCharts.QBarModelMapper):
-    firstBarSetColumnChanged : typing.ClassVar[Signal] = ... # firstBarSetColumnChanged()
-    firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
-    lastBarSetColumnChanged  : typing.ClassVar[Signal] = ... # lastBarSetColumnChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
+    # firstBarSetColumnChanged()
+    firstBarSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstRowChanged()
+    firstRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastBarSetColumnChanged()
+    lastBarSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowCountChanged()
+    rowCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QAbstractBarSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., firstBarSetColumn: int | None = ..., lastBarSetColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
 
@@ -1306,12 +2287,36 @@ class QVBarModelMapper(PySide6.QtCharts.QBarModelMapper):
 
 
 class QVBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
-    firstBoxSetColumnChanged : typing.ClassVar[Signal] = ... # firstBoxSetColumnChanged()
-    firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
-    lastBoxSetColumnChanged  : typing.ClassVar[Signal] = ... # lastBoxSetColumnChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
+    # firstBoxSetColumnChanged()
+    firstBoxSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstRowChanged()
+    firstRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastBoxSetColumnChanged()
+    lastBoxSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowCountChanged()
+    rowCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QBoxPlotSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., firstBoxSetColumn: int | None = ..., lastBoxSetColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
 
@@ -1330,13 +2335,41 @@ class QVBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
 
 
 class QVCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
-    closeRowChanged          : typing.ClassVar[Signal] = ... # closeRowChanged()
-    firstSetColumnChanged    : typing.ClassVar[Signal] = ... # firstSetColumnChanged()
-    highRowChanged           : typing.ClassVar[Signal] = ... # highRowChanged()
-    lastSetColumnChanged     : typing.ClassVar[Signal] = ... # lastSetColumnChanged()
-    lowRowChanged            : typing.ClassVar[Signal] = ... # lowRowChanged()
-    openRowChanged           : typing.ClassVar[Signal] = ... # openRowChanged()
-    timestampRowChanged      : typing.ClassVar[Signal] = ... # timestampRowChanged()
+    # closeRowChanged()
+    closeRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # firstSetColumnChanged()
+    firstSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # highRowChanged()
+    highRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lastSetColumnChanged()
+    lastSetColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # lowRowChanged()
+    lowRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # openRowChanged()
+    openRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # timestampRowChanged()
+    timestampRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, timestampRow: int | None = ..., openRow: int | None = ..., highRow: int | None = ..., lowRow: int | None = ..., closeRow: int | None = ..., firstSetColumn: int | None = ..., lastSetColumn: int | None = ...) -> None: ...
 
@@ -1358,14 +2391,38 @@ class QVCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
 
 
 class QVPieModelMapper(PySide6.QtCharts.QPieModelMapper):
-    firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
-    labelsColumnChanged      : typing.ClassVar[Signal] = ... # labelsColumnChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
-    valuesColumnChanged      : typing.ClassVar[Signal] = ... # valuesColumnChanged()
+    # firstRowChanged()
+    firstRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # labelsColumnChanged()
+    labelsColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowCountChanged()
+    rowCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # valuesColumnChanged()
+    valuesColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
-    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QPieSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., valuesColumn: int | None = ..., labelsColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
+    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QPieSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., valuesColumn: int | None = ..., labelsColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
 
     def firstRow(self, /) -> int: ...
     def labelsColumn(self, /) -> int: ...
@@ -1382,14 +2439,38 @@ class QVPieModelMapper(PySide6.QtCharts.QPieModelMapper):
 
 
 class QVXYModelMapper(PySide6.QtCharts.QXYModelMapper):
-    firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
-    modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
-    rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged()
-    seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
-    xColumnChanged           : typing.ClassVar[Signal] = ... # xColumnChanged()
-    yColumnChanged           : typing.ClassVar[Signal] = ... # yColumnChanged()
+    # firstRowChanged()
+    firstRowChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modelReplaced()
+    modelReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # rowCountChanged()
+    rowCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # seriesReplaced()
+    seriesReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # xColumnChanged()
+    xColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # yColumnChanged()
+    yColumnChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
-    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtCharts.QXYSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., xColumn: int | None = ..., yColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
+    def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, series: PySide6.QtGraphs.QXYSeries | None = ..., model: PySide6.QtCore.QAbstractItemModel | None = ..., xColumn: int | None = ..., yColumn: int | None = ..., firstRow: int | None = ..., rowCount: int | None = ...) -> None: ...
 
     def firstRow(self, /) -> int: ...
     def model(self, /) -> PySide6.QtCore.QAbstractItemModel: ...
@@ -1406,15 +2487,51 @@ class QVXYModelMapper(PySide6.QtCharts.QXYModelMapper):
 
 
 class QValueAxis(PySide6.QtCharts.QAbstractAxis):
-    labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
-    maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
-    minChanged               : typing.ClassVar[Signal] = ... # minChanged(double)
-    minorTickCountChanged    : typing.ClassVar[Signal] = ... # minorTickCountChanged(int)
-    rangeChanged             : typing.ClassVar[Signal] = ... # rangeChanged(double,double)
-    tickAnchorChanged        : typing.ClassVar[Signal] = ... # tickAnchorChanged(double)
-    tickCountChanged         : typing.ClassVar[Signal] = ... # tickCountChanged(int)
-    tickIntervalChanged      : typing.ClassVar[Signal] = ... # tickIntervalChanged(double)
-    tickTypeChanged          : typing.ClassVar[Signal] = ... # tickTypeChanged(QValueAxis::TickType)
+    # labelFormatChanged(QString)
+    labelFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # maxChanged(double)
+    maxChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minChanged(double)
+    minChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # minorTickCountChanged(int)
+    minorTickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # rangeChanged(double,double)
+    rangeChanged: typing.ClassVar[Signal[
+        [float, float], [float], [], [], [], [], [], [],
+        [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float], [float, float]
+    ]]
+    # tickAnchorChanged(double)
+    tickAnchorChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # tickCountChanged(int)
+    tickCountChanged: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # tickIntervalChanged(double)
+    tickIntervalChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # tickTypeChanged(QValueAxis::TickType)
+    tickTypeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCharts.QValueAxis.TickType], [], [], [], [], [], [], [],
+        [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType], [PySide6.QtCharts.QValueAxis.TickType]
+    ]]
 
     class TickType(enum.Enum):
         TicksDynamic              = 0x0
@@ -1470,32 +2587,136 @@ class QXYModelMapper(PySide6.QtCore.QObject):
 
 
 class QXYSeries(PySide6.QtCharts.QAbstractSeries):
-    bestFitLineColorChanged  : typing.ClassVar[Signal] = ... # bestFitLineColorChanged(QColor)
-    bestFitLinePenChanged    : typing.ClassVar[Signal] = ... # bestFitLinePenChanged(QPen)
-    bestFitLineVisibilityChanged: typing.ClassVar[Signal] = ... # bestFitLineVisibilityChanged(bool)
-    clicked                  : typing.ClassVar[Signal] = ... # clicked(QPointF)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(QPointF)
-    hovered                  : typing.ClassVar[Signal] = ... # hovered(QPointF,bool)
-    lightMarkerChanged       : typing.ClassVar[Signal] = ... # lightMarkerChanged(QImage)
-    markerSizeChanged        : typing.ClassVar[Signal] = ... # markerSizeChanged(double)
-    penChanged               : typing.ClassVar[Signal] = ... # penChanged(QPen)
-    pointAdded               : typing.ClassVar[Signal] = ... # pointAdded(int)
-    pointLabelsClippingChanged: typing.ClassVar[Signal] = ... # pointLabelsClippingChanged(bool)
-    pointLabelsColorChanged  : typing.ClassVar[Signal] = ... # pointLabelsColorChanged(QColor)
-    pointLabelsFontChanged   : typing.ClassVar[Signal] = ... # pointLabelsFontChanged(QFont)
-    pointLabelsFormatChanged : typing.ClassVar[Signal] = ... # pointLabelsFormatChanged(QString)
-    pointLabelsVisibilityChanged: typing.ClassVar[Signal] = ... # pointLabelsVisibilityChanged(bool)
-    pointRemoved             : typing.ClassVar[Signal] = ... # pointRemoved(int)
-    pointReplaced            : typing.ClassVar[Signal] = ... # pointReplaced(int)
-    pointsConfigurationChanged: typing.ClassVar[Signal] = ... # pointsConfigurationChanged(QXYSeries::PointsConfigurationHash)
-    pointsRemoved            : typing.ClassVar[Signal] = ... # pointsRemoved(int,int)
-    pointsReplaced           : typing.ClassVar[Signal] = ... # pointsReplaced()
-    pressed                  : typing.ClassVar[Signal] = ... # pressed(QPointF)
-    released                 : typing.ClassVar[Signal] = ... # released(QPointF)
-    selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
-    selectedLightMarkerChanged: typing.ClassVar[Signal] = ... # selectedLightMarkerChanged(QImage)
-    selectedPointsChanged    : typing.ClassVar[Signal] = ... # selectedPointsChanged()
+    # bestFitLineColorChanged(QColor)
+    bestFitLineColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # bestFitLinePenChanged(QPen)
+    bestFitLinePenChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # bestFitLineVisibilityChanged(bool)
+    bestFitLineVisibilityChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # clicked(QPointF)
+    clicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # doubleClicked(QPointF)
+    doubleClicked: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # hovered(QPointF,bool)
+    hovered: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool], [PySide6.QtCore.QPointF, bool]
+    ]]
+    # lightMarkerChanged(QImage)
+    lightMarkerChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImage], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage]
+    ]]
+    # markerSizeChanged(double)
+    markerSizeChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # penChanged(QPen)
+    penChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QPen], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen], [PySide6.QtGui.QPen]
+    ]]
+    # pointAdded(int)
+    pointAdded: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointLabelsClippingChanged(bool)
+    pointLabelsClippingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # pointLabelsColorChanged(QColor)
+    pointLabelsColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # pointLabelsFontChanged(QFont)
+    pointLabelsFontChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QFont], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont], [PySide6.QtGui.QFont]
+    ]]
+    # pointLabelsFormatChanged(QString)
+    pointLabelsFormatChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # pointLabelsVisibilityChanged(bool)
+    pointLabelsVisibilityChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # pointRemoved(int)
+    pointRemoved: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointReplaced(int)
+    pointReplaced: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # pointsConfigurationChanged(QXYSeries::PointsConfigurationHash)
+    pointsConfigurationChanged: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # pointsRemoved(int,int)
+    pointsRemoved: typing.ClassVar[Signal[
+        [int, int], [int], [], [], [], [], [], [],
+        [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int], [int, int]
+    ]]
+    # pointsReplaced()
+    pointsReplaced: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # pressed(QPointF)
+    pressed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # released(QPointF)
+    released: typing.ClassVar[Signal[
+        [PySide6.QtCore.QPointF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF], [PySide6.QtCore.QPointF]
+    ]]
+    # selectedColorChanged(QColor)
+    selectedColorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # selectedLightMarkerChanged(QImage)
+    selectedLightMarkerChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QImage], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage], [PySide6.QtGui.QImage]
+    ]]
+    # selectedPointsChanged()
+    selectedPointsChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class PointConfiguration(enum.Enum):
         Color                     = 0x0

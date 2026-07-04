@@ -31,7 +31,11 @@ class QIntList:
 
 
 class QJSEngine(PySide6.QtCore.QObject):
-    uiLanguageChanged        : typing.ClassVar[Signal] = ... # uiLanguageChanged()
+    # uiLanguageChanged()
+    uiLanguageChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Extension(enum.Flag):
         AllExtensions             = -1
@@ -335,8 +339,16 @@ class QQmlAbstractUrlInterceptor(Shiboken.Object):
 
 
 class QQmlApplicationEngine(PySide6.QtQml.QQmlEngine):
-    objectCreated            : typing.ClassVar[Signal] = ... # objectCreated(QObject*,QUrl)
-    objectCreationFailed     : typing.ClassVar[Signal] = ... # objectCreationFailed(QUrl)
+    # objectCreated(QObject*,QUrl)
+    objectCreated: typing.ClassVar[Signal[
+        [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject], [], [], [], [], [], [],
+        [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl], [PySide6.QtCore.QObject, PySide6.QtCore.QUrl]
+    ]]
+    # objectCreationFailed(QUrl)
+    objectCreationFailed: typing.ClassVar[Signal[
+        [PySide6.QtCore.QUrl], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl], [PySide6.QtCore.QUrl]
+    ]]
 
     @typing.overload
     def __init__(self, uri: str, typeName: str, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -359,8 +371,16 @@ class QQmlApplicationEngine(PySide6.QtQml.QQmlEngine):
 
 
 class QQmlComponent(PySide6.QtCore.QObject):
-    progressChanged          : typing.ClassVar[Signal] = ... # progressChanged(double)
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQmlComponent::Status)
+    # progressChanged(double)
+    progressChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # statusChanged(QQmlComponent::Status)
+    statusChanged: typing.ClassVar[Signal[
+        [PySide6.QtQml.QQmlComponent.Status], [], [], [], [], [], [], [],
+        [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status], [PySide6.QtQml.QQmlComponent.Status]
+    ]]
 
     class CompilationMode(enum.Enum):
         PreferSynchronous         = 0x0
@@ -493,10 +513,26 @@ class QQmlDebuggingEnabler(Shiboken.Object):
 
 
 class QQmlEngine(PySide6.QtQml.QJSEngine):
-    exit                     : typing.ClassVar[Signal] = ... # exit(int)
-    offlineStoragePathChanged: typing.ClassVar[Signal] = ... # offlineStoragePathChanged()
-    quit                     : typing.ClassVar[Signal] = ... # quit()
-    warnings                 : typing.ClassVar[Signal] = ... # warnings(QList<QQmlError>)
+    # exit(int)
+    exit: typing.ClassVar[Signal[
+        [int], [], [], [], [], [], [], [],
+        [int], [int], [int], [int], [int], [int], [int], [int]
+    ]]
+    # offlineStoragePathChanged()
+    offlineStoragePathChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # quit()
+    quit: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # warnings(QList<QQmlError>)
+    warnings: typing.ClassVar[Signal[
+        [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [], [], [], [], [], [], [],
+        [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]], [collections.abc.Sequence[PySide6.QtQml.QQmlError]]
+    ]]
 
     def __init__(self, /, p: PySide6.QtCore.QObject | None = ..., *, offlineStoragePath: str | None = ...) -> None: ...
 
@@ -573,7 +609,11 @@ class QQmlError(Shiboken.Object):
 
 
 class QQmlExpression(PySide6.QtCore.QObject):
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
+    # valueChanged()
+    valueChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -875,7 +915,11 @@ class QQmlProperty(Shiboken.Object):
 
 
 class QQmlPropertyMap(PySide6.QtCore.QObject):
-    valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(QString,QVariant)
+    # valueChanged(QString,QVariant)
+    valueChanged: typing.ClassVar[Signal[
+        [str, typing.Any], [str], [], [], [], [], [], [],
+        [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any], [str, typing.Any]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

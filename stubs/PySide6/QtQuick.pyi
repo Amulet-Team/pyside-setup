@@ -32,8 +32,16 @@ class QQuickAsyncImageProvider(PySide6.QtQuick.QQuickImageProvider):
 
 
 class QQuickFramebufferObject(PySide6.QtQuick.QQuickItem):
-    mirrorVerticallyChanged  : typing.ClassVar[Signal] = ... # mirrorVerticallyChanged(bool)
-    textureFollowsItemSizeChanged: typing.ClassVar[Signal] = ... # textureFollowsItemSizeChanged(bool)
+    # mirrorVerticallyChanged(bool)
+    mirrorVerticallyChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # textureFollowsItemSizeChanged(bool)
+    textureFollowsItemSizeChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     class Renderer(Shiboken.Object):
         def __init__(self, /) -> None: ...
@@ -119,7 +127,11 @@ class QQuickImageProvider(PySide6.QtQml.QQmlImageProviderBase):
 
 
 class QQuickImageResponse(PySide6.QtCore.QObject):
-    finished                 : typing.ClassVar[Signal] = ... # finished()
+    # finished()
+    finished: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /) -> None: ...
 
@@ -129,36 +141,156 @@ class QQuickImageResponse(PySide6.QtCore.QObject):
 
 
 class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-    activeFocusChanged       : typing.ClassVar[Signal] = ... # activeFocusChanged(bool)
-    activeFocusOnTabChanged  : typing.ClassVar[Signal] = ... # activeFocusOnTabChanged(bool)
-    antialiasingChanged      : typing.ClassVar[Signal] = ... # antialiasingChanged(bool)
-    baselineOffsetChanged    : typing.ClassVar[Signal] = ... # baselineOffsetChanged(double)
-    childrenChanged          : typing.ClassVar[Signal] = ... # childrenChanged()
-    childrenRectChanged      : typing.ClassVar[Signal] = ... # childrenRectChanged(QRectF)
-    clipChanged              : typing.ClassVar[Signal] = ... # clipChanged(bool)
-    containmentMaskChanged   : typing.ClassVar[Signal] = ... # containmentMaskChanged()
-    enabledChanged           : typing.ClassVar[Signal] = ... # enabledChanged()
-    focusChanged             : typing.ClassVar[Signal] = ... # focusChanged(bool)
-    focusPolicyChanged       : typing.ClassVar[Signal] = ... # focusPolicyChanged(Qt::FocusPolicy)
-    heightChanged            : typing.ClassVar[Signal] = ... # heightChanged()
-    implicitHeightChanged    : typing.ClassVar[Signal] = ... # implicitHeightChanged()
-    implicitWidthChanged     : typing.ClassVar[Signal] = ... # implicitWidthChanged()
-    opacityChanged           : typing.ClassVar[Signal] = ... # opacityChanged()
-    paletteChanged           : typing.ClassVar[Signal] = ... # paletteChanged()
-    paletteCreated           : typing.ClassVar[Signal] = ... # paletteCreated()
-    parentChanged            : typing.ClassVar[Signal] = ... # parentChanged(QQuickItem*)
-    rotationChanged          : typing.ClassVar[Signal] = ... # rotationChanged()
-    scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged()
-    smoothChanged            : typing.ClassVar[Signal] = ... # smoothChanged(bool)
-    stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QString)
-    transformOriginChanged   : typing.ClassVar[Signal] = ... # transformOriginChanged(TransformOrigin)
-    visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
-    visibleChildrenChanged   : typing.ClassVar[Signal] = ... # visibleChildrenChanged()
-    widthChanged             : typing.ClassVar[Signal] = ... # widthChanged()
-    windowChanged            : typing.ClassVar[Signal] = ... # windowChanged(QQuickWindow*)
-    xChanged                 : typing.ClassVar[Signal] = ... # xChanged()
-    yChanged                 : typing.ClassVar[Signal] = ... # yChanged()
-    zChanged                 : typing.ClassVar[Signal] = ... # zChanged()
+    # activeFocusChanged(bool)
+    activeFocusChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # activeFocusOnTabChanged(bool)
+    activeFocusOnTabChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # antialiasingChanged(bool)
+    antialiasingChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # baselineOffsetChanged(double)
+    baselineOffsetChanged: typing.ClassVar[Signal[
+        [float], [], [], [], [], [], [], [],
+        [float], [float], [float], [float], [float], [float], [float], [float]
+    ]]
+    # childrenChanged()
+    childrenChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # childrenRectChanged(QRectF)
+    childrenRectChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QRectF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF], [PySide6.QtCore.QRectF]
+    ]]
+    # clipChanged(bool)
+    clipChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # containmentMaskChanged()
+    containmentMaskChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # enabledChanged()
+    enabledChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # focusChanged(bool)
+    focusChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # focusPolicyChanged(Qt::FocusPolicy)
+    focusPolicyChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.FocusPolicy], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy], [PySide6.QtCore.Qt.FocusPolicy]
+    ]]
+    # heightChanged()
+    heightChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # implicitHeightChanged()
+    implicitHeightChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # implicitWidthChanged()
+    implicitWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # opacityChanged()
+    opacityChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # paletteChanged()
+    paletteChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # paletteCreated()
+    paletteCreated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # parentChanged(QQuickItem*)
+    parentChanged: typing.ClassVar[Signal[
+        [PySide6.QtQuick.QQuickItem], [], [], [], [], [], [], [],
+        [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem], [PySide6.QtQuick.QQuickItem]
+    ]]
+    # rotationChanged()
+    rotationChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # scaleChanged()
+    scaleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # smoothChanged(bool)
+    smoothChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
+    # stateChanged(QString)
+    stateChanged: typing.ClassVar[Signal[
+        [str], [], [], [], [], [], [], [],
+        [str], [str], [str], [str], [str], [str], [str], [str]
+    ]]
+    # transformOriginChanged(TransformOrigin)
+    transformOriginChanged: typing.ClassVar[Signal[
+        [TransformOrigin], [], [], [], [], [], [], [],
+        [TransformOrigin], [TransformOrigin], [TransformOrigin], [TransformOrigin], [TransformOrigin], [TransformOrigin], [TransformOrigin], [TransformOrigin]
+    ]]
+    # visibleChanged()
+    visibleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # visibleChildrenChanged()
+    visibleChildrenChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # widthChanged()
+    widthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # windowChanged(QQuickWindow*)
+    windowChanged: typing.ClassVar[Signal[
+        [PySide6.QtQuick.QQuickWindow], [], [], [], [], [], [], [],
+        [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow], [PySide6.QtQuick.QQuickWindow]
+    ]]
+    # xChanged()
+    xChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # yChanged()
+    yChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # zChanged()
+    zChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Flag(enum.Flag):
         ItemClipsChildrenToShape  = 0x1
@@ -386,7 +518,11 @@ class QQuickItem(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QQuickItemGrabResult(PySide6.QtCore.QObject):
-    ready                    : typing.ClassVar[Signal] = ... # ready()
+    # ready()
+    ready: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def event(self, arg__1: PySide6.QtCore.QEvent, /) -> bool: ...
     def image(self, /) -> PySide6.QtGui.QImage: ...
@@ -403,11 +539,31 @@ class QQuickOpenGLUtils(Shiboken.Object):
 
 
 class QQuickPaintedItem(PySide6.QtQuick.QQuickItem):
-    contentsScaleChanged     : typing.ClassVar[Signal] = ... # contentsScaleChanged()
-    contentsSizeChanged      : typing.ClassVar[Signal] = ... # contentsSizeChanged()
-    fillColorChanged         : typing.ClassVar[Signal] = ... # fillColorChanged()
-    renderTargetChanged      : typing.ClassVar[Signal] = ... # renderTargetChanged()
-    textureSizeChanged       : typing.ClassVar[Signal] = ... # textureSizeChanged()
+    # contentsScaleChanged()
+    contentsScaleChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # contentsSizeChanged()
+    contentsSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # fillColorChanged()
+    fillColorChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # renderTargetChanged()
+    renderTargetChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # textureSizeChanged()
+    textureSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class PerformanceHint(enum.Flag):
         FastFBOResizing           = 0x1
@@ -449,8 +605,16 @@ class QQuickPaintedItem(PySide6.QtQuick.QQuickItem):
 
 
 class QQuickRenderControl(PySide6.QtCore.QObject):
-    renderRequested          : typing.ClassVar[Signal] = ... # renderRequested()
-    sceneChanged             : typing.ClassVar[Signal] = ... # sceneChanged()
+    # renderRequested()
+    renderRequested: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sceneChanged()
+    sceneChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -524,14 +688,46 @@ class QQuickRenderTarget(Shiboken.Object):
 
 
 class QQuickRhiItem(PySide6.QtQuick.QQuickItem):
-    alphaBlendingChanged     : typing.ClassVar[Signal] = ... # alphaBlendingChanged()
-    autoRenderTargetChanged  : typing.ClassVar[Signal] = ... # autoRenderTargetChanged()
-    colorBufferFormatChanged : typing.ClassVar[Signal] = ... # colorBufferFormatChanged()
-    effectiveColorBufferSizeChanged: typing.ClassVar[Signal] = ... # effectiveColorBufferSizeChanged()
-    fixedColorBufferHeightChanged: typing.ClassVar[Signal] = ... # fixedColorBufferHeightChanged()
-    fixedColorBufferWidthChanged: typing.ClassVar[Signal] = ... # fixedColorBufferWidthChanged()
-    mirrorVerticallyChanged  : typing.ClassVar[Signal] = ... # mirrorVerticallyChanged()
-    sampleCountChanged       : typing.ClassVar[Signal] = ... # sampleCountChanged()
+    # alphaBlendingChanged()
+    alphaBlendingChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # autoRenderTargetChanged()
+    autoRenderTargetChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # colorBufferFormatChanged()
+    colorBufferFormatChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # effectiveColorBufferSizeChanged()
+    effectiveColorBufferSizeChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # fixedColorBufferHeightChanged()
+    fixedColorBufferHeightChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # fixedColorBufferWidthChanged()
+    fixedColorBufferWidthChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # mirrorVerticallyChanged()
+    mirrorVerticallyChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sampleCountChanged()
+    sampleCountChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class TextureFormat(enum.Enum):
         RGBA8                     = 0x0
@@ -581,11 +777,31 @@ class QQuickRhiItemRenderer(Shiboken.Object):
 
 
 class QQuickTextDocument(PySide6.QtCore.QObject):
-    errorStringChanged       : typing.ClassVar[Signal] = ... # errorStringChanged()
-    modifiedChanged          : typing.ClassVar[Signal] = ... # modifiedChanged()
-    sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged()
-    textDocumentChanged      : typing.ClassVar[Signal] = ... # textDocumentChanged()
+    # errorStringChanged()
+    errorStringChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # modifiedChanged()
+    modifiedChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sourceChanged()
+    sourceChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # statusChanged()
+    statusChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # textDocumentChanged()
+    textDocumentChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class Status(enum.Enum):
         Null                      = 0x0
@@ -632,7 +848,11 @@ class QQuickTransform(PySide6.QtCore.QObject):
 
 
 class QQuickView(PySide6.QtQuick.QQuickWindow):
-    statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQuickView::Status)
+    # statusChanged(QQuickView::Status)
+    statusChanged: typing.ClassVar[Signal[
+        [PySide6.QtQuick.QQuickView.Status], [], [], [], [], [], [], [],
+        [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status], [PySide6.QtQuick.QQuickView.Status]
+    ]]
 
     class ResizeMode(enum.Enum):
         SizeViewToRootObject      = 0x0
@@ -679,26 +899,106 @@ class QQuickView(PySide6.QtQuick.QQuickWindow):
 
 
 class QQuickWindow(PySide6.QtGui.QWindow):
-    activeFocusItemChanged   : typing.ClassVar[Signal] = ... # activeFocusItemChanged()
-    afterAnimating           : typing.ClassVar[Signal] = ... # afterAnimating()
-    afterFrameEnd            : typing.ClassVar[Signal] = ... # afterFrameEnd()
-    afterRenderPassRecording : typing.ClassVar[Signal] = ... # afterRenderPassRecording()
-    afterRendering           : typing.ClassVar[Signal] = ... # afterRendering()
-    afterSynchronizing       : typing.ClassVar[Signal] = ... # afterSynchronizing()
-    beforeFrameBegin         : typing.ClassVar[Signal] = ... # beforeFrameBegin()
-    beforeRenderPassRecording: typing.ClassVar[Signal] = ... # beforeRenderPassRecording()
-    beforeRendering          : typing.ClassVar[Signal] = ... # beforeRendering()
-    beforeSynchronizing      : typing.ClassVar[Signal] = ... # beforeSynchronizing()
-    closing                  : typing.ClassVar[Signal] = ... # closing(QQuickCloseEvent*)
-    colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
-    devicePixelRatioChanged  : typing.ClassVar[Signal] = ... # devicePixelRatioChanged()
-    frameSwapped             : typing.ClassVar[Signal] = ... # frameSwapped()
-    paletteChanged           : typing.ClassVar[Signal] = ... # paletteChanged()
-    paletteCreated           : typing.ClassVar[Signal] = ... # paletteCreated()
-    sceneGraphAboutToStop    : typing.ClassVar[Signal] = ... # sceneGraphAboutToStop()
-    sceneGraphError          : typing.ClassVar[Signal] = ... # sceneGraphError(QQuickWindow::SceneGraphError,QString)
-    sceneGraphInitialized    : typing.ClassVar[Signal] = ... # sceneGraphInitialized()
-    sceneGraphInvalidated    : typing.ClassVar[Signal] = ... # sceneGraphInvalidated()
+    # activeFocusItemChanged()
+    activeFocusItemChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # afterAnimating()
+    afterAnimating: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # afterFrameEnd()
+    afterFrameEnd: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # afterRenderPassRecording()
+    afterRenderPassRecording: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # afterRendering()
+    afterRendering: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # afterSynchronizing()
+    afterSynchronizing: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # beforeFrameBegin()
+    beforeFrameBegin: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # beforeRenderPassRecording()
+    beforeRenderPassRecording: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # beforeRendering()
+    beforeRendering: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # beforeSynchronizing()
+    beforeSynchronizing: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # closing(QQuickCloseEvent*)
+    closing: typing.ClassVar[Signal[
+        [typing.Any], [], [], [], [], [], [], [],
+        [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any], [typing.Any]
+    ]]
+    # colorChanged(QColor)
+    colorChanged: typing.ClassVar[Signal[
+        [PySide6.QtGui.QColor], [], [], [], [], [], [], [],
+        [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor], [PySide6.QtGui.QColor]
+    ]]
+    # devicePixelRatioChanged()
+    devicePixelRatioChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # frameSwapped()
+    frameSwapped: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # paletteChanged()
+    paletteChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # paletteCreated()
+    paletteCreated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sceneGraphAboutToStop()
+    sceneGraphAboutToStop: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sceneGraphError(QQuickWindow::SceneGraphError,QString)
+    sceneGraphError: typing.ClassVar[Signal[
+        [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError], [], [], [], [], [], [],
+        [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str], [PySide6.QtQuick.QQuickWindow.SceneGraphError, str]
+    ]]
+    # sceneGraphInitialized()
+    sceneGraphInitialized: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
+    # sceneGraphInvalidated()
+    sceneGraphInvalidated: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class CreateTextureOption(enum.Flag):
         TextureHasAlphaChannel    = 0x1
@@ -1720,7 +2020,11 @@ class QSGTextureMaterial(PySide6.QtQuick.QSGOpaqueTextureMaterial):
 
 
 class QSGTextureProvider(PySide6.QtCore.QObject):
-    textureChanged           : typing.ClassVar[Signal] = ... # textureChanged()
+    # textureChanged()
+    textureChanged: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     def __init__(self, /) -> None: ...
 

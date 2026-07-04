@@ -19,7 +19,11 @@ from PySide6.QtCore import Signal
 
 
 class QGraphicsVideoItem(PySide6.QtWidgets.QGraphicsObject):
-    nativeSizeChanged        : typing.ClassVar[Signal] = ... # nativeSizeChanged(QSizeF)
+    # nativeSizeChanged(QSizeF)
+    nativeSizeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.QSizeF], [], [], [], [], [], [], [],
+        [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF], [PySide6.QtCore.QSizeF]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtWidgets.QGraphicsItem | None = ..., *, aspectRatioMode: PySide6.QtCore.Qt.AspectRatioMode | None = ..., offset: PySide6.QtCore.QPointF | None = ..., size: PySide6.QtCore.QSizeF | None = ..., nativeSize: PySide6.QtCore.QSizeF | None = ..., videoSink: PySide6.QtMultimedia.QVideoSink | None = ...) -> None: ...
 
@@ -43,8 +47,16 @@ class QIntList:
 
 
 class QVideoWidget(PySide6.QtWidgets.QWidget):
-    aspectRatioModeChanged   : typing.ClassVar[Signal] = ... # aspectRatioModeChanged(Qt::AspectRatioMode)
-    fullScreenChanged        : typing.ClassVar[Signal] = ... # fullScreenChanged(bool)
+    # aspectRatioModeChanged(Qt::AspectRatioMode)
+    aspectRatioModeChanged: typing.ClassVar[Signal[
+        [PySide6.QtCore.Qt.AspectRatioMode], [], [], [], [], [], [], [],
+        [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode], [PySide6.QtCore.Qt.AspectRatioMode]
+    ]]
+    # fullScreenChanged(bool)
+    fullScreenChanged: typing.ClassVar[Signal[
+        [bool], [], [], [], [], [], [], [],
+        [bool], [bool], [bool], [bool], [bool], [bool], [bool], [bool]
+    ]]
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ..., *, fullScreen: bool | None = ..., aspectRatioMode: PySide6.QtCore.Qt.AspectRatioMode | None = ...) -> None: ...
 

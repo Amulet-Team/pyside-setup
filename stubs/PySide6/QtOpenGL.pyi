@@ -97,7 +97,11 @@ class QOpenGLBuffer(Shiboken.Object):
 
 
 class QOpenGLDebugLogger(PySide6.QtCore.QObject):
-    messageLogged            : typing.ClassVar[Signal] = ... # messageLogged(QOpenGLDebugMessage)
+    # messageLogged(QOpenGLDebugMessage)
+    messageLogged: typing.ClassVar[Signal[
+        [PySide6.QtOpenGL.QOpenGLDebugMessage], [], [], [], [], [], [], [],
+        [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage], [PySide6.QtOpenGL.QOpenGLDebugMessage]
+    ]]
 
     class LoggingMode(enum.Enum):
         AsynchronousLogging       = 0x0
@@ -13943,7 +13947,11 @@ class QOpenGLVertexArrayObject(PySide6.QtCore.QObject):
 
 
 class QOpenGLWindow(PySide6.QtGui.QPaintDeviceWindow):
-    frameSwapped             : typing.ClassVar[Signal] = ... # frameSwapped()
+    # frameSwapped()
+    frameSwapped: typing.ClassVar[Signal[
+        [], [], [], [], [], [], [], [],
+        [], [], [], [], [], [], [], []
+    ]]
 
     class UpdateBehavior(enum.Enum):
         NoPartialUpdate           = 0x0
