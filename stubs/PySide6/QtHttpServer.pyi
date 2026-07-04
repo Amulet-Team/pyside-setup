@@ -20,7 +20,6 @@ from shiboken6 import Shiboken
 
 
 class QAbstractHttpServer(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     @typing.overload
@@ -37,7 +36,6 @@ class QAbstractHttpServer(PySide6.QtCore.QObject):
 
 
 class QFutureHttpServerResponse(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -70,7 +68,6 @@ class QFutureHttpServerResponse(Shiboken.Object):
 
 
 class QHttpServer(PySide6.QtHttpServer.QAbstractHttpServer):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def addAfterRequestHandler(self, context: PySide6.QtCore.QObject, callback: collections.abc.Callable[..., typing.Any], /) -> None: ...
@@ -82,7 +79,6 @@ class QHttpServer(PySide6.QtHttpServer.QAbstractHttpServer):
 
 
 class QHttpServerConfiguration(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -109,9 +105,7 @@ class QHttpServerConfiguration(Shiboken.Object):
 
 
 class QHttpServerRequest(Shiboken.Object):
-
     class Method(enum.Flag):
-
         Unknown                   = 0x0
         Get                       = 0x1
         Put                       = 0x2
@@ -123,7 +117,6 @@ class QHttpServerRequest(Shiboken.Object):
         Connect                   = 0x80
         Trace                     = 0x100
         AnyKnown                  = 0x1ff
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -145,9 +138,7 @@ class QHttpServerRequest(Shiboken.Object):
 
 
 class QHttpServerResponder(Shiboken.Object):
-
     class StatusCode(enum.Enum):
-
         Continue                  = 0x64
         SwitchingProtocols        = 0x65
         Processing                = 0x66
@@ -210,7 +201,6 @@ class QHttpServerResponder(Shiboken.Object):
         NetworkAuthenticationRequired = 0x1ff
         NetworkConnectTimeoutError = 0x257
 
-
     def isResponseCanceled(self, /) -> bool: ...
     def sendResponse(self, response: PySide6.QtHttpServer.QHttpServerResponse, /) -> None: ...
     def swap(self, other: PySide6.QtHttpServer.QHttpServerResponder, /) -> None: ...
@@ -244,7 +234,6 @@ class QHttpServerResponder(Shiboken.Object):
 
 
 class QHttpServerResponse(Shiboken.Object):
-
     @typing.overload
     def __init__(self, data: PySide6.QtCore.QJsonArray, /, status: PySide6.QtHttpServer.QHttpServerResponder.StatusCode = ...) -> None: ...
     @typing.overload
@@ -269,7 +258,6 @@ class QHttpServerResponse(Shiboken.Object):
 
 
 class QHttpServerRouter(Shiboken.Object):
-
     def __init__(self, server: PySide6.QtHttpServer.QAbstractHttpServer, /) -> None: ...
 
     def addConverter(self, metaType: PySide6.QtCore.QMetaType | PySide6.QtCore.QMetaType.Type, regexp: str, /) -> None: ...
@@ -287,13 +275,10 @@ class QHttpServerRouterRule(Shiboken.Object):
 
 
 class QHttpServerWebSocketUpgradeResponse(Shiboken.Object):
-
     class ResponseType(enum.Enum):
-
         Accept                    = 0x0
         Deny                      = 0x1
         PassToNext                = 0x2
-
 
     def __init__(self, other: PySide6.QtHttpServer.QHttpServerWebSocketUpgradeResponse, /) -> None: ...
 
@@ -313,7 +298,8 @@ class QHttpServerWebSocketUpgradeResponse(Shiboken.Object):
     def type(self, /) -> PySide6.QtHttpServer.QHttpServerWebSocketUpgradeResponse.ResponseType: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

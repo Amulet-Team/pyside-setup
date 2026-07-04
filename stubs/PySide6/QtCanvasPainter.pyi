@@ -22,7 +22,6 @@ from shiboken6 import Shiboken
 
 
 class QCanvasBoxGradient(PySide6.QtCanvasPainter.QCanvasGradient):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -45,7 +44,6 @@ class QCanvasBoxGradient(PySide6.QtCanvasPainter.QCanvasGradient):
 
 
 class QCanvasBoxShadow(PySide6.QtCanvasPainter.QCanvasBrush):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -86,9 +84,7 @@ class QCanvasBoxShadow(PySide6.QtCanvasPainter.QCanvasBrush):
 
 
 class QCanvasBrush(Shiboken.Object):
-
     class BrushType(enum.Enum):
-
         Invalid                   = 0x0
         LinearGradient            = 0x1
         RadialGradient            = 0x2
@@ -98,7 +94,6 @@ class QCanvasBrush(Shiboken.Object):
         ImagePattern              = 0x6
         GridPattern               = 0x7
         Custom                    = 0x3e8
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -112,7 +107,6 @@ class QCanvasBrush(Shiboken.Object):
 
 
 class QCanvasConicalGradient(PySide6.QtCanvasPainter.QCanvasGradient):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -133,7 +127,6 @@ class QCanvasConicalGradient(PySide6.QtCanvasPainter.QCanvasGradient):
 
 
 class QCanvasCustomBrush(PySide6.QtCanvasPainter.QCanvasBrush):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -162,7 +155,6 @@ class QCanvasCustomBrush(PySide6.QtCanvasPainter.QCanvasBrush):
 
 
 class QCanvasGradient(PySide6.QtCanvasPainter.QCanvasBrush):
-
     def __init__(self, QCanvasGradient: PySide6.QtCanvasPainter.QCanvasGradient, /) -> None: ...
 
     def __copy__(self, /) -> typing.Self: ...
@@ -182,7 +174,6 @@ class QCanvasGradient(PySide6.QtCanvasPainter.QCanvasBrush):
 
 
 class QCanvasGradientStop(Shiboken.Object):
-
     @property
     def color(self) -> PySide6.QtGui.QColor: ...
     @color.setter
@@ -206,7 +197,6 @@ class QCanvasGradientStop(Shiboken.Object):
 
 
 class QCanvasGridPattern(PySide6.QtCanvasPainter.QCanvasBrush):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -245,7 +235,6 @@ class QCanvasGridPattern(PySide6.QtCanvasPainter.QCanvasBrush):
 
 
 class QCanvasImage(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -267,7 +256,6 @@ class QCanvasImage(Shiboken.Object):
 
 
 class QCanvasImagePattern(PySide6.QtCanvasPainter.QCanvasBrush):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -304,7 +292,6 @@ class QCanvasImagePattern(PySide6.QtCanvasPainter.QCanvasBrush):
 
 
 class QCanvasLinearGradient(PySide6.QtCanvasPainter.QCanvasGradient):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -328,12 +315,9 @@ class QCanvasLinearGradient(PySide6.QtCanvasPainter.QCanvasGradient):
 
 
 class QCanvasOffscreenCanvas(Shiboken.Object):
-
     class Flag(enum.Flag):
-
         PreserveContents          = 0x1
         MipMaps                   = 0x2
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -352,15 +336,12 @@ class QCanvasOffscreenCanvas(Shiboken.Object):
 
 
 class QCanvasPainter(Shiboken.Object):
-
     class CompositeOperation(enum.Enum):
-
         SourceOver                = 0x0
         SourceAtop                = 0x1
         DestinationOut            = 0x2
 
     class ImageFlag(enum.Flag):
-
         GenerateMipmaps           = 0x1
         RepeatX                   = 0x2
         RepeatY                   = 0x4
@@ -371,35 +352,29 @@ class QCanvasPainter(Shiboken.Object):
         NativeTexture             = 0x40
 
     class LineCap(enum.Enum):
-
         Butt                      = 0x0
         Round                     = 0x1
         Square                    = 0x2
 
     class LineJoin(enum.Enum):
-
         Round                     = 0x0
         Bevel                     = 0x1
         Miter                     = 0x2
 
     class PathConnection(enum.Enum):
-
         NotConnected              = 0x0
         Connected                 = 0x1
 
     class PathWinding(enum.Enum):
-
         CounterClockWise          = 0x0
         ClockWise                 = 0x1
 
     class RenderHint(enum.Flag):
-
         Antialiasing              = 0x1
         HighQualityStroking       = 0x2
         DisableWindingEnforce     = 0x4
 
     class TextAlign(enum.Enum):
-
         Left                      = 0x0
         Right                     = 0x1
         Center                    = 0x2
@@ -407,7 +382,6 @@ class QCanvasPainter(Shiboken.Object):
         End                       = 0x4
 
     class TextBaseline(enum.Enum):
-
         Top                       = 0x0
         Hanging                   = 0x1
         Middle                    = 0x2
@@ -415,19 +389,16 @@ class QCanvasPainter(Shiboken.Object):
         Bottom                    = 0x4
 
     class TextDirection(enum.Enum):
-
         LeftToRight               = 0x0
         RightToLeft               = 0x1
         Inherit                   = 0x2
         Auto                      = 0x3
 
     class WrapMode(enum.Enum):
-
         NoWrap                    = 0x0
         Wrap                      = 0x1
         WordWrap                  = 0x2
         WrapAnywhere              = 0x3
-
 
     def __init__(self, /) -> None: ...
 
@@ -601,7 +572,6 @@ class QCanvasPainter(Shiboken.Object):
 
 
 class QCanvasPainterFactory(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def create(self, rhi: PySide6.QtGui.QRhi, /) -> PySide6.QtCanvasPainter.QCanvasPainter: ...
@@ -614,7 +584,6 @@ class QCanvasPainterFactory(Shiboken.Object):
 
 
 class QCanvasPainterItem(PySide6.QtQuick.QQuickRhiItem):
-
     debugChanged             : typing.ClassVar[Signal] = ... # debugChanged()
     fillColorChanged         : typing.ClassVar[Signal] = ... # fillColorChanged()
 
@@ -628,7 +597,6 @@ class QCanvasPainterItem(PySide6.QtQuick.QQuickRhiItem):
 
 
 class QCanvasPainterItemRenderer(PySide6.QtQuick.QQuickRhiItemRenderer):
-
     def __init__(self, /) -> None: ...
 
     def beginCanvasPainting(self, canvas: PySide6.QtCanvasPainter.QCanvasOffscreenCanvas, /) -> None: ...
@@ -652,7 +620,6 @@ class QCanvasPainterItemRenderer(PySide6.QtQuick.QQuickRhiItemRenderer):
 
 
 class QCanvasPainterWidget(PySide6.QtWidgets.QRhiWidget):
-
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
 
     def beginCanvasPainting(self, canvas: PySide6.QtCanvasPainter.QCanvasOffscreenCanvas, /) -> None: ...
@@ -677,7 +644,6 @@ class QCanvasPainterWidget(PySide6.QtWidgets.QRhiWidget):
 
 
 class QCanvasPath(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -758,7 +724,6 @@ class QCanvasPath(Shiboken.Object):
 
 
 class QCanvasRadialGradient(PySide6.QtCanvasPainter.QCanvasGradient):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -781,15 +746,11 @@ class QCanvasRadialGradient(PySide6.QtCanvasPainter.QCanvasGradient):
 
 
 class QCanvasRhiPaintDriver(Shiboken.Object):
-
     class BeginPaintFlag(enum.Flag):
-
         DepthTest                 = 0x1
 
     class EndPaintFlag(enum.Flag):
-
         DoNotRecordRenderPass     = 0x1
-
 
     def __init__(self, /) -> None: ...
 
@@ -805,7 +766,8 @@ class QCanvasRhiPaintDriver(Shiboken.Object):
     def resetForNewFrame(self, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 # eof

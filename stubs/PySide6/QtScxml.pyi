@@ -18,17 +18,15 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QScxmlCompiler(Shiboken.Object):
-
     class Loader(Shiboken.Object):
-
         def __init__(self, /) -> None: ...
 
         def load(self, name: str, baseDir: str, /) -> typing.Tuple[PySide6.QtCore.QByteArray, typing.List[str]]: ...
-
 
     def __init__(self, xmlReader: PySide6.QtCore.QXmlStreamReader, /) -> None: ...
 
@@ -41,7 +39,6 @@ class QScxmlCompiler(Shiboken.Object):
 
 
 class QScxmlCppDataModel(PySide6.QtScxml.QScxmlDataModel):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def evaluateAssignment(self, id: int, /) -> bool: ...
@@ -57,15 +54,12 @@ class QScxmlCppDataModel(PySide6.QtScxml.QScxmlDataModel):
 
 
 class QScxmlDataModel(PySide6.QtCore.QObject):
-
     stateMachineChanged      : typing.ClassVar[Signal] = ... # stateMachineChanged(QScxmlStateMachine*)
 
     class ForeachLoopBody(Shiboken.Object):
-
         def __init__(self, /) -> None: ...
 
         def run(self, /) -> bool: ...
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, stateMachine: PySide6.QtScxml.QScxmlStateMachine | None = ...) -> None: ...
 
@@ -88,14 +82,12 @@ class QScxmlDataModel(PySide6.QtCore.QObject):
 
 
 class QScxmlDynamicScxmlServiceFactory(PySide6.QtScxml.QScxmlInvokableServiceFactory):
-
     def __init__(self, invokeInfo: PySide6.QtScxml.QScxmlExecutableContent.InvokeInfo, names: collections.abc.Sequence[int], parameters: collections.abc.Sequence[PySide6.QtScxml.QScxmlExecutableContent.ParameterInfo], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def invoke(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, /) -> PySide6.QtScxml.QScxmlInvokableService: ...
 
 
 class QScxmlError(Shiboken.Object):
-
     @typing.overload
     def __init__(self, arg__1: PySide6.QtScxml.QScxmlError, /, *, valid: bool | None = ..., fileName: str | None = ..., line: int | None = ..., column: int | None = ..., description: str | None = ...) -> None: ...
     @typing.overload
@@ -113,13 +105,10 @@ class QScxmlError(Shiboken.Object):
 
 
 class QScxmlEvent(Shiboken.Object):
-
     class EventType(enum.Enum):
-
         PlatformEvent             = 0x0
         InternalEvent             = 0x1
         ExternalEvent             = 0x2
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtScxml.QScxmlEvent, /, *, name: str | None = ..., eventType: PySide6.QtScxml.QScxmlEvent.EventType | None = ..., scxmlType: str | None = ..., sendId: str | None = ..., origin: str | None = ..., originType: str | None = ..., invokeId: str | None = ..., delay: int | None = ..., data: typing.Any | None = ..., errorEvent: bool | None = ..., errorMessage: str | None = ...) -> None: ...
@@ -151,9 +140,7 @@ class QScxmlEvent(Shiboken.Object):
 
 
 class QScxmlExecutableContent(Shiboken.Object):
-
     class AssignmentInfo(Shiboken.Object):
-
         @property
         def context(self) -> int: ...
         @context.setter
@@ -175,7 +162,6 @@ class QScxmlExecutableContent(Shiboken.Object):
         def __copy__(self, /) -> typing.Self: ...
 
     class EvaluatorInfo(Shiboken.Object):
-
         @property
         def context(self) -> int: ...
         @context.setter
@@ -193,7 +179,6 @@ class QScxmlExecutableContent(Shiboken.Object):
         def __copy__(self, /) -> typing.Self: ...
 
     class ForeachInfo(Shiboken.Object):
-
         @property
         def array(self) -> int: ...
         @array.setter
@@ -219,7 +204,6 @@ class QScxmlExecutableContent(Shiboken.Object):
         def __copy__(self, /) -> typing.Self: ...
 
     class InvokeInfo(Shiboken.Object):
-
         @property
         def autoforward(self) -> bool: ...
         @autoforward.setter
@@ -257,7 +241,6 @@ class QScxmlExecutableContent(Shiboken.Object):
         def __copy__(self, /) -> typing.Self: ...
 
     class ParameterInfo(Shiboken.Object):
-
         @property
         def expr(self) -> int: ...
         @expr.setter
@@ -280,7 +263,6 @@ class QScxmlExecutableContent(Shiboken.Object):
 
 
 class QScxmlInvokableService(PySide6.QtCore.QObject):
-
     def __init__(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, parent: PySide6.QtScxml.QScxmlInvokableServiceFactory, /, *, id: str | None = ..., name: str | None = ...) -> None: ...
 
     def id(self, /) -> str: ...
@@ -291,7 +273,6 @@ class QScxmlInvokableService(PySide6.QtCore.QObject):
 
 
 class QScxmlInvokableServiceFactory(PySide6.QtCore.QObject):
-
     def __init__(self, invokeInfo: PySide6.QtScxml.QScxmlExecutableContent.InvokeInfo, names: collections.abc.Sequence[int], parameters: collections.abc.Sequence[PySide6.QtScxml.QScxmlExecutableContent.ParameterInfo], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def invoke(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, /) -> PySide6.QtScxml.QScxmlInvokableService: ...
@@ -301,7 +282,6 @@ class QScxmlInvokableServiceFactory(PySide6.QtCore.QObject):
 
 
 class QScxmlNullDataModel(PySide6.QtScxml.QScxmlDataModel):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def evaluateAssignment(self, id: int, /) -> bool: ...
@@ -319,7 +299,6 @@ class QScxmlNullDataModel(PySide6.QtScxml.QScxmlDataModel):
 
 
 class QScxmlStateMachine(PySide6.QtCore.QObject):
-
     dataModelChanged         : typing.ClassVar[Signal] = ... # dataModelChanged(QScxmlDataModel*)
     finished                 : typing.ClassVar[Signal] = ... # finished()
     initialValuesChanged     : typing.ClassVar[Signal] = ... # initialValuesChanged(QVariantMap)
@@ -375,14 +354,12 @@ class QScxmlStateMachine(PySide6.QtCore.QObject):
 
 
 class QScxmlStaticScxmlServiceFactory(PySide6.QtScxml.QScxmlInvokableServiceFactory):
-
     def __init__(self, metaObject: PySide6.QtCore.QMetaObject, invokeInfo: PySide6.QtScxml.QScxmlExecutableContent.InvokeInfo, nameList: collections.abc.Sequence[int], parameters: collections.abc.Sequence[PySide6.QtScxml.QScxmlExecutableContent.ParameterInfo], /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def invoke(self, parentStateMachine: PySide6.QtScxml.QScxmlStateMachine, /) -> PySide6.QtScxml.QScxmlInvokableService: ...
 
 
 class QScxmlTableData(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def assignmentInfo(self, assignmentId: int, /) -> PySide6.QtScxml.QScxmlExecutableContent.AssignmentInfo: ...

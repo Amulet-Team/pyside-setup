@@ -19,7 +19,6 @@ from PySide6.QtCore import Signal
 
 
 class QGraphicsVideoItem(PySide6.QtWidgets.QGraphicsObject):
-
     nativeSizeChanged        : typing.ClassVar[Signal] = ... # nativeSizeChanged(QSizeF)
 
     def __init__(self, /, parent: PySide6.QtWidgets.QGraphicsItem | None = ..., *, aspectRatioMode: PySide6.QtCore.Qt.AspectRatioMode | None = ..., offset: PySide6.QtCore.QPointF | None = ..., size: PySide6.QtCore.QSizeF | None = ..., nativeSize: PySide6.QtCore.QSizeF | None = ..., videoSink: PySide6.QtMultimedia.QVideoSink | None = ...) -> None: ...
@@ -39,11 +38,11 @@ class QGraphicsVideoItem(PySide6.QtWidgets.QGraphicsObject):
     def videoSink(self, /) -> PySide6.QtMultimedia.QVideoSink: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QVideoWidget(PySide6.QtWidgets.QWidget):
-
     aspectRatioModeChanged   : typing.ClassVar[Signal] = ... # aspectRatioModeChanged(Qt::AspectRatioMode)
     fullScreenChanged        : typing.ClassVar[Signal] = ... # fullScreenChanged(bool)
 

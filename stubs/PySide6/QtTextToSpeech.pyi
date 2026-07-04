@@ -17,11 +17,11 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QTextToSpeech(PySide6.QtCore.QObject):
-
     aboutToSynthesize        : typing.ClassVar[Signal] = ... # aboutToSynthesize(qsizetype)
     engineChanged            : typing.ClassVar[Signal] = ... # engineChanged(QString)
     errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QTextToSpeech::ErrorReason,QString)
@@ -34,7 +34,6 @@ class QTextToSpeech(PySide6.QtCore.QObject):
     volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged(double)
 
     class BoundaryHint(enum.Enum):
-
         Default                   = 0x0
         Immediate                 = 0x1
         Word                      = 0x2
@@ -42,7 +41,6 @@ class QTextToSpeech(PySide6.QtCore.QObject):
         Utterance                 = 0x4
 
     class Capability(enum.Flag):
-
         None_                     = 0x0
         Speak                     = 0x1
         PauseResume               = 0x2
@@ -50,7 +48,6 @@ class QTextToSpeech(PySide6.QtCore.QObject):
         Synthesize                = 0x8
 
     class ErrorReason(enum.Enum):
-
         NoError                   = 0x0
         Initialization            = 0x1
         Configuration             = 0x2
@@ -58,13 +55,11 @@ class QTextToSpeech(PySide6.QtCore.QObject):
         Playback                  = 0x4
 
     class State(enum.Enum):
-
         Ready                     = 0x0
         Speaking                  = 0x1
         Paused                    = 0x2
         Error                     = 0x3
         Synthesizing              = 0x4
-
 
     @typing.overload
     def __init__(self, engine: str, params: typing.Dict[str, typing.Any], /, parent: PySide6.QtCore.QObject | None = ..., *, state: PySide6.QtTextToSpeech.QTextToSpeech.State | None = ..., volume: float | None = ..., rate: float | None = ..., pitch: float | None = ..., locale: PySide6.QtCore.QLocale | None = ..., voice: PySide6.QtTextToSpeech.QVoice | None = ..., engineCapabilities: PySide6.QtTextToSpeech.QTextToSpeech.Capability | None = ...) -> None: ...
@@ -102,7 +97,6 @@ class QTextToSpeech(PySide6.QtCore.QObject):
 
 
 class QTextToSpeechEngine(PySide6.QtCore.QObject):
-
     errorOccurred            : typing.ClassVar[Signal] = ... # errorOccurred(QTextToSpeech::ErrorReason,QString)
     sayingWord               : typing.ClassVar[Signal] = ... # sayingWord(QString,qsizetype,qsizetype)
     stateChanged             : typing.ClassVar[Signal] = ... # stateChanged(QTextToSpeech::State)
@@ -138,9 +132,7 @@ class QTextToSpeechEngine(PySide6.QtCore.QObject):
 
 
 class QVoice(Shiboken.Object):
-
     class Age(enum.Enum):
-
         Child                     = 0x0
         Teenager                  = 0x1
         Adult                     = 0x2
@@ -148,11 +140,9 @@ class QVoice(Shiboken.Object):
         Other                     = 0x4
 
     class Gender(enum.Enum):
-
         Male                      = 0x0
         Female                    = 0x1
         Unknown                   = 0x2
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtTextToSpeech.QVoice, /, *, name: str | None = ..., gender: PySide6.QtTextToSpeech.QVoice.Gender | None = ..., age: PySide6.QtTextToSpeech.QVoice.Age | None = ..., locale: PySide6.QtCore.QLocale | None = ..., language: PySide6.QtCore.QLocale.Language | None = ...) -> None: ...

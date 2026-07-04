@@ -19,7 +19,6 @@ from PySide6.QtCore import Signal
 
 
 class QAbstractState(PySide6.QtCore.QObject):
-
     activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
     entered                  : typing.ClassVar[Signal] = ... # entered()
     exited                   : typing.ClassVar[Signal] = ... # exited()
@@ -35,16 +34,13 @@ class QAbstractState(PySide6.QtCore.QObject):
 
 
 class QAbstractTransition(PySide6.QtCore.QObject):
-
     targetStateChanged       : typing.ClassVar[Signal] = ... # targetStateChanged()
     targetStatesChanged      : typing.ClassVar[Signal] = ... # targetStatesChanged()
     triggered                : typing.ClassVar[Signal] = ... # triggered()
 
     class TransitionType(enum.Enum):
-
         ExternalTransition        = 0x0
         InternalTransition        = 0x1
-
 
     def __init__(self, /, sourceState: PySide6.QtStateMachine.QState | None = ..., *, targetState: PySide6.QtStateMachine.QAbstractState | None = ..., targetStates: collections.abc.Sequence[PySide6.QtStateMachine.QAbstractState] | None = ..., transitionType: PySide6.QtStateMachine.QAbstractTransition.TransitionType | None = ...) -> None: ...
 
@@ -65,7 +61,6 @@ class QAbstractTransition(PySide6.QtCore.QObject):
 
 
 class QEventTransition(PySide6.QtStateMachine.QAbstractTransition):
-
     @typing.overload
     def __init__(self, object: PySide6.QtCore.QObject, type: PySide6.QtCore.QEvent.Type, /, sourceState: PySide6.QtStateMachine.QState | None = ..., *, eventSource: PySide6.QtCore.QObject | None = ..., eventType: PySide6.QtCore.QEvent.Type | None = ...) -> None: ...
     @typing.overload
@@ -81,7 +76,6 @@ class QEventTransition(PySide6.QtStateMachine.QAbstractTransition):
 
 
 class QFinalState(PySide6.QtStateMachine.QAbstractState):
-
     def __init__(self, /, parent: PySide6.QtStateMachine.QState | None = ...) -> None: ...
 
     def event(self, e: PySide6.QtCore.QEvent, /) -> bool: ...
@@ -90,16 +84,13 @@ class QFinalState(PySide6.QtStateMachine.QAbstractState):
 
 
 class QHistoryState(PySide6.QtStateMachine.QAbstractState):
-
     defaultStateChanged      : typing.ClassVar[Signal] = ... # defaultStateChanged()
     defaultTransitionChanged : typing.ClassVar[Signal] = ... # defaultTransitionChanged()
     historyTypeChanged       : typing.ClassVar[Signal] = ... # historyTypeChanged()
 
     class HistoryType(enum.Enum):
-
         ShallowHistory            = 0x0
         DeepHistory               = 0x1
-
 
     @typing.overload
     def __init__(self, type: PySide6.QtStateMachine.QHistoryState.HistoryType, /, parent: PySide6.QtStateMachine.QState | None = ..., *, defaultState: PySide6.QtStateMachine.QAbstractState | None = ..., defaultTransition: PySide6.QtStateMachine.QAbstractTransition | None = ..., historyType: PySide6.QtStateMachine.QHistoryState.HistoryType | None = ...) -> None: ...
@@ -117,11 +108,11 @@ class QHistoryState(PySide6.QtStateMachine.QAbstractState):
     def setHistoryType(self, type: PySide6.QtStateMachine.QHistoryState.HistoryType, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QKeyEventTransition(PySide6.QtStateMachine.QEventTransition):
-
     @typing.overload
     def __init__(self, object: PySide6.QtCore.QObject, type: PySide6.QtCore.QEvent.Type, key: int, /, sourceState: PySide6.QtStateMachine.QState | None = ..., *, modifierMask: PySide6.QtCore.Qt.KeyboardModifier | None = ...) -> None: ...
     @typing.overload
@@ -136,7 +127,6 @@ class QKeyEventTransition(PySide6.QtStateMachine.QEventTransition):
 
 
 class QMouseEventTransition(PySide6.QtStateMachine.QEventTransition):
-
     @typing.overload
     def __init__(self, object: PySide6.QtCore.QObject, type: PySide6.QtCore.QEvent.Type, button: PySide6.QtCore.Qt.MouseButton, /, sourceState: PySide6.QtStateMachine.QState | None = ..., *, modifierMask: PySide6.QtCore.Qt.KeyboardModifier | None = ...) -> None: ...
     @typing.overload
@@ -153,7 +143,6 @@ class QMouseEventTransition(PySide6.QtStateMachine.QEventTransition):
 
 
 class QSignalTransition(PySide6.QtStateMachine.QAbstractTransition):
-
     senderObjectChanged      : typing.ClassVar[Signal] = ... # senderObjectChanged()
     signalChanged            : typing.ClassVar[Signal] = ... # signalChanged()
 
@@ -174,7 +163,6 @@ class QSignalTransition(PySide6.QtStateMachine.QAbstractTransition):
 
 
 class QState(PySide6.QtStateMachine.QAbstractState):
-
     childModeChanged         : typing.ClassVar[Signal] = ... # childModeChanged()
     errorStateChanged        : typing.ClassVar[Signal] = ... # errorStateChanged()
     finished                 : typing.ClassVar[Signal] = ... # finished()
@@ -182,15 +170,12 @@ class QState(PySide6.QtStateMachine.QAbstractState):
     propertiesAssigned       : typing.ClassVar[Signal] = ... # propertiesAssigned()
 
     class ChildMode(enum.Enum):
-
         ExclusiveStates           = 0x0
         ParallelStates            = 0x1
 
     class RestorePolicy(enum.Enum):
-
         DontRestoreProperties     = 0x0
         RestoreProperties         = 0x1
-
 
     @typing.overload
     def __init__(self, childMode: PySide6.QtStateMachine.QState.ChildMode, /, parent: PySide6.QtStateMachine.QState | None = ..., *, initialState: PySide6.QtStateMachine.QAbstractState | None = ..., errorState: PySide6.QtStateMachine.QAbstractState | None = ...) -> None: ...
@@ -220,13 +205,11 @@ class QState(PySide6.QtStateMachine.QAbstractState):
 
 
 class QStateMachine(PySide6.QtStateMachine.QState):
-
     runningChanged           : typing.ClassVar[Signal] = ... # runningChanged(bool)
     started                  : typing.ClassVar[Signal] = ... # started()
     stopped                  : typing.ClassVar[Signal] = ... # stopped()
 
     class Error(enum.Enum):
-
         NoError                   = 0x0
         NoInitialStateError       = 0x1
         NoDefaultStateInHistoryStateError = 0x2
@@ -234,12 +217,10 @@ class QStateMachine(PySide6.QtStateMachine.QState):
         StateMachineChildModeSetToParallelError = 0x4
 
     class EventPriority(enum.Enum):
-
         NormalPriority            = 0x0
         HighPriority              = 0x1
 
     class SignalEvent(PySide6.QtCore.QEvent):
-
         def __init__(self, sender: PySide6.QtCore.QObject, signalIndex: int, arguments: collections.abc.Sequence[typing.Any], /) -> None: ...
 
         def arguments(self, /) -> typing.List[typing.Any]: ...
@@ -247,12 +228,10 @@ class QStateMachine(PySide6.QtStateMachine.QState):
         def signalIndex(self, /) -> int: ...
 
     class WrappedEvent(PySide6.QtCore.QEvent):
-
         def __init__(self, object: PySide6.QtCore.QObject, event: PySide6.QtCore.QEvent, /) -> None: ...
 
         def event(self, /) -> PySide6.QtCore.QEvent: ...
         def object(self, /) -> PySide6.QtCore.QObject: ...
-
 
     @typing.overload
     def __init__(self, childMode: PySide6.QtStateMachine.QState.ChildMode, /, parent: PySide6.QtCore.QObject | None = ..., *, errorString: str | None = ..., globalRestorePolicy: PySide6.QtStateMachine.QState.RestorePolicy | None = ..., running: bool | None = ..., animated: bool | None = ...) -> None: ...

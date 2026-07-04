@@ -17,11 +17,11 @@ import os
 import typing
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QUiLoader(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def addPluginPath(self, path: str, /) -> None: ...
@@ -48,6 +48,5 @@ class QUiLoader(PySide6.QtCore.QObject):
 
 
 def loadUiType(uifile: str, /) -> object: ...
-
 
 # eof

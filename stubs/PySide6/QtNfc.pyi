@@ -19,13 +19,12 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QNdefFilter(Shiboken.Object):
-
     class Record(Shiboken.Object):
-
         @property
         def maximum(self) -> typing.Any: ...
         @maximum.setter
@@ -50,7 +49,6 @@ class QNdefFilter(Shiboken.Object):
 
         def __copy__(self, /) -> typing.Self: ...
 
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -70,7 +68,6 @@ class QNdefFilter(Shiboken.Object):
 
 
 class QNdefMessage(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -154,7 +151,6 @@ class QNdefMessage(Shiboken.Object):
 
 
 class QNdefNfcIconRecord(PySide6.QtNfc.QNdefRecord):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -168,14 +164,11 @@ class QNdefNfcIconRecord(PySide6.QtNfc.QNdefRecord):
 
 
 class QNdefNfcSmartPosterRecord(PySide6.QtNfc.QNdefRecord):
-
     class Action(enum.Enum):
-
         UnspecifiedAction         = -1
         DoAction                  = 0x0
         SaveAction                = 0x1
         EditAction                = 0x2
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -232,12 +225,9 @@ class QNdefNfcSmartPosterRecord(PySide6.QtNfc.QNdefRecord):
 
 
 class QNdefNfcTextRecord(PySide6.QtNfc.QNdefRecord):
-
     class Encoding(enum.Enum):
-
         Utf8                      = 0x0
         Utf16                     = 0x1
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -256,7 +246,6 @@ class QNdefNfcTextRecord(PySide6.QtNfc.QNdefRecord):
 
 
 class QNdefNfcUriRecord(PySide6.QtNfc.QNdefRecord):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -270,16 +259,13 @@ class QNdefNfcUriRecord(PySide6.QtNfc.QNdefRecord):
 
 
 class QNdefRecord(Shiboken.Object):
-
     class TypeNameFormat(enum.Enum):
-
         Empty                     = 0x0
         NfcRtd                    = 0x1
         Mime                      = 0x2
         Uri                       = 0x3
         ExternalRtd               = 0x4
         Unknown                   = 0x5
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -309,19 +295,16 @@ class QNdefRecord(Shiboken.Object):
 
 
 class QNearFieldManager(PySide6.QtCore.QObject):
-
     adapterStateChanged      : typing.ClassVar[Signal] = ... # adapterStateChanged(QNearFieldManager::AdapterState)
     targetDetected           : typing.ClassVar[Signal] = ... # targetDetected(QNearFieldTarget*)
     targetDetectionStopped   : typing.ClassVar[Signal] = ... # targetDetectionStopped()
     targetLost               : typing.ClassVar[Signal] = ... # targetLost(QNearFieldTarget*)
 
     class AdapterState(enum.Enum):
-
         Offline                   = 0x1
         TurningOn                 = 0x2
         Online                    = 0x3
         TurningOff                = 0x4
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -333,21 +316,18 @@ class QNearFieldManager(PySide6.QtCore.QObject):
 
 
 class QNearFieldTarget(PySide6.QtCore.QObject):
-
     disconnected             : typing.ClassVar[Signal] = ... # disconnected()
     error                    : typing.ClassVar[Signal] = ... # error(QNearFieldTarget::Error,QNearFieldTarget::RequestId)
     ndefMessageRead          : typing.ClassVar[Signal] = ... # ndefMessageRead(QNdefMessage)
     requestCompleted         : typing.ClassVar[Signal] = ... # requestCompleted(QNearFieldTarget::RequestId)
 
     class AccessMethod(enum.Flag):
-
         UnknownAccess             = 0x0
         NdefAccess                = 0x1
         TagTypeSpecificAccess     = 0x2
         AnyAccess                 = 0xff
 
     class Error(enum.Enum):
-
         NoError                   = 0x0
         UnknownError              = 0x1
         UnsupportedError          = 0x2
@@ -363,7 +343,6 @@ class QNearFieldTarget(PySide6.QtCore.QObject):
         UnsupportedTargetError    = 0xc
 
     class RequestId(Shiboken.Object):
-
         @typing.overload
         def __init__(self, /) -> None: ...
         @typing.overload
@@ -377,7 +356,6 @@ class QNearFieldTarget(PySide6.QtCore.QObject):
         def refCount(self, /) -> int: ...
 
     class Type(enum.Enum):
-
         ProprietaryTag            = 0x0
         NfcTagType1               = 0x1
         NfcTagType2               = 0x2
@@ -386,7 +364,6 @@ class QNearFieldTarget(PySide6.QtCore.QObject):
         NfcTagType4A              = 0x5
         NfcTagType4B              = 0x6
         MifareTag                 = 0x7
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 

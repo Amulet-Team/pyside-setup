@@ -19,22 +19,20 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QPdfBookmarkModel(PySide6.QtCore.QAbstractItemModel):
-
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
 
     class Role(enum.IntEnum):
-
         Title                     = 0x100
         Level                     = 0x101
         Page                      = 0x102
         Location                  = 0x103
         Zoom                      = 0x104
         NRoles                    = 0x105
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, document: PySide6.QtPdf.QPdfDocument | None = ...) -> None: ...
@@ -55,7 +53,6 @@ class QPdfBookmarkModel(PySide6.QtCore.QAbstractItemModel):
 
 
 class QPdfDocument(PySide6.QtCore.QObject):
-
     pageCountChanged         : typing.ClassVar[Signal] = ... # pageCountChanged(int)
     pageModelChanged         : typing.ClassVar[Signal] = ... # pageModelChanged()
     passwordChanged          : typing.ClassVar[Signal] = ... # passwordChanged()
@@ -63,7 +60,6 @@ class QPdfDocument(PySide6.QtCore.QObject):
     statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QPdfDocument::Status)
 
     class Error(enum.Enum):
-
         None_                     = 0x0
         Unknown                   = 0x1
         DataNotYetAvailable       = 0x2
@@ -73,7 +69,6 @@ class QPdfDocument(PySide6.QtCore.QObject):
         UnsupportedSecurityScheme = 0x6
 
     class MetaDataField(enum.Enum):
-
         Title                     = 0x0
         Subject                   = 0x1
         Author                    = 0x2
@@ -84,19 +79,16 @@ class QPdfDocument(PySide6.QtCore.QObject):
         ModificationDate          = 0x7
 
     class PageModelRole(enum.Enum):
-
         Label                     = 0x100
         PointSize                 = 0x101
         NRoles                    = 0x102
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Loading                   = 0x1
         Ready                     = 0x2
         Unloading                 = 0x3
         Error                     = 0x4
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, pageCount: int | None = ..., password: str | None = ..., status: PySide6.QtPdf.QPdfDocument.Status | None = ..., pageModel: PySide6.QtCore.QAbstractListModel | None = ...) -> None: ...
@@ -125,9 +117,7 @@ class QPdfDocument(PySide6.QtCore.QObject):
 
 
 class QPdfDocumentRenderOptions(Shiboken.Object):
-
     class RenderFlag(enum.Flag):
-
         None_                     = 0x0
         Annotations               = 0x1
         OptimizedForLcd           = 0x2
@@ -138,12 +128,10 @@ class QPdfDocumentRenderOptions(Shiboken.Object):
         PathAliased               = 0x40
 
     class Rotation(enum.Enum):
-
         None_                     = 0x0
         Clockwise90               = 0x1
         Clockwise180              = 0x2
         Clockwise270              = 0x3
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -164,7 +152,6 @@ class QPdfDocumentRenderOptions(Shiboken.Object):
 
 
 class QPdfLink(Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtPdf.QPdfLink, /, *, valid: bool | None = ..., page: int | None = ..., location: PySide6.QtCore.QPointF | None = ..., zoom: float | None = ..., url: PySide6.QtCore.QUrl | None = ..., contextBefore: str | None = ..., contextAfter: str | None = ..., rectangles: collections.abc.Sequence[PySide6.QtCore.QRectF] | None = ...) -> None: ...
     @typing.overload
@@ -186,12 +173,10 @@ class QPdfLink(Shiboken.Object):
 
 
 class QPdfLinkModel(PySide6.QtCore.QAbstractListModel):
-
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged()
     pageChanged              : typing.ClassVar[Signal] = ... # pageChanged(int)
 
     class Role(enum.Enum):
-
         Link                      = 0x100
         Rectangle                 = 0x101
         Url                       = 0x102
@@ -199,7 +184,6 @@ class QPdfLinkModel(PySide6.QtCore.QAbstractListModel):
         Location                  = 0x104
         Zoom                      = 0x105
         NRoles                    = 0x106
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, document: PySide6.QtPdf.QPdfDocument | None = ..., page: int | None = ...) -> None: ...
 
@@ -214,7 +198,6 @@ class QPdfLinkModel(PySide6.QtCore.QAbstractListModel):
 
 
 class QPdfPageNavigator(PySide6.QtCore.QObject):
-
     backAvailableChanged     : typing.ClassVar[Signal] = ... # backAvailableChanged(bool)
     currentLocationChanged   : typing.ClassVar[Signal] = ... # currentLocationChanged(QPointF)
     currentPageChanged       : typing.ClassVar[Signal] = ... # currentPageChanged(int)
@@ -244,16 +227,13 @@ class QPdfPageNavigator(PySide6.QtCore.QObject):
 
 
 class QPdfPageRenderer(PySide6.QtCore.QObject):
-
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
     pageRendered             : typing.ClassVar[Signal] = ... # pageRendered(int,QSize,QImage,QPdfDocumentRenderOptions,qulonglong)
     renderModeChanged        : typing.ClassVar[Signal] = ... # renderModeChanged(QPdfPageRenderer::RenderMode)
 
     class RenderMode(enum.Enum):
-
         MultiThreaded             = 0x0
         SingleThreaded            = 0x1
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, document: PySide6.QtPdf.QPdfDocument | None = ..., renderMode: PySide6.QtPdf.QPdfPageRenderer.RenderMode | None = ...) -> None: ...
@@ -268,20 +248,17 @@ class QPdfPageRenderer(PySide6.QtCore.QObject):
 
 
 class QPdfSearchModel(PySide6.QtCore.QAbstractListModel):
-
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged()
     searchStringChanged      : typing.ClassVar[Signal] = ... # searchStringChanged()
 
     class Role(enum.Enum):
-
         Page                      = 0x100
         IndexOnPage               = 0x101
         Location                  = 0x102
         ContextBefore             = 0x103
         ContextAfter              = 0x104
         NRoles                    = 0x105
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, document: PySide6.QtPdf.QPdfDocument | None = ..., searchString: str | None = ..., count: int | None = ...) -> None: ...
@@ -303,7 +280,6 @@ class QPdfSearchModel(PySide6.QtCore.QAbstractListModel):
 
 
 class QPdfSelection(Shiboken.Object):
-
     def __init__(self, other: PySide6.QtPdf.QPdfSelection, /, *, valid: bool | None = ..., bounds: collections.abc.Sequence[PySide6.QtGui.QPolygonF] | None = ..., boundingRectangle: PySide6.QtCore.QRectF | None = ..., text: str | None = ..., startIndex: int | None = ..., endIndex: int | None = ...) -> None: ...
 
     def boundingRectangle(self, /) -> PySide6.QtCore.QRectF: ...

@@ -21,9 +21,7 @@ from shiboken6 import Shiboken
 
 
 class QAbstractPrintDialog(PySide6.QtWidgets.QDialog):
-
     class PrintDialogOption(enum.Flag):
-
         PrintToFile               = 0x1
         PrintSelection            = 0x2
         PrintPageRange            = 0x4
@@ -32,12 +30,10 @@ class QAbstractPrintDialog(PySide6.QtWidgets.QDialog):
         PrintCurrentPage          = 0x40
 
     class PrintRange(enum.Enum):
-
         AllPages                  = 0x0
         Selection                 = 0x1
         PageRange                 = 0x2
         CurrentPage               = 0x3
-
 
     def __init__(self, printer: PySide6.QtPrintSupport.QPrinter, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
 
@@ -53,11 +49,11 @@ class QAbstractPrintDialog(PySide6.QtWidgets.QDialog):
     def toPage(self, /) -> int: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QPageSetupDialog(PySide6.QtWidgets.QDialog):
-
     @typing.overload
     def __init__(self, printer: PySide6.QtPrintSupport.QPrinter, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
     @typing.overload
@@ -75,7 +71,6 @@ class QPageSetupDialog(PySide6.QtWidgets.QDialog):
 
 
 class QPrintDialog(PySide6.QtPrintSupport.QAbstractPrintDialog):
-
     accepted                 : typing.ClassVar[Signal] = ... # accepted(QPrinter*)
 
     @typing.overload
@@ -95,9 +90,7 @@ class QPrintDialog(PySide6.QtPrintSupport.QAbstractPrintDialog):
 
 
 class QPrintEngine(Shiboken.Object):
-
     class PrintEnginePropertyKey(enum.Enum):
-
         PPK_CollateCopies         = 0x0
         PPK_ColorMode             = 0x1
         PPK_Creator               = 0x2
@@ -131,7 +124,6 @@ class QPrintEngine(Shiboken.Object):
         PPK_QPageLayout           = 0x1d
         PPK_CustomBase            = 0xff00
 
-
     def __init__(self, /) -> None: ...
 
     def abort(self, /) -> bool: ...
@@ -143,7 +135,6 @@ class QPrintEngine(Shiboken.Object):
 
 
 class QPrintPreviewDialog(PySide6.QtWidgets.QDialog):
-
     paintRequested           : typing.ClassVar[Signal] = ... # paintRequested(QPrinter*)
 
     @typing.overload
@@ -161,22 +152,18 @@ class QPrintPreviewDialog(PySide6.QtWidgets.QDialog):
 
 
 class QPrintPreviewWidget(PySide6.QtWidgets.QWidget):
-
     paintRequested           : typing.ClassVar[Signal] = ... # paintRequested(QPrinter*)
     previewChanged           : typing.ClassVar[Signal] = ... # previewChanged()
 
     class ViewMode(enum.Enum):
-
         SinglePageView            = 0x0
         FacingPagesView           = 0x1
         AllPagesView              = 0x2
 
     class ZoomMode(enum.Enum):
-
         CustomZoom                = 0x0
         FitToWidth                = 0x1
         FitInView                 = 0x2
-
 
     @typing.overload
     def __init__(self, printer: PySide6.QtPrintSupport.QPrinter, /, parent: PySide6.QtWidgets.QWidget | None = ..., flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
@@ -209,31 +196,25 @@ class QPrintPreviewWidget(PySide6.QtWidgets.QWidget):
 
 
 class QPrinter(PySide6.QtGui.QPagedPaintDevice):
-
     class ColorMode(enum.Enum):
-
         GrayScale                 = 0x0
         Color                     = 0x1
 
     class DuplexMode(enum.Enum):
-
         DuplexNone                = 0x0
         DuplexAuto                = 0x1
         DuplexLongSide            = 0x2
         DuplexShortSide           = 0x3
 
     class OutputFormat(enum.Enum):
-
         NativeFormat              = 0x0
         PdfFormat                 = 0x1
 
     class PageOrder(enum.Enum):
-
         FirstPageFirst            = 0x0
         LastPageFirst             = 0x1
 
     class PaperSource(enum.Enum):
-
         OnlyOne                   = 0x0
         Upper                     = 0x0
         Lower                     = 0x1
@@ -253,27 +234,23 @@ class QPrinter(PySide6.QtGui.QPagedPaintDevice):
         LastPaperSource           = 0xe
 
     class PrintRange(enum.Enum):
-
         AllPages                  = 0x0
         Selection                 = 0x1
         PageRange                 = 0x2
         CurrentPage               = 0x3
 
     class PrinterMode(enum.Enum):
-
         ScreenResolution          = 0x0
         PrinterResolution         = 0x1
         HighResolution            = 0x2
 
     class PrinterState(enum.Enum):
-
         Idle                      = 0x0
         Active                    = 0x1
         Aborted                   = 0x2
         Error                     = 0x3
 
     class Unit(enum.Enum):
-
         Millimeter                = 0x0
         Point                     = 0x1
         Inch                      = 0x2
@@ -281,7 +258,6 @@ class QPrinter(PySide6.QtGui.QPagedPaintDevice):
         Didot                     = 0x4
         Cicero                    = 0x5
         DevicePixel               = 0x6
-
 
     @typing.overload
     def __init__(self, /, mode: PySide6.QtPrintSupport.QPrinter.PrinterMode = ...) -> None: ...
@@ -345,7 +321,6 @@ class QPrinter(PySide6.QtGui.QPagedPaintDevice):
 
 
 class QPrinterInfo(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload

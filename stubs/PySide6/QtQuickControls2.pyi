@@ -15,11 +15,11 @@ import typing
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QQuickAttachedPropertyPropagator(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def attachedChildren(self, /) -> typing.List[PySide6.QtQuickControls2.QQuickAttachedPropertyPropagator]: ...
@@ -29,7 +29,6 @@ class QQuickAttachedPropertyPropagator(PySide6.QtCore.QObject):
 
 
 class QQuickStyle(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod

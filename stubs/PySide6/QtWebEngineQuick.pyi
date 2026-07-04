@@ -19,7 +19,8 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QQuickWebEngineDownloadRequest(PySide6.QtWebEngineCore.QWebEngineDownloadRequest):
@@ -27,7 +28,6 @@ class QQuickWebEngineDownloadRequest(PySide6.QtWebEngineCore.QWebEngineDownloadR
 
 
 class QQuickWebEngineProfile(PySide6.QtCore.QObject):
-
     cachePathChanged         : typing.ClassVar[Signal] = ... # cachePathChanged()
     clearHttpCacheCompleted  : typing.ClassVar[Signal] = ... # clearHttpCacheCompleted()
     downloadFinished         : typing.ClassVar[Signal] = ... # downloadFinished(QQuickWebEngineDownloadRequest*)
@@ -48,24 +48,20 @@ class QQuickWebEngineProfile(PySide6.QtCore.QObject):
     storageNameChanged       : typing.ClassVar[Signal] = ... # storageNameChanged()
 
     class HttpCacheType(enum.Enum):
-
         MemoryHttpCache           = 0x0
         DiskHttpCache             = 0x1
         NoCache                   = 0x2
 
     class PersistentCookiesPolicy(enum.Enum):
-
         NoPersistentCookies       = 0x0
         AllowPersistentCookies    = 0x1
         ForcePersistentCookies    = 0x2
         OnlyPersistentCookies     = 0x3
 
     class PersistentPermissionsPolicy(enum.Enum):
-
         AskEveryTime              = 0x0
         StoreInMemory             = 0x1
         StoreOnDisk               = 0x2
-
 
     @typing.overload
     def __init__(self, storageName: str, /, parent: PySide6.QtCore.QObject | None = ..., *, offTheRecord: bool | None = ..., persistentStoragePath: str | None = ..., cachePath: str | None = ..., httpUserAgent: str | None = ..., httpCacheType: PySide6.QtWebEngineQuick.QQuickWebEngineProfile.HttpCacheType | None = ..., httpAcceptLanguage: str | None = ..., persistentCookiesPolicy: PySide6.QtWebEngineQuick.QQuickWebEngineProfile.PersistentCookiesPolicy | None = ..., persistentPermissionsPolicy: PySide6.QtWebEngineQuick.QQuickWebEngineProfile.PersistentPermissionsPolicy | None = ..., httpCacheMaximumSize: int | None = ..., spellCheckLanguages: collections.abc.Sequence[str] | None = ..., spellCheckEnabled: bool | None = ..., downloadPath: str | None = ..., isPushServiceEnabled: bool | None = ..., clientHints: PySide6.QtWebEngineCore.QWebEngineClientHints | None = ..., extensionManager: PySide6.QtWebEngineCore.QWebEngineExtensionManager | None = ...) -> None: ...

@@ -21,14 +21,12 @@ from shiboken6 import Shiboken
 
 
 class QAbstractExtensionFactory(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def extension(self, object: PySide6.QtCore.QObject, iid: str, /) -> PySide6.QtCore.QObject: ...
 
 
 class QAbstractExtensionManager(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def extension(self, object: PySide6.QtCore.QObject, iid: str, /) -> PySide6.QtCore.QObject: ...
@@ -37,7 +35,6 @@ class QAbstractExtensionManager(Shiboken.Object):
 
 
 class QAbstractFormBuilder(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def addMenuAction(self, action: PySide6.QtGui.QAction, /) -> None: ...
@@ -58,7 +55,6 @@ class QAbstractFormBuilder(Shiboken.Object):
 
 
 class QDesignerActionEditorInterface(PySide6.QtWidgets.QWidget):
-
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
     def core(self, /) -> PySide6.QtDesigner.QDesignerFormEditorInterface: ...
@@ -68,7 +64,6 @@ class QDesignerActionEditorInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerContainerExtension(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def addWidget(self, widget: PySide6.QtWidgets.QWidget, /) -> None: ...
@@ -83,14 +78,12 @@ class QDesignerContainerExtension(Shiboken.Object):
 
 
 class QDesignerCustomWidgetCollectionInterface(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def customWidgets(self, /) -> typing.List[PySide6.QtDesigner.QDesignerCustomWidgetInterface]: ...
 
 
 class QDesignerCustomWidgetInterface(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def codeTemplate(self, /) -> str: ...
@@ -108,12 +101,9 @@ class QDesignerCustomWidgetInterface(Shiboken.Object):
 
 
 class QDesignerDnDItemInterface(Shiboken.Object):
-
     class DropType(enum.Enum):
-
         MoveDrop                  = 0x0
         CopyDrop                  = 0x1
-
 
     def __init__(self, /) -> None: ...
 
@@ -125,7 +115,6 @@ class QDesignerDnDItemInterface(Shiboken.Object):
 
 
 class QDesignerDynamicPropertySheetExtension(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def addDynamicProperty(self, propertyName: str, value: typing.Any, /) -> int: ...
@@ -136,7 +125,6 @@ class QDesignerDynamicPropertySheetExtension(Shiboken.Object):
 
 
 class QDesignerFormEditorInterface(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def actionEditor(self, /) -> PySide6.QtDesigner.QDesignerActionEditorInterface: ...
@@ -160,14 +148,11 @@ class QDesignerFormEditorInterface(PySide6.QtCore.QObject):
 
 
 class QDesignerFormWindowCursorInterface(Shiboken.Object):
-
     class MoveMode(enum.Enum):
-
         MoveAnchor                = 0x0
         KeepAnchor                = 0x1
 
     class MoveOperation(enum.Enum):
-
         NoMove                    = 0x0
         Start                     = 0x1
         End                       = 0x2
@@ -177,7 +162,6 @@ class QDesignerFormWindowCursorInterface(Shiboken.Object):
         Right                     = 0x6
         Up                        = 0x7
         Down                      = 0x8
-
 
     def __init__(self, /) -> None: ...
 
@@ -198,7 +182,6 @@ class QDesignerFormWindowCursorInterface(Shiboken.Object):
 
 
 class QDesignerFormWindowInterface(PySide6.QtWidgets.QWidget):
-
     aboutToUnmanageWidget    : typing.ClassVar[Signal] = ... # aboutToUnmanageWidget(QWidget*)
     activated                : typing.ClassVar[Signal] = ... # activated(QWidget*)
     changed                  : typing.ClassVar[Signal] = ... # changed()
@@ -215,18 +198,15 @@ class QDesignerFormWindowInterface(PySide6.QtWidgets.QWidget):
     widgetUnmanaged          : typing.ClassVar[Signal] = ... # widgetUnmanaged(QWidget*)
 
     class FeatureFlag(enum.Flag):
-
         EditFeature               = 0x1
         GridFeature               = 0x2
         DefaultFeature            = 0x3
         TabOrderFeature           = 0x4
 
     class ResourceFileSaveMode(enum.Enum):
-
         SaveAllResourceFiles      = 0x0
         SaveOnlyUsedResourceFiles = 0x1
         DontSaveResourceFiles     = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ..., flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
@@ -298,14 +278,12 @@ class QDesignerFormWindowInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerFormWindowManagerInterface(PySide6.QtCore.QObject):
-
     activeFormWindowChanged  : typing.ClassVar[Signal] = ... # activeFormWindowChanged(QDesignerFormWindowInterface*)
     formWindowAdded          : typing.ClassVar[Signal] = ... # formWindowAdded(QDesignerFormWindowInterface*)
     formWindowRemoved        : typing.ClassVar[Signal] = ... # formWindowRemoved(QDesignerFormWindowInterface*)
     formWindowSettingsChanged: typing.ClassVar[Signal] = ... # formWindowSettingsChanged(QDesignerFormWindowInterface*)
 
     class Action(enum.Enum):
-
         CutAction                 = 0x64
         CopyAction                = 0x65
         PasteAction               = 0x66
@@ -328,9 +306,7 @@ class QDesignerFormWindowManagerInterface(PySide6.QtCore.QObject):
         FormWindowSettingsDialogAction = 0x258
 
     class ActionGroup(enum.Enum):
-
         StyledPreviewActionGroup  = 0x64
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -370,7 +346,6 @@ class QDesignerFormWindowManagerInterface(PySide6.QtCore.QObject):
 
 
 class QDesignerFormWindowToolInterface(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def action(self, /) -> PySide6.QtGui.QAction: ...
@@ -383,7 +358,6 @@ class QDesignerFormWindowToolInterface(PySide6.QtCore.QObject):
 
 
 class QDesignerMemberSheetExtension(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def count(self, /) -> int: ...
@@ -403,7 +377,6 @@ class QDesignerMemberSheetExtension(Shiboken.Object):
 
 
 class QDesignerObjectInspectorInterface(PySide6.QtWidgets.QWidget):
-
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
     def core(self, /) -> PySide6.QtDesigner.QDesignerFormEditorInterface: ...
@@ -411,7 +384,6 @@ class QDesignerObjectInspectorInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerPropertyEditorInterface(PySide6.QtWidgets.QWidget):
-
     propertyChanged          : typing.ClassVar[Signal] = ... # propertyChanged(QString,QVariant)
 
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
@@ -426,7 +398,6 @@ class QDesignerPropertyEditorInterface(PySide6.QtWidgets.QWidget):
 
 
 class QDesignerPropertySheetExtension(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def count(self, /) -> int: ...
@@ -448,7 +419,6 @@ class QDesignerPropertySheetExtension(Shiboken.Object):
 
 
 class QDesignerTaskMenuExtension(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def preferredEditAction(self, /) -> PySide6.QtGui.QAction: ...
@@ -456,14 +426,10 @@ class QDesignerTaskMenuExtension(Shiboken.Object):
 
 
 class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
-
     class Category(Shiboken.Object):
-
         class Type(enum.Enum):
-
             Default                   = 0x0
             Scratchpad                = 0x1
-
 
         @typing.overload
         def __init__(self, Category: PySide6.QtDesigner.QDesignerWidgetBoxInterface.Category, /) -> None: ...
@@ -482,12 +448,9 @@ class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
         def widgetCount(self, /) -> int: ...
 
     class Widget(Shiboken.Object):
-
         class Type(enum.Enum):
-
             Default                   = 0x0
             Custom                    = 0x1
-
 
         @typing.overload
         def __init__(self, w: PySide6.QtDesigner.QDesignerWidgetBoxInterface.Widget, /) -> None: ...
@@ -504,7 +467,6 @@ class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
         def setName(self, aname: str, /) -> None: ...
         def setType(self, atype: PySide6.QtDesigner.QDesignerWidgetBoxInterface.Widget.Type, /) -> None: ...
         def type(self, /) -> PySide6.QtDesigner.QDesignerWidgetBoxInterface.Widget.Type: ...
-
 
     def __init__(self, /, parent: PySide6.QtWidgets.QWidget | None = ..., flags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
@@ -525,7 +487,6 @@ class QDesignerWidgetBoxInterface(PySide6.QtWidgets.QWidget):
 
 
 class QExtensionFactory(PySide6.QtCore.QObject, PySide6.QtDesigner.QAbstractExtensionFactory):
-
     def __init__(self, /, parent: PySide6.QtDesigner.QExtensionManager | None = ...) -> None: ...
 
     def createExtension(self, object: PySide6.QtCore.QObject, iid: str, parent: PySide6.QtCore.QObject, /) -> PySide6.QtCore.QObject: ...
@@ -534,7 +495,6 @@ class QExtensionFactory(PySide6.QtCore.QObject, PySide6.QtDesigner.QAbstractExte
 
 
 class QExtensionManager(PySide6.QtCore.QObject, PySide6.QtDesigner.QAbstractExtensionManager):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def extension(self, object: PySide6.QtCore.QObject, iid: str, /) -> PySide6.QtCore.QObject: ...
@@ -543,7 +503,6 @@ class QExtensionManager(PySide6.QtCore.QObject, PySide6.QtDesigner.QAbstractExte
 
 
 class QFormBuilder(PySide6.QtDesigner.QAbstractFormBuilder):
-
     def __init__(self, /) -> None: ...
 
     def addPluginPath(self, pluginPath: str, /) -> None: ...
@@ -558,11 +517,11 @@ class QFormBuilder(PySide6.QtDesigner.QAbstractFormBuilder):
     def widgetByName(topLevel: PySide6.QtWidgets.QWidget, name: str, /) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QPyDesignerContainerExtension(PySide6.QtCore.QObject, PySide6.QtDesigner.QDesignerContainerExtension):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
@@ -577,17 +536,14 @@ class QPyDesignerCustomWidgetCollection(PySide6.QtDesigner.QDesignerCustomWidget
 
 
 class QPyDesignerMemberSheetExtension(PySide6.QtCore.QObject, PySide6.QtDesigner.QDesignerMemberSheetExtension):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
 class QPyDesignerPropertySheetExtension(PySide6.QtCore.QObject, PySide6.QtDesigner.QDesignerPropertySheetExtension):  # type: ignore[misc]
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
 class QPyDesignerTaskMenuExtension(PySide6.QtCore.QObject, PySide6.QtDesigner.QDesignerTaskMenuExtension):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 

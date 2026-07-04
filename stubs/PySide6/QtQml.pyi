@@ -19,34 +19,29 @@ import collections.abc
 from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
-
 _QmlType  = typing.TypeVar("_QmlType")
 
 
 class ListProperty(PySide6.QtCore.Property):
-
     def __init__(self, type: type, /, append: collections.abc.Callable[..., typing.Any] | None = ..., at: collections.abc.Callable[..., typing.Any] | None = ..., clear: collections.abc.Callable[..., typing.Any] | None = ..., count: collections.abc.Callable[..., typing.Any] | None = ...) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QJSEngine(PySide6.QtCore.QObject):
-
     uiLanguageChanged        : typing.ClassVar[Signal] = ... # uiLanguageChanged()
 
     class Extension(enum.Flag):
-
         AllExtensions             = -1
         TranslationExtension      = 0x1
         ConsoleExtension          = 0x2
         GarbageCollectionExtension = 0x4
 
     class ObjectOwnership(enum.Enum):
-
         CppOwnership              = 0x0
         JavaScriptOwnership       = 0x1
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, uiLanguage: str | None = ...) -> None: ...
@@ -85,9 +80,7 @@ class QJSEngine(PySide6.QtCore.QObject):
 
 
 class QJSManagedValue(Shiboken.Object):
-
     class Type(enum.Enum):
-
         Undefined                 = 0x0
         Boolean                   = 0x1
         Number                    = 0x2
@@ -95,7 +88,6 @@ class QJSManagedValue(Shiboken.Object):
         Object                    = 0x4
         Symbol                    = 0x5
         Function                  = 0x6
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -173,16 +165,13 @@ class QJSManagedValue(Shiboken.Object):
 
 
 class QJSPrimitiveValue(Shiboken.Object):
-
     class Type(enum.Enum):
-
         Undefined                 = 0x0
         Null                      = 0x1
         Boolean                   = 0x2
         Integer                   = 0x3
         Double                    = 0x4
         String                    = 0x5
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -233,9 +222,7 @@ class QJSPrimitiveValue(Shiboken.Object):
 
 
 class QJSValue(Shiboken.Object):
-
     class ErrorType(enum.Enum):
-
         NoError                   = 0x0
         GenericError              = 0x1
         EvalError                 = 0x2
@@ -246,15 +233,12 @@ class QJSValue(Shiboken.Object):
         URIError                  = 0x7
 
     class ObjectConversionBehavior(enum.Enum):
-
         ConvertJSObjects          = 0x0
         RetainJSObjects           = 0x1
 
     class SpecialValue(enum.Enum):
-
         NullValue                 = 0x0
         UndefinedValue            = 0x1
-
 
     @typing.overload
     def __init__(self, other: PySide6.QtQml.QJSValue, /) -> None: ...
@@ -322,7 +306,6 @@ class QJSValue(Shiboken.Object):
 
 
 class QJSValueIterator(Shiboken.Object):
-
     def __init__(self, value: PySide6.QtQml.QJSValue | PySide6.QtQml.QJSValue.SpecialValue | bool | str | float | int, /) -> None: ...
 
     def hasNext(self, /) -> bool: ...
@@ -332,24 +315,19 @@ class QJSValueIterator(Shiboken.Object):
 
 
 class QPyQmlParserStatus(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
 class QPyQmlPropertyValueSource(PySide6.QtCore.QObject, PySide6.QtQml.QQmlPropertyValueSource):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
 
 class QQmlAbstractUrlInterceptor(Shiboken.Object):
-
     class DataType(enum.Enum):
-
         QmlFile                   = 0x0
         JavaScriptFile            = 0x1
         QmldirFile                = 0x2
         UrlString                 = 0x1000
-
 
     def __init__(self, /) -> None: ...
 
@@ -357,7 +335,6 @@ class QQmlAbstractUrlInterceptor(Shiboken.Object):
 
 
 class QQmlApplicationEngine(PySide6.QtQml.QQmlEngine):
-
     objectCreated            : typing.ClassVar[Signal] = ... # objectCreated(QObject*,QUrl)
     objectCreationFailed     : typing.ClassVar[Signal] = ... # objectCreationFailed(QUrl)
 
@@ -382,22 +359,18 @@ class QQmlApplicationEngine(PySide6.QtQml.QQmlEngine):
 
 
 class QQmlComponent(PySide6.QtCore.QObject):
-
     progressChanged          : typing.ClassVar[Signal] = ... # progressChanged(double)
     statusChanged            : typing.ClassVar[Signal] = ... # statusChanged(QQmlComponent::Status)
 
     class CompilationMode(enum.Enum):
-
         PreferSynchronous         = 0x0
         Asynchronous              = 0x1
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Ready                     = 0x1
         Loading                   = 0x2
         Error                     = 0x3
-
 
     @typing.overload
     def __init__(self, arg__1: PySide6.QtQml.QQmlEngine, fileName: str, mode: PySide6.QtQml.QQmlComponent.CompilationMode, /, parent: PySide6.QtCore.QObject | None = ..., *, progress: float | None = ..., status: PySide6.QtQml.QQmlComponent.Status | None = ..., url: PySide6.QtCore.QUrl | None = ...) -> None: ...
@@ -448,9 +421,7 @@ class QQmlComponent(PySide6.QtCore.QObject):
 
 
 class QQmlContext(PySide6.QtCore.QObject):
-
     class PropertyPair(Shiboken.Object):
-
         @property
         def name(self) -> str: ...
         @name.setter
@@ -466,7 +437,6 @@ class QQmlContext(PySide6.QtCore.QObject):
         def __init__(self, PropertyPair: PySide6.QtQml.QQmlContext.PropertyPair, /) -> None: ...
 
         def __copy__(self, /) -> typing.Self: ...
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtQml.QQmlEngine, /, objParent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -496,12 +466,9 @@ class QQmlContext(PySide6.QtCore.QObject):
 
 
 class QQmlDebuggingEnabler(Shiboken.Object):
-
     class StartMode(enum.Enum):
-
         DoNotWaitForClient        = 0x0
         WaitForClient             = 0x1
-
 
     def __init__(self, /, printWarning: bool = ...) -> None: ...
 
@@ -526,7 +493,6 @@ class QQmlDebuggingEnabler(Shiboken.Object):
 
 
 class QQmlEngine(PySide6.QtQml.QJSEngine):
-
     exit                     : typing.ClassVar[Signal] = ... # exit(int)
     offlineStoragePathChanged: typing.ClassVar[Signal] = ... # offlineStoragePathChanged()
     quit                     : typing.ClassVar[Signal] = ... # quit()
@@ -582,7 +548,6 @@ class QQmlEngine(PySide6.QtQml.QJSEngine):
 
 
 class QQmlError(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -608,7 +573,6 @@ class QQmlError(Shiboken.Object):
 
 
 class QQmlExpression(PySide6.QtCore.QObject):
-
     valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
 
     @typing.overload
@@ -636,14 +600,12 @@ class QQmlExpression(PySide6.QtCore.QObject):
 
 
 class QQmlExtensionInterface(PySide6.QtQml.QQmlTypesExtensionInterface):
-
     def __init__(self, /) -> None: ...
 
     def initializeEngine(self, engine: PySide6.QtQml.QQmlEngine, uri: str, /) -> None: ...
 
 
 class QQmlExtensionPlugin(PySide6.QtCore.QObject, PySide6.QtQml.QQmlExtensionInterface):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def baseUrl(self, /) -> PySide6.QtCore.QUrl: ...
@@ -653,14 +615,11 @@ class QQmlExtensionPlugin(PySide6.QtCore.QObject, PySide6.QtQml.QQmlExtensionInt
 
 
 class QQmlFile(Shiboken.Object):
-
     class Status(enum.Enum):
-
         Null                      = 0x0
         Ready                     = 0x1
         Error                     = 0x2
         Loading                   = 0x3
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -716,7 +675,6 @@ class QQmlFile(Shiboken.Object):
 
 
 class QQmlFileSelector(PySide6.QtCore.QObject):
-
     def __init__(self, engine: PySide6.QtQml.QQmlEngine, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     @staticmethod
@@ -727,26 +685,21 @@ class QQmlFileSelector(PySide6.QtCore.QObject):
 
 
 class QQmlImageProviderBase(PySide6.QtCore.QObject):
-
     class Flag(enum.Flag):
-
         ForceAsynchronousImageLoading = 0x1
 
     class ImageType(enum.Enum):
-
         Invalid                   = 0x0
         Image                     = 0x1
         Pixmap                    = 0x2
         Texture                   = 0x3
         ImageResponse             = 0x4
 
-
     def flags(self, /) -> PySide6.QtQml.QQmlImageProviderBase.Flag: ...
     def imageType(self, /) -> PySide6.QtQml.QQmlImageProviderBase.ImageType: ...
 
 
 class QQmlIncubationController(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def engine(self, /) -> PySide6.QtQml.QQmlEngine: ...
@@ -757,20 +710,16 @@ class QQmlIncubationController(Shiboken.Object):
 
 
 class QQmlIncubator(Shiboken.Object):
-
     class IncubationMode(enum.Enum):
-
         Asynchronous              = 0x0
         AsynchronousIfNested      = 0x1
         Synchronous               = 0x2
 
     class Status(enum.Enum):
-
         Null                      = 0x0
         Ready                     = 0x1
         Loading                   = 0x2
         Error                     = 0x3
-
 
     def __init__(self, /, arg__1: PySide6.QtQml.QQmlIncubator.IncubationMode = ...) -> None: ...
 
@@ -790,7 +739,6 @@ class QQmlIncubator(Shiboken.Object):
 
 
 class QQmlListReference(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -827,21 +775,18 @@ class QQmlListReference(Shiboken.Object):
 
 
 class QQmlModuleImportSpecialVersions(enum.Flag):
-
     QQmlModuleImportAuto      = -2
     QQmlModuleImportLatest    = -1
     QQmlModuleImportModuleAny = -1
 
 
 class QQmlNetworkAccessManagerFactory(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def create(self, parent: PySide6.QtCore.QObject, /) -> PySide6.QtNetwork.QNetworkAccessManager: ...
 
 
 class QQmlParserStatus(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def classBegin(self, /) -> None: ...
@@ -849,20 +794,16 @@ class QQmlParserStatus(Shiboken.Object):
 
 
 class QQmlProperty(Shiboken.Object):
-
     class PropertyTypeCategory(enum.Enum):
-
         InvalidCategory           = 0x0
         List                      = 0x1
         Object                    = 0x2
         Normal                    = 0x3
 
     class Type(enum.Enum):
-
         Invalid                   = 0x0
         Property                  = 0x1
         SignalProperty            = 0x2
-
 
     @typing.overload
     def __init__(self, arg__1: PySide6.QtCore.QObject, arg__2: PySide6.QtQml.QQmlEngine, /, *, object: PySide6.QtCore.QObject | None = ..., name: str | None = ...) -> None: ...
@@ -934,7 +875,6 @@ class QQmlProperty(Shiboken.Object):
 
 
 class QQmlPropertyMap(PySide6.QtCore.QObject):
-
     valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(QString,QVariant)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -957,14 +897,12 @@ class QQmlPropertyMap(PySide6.QtCore.QObject):
 
 
 class QQmlPropertyValueSource(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def setTarget(self, arg__1: PySide6.QtQml.QQmlProperty | PySide6.QtCore.QObject, /) -> None: ...
 
 
 class QQmlScriptString(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -982,34 +920,28 @@ class QQmlScriptString(Shiboken.Object):
 
 
 class QQmlTypesExtensionInterface(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def registerTypes(self, uri: str, /) -> None: ...
 
 
 class QmlAttached:
-
     def __init__(self, type: type, /) -> None: ...
 
 
 class QmlExtended:
-
     def __init__(self, type: type, /) -> None: ...
 
 
 class QmlForeign:
-
     def __init__(self, type: type, /) -> None: ...
 
 
 class QmlNamedElement:
-
     def __init__(self, reason: str, /) -> None: ...
 
 
 class QmlUncreatable:
-
     def __init__(self, reason: str, /) -> None: ...
 
 
@@ -1045,6 +977,5 @@ def qmlRegisterType(url: PySide6.QtCore.QUrl | str, uri: str, versionMajor: int,
 def qmlRegisterUncreatableMetaObject(staticMetaObject: PySide6.QtCore.QMetaObject, uri: str, versionMajor: int, versionMinor: int, qmlName: str, reason: str, /) -> int: ...
 def qmlRegisterUncreatableType(type_obj: type, uri: str, version_major: int, version_minor: int, qml_name: str, message: str, /) -> int: ...
 def qmlTypeId(uri: str, versionMajor: int, versionMinor: int, qmlName: str, /) -> int: ...
-
 
 # eof

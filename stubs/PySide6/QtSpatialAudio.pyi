@@ -19,17 +19,14 @@ from PySide6.QtCore import Signal
 
 
 class QAmbientSound(PySide6.QtCore.QObject):
-
     autoPlayChanged          : typing.ClassVar[Signal] = ... # autoPlayChanged()
     loopsChanged             : typing.ClassVar[Signal] = ... # loopsChanged()
     sourceChanged            : typing.ClassVar[Signal] = ... # sourceChanged()
     volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged()
 
     class Loops(enum.IntEnum):
-
         Infinite                  = -1
         Once                      = 0x1
-
 
     def __init__(self, engine: PySide6.QtSpatialAudio.QAudioEngine, /, *, source: PySide6.QtCore.QUrl | None = ..., volume: float | None = ..., loops: int | None = ..., autoPlay: bool | None = ...) -> None: ...
 
@@ -48,7 +45,6 @@ class QAmbientSound(PySide6.QtCore.QObject):
 
 
 class QAudioEngine(PySide6.QtCore.QObject):
-
     distanceScaleChanged     : typing.ClassVar[Signal] = ... # distanceScaleChanged()
     masterVolumeChanged      : typing.ClassVar[Signal] = ... # masterVolumeChanged()
     outputDeviceChanged      : typing.ClassVar[Signal] = ... # outputDeviceChanged()
@@ -56,11 +52,9 @@ class QAudioEngine(PySide6.QtCore.QObject):
     pausedChanged            : typing.ClassVar[Signal] = ... # pausedChanged()
 
     class OutputMode(enum.Enum):
-
         Surround                  = 0x0
         Stereo                    = 0x1
         Headphone                 = 0x2
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtCore.QObject, /, *, outputMode: PySide6.QtSpatialAudio.QAudioEngine.OutputMode | None = ..., outputDevice: PySide6.QtMultimedia.QAudioDevice | None = ..., masterVolume: float | None = ..., paused: bool | None = ..., distanceScale: float | None = ...) -> None: ...
@@ -89,7 +83,6 @@ class QAudioEngine(PySide6.QtCore.QObject):
 
 
 class QAudioListener(PySide6.QtCore.QObject):
-
     def __init__(self, engine: PySide6.QtSpatialAudio.QAudioEngine, /) -> None: ...
 
     def engine(self, /) -> PySide6.QtSpatialAudio.QAudioEngine: ...
@@ -100,7 +93,6 @@ class QAudioListener(PySide6.QtCore.QObject):
 
 
 class QAudioRoom(PySide6.QtCore.QObject):
-
     dimensionsChanged        : typing.ClassVar[Signal] = ... # dimensionsChanged()
     positionChanged          : typing.ClassVar[Signal] = ... # positionChanged()
     reflectionGainChanged    : typing.ClassVar[Signal] = ... # reflectionGainChanged()
@@ -111,7 +103,6 @@ class QAudioRoom(PySide6.QtCore.QObject):
     wallsChanged             : typing.ClassVar[Signal] = ... # wallsChanged()
 
     class Material(enum.Enum):
-
         Transparent               = 0x0
         AcousticCeilingTiles      = 0x1
         BrickBare                 = 0x2
@@ -138,14 +129,12 @@ class QAudioRoom(PySide6.QtCore.QObject):
         UniformMaterial           = 0x17
 
     class Wall(enum.Enum):
-
         LeftWall                  = 0x0
         RightWall                 = 0x1
         Floor                     = 0x2
         Ceiling                   = 0x3
         FrontWall                 = 0x4
         BackWall                  = 0x5
-
 
     def __init__(self, engine: PySide6.QtSpatialAudio.QAudioEngine, /, *, position: PySide6.QtGui.QVector3D | None = ..., dimensions: PySide6.QtGui.QVector3D | None = ..., rotation: PySide6.QtGui.QQuaternion | None = ..., reflectionGain: float | None = ..., reverbGain: float | None = ..., reverbTime: float | None = ..., reverbBrightness: float | None = ...) -> None: ...
 
@@ -167,11 +156,11 @@ class QAudioRoom(PySide6.QtCore.QObject):
     def wallMaterial(self, wall: PySide6.QtSpatialAudio.QAudioRoom.Wall, /) -> PySide6.QtSpatialAudio.QAudioRoom.Material: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSpatialSound(PySide6.QtCore.QObject):
-
     autoPlayChanged          : typing.ClassVar[Signal] = ... # autoPlayChanged()
     directivityChanged       : typing.ClassVar[Signal] = ... # directivityChanged()
     directivityOrderChanged  : typing.ClassVar[Signal] = ... # directivityOrderChanged()
@@ -188,16 +177,13 @@ class QSpatialSound(PySide6.QtCore.QObject):
     volumeChanged            : typing.ClassVar[Signal] = ... # volumeChanged()
 
     class DistanceModel(enum.Enum):
-
         Logarithmic               = 0x0
         Linear                    = 0x1
         ManualAttenuation         = 0x2
 
     class Loops(enum.IntEnum):
-
         Infinite                  = -1
         Once                      = 0x1
-
 
     def __init__(self, engine: PySide6.QtSpatialAudio.QAudioEngine, /, *, source: PySide6.QtCore.QUrl | None = ..., position: PySide6.QtGui.QVector3D | None = ..., rotation: PySide6.QtGui.QQuaternion | None = ..., volume: float | None = ..., distanceModel: PySide6.QtSpatialAudio.QSpatialSound.DistanceModel | None = ..., size: float | None = ..., distanceCutoff: float | None = ..., manualAttenuation: float | None = ..., occlusionIntensity: float | None = ..., directivity: float | None = ..., directivityOrder: float | None = ..., nearFieldGain: float | None = ..., loops: int | None = ..., autoPlay: bool | None = ...) -> None: ...
 

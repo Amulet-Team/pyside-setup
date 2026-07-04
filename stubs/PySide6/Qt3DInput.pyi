@@ -20,21 +20,21 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class Qt3DInput(Shiboken.Object):
-
-    class QAbstractActionInput(PySide6.Qt3DCore.Qt3DCore.QNode): ...
+    class QAbstractActionInput(PySide6.Qt3DCore.Qt3DCore.QNode):
+        ...
 
     class QAbstractAxisInput(PySide6.Qt3DCore.Qt3DCore.QNode):
-
         sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QAbstractPhysicalDevice*)
+
         def setSourceDevice(self, sourceDevice: PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice, /) -> None: ...
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
 
     class QAbstractPhysicalDevice(PySide6.Qt3DCore.Qt3DCore.QNode):
-
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
         def addAxisSetting(self, axisSetting: PySide6.Qt3DInput.Qt3DInput.QAxisSetting, /) -> None: ...
@@ -48,7 +48,6 @@ class Qt3DInput(Shiboken.Object):
         def removeAxisSetting(self, axisSetting: PySide6.Qt3DInput.Qt3DInput.QAxisSetting, /) -> None: ...
 
     class QAction(PySide6.Qt3DCore.Qt3DCore.QNode):
-
         activeChanged            : typing.ClassVar[Signal] = ... # activeChanged(bool)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, active: bool | None = ...) -> None: ...
@@ -59,7 +58,6 @@ class Qt3DInput(Shiboken.Object):
         def removeInput(self, input: PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput, /) -> None: ...
 
     class QActionInput(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-
         buttonsChanged           : typing.ClassVar[Signal] = ... # buttonsChanged(QList<int>)
         sourceDeviceChanged      : typing.ClassVar[Signal] = ... # sourceDeviceChanged(QAbstractPhysicalDevice*)
 
@@ -71,7 +69,6 @@ class Qt3DInput(Shiboken.Object):
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
 
     class QAnalogAxisInput(PySide6.Qt3DInput.Qt3DInput.QAbstractAxisInput):
-
         axisChanged              : typing.ClassVar[Signal] = ... # axisChanged(int)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, axis: int | None = ...) -> None: ...
@@ -80,7 +77,6 @@ class Qt3DInput(Shiboken.Object):
         def setAxis(self, axis: int, /) -> None: ...
 
     class QAxis(PySide6.Qt3DCore.Qt3DCore.QNode):
-
         valueChanged             : typing.ClassVar[Signal] = ... # valueChanged(float)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, value: float | None = ...) -> None: ...
@@ -91,7 +87,6 @@ class Qt3DInput(Shiboken.Object):
         def value(self, /) -> float: ...
 
     class QAxisAccumulator(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         scaleChanged             : typing.ClassVar[Signal] = ... # scaleChanged(float)
         sourceAxisChanged        : typing.ClassVar[Signal] = ... # sourceAxisChanged(Qt3DInput::QAxis*)
         sourceAxisTypeChanged    : typing.ClassVar[Signal] = ... # sourceAxisTypeChanged(QAxisAccumulator::SourceAxisType)
@@ -99,10 +94,8 @@ class Qt3DInput(Shiboken.Object):
         velocityChanged          : typing.ClassVar[Signal] = ... # velocityChanged(float)
 
         class SourceAxisType(enum.Enum):
-
             Velocity                  = 0x0
             Acceleration              = 0x1
-
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sourceAxis: PySide6.Qt3DInput.Qt3DInput.QAxis | None = ..., sourceAxisType: PySide6.Qt3DInput.Qt3DInput.QAxisAccumulator.SourceAxisType | None = ..., scale: float | None = ..., value: float | None = ..., velocity: float | None = ...) -> None: ...
 
@@ -116,7 +109,6 @@ class Qt3DInput(Shiboken.Object):
         def velocity(self, /) -> float: ...
 
     class QAxisSetting(PySide6.Qt3DCore.Qt3DCore.QNode):
-
         axesChanged              : typing.ClassVar[Signal] = ... # axesChanged(QList<int>)
         deadZoneRadiusChanged    : typing.ClassVar[Signal] = ... # deadZoneRadiusChanged(float)
         smoothChanged            : typing.ClassVar[Signal] = ... # smoothChanged(bool)
@@ -131,7 +123,6 @@ class Qt3DInput(Shiboken.Object):
         def setSmoothEnabled(self, enabled: bool, /) -> None: ...
 
     class QButtonAxisInput(PySide6.Qt3DInput.Qt3DInput.QAbstractAxisInput):
-
         accelerationChanged      : typing.ClassVar[Signal] = ... # accelerationChanged(float)
         buttonsChanged           : typing.ClassVar[Signal] = ... # buttonsChanged(QList<int>)
         decelerationChanged      : typing.ClassVar[Signal] = ... # decelerationChanged(float)
@@ -149,14 +140,12 @@ class Qt3DInput(Shiboken.Object):
         def setScale(self, scale: float, /) -> None: ...
 
     class QInputAspect(PySide6.Qt3DCore.Qt3DCore.QAbstractAspect):
-
         def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
         def availablePhysicalDevices(self, /) -> typing.List[str]: ...
         def createPhysicalDevice(self, name: str, /) -> PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice: ...
 
     class QInputChord(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-
         timeoutChanged           : typing.ClassVar[Signal] = ... # timeoutChanged(int)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, timeout: int | None = ...) -> None: ...
@@ -168,7 +157,6 @@ class Qt3DInput(Shiboken.Object):
         def timeout(self, /) -> int: ...
 
     class QInputSequence(PySide6.Qt3DInput.Qt3DInput.QAbstractActionInput):
-
         buttonIntervalChanged    : typing.ClassVar[Signal] = ... # buttonIntervalChanged(int)
         timeoutChanged           : typing.ClassVar[Signal] = ... # timeoutChanged(int)
 
@@ -183,7 +171,6 @@ class Qt3DInput(Shiboken.Object):
         def timeout(self, /) -> int: ...
 
     class QInputSettings(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         eventSourceChanged       : typing.ClassVar[Signal] = ... # eventSourceChanged(QObject*)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, eventSource: PySide6.QtCore.QObject | None = ...) -> None: ...
@@ -192,7 +179,6 @@ class Qt3DInput(Shiboken.Object):
         def setEventSource(self, eventSource: PySide6.QtCore.QObject, /) -> None: ...
 
     class QKeyEvent(PySide6.QtCore.QObject):
-
         @typing.overload
         def __init__(self, type: PySide6.QtCore.QEvent.Type, key: int, modifiers: PySide6.QtCore.Qt.KeyboardModifier, /, text: str = ..., autorep: bool = ..., count: int = ..., *, isAutoRepeat: bool | None = ..., nativeScanCode: int | None = ..., accepted: bool | None = ...) -> None: ...
         @typing.overload
@@ -210,7 +196,6 @@ class Qt3DInput(Shiboken.Object):
         def type(self, /) -> PySide6.QtCore.QEvent.Type: ...
 
     class QKeyboardDevice(PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice):
-
         activeInputChanged       : typing.ClassVar[Signal] = ... # activeInputChanged(QKeyboardHandler*)
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, activeInput: PySide6.Qt3DInput.Qt3DInput.QKeyboardHandler | None = ...) -> None: ...
@@ -224,7 +209,6 @@ class Qt3DInput(Shiboken.Object):
         def buttonNames(self, /) -> typing.List[str]: ...
 
     class QKeyboardHandler(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         asteriskPressed          : typing.ClassVar[Signal] = ... # asteriskPressed(Qt3DInput::QKeyEvent*)
         backPressed              : typing.ClassVar[Signal] = ... # backPressed(Qt3DInput::QKeyEvent*)
         backtabPressed           : typing.ClassVar[Signal] = ... # backtabPressed(Qt3DInput::QKeyEvent*)
@@ -276,7 +260,6 @@ class Qt3DInput(Shiboken.Object):
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QKeyboardDevice: ...
 
     class QLogicalDevice(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ...) -> None: ...
 
         def actions(self, /) -> typing.List[PySide6.Qt3DInput.Qt3DInput.QAction]: ...
@@ -287,17 +270,14 @@ class Qt3DInput(Shiboken.Object):
         def removeAxis(self, axis: PySide6.Qt3DInput.Qt3DInput.QAxis, /) -> None: ...
 
     class QMouseDevice(PySide6.Qt3DInput.Qt3DInput.QAbstractPhysicalDevice):
-
         sensitivityChanged       : typing.ClassVar[Signal] = ... # sensitivityChanged(float)
         updateAxesContinuouslyChanged: typing.ClassVar[Signal] = ... # updateAxesContinuouslyChanged(bool)
 
         class Axis(enum.Enum):
-
             X                         = 0x0
             Y                         = 0x1
             WheelX                    = 0x2
             WheelY                    = 0x3
-
 
         def __init__(self, /, parent: PySide6.Qt3DCore.Qt3DCore.QNode | None = ..., *, sensitivity: float | None = ..., updateAxesContinuously: bool | None = ...) -> None: ...
 
@@ -313,9 +293,7 @@ class Qt3DInput(Shiboken.Object):
         def updateAxesContinuously(self, /) -> bool: ...
 
     class QMouseEvent(PySide6.QtCore.QObject):
-
         class Buttons(enum.Enum):
-
             NoButton                  = 0x0
             LeftButton                = 0x1
             RightButton               = 0x2
@@ -323,14 +301,12 @@ class Qt3DInput(Shiboken.Object):
             BackButton                = 0x8
 
         class Modifiers(enum.Enum):
-
             NoModifier                = 0x0
             ShiftModifier             = 0x2000000
             ControlModifier           = 0x4000000
             AltModifier               = 0x8000000
             MetaModifier              = 0x10000000
             KeypadModifier            = 0x20000000
-
 
         def __init__(self, e: PySide6.QtGui.QMouseEvent, /, *, x: int | None = ..., y: int | None = ..., wasHeld: bool | None = ..., button: PySide6.Qt3DInput.Qt3DInput.QMouseEvent.Buttons | None = ..., buttons: int | None = ..., modifiers: PySide6.Qt3DInput.Qt3DInput.QMouseEvent.Modifiers | None = ..., accepted: bool | None = ...) -> None: ...
 
@@ -345,7 +321,6 @@ class Qt3DInput(Shiboken.Object):
         def y(self, /) -> int: ...
 
     class QMouseHandler(PySide6.Qt3DCore.Qt3DCore.QComponent):
-
         clicked                  : typing.ClassVar[Signal] = ... # clicked(Qt3DInput::QMouseEvent*)
         containsMouseChanged     : typing.ClassVar[Signal] = ... # containsMouseChanged(bool)
         doubleClicked            : typing.ClassVar[Signal] = ... # doubleClicked(Qt3DInput::QMouseEvent*)
@@ -366,9 +341,7 @@ class Qt3DInput(Shiboken.Object):
         def sourceDevice(self, /) -> PySide6.Qt3DInput.Qt3DInput.QMouseDevice: ...
 
     class QWheelEvent(PySide6.QtCore.QObject):
-
         class Buttons(enum.Enum):
-
             NoButton                  = 0x0
             LeftButton                = 0x1
             RightButton               = 0x2
@@ -376,14 +349,12 @@ class Qt3DInput(Shiboken.Object):
             BackButton                = 0x8
 
         class Modifiers(enum.Enum):
-
             NoModifier                = 0x0
             ShiftModifier             = 0x2000000
             ControlModifier           = 0x4000000
             AltModifier               = 0x8000000
             MetaModifier              = 0x10000000
             KeypadModifier            = 0x20000000
-
 
         def __init__(self, e: PySide6.QtGui.QWheelEvent, /, *, x: int | None = ..., y: int | None = ..., angleDelta: PySide6.QtCore.QPoint | None = ..., buttons: int | None = ..., modifiers: PySide6.Qt3DInput.Qt3DInput.QWheelEvent.Modifiers | None = ..., accepted: bool | None = ...) -> None: ...
 

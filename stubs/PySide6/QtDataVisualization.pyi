@@ -20,7 +20,6 @@ from shiboken6 import Shiboken
 
 
 class Q3DBars(PySide6.QtDataVisualization.QAbstract3DGraph):
-
     barSeriesMarginChanged   : typing.ClassVar[Signal] = ... # barSeriesMarginChanged(QSizeF)
     barSpacingChanged        : typing.ClassVar[Signal] = ... # barSpacingChanged(QSizeF)
     barSpacingRelativeChanged: typing.ClassVar[Signal] = ... # barSpacingRelativeChanged(bool)
@@ -66,7 +65,6 @@ class Q3DBars(PySide6.QtDataVisualization.QAbstract3DGraph):
 
 
 class Q3DCamera(PySide6.QtDataVisualization.Q3DObject):
-
     cameraPresetChanged      : typing.ClassVar[Signal] = ... # cameraPresetChanged(Q3DCamera::CameraPreset)
     maxZoomLevelChanged      : typing.ClassVar[Signal] = ... # maxZoomLevelChanged(float)
     minZoomLevelChanged      : typing.ClassVar[Signal] = ... # minZoomLevelChanged(float)
@@ -78,7 +76,6 @@ class Q3DCamera(PySide6.QtDataVisualization.Q3DObject):
     zoomLevelChanged         : typing.ClassVar[Signal] = ... # zoomLevelChanged(float)
 
     class CameraPreset(enum.Enum):
-
         CameraPresetNone          = -1
         CameraPresetFrontLow      = 0x0
         CameraPresetFront         = 0x1
@@ -105,7 +102,6 @@ class Q3DCamera(PySide6.QtDataVisualization.Q3DObject):
         CameraPresetBehindBelow   = 0x16
         CameraPresetDirectlyBelow = 0x17
 
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, xRotation: float | None = ..., yRotation: float | None = ..., zoomLevel: float | None = ..., cameraPreset: PySide6.QtDataVisualization.Q3DCamera.CameraPreset | None = ..., wrapXRotation: bool | None = ..., wrapYRotation: bool | None = ..., target: PySide6.QtGui.QVector3D | None = ..., minZoomLevel: float | None = ..., maxZoomLevel: float | None = ...) -> None: ...
 
     def cameraPreset(self, /) -> PySide6.QtDataVisualization.Q3DCamera.CameraPreset: ...
@@ -131,7 +127,6 @@ class Q3DCamera(PySide6.QtDataVisualization.Q3DObject):
 
 
 class Q3DInputHandler(PySide6.QtDataVisualization.QAbstract3DInputHandler):
-
     rotationEnabledChanged   : typing.ClassVar[Signal] = ... # rotationEnabledChanged(bool)
     selectionEnabledChanged  : typing.ClassVar[Signal] = ... # selectionEnabledChanged(bool)
     zoomAtTargetEnabledChanged: typing.ClassVar[Signal] = ... # zoomAtTargetEnabledChanged(bool)
@@ -154,7 +149,6 @@ class Q3DInputHandler(PySide6.QtDataVisualization.QAbstract3DInputHandler):
 
 
 class Q3DLight(PySide6.QtDataVisualization.Q3DObject):
-
     autoPositionChanged      : typing.ClassVar[Signal] = ... # autoPositionChanged(bool)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, autoPosition: bool | None = ...) -> None: ...
@@ -164,7 +158,6 @@ class Q3DLight(PySide6.QtDataVisualization.Q3DObject):
 
 
 class Q3DObject(PySide6.QtCore.QObject):
-
     positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(QVector3D)
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, parentScene: PySide6.QtDataVisualization.Q3DScene | None = ..., position: PySide6.QtGui.QVector3D | None = ...) -> None: ...
@@ -178,7 +171,6 @@ class Q3DObject(PySide6.QtCore.QObject):
 
 
 class Q3DScatter(PySide6.QtDataVisualization.QAbstract3DGraph):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -202,7 +194,6 @@ class Q3DScatter(PySide6.QtDataVisualization.QAbstract3DGraph):
 
 
 class Q3DScene(PySide6.QtCore.QObject):
-
     activeCameraChanged      : typing.ClassVar[Signal] = ... # activeCameraChanged(Q3DCamera*)
     activeLightChanged       : typing.ClassVar[Signal] = ... # activeLightChanged(Q3DLight*)
     devicePixelRatioChanged  : typing.ClassVar[Signal] = ... # devicePixelRatioChanged(float)
@@ -242,7 +233,6 @@ class Q3DScene(PySide6.QtCore.QObject):
 
 
 class Q3DSurface(PySide6.QtDataVisualization.QAbstract3DGraph):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -269,7 +259,6 @@ class Q3DSurface(PySide6.QtDataVisualization.QAbstract3DGraph):
 
 
 class Q3DTheme(PySide6.QtCore.QObject):
-
     ambientLightStrengthChanged: typing.ClassVar[Signal] = ... # ambientLightStrengthChanged(float)
     backgroundColorChanged   : typing.ClassVar[Signal] = ... # backgroundColorChanged(QColor)
     backgroundEnabledChanged : typing.ClassVar[Signal] = ... # backgroundEnabledChanged(bool)
@@ -294,13 +283,11 @@ class Q3DTheme(PySide6.QtCore.QObject):
     windowColorChanged       : typing.ClassVar[Signal] = ... # windowColorChanged(QColor)
 
     class ColorStyle(enum.Enum):
-
         ColorStyleUniform         = 0x0
         ColorStyleObjectGradient  = 0x1
         ColorStyleRangeGradient   = 0x2
 
     class Theme(enum.Enum):
-
         ThemeQt                   = 0x0
         ThemePrimaryColors        = 0x1
         ThemeDigia                = 0x2
@@ -310,7 +297,6 @@ class Q3DTheme(PySide6.QtCore.QObject):
         ThemeEbony                = 0x6
         ThemeIsabelle             = 0x7
         ThemeUserDefined          = 0x8
-
 
     @typing.overload
     def __init__(self, themeType: PySide6.QtDataVisualization.Q3DTheme.Theme, /, parent: PySide6.QtCore.QObject | None = ..., *, type: PySide6.QtDataVisualization.Q3DTheme.Theme | None = ..., baseColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., backgroundColor: PySide6.QtGui.QColor | None = ..., windowColor: PySide6.QtGui.QColor | None = ..., labelTextColor: PySide6.QtGui.QColor | None = ..., labelBackgroundColor: PySide6.QtGui.QColor | None = ..., gridLineColor: PySide6.QtGui.QColor | None = ..., singleHighlightColor: PySide6.QtGui.QColor | None = ..., multiHighlightColor: PySide6.QtGui.QColor | None = ..., lightColor: PySide6.QtGui.QColor | None = ..., baseGradients: collections.abc.Sequence[PySide6.QtGui.QLinearGradient] | None = ..., singleHighlightGradient: PySide6.QtGui.QLinearGradient | None = ..., multiHighlightGradient: PySide6.QtGui.QLinearGradient | None = ..., lightStrength: float | None = ..., ambientLightStrength: float | None = ..., highlightLightStrength: float | None = ..., labelBorderEnabled: bool | None = ..., font: PySide6.QtGui.QFont | None = ..., backgroundEnabled: bool | None = ..., gridEnabled: bool | None = ..., labelBackgroundEnabled: bool | None = ..., colorStyle: PySide6.QtDataVisualization.Q3DTheme.ColorStyle | None = ...) -> None: ...
@@ -364,7 +350,6 @@ class Q3DTheme(PySide6.QtCore.QObject):
 
 
 class QAbstract3DAxis(PySide6.QtCore.QObject):
-
     autoAdjustRangeChanged   : typing.ClassVar[Signal] = ... # autoAdjustRangeChanged(bool)
     labelAutoRotationChanged : typing.ClassVar[Signal] = ... # labelAutoRotationChanged(float)
     labelsChanged            : typing.ClassVar[Signal] = ... # labelsChanged()
@@ -377,18 +362,15 @@ class QAbstract3DAxis(PySide6.QtCore.QObject):
     titleVisibilityChanged   : typing.ClassVar[Signal] = ... # titleVisibilityChanged(bool)
 
     class AxisOrientation(enum.Enum):
-
         AxisOrientationNone       = 0x0
         AxisOrientationX          = 0x1
         AxisOrientationY          = 0x2
         AxisOrientationZ          = 0x4
 
     class AxisType(enum.Enum):
-
         AxisTypeNone              = 0x0
         AxisTypeCategory          = 0x1
         AxisTypeValue             = 0x2
-
 
     def isAutoAdjustRange(self, /) -> bool: ...
     def isTitleFixed(self, /) -> bool: ...
@@ -412,7 +394,6 @@ class QAbstract3DAxis(PySide6.QtCore.QObject):
 
 
 class QAbstract3DGraph(PySide6.QtGui.QWindow):
-
     activeInputHandlerChanged: typing.ClassVar[Signal] = ... # activeInputHandlerChanged(QAbstract3DInputHandler*)
     activeThemeChanged       : typing.ClassVar[Signal] = ... # activeThemeChanged(Q3DTheme*)
     aspectRatioChanged       : typing.ClassVar[Signal] = ... # aspectRatioChanged(double)
@@ -433,7 +414,6 @@ class QAbstract3DGraph(PySide6.QtGui.QWindow):
     shadowQualityChanged     : typing.ClassVar[Signal] = ... # shadowQualityChanged(QAbstract3DGraph::ShadowQuality)
 
     class ElementType(enum.Enum):
-
         ElementNone               = 0x0
         ElementSeries             = 0x1
         ElementAxisXLabel         = 0x2
@@ -442,12 +422,10 @@ class QAbstract3DGraph(PySide6.QtGui.QWindow):
         ElementCustomItem         = 0x5
 
     class OptimizationHint(enum.Flag):
-
         OptimizationDefault       = 0x0
         OptimizationStatic        = 0x1
 
     class SelectionFlag(enum.Flag):
-
         SelectionNone             = 0x0
         SelectionItem             = 0x1
         SelectionRow              = 0x2
@@ -460,7 +438,6 @@ class QAbstract3DGraph(PySide6.QtGui.QWindow):
         SelectionMultiSeries      = 0x10
 
     class ShadowQuality(enum.Enum):
-
         ShadowQualityNone         = 0x0
         ShadowQualityLow          = 0x1
         ShadowQualityMedium       = 0x2
@@ -468,7 +445,6 @@ class QAbstract3DGraph(PySide6.QtGui.QWindow):
         ShadowQualitySoftLow      = 0x4
         ShadowQualitySoftMedium   = 0x5
         ShadowQualitySoftHigh     = 0x6
-
 
     def activeInputHandler(self, /) -> PySide6.QtDataVisualization.QAbstract3DInputHandler: ...
     def activeTheme(self, /) -> PySide6.QtDataVisualization.Q3DTheme: ...
@@ -537,17 +513,14 @@ class QAbstract3DGraph(PySide6.QtGui.QWindow):
 
 
 class QAbstract3DInputHandler(PySide6.QtCore.QObject):
-
     inputViewChanged         : typing.ClassVar[Signal] = ... # inputViewChanged(QAbstract3DInputHandler::InputView)
     positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(QPoint)
     sceneChanged             : typing.ClassVar[Signal] = ... # sceneChanged(Q3DScene*)
 
     class InputView(enum.Enum):
-
         InputViewNone             = 0x0
         InputViewOnPrimary        = 0x1
         InputViewOnSecondary      = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, inputView: PySide6.QtDataVisualization.QAbstract3DInputHandler.InputView | None = ..., inputPosition: PySide6.QtCore.QPoint | None = ..., scene: PySide6.QtDataVisualization.Q3DScene | None = ...) -> None: ...
 
@@ -570,7 +543,6 @@ class QAbstract3DInputHandler(PySide6.QtCore.QObject):
 
 
 class QAbstract3DSeries(PySide6.QtCore.QObject):
-
     baseColorChanged         : typing.ClassVar[Signal] = ... # baseColorChanged(QColor)
     baseGradientChanged      : typing.ClassVar[Signal] = ... # baseGradientChanged(QLinearGradient)
     colorStyleChanged        : typing.ClassVar[Signal] = ... # colorStyleChanged(Q3DTheme::ColorStyle)
@@ -589,7 +561,6 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
     visibilityChanged        : typing.ClassVar[Signal] = ... # visibilityChanged(bool)
 
     class Mesh(enum.Enum):
-
         MeshUserDefined           = 0x0
         MeshBar                   = 0x1
         MeshCube                  = 0x2
@@ -604,12 +575,10 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
         MeshPoint                 = 0xb
 
     class SeriesType(enum.Enum):
-
         SeriesTypeNone            = 0x0
         SeriesTypeBar             = 0x1
         SeriesTypeScatter         = 0x2
         SeriesTypeSurface         = 0x4
-
 
     def baseColor(self, /) -> PySide6.QtGui.QColor: ...
     def baseGradient(self, /) -> PySide6.QtGui.QLinearGradient: ...
@@ -647,20 +616,16 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
 
 
 class QAbstractDataProxy(PySide6.QtCore.QObject):
-
     class DataType(enum.Enum):
-
         DataTypeNone              = 0x0
         DataTypeBar               = 0x1
         DataTypeScatter           = 0x2
         DataTypeSurface           = 0x4
 
-
     def type(self, /) -> PySide6.QtDataVisualization.QAbstractDataProxy.DataType: ...
 
 
 class QBar3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
-
     dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QBarDataProxy*)
     meshAngleChanged         : typing.ClassVar[Signal] = ... # meshAngleChanged(float)
     rowColorsChanged         : typing.ClassVar[Signal] = ... # rowColorsChanged(QList<QColor>)
@@ -684,7 +649,6 @@ class QBar3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
 
 
 class QBarDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -703,7 +667,6 @@ class QBarDataItem(Shiboken.Object):
 
 
 class QBarDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     columnLabelsChanged      : typing.ClassVar[Signal] = ... # columnLabelsChanged()
     itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(int,int)
@@ -767,7 +730,6 @@ class QBarDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
 
 
 class QCategory3DAxis(PySide6.QtDataVisualization.QAbstract3DAxis):
-
     labelsChanged            : typing.ClassVar[Signal] = ... # labelsChanged()
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, labels: collections.abc.Sequence[str] | None = ...) -> None: ...
@@ -777,7 +739,6 @@ class QCategory3DAxis(PySide6.QtDataVisualization.QAbstract3DAxis):
 
 
 class QCustom3DItem(PySide6.QtCore.QObject):
-
     meshFileChanged          : typing.ClassVar[Signal] = ... # meshFileChanged(QString)
     positionAbsoluteChanged  : typing.ClassVar[Signal] = ... # positionAbsoluteChanged(bool)
     positionChanged          : typing.ClassVar[Signal] = ... # positionChanged(QVector3D)
@@ -816,7 +777,6 @@ class QCustom3DItem(PySide6.QtCore.QObject):
 
 
 class QCustom3DLabel(PySide6.QtDataVisualization.QCustom3DItem):
-
     backgroundColorChanged   : typing.ClassVar[Signal] = ... # backgroundColorChanged(QColor)
     backgroundEnabledChanged : typing.ClassVar[Signal] = ... # backgroundEnabledChanged(bool)
     borderEnabledChanged     : typing.ClassVar[Signal] = ... # borderEnabledChanged(bool)
@@ -847,7 +807,6 @@ class QCustom3DLabel(PySide6.QtDataVisualization.QCustom3DItem):
 
 
 class QCustom3DVolume(PySide6.QtDataVisualization.QCustom3DItem):
-
     alphaMultiplierChanged   : typing.ClassVar[Signal] = ... # alphaMultiplierChanged(float)
     colorTableChanged        : typing.ClassVar[Signal] = ... # colorTableChanged()
     drawSliceFramesChanged   : typing.ClassVar[Signal] = ... # drawSliceFramesChanged(bool)
@@ -920,7 +879,6 @@ class QCustom3DVolume(PySide6.QtDataVisualization.QCustom3DItem):
 
 
 class QHeightMapSurfaceDataProxy(PySide6.QtDataVisualization.QSurfaceDataProxy):
-
     autoScaleYChanged        : typing.ClassVar[Signal] = ... # autoScaleYChanged(bool)
     heightMapChanged         : typing.ClassVar[Signal] = ... # heightMapChanged(QImage)
     heightMapFileChanged     : typing.ClassVar[Signal] = ... # heightMapFileChanged(QString)
@@ -959,11 +917,11 @@ class QHeightMapSurfaceDataProxy(PySide6.QtDataVisualization.QSurfaceDataProxy):
     def setValueRanges(self, minX: float, maxX: float, minZ: float, maxZ: float, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QItemModelBarDataProxy(PySide6.QtDataVisualization.QBarDataProxy):
-
     autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
     autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
     columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
@@ -985,12 +943,10 @@ class QItemModelBarDataProxy(PySide6.QtDataVisualization.QBarDataProxy):
     valueRoleReplaceChanged  : typing.ClassVar[Signal] = ... # valueRoleReplaceChanged(QString)
 
     class MultiMatchBehavior(enum.Enum):
-
         MMBFirst                  = 0x0
         MMBLast                   = 0x1
         MMBAverage                = 0x2
         MMBCumulative             = 0x3
-
 
     @typing.overload
     def __init__(self, itemModel: PySide6.QtCore.QAbstractItemModel, rowRole: str, columnRole: str, valueRole: str, rotationRole: str, rowCategories: collections.abc.Sequence[str], columnCategories: collections.abc.Sequence[str], /, parent: PySide6.QtCore.QObject | None = ..., *, useModelCategories: bool | None = ..., autoRowCategories: bool | None = ..., autoColumnCategories: bool | None = ..., rowRolePattern: PySide6.QtCore.QRegularExpression | None = ..., columnRolePattern: PySide6.QtCore.QRegularExpression | None = ..., valueRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rotationRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rowRoleReplace: str | None = ..., columnRoleReplace: str | None = ..., valueRoleReplace: str | None = ..., rotationRoleReplace: str | None = ..., multiMatchBehavior: PySide6.QtDataVisualization.QItemModelBarDataProxy.MultiMatchBehavior | None = ...) -> None: ...
@@ -1051,7 +1007,6 @@ class QItemModelBarDataProxy(PySide6.QtDataVisualization.QBarDataProxy):
 
 
 class QItemModelScatterDataProxy(PySide6.QtDataVisualization.QScatterDataProxy):
-
     itemModelChanged         : typing.ClassVar[Signal] = ... # itemModelChanged(const QAbstractItemModel*)
     rotationRoleChanged      : typing.ClassVar[Signal] = ... # rotationRoleChanged(QString)
     rotationRolePatternChanged: typing.ClassVar[Signal] = ... # rotationRolePatternChanged(QRegularExpression)
@@ -1105,7 +1060,6 @@ class QItemModelScatterDataProxy(PySide6.QtDataVisualization.QScatterDataProxy):
 
 
 class QItemModelSurfaceDataProxy(PySide6.QtDataVisualization.QSurfaceDataProxy):
-
     autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
     autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
     columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
@@ -1130,12 +1084,10 @@ class QItemModelSurfaceDataProxy(PySide6.QtDataVisualization.QSurfaceDataProxy):
     zPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # zPosRoleReplaceChanged(QString)
 
     class MultiMatchBehavior(enum.Enum):
-
         MMBFirst                  = 0x0
         MMBLast                   = 0x1
         MMBAverage                = 0x2
         MMBCumulativeY            = 0x3
-
 
     @typing.overload
     def __init__(self, itemModel: PySide6.QtCore.QAbstractItemModel, rowRole: str, columnRole: str, xPosRole: str, yPosRole: str, zPosRole: str, rowCategories: collections.abc.Sequence[str], columnCategories: collections.abc.Sequence[str], /, parent: PySide6.QtCore.QObject | None = ..., *, useModelCategories: bool | None = ..., autoRowCategories: bool | None = ..., autoColumnCategories: bool | None = ..., rowRolePattern: PySide6.QtCore.QRegularExpression | None = ..., columnRolePattern: PySide6.QtCore.QRegularExpression | None = ..., xPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., yPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., zPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rowRoleReplace: str | None = ..., columnRoleReplace: str | None = ..., xPosRoleReplace: str | None = ..., yPosRoleReplace: str | None = ..., zPosRoleReplace: str | None = ..., multiMatchBehavior: PySide6.QtDataVisualization.QItemModelSurfaceDataProxy.MultiMatchBehavior | None = ...) -> None: ...
@@ -1202,7 +1154,6 @@ class QItemModelSurfaceDataProxy(PySide6.QtDataVisualization.QSurfaceDataProxy):
 
 
 class QLogValue3DAxisFormatter(PySide6.QtDataVisualization.QValue3DAxisFormatter):
-
     autoSubGridChanged       : typing.ClassVar[Signal] = ... # autoSubGridChanged(bool)
     baseChanged              : typing.ClassVar[Signal] = ... # baseChanged(double)
     showEdgeLabelsChanged    : typing.ClassVar[Signal] = ... # showEdgeLabelsChanged(bool)
@@ -1223,7 +1174,6 @@ class QLogValue3DAxisFormatter(PySide6.QtDataVisualization.QValue3DAxisFormatter
 
 
 class QScatter3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
-
     dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QScatterDataProxy*)
     itemSizeChanged          : typing.ClassVar[Signal] = ... # itemSizeChanged(float)
     selectedItemChanged      : typing.ClassVar[Signal] = ... # selectedItemChanged(int)
@@ -1244,7 +1194,6 @@ class QScatter3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
 
 
 class QScatterDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -1269,7 +1218,6 @@ class QScatterDataItem(Shiboken.Object):
 
 
 class QScatterDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     itemCountChanged         : typing.ClassVar[Signal] = ... # itemCountChanged(int)
     itemsAdded               : typing.ClassVar[Signal] = ... # itemsAdded(int,int)
@@ -1295,7 +1243,6 @@ class QScatterDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
 
 
 class QSurface3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
-
     dataProxyChanged         : typing.ClassVar[Signal] = ... # dataProxyChanged(QSurfaceDataProxy*)
     drawModeChanged          : typing.ClassVar[Signal] = ... # drawModeChanged(QSurface3DSeries::DrawFlags)
     flatShadingEnabledChanged: typing.ClassVar[Signal] = ... # flatShadingEnabledChanged(bool)
@@ -1306,11 +1253,9 @@ class QSurface3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
     wireframeColorChanged    : typing.ClassVar[Signal] = ... # wireframeColorChanged(QColor)
 
     class DrawFlag(enum.Flag):
-
         DrawWireframe             = 0x1
         DrawSurface               = 0x2
         DrawSurfaceAndWireframe   = 0x3
-
 
     @typing.overload
     def __init__(self, dataProxy: PySide6.QtDataVisualization.QSurfaceDataProxy, /, parent: PySide6.QtCore.QObject | None = ..., *, selectedPoint: PySide6.QtCore.QPoint | None = ..., flatShadingEnabled: bool | None = ..., flatShadingSupported: bool | None = ..., drawMode: PySide6.QtDataVisualization.QSurface3DSeries.DrawFlag | None = ..., texture: PySide6.QtGui.QImage | None = ..., textureFile: str | None = ..., wireframeColor: PySide6.QtGui.QColor | None = ...) -> None: ...
@@ -1337,7 +1282,6 @@ class QSurface3DSeries(PySide6.QtDataVisualization.QAbstract3DSeries):
 
 
 class QSurfaceDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -1358,7 +1302,6 @@ class QSurfaceDataItem(Shiboken.Object):
 
 
 class QSurfaceDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged(int)
     itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(int,int)
@@ -1395,14 +1338,12 @@ class QSurfaceDataProxy(PySide6.QtDataVisualization.QAbstractDataProxy):
 
 
 class QTouch3DInputHandler(PySide6.QtDataVisualization.Q3DInputHandler):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def touchEvent(self, event: PySide6.QtGui.QTouchEvent, /) -> None: ...
 
 
 class QValue3DAxis(PySide6.QtDataVisualization.QAbstract3DAxis):
-
     formatterChanged         : typing.ClassVar[Signal] = ... # formatterChanged(QValue3DAxisFormatter*)
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
     reversedChanged          : typing.ClassVar[Signal] = ... # reversedChanged(bool)
@@ -1424,7 +1365,6 @@ class QValue3DAxis(PySide6.QtDataVisualization.QAbstract3DAxis):
 
 
 class QValue3DAxisFormatter(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def allowNegatives(self, /) -> bool: ...
@@ -1451,6 +1391,5 @@ class QValue3DAxisFormatter(PySide6.QtCore.QObject):
 
 
 def qDefaultSurfaceFormat(antialias: bool, /) -> PySide6.QtGui.QSurfaceFormat: ...
-
 
 # eof

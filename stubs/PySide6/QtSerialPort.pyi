@@ -17,11 +17,11 @@ from PySide6.QtCore import Signal
 from shiboken6 import Shiboken
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QSerialPort(PySide6.QtCore.QIODevice):
-
     baudRateChanged          : typing.ClassVar[Signal] = ... # baudRateChanged(int,QSerialPort::Directions)
     breakEnabledChanged      : typing.ClassVar[Signal] = ... # breakEnabledChanged(bool)
     dataBitsChanged          : typing.ClassVar[Signal] = ... # dataBitsChanged(QSerialPort::DataBits)
@@ -34,7 +34,6 @@ class QSerialPort(PySide6.QtCore.QIODevice):
     stopBitsChanged          : typing.ClassVar[Signal] = ... # stopBitsChanged(QSerialPort::StopBits)
 
     class BaudRate(enum.IntEnum):
-
         Baud1200                  = 0x4b0
         Baud2400                  = 0x960
         Baud4800                  = 0x12c0
@@ -45,26 +44,22 @@ class QSerialPort(PySide6.QtCore.QIODevice):
         Baud115200                = 0x1c200
 
     class DataBits(enum.Enum):
-
         Data5                     = 0x5
         Data6                     = 0x6
         Data7                     = 0x7
         Data8                     = 0x8
 
     class Direction(enum.Flag):
-
         Input                     = 0x1
         Output                    = 0x2
         AllDirections             = 0x3
 
     class FlowControl(enum.Enum):
-
         NoFlowControl             = 0x0
         HardwareControl           = 0x1
         SoftwareControl           = 0x2
 
     class Parity(enum.Enum):
-
         NoParity                  = 0x0
         EvenParity                = 0x2
         OddParity                 = 0x3
@@ -72,7 +67,6 @@ class QSerialPort(PySide6.QtCore.QIODevice):
         MarkParity                = 0x5
 
     class PinoutSignal(enum.Flag):
-
         NoSignal                  = 0x0
         DataTerminalReadySignal   = 0x4
         DataCarrierDetectSignal   = 0x8
@@ -84,7 +78,6 @@ class QSerialPort(PySide6.QtCore.QIODevice):
         SecondaryReceivedDataSignal = 0x200
 
     class SerialPortError(enum.Enum):
-
         NoError                   = 0x0
         DeviceNotFoundError       = 0x1
         PermissionError           = 0x2
@@ -98,11 +91,9 @@ class QSerialPort(PySide6.QtCore.QIODevice):
         NotOpenError              = 0xa
 
     class StopBits(enum.Enum):
-
         OneStop                   = 0x1
         TwoStop                   = 0x2
         OneAndHalfStop            = 0x3
-
 
     @typing.overload
     def __init__(self, info: PySide6.QtSerialPort.QSerialPortInfo, /, parent: PySide6.QtCore.QObject | None = ..., *, baudRate: int | None = ..., dataBits: PySide6.QtSerialPort.QSerialPort.DataBits | None = ..., parity: PySide6.QtSerialPort.QSerialPort.Parity | None = ..., stopBits: PySide6.QtSerialPort.QSerialPort.StopBits | None = ..., flowControl: PySide6.QtSerialPort.QSerialPort.FlowControl | None = ..., dataTerminalReady: bool | None = ..., requestToSend: bool | None = ..., error: PySide6.QtSerialPort.QSerialPort.SerialPortError | None = ..., breakEnabled: bool | None = ..., settingsRestoredOnClose: bool | None = ...) -> None: ...
@@ -156,7 +147,6 @@ class QSerialPort(PySide6.QtCore.QIODevice):
 
 
 class QSerialPortInfo(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload

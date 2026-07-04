@@ -20,7 +20,6 @@ from shiboken6 import Shiboken
 
 
 class QAbstractOpenGLFunctions(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     def initializeOpenGLFunctions(self, /) -> bool: ...
@@ -29,19 +28,17 @@ class QAbstractOpenGLFunctions(Shiboken.Object):
     def setOwningContext(self, context: PySide6.QtGui.QOpenGLContext, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QOpenGLBuffer(Shiboken.Object):
-
     class Access(enum.Enum):
-
         ReadOnly                  = 0x88b8
         WriteOnly                 = 0x88b9
         ReadWrite                 = 0x88ba
 
     class RangeAccessFlag(enum.Flag):
-
         RangeRead                 = 0x1
         RangeWrite                = 0x2
         RangeInvalidate           = 0x4
@@ -50,14 +47,12 @@ class QOpenGLBuffer(Shiboken.Object):
         RangeUnsynchronized       = 0x20
 
     class Type(enum.Enum):
-
         VertexBuffer              = 0x8892
         IndexBuffer               = 0x8893
         PixelPackBuffer           = 0x88eb
         PixelUnpackBuffer         = 0x88ec
 
     class UsagePattern(enum.Enum):
-
         StreamDraw                = 0x88e0
         StreamRead                = 0x88e1
         StreamCopy                = 0x88e2
@@ -67,7 +62,6 @@ class QOpenGLBuffer(Shiboken.Object):
         DynamicDraw               = 0x88e8
         DynamicRead               = 0x88e9
         DynamicCopy               = 0x88ea
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -103,14 +97,11 @@ class QOpenGLBuffer(Shiboken.Object):
 
 
 class QOpenGLDebugLogger(PySide6.QtCore.QObject):
-
     messageLogged            : typing.ClassVar[Signal] = ... # messageLogged(QOpenGLDebugMessage)
 
     class LoggingMode(enum.Enum):
-
         AsynchronousLogging       = 0x0
         SynchronousLogging        = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, loggingMode: PySide6.QtOpenGL.QOpenGLDebugLogger.LoggingMode | None = ...) -> None: ...
 
@@ -135,9 +126,7 @@ class QOpenGLDebugLogger(PySide6.QtCore.QObject):
 
 
 class QOpenGLDebugMessage(Shiboken.Object):
-
     class Severity(enum.Flag):
-
         AnySeverity               = -1
         InvalidSeverity           = 0x0
         HighSeverity              = 0x1
@@ -147,7 +136,6 @@ class QOpenGLDebugMessage(Shiboken.Object):
         NotificationSeverity      = 0x8
 
     class Source(enum.Flag):
-
         AnySource                 = -1
         InvalidSource             = 0x0
         APISource                 = 0x1
@@ -159,7 +147,6 @@ class QOpenGLDebugMessage(Shiboken.Object):
         OtherSource               = 0x20
 
     class Type(enum.Flag):
-
         AnyType                   = -1
         InvalidType               = 0x0
         ErrorType                 = 0x1
@@ -172,7 +159,6 @@ class QOpenGLDebugMessage(Shiboken.Object):
         GroupPushType             = 0x80
         GroupPopType              = 0x100
         LastType                  = 0x100
-
 
     @typing.overload
     def __init__(self, /) -> None: ...
@@ -196,19 +182,15 @@ class QOpenGLDebugMessage(Shiboken.Object):
 
 
 class QOpenGLFramebufferObject(Shiboken.Object):
-
     class Attachment(enum.Enum):
-
         NoAttachment              = 0x0
         CombinedDepthStencil      = 0x1
         Depth                     = 0x2
 
     class FramebufferRestorePolicy(enum.Enum):
-
         DontRestoreFramebufferBinding = 0x0
         RestoreFramebufferBindingToDefault = 0x1
         RestoreFrameBufferBinding = 0x2
-
 
     @typing.overload
     def __init__(self, size: PySide6.QtCore.QSize, attachment: PySide6.QtOpenGL.QOpenGLFramebufferObject.Attachment, /, target: int = ..., internalFormat: int | None = ...) -> None: ...
@@ -270,7 +252,6 @@ class QOpenGLFramebufferObject(Shiboken.Object):
 
 
 class QOpenGLFramebufferObjectFormat(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -292,7 +273,6 @@ class QOpenGLFramebufferObjectFormat(Shiboken.Object):
 
 
 class QOpenGLFunctions_1_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -579,7 +559,6 @@ class QOpenGLFunctions_1_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_1_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -893,7 +872,6 @@ class QOpenGLFunctions_1_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_1_2(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -1237,7 +1215,6 @@ class QOpenGLFunctions_1_2(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_1_3(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -1627,7 +1604,6 @@ class QOpenGLFunctions_1_3(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_1_4(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -2061,7 +2037,6 @@ class QOpenGLFunctions_1_4(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_1_5(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -2504,7 +2479,6 @@ class QOpenGLFunctions_1_5(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_2_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -3025,7 +2999,6 @@ class QOpenGLFunctions_2_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_2_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -3552,7 +3525,6 @@ class QOpenGLFunctions_2_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_3_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -4148,7 +4120,6 @@ class QOpenGLFunctions_3_0(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_3_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveTexture(self, texture: int, /) -> None: ...
@@ -4344,7 +4315,6 @@ class QOpenGLFunctions_3_1(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_3_2_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -4954,7 +4924,6 @@ class QOpenGLFunctions_3_2_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_3_2_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveTexture(self, texture: int, /) -> None: ...
@@ -5158,7 +5127,6 @@ class QOpenGLFunctions_3_2_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_3_3_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -5819,7 +5787,6 @@ class QOpenGLFunctions_3_3_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_3_3_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveTexture(self, texture: int, /) -> None: ...
@@ -6044,7 +6011,6 @@ class QOpenGLFunctions_3_3_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_0_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -6743,7 +6709,6 @@ class QOpenGLFunctions_4_0_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_0_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveTexture(self, texture: int, /) -> None: ...
@@ -7006,7 +6971,6 @@ class QOpenGLFunctions_4_0_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_1_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -7786,7 +7750,6 @@ class QOpenGLFunctions_4_1_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_1_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveShaderProgram(self, pipeline: int, program: int, /) -> None: ...
@@ -8130,7 +8093,6 @@ class QOpenGLFunctions_4_1_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_2_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -8920,7 +8882,6 @@ class QOpenGLFunctions_4_2_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_2_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveShaderProgram(self, pipeline: int, program: int, /) -> None: ...
@@ -9274,7 +9235,6 @@ class QOpenGLFunctions_4_2_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_3_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -10086,7 +10046,6 @@ class QOpenGLFunctions_4_3_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_3_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveShaderProgram(self, pipeline: int, program: int, /) -> None: ...
@@ -10462,7 +10421,6 @@ class QOpenGLFunctions_4_3_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_4_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -11288,7 +11246,6 @@ class QOpenGLFunctions_4_4_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_4_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveShaderProgram(self, pipeline: int, program: int, /) -> None: ...
@@ -11734,7 +11691,6 @@ class QOpenGLFunctions_4_4_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLFunctions_4_5_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glAccum(self, op: int, value: float, /) -> None: ...
@@ -12629,7 +12585,6 @@ class QOpenGLFunctions_4_5_Compatibility(PySide6.QtOpenGL.QAbstractOpenGLFunctio
 
 
 class QOpenGLFunctions_4_5_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
-
     def __init__(self, /) -> None: ...
 
     def glActiveShaderProgram(self, pipeline: int, program: int, /) -> None: ...
@@ -13139,7 +13094,6 @@ class QOpenGLFunctions_4_5_Core(PySide6.QtOpenGL.QAbstractOpenGLFunctions):
 
 
 class QOpenGLPaintDevice(PySide6.QtGui.QPaintDevice):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -13164,7 +13118,6 @@ class QOpenGLPaintDevice(PySide6.QtGui.QPaintDevice):
 
 
 class QOpenGLPixelTransferOptions(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -13191,16 +13144,13 @@ class QOpenGLPixelTransferOptions(Shiboken.Object):
 
 
 class QOpenGLShader(PySide6.QtCore.QObject):
-
     class ShaderTypeBit(enum.Flag):
-
         Vertex                    = 0x1
         Fragment                  = 0x2
         Geometry                  = 0x4
         TessellationControl       = 0x8
         TessellationEvaluation    = 0x10
         Compute                   = 0x20
-
 
     def __init__(self, type: PySide6.QtOpenGL.QOpenGLShader.ShaderTypeBit, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -13219,7 +13169,6 @@ class QOpenGLShader(PySide6.QtCore.QObject):
 
 
 class QOpenGLShaderProgram(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     @typing.overload
@@ -13439,9 +13388,7 @@ class QOpenGLShaderProgram(PySide6.QtCore.QObject):
 
 
 class QOpenGLTexture(Shiboken.Object):
-
     class BindingTarget(enum.Enum):
-
         BindingTarget1D           = 0x8068
         BindingTarget2D           = 0x8069
         BindingTarget3D           = 0x806a
@@ -13455,7 +13402,6 @@ class QOpenGLTexture(Shiboken.Object):
         BindingTarget2DMultisampleArray = 0x9105
 
     class ComparisonFunction(enum.Enum):
-
         CompareNever              = 0x200
         CompareLess               = 0x201
         CompareEqual              = 0x202
@@ -13467,18 +13413,15 @@ class QOpenGLTexture(Shiboken.Object):
         CompareAlways             = 0x207
 
     class ComparisonMode(enum.Enum):
-
         CompareNone               = 0x0
         CompareRefToTexture       = 0x884e
 
     class CoordinateDirection(enum.Enum):
-
         DirectionS                = 0x2802
         DirectionT                = 0x2803
         DirectionR                = 0x8072
 
     class CubeMapFace(enum.Enum):
-
         CubeMapPositiveX          = 0x8515
         CubeMapNegativeX          = 0x8516
         CubeMapPositiveY          = 0x8517
@@ -13487,12 +13430,10 @@ class QOpenGLTexture(Shiboken.Object):
         CubeMapNegativeZ          = 0x851a
 
     class DepthStencilMode(enum.Enum):
-
         StencilMode               = 0x1901
         DepthMode                 = 0x1902
 
     class Feature(enum.Flag):
-
         ImmutableStorage          = 0x1
         ImmutableMultisampleStorage = 0x2
         TextureRectangle          = 0x4
@@ -13512,7 +13453,6 @@ class QOpenGLTexture(Shiboken.Object):
         MaxFeatureFlag            = 0x10000
 
     class Filter(enum.Enum):
-
         Nearest                   = 0x2600
         Linear                    = 0x2601
         NearestMipMapNearest      = 0x2700
@@ -13521,12 +13461,10 @@ class QOpenGLTexture(Shiboken.Object):
         LinearMipMapLinear        = 0x2703
 
     class MipMapGeneration(enum.Enum):
-
         GenerateMipMaps           = 0x0
         DontGenerateMipMaps       = 0x1
 
     class PixelFormat(enum.Enum):
-
         NoSourceFormat            = 0x0
         Stencil                   = 0x1901
         Depth                     = 0x1902
@@ -13548,7 +13486,6 @@ class QOpenGLTexture(Shiboken.Object):
         BGRA_Integer              = 0x8d9b
 
     class PixelType(enum.Enum):
-
         NoPixelType               = 0x0
         Int8                      = 0x1400
         UInt8                     = 0x1401
@@ -13577,14 +13514,12 @@ class QOpenGLTexture(Shiboken.Object):
         Float32_D32_UInt32_S8_X24 = 0x8dad
 
     class SwizzleComponent(enum.Enum):
-
         SwizzleRed                = 0x8e42
         SwizzleGreen              = 0x8e43
         SwizzleBlue               = 0x8e44
         SwizzleAlpha              = 0x8e45
 
     class SwizzleValue(enum.Enum):
-
         ZeroValue                 = 0x0
         OneValue                  = 0x1
         RedValue                  = 0x1903
@@ -13593,7 +13528,6 @@ class QOpenGLTexture(Shiboken.Object):
         AlphaValue                = 0x1906
 
     class Target(enum.Enum):
-
         Target1D                  = 0xde0
         Target2D                  = 0xde1
         Target3D                  = 0x806f
@@ -13607,7 +13541,6 @@ class QOpenGLTexture(Shiboken.Object):
         Target2DMultisampleArray  = 0x9102
 
     class TextureFormat(enum.Enum):
-
         NoFormat                  = 0x0
         DepthFormat               = 0x1902
         AlphaFormat               = 0x1906
@@ -13736,7 +13669,6 @@ class QOpenGLTexture(Shiboken.Object):
         SRGB8_Alpha8_ASTC_12x12   = 0x93dd
 
     class TextureFormatClass(enum.Enum):
-
         NoFormatClass             = 0x0
         FormatClass_128Bit        = 0x1
         FormatClass_96Bit         = 0x2
@@ -13757,17 +13689,14 @@ class QOpenGLTexture(Shiboken.Object):
         FormatClass_Unique        = 0x11
 
     class TextureUnitReset(enum.Enum):
-
         ResetTextureUnit          = 0x0
         DontResetTextureUnit      = 0x1
 
     class WrapMode(enum.Enum):
-
         Repeat                    = 0x2901
         ClampToBorder             = 0x812d
         ClampToEdge               = 0x812f
         MirroredRepeat            = 0x8370
-
 
     @typing.overload
     def __init__(self, image: PySide6.QtGui.QImage, /, genMipMaps: PySide6.QtOpenGL.QOpenGLTexture.MipMapGeneration = ...) -> None: ...
@@ -13909,12 +13838,9 @@ class QOpenGLTexture(Shiboken.Object):
 
 
 class QOpenGLTextureBlitter(Shiboken.Object):
-
     class Origin(enum.Enum):
-
         OriginBottomLeft          = 0x0
         OriginTopLeft             = 0x1
-
 
     def __init__(self, /) -> None: ...
 
@@ -13938,7 +13864,6 @@ class QOpenGLTextureBlitter(Shiboken.Object):
 
 
 class QOpenGLTimeMonitor(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def create(self, /) -> bool: ...
@@ -13955,7 +13880,6 @@ class QOpenGLTimeMonitor(PySide6.QtCore.QObject):
 
 
 class QOpenGLTimerQuery(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def begin(self, /) -> None: ...
@@ -13971,7 +13895,6 @@ class QOpenGLTimerQuery(PySide6.QtCore.QObject):
 
 
 class QOpenGLVersionFunctionsFactory(Shiboken.Object):
-
     def __init__(self, /) -> None: ...
 
     @staticmethod
@@ -13979,7 +13902,6 @@ class QOpenGLVersionFunctionsFactory(Shiboken.Object):
 
 
 class QOpenGLVersionProfile(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -14002,16 +13924,13 @@ class QOpenGLVersionProfile(Shiboken.Object):
 
 
 class QOpenGLVertexArrayObject(PySide6.QtCore.QObject):
-
     class Binder(Shiboken.Object):
-
         def __init__(self, v: PySide6.QtOpenGL.QOpenGLVertexArrayObject, /) -> None: ...
 
         def __enter__(self, /) -> PySide6.QtOpenGL.QOpenGLVertexArrayObject.Binder: ...
         def __exit__(self, arg__1: object, arg__2: object, arg__3: object, /) -> None: ...
         def rebind(self, /) -> None: ...
         def release(self, /) -> None: ...
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
@@ -14024,15 +13943,12 @@ class QOpenGLVertexArrayObject(PySide6.QtCore.QObject):
 
 
 class QOpenGLWindow(PySide6.QtGui.QPaintDeviceWindow):
-
     frameSwapped             : typing.ClassVar[Signal] = ... # frameSwapped()
 
     class UpdateBehavior(enum.Enum):
-
         NoPartialUpdate           = 0x0
         PartialUpdateBlit         = 0x1
         PartialUpdateBlend        = 0x2
-
 
     @typing.overload
     def __init__(self, shareContext: PySide6.QtGui.QOpenGLContext, /, updateBehavior: PySide6.QtOpenGL.QOpenGLWindow.UpdateBehavior = ..., parent: PySide6.QtGui.QWindow | None = ...) -> None: ...

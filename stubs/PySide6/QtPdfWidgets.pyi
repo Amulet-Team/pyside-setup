@@ -19,11 +19,11 @@ import typing
 from PySide6.QtCore import Signal
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QPdfPageSelector(PySide6.QtWidgets.QWidget):
-
     currentPageChanged       : typing.ClassVar[Signal] = ... # currentPageChanged(int)
     currentPageLabelChanged  : typing.ClassVar[Signal] = ... # currentPageLabelChanged(QString)
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
@@ -41,7 +41,6 @@ class QPdfPageSelector(PySide6.QtWidgets.QWidget):
 
 
 class QPdfView(PySide6.QtWidgets.QAbstractScrollArea):
-
     currentSearchResultIndexChanged: typing.ClassVar[Signal] = ... # currentSearchResultIndexChanged(int)
     documentChanged          : typing.ClassVar[Signal] = ... # documentChanged(QPdfDocument*)
     documentMarginsChanged   : typing.ClassVar[Signal] = ... # documentMarginsChanged(QMargins)
@@ -52,16 +51,13 @@ class QPdfView(PySide6.QtWidgets.QAbstractScrollArea):
     zoomModeChanged          : typing.ClassVar[Signal] = ... # zoomModeChanged(QPdfView::ZoomMode)
 
     class PageMode(enum.Enum):
-
         SinglePage                = 0x0
         MultiPage                 = 0x1
 
     class ZoomMode(enum.Enum):
-
         Custom                    = 0x0
         FitToWidth                = 0x1
         FitInView                 = 0x2
-
 
     @typing.overload
     def __init__(self, parent: PySide6.QtWidgets.QWidget, /, *, document: PySide6.QtPdf.QPdfDocument | None = ..., pageMode: PySide6.QtPdfWidgets.QPdfView.PageMode | None = ..., zoomMode: PySide6.QtPdfWidgets.QPdfView.ZoomMode | None = ..., zoomFactor: float | None = ..., pageSpacing: int | None = ..., documentMargins: PySide6.QtCore.QMargins | None = ..., searchModel: PySide6.QtPdf.QPdfSearchModel | None = ..., currentSearchResultIndex: int | None = ...) -> None: ...

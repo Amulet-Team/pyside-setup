@@ -23,7 +23,6 @@ from shiboken6 import Shiboken
 
 
 class Q3DScene(PySide6.QtCore.QObject):
-
     devicePixelRatioChanged  : typing.ClassVar[Signal] = ... # devicePixelRatioChanged(double)
     graphPositionQueryChanged: typing.ClassVar[Signal] = ... # graphPositionQueryChanged(QPoint)
     needRender               : typing.ClassVar[Signal] = ... # needRender()
@@ -57,7 +56,6 @@ class Q3DScene(PySide6.QtCore.QObject):
 
 
 class QAbstract3DAxis(PySide6.QtCore.QObject):
-
     autoAdjustRangeChanged   : typing.ClassVar[Signal] = ... # autoAdjustRangeChanged(bool)
     labelAutoAngleChanged    : typing.ClassVar[Signal] = ... # labelAutoAngleChanged(float)
     labelSizeChanged         : typing.ClassVar[Signal] = ... # labelSizeChanged(double)
@@ -74,18 +72,15 @@ class QAbstract3DAxis(PySide6.QtCore.QObject):
     titleVisibleChanged      : typing.ClassVar[Signal] = ... # titleVisibleChanged(bool)
 
     class AxisOrientation(enum.Enum):
-
         None_                     = 0x0
         X                         = 0x1
         Y                         = 0x2
         Z                         = 0x3
 
     class AxisType(enum.Enum):
-
         None_                     = 0x0
         Category                  = 0x1
         Value                     = 0x2
-
 
     def isAutoAdjustRange(self, /) -> bool: ...
     def isScaleLabelsByCount(self, /) -> bool: ...
@@ -117,7 +112,6 @@ class QAbstract3DAxis(PySide6.QtCore.QObject):
 
 
 class QAbstract3DSeries(PySide6.QtCore.QObject):
-
     baseColorChanged         : typing.ClassVar[Signal] = ... # baseColorChanged(QColor)
     baseGradientChanged      : typing.ClassVar[Signal] = ... # baseGradientChanged(QLinearGradient)
     colorStyleChanged        : typing.ClassVar[Signal] = ... # colorStyleChanged(QGraphsTheme::ColorStyle)
@@ -137,12 +131,10 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
     visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
 
     class LightingMode(enum.Enum):
-
         Shaded                    = 0x0
         Unshaded                  = 0x1
 
     class Mesh(enum.Enum):
-
         UserDefined               = 0x0
         Bar                       = 0x1
         Cube                      = 0x2
@@ -157,12 +149,10 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
         Point                     = 0xb
 
     class SeriesType(enum.Enum):
-
         None_                     = 0x0
         Bar                       = 0x1
         Scatter                   = 0x2
         Surface                   = 0x3
-
 
     def baseColor(self, /) -> PySide6.QtGui.QColor: ...
     def baseGradient(self, /) -> PySide6.QtGui.QLinearGradient: ...
@@ -202,7 +192,6 @@ class QAbstract3DSeries(PySide6.QtCore.QObject):
 
 
 class QAbstractAxis(PySide6.QtCore.QObject):
-
     alignmentChanged         : typing.ClassVar[Signal] = ... # alignmentChanged(Qt::Alignment)
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
     gridVisibleChanged       : typing.ClassVar[Signal] = ... # gridVisibleChanged(bool)
@@ -222,11 +211,9 @@ class QAbstractAxis(PySide6.QtCore.QObject):
     visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
 
     class AxisType(enum.Enum):
-
         Value                     = 0x0
         BarCategory               = 0x1
         DateTime                  = 0x2
-
 
     def alignment(self, /) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     def color(self, /) -> PySide6.QtGui.QColor: ...
@@ -267,20 +254,16 @@ class QAbstractAxis(PySide6.QtCore.QObject):
 
 
 class QAbstractDataProxy(PySide6.QtCore.QObject):
-
     class DataType(enum.Enum):
-
         None_                     = 0x0
         Bar                       = 0x1
         Scatter                   = 0x2
         Surface                   = 0x3
 
-
     def type(self, /) -> PySide6.QtGraphs.QAbstractDataProxy.DataType: ...
 
 
 class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QAbstractAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QAbstractAxis*)
     hover                    : typing.ClassVar[Signal] = ... # hover(QString,QPointF,QPointF)
@@ -298,7 +281,6 @@ class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
     zValueChanged            : typing.ClassVar[Signal] = ... # zValueChanged(int)
 
     class SeriesType(enum.Enum):
-
         Line                      = 0x0
         Area                      = 0x1
         Bar                       = 0x2
@@ -306,7 +288,6 @@ class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         Scatter                   = 0x4
         Spline                    = 0x5
         Custom                    = 0x6
-
 
     def axisX(self, /) -> PySide6.QtGraphs.QAbstractAxis: ...
     def axisY(self, /) -> PySide6.QtGraphs.QAbstractAxis: ...
@@ -338,7 +319,6 @@ class QAbstractSeries(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QAreaSeries(PySide6.QtGraphs.QAbstractSeries):
-
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
     borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
     clicked                  : typing.ClassVar[Signal] = ... # clicked(QPoint)
@@ -376,7 +356,6 @@ class QAreaSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QBar3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-
     columnAxisChanged        : typing.ClassVar[Signal] = ... # columnAxisChanged(QCategory3DAxis*)
     columnLabelsChanged      : typing.ClassVar[Signal] = ... # columnLabelsChanged()
     customColumnLabelsChanged: typing.ClassVar[Signal] = ... # customColumnLabelsChanged(QStringList)
@@ -432,7 +411,6 @@ class QBar3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
 
 
 class QBarCategoryAxis(PySide6.QtGraphs.QAbstractAxis):
-
     categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
     categoryRangeChanged     : typing.ClassVar[Signal] = ... # categoryRangeChanged(QString,QString)
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
@@ -441,10 +419,8 @@ class QBarCategoryAxis(PySide6.QtGraphs.QAbstractAxis):
     minChanged               : typing.ClassVar[Signal] = ... # minChanged(QString)
 
     class LabelPosition(enum.Enum):
-
         Center                    = 0x0
         OnValue                   = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, categories: collections.abc.Sequence[str] | None = ..., min: str | None = ..., max: str | None = ..., count: int | None = ..., labelPosition: PySide6.QtGraphs.QBarCategoryAxis.LabelPosition | None = ...) -> None: ...
 
@@ -474,7 +450,6 @@ class QBarCategoryAxis(PySide6.QtGraphs.QAbstractAxis):
 
 
 class QBarDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -492,7 +467,6 @@ class QBarDataItem(Shiboken.Object):
 
 
 class QBarDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     colCountChanged          : typing.ClassVar[Signal] = ... # colCountChanged(qsizetype)
     itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(qsizetype,qsizetype)
@@ -504,10 +478,8 @@ class QBarDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
     seriesChanged            : typing.ClassVar[Signal] = ... # seriesChanged(QBar3DSeries*)
 
     class RemoveLabels(enum.Enum):
-
         No                        = 0x0
         Yes                       = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, rowCount: int | None = ..., colCount: int | None = ..., series: PySide6.QtGraphs.QBar3DSeries | None = ...) -> None: ...
 
@@ -557,7 +529,6 @@ class QBarDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
 
 
 class QBarModelMapper(PySide6.QtCore.QObject):
-
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
     firstBarSetSectionChanged: typing.ClassVar[Signal] = ... # firstBarSetSectionChanged()
     firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
@@ -585,7 +556,6 @@ class QBarModelMapper(PySide6.QtCore.QObject):
 
 
 class QBarSeries(PySide6.QtGraphs.QAbstractSeries):
-
     barDelegateChanged       : typing.ClassVar[Signal] = ... # barDelegateChanged()
     barSetsChanged           : typing.ClassVar[Signal] = ... # barSetsChanged()
     barWidthChanged          : typing.ClassVar[Signal] = ... # barWidthChanged()
@@ -612,18 +582,15 @@ class QBarSeries(PySide6.QtGraphs.QAbstractSeries):
     updatedBars              : typing.ClassVar[Signal] = ... # updatedBars()
 
     class BarsType(enum.Enum):
-
         Groups                    = 0x0
         Stacked                   = 0x1
         StackedPercent            = 0x2
 
     class LabelsPosition(enum.Enum):
-
         Center                    = 0x0
         InsideEnd                 = 0x1
         InsideBase                = 0x2
         OutsideEnd                = 0x3
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, seriesColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., borderColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., barsType: PySide6.QtGraphs.QBarSeries.BarsType | None = ..., barWidth: float | None = ..., count: int | None = ..., labelsVisible: bool | None = ..., labelsFormat: str | None = ..., labelsPosition: PySide6.QtGraphs.QBarSeries.LabelsPosition | None = ..., labelsMargin: float | None = ..., labelsAngle: float | None = ..., labelsPrecision: int | None = ..., barDelegate: PySide6.QtQml.QQmlComponent | None = ..., barSets: collections.abc.Sequence[PySide6.QtGraphs.QBarSet] | None = ...) -> None: ...
 
@@ -678,7 +645,6 @@ class QBarSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QBarSet(PySide6.QtCore.QObject):
-
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
     borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged(double)
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
@@ -740,7 +706,6 @@ class QBarSet(PySide6.QtCore.QObject):
 
 
 class QCategory3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
-
     columnLabelsChanged      : typing.ClassVar[Signal] = ... # columnLabelsChanged()
     rowLabelsChanged         : typing.ClassVar[Signal] = ... # rowLabelsChanged()
 
@@ -751,7 +716,6 @@ class QCategory3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
 
 
 class QCustom3DItem(PySide6.QtCore.QObject):
-
     meshFileChanged          : typing.ClassVar[Signal] = ... # meshFileChanged(QString)
     needUpdate               : typing.ClassVar[Signal] = ... # needUpdate()
     positionAbsoluteChanged  : typing.ClassVar[Signal] = ... # positionAbsoluteChanged(bool)
@@ -794,7 +758,6 @@ class QCustom3DItem(PySide6.QtCore.QObject):
 
 
 class QCustom3DLabel(PySide6.QtGraphs.QCustom3DItem):
-
     backgroundColorChanged   : typing.ClassVar[Signal] = ... # backgroundColorChanged(QColor)
     backgroundVisibleChanged : typing.ClassVar[Signal] = ... # backgroundVisibleChanged(bool)
     borderVisibleChanged     : typing.ClassVar[Signal] = ... # borderVisibleChanged(bool)
@@ -825,7 +788,6 @@ class QCustom3DLabel(PySide6.QtGraphs.QCustom3DItem):
 
 
 class QCustom3DVolume(PySide6.QtGraphs.QCustom3DItem):
-
     alphaMultiplierChanged   : typing.ClassVar[Signal] = ... # alphaMultiplierChanged(float)
     colorTableChanged        : typing.ClassVar[Signal] = ... # colorTableChanged()
     drawSliceFramesChanged   : typing.ClassVar[Signal] = ... # drawSliceFramesChanged(bool)
@@ -898,7 +860,6 @@ class QCustom3DVolume(PySide6.QtGraphs.QCustom3DItem):
 
 
 class QCustomSeries(PySide6.QtGraphs.QAbstractSeries):
-
     delegateChanged          : typing.ClassVar[Signal] = ... # delegateChanged()
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, delegate: PySide6.QtQml.QQmlComponent | None = ...) -> None: ...
@@ -924,7 +885,6 @@ class QCustomSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QDateTimeAxis(PySide6.QtGraphs.QAbstractAxis):
-
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QDateTime)
     minChanged               : typing.ClassVar[Signal] = ... # minChanged(QDateTime)
@@ -962,7 +922,6 @@ class QDateTimeAxis(PySide6.QtGraphs.QAbstractAxis):
 
 
 class QGraphsLine(Shiboken.Object):
-
     @typing.overload
     def __init__(self, other: PySide6.QtGraphs.QGraphsLine, /, *, mainColor: PySide6.QtGui.QColor | None = ..., subColor: PySide6.QtGui.QColor | None = ..., mainWidth: float | None = ..., subWidth: float | None = ..., labelTextColor: PySide6.QtGui.QColor | None = ...) -> None: ...
     @typing.overload
@@ -984,7 +943,6 @@ class QGraphsLine(Shiboken.Object):
 
 
 class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged()
     axisXLabelFontChanged    : typing.ClassVar[Signal] = ... # axisXLabelFontChanged()
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged()
@@ -1019,24 +977,20 @@ class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
     update                   : typing.ClassVar[Signal] = ... # update()
 
     class ColorScheme(enum.Enum):
-
         Automatic                 = 0x0
         Light                     = 0x1
         Dark                      = 0x2
 
     class ColorStyle(enum.Enum):
-
         Uniform                   = 0x0
         ObjectGradient            = 0x1
         RangeGradient             = 0x2
 
     class ForceTheme(enum.Enum):
-
         No                        = 0x0
         Yes                       = 0x1
 
     class Theme(enum.Enum):
-
         QtGreen                   = 0x0
         QtGreenNeon               = 0x1
         MixSeries                 = 0x2
@@ -1046,7 +1000,6 @@ class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
         PurpleSeries              = 0x6
         GreySeries                = 0x7
         UserDefined               = 0x8
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, colorScheme: PySide6.QtGraphs.QGraphsTheme.ColorScheme | None = ..., theme: PySide6.QtGraphs.QGraphsTheme.Theme | None = ..., colorStyle: PySide6.QtGraphs.QGraphsTheme.ColorStyle | None = ..., backgroundColor: PySide6.QtGui.QColor | None = ..., backgroundVisible: bool | None = ..., plotAreaBackgroundColor: PySide6.QtGui.QColor | None = ..., plotAreaBackgroundVisible: bool | None = ..., gridVisible: bool | None = ..., axisXLabelFont: PySide6.QtGui.QFont | None = ..., axisYLabelFont: PySide6.QtGui.QFont | None = ..., axisZLabelFont: PySide6.QtGui.QFont | None = ..., grid: PySide6.QtGraphs.QGraphsLine | None = ..., axisX: PySide6.QtGraphs.QGraphsLine | None = ..., axisY: PySide6.QtGraphs.QGraphsLine | None = ..., axisZ: PySide6.QtGraphs.QGraphsLine | None = ..., labelFont: PySide6.QtGui.QFont | None = ..., labelsVisible: bool | None = ..., labelBackgroundColor: PySide6.QtGui.QColor | None = ..., labelTextColor: PySide6.QtGui.QColor | None = ..., labelBackgroundVisible: bool | None = ..., labelBorderVisible: bool | None = ..., seriesColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., borderColors: collections.abc.Sequence[PySide6.QtGui.QColor] | None = ..., borderWidth: float | None = ..., singleHighlightColor: PySide6.QtGui.QColor | None = ..., multiHighlightColor: PySide6.QtGui.QColor | None = ...) -> None: ...
 
@@ -1120,7 +1073,6 @@ class QGraphsTheme(PySide6.QtCore.QObject, PySide6.QtQml.QQmlParserStatus):
 
 
 class QGraphsThemeDirtyBitField(Shiboken.Object):
-
     @property
     def axisXDirty(self) -> bool: ...
     @axisXDirty.setter
@@ -1227,7 +1179,6 @@ class QGraphsThemeDirtyBitField(Shiboken.Object):
 
 
 class QHeightMapSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
-
     autoScaleYChanged        : typing.ClassVar[Signal] = ... # autoScaleYChanged(bool)
     heightMapChanged         : typing.ClassVar[Signal] = ... # heightMapChanged(QImage)
     heightMapFileChanged     : typing.ClassVar[Signal] = ... # heightMapFileChanged(QString)
@@ -1267,11 +1218,11 @@ class QHeightMapSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
     def setValueRanges(self, minX: float, maxX: float, minZ: float, maxZ: float, /) -> None: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QItemModelBarDataProxy(PySide6.QtGraphs.QBarDataProxy):
-
     autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
     autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
     columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
@@ -1293,12 +1244,10 @@ class QItemModelBarDataProxy(PySide6.QtGraphs.QBarDataProxy):
     valueRoleReplaceChanged  : typing.ClassVar[Signal] = ... # valueRoleReplaceChanged(QString)
 
     class MultiMatchBehavior(enum.Enum):
-
         First                     = 0x0
         Last                      = 0x1
         Average                   = 0x2
         Cumulative                = 0x3
-
 
     @typing.overload
     def __init__(self, itemModel: PySide6.QtCore.QAbstractItemModel, rowRole: str, columnRole: str, valueRole: str, rotationRole: str, rowCategories: collections.abc.Sequence[str], columnCategories: collections.abc.Sequence[str], /, parent: PySide6.QtCore.QObject | None = ..., *, useModelCategories: bool | None = ..., autoRowCategories: bool | None = ..., autoColumnCategories: bool | None = ..., rowRolePattern: PySide6.QtCore.QRegularExpression | None = ..., columnRolePattern: PySide6.QtCore.QRegularExpression | None = ..., valueRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rotationRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rowRoleReplace: str | None = ..., columnRoleReplace: str | None = ..., valueRoleReplace: str | None = ..., rotationRoleReplace: str | None = ..., multiMatchBehavior: PySide6.QtGraphs.QItemModelBarDataProxy.MultiMatchBehavior | None = ...) -> None: ...
@@ -1359,7 +1308,6 @@ class QItemModelBarDataProxy(PySide6.QtGraphs.QBarDataProxy):
 
 
 class QItemModelScatterDataProxy(PySide6.QtGraphs.QScatterDataProxy):
-
     itemModelChanged         : typing.ClassVar[Signal] = ... # itemModelChanged(const QAbstractItemModel*)
     rotationRoleChanged      : typing.ClassVar[Signal] = ... # rotationRoleChanged(QString)
     rotationRolePatternChanged: typing.ClassVar[Signal] = ... # rotationRolePatternChanged(QRegularExpression)
@@ -1425,7 +1373,6 @@ class QItemModelScatterDataProxy(PySide6.QtGraphs.QScatterDataProxy):
 
 
 class QItemModelSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
-
     autoColumnCategoriesChanged: typing.ClassVar[Signal] = ... # autoColumnCategoriesChanged(bool)
     autoRowCategoriesChanged : typing.ClassVar[Signal] = ... # autoRowCategoriesChanged(bool)
     columnCategoriesChanged  : typing.ClassVar[Signal] = ... # columnCategoriesChanged()
@@ -1450,12 +1397,10 @@ class QItemModelSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
     zPosRoleReplaceChanged   : typing.ClassVar[Signal] = ... # zPosRoleReplaceChanged(QString)
 
     class MultiMatchBehavior(enum.Enum):
-
         First                     = 0x0
         Last                      = 0x1
         Average                   = 0x2
         CumulativeY               = 0x3
-
 
     @typing.overload
     def __init__(self, itemModel: PySide6.QtCore.QAbstractItemModel, rowRole: str, columnRole: str, xPosRole: str, yPosRole: str, zPosRole: str, rowCategories: collections.abc.Sequence[str], columnCategories: collections.abc.Sequence[str], /, parent: PySide6.QtCore.QObject | None = ..., *, useModelCategories: bool | None = ..., autoRowCategories: bool | None = ..., autoColumnCategories: bool | None = ..., rowRolePattern: PySide6.QtCore.QRegularExpression | None = ..., columnRolePattern: PySide6.QtCore.QRegularExpression | None = ..., xPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., yPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., zPosRolePattern: PySide6.QtCore.QRegularExpression | None = ..., rowRoleReplace: str | None = ..., columnRoleReplace: str | None = ..., xPosRoleReplace: str | None = ..., yPosRoleReplace: str | None = ..., zPosRoleReplace: str | None = ..., multiMatchBehavior: PySide6.QtGraphs.QItemModelSurfaceDataProxy.MultiMatchBehavior | None = ...) -> None: ...
@@ -1522,7 +1467,6 @@ class QItemModelSurfaceDataProxy(PySide6.QtGraphs.QSurfaceDataProxy):
 
 
 class QLegendData(Shiboken.Object):
-
     @property
     def borderColor(self) -> PySide6.QtGui.QColor: ...
     @borderColor.setter
@@ -1545,7 +1489,6 @@ class QLegendData(Shiboken.Object):
 
 
 class QLineSeries(PySide6.QtGraphs.QXYSeries):
-
     capStyleChanged          : typing.ClassVar[Signal] = ... # capStyleChanged()
     dashOffsetChanged        : typing.ClassVar[Signal] = ... # dashOffsetChanged(double)
     dashPatternChanged       : typing.ClassVar[Signal] = ... # dashPatternChanged(QList<qreal>)
@@ -1555,17 +1498,14 @@ class QLineSeries(PySide6.QtGraphs.QXYSeries):
     widthChanged             : typing.ClassVar[Signal] = ... # widthChanged()
 
     class LineStyle(enum.Enum):
-
         Straight                  = 0x0
         StepLeft                  = 0x1
         StepRight                 = 0x2
         StepCenter                = 0x3
 
     class StrokeStyle(enum.Enum):
-
         SolidLine                 = 0x1
         DashLine                  = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, width: float | None = ..., capStyle: PySide6.QtCore.Qt.PenCapStyle | None = ..., joinStyle: PySide6.QtCore.Qt.PenJoinStyle | None = ..., lineStyle: PySide6.QtGraphs.QLineSeries.LineStyle | None = ..., strokeStyle: PySide6.QtGraphs.QLineSeries.StrokeStyle | None = ..., dashOffset: float | None = ..., dashPattern: collections.abc.Sequence[float] | None = ...) -> None: ...
 
@@ -1589,7 +1529,6 @@ class QLineSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QLogValue3DAxisFormatter(PySide6.QtGraphs.QValue3DAxisFormatter):
-
     autoSubGridChanged       : typing.ClassVar[Signal] = ... # autoSubGridChanged(bool)
     baseChanged              : typing.ClassVar[Signal] = ... # baseChanged(double)
     edgeLabelsVisibleChanged : typing.ClassVar[Signal] = ... # edgeLabelsVisibleChanged(bool)
@@ -1610,7 +1549,6 @@ class QLogValue3DAxisFormatter(PySide6.QtGraphs.QValue3DAxisFormatter):
 
 
 class QPieModelMapper(PySide6.QtCore.QObject):
-
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
     firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
     labelsSectionChanged     : typing.ClassVar[Signal] = ... # labelsSectionChanged()
@@ -1640,7 +1578,6 @@ class QPieModelMapper(PySide6.QtCore.QObject):
 
 
 class QPieSeries(PySide6.QtGraphs.QAbstractSeries):
-
     added                    : typing.ClassVar[Signal] = ... # added(QList<QPieSlice*>)
     angleSpanLabelVisibilityChanged: typing.ClassVar[Signal] = ... # angleSpanLabelVisibilityChanged(LabelVisibility)
     angleSpanVisibleLimitChanged: typing.ClassVar[Signal] = ... # angleSpanVisibleLimitChanged(double)
@@ -1660,12 +1597,10 @@ class QPieSeries(PySide6.QtGraphs.QAbstractSeries):
     verticalPositionChanged  : typing.ClassVar[Signal] = ... # verticalPositionChanged()
 
     class LabelVisibility(enum.Enum):
-
         None_                     = 0x0
         First                     = 0x1
         Even                      = 0x2
         Odd                       = 0x3
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, horizontalPosition: float | None = ..., verticalPosition: float | None = ..., pieSize: float | None = ..., startAngle: float | None = ..., endAngle: float | None = ..., count: int | None = ..., sum: float | None = ..., holeSize: float | None = ..., angleSpanVisibleLimit: float | None = ..., angleSpanLabelVisibility: PySide6.QtGraphs.QPieSeries.LabelVisibility | None = ...) -> None: ...
 
@@ -1720,7 +1655,6 @@ class QPieSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QPieSlice(PySide6.QtCore.QObject):
-
     angleSpanChanged         : typing.ClassVar[Signal] = ... # angleSpanChanged()
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged()
     borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
@@ -1745,12 +1679,10 @@ class QPieSlice(PySide6.QtCore.QObject):
     valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
 
     class LabelPosition(enum.Enum):
-
         Outside                   = 0x0
         InsideHorizontal          = 0x1
         InsideTangential          = 0x2
         InsideNormal              = 0x3
-
 
     @typing.overload
     def __init__(self, label: str, value: float, /, parent: PySide6.QtCore.QObject | None = ..., *, labelVisible: bool | None = ..., labelPosition: PySide6.QtGraphs.QPieSlice.LabelPosition | None = ..., labelColor: PySide6.QtGui.QColor | None = ..., labelFont: PySide6.QtGui.QFont | None = ..., labelArmLengthFactor: float | None = ..., color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., borderWidth: float | None = ..., exploded: bool | None = ..., explodeDistanceFactor: float | None = ..., percentage: float | None = ..., startAngle: float | None = ..., angleSpan: float | None = ..., subSlicesCount: int | None = ..., subSlicesSum: float | None = ..., subSlicesRatio: float | None = ...) -> None: ...
@@ -1814,11 +1746,11 @@ class QPieSlice(PySide6.QtCore.QObject):
     def value(self, /) -> float: ...
 
 
-class QPointFList: ...
+class QPointFList:
+    ...
 
 
 class QScatter3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -1859,7 +1791,6 @@ class QScatter3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
 
 
 class QScatterDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -1885,7 +1816,6 @@ class QScatterDataItem(Shiboken.Object):
 
 
 class QScatterDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     itemCountChanged         : typing.ClassVar[Signal] = ... # itemCountChanged(qsizetype)
     itemsAdded               : typing.ClassVar[Signal] = ... # itemsAdded(qsizetype,qsizetype)
@@ -1916,7 +1846,6 @@ class QScatterDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
 
 
 class QScatterSeries(PySide6.QtGraphs.QXYSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def componentComplete(self, /) -> None: ...
@@ -1924,7 +1853,6 @@ class QScatterSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QSpline3DSeries(PySide6.QtGraphs.QScatter3DSeries):
-
     splineColorChanged       : typing.ClassVar[Signal] = ... # splineColorChanged(QColor)
     splineKnottingChanged    : typing.ClassVar[Signal] = ... # splineKnottingChanged(double)
     splineLoopingChanged     : typing.ClassVar[Signal] = ... # splineLoopingChanged(bool)
@@ -1952,7 +1880,6 @@ class QSpline3DSeries(PySide6.QtGraphs.QScatter3DSeries):
 
 
 class QSplineSeries(PySide6.QtGraphs.QXYSeries):
-
     capStyleChanged          : typing.ClassVar[Signal] = ... # capStyleChanged()
     optimizedChanged         : typing.ClassVar[Signal] = ... # optimizedChanged(bool)
     widthChanged             : typing.ClassVar[Signal] = ... # widthChanged()
@@ -1971,7 +1898,6 @@ class QSplineSeries(PySide6.QtGraphs.QXYSeries):
 
 
 class QSurface3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
-
     axisXChanged             : typing.ClassVar[Signal] = ... # axisXChanged(QValue3DAxis*)
     axisYChanged             : typing.ClassVar[Signal] = ... # axisYChanged(QValue3DAxis*)
     axisZChanged             : typing.ClassVar[Signal] = ... # axisZChanged(QValue3DAxis*)
@@ -1987,17 +1913,14 @@ class QSurface3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
     wireframeColorChanged    : typing.ClassVar[Signal] = ... # wireframeColorChanged(QColor)
 
     class DrawFlag(enum.Flag):
-
         DrawWireframe             = 0x1
         DrawSurface               = 0x2
         DrawSurfaceAndWireframe   = 0x3
         DrawFilledSurface         = 0x4
 
     class Shading(enum.Enum):
-
         Smooth                    = 0x0
         Flat                      = 0x1
-
 
     @typing.overload
     def __init__(self, dataProxy: PySide6.QtGraphs.QSurfaceDataProxy, /, parent: PySide6.QtCore.QObject | None = ..., *, selectedPoint: PySide6.QtCore.QPoint | None = ..., flatShadingSupported: bool | None = ..., drawMode: PySide6.QtGraphs.QSurface3DSeries.DrawFlag | None = ..., shading: PySide6.QtGraphs.QSurface3DSeries.Shading | None = ..., texture: PySide6.QtGui.QImage | None = ..., textureFile: str | None = ..., wireframeColor: PySide6.QtGui.QColor | None = ..., dataArray: collections.abc.Sequence[collections.abc.Sequence[PySide6.QtGraphs.QSurfaceDataItem]] | None = ..., rowsSanitized: bool | None = ..., axisX: PySide6.QtGraphs.QValue3DAxis | None = ..., axisY: PySide6.QtGraphs.QValue3DAxis | None = ..., axisZ: PySide6.QtGraphs.QValue3DAxis | None = ...) -> None: ...
@@ -2039,7 +1962,6 @@ class QSurface3DSeries(PySide6.QtGraphs.QAbstract3DSeries):
 
 
 class QSurfaceDataItem(Shiboken.Object):
-
     @typing.overload
     def __init__(self, /) -> None: ...
     @typing.overload
@@ -2061,7 +1983,6 @@ class QSurfaceDataItem(Shiboken.Object):
 
 
 class QSurfaceDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
-
     arrayReset               : typing.ClassVar[Signal] = ... # arrayReset()
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged(qsizetype)
     itemChanged              : typing.ClassVar[Signal] = ... # itemChanged(qsizetype,qsizetype)
@@ -2100,7 +2021,6 @@ class QSurfaceDataProxy(PySide6.QtGraphs.QAbstractDataProxy):
 
 
 class QValue3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
-
     formatterChanged         : typing.ClassVar[Signal] = ... # formatterChanged(QValue3DAxisFormatter*)
     formatterDirty           : typing.ClassVar[Signal] = ... # formatterDirty()
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
@@ -2131,7 +2051,6 @@ class QValue3DAxis(PySide6.QtGraphs.QAbstract3DAxis):
 
 
 class QValue3DAxisFormatter(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def allowNegatives(self, /) -> bool: ...
@@ -2160,7 +2079,6 @@ class QValue3DAxisFormatter(PySide6.QtCore.QObject):
 
 
 class QValueAxis(PySide6.QtGraphs.QAbstractAxis):
-
     labelDecimalsChanged     : typing.ClassVar[Signal] = ... # labelDecimalsChanged(int)
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
@@ -2200,11 +2118,11 @@ class QValueAxis(PySide6.QtGraphs.QAbstractAxis):
     def zoom(self, /) -> float: ...
 
 
-class QVector3DList: ...
+class QVector3DList:
+    ...
 
 
 class QXYModelMapper(PySide6.QtCore.QObject):
-
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
     firstChanged             : typing.ClassVar[Signal] = ... # firstChanged()
     modelChanged             : typing.ClassVar[Signal] = ... # modelChanged()
@@ -2232,7 +2150,6 @@ class QXYModelMapper(PySide6.QtCore.QObject):
 
 
 class QXYSeries(PySide6.QtGraphs.QAbstractSeries):
-
     clicked                  : typing.ClassVar[Signal] = ... # clicked(QPoint)
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
@@ -2250,6 +2167,7 @@ class QXYSeries(PySide6.QtGraphs.QAbstractSeries):
     selectedColorChanged     : typing.ClassVar[Signal] = ... # selectedColorChanged(QColor)
     selectedPointsChanged    : typing.ClassVar[Signal] = ... # selectedPointsChanged()
     seriesUpdated            : typing.ClassVar[Signal] = ... # seriesUpdated()
+
     @typing.overload
     def __lshift__(self, points: collections.abc.Sequence[PySide6.QtCore.QPointF], /) -> PySide6.QtGraphs.QXYSeries: ...
     @typing.overload
@@ -2308,9 +2226,7 @@ class QXYSeries(PySide6.QtGraphs.QAbstractSeries):
 
 
 class QtGraphs3D(Shiboken.Object):
-
     class CameraPreset(enum.Enum):
-
         NoPreset                  = 0x0
         FrontLow                  = 0x1
         Front                     = 0x2
@@ -2338,7 +2254,6 @@ class QtGraphs3D(Shiboken.Object):
         DirectlyBelow             = 0x18
 
     class ElementType(enum.Enum):
-
         None_                     = 0x0
         Series                    = 0x1
         AxisXLabel                = 0x2
@@ -2347,22 +2262,18 @@ class QtGraphs3D(Shiboken.Object):
         CustomItem                = 0x5
 
     class GridLineType(enum.Enum):
-
         Shader                    = 0x0
         Geometry                  = 0x1
 
     class OptimizationHint(enum.Flag):
-
         Default                   = 0x0
         Legacy                    = 0x1
 
     class RenderingMode(enum.Enum):
-
         DirectToBackground        = 0x0
         Indirect                  = 0x1
 
     class SelectionFlag(enum.Flag):
-
         None_                     = 0x0
         Item                      = 0x1
         Row                       = 0x2
@@ -2375,7 +2286,6 @@ class QtGraphs3D(Shiboken.Object):
         MultiSeries               = 0x10
 
     class ShadowQuality(enum.Enum):
-
         None_                     = 0x0
         Low                       = 0x1
         Medium                    = 0x2
@@ -2385,19 +2295,16 @@ class QtGraphs3D(Shiboken.Object):
         SoftHigh                  = 0x6
 
     class SliceCaptureType(enum.Enum):
-
         NoImage                   = 0x0
         RowImage                  = 0x1
         ColumnImage               = 0x2
 
     class TransparencyTechnique(enum.Enum):
-
         Default                   = 0x0
         Approximate               = 0x1
         Accurate                  = 0x2
 
 
 def qDefaultSurfaceFormat(antialias: bool, /) -> PySide6.QtGui.QSurfaceFormat: ...
-
 
 # eof

@@ -21,7 +21,6 @@ from PySide6.QtCore import Signal
 
 
 class QAbstractAxis(PySide6.QtCore.QObject):
-
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
     gridLineColorChanged     : typing.ClassVar[Signal] = ... # gridLineColorChanged(QColor)
     gridLinePenChanged       : typing.ClassVar[Signal] = ... # gridLinePenChanged(QPen)
@@ -52,7 +51,6 @@ class QAbstractAxis(PySide6.QtCore.QObject):
     visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged(bool)
 
     class AxisType(enum.Enum):
-
         AxisTypeNoAxis            = 0x0
         AxisTypeValue             = 0x1
         AxisTypeBarCategory       = 0x2
@@ -60,7 +58,6 @@ class QAbstractAxis(PySide6.QtCore.QObject):
         AxisTypeDateTime          = 0x8
         AxisTypeLogValue          = 0x10
         AxisTypeColor             = 0x20
-
 
     def alignment(self, /) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     def gridLineColor(self, /) -> PySide6.QtGui.QColor: ...
@@ -128,7 +125,6 @@ class QAbstractAxis(PySide6.QtCore.QObject):
 
 
 class QAbstractBarSeries(PySide6.QtCharts.QAbstractSeries):
-
     barsetsAdded             : typing.ClassVar[Signal] = ... # barsetsAdded(QList<QBarSet*>)
     barsetsRemoved           : typing.ClassVar[Signal] = ... # barsetsRemoved(QList<QBarSet*>)
     clicked                  : typing.ClassVar[Signal] = ... # clicked(int,QBarSet*)
@@ -144,12 +140,10 @@ class QAbstractBarSeries(PySide6.QtCharts.QAbstractSeries):
     released                 : typing.ClassVar[Signal] = ... # released(int,QBarSet*)
 
     class LabelsPosition(enum.Enum):
-
         LabelsCenter              = 0x0
         LabelsInsideEnd           = 0x1
         LabelsInsideBase          = 0x2
         LabelsOutsideEnd          = 0x3
-
 
     @typing.overload
     def append(self, set: PySide6.QtCharts.QBarSet, /) -> bool: ...
@@ -176,14 +170,12 @@ class QAbstractBarSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QAbstractSeries(PySide6.QtCore.QObject):
-
     nameChanged              : typing.ClassVar[Signal] = ... # nameChanged()
     opacityChanged           : typing.ClassVar[Signal] = ... # opacityChanged()
     useOpenGLChanged         : typing.ClassVar[Signal] = ... # useOpenGLChanged()
     visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
 
     class SeriesType(enum.Enum):
-
         SeriesTypeLine            = 0x0
         SeriesTypeArea            = 0x1
         SeriesTypeBar             = 0x2
@@ -197,7 +189,6 @@ class QAbstractSeries(PySide6.QtCore.QObject):
         SeriesTypeHorizontalPercentBar = 0xa
         SeriesTypeBoxPlot         = 0xb
         SeriesTypeCandlestick     = 0xc
-
 
     def attachAxis(self, axis: PySide6.QtCharts.QAbstractAxis, /) -> bool: ...
     def attachedAxes(self, /) -> typing.List[PySide6.QtCharts.QAbstractAxis]: ...
@@ -217,7 +208,6 @@ class QAbstractSeries(PySide6.QtCore.QObject):
 
 
 class QAreaLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QAreaSeries, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def series(self, /) -> PySide6.QtCharts.QAreaSeries: ...
@@ -225,7 +215,6 @@ class QAreaLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QAreaSeries(PySide6.QtCharts.QAbstractSeries):
-
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
     clicked                  : typing.ClassVar[Signal] = ... # clicked(QPointF)
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
@@ -273,7 +262,6 @@ class QAreaSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QBarCategoryAxis(PySide6.QtCharts.QAbstractAxis):
-
     categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QString)
@@ -303,7 +291,6 @@ class QBarCategoryAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QBarLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QAbstractBarSeries, barset: PySide6.QtCharts.QBarSet, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def barset(self, /) -> PySide6.QtCharts.QBarSet: ...
@@ -312,7 +299,6 @@ class QBarLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QBarModelMapper(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def count(self, /) -> int: ...
@@ -332,14 +318,12 @@ class QBarModelMapper(PySide6.QtCore.QObject):
 
 
 class QBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QBarSet(PySide6.QtCore.QObject):
-
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
     brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
     clicked                  : typing.ClassVar[Signal] = ... # clicked(int)
@@ -403,7 +387,6 @@ class QBarSet(PySide6.QtCore.QObject):
 
 
 class QBoxPlotLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QBoxPlotSeries, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def series(self, /) -> PySide6.QtCharts.QBoxPlotSeries: ...
@@ -411,7 +394,6 @@ class QBoxPlotLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QBoxPlotModelMapper(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def count(self, /) -> int: ...
@@ -431,7 +413,6 @@ class QBoxPlotModelMapper(PySide6.QtCore.QObject):
 
 
 class QBoxPlotSeries(PySide6.QtCharts.QAbstractSeries):
-
     boxOutlineVisibilityChanged: typing.ClassVar[Signal] = ... # boxOutlineVisibilityChanged()
     boxWidthChanged          : typing.ClassVar[Signal] = ... # boxWidthChanged()
     boxsetsAdded             : typing.ClassVar[Signal] = ... # boxsetsAdded(QList<QBoxSet*>)
@@ -469,7 +450,6 @@ class QBoxPlotSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QBoxSet(PySide6.QtCore.QObject):
-
     brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
     cleared                  : typing.ClassVar[Signal] = ... # cleared()
     clicked                  : typing.ClassVar[Signal] = ... # clicked()
@@ -482,13 +462,11 @@ class QBoxSet(PySide6.QtCore.QObject):
     valuesChanged            : typing.ClassVar[Signal] = ... # valuesChanged()
 
     class ValuePositions(enum.IntEnum):
-
         LowerExtreme              = 0x0
         LowerQuartile             = 0x1
         Median                    = 0x2
         UpperQuartile             = 0x3
         UpperExtreme              = 0x4
-
 
     @typing.overload
     def __init__(self, /, label: str = ..., parent: PySide6.QtCore.QObject | None = ..., *, pen: PySide6.QtGui.QPen | None = ..., brush: PySide6.QtGui.QBrush | None = ...) -> None: ...
@@ -513,7 +491,6 @@ class QBoxSet(PySide6.QtCore.QObject):
 
 
 class QCandlestickLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QCandlestickSeries, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def series(self, /) -> PySide6.QtCharts.QCandlestickSeries: ...
@@ -521,7 +498,6 @@ class QCandlestickLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QCandlestickModelMapper(PySide6.QtCore.QObject):
-
     modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
     seriesReplaced           : typing.ClassVar[Signal] = ... # seriesReplaced()
 
@@ -549,7 +525,6 @@ class QCandlestickModelMapper(PySide6.QtCore.QObject):
 
 
 class QCandlestickSeries(PySide6.QtCharts.QAbstractSeries):
-
     bodyOutlineVisibilityChanged: typing.ClassVar[Signal] = ... # bodyOutlineVisibilityChanged()
     bodyWidthChanged         : typing.ClassVar[Signal] = ... # bodyWidthChanged()
     brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
@@ -608,7 +583,6 @@ class QCandlestickSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QCandlestickSet(PySide6.QtCore.QObject):
-
     brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
     clicked                  : typing.ClassVar[Signal] = ... # clicked()
     closeChanged             : typing.ClassVar[Signal] = ... # closeChanged()
@@ -644,15 +618,12 @@ class QCandlestickSet(PySide6.QtCore.QObject):
 
 
 class QCategoryAxis(PySide6.QtCharts.QValueAxis):
-
     categoriesChanged        : typing.ClassVar[Signal] = ... # categoriesChanged()
     labelsPositionChanged    : typing.ClassVar[Signal] = ... # labelsPositionChanged(QCategoryAxis::AxisLabelsPosition)
 
     class AxisLabelsPosition(enum.Enum):
-
         AxisLabelsPositionCenter  = 0x0
         AxisLabelsPositionOnValue = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, startValue: float | None = ..., count: int | None = ..., categoriesLabels: collections.abc.Sequence[str] | None = ..., labelsPosition: PySide6.QtCharts.QCategoryAxis.AxisLabelsPosition | None = ...) -> None: ...
 
@@ -670,18 +641,15 @@ class QCategoryAxis(PySide6.QtCharts.QValueAxis):
 
 
 class QChart(PySide6.QtWidgets.QGraphicsWidget):
-
     plotAreaChanged          : typing.ClassVar[Signal] = ... # plotAreaChanged(QRectF)
 
     class AnimationOption(enum.Flag):
-
         NoAnimation               = 0x0
         GridAxisAnimations        = 0x1
         SeriesAnimations          = 0x2
         AllAnimations             = 0x3
 
     class ChartTheme(enum.Enum):
-
         ChartThemeLight           = 0x0
         ChartThemeBlueCerulean    = 0x1
         ChartThemeDark            = 0x2
@@ -692,11 +660,9 @@ class QChart(PySide6.QtWidgets.QGraphicsWidget):
         ChartThemeQt              = 0x7
 
     class ChartType(enum.Enum):
-
         ChartTypeUndefined        = 0x0
         ChartTypeCartesian        = 0x1
         ChartTypePolar            = 0x2
-
 
     @typing.overload
     def __init__(self, type: PySide6.QtCharts.QChart.ChartType, parent: PySide6.QtWidgets.QGraphicsItem, wFlags: PySide6.QtCore.Qt.WindowType, /, *, theme: PySide6.QtCharts.QChart.ChartTheme | None = ..., title: str | None = ..., backgroundVisible: bool | None = ..., dropShadowEnabled: bool | None = ..., backgroundRoundness: float | None = ..., animationOptions: PySide6.QtCharts.QChart.AnimationOption | None = ..., animationDuration: int | None = ..., animationEasingCurve: PySide6.QtCore.QEasingCurve | None = ..., margins: PySide6.QtCore.QMargins | None = ..., chartType: PySide6.QtCharts.QChart.ChartType | None = ..., plotAreaBackgroundVisible: bool | None = ..., localizeNumbers: bool | None = ..., locale: PySide6.QtCore.QLocale | None = ..., plotArea: PySide6.QtCore.QRectF | None = ...) -> None: ...
@@ -769,15 +735,12 @@ class QChart(PySide6.QtWidgets.QGraphicsWidget):
 
 
 class QChartView(PySide6.QtWidgets.QGraphicsView):
-
     class RubberBand(enum.Flag):
-
         NoRubberBand              = 0x0
         VerticalRubberBand        = 0x1
         HorizontalRubberBand      = 0x2
         RectangleRubberBand       = 0x3
         ClickThroughRubberBand    = 0x80
-
 
     @typing.overload
     def __init__(self, chart: PySide6.QtCharts.QChart, /, parent: PySide6.QtWidgets.QWidget | None = ...) -> None: ...
@@ -795,7 +758,6 @@ class QChartView(PySide6.QtWidgets.QGraphicsView):
 
 
 class QColorAxis(PySide6.QtCharts.QAbstractAxis):
-
     autoRangeChanged         : typing.ClassVar[Signal] = ... # autoRangeChanged(bool)
     gradientChanged          : typing.ClassVar[Signal] = ... # gradientChanged(QLinearGradient)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
@@ -823,7 +785,6 @@ class QColorAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QDateTimeAxis(PySide6.QtCharts.QAbstractAxis):
-
     formatChanged            : typing.ClassVar[Signal] = ... # formatChanged(QString)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(QDateTime)
     minChanged               : typing.ClassVar[Signal] = ... # minChanged(QDateTime)
@@ -845,7 +806,6 @@ class QDateTimeAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QHBarModelMapper(PySide6.QtCharts.QBarModelMapper):
-
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
     firstBarSetRowChanged    : typing.ClassVar[Signal] = ... # firstBarSetRowChanged()
     firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
@@ -870,7 +830,6 @@ class QHBarModelMapper(PySide6.QtCharts.QBarModelMapper):
 
 
 class QHBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
-
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
     firstBoxSetRowChanged    : typing.ClassVar[Signal] = ... # firstBoxSetRowChanged()
     firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
@@ -895,7 +854,6 @@ class QHBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
 
 
 class QHCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
-
     closeColumnChanged       : typing.ClassVar[Signal] = ... # closeColumnChanged()
     firstSetRowChanged       : typing.ClassVar[Signal] = ... # firstSetRowChanged()
     highColumnChanged        : typing.ClassVar[Signal] = ... # highColumnChanged()
@@ -924,7 +882,6 @@ class QHCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
 
 
 class QHPieModelMapper(PySide6.QtCharts.QPieModelMapper):
-
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
     firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
     labelsRowChanged         : typing.ClassVar[Signal] = ... # labelsRowChanged()
@@ -949,7 +906,6 @@ class QHPieModelMapper(PySide6.QtCharts.QPieModelMapper):
 
 
 class QHXYModelMapper(PySide6.QtCharts.QXYModelMapper):
-
     columnCountChanged       : typing.ClassVar[Signal] = ... # columnCountChanged()
     firstColumnChanged       : typing.ClassVar[Signal] = ... # firstColumnChanged()
     modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
@@ -974,31 +930,28 @@ class QHXYModelMapper(PySide6.QtCharts.QXYModelMapper):
 
 
 class QHorizontalBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QHorizontalPercentBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QHorizontalStackedBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
-class QIntList: ...
+class QIntList:
+    ...
 
 
 class QLegend(PySide6.QtWidgets.QGraphicsWidget):
-
     attachedToChartChanged   : typing.ClassVar[Signal] = ... # attachedToChartChanged(bool)
     backgroundVisibleChanged : typing.ClassVar[Signal] = ... # backgroundVisibleChanged(bool)
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
@@ -1011,7 +964,6 @@ class QLegend(PySide6.QtWidgets.QGraphicsWidget):
     showToolTipsChanged      : typing.ClassVar[Signal] = ... # showToolTipsChanged(bool)
 
     class MarkerShape(enum.Enum):
-
         MarkerShapeDefault        = 0x0
         MarkerShapeRectangle      = 0x1
         MarkerShapeCircle         = 0x2
@@ -1020,7 +972,6 @@ class QLegend(PySide6.QtWidgets.QGraphicsWidget):
         MarkerShapeTriangle       = 0x5
         MarkerShapeStar           = 0x6
         MarkerShapePentagon       = 0x7
-
 
     def alignment(self, /) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     def attachToChart(self, /) -> None: ...
@@ -1058,7 +1009,6 @@ class QLegend(PySide6.QtWidgets.QGraphicsWidget):
 
 
 class QLegendMarker(PySide6.QtCore.QObject):
-
     brushChanged             : typing.ClassVar[Signal] = ... # brushChanged()
     clicked                  : typing.ClassVar[Signal] = ... # clicked()
     fontChanged              : typing.ClassVar[Signal] = ... # fontChanged()
@@ -1070,14 +1020,12 @@ class QLegendMarker(PySide6.QtCore.QObject):
     visibleChanged           : typing.ClassVar[Signal] = ... # visibleChanged()
 
     class LegendMarkerType(enum.Enum):
-
         LegendMarkerTypeArea      = 0x0
         LegendMarkerTypeBar       = 0x1
         LegendMarkerTypePie       = 0x2
         LegendMarkerTypeXY        = 0x3
         LegendMarkerTypeBoxPlot   = 0x4
         LegendMarkerTypeCandlestick = 0x5
-
 
     def brush(self, /) -> PySide6.QtGui.QBrush: ...
     def font(self, /) -> PySide6.QtGui.QFont: ...
@@ -1098,14 +1046,12 @@ class QLegendMarker(PySide6.QtCore.QObject):
 
 
 class QLineSeries(PySide6.QtCharts.QXYSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QLogValueAxis(PySide6.QtCharts.QAbstractAxis):
-
     baseChanged              : typing.ClassVar[Signal] = ... # baseChanged(double)
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
@@ -1132,14 +1078,12 @@ class QLogValueAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QPercentBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QPieLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QPieSeries, slice: PySide6.QtCharts.QPieSlice, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def series(self, /) -> PySide6.QtCharts.QPieSeries: ...
@@ -1148,7 +1092,6 @@ class QPieLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QPieModelMapper(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def count(self, /) -> int: ...
@@ -1168,7 +1111,6 @@ class QPieModelMapper(PySide6.QtCore.QObject):
 
 
 class QPieSeries(PySide6.QtCharts.QAbstractSeries):
-
     added                    : typing.ClassVar[Signal] = ... # added(QList<QPieSlice*>)
     clicked                  : typing.ClassVar[Signal] = ... # clicked(QPieSlice*)
     countChanged             : typing.ClassVar[Signal] = ... # countChanged()
@@ -1214,7 +1156,6 @@ class QPieSeries(PySide6.QtCharts.QAbstractSeries):
 
 
 class QPieSlice(PySide6.QtCore.QObject):
-
     angleSpanChanged         : typing.ClassVar[Signal] = ... # angleSpanChanged()
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged()
     borderWidthChanged       : typing.ClassVar[Signal] = ... # borderWidthChanged()
@@ -1236,12 +1177,10 @@ class QPieSlice(PySide6.QtCore.QObject):
     valueChanged             : typing.ClassVar[Signal] = ... # valueChanged()
 
     class LabelPosition(enum.Enum):
-
         LabelOutside              = 0x0
         LabelInsideHorizontal     = 0x1
         LabelInsideTangential     = 0x2
         LabelInsideNormal         = 0x3
-
 
     @typing.overload
     def __init__(self, label: str, value: float, /, parent: PySide6.QtCore.QObject | None = ..., *, labelVisible: bool | None = ..., labelPosition: PySide6.QtCharts.QPieSlice.LabelPosition | None = ..., exploded: bool | None = ..., pen: PySide6.QtGui.QPen | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., borderWidth: int | None = ..., brush: PySide6.QtGui.QBrush | None = ..., color: PySide6.QtGui.QColor | None = ..., labelBrush: PySide6.QtGui.QBrush | None = ..., labelColor: PySide6.QtGui.QColor | None = ..., labelFont: PySide6.QtGui.QFont | None = ..., labelArmLengthFactor: float | None = ..., explodeDistanceFactor: float | None = ..., percentage: float | None = ..., startAngle: float | None = ..., angleSpan: float | None = ...) -> None: ...
@@ -1284,16 +1223,14 @@ class QPieSlice(PySide6.QtCore.QObject):
     def value(self, /) -> float: ...
 
 
-class QPointFList: ...
+class QPointFList:
+    ...
 
 
 class QPolarChart(PySide6.QtCharts.QChart):
-
     class PolarOrientation(enum.Flag):
-
         PolarOrientationRadial    = 0x1
         PolarOrientationAngular   = 0x2
-
 
     def __init__(self, /, parent: PySide6.QtWidgets.QGraphicsItem | None = ..., wFlags: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
 
@@ -1303,21 +1240,18 @@ class QPolarChart(PySide6.QtCharts.QChart):
 
 
 class QScatterSeries(PySide6.QtCharts.QXYSeries):
-
     borderColorChanged       : typing.ClassVar[Signal] = ... # borderColorChanged(QColor)
     colorChanged             : typing.ClassVar[Signal] = ... # colorChanged(QColor)
     markerShapeChanged       : typing.ClassVar[Signal] = ... # markerShapeChanged(MarkerShape)
     markerSizeChanged        : typing.ClassVar[Signal] = ... # markerSizeChanged(double)
 
     class MarkerShape(enum.Enum):
-
         MarkerShapeCircle         = 0x0
         MarkerShapeRectangle      = 0x1
         MarkerShapeRotatedRectangle = 0x2
         MarkerShapeTriangle       = 0x3
         MarkerShapeStar           = 0x4
         MarkerShapePentagon       = 0x5
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, color: PySide6.QtGui.QColor | None = ..., borderColor: PySide6.QtGui.QColor | None = ..., markerShape: PySide6.QtCharts.QScatterSeries.MarkerShape | None = ..., markerSize: float | None = ..., brush: PySide6.QtGui.QBrush | None = ...) -> None: ...
 
@@ -1336,21 +1270,18 @@ class QScatterSeries(PySide6.QtCharts.QXYSeries):
 
 
 class QSplineSeries(PySide6.QtCharts.QLineSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QStackedBarSeries(PySide6.QtCharts.QAbstractBarSeries):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def type(self, /) -> PySide6.QtCharts.QAbstractSeries.SeriesType: ...
 
 
 class QVBarModelMapper(PySide6.QtCharts.QBarModelMapper):
-
     firstBarSetColumnChanged : typing.ClassVar[Signal] = ... # firstBarSetColumnChanged()
     firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
     lastBarSetColumnChanged  : typing.ClassVar[Signal] = ... # lastBarSetColumnChanged()
@@ -1375,7 +1306,6 @@ class QVBarModelMapper(PySide6.QtCharts.QBarModelMapper):
 
 
 class QVBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
-
     firstBoxSetColumnChanged : typing.ClassVar[Signal] = ... # firstBoxSetColumnChanged()
     firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
     lastBoxSetColumnChanged  : typing.ClassVar[Signal] = ... # lastBoxSetColumnChanged()
@@ -1400,7 +1330,6 @@ class QVBoxPlotModelMapper(PySide6.QtCharts.QBoxPlotModelMapper):
 
 
 class QVCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
-
     closeRowChanged          : typing.ClassVar[Signal] = ... # closeRowChanged()
     firstSetColumnChanged    : typing.ClassVar[Signal] = ... # firstSetColumnChanged()
     highRowChanged           : typing.ClassVar[Signal] = ... # highRowChanged()
@@ -1429,7 +1358,6 @@ class QVCandlestickModelMapper(PySide6.QtCharts.QCandlestickModelMapper):
 
 
 class QVPieModelMapper(PySide6.QtCharts.QPieModelMapper):
-
     firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
     labelsColumnChanged      : typing.ClassVar[Signal] = ... # labelsColumnChanged()
     modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
@@ -1454,7 +1382,6 @@ class QVPieModelMapper(PySide6.QtCharts.QPieModelMapper):
 
 
 class QVXYModelMapper(PySide6.QtCharts.QXYModelMapper):
-
     firstRowChanged          : typing.ClassVar[Signal] = ... # firstRowChanged()
     modelReplaced            : typing.ClassVar[Signal] = ... # modelReplaced()
     rowCountChanged          : typing.ClassVar[Signal] = ... # rowCountChanged()
@@ -1479,7 +1406,6 @@ class QVXYModelMapper(PySide6.QtCharts.QXYModelMapper):
 
 
 class QValueAxis(PySide6.QtCharts.QAbstractAxis):
-
     labelFormatChanged       : typing.ClassVar[Signal] = ... # labelFormatChanged(QString)
     maxChanged               : typing.ClassVar[Signal] = ... # maxChanged(double)
     minChanged               : typing.ClassVar[Signal] = ... # minChanged(double)
@@ -1491,10 +1417,8 @@ class QValueAxis(PySide6.QtCharts.QAbstractAxis):
     tickTypeChanged          : typing.ClassVar[Signal] = ... # tickTypeChanged(QValueAxis::TickType)
 
     class TickType(enum.Enum):
-
         TicksDynamic              = 0x0
         TicksFixed                = 0x1
-
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, tickCount: int | None = ..., min: float | None = ..., max: float | None = ..., labelFormat: str | None = ..., minorTickCount: int | None = ..., tickAnchor: float | None = ..., tickInterval: float | None = ..., tickType: PySide6.QtCharts.QValueAxis.TickType | None = ...) -> None: ...
 
@@ -1520,7 +1444,6 @@ class QValueAxis(PySide6.QtCharts.QAbstractAxis):
 
 
 class QXYLegendMarker(PySide6.QtCharts.QLegendMarker):
-
     def __init__(self, series: PySide6.QtCharts.QXYSeries, legend: PySide6.QtCharts.QLegend, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def series(self, /) -> PySide6.QtCharts.QXYSeries: ...
@@ -1528,7 +1451,6 @@ class QXYLegendMarker(PySide6.QtCharts.QLegendMarker):
 
 
 class QXYModelMapper(PySide6.QtCore.QObject):
-
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ...) -> None: ...
 
     def count(self, /) -> int: ...
@@ -1548,7 +1470,6 @@ class QXYModelMapper(PySide6.QtCore.QObject):
 
 
 class QXYSeries(PySide6.QtCharts.QAbstractSeries):
-
     bestFitLineColorChanged  : typing.ClassVar[Signal] = ... # bestFitLineColorChanged(QColor)
     bestFitLinePenChanged    : typing.ClassVar[Signal] = ... # bestFitLinePenChanged(QPen)
     bestFitLineVisibilityChanged: typing.ClassVar[Signal] = ... # bestFitLineVisibilityChanged(bool)
@@ -1577,13 +1498,11 @@ class QXYSeries(PySide6.QtCharts.QAbstractSeries):
     selectedPointsChanged    : typing.ClassVar[Signal] = ... # selectedPointsChanged()
 
     class PointConfiguration(enum.Enum):
-
         Color                     = 0x0
         Size                      = 0x1
         Visibility                = 0x2
         LabelVisibility           = 0x3
         LabelFormat               = 0x4
-
 
     @typing.overload
     def __lshift__(self, points: collections.abc.Sequence[PySide6.QtCore.QPointF], /) -> PySide6.QtCharts.QXYSeries: ...
