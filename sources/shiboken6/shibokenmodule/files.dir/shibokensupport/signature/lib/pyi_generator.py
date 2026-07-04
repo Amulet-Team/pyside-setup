@@ -37,6 +37,7 @@ from shibokensupport.signature.lib.enum_sig import (
 from shibokensupport.signature.lib.tool import build_brace_pattern
 
 indent = " " * 4
+MaxSignalSignatures = 8
 
 TYPE_MAP = {
     # Qt integer types
@@ -71,31 +72,62 @@ TYPE_MAP = {
 }
 
 
-def get_signal_constructors() -> str:
-    def get_stub(arg_count: int) -> str:
+EmitTypeVars = ", ".join(f"EmitT{num}" for num in range(1, MaxSignalSignatures + 1))
+ArgsTypeVars = ", ".join(f"ArgsT{num}" for num in range(1, MaxSignalSignatures + 1))
+
+
+def get_signal_hint() -> str:
+    lines = [
+        "signatures: tuple[str, ...]",
+        ""
+    ]
+    for arg_count in [*range(MaxSignalSignatures), -1]:
         if arg_count >= 0:
-            if arg_count >= 1:
-                arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
-            else:
-                arg_params = "()"
-            self_hint = f": PySide6.QtCore.Signal[{arg_params}]"
+            arg_hints =  ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count_2 + 1)) + "]" if arg_count_2 <= arg_count else "[]" for arg_count_2 in range(MaxSignalSignatures))
+            emit_hints = ", ".join("[" + ", ".join(f"T{num}" for num in range(1, arg_count + 1)) + "]" for _ in range(MaxSignalSignatures))
+            self_hint = f": Signal[{arg_hints}, {emit_hints}]"
             args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
         else:
             self_hint = ""
             args = "*types: type, "
-        return f"""\
+        lines.append(f"""\
 @typing.overload
-def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...
-"""
+def __init__(self{self_hint}, /, {args}name: str = "", arguments: typing.Sequence[str] = ()) -> None: ...""")
 
-    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
+    lines.append(f"""\
+
+@typing.overload
+def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[{ArgsTypeVars}, {EmitTypeVars}]: ...
+@typing.overload
+def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[{ArgsTypeVars}, {EmitTypeVars}]: ...
+""")
+
+    return "\n".join(lines)
+
+
+def get_signal_instance_hint() -> str:
+    lines = []
+
+    slot_hint = " | ".join([
+        *[f"PySide6.QtCore._SignalInstance[ArgsT{num}]" for num in range(1, MaxSignalSignatures + 1)],
+        *[f"typing.Callable[ArgsT{num}, typing.Any]" for num in range(1, MaxSignalSignatures + 1)]
+    ])
+
+    lines.append(f"def connect(self, slot: {slot_hint}, /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...")
+    lines.append(f"def disconnect(self, /, slot: {slot_hint} | None = None) -> bool: ...")
+
+    for arg_i in range(1, MaxSignalSignatures + 1):
+        lines.append("@typing.overload")
+        lines.append(f"def emit(self, /, *args: EmitT{arg_i}.args, **kwargs: EmitT{arg_i}.kwargs) -> bool: ...")
+    lines.append("")
+    return "\n".join(lines)
 
 
 def get_slot_constructors() -> str:
     def get_stub(arg_count: int) -> str:
         if arg_count >= 0:
             arg_params = ", ".join(f"T{num}" for num in range(1, arg_count + 1))
-            self_hint = f": PySide6.QtCore.Slot[[{arg_params}], R]"
+            self_hint = f": Slot[[{arg_params}], R]"
             args = "".join(f"type_{num}: type[T{num}], " for num in range(1, arg_count + 1)) + "*, "
         else:
             self_hint = ""
@@ -105,25 +137,16 @@ def get_slot_constructors() -> str:
 def __init__(self{self_hint}, /, {args}name: str = "", result: type[R] | str | None = None, tag: str = "") -> None: ...
 """
 
-    return "".join(map(get_stub, range(0, 17))) + get_stub(-1)
-
+    return "".join(map(get_stub, range(MaxSignalSignatures))) + get_stub(-1)
 
 StubOverrides: dict[tuple[str, str], tuple[str, str]] = {
-    ("PySide6.QtCore", "Signal"): ("class Signal(typing.Generic[*Ts]):", f"""\
-signatures: tuple[str, ...]
+    ("PySide6.QtCore", "Signal"): (f"class Signal(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):", get_signal_hint()),
+    ("PySide6.QtCore", "SignalInstance"): (f"""\
+class _SignalInstance(typing.Protocol[P]):
+    def emit(self, /, *args: P.args, **kwargs: P.kwargs) -> bool: ...
 
-{get_signal_constructors()}\
 
-@typing.overload
-def __get__(self, instance: PySide6.QtCore.QObject, owner: typing.Any | None, /) -> PySide6.QtCore.SignalInstance[*Ts]: ...
-@typing.overload
-def __get__(self, instance: None, owner: typing.Any | None, /) -> PySide6.QtCore.Signal[*Ts]: ...
-"""),
-    ("PySide6.QtCore", "SignalInstance"): ("class SignalInstance(typing.Generic[*Ts]):", """\
-def connect(self, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any], /, type: PySide6.QtCore.Qt.ConnectionType = PySide6.QtCore.Qt.ConnectionType.AutoConnection) -> PySide6.QtCore.QMetaObject.Connection: ...
-def disconnect(self, /, slot: PySide6.QtCore.Signal[*Ts] | typing.Callable[[*Ts], typing.Any] | typing.Callable[[], typing.Any] | None = None) -> bool: ...
-def emit(self, /, *args: *Ts) -> None: ...
-"""),
+class SignalInstance(typing.Generic[{ArgsTypeVars}, {EmitTypeVars}]):""", get_signal_instance_hint()),
     ("PySide6.QtCore", "Slot"): ("class Slot(typing.Generic[P, R]):", f"""\
 {get_slot_constructors()}\
 
@@ -465,11 +488,14 @@ def generate_pyi(import_name, outpath, options):
                     wr.print("PlaceholderType = typing.TypeVar(\"PlaceholderType\", "
                              "bound=PySide6.QtCore.QObject)")
                     wr.print('T = typing.TypeVar("T")')
-                    for num in range(1, 17):
+                    for num in range(1, MaxSignalSignatures + 1):
                         wr.print(f'T{num} = typing.TypeVar("T{num}")')
-                    wr.print('Ts = typing.TypeVarTuple("Ts")')
                     wr.print('P = typing.ParamSpec("P")')
                     wr.print('R = typing.TypeVar("R")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'EmitT{num} = typing.ParamSpec("EmitT{num}")')
+                    for num in range(1, MaxSignalSignatures + 1):
+                        wr.print(f'ArgsT{num} = typing.ParamSpec("ArgsT{num}")')
                     wr.print()
                     # PYSIDE-2516: Qt.KeyboardModifier and Qt.Modifier support cross-type | with
                     # Qt.Key producing QKeyCombination, which enum.Flag.__or__ cannot express.
